@@ -25,7 +25,7 @@ Throughout the project's development period, the distribution of _tasks / requir
 |-----------------------------|------------|------------|------------|------------|
 | Glossary  |  [Lucas/Daniel](SprintA/Glossary.md)   |   [all](SprintB/Glossary.md)  |   [all](SprintC/Glossary.md)  | [all](SprintD/Glossary.md)  |
 | Use Case Diagram (UCD)  |  [Miguel/Mariana](SprintA/UCD.md)   |   [all](SprintB/UCD.md)  |   [all](SprintC/UCD.md)  | [all](SprintD/UCD.md)  |
-| Supplementary Specification   |  [all](SprintA/FURPS.md)   |   [all](SprintB/FURPS.md)  |   [all](SprintC/FURPS.md)  | [all](SprintD/FURPS.md)  |
+| Supplementary Specification   |  [Daniel/Lucas](SprintA/FURPS.md)   |   [all](SprintB/FURPS.md)  |   [all](SprintC/FURPS.md)  | [all](SprintD/FURPS.md)  |
 | Domain Model  |  [Miguel/Mariana](SprintA/DM.svg)   |   [all](SprintB/DM.md)  |   [all](SprintC/DM.md)  | [all](SprintD/DM.md)  |
 | US 1 (SDP Activities)  |  [1190001](SprintA/US1.md)   |    |   |  |
 | US 2 (SDP Activities)  |  [1190002](SprintA/US2.md)   |    |   |  |
@@ -33,4 +33,5 @@ Throughout the project's development period, the distribution of _tasks / requir
 | US 4 (SDP Activities)  |  [1190004](SprintA/US4.md)   |    |   |  |
 | ...  |  ...   | ...   | ...  | ... |
 | US 326 (SDP Activities)  |    |    |   | [1190004](SprintA/US326.md) |
+
 
