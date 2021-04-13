@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="ESOFT SPRINT A" uuid="9f4a4eb2-8f58-460b-85ed-3250b7b553af">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\MiguelJordão(1201487\Documents\lei-21-s2-1dj-g40\docs\SprintA\ESOFT SPRINT A.vpp</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="ESOFT SPRINT A.vpp" uuid="134d80f9-c6bf-4edd-b560-aafdc9da209f">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\MiguelJordão(1201487\Documents\lei-21-s2-1dj-g40\docs\SprintA\ESOFT SPRINT A.vpp.bak_003d</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+  </component>
+</project>
