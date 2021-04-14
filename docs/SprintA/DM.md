@@ -166,12 +166,15 @@ An association is a relationship between instances of objects that indicates a r
 | Receptionist 	          | works in    		          | Clinical Analysis Laboratory  |
 | Medical lab technicians | works in    		          | Clinical Analysis Laboratory  |
 | Sample 	              | registered locally by    	  | Medical lab technicians       |
-| Specialist Doctor 	  | make a diagnosis    		  | Sample                        |
+| Specialist Doctor 	  | performs a           		  | Diagnosis                     |
 | Chemistry Technologist  | performs the chemical analysis| Sample                        |
 | Specialist Doctor 	  | works in    		          | Chemical Laboratory           |
 | Chemistry Technologist  | works in    		          | Chemical Laboratory           |
 | Laboratory Coordinator  | validates    		          | Sample                        |
 | Laboratory Coordinator  | works in    		          | Clinical Analysis Laboratory  |
+| Specialist Doctor 	  | writes a             		  | Report                        |
+| Sample             	  | presented by         		  | Diagnosis                     |
+| Report               	  | sent to              		  | NHS                           |
 
 
 
