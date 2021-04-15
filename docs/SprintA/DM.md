@@ -154,37 +154,37 @@ To identify domain conceptual classes, start by making a list of candidate conce
 
 ###**Rationale to identify associations between conceptual classes**
 
-|       Concept (A)       |          Association   	      |          Concept (B)          |
-|:-----------------------:|:-----------------------------:|------------------------------:|
-| Company  	              | owns                          | Chemical Laboratory           |
-| Company  	              | owns                          | Clinical Analysis Laboratory  |
-| Company  	              | performs   	                  | Test                          |
-| Company  	              | conducts    		          | Test Type                     |
-| Test 	                  | is of    		              | Test Type                     |
-| Test 	                  | requests analysis of    	  | Parameter                     |
-| Test 	                  | collects    		          | Sample                        |
-| Test 	                  | requested by    	          | Client                        |
-| Parameter               | presented under    		      | Category                      |
-| Category 	              | created by    		          | Administrator                 |
-| Client	              | registered by                 | Receptionist                  |
-| Receptionist 	          | works in    		          | Clinical Analysis Laboratory  |
-| Receptionist 	          | registers   		          | Lab Order                     |
-| Medical lab technicians | works in    		          | Clinical Analysis Laboratory  |
-| Sample 	              | registered locally by    	  | Medical lab technicians       |
-| Specialist Doctor 	  | performs a           		  | Diagnosis                     |
-| Chemistry Technologist  | performs the chemical analysis| Sample                        |
-| Specialist Doctor 	  | works in    		          | Chemical Laboratory           |
-| Chemistry Technologist  | works in    		          | Chemical Laboratory           |
-| Laboratory Coordinator  | validates    		          | Sample                        |
-| Laboratory Coordinator  | works in    		          | Clinical Analysis Laboratory  |
-| Company             	  | uses                		  | NHS API                       |
-| NHS API            	  | generates              		  | Report                        |
-| Sample             	  | presented by         		  | Diagnosis                     |
-| Report               	  | sent to              		  | NHS                           |
-| Test 	                  | has a            	          | Test Result                   |
-| External API	          | identifies         	          | Sample                        |
-| Client 	              | has a            	          | Lab Order                     |
-| Algorithm	              | evaluates            	      | Company                       |
+|       Concept (A)       |          Association   	          |          Concept (B)          |
+|:-----------------------:|:---------------------------------:|:-----------------------------:|
+| Company  	              | owns                              | Chemical Laboratory           |
+| Company  	              | owns                              | Clinical Analysis Laboratory  |
+| Company  	              | performs   	                      | Test                          |
+| Company  	              | conducts    		              | Test Type                     |
+| Company             	  | uses                		      | NHS API                       |
+| Client	              | registered by                     | Receptionist                  |
+| Client 	              | has a            	              | Lab Order                     |
+| Receptionist 	          | works in    		              | Clinical Analysis Laboratory  |
+| Receptionist 	          | registers   		              | Lab Order                     |
+| Test 	                  | is of    		                  | Test Type                     |
+| Test 	                  | has a            	              | Test Result                   |
+| Test 	                  | requests analysis of    	      | Parameter                     |
+| Test 	                  | collects    		              | Sample                        |
+| Test 	                  | requested by    	              | Client                        |
+| Parameter               | presented under    		          | Category                      |
+| Category 	              | created by    		              | Administrator                 |
+| Medical lab technicians | works in    		              | Clinical Analysis Laboratory  |
+| Sample 	              | registered locally by    	      | Medical lab technicians       |
+| Chemistry Technologist  | works in    		              | Chemical Laboratory           |
+| Chemistry Technologist  | performs the chemical analysis in | Sample                        |
+| Specialist Doctor 	  | performs a                        | Diagnosis                     |
+| Specialist Doctor 	  | works in    		              | Chemical Laboratory           |
+| Laboratory Coordinator  | validates    		              | Sample                        |
+| Laboratory Coordinator  | works in    		              | Clinical Analysis Laboratory  |
+| NHS API            	  | generates              	 	      | Report                        |
+| Report               	  | sent to              	 	      | NHS                           |
+| External API	          | identifies         	              | Sample                        |
+| Sample             	  | presented by         		      | Diagnosis                     |
+| Algorithm	              | evaluates            	          | Company                       |
 
 
 
