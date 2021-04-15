@@ -10,19 +10,22 @@ To identify domain conceptual classes, start by making a list of candidate conce
 
 **Business Transactions**
 
-*
+* Test
 
 ---
 
 **Transaction Line Items**
 
 * Sample
+* Lab Order
 
 ---
 
 **Product/Service related to a Transaction or Transaction Line Item**
 
-*  Parameter
+* Parameter
+* Covid-19 tests
+* Blood analysis
 
 ---
 
@@ -30,7 +33,8 @@ To identify domain conceptual classes, start by making a list of candidate conce
 **Transaction Records**
 
 * Test
-* Record
+* Report
+* Test Results
 
 ---  
 
@@ -45,20 +49,22 @@ To identify domain conceptual classes, start by making a list of candidate conce
 * Client
 * Administrator
 * NHS
+* Company
 
 ---
 
 
 **Places**
 
-*  Chemical Laboratory
-*  Clinical Analysis Laboratory
+* Chemical Laboratory
+* Clinical Analysis Laboratory
 
 ---
 
 **Noteworthy Events**
 
 * Chemical Analysis
+* Algorithm
 
 ---
 
@@ -66,6 +72,7 @@ To identify domain conceptual classes, start by making a list of candidate conce
 **Physical Objects**
 
 * Sample
+* Lab Order
 
 ---
 
@@ -102,53 +109,50 @@ To identify domain conceptual classes, start by making a list of candidate conce
 
 **Organizations**
 
-* Company(ManyLabs?)
+* Company
 * NHS
 
 ---
 
 **Other External/Collaborating Systems**
 
-*  
-
+* NHS API module
+* External API module
 
 ---
 
 
 **Records of finance, work, contracts, legal matters**
 
-* 
+* Report to NHS
+* Report to the Client
 
 ---
 
 
 **Financial Instruments**
 
-*  
+* TIF Number
+* NHS Number
 
 ---
 
 
 **Documents mentioned/used to perform some work/**
 
-* 
+* Diagnosis
+* Test Validation
+* Sample analyses
+* Lab Order
+* Test Result
+* Test
+* Report
+
 ---
 
 
 
-###**Rationale to identify associations between conceptual classes**###
-
-An association is a relationship between instances of objects that indicates a relevant connection and that is worth of remembering, or it is derivable from the List of Common Associations: 
-
-+ **_A_** is physically or logically part of **_B_**
-+ **_A_** is physically or logically contained in/on **_B_**
-+ **_A_** is a description for **_B_**
-+ **_A_** known/logged/recorded/reported/captured in **_B_**
-+ **_A_** uses or manages or owns **_B_**
-+ **_A_** is related with a transaction (item) of **_B_**
-+ etc.
-
-
+###**Rationale to identify associations between conceptual classes**
 
 |       Concept (A)       |          Association   	      |          Concept (B)          |
 |:-----------------------:|:-----------------------------:|------------------------------:|
@@ -164,6 +168,7 @@ An association is a relationship between instances of objects that indicates a r
 | Category 	              | created by    		          | Administrator                 |
 | Client	              | registered by                 | Receptionist                  |
 | Receptionist 	          | works in    		          | Clinical Analysis Laboratory  |
+| Receptionist 	          | registers   		          | Lab Order                     |
 | Medical lab technicians | works in    		          | Clinical Analysis Laboratory  |
 | Sample 	              | registered locally by    	  | Medical lab technicians       |
 | Specialist Doctor 	  | performs a           		  | Diagnosis                     |
@@ -172,10 +177,14 @@ An association is a relationship between instances of objects that indicates a r
 | Chemistry Technologist  | works in    		          | Chemical Laboratory           |
 | Laboratory Coordinator  | validates    		          | Sample                        |
 | Laboratory Coordinator  | works in    		          | Clinical Analysis Laboratory  |
-| Specialist Doctor 	  | writes a             		  | Report                        |
+| Company             	  | uses                		  | NHS API                       |
+| NHS API            	  | generates              		  | Report                        |
 | Sample             	  | presented by         		  | Diagnosis                     |
 | Report               	  | sent to              		  | NHS                           |
-
+| Test 	                  | has a            	          | Test Result                   |
+| External API	          | identifies         	          | Sample                        |
+| Client 	              | has a            	          | Lab Order                     |
+| Algorithm	              | evaluates            	      | Company                       |
 
 
 
@@ -184,9 +193,6 @@ An association is a relationship between instances of objects that indicates a r
 
 ## Domain Model
 
-**Do NOT forget to identify concepts atributes too.**
-
-**Insert below the Domain Model Diagram in a SVG format**
 
 ![DM.svg](DM.svg)
 
