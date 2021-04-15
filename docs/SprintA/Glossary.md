@@ -8,6 +8,7 @@
 |:------------------------|:-----------------|:--------------------------------------------|:--------------------------------------------|
 | **API** | **IPA** |Person responsible for carrying out various business supporting activities on the system.| Acrónimo para Interface de Programação de Aplicações.| |
 | **Barcode** | **Código de Barras** | Method of representing data in a visual, machine-readable form.| Método de representação de dados em um formato visual legível por uma máquina.|
+| **Benchmark** | **Benchmark** | Standardized problem or test that serves as a basis for evaluation or comparison (as of computer system performance).| Problema ou teste padronizado que serve como base para avaliação ou comparação (a partir do desempenho do sistema de computador).|
 | **Blood Test** | **Teste ao sangue** | Test frequently characterized by measuring several parameters organized by categories.| Teste frequentemente caracterizado por medir vários parâmetros organizados por categorias.|
 | **Client** | **Client** |The individual who requests the clinical analysis. | Indivíduo que solicita a análise clínica.|
 | **Clinical Analysis Laboratory** | **Laboratório de Análises Clínicas** | Facility where the clinical blood tests are performed. Also performs Covid-19 tests (several Labs).| Instalação onde são realizados os exames clínicos de sangue. Também realiza testes Covid-19 (em vários laboratórios).|
