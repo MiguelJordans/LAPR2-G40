@@ -132,8 +132,7 @@ To identify domain conceptual classes, start by making a list of candidate conce
 
 **Financial Instruments**
 
-* TIF Number
-* NHS Number
+* Lab Order
 
 ---
 

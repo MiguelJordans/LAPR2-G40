@@ -7,10 +7,10 @@ The teams consists of students identified in the following table.
 | Student Number	| Name |
 |--------------|----------------------------|
 | **1201487**  | Miguel Jordão              |
-| **1200902**  | Mariana Leiges             |
+| **1200902**  | Mariana Lages              |
 | **1200581**  | Daniel Costa               |
 | **1200759**  | Lucas Silva                |
-| **1200300**  | Marcin Basinki             |
+| **1200300**  | Marcin Basinski            |
 
 
 
@@ -21,17 +21,16 @@ Throughout the project's development period, the distribution of _tasks / requir
 
 **Keep this table must always up-to-date.**
 
-| Task                      | [Sprint A](SprintA/README.md) | [Sprint B](SprintB/README.md) | [Sprint C](SprintC/README.md) |  [Sprint D](SprintD/README.md) |
-|-----------------------------|------------|------------|------------|------------|
-| Glossary  |  [Lucas/Daniel](SprintA/Glossary.md)   |   [all](SprintB/Glossary.md)  |   [all](SprintC/Glossary.md)  | [all](SprintD/Glossary.md)  |
-| Use Case Diagram (UCD)  |  [Miguel/Mariana](SprintA/UCD.md)   |   [all](SprintB/UCD.md)  |   [all](SprintC/UCD.md)  | [all](SprintD/UCD.md)  |
-| Supplementary Specification   |  [Daniel/Lucas](SprintA/FURPS.md)   |   [all](SprintB/FURPS.md)  |   [all](SprintC/FURPS.md)  | [all](SprintD/FURPS.md)  |
-| Domain Model  |  [Miguel/Mariana](SprintA/DM.svg)   |   [all](SprintB/DM.md)  |   [all](SprintC/DM.md)  | [all](SprintD/DM.md)  |
-| US 1 (SDP Activities)  |  [1190001](SprintA/US1.md)   |    |   |  |
-| US 2 (SDP Activities)  |  [1190002](SprintA/US2.md)   |    |   |  |
-| US 3 (SDP Activities)  |  [1190003](SprintA/US3.md)   |    |   |  |
-| US 4 (SDP Activities)  |  [1190004](SprintA/US4.md)   |    |   |  |
-| ...  |  ...   | ...   | ...  | ... |
-| US 326 (SDP Activities)  |    |    |   | [1190004](SprintA/US326.md) |
+| Task                        |  [Sprint A](SprintA/README.md)          | [Sprint B](SprintB/README.md) | [Sprint C](SprintC/README.md) |  [Sprint D](SprintD/README.md) |
+|-----------------------------|-----------------------------------------|------------|------------|------------|
+| Glossary                    |  [1200759 1200581](SprintA/Glossary.md) |   [all](SprintB/Glossary.md)  |   [all](SprintC/Glossary.md)  | [all](SprintD/Glossary.md)  |
+| Use Case Diagram (UCD)      |  [1201487 1200902](SprintA/UCD.md)      |   [all](SprintB/UCD.md)  |   [all](SprintC/UCD.md)  | [all](SprintD/UCD.md)  |
+| Supplementary Specification |  [1200759 1200581](SprintA/FURPS.md)    |   [all](SprintB/FURPS.md)  |   [all](SprintC/FURPS.md)  | [all](SprintD/FURPS.md)  |
+| Domain Model                |  [1201487 1200902](SprintA/DM.svg)      |   [all](SprintB/DM.md)  |   [all](SprintC/DM.md)  | [all](SprintD/DM.md)  |
+| US 1 (SDP Activities)       |  [](SprintA/US1.md)   |    |   |  |
+| US 2 (SDP Activities)       |  [](SprintA/US2.md)   |    |   |  |
+| US 3 (SDP Activities)       |  [](SprintA/US3.md)   |    |   |  |
+| US 4 (SDP Activities)       |  [](SprintA/US4.md)   |    |   |  |
+
 
 
