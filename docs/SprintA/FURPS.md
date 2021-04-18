@@ -37,6 +37,8 @@ _Specifies functionalities that:_
 "The application must be authenticated with a password holding seven alphanumeric characters, including three capital letters and two digits."
 - Security
 
+###
+
 ## Usability 
 
 _Evaluates the user interface. It has several subcategories,
@@ -53,8 +55,7 @@ documentation; consistency and standards._
 "The user interface must be simple, intuitive and consistent."
 - Aesthetics
 
-
-
+###
 
 ## Reliability
 _Refers to the integrity, compliance and interoperability of the software. The requirements to be considered are: frequency and severity of failure, possibility of recovery, possibility of prediction, accuracy, average time between failures._
@@ -77,6 +78,7 @@ _Refers to the integrity, compliance and interoperability of the software. The r
 
 "At least two sorting algorithms should be evaluated and documented in the application user manual (in the annexes) that must be delivered with the application."
 
+###
 
 ## Performance
 _Evaluates the performance requirements of the software, namely: response time, start-up time, recovery time, memory consumption, CPU usage, load capacity and application availability._
@@ -99,12 +101,12 @@ _Evaluates the performance requirements of the software, namely: response time, 
 "The implemented algorithm should be analysed in terms of its worst-case time complexity, and it should be compared to a provided benchmark algorithm."
 - Throughput
 
+###
+
 ## Supportability
 _The supportability requirements gathers several characteristics, such as:
 testability, adaptability, maintainability, compatibility,
 configurability, installability, scalability and more._ 
-
-
 
 "The application must support the English language only."
 - Localizability
@@ -139,14 +141,13 @@ configurability, installability, scalability and more._
 "The time complexity analysis of the algorithms should be properly documented in the application user manual (in the annexes) that must be delivered with the application."
 
 
-## +
+###
 
 ### Design Constraints
 
 _Specifies or constraints the system design process. Examples may include: programming languages, software process, mandatory standards/patterns, use of development tools, class library, etc._
-  
 
-
+###
 
 ### Implementation Constraints
 
@@ -176,6 +177,8 @@ database integrity, resource limits, operating system._
 "Use Javadoc to generate useful documentation for Java code."
 - Standards-compliance
 
+###
+
 ### Interface Constraints
 _Specifies or constraints the features inherent to the interaction of the
 system being developed with other external systems._
@@ -193,6 +196,7 @@ system being developed with other external systems._
 The application graphical interface is to be developed in JavaFX 11."
 - Interface formats
 
+###
 
 ### Physical Constraints
 

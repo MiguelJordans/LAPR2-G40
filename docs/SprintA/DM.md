@@ -178,7 +178,6 @@ To identify domain conceptual classes, start by making a list of candidate conce
 | Specialist Doctor 	  | performs a                        | Diagnosis                     |
 | Specialist Doctor 	  | works in    		              | Chemical Laboratory           |
 | Laboratory Coordinator  | validates    		              | Sample                        |
-| Laboratory Coordinator  | works in    		              | Clinical Analysis Laboratory  |
 | NHS API            	  | generates              	 	      | Report                        |
 | Report               	  | sent to              	 	      | NHS                           |
 | External API	          | identifies         	              | Sample                        |
@@ -186,12 +185,7 @@ To identify domain conceptual classes, start by making a list of candidate conce
 | Algorithm	              | evaluates            	          | Company                       |
 
 
-
-
-
-
 ## Domain Model
-
 
 ![DM.svg](DM.svg)
 

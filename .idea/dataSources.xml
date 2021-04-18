@@ -22,5 +22,12 @@
       <jdbc-url>jdbc:sqlite:C:\Users\MiguelJordão(1201487\Documents\lei-21-s2-1dj-g40\docs\SprintA\ESOFT SPRINT A V2(UCD) .vpp.bak_000f</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="ESOFT SPRINT A V2(UCD) .vpp [2]" uuid="c5e3b80c-ba74-4180-92e6-6f8124758a49">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\MiguelJordão(1201487\Documents\lei-21-s2-1dj-g40\docs\SprintA\ESOFT SPRINT A V2(UCD) .vpp.bak_002d</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>
