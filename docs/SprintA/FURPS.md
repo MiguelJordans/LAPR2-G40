@@ -7,35 +7,82 @@ _Specifies functionalities that:_
 - _are common across several US/UC;_
 - _are not related to US/UC, namely: Audit, Reporting and Security._
 
+***
 
+
+- Auditing
+  
+***
+- Authentication
+  
+"Associating the samples with the client/test, and identifying each sample with a barcode."
+***
+- Communication
+  
+***
+- Error management
+  
+***
+- Event management
+  
+***
+- Licensing
+  
+***
+- Localisation
+
+"The application must support the English language only."
+
+***
+- Online help
+  
+***
+- Persistence
 
 "Registers in the application the test to be performed to that client."
-- Workflow
-- Persistence
 
 "In case of a new client, the receptionist registers the client in the application."
-- Workflow
-- Persistence
 
 "Records the samples in the system."
-- Workflow
-- Persistence
-
-"Associating the samples with the client/test, and identifying each sample with a barcode."
-- Authentication
 
 "Recording the results in the software application."
-- Workflow
-- Persistence
+  
+***
+- Printing
+  
+***
+- Reporting
 
 "The client receives the notification by SMS and e-mail."
-- Report
 
 "The company is also required to generate daily (automatic) reports."
-- Report
+
+  
+***
+- Scheduling
+  
+***
+- Security
 
 "The application must be authenticated with a password holding seven alphanumeric characters, including three capital letters and two digits."
-- Security
+
+***
+- Transaction management
+
+***
+
+- Workflow
+
+"Registers in the application the test to be performed to that client."
+
+"In case of a new client, the receptionist registers the client in the application."
+
+"Records the samples in the system."
+
+"Recording the results in the software application."
+
+
+***
 
 ###
 
