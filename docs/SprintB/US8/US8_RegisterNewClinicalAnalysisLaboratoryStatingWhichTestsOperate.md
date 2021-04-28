@@ -7,23 +7,60 @@
 
 ### 1.1. User Story Description
 
-*Insert here the User Story as described by the client.*
+*As an administrator, I want to register a new clinical analysis laboratory stating which kind of test(s) it operates.*
 
 ### 1.2. Customer Specifications and Clarifications 
 
-*Insert here any related specification and/or clarification provided by the client together with **your interpretation**. When possible, provide a link to such specifications/clarifications.*
+**From the specifications document:**
+
+> All Many Labs clinical analysis laboratories perform clinical blood tests, and a subset of these laboratories also performs Covid-19 tests.
+
+
+**From the client clarifications:**
+
+> **Question:** What are that data that caracterize a clinical analysis laboratory?
+> 
+> **Answer:** Each clinical analysis laboratory is characterized by the following attributes: Laboratory ID, name, address, phone number and TIN number.
+
 
 ### 1.3. Acceptance Criteria
 
-*Insert here the client acceptance criteria.*
+* **AC1:** A clinical analysis laboratory must always perform clinical blood tests.
+* **AC2:** Laboratory ID has 5 alphanumeric characters
+* **AC3:** Name is a string with no more than 30 characters
+* **AC4:** Address is a string with no more than 30 characters
+* **AC5:** Phone number has 11 digit numbers
+* **AC6:** TIN number has 10 digit numbers
+* **AC7:** A clinical analysis laboratory cannot be registered without all its attributes
+* **AC8:** All types of test are performed by the lab
+
 
 ### 1.4. Found out Dependencies
 
-*Identify here any found out dependency to other US and/or requirements.*
+
+No dependencies were found.
+
 
 ### 1.5 Input and Output Data
 
-*Identity here the data to be inputted by the system actor as well as the output data that the system have/needs to present in order to properly support the actor actions. Regarding the inputted data, it is suggested to distinguish between typed data and selected data (e.g. from a list)*
+
+**Input Data:**
+
+* Typed data:
+    * Laboratory ID
+    * Name
+    * Address
+    * Phone number
+    * TIN number
+
+* Selected data:
+    * Test type(s)
+
+
+**Output Data:**
+
+* List of existing test types
+* (In)Success of the operation
 
 
 ### 1.6. System Sequence Diagram (SSD)

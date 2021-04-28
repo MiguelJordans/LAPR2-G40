@@ -27,17 +27,17 @@ Throughout the project's development period, the distribution of _tasks / requir
 | Use Case Diagram (UCD)      |  [1201487 1200902](SprintA/UCD.md)      |   [](SprintB/UCD.md)  |   [](SprintC/UCD.md)  | [](SprintD/UCD.md)  |
 | Supplementary Specification |  [1200759 1200581](SprintA/FURPS.md)    |   [](SprintB/FURPS.md)  |   [](SprintC/FURPS.md)  | [](SprintD/FURPS.md)  |
 | Domain Model                |  [1201487 1200902](SprintA/DM.svg)      |   [](SprintB/DM.md)  |   [](SprintC/DM.md)  | [](SprintD/DM.md)  |
-| US 1 (SDP Activities)       |  [](SprintA/US1.md)   |    |   |  |
-| US 2 (SDP Activities)       |  [](SprintA/US2.md)   |    |   |  |
-| US 3 (SDP Activities)       |  [](SprintA/US3.md)   |  [1200759](SprintB/US3_Template.md)   |   |  |
-| US 4 (SDP Activities)       |  [](SprintA/US4.md)   |    |   |  |
-| US 5 (SDP Activities)       |  [](SprintA/US1.md)   |    |   |  |
-| US 6 (SDP Activities)       |  [](SprintA/US1.md)   |    |   |  |
-| US 7 (SDP Activities)       |  [](SprintA/US1.md)   | [1200581](SprintB/US7_Template.md)    |   |  |
-| US 8 (SDP Activities)       |  [](SprintA/US1.md)   | [1200902](SprintB/US8_Template.md)   |   |  |
-| US 9 (SDP Activities)       |  [](SprintA/US1.md)   | [1201487](SprintB/US9_Template.md)  |   |  |
-| US 10 (SDP Activities)      |  [](SprintA/US1.md)   | [1200300](SprintB/US10_Template.md)  |   |  |
-| US 11 (SDP Activities)      |  [](SprintA/US1.md)   | [1200300](SprintB/US11_Template.md)  |   |  |
+| US 1 (SDP Activities)       |     |    |   |  |
+| US 2 (SDP Activities)       |      |    |   |  |
+| US 3 (SDP Activities)       |     |  [1200759](SprintB/US3/US3_RegisterClient.md)   |   |  |
+| US 4 (SDP Activities)       |     |    |   |  |
+| US 5 (SDP Activities)       |     |    |   |  |
+| US 6 (SDP Activities)       |     |    |   |  |
+| US 7 (SDP Activities)       |     | [1200581](SprintB/US7/US7_RegisterEmployee.md)    |   |  |
+| US 8 (SDP Activities)       |     | [1200902](SprintB/US8/US8_RegisterNewClinicalAnalysisLaboratoryStatingWhichTestsOperate.md)   |   |  |
+| US 9 (SDP Activities)       |     | [1201487](SprintB/US9/US9_SpecifyTestAndItsCollectingMethods.md)  |   |  |
+| US 10 (SDP Activities)      |     | [1200300](SprintB/US10/US10_SpecifyNewParameter.md)  |   |  |
+| US 11 (SDP Activities)      |     | [1201487](SprintB/US11/US11_SpecifyNewParameterCategory.md)  |   |  |
 
 
 

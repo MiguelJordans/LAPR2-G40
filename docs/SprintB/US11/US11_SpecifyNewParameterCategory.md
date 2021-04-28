@@ -1,36 +1,58 @@
-# US XXX - XXXX XXXX
+# US 11 - Specify new parameter category
 
 ## 1. Requirements Engineering
 
-*In this section, it is suggested to capture the requirement description and specifications as provided by the client as well as any further clarification on it. It is also suggested to capture the requirements acceptance criteria and existing dependencies to other requirements. At last, identfy the involved input and output data and depicted an Actor-System interaction in order to fulfill the requirement.*
-
-
 ### 1.1. User Story Description
 
-*Insert here the User Story as described by the client.*
+*As an administrator, I want to specify a new parameter category*
 
 ### 1.2. Customer Specifications and Clarifications 
 
-*Insert here any related specification and/or clarification provided by the client together with **your interpretation**. When possible, provide a link to such specifications/clarifications.*
+**From the Specifications Document:**
+
+>"Blood Tests are frequently characterized by measuring several parameters wich for presentation/reporting purposes are organized by categories.For example, parameters such as the number of Red Blood Cells(RBC), White Blood Cells(RBC) and Platelets(PLT) are usually presented under the blood count(Hemogram) category."*
+
+>"Regardless, such tests rely on measuring one or more parameters that can be grouped/organized by categories."*
+
+**From the client clarifications:**
+
+>**Question**: What are the data that characterize a parameter category?*
+>
+>**Answer**:Simply consider a code, a description and an NHS identifier*
+
+
+>**Question**: What are the business rules applicable to such data?*
+>
+>**Answer:**
 
 ### 1.3. Acceptance Criteria
 
-*Insert here the client acceptance criteria.*
+* **AC1:** Code must be unique having 4 to 8 chars.
+* **AC2:** Description cannot be empty and has, at maximum, 40 chars.
+* **AC3:** NHS identifier is not mandatory.
 
 ### 1.4. Found out Dependencies
 
-*Identify here any found out dependency to other US and/or requirements.*
+*No dependencies were found*
 
 ### 1.5 Input and Output Data
 
-*Identity here the data to be inputted by the system actor as well as the output data that the system have/needs to present in order to properly support the actor actions. Regarding the inputted data, it is suggested to distinguish between typed data and selected data (e.g. from a list)*
+**Input data**
 
+* Typed data:
+    * a code,
+    * a description,
+    * a NHS indentified.
+    
+**Selected data**: (none) 
+
+**Output Data**
+
+*(In)Success of the operation*
 
 ### 1.6. System Sequence Diagram (SSD)
 
-*Insert here a SSD depicting the envisioned Actor-System interactions and throughout which data is inputted and outputted to fulfill the requirement. All interactions must be numbered.*
-
-![USXX-SSD](USXX-SSD.svg)
+![US11-SSD](US11_SSD.svg)
 
 
 ### 1.7 Other Relevant Remarks
@@ -40,10 +62,9 @@
 
 ## 2. OO Analysis
 
-### 2.1. Relevant Domain Model Excerpt 
-*In this section, it is suggested to present an excerpt of the domain model that is seen as relevant to fulfill this requirement.* 
+### 2.1. Relevant Domain Model Excerpt
 
-![USXX-MD](USXX-MD.svg)
+![US11-MD](US11_MD.svg)
 
 ### 2.2. Other Remarks
 
@@ -59,36 +80,44 @@
 
 | Interaction ID | Question: Which class is responsible for... | Answer  | Justification (with patterns)  |
 |:-------------  |:--------------------- |:------------|:---------------------------- |
-| Step 1  		 |							 |             |                              |
-| Step 2  		 |							 |             |                              |
-| Step 3  		 |							 |             |                              |
-| Step 4  		 |							 |             |                              |
-| Step 5  		 |							 |             |                              |
-| Step 6  		 |							 |             |                              |              
+| Step/Msg 1 : starts new parameter category		 |	...instantiating a new Parameter Category		 |  Company           |      Creator: R1/2                        |
+| Step/Msg 2 : request data (i.e.,code,description,nhsld) 		 | n/a							 |             |                              |
+| Step/Msg 3 : types requested data  		 |		...saving the input data					 | Parameter Category            |      IE: The object created in step 1 has its own data                        |
+| Step/Msg 4 : shows the data and requests a confirmation  		 |	...validating the data locally (e.g..:mandatory vs. nom-mandatory data)?						 |   Parameter Category          |    IE: knows its own data                          |
+|  	 |	...validanting the data globally (e.g..:duplicated)?		 |  Company           |      IE : adopts/records all the ParameterCategory objects                       |
+| Step/Msg 5 : confirms the data		 | ...saving the created parameter category							 |  Company           |  IE: adopts/records all the ParameterCategory objects                            |
+| Step/Msg 6 : informing operation sucess	 | 	...informing operation sucess			 |  UI	         |    IE: responible for user interaction                           |              
 
 ### Systematization ##
 
 According to the taken rationale, the conceptual classes promoted to software classes are: 
 
- * Class1
- * Class2
- * Class3
+ * Company
+ * ParameterCategory
 
 Other software classes (i.e. Pure Fabrication) identified: 
- * xxxxUI  
- * xxxxController
+ * CreateParameterCategoryUI
+ * CreateParameterCategoryController
 
 ## 3.2. Sequence Diagram (SD)
 
-*In this section, it is suggested to present an UML dynamic view stating the sequence of domain related software objects' interactions that allows to fulfill the requirement.* 
+**Alternativa 1**
 
-![USXX-SD](USXX-SD.svg)
+![US11-SD](US11_SD.svg)
+
+##
+
+**Alternativa 2**
+
+##
+
+![US11-SD](US11_1_SD.svg)
+
+**Other alternatives might exist.**
 
 ## 3.3. Class Diagram (CD)
 
-*In this section, it is suggested to present an UML static view representing the main domain related software classes that are involved in fulfilling the requirement as well as and their relations, attributes and methods.*
-
-![USXX-CD](USXX-CD.svg)
+![US11-CD](US11_CD.svg)
 
 # 4. Tests 
 *In this section, it is suggested to systematize how the tests were designed to allow a correct measurement of requirements fulfilling.* 
