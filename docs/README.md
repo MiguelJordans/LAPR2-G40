@@ -29,8 +29,16 @@ Throughout the project's development period, the distribution of _tasks / requir
 | Domain Model                |  [1201487 1200902](SprintA/DM.svg)      |   [](SprintB/DM.md)  |   [](SprintC/DM.md)  | [](SprintD/DM.md)  |
 | US 1 (SDP Activities)       |  [](SprintA/US1.md)   |    |   |  |
 | US 2 (SDP Activities)       |  [](SprintA/US2.md)   |    |   |  |
-| US 3 (SDP Activities)       |  [](SprintA/US3.md)   |    |   |  |
+| US 3 (SDP Activities)       |  [](SprintA/US3.md)   |  [1200759](SprintB/US3_Template.md)   |   |  |
 | US 4 (SDP Activities)       |  [](SprintA/US4.md)   |    |   |  |
+| US 5 (SDP Activities)       |  [](SprintA/US1.md)   |    |   |  |
+| US 6 (SDP Activities)       |  [](SprintA/US1.md)   |    |   |  |
+| US 7 (SDP Activities)       |  [](SprintA/US1.md)   | [1200581](SprintB/US7_Template.md)    |   |  |
+| US 8 (SDP Activities)       |  [](SprintA/US1.md)   | [1200902](SprintB/US8_Template.md)   |   |  |
+| US 9 (SDP Activities)       |  [](SprintA/US1.md)   | [1201487](SprintB/US9_Template.md)  |   |  |
+| US 10 (SDP Activities)      |  [](SprintA/US1.md)   | [1200300](SprintB/US10_Template.md)  |   |  |
+| US 11 (SDP Activities)      |  [](SprintA/US1.md)   | [1200300](SprintB/US11_Template.md)  |   |  |
+
 
 
 
