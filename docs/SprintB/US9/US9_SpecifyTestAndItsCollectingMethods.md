@@ -1,29 +1,63 @@
-# US 9 - SpecifyTestAndItsCollectingMethods
+# US 9 - Specify test and its collecting methods
 
 ## 1. Requirements Engineering
 
-*In this section, it is suggested to capture the requirement description and specifications as provided by the client as well as any further clarification on it. It is also suggested to capture the requirements acceptance criteria and existing dependencies to other requirements. At last, identfy the involved input and output data and depicted an Actor-System interaction in order to fulfill the requirement.*
-
-
 ### 1.1. User Story Description
 
-*As an administrator,I want to specify a new type of test and its collecting methods*
+*- As an administrator, I want to specify a new type of test and its collecting methods.*
 
-### 1.2. Customer Specifications and Clarifications 
+### 1.2. Customer Specifications and Clarifications
 
-*Insert here any related specification and/or clarification provided by the client together with **your interpretation**. When possible, provide a link to such specifications/clarifications.*
+**From the Specifications Document:**
 
+>"Once there, a receptionist asks the client´s citizen card number, the lab order (which contains the type of test and parameters to be measured), and registers in the application the test to be performed to that client".
+>
+> "Many Labs performs two types of tests. Each test is characterized by an internal code, an NHS code, a description that indetifies the sample collection method, the date and time when the samples were collected, the date and time of the chemical analysis, the data and time of the diagnosis made by the specialist doctor, the date and time when the laboratory coordiantor validated the test, and the test type(whether it is blood test or Covid test)"
+
+**From the client clarifications:**
+
+>**Question**: Does a type of test holds any attribute besides its name and collecting methods?
+>
+>**Answer**: The attributes for a new test type are: description, collecting method and each test type should have a set of categories. Each category should be chosen from a list of categories. Each category has a name and a unique code. There are no subcategories. There exists only one collection method per test type.
+
+>**Question**: Are the collecting methods stored simpled as a word or a sentence, or does it also must contain its description, and/or another attributes?
+>
+>**Answer**: To make a Covid test you need a swab to collect a sample. To make a blood test you need sample tubes and a syringe.
+When the administrator (US9) specifies a new type of test, the administrator also specifies the method to collect a sample. The administrator introduces a brief description for specifying the collecting method. There exists only one collection method per test type.
+
+>**Question**: Are there any different collecting methods other than the ones currently known? Which ones?
+>
+> **Answer**: Each collecting method is associated with a test type. Whenever a test type is created a collecting method should be defined.
 ### 1.3. Acceptance Criteria
 
-*Insert here the client acceptance criteria.*
+* **AC1:** Code has five alphanumeric characters.
+* **AC2:** The code is not automatically generated.
+* **AC3:** The administrator introduces a brief description for specifying the collecting method.
+* **AC4:** Description is a string with no more than 15 characters.
+* **AC5:** Collecting method is a string with no more than 20 characters.
+* **AC6:** Each category has a name and a unique code. There are no subcategories.
+* **AC7:** There exists only one collection method per test type.
+* **AC8:** Each collecting method is associated with a test type.
+* **AC9:** Whenever a test type is created a collecting method should be defined.
 
 ### 1.4. Found out Dependencies
 
-*Identify here any found out dependency to other US and/or requirements.*
+*No dependencies were found*
 
 ### 1.5 Input and Output Data
 
-*Identity here the data to be inputted by the system actor as well as the output data that the system have/needs to present in order to properly support the actor actions. Regarding the inputted data, it is suggested to distinguish between typed data and selected data (e.g. from a list)*
+**Input data**
+
+* Typed data:
+    * a code,
+    * a description,
+    * a collecting method.
+
+**Selected data**: Categories
+
+**Output Data**
+
+*(In)Success of the operation*
 
 
 ### 1.6. System Sequence Diagram (SSD)
@@ -31,7 +65,6 @@
 *Insert here a SSD depicting the envisioned Actor-System interactions and throughout which data is inputted and outputted to fulfill the requirement. All interactions must be numbered.*
 
 ![USXX-SSD](USXX-SSD.svg)
-
 
 ### 1.7 Other Relevant Remarks
 
