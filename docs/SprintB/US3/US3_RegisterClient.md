@@ -7,11 +7,7 @@
 
 ### 1.1. User Story Description
 
-<<<<<<< HEAD
 As a receptionist of the laboratory, I want to register a client.
-=======
-*As a receptionist of the laboratory, I want to register a client.*
->>>>>>> 9336b531fe6df1c1ffd3722811aa694ac550ff2f
 
 ### 1.2. Customer Specifications and Clarifications 
 
@@ -110,16 +106,15 @@ No dependencies were found.
 
 **Output Data:**
 
-* Email (Including the password)
+* Confirmation Email (Including the password)
 * (In)Success of the operation
 
 
 
 ### 1.6. System Sequence Diagram (SSD)
 
-*Insert here a SSD depicting the envisioned Actor-System interactions and throughout which data is inputted and outputted to fulfill the requirement. All interactions must be numbered.*
 
-![USXX-SSD](USXX-SSD.svg)
+![US03-SSD](US03_SSD.svg)
 
 
 ### 1.7 Other Relevant Remarks
