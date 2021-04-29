@@ -62,19 +62,29 @@ When the administrator (US9) specifies a new type of test, the administrator als
 
 ### 1.6. System Sequence Diagram (SSD)
 
-*Insert here a SSD depicting the envisioned Actor-System interactions and throughout which data is inputted and outputted to fulfill the requirement. All interactions must be numbered.*
+##
 
-![USXX-SSD](USXX-SSD.svg)
+**Alternativa 1**
+
+##
+
+![US009_SSD](US009_SSD.svg)
+
+##
+
+**Alternativa 2**
+
+##
+
+![US009_SSD](US009_V2_SSD.svg)
 
 ### 1.7 Other Relevant Remarks
 
 *Use this section to capture other relevant information that is related with this US such as (i) special requirements ; (ii) data and/or technology variations; (iii) how often this US is held.* 
 
-
 ## 2. OO Analysis
 
 ### 2.1. Relevant Domain Model Excerpt 
-*In this section, it is suggested to present an excerpt of the domain model that is seen as relevant to fulfill this requirement.* 
 
 ![USXX-MD](USXX-MD.svg)
 
@@ -113,13 +123,23 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 ## 3.2. Sequence Diagram (SD)
 
-*In this section, it is suggested to present an UML dynamic view stating the sequence of domain related software objects' interactions that allows to fulfill the requirement.* 
+##
 
-![USXX-SD](USXX-SD.svg)
+**Alternativa 1**
+
+##
+
+![US009_SD](US009_SD.svg)
+
+##
+
+**Alternativa 2**
+
+##
+
+![US009_SD](US009_V2_SD.svg)
 
 ## 3.3. Class Diagram (CD)
-
-*In this section, it is suggested to present an UML static view representing the main domain related software classes that are involved in fulfilling the requirement as well as and their relations, attributes and methods.*
 
 ![USXX-CD](USXX-CD.svg)
 

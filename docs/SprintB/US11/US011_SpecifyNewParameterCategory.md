@@ -52,7 +52,7 @@
 
 ### 1.6. System Sequence Diagram (SSD)
 
-![US11-SSD](US11_SSD.svg)
+![US011_SSD](US011_SSD.svg)
 
 
 ### 1.7 Other Relevant Remarks
@@ -64,7 +64,7 @@
 
 ### 2.1. Relevant Domain Model Excerpt
 
-![US11-MD](US11_MD.svg)
+![US011_MD](US011_MD.svg)
 
 ### 2.2. Other Remarks
 
@@ -103,7 +103,7 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 **Alternativa 1**
 
-![US11-SD](US11_SD.svg)
+![US011_SD](US011_SD.svg)
 
 ##
 
@@ -111,13 +111,13 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 ##
 
-![US11-SD](US11_V2_SD.svg)
+![US011-SD](US011_V2_SD.svg)
 
 **Other alternatives might exist.**
 
 ## 3.3. Class Diagram (CD)
 
-![US11-CD](US11_CD.svg)
+![US011_CD](US011_CD.svg)
 
 # 4. Tests 
 *In this section, it is suggested to systematize how the tests were designed to allow a correct measurement of requirements fulfilling.* 
