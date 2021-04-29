@@ -33,7 +33,7 @@
 | **Specialist Doctor** | **Doutor Especialista** | The specialist who does the diagnosis.| Especialista que faz o diagnóstico.|
 | **SVG** | **SVG** | Acronymn for Scalable Vector Graphics.| Acrónimo para Scalable Vector Graphics.|
 | **Technician** | **Técnico** | A worker trained with special skills or knowledge.| Trabalhador com habilidades ou conhecimentos especiais.|
-| **TIF** | **NIF** | Acronymn for Tax Identification Number.| Acrónimo para Número de Identificação Fiscal.|
+| **TIN** | **NIF** | Acronymn for Tax Identification Number.| Acrónimo para Número de Identificação Fiscal.|
 | **WBC** | **GB** | Acronymn for White Blood Cells.| Acrónimo para Glóbulos Brancos.|
 
  
