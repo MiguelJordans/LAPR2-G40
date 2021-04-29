@@ -1,4 +1,4 @@
-# US XXX - XXXX XXXX
+# US 10 - SpecifyNewParameter
 
 ## 1. Requirements Engineering
 
@@ -7,7 +7,7 @@
 
 ### 1.1. User Story Description
 
-*Insert here the User Story as described by the client.*
+*As an administrator, I want to specify a new parameter and categorize it.*
 
 ### 1.2. Customer Specifications and Clarifications 
 

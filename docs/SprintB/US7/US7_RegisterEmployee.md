@@ -1,4 +1,4 @@
-# US XXX - XXXX XXXX
+# US 7 - RegisterEmployee
 
 ## 1. Requirements Engineering
 
@@ -7,7 +7,7 @@
 
 ### 1.1. User Story Description
 
-*Insert here the User Story as described by the client.*
+*As an administrator, I want to register a new employee*
 
 ### 1.2. Customer Specifications and Clarifications 
 

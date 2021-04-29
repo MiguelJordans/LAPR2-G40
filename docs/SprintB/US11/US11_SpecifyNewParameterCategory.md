@@ -111,7 +111,7 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 ##
 
-![US11-SD](US11_1_SD.svg)
+![US11-SD](US11_V2_SD.svg)
 
 **Other alternatives might exist.**
 

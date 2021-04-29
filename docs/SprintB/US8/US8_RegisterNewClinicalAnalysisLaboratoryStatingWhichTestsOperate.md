@@ -1,4 +1,4 @@
-# US XXX - XXXX XXXX
+# US 8 - RegisterNewClinicalAnalysisLaboratory
 
 ## 1. Requirements Engineering
 
