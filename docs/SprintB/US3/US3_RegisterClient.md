@@ -1,4 +1,4 @@
-# US XXX - XXXX XXXX
+# US 3 - RegisterClient
 
 ## 1. Requirements Engineering
 
@@ -7,7 +7,11 @@
 
 ### 1.1. User Story Description
 
+<<<<<<< HEAD
 As a receptionist of the laboratory, I want to register a client.
+=======
+*As a receptionist of the laboratory, I want to register a client.*
+>>>>>>> 9336b531fe6df1c1ffd3722811aa694ac550ff2f
 
 ### 1.2. Customer Specifications and Clarifications 
 
