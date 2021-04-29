@@ -28,7 +28,7 @@ Throughout the project's development period, the distribution of _tasks / requir
 | Supplementary Specification |  [1200759 1200581](SprintA/FURPS.md)    |   [](SprintB/FURPS.md)  |   [](SprintC/FURPS.md)  | [](SprintD/FURPS.md)  |
 | Domain Model                |  [1201487 1200902](SprintA/DM.svg)      |   [](SprintB/DM.md)  |   [](SprintC/DM.md)  | [](SprintD/DM.md)  |
 | US 1 (SDP Activities)       |     |    |   |  |
-| US 2 (SDP Activities)       |      |    |   |  |
+| US 2 (SDP Activities)       |     |    |   |  |
 | US 3 (SDP Activities)       |     |  [1200759](SprintB/US3/US3_RegisterClient.md)   |   |  |
 | US 4 (SDP Activities)       |     |    |   |  |
 | US 5 (SDP Activities)       |     |    |   |  |
