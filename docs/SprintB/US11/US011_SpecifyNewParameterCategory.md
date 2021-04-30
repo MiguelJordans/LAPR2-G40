@@ -94,6 +94,7 @@ According to the taken rationale, the conceptual classes promoted to software cl
 
  * Company
  * ParameterCategory
+ * UI ?
 
 Other software classes (i.e. Pure Fabrication) identified: 
  * CreateParameterCategoryUI
