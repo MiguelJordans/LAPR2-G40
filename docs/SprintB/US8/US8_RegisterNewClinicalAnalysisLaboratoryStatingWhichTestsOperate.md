@@ -18,9 +18,25 @@
 
 **From the client clarifications:**
 
-> **Question:** What are that data that caracterize a clinical analysis laboratory?
+> **Question:** What are that data that characterize a clinical analysis laboratory?
 > 
 > **Answer:** Each clinical analysis laboratory is characterized by the following attributes: Laboratory ID, name, address, phone number and TIN number.
+
+> **Question:** Is there a maximum limit of types of tests a clinical analysis laboratory can operate?
+>
+> **Answer:** No.
+
+> **Question:** Are the test types in US8 typed in or selected from those that the program has?
+> 
+> **Answer:** The test types are selected from a list.
+
+> **Question:** What information is associated with a clinical analysis laboratory?
+> 
+> **Answer:** Each Clinical Analysis Laboratory is characterized by the following attributes: LaboratoryID, name, address, phone number and TIN number.
+
+> **Question:** Should the employees be allocated to the clinical lab in which they work? Or, for example, can one medical lab technician work in more than one clinical analysis laboratory?
+> 
+> **Answer:** Each Receptionist and each Medical Lab Technician can work in any CLinical Analysis Laboratory of the Many Labs network.
 
 
 ### 1.3. Acceptance Criteria
@@ -38,7 +54,7 @@
 ### 1.4. Found out Dependencies
 
 
-* There is a dependency to "US009 Specify a new type of test and its collecting methods" since at least a test type must exist to be performed in a clinical analysis laboratory.
+* There is a dependency to "US009 Specify a new type of test and its collecting methods" since at least a test type must exist in order to be performed in a clinical analysis laboratory.
 
 
 ### 1.5 Input and Output Data
