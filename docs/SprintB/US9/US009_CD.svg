@@ -69,13 +69,13 @@
       ><path d="M0 0 L0 15 L139 15 L139 0 Z"
       /></clipPath
       ><clipPath clipPathUnits="userSpaceOnUse" id="clipPath22"
-      ><path d="M-7 -7 L155 -7 L155 92 L-7 92 L-7 -7 Z"
+      ><path d="M-7 -7 L169 -7 L169 92 L-7 92 L-7 -7 Z"
       /></clipPath
       ><clipPath clipPathUnits="userSpaceOnUse" id="clipPath23"
-      ><path d="M0 0 L0 66 L144 66 L144 0 Z"
+      ><path d="M0 0 L0 66 L158 66 L158 0 Z"
       /></clipPath
       ><clipPath clipPathUnits="userSpaceOnUse" id="clipPath24"
-      ><path d="M0 0 L0 15 L144 15 L144 0 Z"
+      ><path d="M0 0 L0 15 L158 15 L158 0 Z"
       /></clipPath
       ><clipPath clipPathUnits="userSpaceOnUse" id="clipPath25"
       ><path d="M-7 -7 L38 -7 L38 26 L-7 26 L-7 -7 Z"
@@ -305,7 +305,7 @@
     /></g
     ><g font-size="11px" transform="matrix(1,0,0,1,358,446)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" stroke-opacity="1"
     ><text x="2" xml:space="preserve" y="14" clip-path="url(#clipPath20)" stroke="none"
-      >+doLogin(email, password)</text
+      >+login(email, password)</text
     ></g
     ><g font-size="11px" transform="matrix(1,0,0,1,358,446)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" stroke-opacity="1"
     ><text x="2" xml:space="preserve" y="29" clip-path="url(#clipPath20)" stroke="none"
@@ -316,18 +316,18 @@
       >AuthFacade</text
     ></g
     ><g font-size="11px" transform="translate(595,429)" fill-opacity="1" fill="rgb(122,207,245)" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="rgb(122,207,245)" font-weight="bold" stroke-opacity="1"
-    ><rect x="0" width="144" height="81" y="0" clip-path="url(#clipPath22)" stroke="none"
+    ><rect x="0" width="158" height="81" y="0" clip-path="url(#clipPath22)" stroke="none"
     /></g
     ><g fill-opacity="1" text-rendering="geometricPrecision" stroke="black" stroke-linecap="butt" transform="translate(595,429)" stroke-miterlimit="0" stroke-opacity="1" fill="black" font-weight="bold" font-family="sans-serif" stroke-linejoin="round" font-size="11px" image-rendering="optimizeQuality"
-    ><rect fill="none" x="0" width="144" height="81" y="0" clip-path="url(#clipPath22)"
-      /><line y2="15" fill="none" x1="0" clip-path="url(#clipPath22)" x2="144" y1="15"
+    ><rect fill="none" x="0" width="158" height="81" y="0" clip-path="url(#clipPath22)"
+      /><line y2="15" fill="none" x1="0" clip-path="url(#clipPath22)" x2="158" y1="15"
     /></g
     ><g font-size="11px" transform="matrix(1,0,0,1,595,444)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" stroke-opacity="1"
     ><text x="2" xml:space="preserve" y="14" clip-path="url(#clipPath23)" stroke="none"
-      >+isLoggedInWithRole(roled)</text
+      >+sessionisLoggedWithRole(ID)</text
     ></g
     ><g font-size="11px" transform="translate(595,429)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" font-weight="bold" stroke-opacity="1"
-    ><text x="38" xml:space="preserve" y="12" clip-path="url(#clipPath24)" stroke="none"
+    ><text x="45" xml:space="preserve" y="12" clip-path="url(#clipPath24)" stroke="none"
       >UserSession</text
     ></g
     ><g font-size="11px" transform="translate(139,630)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" stroke-opacity="1"
@@ -376,7 +376,7 @@
       /><line y2="267" fill="none" x1="50" clip-path="url(#clipPath42)" x2="308" y1="267"
     /></g
     ><g fill-opacity="1" text-rendering="geometricPrecision" stroke="black" stroke-linecap="butt" transform="translate(475,237)" stroke-opacity="1" fill="black" stroke-dasharray="5" font-family="sans-serif" stroke-linejoin="round" font-size="11px" stroke-dashoffset="1" image-rendering="optimizeQuality"
-    ><line y2="50" fill="none" x1="50" clip-path="url(#clipPath34)" x2="50" y1="568"
+    ><line y2="568" fill="none" x1="50" clip-path="url(#clipPath34)" x2="50" y1="50"
       /><line clip-path="url(#clipPath34)" stroke-dashoffset="0" fill="none" x1="50" x2="56" y1="568" y2="556" stroke-dasharray="none"
       /><line clip-path="url(#clipPath34)" stroke-dashoffset="0" fill="none" x1="50" x2="44" y1="568" y2="556" stroke-dasharray="none"
     /></g
