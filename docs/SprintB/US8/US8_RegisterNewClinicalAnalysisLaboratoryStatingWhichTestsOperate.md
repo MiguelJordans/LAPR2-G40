@@ -15,7 +15,6 @@
 
 > All Many Labs clinical analysis laboratories perform clinical blood tests, and a subset of these laboratories also performs Covid-19 tests.
 
-
 **From the client clarifications:**
 
 > **Question:** What are that data that characterize a clinical analysis laboratory?
@@ -54,11 +53,10 @@
 ### 1.4. Found out Dependencies
 
 
-* There is a dependency to "US009 Specify a new type of test and its collecting methods" since at least a test type must exist in order to be performed in a clinical analysis laboratory.
+There is a dependency to "US009 Specify a new type of test and its collecting methods" since at least a test type must exist to be performed in a clinical analysis laboratory.
 
 
 ### 1.5 Input and Output Data
-
 
 **Input Data:**
 
@@ -108,26 +106,35 @@
 
 **The rationale grounds on the SSD interactions and the identified input/output data.**
 
-| Interaction ID | Question: Which class is responsible for... | Answer  | Justification (with patterns)  |
+| Interaction ID | Question: Which class is responsible for... | Answer | Justification (with patterns) |
 |:-------------  |:--------------------- |:------------|:---------------------------- |
-| Step 1  		 |							 |             |                              |
-| Step 2  		 |							 |             |                              |
-| Step 3  		 |							 |             |                              |
-| Step 4  		 |							 |             |                              |
-| Step 5  		 |							 |             |                              |
-| Step 6  		 |							 |             |                              |              
+| Step/Msg 1: asks to create a new clinical analysis laboratory | ... interacting with the actor? | CreateClinicalAnalysisLaboratoryUI | Pure Fabrication: there is no reason to assign this responsibility to any existing class in the Domain Model |
+|                                                               | ... coordinating the US? | CreateClinicalAnalysisLaboratoryController | Controller |
+|                                                               | ... instantiating a new Clinical Analysis Laboratory? | Company | Creator (Rule 1): in the DM Company has a Clinical Analysis Laboratory |
+|                                                               | ... knowing the user using the system? | UserSession | IE: cf. A&A component documentation |
+|                                                               | ... knowing to which organization the user belongs to? | System | IE: has registed all? |
+| Step/Msg 2: request data (laboratoryID, name, address, phoneNumber, TINnumber) | n/a | | |
+| Step/Msg 3: types requested data | ... saving the inputted data? | ClinicalAnalysisLaboratory | IE: object created in step 1 has its own data |
+| Step/Msg 4: shows the test types it can operate |	... knowing the test types to show? | System | IE: test types are defined by the system? |
+| Step/Msg 5: confirms the selected test types | ... saving the selected test types? | ClinicalAnalysisLaboratory | IE: object created in step 1 operates one or more test types |
+| Step/Msg 6: shows the data and requests a confirmation | ... validating the data locally (e.g.: mandatory vs non-mandatory data)? | Company | IE: knows its own data |
+|                                                        | ... validating the data globally (e.g.: duplicated)? | Company | IE: knows all the ClinicalAnalysisLaboratory objects |
+| Step/Msg 7: confirms the data | ... saving the created clinical analysis laboratory? | Company | IE: adopts/records all the ClinicalAnalysisLaboratory objects |
+| Step/Msg 8: informs operation success | ... informing operation success? | UI | IE: responsible for user interaction |
 
 ### Systematization ##
 
 According to the taken rationale, the conceptual classes promoted to software classes are: 
 
- * Class1
- * Class2
- * Class3
+ * Company
+ * UserSession
+ * System
+ * ClinicalAnalysisLaboratory
+ * UI?
 
 Other software classes (i.e. Pure Fabrication) identified: 
- * xxxxUI  
- * xxxxController
+ * CreateClinicalAnalysisLaboratoryUI  
+ * CreateClinicalAnalysisLaboratoryController
 
 ## 3.2. Sequence Diagram (SD)
 
