@@ -28,6 +28,7 @@ When the administrator (US9) specifies a new type of test, the administrator als
 > **Question**: Are there any different collecting methods other than the ones currently known? Which ones?
 >
 > **Answer**: Each collecting method is associated with a test type. Whenever a test type is created a collecting method should be defined.
+
 ### 1.3. Acceptance Criteria
 
 * **AC1:** Code has five alphanumeric characters.
@@ -42,7 +43,7 @@ When the administrator (US9) specifies a new type of test, the administrator als
 
 ### 1.4. Found out Dependencies
 
-*No dependencies were found*
+*There is a dependency to "US011 Specify a new parameter category" since at least a category must exist to be performed a test type.*
 
 ### 1.5 Input and Output Data
 
@@ -57,7 +58,8 @@ When the administrator (US9) specifies a new type of test, the administrator als
 
 **Output Data**
 
-*(In)Success of the operation*
+* List of existing categories
+* (In)Success of the operation
 
 
 ### 1.6. System Sequence Diagram (SSD)
@@ -100,6 +102,7 @@ When the administrator (US9) specifies a new type of test, the administrator als
 
 **The rationale grounds on the SSD interactions and the identified input/output data.**
 
+<<<<<<< HEAD
 | Interaction ID | Question: Which class is responsible for... | Answer | Justification (with patterns) |
 |:-------------- |:--------------------- |:------------|:---------------------------- |
 | Step/Msg 1: starts new test type | ... interacting with the actor? | CreateTestTypeUI | Pure Fabrication: there is no reason to assign this responsibility to any existing class in the Domain Model |
@@ -115,6 +118,23 @@ When the administrator (US9) specifies a new type of test, the administrator als
 |                                                        | ... validating the data globally (e.g.:duplicated)? | Company | IE: adopts/records all the TestType objects |
 | Step/Msg 7: confirms the data | ... saving the created test type? |  Company | IE:adopts/records all the Test type objects |              
 | Step/Msg 8: informs operation success | ... informing operation success? | UI | IE: responsible for user interaction |
+=======
+| Interaction ID | Question: Which class is responsible for... | Answer  | Justification (with patterns)  |
+|:-------------  |:--------------------- |:------------|:---------------------------- |
+| Step/Msg 1: starts new test type| ...interacting with the actor?|   CreateTestTypeUI        | Pure Fabrication: there is no reason to assign this responsibility to any existing class in the Domain Model                             |
+|	 |     ...coordinating the US?	|   CreateTaskController          |  Controller                            |
+| 	 | ...instantiating a new test type							 |   Company          |   Creator(Rule 1): in the DM Company has a test type                           |
+| 	 | ...knowing the user using the system?						 |   UserSession          | IE: cf. A&A component documentation                             |
+| 	 | ...knowing to which organization the user belongs to? | System | IE: has registed all                             |
+| Step/Msg 2 : request data(description,code,collectingMethods) 	 |	n/a						 |             |                              |
+| Step/Msg 3 : types requested data 		 |	...saving the input data?						 |  TestType   | IE: The object created in step 1 has its own data                             |
+| Step/Msg 4 : shows the test type category		 |		...knowing the test type category to show 					 |  System  | IE: TestType categories are defined by the system?   | 
+|  Step/Msg 5 : confirms the selected category(ies)	 |	...saving the selected category(ies)						 |  TestType           | IE: object created in step 1 is classified in one (or more) Category(ies)                             |
+| Step/Msg 6 : shows the data and requests a confirmation | ...validating the data locally (e.g.:mandatory vs nom-mandatory data)?							 |  Company           | IE: knows its own data                             |
+|    | ...validating the data globally (e.g.:duplicated)?							 |  Company           | IE: adopts/records all the TestType objects                           |
+| Step/Msg 7 : confirms the data  		  |...saving the created test type						 |  Company           | IE:adopts/records all the Test type objects                             |              
+| Step/Msg 8 : informing operation sucess | ...informing operation sucess					 | UI   | IE: responsible for user interaction                             |
+>>>>>>> d52290bdfd5788a47a247a6428528f564dba7405
 
 ### Systematization ##
 
@@ -124,11 +144,16 @@ According to the taken rationale, the conceptual classes promoted to software cl
  * UserSession
  * System
  * TestType
- * UI?
 
 Other software classes (i.e. Pure Fabrication) identified: 
+
  * CreateTestTypeUI  
+<<<<<<< HEAD
  * CreateTestTypeController
+=======
+ * CreateTaskController
+ * UI?
+>>>>>>> d52290bdfd5788a47a247a6428528f564dba7405
 
 ## 3.2. Sequence Diagram (SD)
 
@@ -147,6 +172,20 @@ Other software classes (i.e. Pure Fabrication) identified:
 ##
 
 ![US009_SD](US009_V2_SD.svg)
+
+**Alternativa 3**
+
+##
+
+![US009_SD](US009_V3.1_SD.svg)
+
+
+**Alternativa 4**
+
+##
+
+![US009_SD](US009_V4_SD.svg)
+
 
 ## 3.3. Class Diagram (CD)
 
