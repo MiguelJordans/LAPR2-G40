@@ -305,7 +305,7 @@
     /></g
     ><g font-size="11px" transform="matrix(1,0,0,1,358,446)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" stroke-opacity="1"
     ><text x="2" xml:space="preserve" y="14" clip-path="url(#clipPath20)" stroke="none"
-      >+login(email, password)</text
+      >+doLogin(email, password)</text
     ></g
     ><g font-size="11px" transform="matrix(1,0,0,1,358,446)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" stroke-opacity="1"
     ><text x="2" xml:space="preserve" y="29" clip-path="url(#clipPath20)" stroke="none"

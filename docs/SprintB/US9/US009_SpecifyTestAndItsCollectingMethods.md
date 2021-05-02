@@ -105,7 +105,7 @@ When the administrator (US9) specifies a new type of test, the administrator als
 | Interaction ID | Question: Which class is responsible for... | Answer | Justification (with patterns) |
 |:-------------- |:--------------------- |:------------|:---------------------------- |
 | Step/Msg 1: starts new test type | ... interacting with the actor? | CreateTestTypeUI | Pure Fabrication: there is no reason to assign this responsibility to any existing class in the Domain Model |
-|                                  | ... coordinating the US? | CreateTaskController | Controller |
+|                                  | ... coordinating the US? | CreateTestTypeController | Controller |
 | 		                           | ... instantiating a new test type? | Company | Creator (Rule 1): in the DM Company has a test type |
 | 	                               | ... knowing the user using the system? | UserSession | IE: cf. A&A component documentation |
 | 		                           | ... knowing to which organization the user belongs to? | System | IE: has registed all? |
@@ -131,7 +131,6 @@ Other software classes (i.e. Pure Fabrication) identified:
 
  * CreateTestTypeUI
  * CreateTestTypeController
- * CreateTaskController
  * UI?
 
 
