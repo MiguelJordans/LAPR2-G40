@@ -11,20 +11,51 @@
 
 ### 1.2. Customer Specifications and Clarifications 
 
-*Insert here any related specification and/or clarification provided by the client together with **your interpretation**. When possible, provide a link to such specifications/clarifications.*
+**From the specifications document:**
+
+> “Typically, the client arrives at one of the clinical analysis laboratories with a lab order prescribed by a doctor. Once there, a receptionist asks the client’s citizen card number, the lab order (which contains the type of test and parameters to be measured), and registers in the application the test to be performed to that client.”
+
+> "Blood tests are frequently characterized by measuring several parameters which for presentation/reporting purposes are organized by categories. For example, parameters such as the number of Red Blood Cells (RBC), White Blood Cells (WBC) and Platelets (PLT) are usually presented under the blood count (Hemogram) category."
+
+> "Covid tests are characterized by measuring a single parameter stating whether it is a positive or a negative result."
+
+> "Despite being out of scope, the system should be developed having in mind the need to easily support other kinds of tests (e.g., urine). Regardless, such tests rely on measuring one or more parameters that can be grouped/organized by categories."
+
+**From the client clarifications:**
+
+> **Question:** What is the data that characterize a parameter? Should we follow the same data as the parameter category, for example, would each parameter have its own code, description and NHS identifier?
+> 
+> **Answer:** Each parameter is associated with one category. Each parameter has a Code, a Short Name and a Description.
+
+> **Question:** What is the information related to a Parameter Category?
+> 
+> **Answer:** Each category has a name and a unique code. There are no subcategories.
 
 ### 1.3. Acceptance Criteria
 
-*Insert here the client acceptance criteria.*
+* **AC1:** Code is unique and has five alphanumeric characters.
+* **AC2:** Short name is a string with no more than 8 characters.
+* **AC3:** Description is a string with no more than 20 characters.
 
 ### 1.4. Found out Dependencies
 
-*Identify here any found out dependency to other US and/or requirements.*
+* There is a dependency to “US11 Specify a new parameter category” since at least a parameter category must exist to classify the parameter being created.
 
 ### 1.5 Input and Output Data
 
-*Identity here the data to be inputted by the system actor as well as the output data that the system have/needs to present in order to properly support the actor actions. Regarding the inputted data, it is suggested to distinguish between typed data and selected data (e.g. from a list)*
+**Input Data:**
 
+* Typed data:
+  * Code
+  * Short name
+  * Description
+
+* Selected data:
+  * Parameter category
+  
+**Output Data**
+
+* (In)Success of the operation
 
 ### 1.6. System Sequence Diagram (SSD)
 

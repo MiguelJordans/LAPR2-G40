@@ -27,7 +27,7 @@
 					<artifactId>surefire-junit4</artifactId>
 					<version>2.22.0</version>
 				</dependency>
-				
+
 			</dependencies>
 			<!-- <dependencies>-->
                         <!-- This dependency must be included, otherwise Maven Surefire will not recognise the test cases -->
