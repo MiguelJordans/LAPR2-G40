@@ -52,7 +52,7 @@
 
 ### 1.6. System Sequence Diagram (SSD)
 
-![US11-SSD](US11_SSD.svg)
+![US011_SSD](US011_SSD.svg)
 
 
 ### 1.7 Other Relevant Remarks
@@ -64,7 +64,7 @@
 
 ### 2.1. Relevant Domain Model Excerpt
 
-![US11-MD](US11_MD.svg)
+![US011_MD](US011_MD.svg)
 
 ### 2.2. Other Remarks
 
@@ -80,13 +80,17 @@
 
 | Interaction ID | Question: Which class is responsible for... | Answer  | Justification (with patterns)  |
 |:-------------  |:--------------------- |:------------|:---------------------------- |
-| Step/Msg 1 : starts new parameter category		 |	...instantiating a new Parameter Category		 |  Company           |      Creator: R1/2                        |
-| Step/Msg 2 : request data (i.e.,code,description,nhsld) 		 | n/a							 |             |                              |
-| Step/Msg 3 : types requested data  		 |		...saving the input data					 | Parameter Category            |      IE: The object created in step 1 has its own data                        |
-| Step/Msg 4 : shows the data and requests a confirmation  		 |	...validating the data locally (e.g..:mandatory vs. nom-mandatory data)?						 |   Parameter Category          |    IE: knows its own data                          |
+| Step/Msg 1: 		 |	...instantiating a new Parameter Category		 |            |                            |
+| 		 |	...coordinating the US?		 |  CreateParameterCategoryController           | Controller                             |
+| 		 |	...starts new parameter category?		 |  Company            |       Creator: R1/2                        |
+| 		 |		...knowing the user using the system?	 | UserSession             |  IE: cf. A&A component documentation                            |
+| 		 |	...knowing to which organization the user belongs to	| System            | IE: has registed all?                           |
+| Step/Msg 2: request data (i.e.,code,description,nhsld) 		 | n/a							 |             |                              |
+| Step/Msg 3: types requested data  		 |		...saving the input data					 | ParameterCategory            |      IE: The object created in step 1 has its own data                        |
+| Step/Msg 4: shows the data and requests a confirmation  		 |	...validating the data locally (e.g..:mandatory vs. nom-mandatory data)?						 |   ParameterCategory          |    IE: knows its own data                          |
 |  	 |	...validanting the data globally (e.g..:duplicated)?		 |  Company           |      IE : adopts/records all the ParameterCategory objects                       |
-| Step/Msg 5 : confirms the data		 | ...saving the created parameter category							 |  Company           |  IE: adopts/records all the ParameterCategory objects                            |
-| Step/Msg 6 : informing operation sucess	 | 	...informing operation sucess			 |  UI	         |    IE: responible for user interaction                           |              
+| Step/Msg 5:confirms the data		 | ...saving the created parameter category							 |  Company           |  IE: adopts/records all the ParameterCategory objects                            |
+| Step/Msg 6:informing operation sucess	 | 	...informing operation sucess			 |  UI	         |    IE: responible for user interaction                           |              
 
 ### Systematization ##
 
@@ -94,16 +98,20 @@ According to the taken rationale, the conceptual classes promoted to software cl
 
  * Company
  * ParameterCategory
+ * UserSession  
+ * UI ?
 
 Other software classes (i.e. Pure Fabrication) identified: 
+
  * CreateParameterCategoryUI
  * CreateParameterCategoryController
+ * CreateParameterCategoryStore
 
 ## 3.2. Sequence Diagram (SD)
 
 **Alternativa 1**
 
-![US11-SD](US11_SD.svg)
+![US011_SD](US011_SD.svg)
 
 ##
 
@@ -111,13 +119,13 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 ##
 
-![US11-SD](US11_1_SD.svg)
+![US011-SD](US011_V2_SD.svg)
 
 **Other alternatives might exist.**
 
 ## 3.3. Class Diagram (CD)
 
-![US11-CD](US11_CD.svg)
+![US011_CD](US011_CD.svg)
 
 # 4. Tests 
 *In this section, it is suggested to systematize how the tests were designed to allow a correct measurement of requirements fulfilling.* 

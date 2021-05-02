@@ -1,4 +1,4 @@
-# US XXX - XXXX XXXX
+# US 3 - RegisterClient
 
 ## 1. Requirements Engineering
 
@@ -7,30 +7,114 @@
 
 ### 1.1. User Story Description
 
-*Insert here the User Story as described by the client.*
+As a receptionist of the laboratory, I want to register a client.
 
 ### 1.2. Customer Specifications and Clarifications 
 
-*Insert here any related specification and/or clarification provided by the client together with **your interpretation**. When possible, provide a link to such specifications/clarifications.*
+* **From the Specifications Document:** 
+
+>"In case of a new client, the receptionist registers the client in the application." *(Pag. 2, ln. 1)*
+>
+>"To register a client the receptionist needs the client’s citizen card number, National Healthcare Service (NHS) number, birth date, sex, Tax Identification number (TIF), phone number, e-mail and name." *(Pag. 2, ln 1-3)*
+
+* **From the client clarifications:**
+
+>**Question:** Does the receptionist need to be logged in the app to perform the registration?
+> 
+>**Answer**: Yes.
+
+
+>**Question:** What parameter (asked by the receptionist) should the system use to create the password of the new client?
+> 
+>**Answer:** The password should be randomly generated. It should have ten alphanumeric characters.
+
+
+>**Question:** Relative to registering a new user, how should the system respond in the event of creating a new client with the same attributes of an already existing one?
+>
+>**Answer:** This should be treated as an error. A subset of the attributes of any client are unique.
+
+
+>**Question:** When the receptionist is doing the client registration, does he need to pay?
+>
+>**Answer:** There are costs and payments but they are managed by a third party and are outside of the system. Therefore, in this project we will not consider the cost and payments associated with each test.
+
+
+>**Question:** To register a Client which is the format of each attribute?
+>
+>**Answer:**
+> * Citizen Card: 16 digit number
+> * NHS: 10 digit number
+> * TIN: 10 digit number
+> * Birth day: in which format: DD/MM/YY
+> * Sex: should only be Male/Female or include more options.
+> * Phone number: 11 digit number
+> * The sex is opcional. All other fields are required.
+
+
+>**Question:** During the registration of a client, if he gives a phone number already used by another customer, should the registration continue normally or should it be canceled?
+>
+>**Answer:** The e-mail address and phone number should be unique for each user. The system should present a message informing about the error and asking for a different phone number.
+
+
+>**Question:** how are the passwords delivered to the clients?
+>
+>**Answer:** Each client receives an e-mail informing that the registration was successful and that he can start to use the system. The e-mail includes the client password.
+
+
+>**Question:** After being registered by the receptionist, should the client receive some kind of confirmation e-mail in order to finish his registration?
+>
+>**Answer:** The client only receives an e-mail informing that the registration was successful and that he can start to use the system. The e-mail includes the client password.
+
+
 
 ### 1.3. Acceptance Criteria
 
-*Insert here the client acceptance criteria.*
-
+* **AC1:** The client must become a system user. The "auth" component available on the repository must be reused (without modifications).
+* **AC2:** The password should be randomly generated.
+* **AC3:** The password should have 10 alphanumeric characters.
+* **AC4:** The creation of a new client with the same attributes of an aleardy existing one should be treated as an error.
+* **AC5:** Each attribute has a specific format:
+  * Citizen Card: 16 digit number
+  * NHS: 10 digit number
+  * TIN: 10 digit number
+  * Birth day - in which format: DD/MM/YY
+  * Sex - should only be Male/Female or include more options.
+  * Phone number: 11 digit number
+* **AC6:** The registration email includes the client password.
 ### 1.4. Found out Dependencies
 
-*Identify here any found out dependency to other US and/or requirements.*
+No dependencies were found.
 
 ### 1.5 Input and Output Data
 
-*Identity here the data to be inputted by the system actor as well as the output data that the system have/needs to present in order to properly support the actor actions. Regarding the inputted data, it is suggested to distinguish between typed data and selected data (e.g. from a list)*
+**Input Data:**
+
+* Typed data:
+    * Name
+    * Citizen Card Number
+    * Phone Number
+    * Email
+    * TIN Number
+    * NHS Number
+    * Sex
+    * Birth Date
+  
+
+* Selected data:
+   * No data found
+
+
+**Output Data:**
+
+* Confirmation Email (Including the password)
+* (In)Success of the operation
+
 
 
 ### 1.6. System Sequence Diagram (SSD)
 
-*Insert here a SSD depicting the envisioned Actor-System interactions and throughout which data is inputted and outputted to fulfill the requirement. All interactions must be numbered.*
 
-![USXX-SSD](USXX-SSD.svg)
+![US03-SSD](US03_SSD.svg)
 
 
 ### 1.7 Other Relevant Remarks

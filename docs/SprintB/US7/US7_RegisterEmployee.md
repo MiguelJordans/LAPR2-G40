@@ -1,14 +1,20 @@
-# US XXX - XXXX XXXX
+# US 7 - RegisterEmployee
 
 ## 1. Requirements Engineering
 
+<<<<<<< HEAD
 
 ### 1.1. User Story Description
 
 - As an administrator, I want to register a new employee.
 
+=======
+### 1.1. User Story Description
 
-### 1.2. Customer Specifications and Clarifications 
+*As an administrator, I want to register a new employee*
+>>>>>>> 620d64afa79b19022b2ac70872e41c76ae00a41b
+
+### 1.2. Customer Specifications and Clarifications
 
 **From the Specifications Document:**
 
@@ -151,6 +157,8 @@ Other software classes (i.e. Pure Fabrication) identified:
 ![US07-SD](US07_SD.svg)
 
 **Alternative 2**
+=======
+*In this section, it is suggested to present an UML dynamic view stating the sequence of domain related software objects' interactions that allows to fulfill the requirement.*
 
 ![USXX-SD](USXX-SD.svg)
 

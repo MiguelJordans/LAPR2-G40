@@ -65,6 +65,8 @@ To identify domain conceptual classes, start by making a list of candidate conce
 
 * Chemical Analysis
 * Algorithm
+* Covid-19 tests
+* Blood tests
 
 ---
 
@@ -73,6 +75,7 @@ To identify domain conceptual classes, start by making a list of candidate conce
 
 * Sample
 * Lab Order
+* swab
 
 ---
 
@@ -118,6 +121,7 @@ To identify domain conceptual classes, start by making a list of candidate conce
 
 * NHS API module
 * External API module
+* barcode
 
 ---
 
@@ -126,6 +130,7 @@ To identify domain conceptual classes, start by making a list of candidate conce
 
 * Report to NHS
 * Report to the Client
+* NHS contract
 
 ---
 
@@ -148,8 +153,7 @@ To identify domain conceptual classes, start by making a list of candidate conce
 * Report
 
 ---
-
-
+ 
 
 ###**Rationale to identify associations between conceptual classes**
 
@@ -165,7 +169,7 @@ To identify domain conceptual classes, start by making a list of candidate conce
 | Receptionist 	          | works in    		              | Clinical Analysis Laboratory  |
 | Receptionist 	          | registers   		              | Lab Order                     |
 | Test 	                  | is of    		                  | Test Type                     |
-| Test 	                  | has a            	              | Test Result                   |
+| Test 	                  | has a            	              | Test Parameter                |
 | Test 	                  | requests analysis of    	      | Parameter                     |
 | Test 	                  | collects    		              | Sample                        |
 | Test 	                  | requested by    	              | Client                        |
