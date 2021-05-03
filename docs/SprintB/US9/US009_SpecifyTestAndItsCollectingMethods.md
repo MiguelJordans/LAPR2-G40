@@ -131,6 +131,8 @@ Other software classes (i.e. Pure Fabrication) identified:
 
  * CreateTestTypeUI
  * CreateTestTypeController
+ * TestTypeStore
+ * CategoryStore  
  * UI?
 
 
