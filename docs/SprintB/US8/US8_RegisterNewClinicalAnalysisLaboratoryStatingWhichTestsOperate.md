@@ -17,11 +17,11 @@
 
 **From the client clarifications:**
 
-> **Question:** What are that data that characterize a clinical analysis laboratory?
+> **Question:** What are that data that characterize a Clinical Analysis Laboratory?
 > 
-> **Answer:** Each clinical analysis laboratory is characterized by the following attributes: Laboratory ID, name, address, phone number and TIN number.
+> **Answer:** Each Clinical Analysis Laboratory is characterized by the following attributes: Laboratory ID, name, address, phone number and TIN number.
 
-> **Question:** Is there a maximum limit of types of tests a clinical analysis laboratory can operate?
+> **Question:** Is there a maximum limit of types of tests a Clinical Analysis Laboratory can operate?
 >
 > **Answer:** No.
 
@@ -29,25 +29,26 @@
 > 
 > **Answer:** The test types are selected from a list.
 
-> **Question:** What information is associated with a clinical analysis laboratory?
-> 
-> **Answer:** Each Clinical Analysis Laboratory is characterized by the following attributes: LaboratoryID, name, address, phone number and TIN number.
-
 > **Question:** Should the employees be allocated to the clinical lab in which they work? Or, for example, can one medical lab technician work in more than one clinical analysis laboratory?
 > 
 > **Answer:** Each Receptionist and each Medical Lab Technician can work in any CLinical Analysis Laboratory of the Many Labs network.
 
+> **Question:** Are two Clinical Analysis Laboratories with the same attributes allowed to exist?
+> 
+> **Answer:** Only the name of two Clinical Analysis Laboratories can be the same.
+
 
 ### 1.3. Acceptance Criteria
 
-* **AC1:** A clinical analysis laboratory must always perform clinical blood tests.
+* **AC1:** A Clinical Analysis Laboratory must always perform clinical blood tests.
 * **AC2:** Laboratory ID has 5 alphanumeric characters
 * **AC3:** Name is a string with no more than 30 characters
 * **AC4:** Address is a string with no more than 30 characters
 * **AC5:** Phone number has 11 digit numbers
 * **AC6:** TIN number has 10 digit numbers
-* **AC7:** A clinical analysis laboratory cannot be registered without all its attributes
+* **AC7:** A Clinical Analysis Laboratory cannot be registered without all its attributes
 * **AC8:** All types of test are performed by the lab
+* **AC9:** Only the name of two Clinical Analysis Laboratories can be the same
 
 
 ### 1.4. Found out Dependencies
@@ -66,6 +67,7 @@ There is a dependency to "US009 Specify a new type of test and its collecting me
     * Address
     * Phone number
     * TIN number
+
 
 * Selected data:
     * Test type(s)
