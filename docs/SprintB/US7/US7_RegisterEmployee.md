@@ -2,17 +2,12 @@
 
 ## 1. Requirements Engineering
 
-<<<<<<< HEAD
 
 ### 1.1. User Story Description
 
 - As an administrator, I want to register a new employee.
 
-=======
-### 1.1. User Story Description
 
-*As an administrator, I want to register a new employee*
->>>>>>> 620d64afa79b19022b2ac70872e41c76ae00a41b
 
 ### 1.2. Customer Specifications and Clarifications
 
@@ -84,21 +79,22 @@ Employee ID; Organization Role; Name; Address; Phone Number; E-Mail; Standard Oc
 
 * Typed data:
     * Employee ID
-    * Organization role
     * Name
     * Address
     * Phone number
     * Email
     * SOC code
     * Doctor Index Number
+  
 
 * Selected data:
-    * Specialist Doctor role
+  * Organization role
 
 
 **Output Data:**
 
 * Confirmation email (which has the password)
+* (In)Success of the operation
 
 ### 1.6. System Sequence Diagram (SSD)
 
@@ -129,14 +125,14 @@ Employee ID; Organization Role; Name; Address; Phone Number; E-Mail; Standard Oc
 
 | Interaction ID | Question: Which class is responsible for... | Answer  | Justification (with patterns)  |
 |:-------------  |:--------------------- |:------------|:---------------------------- |
-| Step 1: ask to register a new employee|starting a new registering process|Company|                              |
-| Step 2: request an authentication|    |             |                              |
-| Step 3: type requested data( email, password)||             |                              |
-| Step 4: request data (Employee ID, Organization Role, name, address, phone number, email, soc code, doctor index number)|n/a||                              |
-| Step 5: type and select requested data 		 |saving the input data    | NewEmployee            |                              |
-| Step 6: show the data and requests confirmation 		 |  validating the data  |  NewEmployee           |                              |              
-| Step 7: confirm the data		 |saving the created new employee    |   Company   |                              |              
-| Step 8: send confirmation email (which has the password)		 |sending the email |  Company           |                              |              
+| Step/Msg 1: starts registering a new employee|...starting a new registering process?|Company|                              |
+| Step/Msg 2: request an authentication|    |             |                              |
+| Step/Msg 3: type requested data( email, password)||             |                              |
+| Step/Msg 4: request data (Employee ID, Organization Role, name, address, phone number, email, soc code, doctor index number)|n/a||                              |
+| Step/Msg 5: type and select requested data 		 |...saving the input data?    | NewEmployee            |                              |
+| Step/Msg 6: show the data and requests confirmation 		 |...validating the data?  |  NewEmployee           |                              |              
+| Step/Msg 7: confirm the data		 |...saving the created new employee?    |   Company   |                              |              
+| Step/Msg 8: send confirmation email (which has the password)		 |...sending the email? |  Company           |                              |              
 
 ### Systematization ##
 
