@@ -12,7 +12,8 @@ public class TestType {
     public TestType(String testCode,String description,String collectingMethod){
 
         String aux=testCode;
-        testCode.trim();
+
+        if(!(testCode==null)) testCode.trim();
         checkTestCode(testCode);
         checkCollectingMethod(collectingMethod);
         checkDescription(description);

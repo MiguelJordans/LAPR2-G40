@@ -14,10 +14,7 @@ public class TestTypeController {
     private AuthFacade authFacade;
 
     private TestTypeController app;
-
     private TestTypeStore store = null;
-
-
 
     public TestTypeController(){
         this(App.getInstance().getCompany());
