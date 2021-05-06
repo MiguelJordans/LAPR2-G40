@@ -34,10 +34,4 @@ public class Company {
         return new TestType(testCode,description,collectingMethod);
     }
 
-
-
-
-
-
-
 }

@@ -144,7 +144,7 @@ public class TestTypeTest {
     @Test(expected = IllegalArgumentException.class)
     public void checkTestCodeBlank() {
 
-        TestType tt = new TestType("","yes","swab");
+        TestType tt = new TestType("",null,"swab");
 
     }
 
@@ -165,7 +165,7 @@ public class TestTypeTest {
     @Test(expected = IllegalArgumentException.class)
     public void checkDescriptionBlank() {
 
-        TestType tt = new TestType("12aBcDe","","swab");
+        TestType tt = new TestType("12aBcDe",null,"swab");
 
     }
 
@@ -186,7 +186,7 @@ public class TestTypeTest {
     @Test(expected = IllegalArgumentException.class)
     public void checkCollectingMethodBlank() {
 
-        TestType tt = new TestType("12aBcDe","b12312312'1'22312312312asdsd","");
+        TestType tt = new TestType("12aBcDe","b12312312'1'22312312312asdsd",null);
 
     }
 
