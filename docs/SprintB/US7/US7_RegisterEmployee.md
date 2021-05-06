@@ -139,7 +139,8 @@ Employee ID; Organization Role; Name; Address; Phone Number; E-Mail; Standard Oc
 According to the taken rationale, the conceptual classes promoted to software classes are: 
 
  * Company
- * NewEmployee
+ * Employee
+ * UserSession
 
 
 Other software classes (i.e. Pure Fabrication) identified: 

@@ -1,4 +1,4 @@
-package auth.domain.model.US07;
+package app.domain.model;
 
 public class Employee {
 

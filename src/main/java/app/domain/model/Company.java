@@ -1,5 +1,6 @@
 package app.domain.model;
 
+import app.controller.TestTypeController;
 import auth.AuthFacade;
 import org.apache.commons.lang3.StringUtils;
 
@@ -28,4 +29,15 @@ public class Company {
     public AuthFacade getAuthFacade() {
         return authFacade;
     }
+
+    public TestType createTestType(String testCode,String description, String collectingMethod){
+        return new TestType(testCode,description,collectingMethod);
+    }
+
+
+
+
+
+
+
 }
