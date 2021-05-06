@@ -77,7 +77,7 @@ As a receptionist of the laboratory, I want to register a client.
   * Citizen Card: 16 digit number
   * NHS: 10 digit number
   * TIN: 10 digit number
-  * Birth day - in which format: DD/MM/YY
+  * Birthday - in which format: DD/MM/YYYY.
   * Sex - should only be Male/Female or include more options.
   * Phone number: 11 digit number
 * **AC6:** The registration email includes the client password.
