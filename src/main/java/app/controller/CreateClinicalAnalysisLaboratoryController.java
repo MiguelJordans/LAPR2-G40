@@ -2,7 +2,7 @@ package app.controller;
 
 import app.domain.model.Company;
 import auth.AuthFacade;
-import auth.domain.store.ClinicalAnalysisLaboratoryStore;
+import app.domain.model.ClinicalAnalysisLaboratoryStore;
 
 public class CreateClinicalAnalysisLaboratoryController {
 

@@ -1,7 +1,4 @@
-package auth.domain.store;
-
-import app.domain.model.ClinicalAnalysisLaboratory;
-import app.domain.model.TestType;
+package app.domain.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,14 +24,23 @@ public class ClinicalAnalysisLaboratoryStore {
     }
 
     public boolean listContain(ClinicalAnalysisLaboratory cal){
-        if(this.clinicalAnalysisLaboratoryList.contains(cal)){
+        if (this.clinicalAnalysisLaboratoryList.contains(cal)){
             return true;
         } else {
             return false;
         }
     }
 
-    public boolean saveClinicalAnalysisLaboratory(ClinicalAnalysisLaboratory cal) {
+    public boolean saveClinicalAnalysisLaboratory() {
+        if (validateClinicalAnalysisLaboratory(this.cal)) {
+            listAdd(cal);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean listAdd(ClinicalAnalysisLaboratory cal){
         clinicalAnalysisLaboratoryList.add(cal);
         return true;
     }
