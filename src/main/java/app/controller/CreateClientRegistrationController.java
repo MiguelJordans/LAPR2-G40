@@ -1,21 +1,38 @@
 package app.controller;
 
-import app.domain.model.ClientRegistration;
+import app.domain.model.ClientRegistrationStore;
+import app.domain.model.Company;
+import auth.AuthFacade;
+
 
 public class CreateClientRegistrationController {
 
-    ClientRegistration cr;
+    private Company company;
+    private AuthFacade authFacade;
 
-    public void createClientRegistration(String name, long citizenCardNumber, long phoneNumber, String email, long TINNumber, long NHSNumber, String sex, String birthData){
+    private CreateClientRegistrationController app;
 
+    private ClientRegistrationStore store = null;
+
+    public CreateClientRegistrationController() {
+        this(App.getInstance().getCompany());
     }
 
-    public void getClientList(){
-
+    public CreateClientRegistrationController(Company company) {
+        this.company = company;
+        this.app = null;
     }
 
-    public void saveClientRegistration(){
+    public boolean doLogin(String email, String pwd) {
+        try {
+            return this.app.doLogin(email, pwd);
+        } catch(IllegalArgumentException exc) {
+            return false;
+        }
+    }
 
+    public ClientRegistrationStore CreateClientRegistration(String name, String email, String sex, String birthdate, long citizenCardNumber, long phoneNumber, long tinNumber, long nhsNumber){
+        return store = this.CreateClientRegistration(name, email, sex, birthdate, citizenCardNumber, phoneNumber, tinNumber, nhsNumber);
     }
 
 }
