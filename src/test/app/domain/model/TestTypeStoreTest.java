@@ -136,7 +136,7 @@ public class TestTypeStoreTest {
 
         TestType expected = aa;
 
-        TestType actual = tt.getTestType(1);
+        TestType actual = tt.getTestType(0);
 
         Assert.assertEquals(expected,actual);
 
