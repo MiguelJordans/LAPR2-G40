@@ -1,4 +1,4 @@
-package auth.domain.store;
+package app.domain.model;
 
 public class ClientStore {
 
