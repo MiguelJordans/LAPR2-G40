@@ -2,6 +2,7 @@ package app.domain.model;
 
 import app.controller.TestTypeController;
 import auth.AuthFacade;
+import auth.domain.store.ClinicalAnalysisLaboratoryStore;
 import org.apache.commons.lang3.StringUtils;
 
 /**
@@ -34,10 +35,7 @@ public class Company {
         return new TestType(testCode,description,collectingMethod);
     }
 
-
-
-
-
-
-
+    public ClinicalAnalysisLaboratory createClinicalAnalysisLaboratory(String laboratoryID, String name, String address, long phoneNumber, long TINnumber) {
+        return new ClinicalAnalysisLaboratory(laboratoryID, name, address, phoneNumber, TINnumber);
+    }
 }
