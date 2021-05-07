@@ -75,8 +75,11 @@ public class TestTypeControllerTest {
 
         ctrl.CreateTestType("aaa","aaa","aaa");
 
-        String expected = "TestType{testCode='aaa', description='aaa', collectingMethod='aaa'}";
-        String actual = (ctrl.getTT()).toString();
+        String expected =  " Test Code: " + "aaa"  +
+                ", Description:" + "aaa" +
+                ", CollectingMethod:" + "aaa";
+
+        String actual = (ctrl.getTT());
 
         Assert.assertEquals(expected,actual);
 
@@ -89,7 +92,9 @@ public class TestTypeControllerTest {
 
         ctrl.CreateTestType("aaa","+++","aaa");
 
-        String expected = "TestType{testCode='aaa', description='aaa', collectingMethod='aaa'}";
+        String expected =  " Test Code: " + "aaa"  +
+                ", Description:" + "+++" +
+                ", CollectingMethod:" + "aaa";
         String actual = (ctrl.getTT()).toString();
 
         Assert.assertEquals(expected,actual);

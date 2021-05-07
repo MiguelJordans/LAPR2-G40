@@ -86,10 +86,10 @@ public class TestType {
 
     @Override
     public String toString() {
-        return "TestType{" +
-                "testCode='" + testCode + '\'' +
-                ", description='" + description + '\'' +
-                ", collectingMethod='" + collectingMethod + '\'' +
-                '}';
+        return
+                " Test Code: " + testCode  +
+                ", Description:" + description +
+                ", CollectingMethod:" + collectingMethod;
+
     }
 }
