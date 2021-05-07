@@ -1,12 +1,7 @@
 package app.controller;
 
-import app.domain.model.Company;
-import app.domain.model.TestType;
-import app.domain.model.TestTypeStore;
-import app.domain.shared.Constants;
-import auth.AuthFacade;
-
-import java.util.Properties;
+import app.domain.Company;
+import app.domain.TestTypeStore;
 
 public class TestTypeController {
 

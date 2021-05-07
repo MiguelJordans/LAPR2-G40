@@ -1,4 +1,4 @@
-package app.domain.model;
+package app.domain;
 
 import auth.mappers.dto.EmployeeDto;
 

@@ -1,7 +1,6 @@
 package app.ui.console;
 
 import app.controller.TestTypeController;
-import app.domain.model.TestType;
 import app.ui.console.utils.Utils;
 
 import java.util.ArrayList;

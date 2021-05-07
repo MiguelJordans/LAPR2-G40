@@ -1,4 +1,4 @@
-package app.domain.model;
+package app.domain;
 
 import auth.AuthFacade;
 import org.apache.commons.lang3.StringUtils;

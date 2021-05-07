@@ -1,4 +1,4 @@
-package app.domain.model;
+package app.domain;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -51,18 +51,22 @@ public class ClinicalAnalysisLaboratory {
     }
 
     public void setName(String name) {
+        checkNameRules(name);
         this.name = name;
     }
 
     public void setAddress(String address) {
+        checkAddressRules(address);
         this.address = address;
     }
 
     public void setPhoneNumber(long phoneNumber) {
+        checkPhoneNumberRules(phoneNumber);
         this.phoneNumber = phoneNumber;
     }
 
     public void setTINnumber(long TINnumber) {
+        checkTINnumberRules(TINnumber);
         this.TINnumber = TINnumber;
     }
 
@@ -71,7 +75,7 @@ public class ClinicalAnalysisLaboratory {
             throw new IllegalArgumentException("LaboratoryID cannot be blank.");
         }
         if (!(laboratoryID.matches("^[a-zA-Z0-9]*$") || laboratoryID.length() == 5)) {
-            throw new IllegalArgumentException("LaboratoryID must have 5 alphanumeric characters.");
+            throw new IllegalArgumentException("LaboratoryID must be 5 alphanumeric characters.");
         }
     }
 
@@ -111,7 +115,7 @@ public class ClinicalAnalysisLaboratory {
             throw new IllegalArgumentException("Phone number cannot be blank.");
         }
         if (!(auxStrPhoneNumber.length() == 11)) {
-            throw new IllegalArgumentException("Phone number must have 11 digit numbers.");
+            throw new IllegalArgumentException("Phone number must be 11 digit numbers.");
         }
     }
 
@@ -123,7 +127,7 @@ public class ClinicalAnalysisLaboratory {
             throw new IllegalArgumentException("TIN number cannot be blank.");
         }
         if (!(auxStrTINnumber.length() == 10)) {
-            throw new IllegalArgumentException("TIN number must have 10 digit numbers.");
+            throw new IllegalArgumentException("TIN number must be 10 digit numbers.");
         }
     }
 

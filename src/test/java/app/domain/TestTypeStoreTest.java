@@ -1,4 +1,4 @@
-package app.domain.model;
+package app.domain;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -138,7 +138,7 @@ public class TestTypeStoreTest {
 
         TestType actual = tt.getTestType(0);
 
-        Assert.assertEquals(expected,actual);
+        assertEquals(expected,actual);
 
     }
 
@@ -152,7 +152,7 @@ public class TestTypeStoreTest {
 
         TestType actual = tt.getTt();
 
-        Assert.assertEquals(expected,actual);
+        assertEquals(expected,actual);
 
     }
 

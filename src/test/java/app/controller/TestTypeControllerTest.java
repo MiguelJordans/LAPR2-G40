@@ -1,11 +1,9 @@
 package app.controller;
 
-import app.domain.model.TestType;
-import app.domain.model.TestTypeStore;
+import app.domain.TestType;
+import app.domain.TestTypeStore;
 import org.junit.Assert;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class TestTypeControllerTest {
 
