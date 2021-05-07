@@ -1,5 +1,7 @@
 package app.ui.console;
 
+import app.controller.TestTypeController;
+import app.domain.model.TestType;
 import app.ui.console.utils.Utils;
 
 import java.util.ArrayList;
@@ -7,9 +9,17 @@ import java.util.List;
 
 public class TestTypeUI {
 
+
+        private TestTypeController ctrl;
+
+
     public TestTypeUI()
     {
+        this.ctrl = new TestTypeController();
     }
+
+
+
 
     public void run()
     {

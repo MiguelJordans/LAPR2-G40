@@ -44,6 +44,17 @@ public class TestTypeStore {
         return true;
     }
 
+   /* public String toString(TestType tt){
+
+        StringBuilder s = new StringBuilder();
+
+       for (TestType tt1 : list){
+           return s.();
+       }
+
+        return "";
+    }*/
+
     public TestType getTestType(int i){
         return list.get(i);
     }
@@ -52,4 +63,7 @@ public class TestTypeStore {
         return tt;
     }
 
+    public List<TestType> getTestTypeList() {
+        return list;
+    }
 }
