@@ -38,7 +38,7 @@ public class TestTypeUI implements Runnable {
         cont=Utils.confirm("Test Type created! Do you wish to save it?" + ctrl.getTT());
         if(cont){
             if(ctrl.saveTestType());
-            System.out.println("Test type was saved with sucess");
+            System.out.println("Test type was saved with sucess!");
         }
     }
 }

@@ -29,7 +29,6 @@ public class Company {
         this.authFacade = new AuthFacade();
     }
 
-
     public String getDesignation() {
         return designation;
     }
@@ -44,6 +43,10 @@ public class Company {
 
     public ClinicalAnalysisLaboratory createClinicalAnalysisLaboratory(String laboratoryID, String name, String address, long phoneNumber, long TINnumber) {
         return new ClinicalAnalysisLaboratory(laboratoryID, name, address, phoneNumber, TINnumber);
+    }
+
+    public Parameter creatParameter(String code,String description, String name){
+        return new Parameter(code,description,name);
     }
 
     //Test Type
@@ -146,5 +149,55 @@ public class Company {
         return clinicalAnalysisLaboratoryStore.cal;
     }
 
+    //
+
+    ParameterStore parameterStore = new ParameterStore();
+
+    private static ParameterStore parameterList;
+
+    public static ParameterStore Parameter() {
+        return parameterList = new ParameterStore();
+    }
+
+    //public List<TestType> getTestType(){return testTypeStore.getTt();}
+
+    public boolean addParameter(Parameter pp){
+        parameterStore.listAdd(pp);
+        return true;
+    }
+
+    //public List
+
+    public boolean validateParameter(Parameter pp){
+        parameterStore.ValidateTestType(pp);
+        return true;
+    }
+
+    public boolean saveParameter(Parameter pp){
+        parameterStore.saveTestType();
+        return true;
+    }
+
+    public boolean listContainsParameter(Parameter pp){
+        parameterStore.listContain(pp);
+        return true;
+    }
+
+    public boolean parameterListAdd(Parameter pp){
+        parameterStore.listAdd(pp);
+        return true;
+    }
+
+    public Parameter getParameter(int i){
+        return parameterStore.getParameter(i);
+    }
+
+    public Parameter getPP() {
+        return parameterStore.pp;
+    }
+
+    public ParameterStore getParameterStore(){
+        return parameterStore;
+    }
 
 }

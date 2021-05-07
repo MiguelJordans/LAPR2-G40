@@ -10,6 +10,9 @@ public class TestTypeStoreTest {
     @Test
     public void createTestType() {
 
+        TestTypeStore tt = new TestTypeStore();
+        TestType aa = tt.CreateTestType("AAA","aaa","aaa");
+
     }
 
     @Test

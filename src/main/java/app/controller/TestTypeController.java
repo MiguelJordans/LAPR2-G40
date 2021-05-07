@@ -21,7 +21,7 @@ public class TestTypeController {
         store.CreateTestType(description,testCode,collectingMethod);
     }
 
-    public String getTT(){ return store.getTt().toString(); }
+     public String getTT(){ return store.getTt().toString(); }
 
      public boolean saveTestType(){ return this.store.saveTestType(); }
 
