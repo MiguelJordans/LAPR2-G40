@@ -93,8 +93,8 @@ public class Company {
         return testTypeStore.tt;
     }
 
-    public List<TestType> getTestTypeList() {
-        return testTypeStore.getTestTypeList();
+    public TestTypeStore getTestTypeStore(){
+        return testTypeStore;
     }
 
     //Clinical Analysis Laboratory

@@ -3,38 +3,42 @@ package app.ui.console;
 import app.controller.TestTypeController;
 import app.ui.console.utils.Utils;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TestTypeUI {
+public class TestTypeUI implements Runnable {
 
 
         private TestTypeController ctrl;
 
-
-    public TestTypeUI()
+        public TestTypeUI()
     {
         this.ctrl = new TestTypeController();
     }
 
-
-
-
-    public void run()
-    {
-        List<MenuItem> options = new ArrayList<MenuItem>();
-        options.add(new MenuItem("Option1: Create test type ", new ShowTextUI("You have chosen Option 1.")));
-
-        int option = 0;
-        do
-        {
-            option = Utils.showAndSelectIndex(options, "\n\nAdmin Menu:");
-
-            if ( (option >= 0) && (option < options.size()))
-            {
-                options.get(option).run();
+     @Override
+    public void run() {
+        boolean cont = true;
+        boolean exception = false;
+        do{
+            try{
+                String collectingMethod= Utils.readLineFromConsole("Please enter the collecting method for the Test Type");
+                String description = Utils.readLineFromConsole("Please enter the description of the test type");
+                String testCode = Utils.readLineFromConsole("Please enter the testCode of the Test Type");
+                ctrl.CreateTestType(description,testCode,collectingMethod);
+                exception=false;
+            }catch (Exception e){
+                e.printStackTrace();
+                System.out.println("Incorrect input of data (an error has ocurred), please try again.");
+                exception=true;
             }
+        }while(exception);
+
+        cont=Utils.confirm("Test Type created! Do you wish to save it?" + ctrl.getTT());
+        if(cont){
+            if(ctrl.saveTestType());
+            System.out.println("Test type was saved with sucess");
         }
-        while (option != -1 );
     }
 }

@@ -1,69 +1,99 @@
 package app.controller;
 
-<<<<<<< HEAD
-import app.domain.model.Company;
-import app.domain.model.TestType;
-import app.domain.model.TestTypeStore;
-=======
-import app.domain.TestType;
-import app.domain.TestTypeStore;
->>>>>>> 30bae8652689aa30cfa5c2f6b6037606cd57c869
+import app.domain.Company;
 import org.junit.Assert;
 import org.junit.Test;
 
 public class TestTypeControllerTest {
 
+    Company company = App.getInstance().getCompany();
+
     @Test
     public void testCreateTestType() {
 
-        TestTypeStore store = new TestTypeStore();
-
-        TestType actual = store.CreateTestType("aaaa", "aaaa", "aaaa");
-
-        TestType excpected = new TestType("aaaa","aaaa","aaaa");
-
-        Assert.assertEquals(excpected,actual);
+        TestTypeController ctrl = new TestTypeController();
 
     }
 
     @Test
-    public void testGetTT() {
+    public void testCreateTestTypeWithParameter() {
 
-        TestTypeStore  store = new TestTypeStore();
-
-        TestType tt = new TestType("aaa","aaa","aaa");
-
-        // String actual = getTT();
-
+        TestTypeController ctrl = new TestTypeController(company);
 
     }
 
     @Test
-    public void testSaveTestTypeInvalid() {
+    public void createValidTestType(){
 
-        TestTypeStore  store = new TestTypeStore();
-        TestType tt = new TestType("aaa","aaa","aaa");
-        store.listAdd(tt);
+        TestTypeController ctrl = new TestTypeController();
+        ctrl.CreateTestType("aaa","aaa","aaa");
 
-        boolean expected = false;
-        boolean actual = store.saveTestType();
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void createInvalidTestType(){
+        TestTypeController ctrl = new TestTypeController();
+        ctrl.CreateTestType("aaa","+++","aaa");
+    }
+
+    @Test
+    public void saveTestType() {
+
+       TestTypeController ctrl = new TestTypeController();
+       ctrl.CreateTestType("aaa","aaa","aaa");
+
+       Assert.assertTrue(ctrl.saveTestType());
+
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void saveTestTypeInvalid() {
+
+        TestTypeController ctrl = new TestTypeController();
+
+        ctrl.CreateTestType("aaa","+++","aaa");
+
+        Assert.assertTrue(ctrl.saveTestType());
+
+    }
+
+    @Test
+    public void saveTestTypeValid() {
+
+        TestTypeController ctrl = new TestTypeController();
+
+        ctrl.CreateTestType("aaa","aaa","aaa");
+
+        Assert.assertTrue(ctrl.saveTestType());
+
+    }
+
+    @Test
+    public void getTestType() {
+
+        TestTypeController ctrl = new TestTypeController();
+
+        ctrl.CreateTestType("aaa","aaa","aaa");
+
+        String expected = "TestType{testCode='aaa', description='aaa', collectingMethod='aaa'}";
+        String actual = (ctrl.getTT()).toString();
 
         Assert.assertEquals(expected,actual);
 
     }
 
-    @Test
-    public void testSaveTestTypeInvalid2() {
+    @Test(expected = IllegalArgumentException.class)
+    public void getTestTypeInvalid() {
 
         TestTypeController ctrl = new TestTypeController();
-        TestType tt = ctrl.CreateTestType("aaa","aaa","aaa");
 
-        boolean expected = false;
-        boolean actual = ctrl.saveTestType();
+        ctrl.CreateTestType("aaa","+++","aaa");
+
+        String expected = "TestType{testCode='aaa', description='aaa', collectingMethod='aaa'}";
+        String actual = (ctrl.getTT()).toString();
 
         Assert.assertEquals(expected,actual);
 
     }
 
 }
-
