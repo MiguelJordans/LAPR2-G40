@@ -10,7 +10,7 @@ public class ClinicalAnalysisLaboratory {
     private long phoneNumber;
     private long TINnumber;
 
-    private TestType testType;
+    //private TestType testType;
 
     public ClinicalAnalysisLaboratory(String laboratoryID, String name, String address, long phoneNumber, long TINnumber) {
         this.laboratoryID = laboratoryID;
@@ -96,7 +96,7 @@ public class ClinicalAnalysisLaboratory {
 
     private void checkAddressRules(String address) {
         if (StringUtils.isBlank(address)) {
-            throw new IllegalArgumentException("Address cannot be empty.");
+            throw new IllegalArgumentException("Address cannot be blank.");
         }
         if (!(address.length() < 30)) {
             throw new IllegalArgumentException("Address cannot have more than 30 characters.");
@@ -108,7 +108,7 @@ public class ClinicalAnalysisLaboratory {
         String auxStrPhoneNumber = strPhoneNumber.trim();
 
         if (StringUtils.isBlank(auxStrPhoneNumber)) {
-            throw new IllegalArgumentException("Phone number cannot be empty.");
+            throw new IllegalArgumentException("Phone number cannot be blank.");
         }
         if (!(auxStrPhoneNumber.length() == 11)) {
             throw new IllegalArgumentException("Phone number must have 11 digit numbers.");
@@ -120,7 +120,7 @@ public class ClinicalAnalysisLaboratory {
         String auxStrTINnumber = strTINnumber.trim();
 
         if (StringUtils.isBlank(auxStrTINnumber)) {
-            throw new IllegalArgumentException("TIN number cannot be empty.");
+            throw new IllegalArgumentException("TIN number cannot be blank.");
         }
         if (!(auxStrTINnumber.length() == 10)) {
             throw new IllegalArgumentException("TIN number must have 10 digit numbers.");
