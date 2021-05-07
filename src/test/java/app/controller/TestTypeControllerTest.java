@@ -2,14 +2,17 @@ package app.controller;
 
 import app.domain.model.TestType;
 import app.domain.model.TestTypeStore;
-import junit.framework.TestCase;
 import org.junit.Assert;
+import org.junit.Test;
 
-public class TestTypeControllerTest extends TestCase {
+import static org.junit.Assert.*;
 
+public class TestTypeControllerTest {
+
+    @Test
     public void testCreateTestType() {
 
-        TestTypeStore  store = new TestTypeStore();
+        TestTypeStore store = new TestTypeStore();
 
         TestType actual = store.CreateTestType("aaaa", "aaaa", "aaaa");
 
@@ -19,17 +22,20 @@ public class TestTypeControllerTest extends TestCase {
 
     }
 
+    @Test
     public void testGetTT() {
 
         TestTypeStore  store = new TestTypeStore();
 
         TestType tt = new TestType("aaa","aaa","aaa");
 
-        String actual = getTT();
+        // String actual = getTT();
 
 
     }
 
+    @Test
     public void testSaveTestType() {
     }
 }
+
