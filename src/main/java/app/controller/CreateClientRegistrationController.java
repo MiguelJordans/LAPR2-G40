@@ -1,7 +1,7 @@
 package app.controller;
 
-import app.domain.model.ClientRegistrationStore;
-import app.domain.model.Company;
+import app.domain.ClientRegistrationStore;
+import app.domain.Company;
 import auth.AuthFacade;
 
 

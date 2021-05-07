@@ -1,4 +1,5 @@
-package app.domain.model;
+package app.domain;
+
 import org.apache.commons.lang3.StringUtils;
 
 public class TestType {
@@ -9,49 +10,49 @@ public class TestType {
 
     //private Category category; Quando já estiver implementado a class Category
 
-    public TestType(String testCode,String description,String collectingMethod){
+    public TestType(String testCode, String description, String collectingMethod) {
 
-        String aux=testCode;
+        String aux = testCode;
 
-        if(!(testCode==null)) testCode.trim();
+        if (!(testCode == null)) testCode.trim();
         checkTestCode(testCode);
         checkCollectingMethod(collectingMethod);
         checkDescription(description);
-        testCode=aux;
+        testCode = aux;
 
-        this.testCode=testCode;
-        this.collectingMethod=collectingMethod;
-        this.description=description;
+        this.testCode = testCode;
+        this.collectingMethod = collectingMethod;
+        this.description = description;
 
     }
 
-    public void checkTestCode(String testCode){
+    public void checkTestCode(String testCode) {
 
-         if (StringUtils.isBlank(testCode))
+        if (StringUtils.isBlank(testCode))
             throw new IllegalArgumentException("Test Code cannot be blank.");
 
 
-        if(!(testCode.matches("^[a-zA-Z0-9]*$"))||testCode.length()>5)
-            throw new IllegalArgumentException("Test Code not valid! Must be alpha numeric and have less than 5 chars.");
+        if (!(testCode.matches("^[a-zA-Z0-9]*$")) || testCode.length() > 5)
+            throw new IllegalArgumentException("Test Code not valid! Must be alphanumeric and have less than 5 chars.");
 
     }
 
-    public void checkCollectingMethod(String collectingMethod){
+    public void checkCollectingMethod(String collectingMethod) {
 
-         if (StringUtils.isBlank(collectingMethod))
+        if (StringUtils.isBlank(collectingMethod))
             throw new IllegalArgumentException("Collecting Method cannot be blank.");
 
-        if (collectingMethod.length()>20)
+        if (collectingMethod.length() > 20)
             throw new IllegalArgumentException("Collecting Method not valid! Cannot have more than 20 chars.");
 
     }
 
-    public void checkDescription(String description){
+    public void checkDescription(String description) {
 
         if (StringUtils.isBlank(description))
             throw new IllegalArgumentException("Description cannot be blank.");
 
-        if (description.length()>15)
+        if (description.length() > 15)
             throw new IllegalArgumentException("Description not valid! Cannot have more than 15 chars.");
 
     }

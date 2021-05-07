@@ -1,4 +1,4 @@
-package app.domain.model;
+package app.domain;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -10,7 +10,7 @@ public class ClinicalAnalysisLaboratory {
     private long phoneNumber;
     private long TINnumber;
 
-    private TestType testType;
+    //private TestType testType;
 
     public ClinicalAnalysisLaboratory(String laboratoryID, String name, String address, long phoneNumber, long TINnumber) {
         this.laboratoryID = laboratoryID;
@@ -51,18 +51,22 @@ public class ClinicalAnalysisLaboratory {
     }
 
     public void setName(String name) {
+        checkNameRules(name);
         this.name = name;
     }
 
     public void setAddress(String address) {
+        checkAddressRules(address);
         this.address = address;
     }
 
     public void setPhoneNumber(long phoneNumber) {
+        checkPhoneNumberRules(phoneNumber);
         this.phoneNumber = phoneNumber;
     }
 
     public void setTINnumber(long TINnumber) {
+        checkTINnumberRules(TINnumber);
         this.TINnumber = TINnumber;
     }
 
@@ -71,7 +75,7 @@ public class ClinicalAnalysisLaboratory {
             throw new IllegalArgumentException("LaboratoryID cannot be blank.");
         }
         if (!(laboratoryID.matches("^[a-zA-Z0-9]*$") || laboratoryID.length() == 5)) {
-            throw new IllegalArgumentException("LaboratoryID must have 5 alphanumeric characters.");
+            throw new IllegalArgumentException("LaboratoryID must be 5 alphanumeric characters.");
         }
     }
 
@@ -96,7 +100,7 @@ public class ClinicalAnalysisLaboratory {
 
     private void checkAddressRules(String address) {
         if (StringUtils.isBlank(address)) {
-            throw new IllegalArgumentException("Address cannot be empty.");
+            throw new IllegalArgumentException("Address cannot be blank.");
         }
         if (!(address.length() < 30)) {
             throw new IllegalArgumentException("Address cannot have more than 30 characters.");
@@ -108,10 +112,10 @@ public class ClinicalAnalysisLaboratory {
         String auxStrPhoneNumber = strPhoneNumber.trim();
 
         if (StringUtils.isBlank(auxStrPhoneNumber)) {
-            throw new IllegalArgumentException("Phone number cannot be empty.");
+            throw new IllegalArgumentException("Phone number cannot be blank.");
         }
         if (!(auxStrPhoneNumber.length() == 11)) {
-            throw new IllegalArgumentException("Phone number must have 11 digit numbers.");
+            throw new IllegalArgumentException("Phone number must be 11 digit numbers.");
         }
     }
 
@@ -120,10 +124,10 @@ public class ClinicalAnalysisLaboratory {
         String auxStrTINnumber = strTINnumber.trim();
 
         if (StringUtils.isBlank(auxStrTINnumber)) {
-            throw new IllegalArgumentException("TIN number cannot be empty.");
+            throw new IllegalArgumentException("TIN number cannot be blank.");
         }
         if (!(auxStrTINnumber.length() == 10)) {
-            throw new IllegalArgumentException("TIN number must have 10 digit numbers.");
+            throw new IllegalArgumentException("TIN number must be 10 digit numbers.");
         }
     }
 

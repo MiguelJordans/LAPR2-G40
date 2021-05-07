@@ -1,4 +1,4 @@
-package app.domain.model;
+package app.domain;
 
 import auth.AuthFacade;
 import org.apache.commons.lang3.StringUtils;
@@ -12,7 +12,7 @@ import java.util.List;
  * @author Mariana Lages <1200902@isep.ipp.pt>
  * @author Lucas Silva <1200759@isep.ipp.pt>
  * @author Daniel Costa <1200581@isep.ipp.pt>
- * @author Marcin Basinki <1200300@isep.ipp.pt>
+ * @author Marcin Basinski <1200300@isep.ipp.pt>
  */
 
 public class Company {

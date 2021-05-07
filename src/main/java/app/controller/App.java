@@ -1,6 +1,6 @@
 package app.controller;
 
-import app.domain.model.Company;
+import app.domain.Company;
 import app.domain.shared.Constants;
 import auth.AuthFacade;
 import auth.UserSession;

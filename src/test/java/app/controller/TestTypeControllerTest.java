@@ -1,12 +1,15 @@
 package app.controller;
 
+<<<<<<< HEAD
 import app.domain.model.Company;
 import app.domain.model.TestType;
 import app.domain.model.TestTypeStore;
+=======
+import app.domain.TestType;
+import app.domain.TestTypeStore;
+>>>>>>> 30bae8652689aa30cfa5c2f6b6037606cd57c869
 import org.junit.Assert;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class TestTypeControllerTest {
 
