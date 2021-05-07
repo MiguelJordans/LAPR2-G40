@@ -10,11 +10,9 @@ public class TestTypeTest {
 
         TestType tt = new TestType("1abcE","yes","swab");
 
-        String expected = "TestType{" +
-                "testCode='" + "1abcE" + '\'' +
-                ", description='" + "yes" + '\'' +
-                ", collectingMethod='" + "swab" + '\'' +
-                '}';
+        String expected = " Test Code: " + "1abcE"  +
+                ", Description:" + "yes" +
+                ", CollectingMethod:" + "swab";
 
         String actual = tt.toString();
 
@@ -27,11 +25,9 @@ public class TestTypeTest {
 
         TestType tt = new TestType("22222","AAAAAAAAAA","AAAAAAAAAA");
 
-        String expected = "TestType{" +
-                "testCode='" + "22222" + '\'' +
-                ", description='" + "AAAAAAAAAA" + '\'' +
-                ", collectingMethod='" + "AAAAAAAAAA" + '\'' +
-                '}';
+        String expected =  " Test Code: " + "22222"  +
+                ", Description:" + "AAAAAAAAAA" +
+                ", CollectingMethod:" + "AAAAAAAAAA";
 
         String actual = tt.toString();
 
