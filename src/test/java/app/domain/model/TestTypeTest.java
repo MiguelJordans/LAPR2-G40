@@ -3,8 +3,6 @@ package app.domain.model;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class TestTypeTest {
 
     @Test
@@ -116,7 +114,7 @@ public class TestTypeTest {
     @Test(expected = IllegalArgumentException.class)
     public void checkTestCodeNotAlphaNumeric1() {
 
-       TestType tt = new TestType("1''?-","yes","swab");
+        TestType tt = new TestType("1''?-","yes","swab");
 
     }
 

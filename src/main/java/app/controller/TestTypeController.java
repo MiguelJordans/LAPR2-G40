@@ -11,10 +11,8 @@ import java.util.Properties;
 public class TestTypeController {
 
     private Company company;
-    private AuthFacade authFacade;
 
-    private TestTypeController app;
-    private TestTypeStore store = null;
+    private TestTypeStore store;
 
     public TestTypeController(){
         this(App.getInstance().getCompany());
@@ -22,22 +20,15 @@ public class TestTypeController {
 
     public TestTypeController(Company company){
         this.company=company;
-        this.app=null;
     }
 
-    public boolean doLogin(String email, String pwd)
-    {
-        try {
-            return this.app.doLogin(email, pwd);
-        } catch(IllegalArgumentException ex)
-        {
-            return false;
-        }
+    public void CreateTestType(String description,String testCode,String collectingMethod){
+       // store = company.getTestTypeList();
+        store.CreateTestType(description,testCode,collectingMethod);
     }
 
-    public TestTypeStore CreateTestType(String description,String testCode,String collectingMethod){
-       return store = this.CreateTestType(description,testCode,collectingMethod);
-    }
+    public String getTT(){ return store.getTt().toString(); }
 
+    public boolean saveTestType(){ return this.store.saveTestType(); }
 
 }

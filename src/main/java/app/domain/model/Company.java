@@ -92,6 +92,9 @@ public class Company {
         return testTypeStore.tt;
     }
 
+    public List<TestType> getTestTypeList() {
+        return testTypeStore.getTestTypeList();
+    }
 
     //Clinical Analysis Laboratory
 
@@ -141,4 +144,6 @@ public class Company {
     public ClinicalAnalysisLaboratory getCal() {
         return clinicalAnalysisLaboratoryStore.cal;
     }
+
+
 }
