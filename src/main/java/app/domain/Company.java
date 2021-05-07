@@ -49,6 +49,10 @@ public class Company {
         return new Parameter(code,description,name);
     }
 
+    public ParameterCategory creatParameterCategory(String code,String description, String nhsld){
+        return new ParameterCategory(code,description,nhsld);
+    }
+
     //Test Type
 
     TestTypeStore testTypeStore = new TestTypeStore();
@@ -169,12 +173,12 @@ public class Company {
     //public List
 
     public boolean validateParameter(Parameter pp){
-        parameterStore.ValidateTestType(pp);
+        parameterStore.validateParameter(pp);
         return true;
     }
 
     public boolean saveParameter(Parameter pp){
-        parameterStore.saveTestType();
+        parameterStore.saveParameter();
         return true;
     }
 
@@ -200,4 +204,64 @@ public class Company {
         return parameterStore;
     }
 
-}
+
+    //Test Type
+
+    ParameterCategoryStore parameterCategoryStore = new ParameterCategoryStore();
+
+    private static ParameterCategoryStore parameterCategoryList;
+
+    public static ParameterCategoryStore ParameterCategory(){
+        return parameterCategoryList = new ParameterCategoryStore();
+    }
+
+    //public List<TestType> getTestType(){return testTypeStore.getTt();}
+
+    public boolean addParameterCategory(ParameterCategory pc){
+        parameterCategoryStore.listAdd(pc);
+        return true;
+    }
+
+    //public List
+
+    public boolean validateTestType(ParameterCategory pc){
+        parameterCategoryStore.validateParameterCategory(pc);
+        return true;
+    }
+
+    public boolean saveTestType(ParameterCategory pc){
+        parameterCategoryStore.saveParameterCategory();
+        return true;
+    }
+
+    public boolean listContainsTestType(ParameterCategory pc){
+        parameterCategoryStore.listContain(pc);
+        return true;
+    }
+
+    public boolean listAdd(ParameterCategory pc){
+        parameterCategoryStore.listAdd(pc);
+        return true;
+    }
+
+    public ParameterCategory getParameterCategory(int i){
+        return  parameterCategoryStore.getParameterCategory(i);
+    }
+
+    public ParameterCategory getPC() {
+        return  parameterCategoryStore.pc;
+    }
+
+    public ParameterCategoryStore getParameterCategoryStore(){
+        return parameterCategoryStore;
+    }
+
+    //Clinical Analysis Laboratory
+
+    /*ClinicalAnalysisLaboratoryStore clinicalAnalysisLaboratoryStore = new ClinicalAnalysisLaboratoryStore();
+
+    private static ClinicalAnalysisLaboratoryStore clinicalAnalysisLaboratoryList;
+
+    public static ClinicalAnalysisLaboratoryStore ClinicalAnalysisLaboratory() {
+        return clinicalAnalysisLaboratoryList = new ClinicalAnalysisLaboratoryStore();*/
+    }

@@ -24,6 +24,6 @@ public class ParameterController {
 
     public String getPP(){ return store.getPp().toString(); }
 
-    public boolean saveTestType(){ return this.store.saveTestType(); }
+    public boolean saveParameter(){ return this.store.saveParameter(); }
 
 }

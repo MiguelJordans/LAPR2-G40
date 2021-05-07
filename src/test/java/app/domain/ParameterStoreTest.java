@@ -23,7 +23,7 @@ public class ParameterStoreTest {
 
         boolean expected = true;
 
-        boolean actual = pp.ValidateTestType(aa);
+        boolean actual = pp.validateParameter(aa);
 
         Assert.assertEquals(expected, actual);
 
@@ -38,7 +38,7 @@ public class ParameterStoreTest {
 
         boolean expected = false;
 
-        boolean actual = pp.ValidateTestType(aa);
+        boolean actual = pp.validateParameter(aa);
 
         Assert.assertEquals(expected, actual);
 
@@ -81,7 +81,7 @@ public class ParameterStoreTest {
 
         boolean expected = true;
 
-        boolean actual = pp.saveTestType();
+        boolean actual = pp.saveParameter();
 
         Assert.assertEquals(expected, actual);
 
@@ -96,7 +96,7 @@ public class ParameterStoreTest {
 
         boolean expected = false;
 
-        boolean actual = pp.saveTestType();
+        boolean actual = pp.saveParameter();
 
         Assert.assertEquals(expected, actual);
 

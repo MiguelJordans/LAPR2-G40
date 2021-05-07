@@ -2,22 +2,22 @@ package app.domain;
 
 import org.apache.commons.lang3.StringUtils;
 
-public class Parameter {
+public class ParameterCategory {
 
     private String code;
-    private String name;
+    private String nhsld;
     private String description;
 
     //private Category category; Quando já estiver implementado a class Category
 
-    public Parameter(String code, String description, String name) {
+    public ParameterCategory(String code, String description, String nhsld) {
 
         checkTestCode(code);
-        checkName(name);
+        checkNhsld(nhsld);
         checkDescription(description);
 
         this.code = code;
-        this.name = name;
+        this.nhsld = nhsld;
         this.description = description;
 
     }
@@ -27,18 +27,17 @@ public class Parameter {
         if (StringUtils.isBlank(code))
             throw new IllegalArgumentException("Test Code cannot be blank.");
 
-
-        if (!(code.matches("^[a-zA-Z0-9]*$")) || code.length() > 5)
-            throw new IllegalArgumentException("Code not valid! Must be alphanumeric and have less than 5 chars.");
+        if (code.length()<4 || code.length() > 8)
+            throw new IllegalArgumentException("Code not valid! Code must have 4 to 8 chars.");
 
     }
 
-    public void checkName(String name) {
+    public void checkNhsld(String nhsld) {
 
-        if (StringUtils.isBlank(name))
+        if (StringUtils.isBlank(nhsld))
             throw new IllegalArgumentException("Collecting Method cannot be blank.");
 
-        if (name.length() > 8)
+        if (nhsld.length() > 8)
             throw new IllegalArgumentException("Name not valid! Cannot have more than 8 chars.");
 
     }
@@ -48,8 +47,8 @@ public class Parameter {
         if (StringUtils.isBlank(description))
             throw new IllegalArgumentException("Description cannot be blank.");
 
-        if (description.length() > 20)
-            throw new IllegalArgumentException("Description not valid! Cannot have more than 15 chars.");
+        if (description.length() > 40)
+            throw new IllegalArgumentException("Description not valid! Cannot have more than 40 chars.");
 
     }
 
@@ -61,13 +60,13 @@ public class Parameter {
         return description;
     }
 
-    public String getName() {
-        return name;
+    public String getNhsld() {
+        return nhsld;
     }
 
-    public void setName(String name) {
-        checkName(name);
-        this.name = name;
+    public void setName(String nhsld) {
+        checkNhsld(nhsld);
+        this.nhsld = nhsld;
     }
 
     public void setDescription(String description) {
@@ -85,7 +84,7 @@ public class Parameter {
         return
                 " Code: " + code  +
                         ", Description:" + description +
-                        ", Name:" + name;
+                        ", NHSLD:" + nhsld;
 
     }
 }

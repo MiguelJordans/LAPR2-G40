@@ -42,7 +42,7 @@ public class ParameterControllerTest {
         ParameterController ctrl = new ParameterController();
         ctrl.CreateParameter("aaa","aaa","aaa");
 
-        Assert.assertTrue(ctrl.saveTestType());
+        Assert.assertTrue(ctrl.saveParameter());
 
     }
 
@@ -53,7 +53,7 @@ public class ParameterControllerTest {
 
         ctrl.CreateParameter("aaa","+++","aaa");
 
-        Assert.assertTrue(ctrl.saveTestType());
+        Assert.assertTrue(ctrl.saveParameter());
 
     }
 
@@ -64,7 +64,7 @@ public class ParameterControllerTest {
 
         ctrl.CreateParameter("aaa","aaa","aaa");
 
-        Assert.assertTrue(ctrl.saveTestType());
+        Assert.assertTrue(ctrl.saveParameter());
 
     }
 

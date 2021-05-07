@@ -14,7 +14,7 @@ public class ParameterStore {
         return this.pp = new Parameter(code,description,name);
     }
 
-    public boolean ValidateTestType(Parameter pp){
+    public boolean validateParameter(Parameter pp){
         if(pp==null||listContain(pp)){
             return false;
         }
@@ -29,8 +29,8 @@ public class ParameterStore {
         }
     }
 
-    public boolean saveTestType(){
-        if(ValidateTestType(this.pp)){
+    public boolean saveParameter(){
+        if(validateParameter(this.pp)){
             listAdd(pp);
             return true;
         } else {

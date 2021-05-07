@@ -32,7 +32,7 @@ public class ParameterUI implements Runnable {
 
             cont = Utils.confirm("Parameter created! Do you wish to save it?" + ctrl.getPP());
             if (cont) {
-                if (ctrl.saveTestType()) ;
+                if (ctrl.saveParameter()) ;
                 System.out.println("Parameter was saved with sucess!");
             }
         }
