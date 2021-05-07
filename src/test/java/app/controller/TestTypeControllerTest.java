@@ -1,5 +1,6 @@
 package app.controller;
 
+import app.domain.model.Company;
 import app.domain.model.TestType;
 import app.domain.model.TestTypeStore;
 import org.junit.Assert;
@@ -35,7 +36,31 @@ public class TestTypeControllerTest {
     }
 
     @Test
-    public void testSaveTestType() {
+    public void testSaveTestTypeInvalid() {
+
+        TestTypeStore  store = new TestTypeStore();
+        TestType tt = new TestType("aaa","aaa","aaa");
+        store.listAdd(tt);
+
+        boolean expected = false;
+        boolean actual = store.saveTestType();
+
+        Assert.assertEquals(expected,actual);
+
     }
+
+    @Test
+    public void testSaveTestTypeInvalid2() {
+
+        TestTypeController ctrl = new TestTypeController();
+        TestType tt = ctrl.CreateTestType("aaa","aaa","aaa");
+
+        boolean expected = false;
+        boolean actual = ctrl.saveTestType();
+
+        Assert.assertEquals(expected,actual);
+
+    }
+
 }
 

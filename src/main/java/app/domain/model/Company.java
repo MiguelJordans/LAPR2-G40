@@ -29,6 +29,7 @@ public class Company {
         this.authFacade = new AuthFacade();
     }
 
+
     public String getDesignation() {
         return designation;
     }

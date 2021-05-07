@@ -22,9 +22,9 @@ public class TestTypeController {
         this.company=company;
     }
 
-    public void CreateTestType(String description,String testCode,String collectingMethod){
-       // store = company.getTestTypeList();
-        store.CreateTestType(description,testCode,collectingMethod);
+    public TestType CreateTestType(String description,String testCode,String collectingMethod){
+        //store = company.getTestTypeList();
+        return store.CreateTestType(description,testCode,collectingMethod);
     }
 
     public String getTT(){ return store.getTt().toString(); }

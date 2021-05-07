@@ -155,6 +155,4 @@ public class TestTypeStoreTest {
         Assert.assertEquals(expected,actual);
 
     }
-
-
 }
