@@ -300,10 +300,11 @@ public class TestTypeTest {
 
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void checkCategoryList(){
         ParameterCategoryStore pcStore = new ParameterCategoryStore();
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcStore.listAdd(pc);
 
         TestType tt = new TestType("1111","aaaaa","2",pcStore);
 

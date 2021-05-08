@@ -168,7 +168,7 @@ public class TestTypeStoreTest {
         TestType aa = tt.CreateTestType("aaa","aaa","aaa",pcStore);
         tt.listAdd(aa);
 
-        TestType expected = aa;
+        TestType expected = tt.getTestType(0);
 
         TestType actual = tt.getTestType(0);
 
