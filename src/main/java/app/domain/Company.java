@@ -95,7 +95,7 @@ public class Company {
     }
 
     public TestType getTt() {
-        return testTypeStore.tt;
+        return testTypeStore.getTt();
     }
 
     public TestTypeStore getTestTypeStore() {
@@ -173,22 +173,28 @@ public class Company {
         return true;
     }
 
+<<<<<<< HEAD
     public boolean validateTestType(ParameterCategory pc) {
+=======
+    //public List
+
+    public boolean validateParameterCategory(ParameterCategory pc) {
+>>>>>>> c0f40f04d5cd36e000f5f400b3a4df0e049c55f6
         parameterCategoryStore.validateParameterCategory(pc);
         return true;
     }
 
-    public boolean saveTestType(ParameterCategory pc) {
+    public boolean saveParameterCategory(ParameterCategory pc) {
         parameterCategoryStore.saveParameterCategory();
         return true;
     }
 
-    public boolean listContainsTestType(ParameterCategory pc) {
+    public boolean listContainsParameterCategory(ParameterCategory pc) {
         parameterCategoryStore.listContain(pc);
         return true;
     }
 
-    public boolean listAdd(ParameterCategory pc) {
+    public boolean listAddParameterCategory(ParameterCategory pc) {
         parameterCategoryStore.listAdd(pc);
         return true;
     }
