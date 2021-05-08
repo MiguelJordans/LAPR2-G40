@@ -1,6 +1,5 @@
 package app.domain;
 
-import app.domain.ClinicalAnalysisLaboratory;
 import org.junit.Assert;
 import org.junit.Test;
 

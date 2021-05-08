@@ -1,7 +1,10 @@
 package app.controller;
 
 import app.domain.Company;
+import app.domain.TestType;
 import app.domain.TestTypeStore;
+
+import java.util.List;
 
 public class TestTypeController {
 
@@ -24,5 +27,9 @@ public class TestTypeController {
      public String getTT(){ return store.getTt().toString(); }
 
      public boolean saveTestType(){ return this.store.saveTestType(); }
+
+    public List<TestType> getTestTypeList() {
+        return store.getTestTypeList();
+    }
 
 }

@@ -3,8 +3,9 @@ package app.domain;
 import auth.AuthFacade;
 import org.apache.commons.lang3.StringUtils;
 
+import java.util.List;
+
 /**
- *
  * @author Paulo Maio <pam@isep.ipp.pt>
  * @author Miguel Jordão <1201477@isep.ipp.pt>
  * @author Mariana Lages <1200902@isep.ipp.pt>
@@ -163,14 +164,14 @@ public class Company {
         return parameterCategoryList = new ParameterCategoryStore();
     }
 
-    //public List<TestType> getTestType(){return testTypeStore.getTt();}
+    public List<TestType> getTestType() {
+        return testTypeStore.getTestTypeList();
+    }
 
     public boolean addParameterCategory(ParameterCategory pc) {
         parameterCategoryStore.listAdd(pc);
         return true;
     }
-
-    //public List
 
     public boolean validateTestType(ParameterCategory pc) {
         parameterCategoryStore.validateParameterCategory(pc);
@@ -214,12 +215,6 @@ public class Company {
     public static ClinicalAnalysisLaboratoryStore ClinicalAnalysisLaboratory() {
         return clinicalAnalysisLaboratoryList = new ClinicalAnalysisLaboratoryStore();
     }
-
-    /*
-    public List<ClinicalAnalysisLaboratory> getClinicalAnalysisLaboratory() {
-        return clinicalAnalysisLaboratoryStore.getCal();
-    }
-     */
 
     public boolean addClinicalAnalysisLaboratory(ClinicalAnalysisLaboratory cal) {
         clinicalAnalysisLaboratoryStore.listAdd(cal);
