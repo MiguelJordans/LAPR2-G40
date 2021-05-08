@@ -12,19 +12,19 @@ public class ClinicalAnalysisLaboratoryStore {
         this.clinicalAnalysisLaboratoryList = new ArrayList<ClinicalAnalysisLaboratory>();
     }
 
-    public ClinicalAnalysisLaboratory CreateClinicalAnalysisLaboratory(String laboratoryID, String name, String address, long phoneNumber, long TINnumber){
+    public ClinicalAnalysisLaboratory CreateClinicalAnalysisLaboratory(String laboratoryID, String name, String address, String phoneNumber, String TINnumber) {
         return this.cal = new ClinicalAnalysisLaboratory(laboratoryID, name, address, phoneNumber, TINnumber);
     }
 
-    public boolean validateClinicalAnalysisLaboratory(ClinicalAnalysisLaboratory cal){
-        if (cal == null || listContain(cal)){
+    public boolean validateClinicalAnalysisLaboratory(ClinicalAnalysisLaboratory cal) {
+        if (cal == null || listContain(cal)) {
             return false;
         }
         return true;
     }
 
-    public boolean listContain(ClinicalAnalysisLaboratory cal){
-        if (this.clinicalAnalysisLaboratoryList.contains(cal)){
+    public boolean listContain(ClinicalAnalysisLaboratory cal) {
+        if (this.clinicalAnalysisLaboratoryList.contains(cal)) {
             return true;
         } else {
             return false;
@@ -40,7 +40,7 @@ public class ClinicalAnalysisLaboratoryStore {
         }
     }
 
-    public boolean listAdd(ClinicalAnalysisLaboratory cal){
+    public boolean listAdd(ClinicalAnalysisLaboratory cal) {
         clinicalAnalysisLaboratoryList.add(cal);
         return true;
     }
