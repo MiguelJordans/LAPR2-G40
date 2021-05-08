@@ -12,8 +12,8 @@ public class ClinicalAnalysisLaboratoryStore {
         this.clinicalAnalysisLaboratoryList = new ArrayList<ClinicalAnalysisLaboratory>();
     }
 
-    public ClinicalAnalysisLaboratory CreateClinicalAnalysisLaboratory(String laboratoryID, String name, String address, String phoneNumber, String TINnumber) {
-        return this.cal = new ClinicalAnalysisLaboratory(laboratoryID, name, address, phoneNumber, TINnumber);
+    public ClinicalAnalysisLaboratory CreateClinicalAnalysisLaboratory(String laboratoryID, String name, String address, String phoneNumber, String tinNumber) {
+        return this.cal = new ClinicalAnalysisLaboratory(laboratoryID, name, address, phoneNumber, tinNumber);
     }
 
     public boolean validateClinicalAnalysisLaboratory(ClinicalAnalysisLaboratory cal) {

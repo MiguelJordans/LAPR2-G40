@@ -8,22 +8,20 @@ public class ClinicalAnalysisLaboratory {
     private String name;
     private String address;
     private String phoneNumber;
-    private String TINnumber;
+    private String tinNumber;
 
-    //private TestType testType;
-
-    public ClinicalAnalysisLaboratory(String laboratoryID, String name, String address, String phoneNumber, String TINnumber) {
+    public ClinicalAnalysisLaboratory(String laboratoryID, String name, String address, String phoneNumber, String tinNumber) {
         this.laboratoryID = laboratoryID;
         this.name = name;
         this.address = address;
         this.phoneNumber = phoneNumber;
-        this.TINnumber = TINnumber;
+        this.tinNumber = tinNumber;
 
         checkLaboratoryIDRules(laboratoryID);
         checkNameRules(name);
         checkAddressRules(address);
         checkPhoneNumberRules(phoneNumber);
-        checkTINnumberRules(TINnumber);
+        checkTinNumberRules(tinNumber);
     }
 
     //  Gets --------------------------------------------------------------------
@@ -45,7 +43,7 @@ public class ClinicalAnalysisLaboratory {
     }
 
     public String getTINnumber() {
-        return TINnumber;
+        return tinNumber;
     }
 
     //  Sets --------------------------------------------------------------------
@@ -69,9 +67,9 @@ public class ClinicalAnalysisLaboratory {
         this.phoneNumber = phoneNumber;
     }
 
-    public void setTINnumber(String TINnumber) {
-        checkTINnumberRules(TINnumber);
-        this.TINnumber = TINnumber;
+    public void setTINnumber(String tinNumber) {
+        checkTinNumberRules(tinNumber);
+        this.tinNumber = tinNumber;
     }
 
     //  Checks --------------------------------------------------------------------
@@ -131,14 +129,14 @@ public class ClinicalAnalysisLaboratory {
         }
     }
 
-    private void checkTINnumberRules(String TINnumber) {
-        String auxTrimTINnumber = TINnumber.replaceAll("\\p{Z}", "");
+    private void checkTinNumberRules(String tinNumber) {
+        String auxTrimTINnumber = tinNumber.replaceAll("\\p{Z}", "");
         char[] auxChar = auxTrimTINnumber.toCharArray();
 
-        if (StringUtils.isBlank(TINnumber)) {
+        if (StringUtils.isBlank(tinNumber)) {
             throw new IllegalArgumentException("TIN number cannot be blank.");
         }
-        if (!(TINnumber.length() == 10)) {
+        if (!(tinNumber.length() == 10)) {
             throw new IllegalArgumentException("TIN number must be 10 digit numbers.");
         }
         for (int i = 0; i < auxChar.length; i++) {
@@ -151,7 +149,7 @@ public class ClinicalAnalysisLaboratory {
 
     @Override
     public String toString() {
-        return "LaboratoryID: " + laboratoryID + ", Name: " + name + ", Address: " + address + ", Phone number: " + phoneNumber + ", TIN number: " + TINnumber;
+        return "LaboratoryID: " + laboratoryID + ", Name: " + name + ", Address: " + address + ", Phone number: " + phoneNumber + ", TIN number: " + tinNumber;
     }
 }
 

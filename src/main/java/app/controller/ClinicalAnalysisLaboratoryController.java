@@ -16,9 +16,9 @@ public class ClinicalAnalysisLaboratoryController {
         this.company = company;
     }
 
-    public void CreateClinicalAnalysisLaboratory(String laboratoryID, String name, String address, String phoneNumber, String TINnumber) {
+    public void CreateClinicalAnalysisLaboratory(String laboratoryID, String name, String address, String phoneNumber, String tinNumber) {
         store = company.getClinicalAnalysisLaboratoryStore();
-        store.CreateClinicalAnalysisLaboratory(laboratoryID, name, address, phoneNumber, TINnumber);
+        store.CreateClinicalAnalysisLaboratory(laboratoryID, name, address, phoneNumber, tinNumber);
     }
 
     public String getCAL() {

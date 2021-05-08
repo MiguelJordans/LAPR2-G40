@@ -51,4 +51,8 @@ public class TestTypeStore {
     public TestType getTt() {
         return tt;
     }
+
+    public List<TestType> getTestTypeList() {
+        return list;
+    }
 }
