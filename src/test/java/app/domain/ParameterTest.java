@@ -76,7 +76,8 @@ public class ParameterTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void setDescription2(){
-        TestType tt = new TestType("ABCDE","ABCDE'","swab");
+        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+        TestType tt = new TestType("ABCDE","ABCDE'","swab",pcStore);
 
         String expected ="1abcdAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
         tt.setDescription(expected);

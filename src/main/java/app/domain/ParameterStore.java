@@ -51,4 +51,9 @@ public class ParameterStore {
     public Parameter getPp() {
         return pp;
     }
+
+    public List<Parameter> getParameterList() {
+        return list;
+    }
+
 }

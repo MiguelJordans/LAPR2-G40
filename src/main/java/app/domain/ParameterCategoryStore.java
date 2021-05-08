@@ -5,10 +5,10 @@ import java.util.List;
 
 public class ParameterCategoryStore {
 
-    List<ParameterCategory> list;
+    static List<ParameterCategory> list = new ArrayList<ParameterCategory>();
     ParameterCategory pc;
 
-    public ParameterCategoryStore(){this.list = new ArrayList<ParameterCategory>();}
+    public ParameterCategoryStore(){}
 
     public ParameterCategory CreateParameterCategory(String description,String code,String nhsld){
         return this.pc = new ParameterCategory(code,description,nhsld);
@@ -51,5 +51,10 @@ public class ParameterCategoryStore {
     public ParameterCategory getPc() {
         return pc;
     }
+
+    public List<ParameterCategory> getParameterCategoryList() {
+        return this.list;
+    }
+
 }
 

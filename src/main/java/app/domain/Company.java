@@ -36,8 +36,8 @@ public class Company {
         return authFacade;
     }
 
-    public TestType createTestType(String testCode, String description, String collectingMethod) {
-        return new TestType(testCode, description, collectingMethod);
+    public TestType createTestType(String testCode, String description, String collectingMethod,ParameterCategoryStore pcStore) {
+        return new TestType(testCode, description, collectingMethod,pcStore);
     }
 
     public ClinicalAnalysisLaboratory createClinicalAnalysisLaboratory(String laboratoryID, String name, String address, String phoneNumber, String TINnumber) {
@@ -167,6 +167,10 @@ public class Company {
 
     public List<TestType> getTestType() {
         return testTypeStore.getTestTypeList();
+    }
+
+    public List<Parameter> getParameter() {
+        return  parameterStore.getParameterList();
     }
 
     public boolean addParameterCategory(ParameterCategory pc) {

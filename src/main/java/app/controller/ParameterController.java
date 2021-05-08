@@ -1,13 +1,14 @@
 package app.controller;
 
-import app.domain.Company;
-import app.domain.ParameterStore;
-import app.domain.TestTypeStore;
+import app.domain.*;
+
+import java.util.List;
 
 public class ParameterController {
 
     private Company company;
     private ParameterStore store;
+    private List<Parameter> ppList;
 
     public ParameterController(){
         this(App.getInstance().getCompany());
@@ -25,5 +26,9 @@ public class ParameterController {
     public String getPP(){ return store.getPp().toString(); }
 
     public boolean saveParameter(){ return this.store.saveParameter(); }
+
+    public List<Parameter> getParameterList() {
+        return store.getParameterList();
+    }
 
 }

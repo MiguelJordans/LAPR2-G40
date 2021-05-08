@@ -158,4 +158,15 @@ public class ParameterStoreTest {
         assertEquals(expected, actual);
 
     }
+
+    @Test
+    public void getParameterList(){
+
+        ParameterStore pp = new ParameterStore();
+        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+
+        pp.getParameterList();
+
+    }
+
 }

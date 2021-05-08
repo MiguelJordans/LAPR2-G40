@@ -2,11 +2,13 @@ package app.ui.console;
 
 import app.controller.ParameterController;
 import app.controller.TestTypeController;
+import app.domain.ParameterStore;
 import app.ui.console.utils.Utils;
 
 public class ParameterUI implements Runnable {
 
         private ParameterController ctrl;
+        private ParameterStore ppStore;
 
         public ParameterUI() {
             this.ctrl = new ParameterController();
@@ -29,11 +31,11 @@ public class ParameterUI implements Runnable {
                     exception = true;
                 }
             } while (exception);
-
             cont = Utils.confirm("Parameter created! Do you wish to save it?" + ctrl.getPP());
             if (cont) {
-                if (ctrl.saveParameter()) ;
-                System.out.println("Parameter was saved with sucess!");
+                if (ctrl.saveParameter()) {
+                    System.out.println("Parameter was saved with sucess!");
+                }
             }
         }
     }

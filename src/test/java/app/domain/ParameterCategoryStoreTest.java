@@ -130,14 +130,14 @@ public class ParameterCategoryStoreTest {
 
     }
 
-    @Test
+  @Test
     public void getParameterCategory1() {
 
         ParameterCategoryStore pc = new ParameterCategoryStore();
         ParameterCategory aa = pc.CreateParameterCategory("AAA", "aaaaa", "aaa");
         pc.listAdd(aa);
 
-        ParameterCategory expected = aa;
+        ParameterCategory expected = pc.getParameterCategory(0);
 
         ParameterCategory actual = pc.getParameterCategory(0);
 
@@ -158,4 +158,17 @@ public class ParameterCategoryStoreTest {
         assertEquals(expected, actual);
 
     }
+
+    @Test
+    public void getCategoryStoreList(){
+
+
+        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcStore.listAdd(pc);
+
+        pcStore.getParameterCategoryList();
+
+    }
+
 }
