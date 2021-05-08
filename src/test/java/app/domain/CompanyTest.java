@@ -21,6 +21,15 @@ public class CompanyTest {
     }
 
     @Test
+    public void createCompanyNull(){
+
+        Company company = null;
+
+        Assert.assertNull(company);
+
+    }
+
+    @Test
     public void getDesignation(){
 
         Company company = new Company("aaaa");
@@ -57,6 +66,15 @@ public class CompanyTest {
 
     }
 
+    @Test
+    public void createTestTypeNull() {
+
+        TestType tt = null;
+
+        Assert.assertNull(tt);
+
+    }
+
    @Test
     public void createClinicalAnalysisLaboratory() {
 
@@ -67,11 +85,29 @@ public class CompanyTest {
     }
 
     @Test
+    public void createClinicalAnalysisLaboratoryNull() {
+
+        ClinicalAnalysisLaboratory cal = null;
+
+        Assert.assertNull(cal);
+
+    }
+
+    @Test
     public void createParameter() {
 
         Company company = new Company("aaaa");
 
         Parameter pp = company.createParameter("aaaaa","aaa","aaa");
+
+    }
+    @Test
+
+    public void createParameterNull() {
+
+        Parameter pp = null;
+
+        Assert.assertNull(pp);
 
     }
 
@@ -84,12 +120,32 @@ public class CompanyTest {
 
     }
 
+    @Test
+    public void createParameterCategoryNull() {
+
+        ParameterCategory pc = null;
+
+        Assert.assertNull(pc);
+
+    }
+
+
    @Test
     public void testType() {
 
         Company company = new Company("aaaa");
 
         TestTypeStore testTypeStore = company.TestType();
+
+    }
+
+    @Test
+    public void testTypeNull() {
+
+
+        TestTypeStore testTypeStore = null;
+
+        Assert.assertNull(testTypeStore);
 
     }
 
@@ -229,6 +285,15 @@ public class CompanyTest {
     }
 
     @Test
+    public void clinicalAnalysisLaboratoryNull() {
+
+        ClinicalAnalysisLaboratoryStore calstore = null;
+
+        Assert.assertNull(calstore);
+
+    }
+
+    @Test
     public void validateClinicalAnalysisLaboratory() {
 
         Company company = new Company("aaaa");
@@ -302,6 +367,15 @@ public class CompanyTest {
         TestTypeStore testTypeStore = new TestTypeStore();
 
         Parameter pp = company.createParameter("aaa","aaa","aaa");
+
+    }
+
+    @Test
+    public void parameterNull() {
+
+        Parameter pp = null;
+
+        Assert.assertNull(pp);
 
     }
 
@@ -407,6 +481,15 @@ public class CompanyTest {
     }
 
     @Test
+    public void parameterCategoryNull() {
+
+        ParameterCategory pp = null;
+
+        Assert.assertNull(pp);
+
+    }
+
+    @Test
     public void testValidateTestType() {
 
         Company company = new Company("aaaa");
@@ -505,6 +588,15 @@ public class CompanyTest {
     }
 
     @Test
+    public void getParameterCategoryStoreNull() {
+
+        ParameterCategoryStore parameterCategoryStore = null;
+
+        Assert.assertNull(parameterCategoryStore);
+
+    }
+
+    @Test
     public void getClinicalAnalysisLaboratoryStore(){
 
         Company company = new Company("aaaa");
@@ -572,6 +664,15 @@ public class CompanyTest {
         Company company = new Company("aaaa");
 
         ParameterStore parameterStore = company.Parameter();
+
+    }
+
+    @Test
+    public void  ParameterStoreNull() {
+        
+        ParameterStore parameterStore = null;
+
+        Assert.assertNull(parameterStore);
 
     }
 
