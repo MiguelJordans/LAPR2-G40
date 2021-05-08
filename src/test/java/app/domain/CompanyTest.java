@@ -4,8 +4,6 @@ import auth.AuthFacade;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class CompanyTest {
 
     @Test
@@ -55,19 +53,14 @@ public class CompanyTest {
 
     }
 
-   /* @Test
+   @Test
     public void createClinicalAnalysisLaboratory() {
 
         Company company = new Company("aaaa");
 
-        ClinicalAnalysisLaboratory expected = new ClinicalAnalysisLaboratory("aaa","aaa","aaa",69696969,696969696);
+        ClinicalAnalysisLaboratory cal = company.createClinicalAnalysisLaboratory("a23aa","aaa","aaa","69999999999","6999999999");
 
-        ClinicalAnalysisLaboratory actual = company.createClinicalAnalysisLaboratory("aaa","aaa","aaa",69696969,696969696);
-
-        Assert.assertEquals(expected,actual);
-
-
-    }*/
+    }
 
     @Test
     public void createParameter() {
@@ -87,28 +80,23 @@ public class CompanyTest {
 
     }
 
-   /* @Test
+   @Test
     public void testType() {
 
-        TestTypeStore testTypeStore = new TestTypeStore();
+        Company company = new Company("aaaa");
 
-        TestTypeStore testTypeList;
+        TestTypeStore testTypeStore = company.TestType();
 
-    }*/
+    }
 
     @Test
     public void addTestType() {
 
         Company company = new Company("aaaa");
-        TestTypeStore testTypeStore = new TestTypeStore();
 
         TestType tt = company.createTestType("aaa","aaa","aaa");
 
-        boolean expected = true;
-
-        boolean actual = company.testTypeStore.listAdd(tt);
-
-        Assert.assertEquals(expected,actual);
+        Assert.assertTrue(company.addTestType(tt));
 
     }
 
@@ -116,15 +104,10 @@ public class CompanyTest {
     public void validateTestType() {
 
         Company company = new Company("aaaa");
-        TestTypeStore testTypeStore = new TestTypeStore();
 
         TestType tt = company.createTestType("aaa","aaa","aaa");
 
-        boolean expected = true;
-
-        boolean actual = company.testTypeStore.validateTestType(tt);
-
-        Assert.assertEquals(expected,actual);
+        Assert.assertTrue(company.validateTestType(tt));
 
     }
 
@@ -180,35 +163,30 @@ public class CompanyTest {
     public void getTestType() {
 
         Company company = new Company("aaaa");
-        TestTypeStore testTypeStore = new TestTypeStore();
 
-        TestType tt = company.testTypeStore.CreateTestType("aaa","aaa","aaa");
-        company.testTypeStore.listAdd(tt);
+        TestType tt = company.createTestType("aaa","aaa","aaa");
+        company.listAdd(tt);
 
         TestType expected = tt;
-
-        TestType actual = company.testTypeStore.getTestType(0);
+        TestType actual = company.getTestType(0);
 
         Assert.assertEquals(expected,actual);
 
     }
 
-    @Test
-    public void getTt() {
+    //@Test
+    /*public void getTt() {
 
         Company company = new Company("aaaa");
-        TestTypeStore testTypeStore = new TestTypeStore();
 
-        TestType tt = company.testTypeStore.CreateTestType("aaa","aaa","aaa");
+        TestType tt = company.createTestType("aaa","aaa","aaa");
 
         TestType expected = tt;
+        TestType actual = company.getTt();
 
-        TestType actual = company.testTypeStore.getTt();
+        Assert.assertEquals(expected,actual);*/
 
-        Assert.assertEquals(expected,actual);
-
-
-    }
+   // }
 
     @Test
     public void getTestTypeStore() {
@@ -226,23 +204,58 @@ public class CompanyTest {
 
     @Test
     public void clinicalAnalysisLaboratory() {
+
+        Company company = new Company("aaa");
+
+       ClinicalAnalysisLaboratoryStore calstore = company.ClinicalAnalysisLaboratory();
+
     }
 
     @Test
     public void addClinicalAnalysisLaboratory() {
+
+        Company company = new Company("aaaa");
+
+        ClinicalAnalysisLaboratory cal = company.createClinicalAnalysisLaboratory("a23aa","aaa","aaa","69999999999","6999999999");
+
+        Assert.assertTrue(company.addClinicalAnalysisLaboratory(cal));
+
     }
 
     @Test
     public void validateClinicalAnalysisLaboratory() {
+
+        Company company = new Company("aaaa");
+
+        ClinicalAnalysisLaboratory cal = company.createClinicalAnalysisLaboratory("a23aa","aaa","aaa","69999999999","6999999999");
+
+        Assert.assertTrue(company.validateClinicalAnalysisLaboratory(cal));
+
     }
 
     @Test
     public void saveClinicalAnalysisLaboratory() {
+
+        Company company = new Company("aaaa");
+
+        ClinicalAnalysisLaboratory cal = company.createClinicalAnalysisLaboratory("a23aa","aaa","aaa","69999999999","6999999999");
+
+        Assert.assertTrue(company.saveClinicalAnalysisLaboratory(cal));
+
     }
 
     @Test
     public void listContainsClinicalAnalysisLaboratory() {
+
+        Company company = new Company("aaaa");
+
+        ClinicalAnalysisLaboratory cal = company.createClinicalAnalysisLaboratory("a23aa","aaa","aaa","69999999999","6999999999");
+
+        Assert.assertTrue(company.listContainsClinicalAnalysisLaboratory(cal));
+
+
     }
+
 
     @Test
     public void testTypeListAdd() {
@@ -259,6 +272,18 @@ public class CompanyTest {
 
     @Test
     public void getClinicalAnalysisLaboratory() {
+
+        Company company = new Company("aaaa");
+
+        ClinicalAnalysisLaboratory cal = company.createClinicalAnalysisLaboratory("a23aa","aaa","aaa","69999999999","6999999999");
+        company.listAdd(cal);
+
+        ClinicalAnalysisLaboratory expected = cal;
+
+        ClinicalAnalysisLaboratory actual = company.getClinicalAnalysisLaboratory(0);
+
+        Assert.assertEquals(expected,actual);
+
     }
 
     @Test
@@ -303,7 +328,6 @@ public class CompanyTest {
     public void saveParameter() {
 
         Company company = new Company("aaaa");
-        TestTypeStore testTypeStore = new TestTypeStore();
 
         Parameter pp = company.createParameter("aaa","aaa","aaa");
 
@@ -339,14 +363,13 @@ public class CompanyTest {
     public void getParameter() {
 
         Company company = new Company("aaaa");
-        TestTypeStore testTypeStore = new TestTypeStore();
 
-        Parameter pp = company.parameterStore.CreateParameter("aaa","aaa","aaa");
-        company.parameterStore.listAdd(pp);
+        Parameter pp = company.createParameter("aaa","aaa","aaa");
+        company.parameterListAdd(pp);
 
         Parameter expected = pp;
 
-        Parameter actual = company.parameterStore.getParameter(0);
+        Parameter actual = company.getParameter(0);
 
         Assert.assertEquals(expected,actual);
 
@@ -356,7 +379,6 @@ public class CompanyTest {
     public void getPP() {
 
         Company company = new Company("aaaa");
-        TestTypeStore testTypeStore = new TestTypeStore();
 
         Parameter pp = company.parameterStore.CreateParameter("aaa","aaa","aaa");
 
@@ -404,29 +426,154 @@ public class CompanyTest {
 
     @Test
     public void testValidateTestType() {
+
+        Company company = new Company("aaaa");
+
+        TestType tt = company.createTestType("aaa","aaa","aaa");
+
+        Assert.assertTrue(company.validateTestType(tt));
+
     }
 
     @Test
     public void testSaveTestType() {
+
+        Company company = new Company("aaaa");
+
+        TestType tt = company.createTestType("aaa","aaa","aaa");
+
+        Assert.assertTrue(company.saveTestType(tt));
+
     }
 
     @Test
     public void testListContainsTestType() {
+
+        Company company = new Company("aaaa");
+
+        TestType tt = company.createTestType("aaa","aaa","aaa");
+
+        Assert.assertTrue(company.listContainsTestType(tt));
+
     }
 
     @Test
     public void testListAdd1() {
+
+        Company company = new Company("aaaa");
+
+        TestType tt = company.createTestType("aaa","aaa","aaa");
+
+        Assert.assertTrue(company.listAdd(tt));
+
     }
 
-    @Test
+   /* @Test
     public void getParameterCategory() {
-    }
 
-    @Test
+        Company company = new Company("aaaa");
+
+        ParameterCategory pc = company.createParameterCategory("aaaaa","aaa","aaa");
+        company.listAddParameterCategory(pc);
+
+        ParameterCategory  expected = pc;
+        ParameterCategory  actual = company.getParameterCategory(0);
+
+        Assert.assertEquals(expected,actual);*/
+
+   // }
+
+   /* @Test
     public void getPC() {
-    }
+
+        Company company = new Company("aaaa");
+
+        ParameterCategory pc = company.createParameterCategory("aaaaa","aaa","aaa");
+
+        ParameterCategory  expected = pc;
+        ParameterCategory  actual = company.getPC();
+
+        Assert.assertEquals(expected,actual);
+
+    }*/ // estes dois metodos estao a dar mal verificar a store
 
     @Test
     public void getParameterCategoryStore() {
+
+        Company company = new Company("aaaa");
+
+        ParameterCategoryStore parameterCategoryStore = company.getParameterCategoryStore();
+
+    }
+
+    @Test
+    public void getClinicalAnalysisLaboratoryStore(){
+
+        Company company = new Company("aaaa");
+
+       ClinicalAnalysisLaboratoryStore clinicalAnalysisLaboratoryStore = company.getClinicalAnalysisLaboratoryStore();
+
+    }
+
+    @Test
+    public void listAddParameterCategory(){
+
+        Company company = new Company("aaaa");
+
+        ParameterCategory pc = company.createParameterCategory("aaaaa","aaa","aaa");
+
+        Assert.assertTrue(company.listAddParameterCategory(pc));
+
+    }
+
+    @Test
+    public void listContainsParameterCategory(){
+
+        Company company = new Company("aaaa");
+
+        ParameterCategory pc = company.createParameterCategory("aaaaa","aaa","aaa");
+
+        Assert.assertTrue(company.listContainsParameterCategory(pc));
+
+    }
+
+    @Test
+    public void saveParameterCategory(){
+
+        Company company = new Company("aaaa");
+
+        ParameterCategory pc = company.createParameterCategory("aaaaa","aaa","aaa");
+
+        Assert.assertTrue(company.saveParameterCategory(pc));
+
+    }
+
+    @Test
+    public void validateParameterCategory(){
+
+        Company company = new Company("aaaa");
+
+        ParameterCategory pc = company.createParameterCategory("aaaaa","aaa","aaa");
+
+        Assert.assertTrue(company.validateParameterCategory(pc));
+
+    }
+
+    @Test
+    public void ParameterCategoryStore() {
+
+        Company company = new Company("aaaa");
+
+        ParameterCategoryStore parameterCategoryStore = company.ParameterCategory();
+
+    }
+
+    @Test
+    public void  ParameterStore() {
+
+        Company company = new Company("aaaa");
+
+        ParameterStore parameterStore = company.Parameter();
+
     }
 }

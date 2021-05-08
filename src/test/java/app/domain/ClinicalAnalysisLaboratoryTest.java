@@ -1,6 +1,5 @@
 package app.domain;
 
-import app.domain.ClinicalAnalysisLaboratory;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -162,7 +161,7 @@ public class ClinicalAnalysisLaboratoryTest {
     @Test(expected = IllegalArgumentException.class)
     public void checkTINNumberBlank() {
 
-        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "014922356870", " ");
+        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "014922356870", "");
     }
 
     @Test(expected = IllegalArgumentException.class)

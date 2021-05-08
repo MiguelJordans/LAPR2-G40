@@ -1,11 +1,6 @@
 package app.domain;
-
-import app.domain.ClinicalAnalysisLaboratory;
-import app.domain.ClinicalAnalysisLaboratoryStore;
 import org.junit.Assert;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class ClinicalAnalysisLaboratoryStoreTest {
 
