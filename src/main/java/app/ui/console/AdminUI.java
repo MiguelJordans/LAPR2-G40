@@ -24,7 +24,7 @@ public class AdminUI implements Runnable{
         options.add(new MenuItem("Specify a new Parameter ", new ParameterUI()));
         options.add(new MenuItem("Register a employee ", new ShowTextUI("You have chosen Option C.")));
         options.add(new MenuItem("Register Client ", new ShowTextUI("You have chosen Option C.")));
-        
+
         int option = 0;
         do
         {

@@ -14,7 +14,7 @@ public class TestTypeStore {
         return this.tt = new TestType(testCode,description,collectingMethod);
     }
 
-    public boolean ValidateTestType(TestType tt){
+    public boolean validateTestType(TestType tt){
         if(tt==null||listContain(tt)){
             return false;
         }
@@ -30,7 +30,7 @@ public class TestTypeStore {
     }
 
     public boolean saveTestType(){
-        if(ValidateTestType(this.tt)){
+        if(validateTestType(tt)){
             listAdd(tt);
             return true;
         } else {

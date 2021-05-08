@@ -1,7 +1,6 @@
 package app.controller;
 
 import app.domain.Company;
-import app.domain.ParameterCategory;
 import org.junit.Assert;
 import org.junit.Test;
 

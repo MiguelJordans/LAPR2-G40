@@ -3,8 +3,6 @@ package app.domain;
 import auth.AuthFacade;
 import org.apache.commons.lang3.StringUtils;
 
-import java.util.List;
-
 /**
  *
  * @author Paulo Maio <pam@isep.ipp.pt>
@@ -45,11 +43,11 @@ public class Company {
         return new ClinicalAnalysisLaboratory(laboratoryID, name, address, phoneNumber, TINnumber);
     }
 
-    public Parameter creatParameter(String code,String description, String name){
+    public Parameter createParameter(String code,String description, String name){
         return new Parameter(code,description,name);
     }
 
-    public ParameterCategory creatParameterCategory(String code,String description, String nhsld){
+    public ParameterCategory createParameterCategory(String code,String description, String nhsld){
         return new ParameterCategory(code,description,nhsld);
     }
 
@@ -73,7 +71,7 @@ public class Company {
     //public List
 
     public boolean validateTestType(TestType tt){
-        testTypeStore.ValidateTestType(tt);
+        testTypeStore.validateTestType(tt);
         return true;
     }
 

@@ -23,7 +23,7 @@ public class TestTypeStoreTest {
 
         boolean expected = true;
 
-        boolean actual = tt.ValidateTestType(aa);
+        boolean actual = tt.validateTestType(aa);
 
         Assert.assertEquals(expected,actual);
 
@@ -38,7 +38,7 @@ public class TestTypeStoreTest {
 
         boolean expected = false;
 
-        boolean actual = tt.ValidateTestType(aa);
+        boolean actual = tt.validateTestType(aa);
 
         Assert.assertEquals(expected,actual);
 
