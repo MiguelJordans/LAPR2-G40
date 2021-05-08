@@ -62,11 +62,6 @@ public class Company {
         return testTypeList = new TestTypeStore();
     }
 
-    public boolean addTestType(TestType tt) {
-        testTypeStore.listAdd(tt);
-        return true;
-    }
-
     //public List
 
     public boolean validateTestType(TestType tt) {
@@ -109,12 +104,6 @@ public class Company {
 
     public static ParameterStore Parameter() {
         return parameterList = new ParameterStore();
-    }
-
-
-    public boolean addParameter(Parameter pp) {
-        parameterStore.listAdd(pp);
-        return true;
     }
 
     //public List
@@ -170,11 +159,6 @@ public class Company {
         return  parameterStore.getParameterList();
     }
 
-    public boolean addParameterCategory(ParameterCategory pc) {
-        parameterCategoryStore.listAdd(pc);
-        return true;
-    }
-
     public boolean validateParameterCategory(ParameterCategory pc) {
         parameterCategoryStore.validateParameterCategory(pc);
         return true;
@@ -191,7 +175,7 @@ public class Company {
     }
 
     public boolean listAddParameterCategory(ParameterCategory pc) {
-        parameterCategoryStore.listAdd(pc);
+        parameterCategoryStore.listAdd();
         return true;
     }
 
@@ -218,11 +202,6 @@ public class Company {
         return clinicalAnalysisLaboratoryList = new ClinicalAnalysisLaboratoryStore();
     }
 
-    public boolean addClinicalAnalysisLaboratory(ClinicalAnalysisLaboratory cal) {
-        clinicalAnalysisLaboratoryStore.listAdd(cal);
-        return true;
-    }
-
     public boolean validateClinicalAnalysisLaboratory(ClinicalAnalysisLaboratory cal) {
         clinicalAnalysisLaboratoryStore.validateClinicalAnalysisLaboratory(cal);
         return true;
@@ -238,7 +217,7 @@ public class Company {
         return true;
     }
 
-    public boolean listAdd(ClinicalAnalysisLaboratory cal) {
+    public boolean listAddAnalysisLaboratory(ClinicalAnalysisLaboratory cal) {
         clinicalAnalysisLaboratoryStore.listAdd(cal);
         return true;
     }

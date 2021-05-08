@@ -16,8 +16,8 @@ import java.util.Properties;
  */
 public class App {
 
-    private Company company;
-    private AuthFacade authFacade;
+    private final Company company;
+    private final AuthFacade authFacade;
 
     private App()
     {

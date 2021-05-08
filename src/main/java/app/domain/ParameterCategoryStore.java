@@ -5,10 +5,8 @@ import java.util.List;
 
 public class ParameterCategoryStore {
 
-    static List<ParameterCategory> list = new ArrayList<ParameterCategory>();
+    static List<ParameterCategory> list = new ArrayList<>();
     ParameterCategory pc;
-
-    public ParameterCategoryStore(){}
 
     public ParameterCategory CreateParameterCategory(String description,String code,String nhsld){
         return this.pc = new ParameterCategory(code,description,nhsld);
@@ -20,7 +18,6 @@ public class ParameterCategoryStore {
         }
         return true;
     }
-
     public boolean listContain(ParameterCategory pc){
         if(this.list.contains(pc)){
             return true;
@@ -31,15 +28,14 @@ public class ParameterCategoryStore {
 
     public boolean saveParameterCategory(){
         if(validateParameterCategory(this.pc)){
-            listAdd(pc);
+            listAdd();
             return true;
         } else {
             return false;
         }
-
     }
 
-    public boolean listAdd(ParameterCategory c){
+    public boolean listAdd(){
         list.add(pc);
         return true;
     }

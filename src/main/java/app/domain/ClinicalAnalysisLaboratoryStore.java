@@ -9,7 +9,7 @@ public class ClinicalAnalysisLaboratoryStore {
     ClinicalAnalysisLaboratory cal;
 
     public ClinicalAnalysisLaboratoryStore() {
-        this.clinicalAnalysisLaboratoryList = new ArrayList<ClinicalAnalysisLaboratory>();
+        this.clinicalAnalysisLaboratoryList = new ArrayList<>();
     }
 
     public ClinicalAnalysisLaboratory CreateClinicalAnalysisLaboratory(String laboratoryID, String name, String address, String phoneNumber, String tinNumber) {

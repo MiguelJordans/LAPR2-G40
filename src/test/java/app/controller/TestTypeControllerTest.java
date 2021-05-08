@@ -29,7 +29,7 @@ public class TestTypeControllerTest {
         ParameterCategoryStore pcStore = new ParameterCategoryStore();
 
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcStore.listAdd(pc);
+        pcStore.listAdd();
 
         ctrl.CreateTestType("aaa","aaa","aaa",pcStore);
 
@@ -41,7 +41,7 @@ public class TestTypeControllerTest {
         ParameterCategoryStore pcStore = new ParameterCategoryStore();
 
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcStore.listAdd(pc);
+        pcStore.listAdd();
 
         ctrl.CreateTestType("aaa","+++","aaa",pcStore);
     }
@@ -53,7 +53,7 @@ public class TestTypeControllerTest {
         ParameterCategoryStore pcStore = new ParameterCategoryStore();
 
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcStore.listAdd(pc);
+        pcStore.listAdd();
 
        ctrl.CreateTestType("aaa","aaa","aaa",pcStore);
 
@@ -68,7 +68,7 @@ public class TestTypeControllerTest {
         ParameterCategoryStore pcStore = new ParameterCategoryStore();
 
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcStore.listAdd(pc);
+        pcStore.listAdd();
 
         ctrl.CreateTestType("aaa","+++","aaa",pcStore);
 
@@ -83,7 +83,7 @@ public class TestTypeControllerTest {
         ParameterCategoryStore pcStore = new ParameterCategoryStore();
 
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcStore.listAdd(pc);
+        pcStore.listAdd();
 
         ctrl.CreateTestType("aaa","aaa","aaa",pcStore);
 
@@ -98,7 +98,7 @@ public class TestTypeControllerTest {
         ParameterCategoryStore pcStore = new ParameterCategoryStore();
 
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcStore.listAdd(pc);
+        pcStore.listAdd();
 
         ctrl.CreateTestType("aaa","aaa","aaa",pcStore);
 
@@ -119,7 +119,7 @@ public class TestTypeControllerTest {
         ParameterCategoryStore pcStore = new ParameterCategoryStore();
 
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcStore.listAdd(pc);
+        pcStore.listAdd();
 
         ctrl.CreateTestType("aaa","+++","aaa",pcStore);
 
@@ -140,7 +140,7 @@ public class TestTypeControllerTest {
         TestTypeStore testTypeStore = new TestTypeStore();
 
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcStore.listAdd(pc);
+        pcStore.listAdd();
 
         TestType tt = new TestType("aaa","aaa","aaa",pcStore);
         testTypeStore.listAdd(tt);

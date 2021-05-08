@@ -51,7 +51,7 @@ public class CompanyTest {
         ParameterCategoryStore pcStore = new ParameterCategoryStore();
 
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcStore.listAdd(pc);
+        pcStore.listAdd();
 
         TestType tt = company.createTestType("aaa","aaa","aaa",pcStore);
 
@@ -94,28 +94,13 @@ public class CompanyTest {
     }
 
     @Test
-    public void addTestType() {
-
-        Company company = new Company("aaaa");
-        ParameterCategoryStore pcStore = new ParameterCategoryStore();
-
-        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcStore.listAdd(pc);
-
-        TestType tt = company.createTestType("aaa","aaa","aaa",pcStore);
-
-        Assert.assertTrue(company.addTestType(tt));
-
-    }
-
-    @Test
     public void validateTestType() {
 
         Company company = new Company("aaaa");
         ParameterCategoryStore pcStore = new ParameterCategoryStore();
 
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcStore.listAdd(pc);
+        pcStore.listAdd();
 
         TestType tt = company.createTestType("aaa","aaa","aaa",pcStore);
 
@@ -131,7 +116,7 @@ public class CompanyTest {
         ParameterCategoryStore pcStore = new ParameterCategoryStore();
 
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcStore.listAdd(pc);
+        pcStore.listAdd();
 
         TestType tt = company.createTestType("aaa","aaa","aaa",pcStore);
 
@@ -151,7 +136,7 @@ public class CompanyTest {
         ParameterCategoryStore pcStore = new ParameterCategoryStore();
 
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcStore.listAdd(pc);
+        pcStore.listAdd();
 
         TestType tt = company.createTestType("aaa","aaa","aaa",pcStore);
 
@@ -171,7 +156,7 @@ public class CompanyTest {
         ParameterCategoryStore pcStore = new ParameterCategoryStore();
 
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcStore.listAdd(pc);
+        pcStore.listAdd();
 
         TestType tt = company.createTestType("aaa","aaa","aaa",pcStore);
 
@@ -190,7 +175,7 @@ public class CompanyTest {
         ParameterCategoryStore pcStore = new ParameterCategoryStore();
 
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcStore.listAdd(pc);
+        pcStore.listAdd();
 
         TestType tt = company.createTestType("aaa","aaa","aaa",pcStore);
         company.listAdd(tt);
@@ -209,7 +194,7 @@ public class CompanyTest {
         ParameterCategoryStore parameterCategoryStore = new ParameterCategoryStore();
 
         ParameterCategory pp = new ParameterCategory("aaaaa","aaa","aaa");
-        parameterCategoryStore.listAdd(pp);
+        parameterCategoryStore.listAdd();
 
         TestType tt = company.createTestType("aaa","aaa","aaa",parameterCategoryStore);
 
@@ -240,17 +225,6 @@ public class CompanyTest {
         Company company = new Company("aaa");
 
        ClinicalAnalysisLaboratoryStore calstore = company.ClinicalAnalysisLaboratory();
-
-    }
-
-    @Test
-    public void addClinicalAnalysisLaboratory() {
-
-        Company company = new Company("aaaa");
-
-        ClinicalAnalysisLaboratory cal = company.createClinicalAnalysisLaboratory("a23aa","aaa","aaa","69999999999","6999999999");
-
-        Assert.assertTrue(company.addClinicalAnalysisLaboratory(cal));
 
     }
 
@@ -296,7 +270,7 @@ public class CompanyTest {
         ParameterCategoryStore pcStore = new ParameterCategoryStore();
 
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcStore.listAdd(pc);
+        pcStore.listAdd();
 
         TestType tt = company.testTypeStore.CreateTestType("aaa","aaa","aaa",pcStore);
 
@@ -311,7 +285,7 @@ public class CompanyTest {
         Company company = new Company("aaaa");
 
         ClinicalAnalysisLaboratory cal = company.createClinicalAnalysisLaboratory("a23aa","aaa","aaa","69999999999","6999999999");
-        company.listAdd(cal);
+        company.listAddAnalysisLaboratory(cal);
 
         ClinicalAnalysisLaboratory expected = cal;
 
@@ -328,18 +302,6 @@ public class CompanyTest {
         TestTypeStore testTypeStore = new TestTypeStore();
 
         Parameter pp = company.createParameter("aaa","aaa","aaa");
-
-    }
-
-    @Test
-    public void addParameter() {
-
-        Company company = new Company("aaaa");
-        TestTypeStore testTypeStore = new TestTypeStore();
-
-        Parameter pp = company.createParameter("aaa","aaa","aaa");
-
-        Assert.assertTrue(company.addParameter(pp));
 
     }
 
@@ -445,24 +407,13 @@ public class CompanyTest {
     }
 
     @Test
-    public void addParameterCategory() {
-
-        Company company = new Company("aaaa");
-
-        ParameterCategory pp = company.createParameterCategory("aaaaa","aaa","aaa");
-
-        Assert.assertTrue(company.addParameterCategory(pp));
-
-    }
-
-    @Test
     public void testValidateTestType() {
 
         Company company = new Company("aaaa");
         ParameterCategoryStore pcStore = new ParameterCategoryStore();
 
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcStore.listAdd(pc);
+        pcStore.listAdd();
 
         TestType tt = company.createTestType("aaa","aaa","aaa",pcStore);
 
@@ -477,7 +428,7 @@ public class CompanyTest {
         ParameterCategoryStore pcStore = new ParameterCategoryStore();
 
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcStore.listAdd(pc);
+        pcStore.listAdd();
 
         TestType tt = company.createTestType("aaa","aaa","aaa",pcStore);
 
@@ -492,7 +443,7 @@ public class CompanyTest {
         ParameterCategoryStore pcStore = new ParameterCategoryStore();
 
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcStore.listAdd(pc);
+        pcStore.listAdd();
 
         TestType tt = company.createTestType("aaa","aaa","aaa",pcStore);
 
@@ -507,7 +458,7 @@ public class CompanyTest {
         ParameterCategoryStore pcStore = new ParameterCategoryStore();
 
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcStore.listAdd(pc);
+        pcStore.listAdd();
 
         TestType tt = company.createTestType("aaa","aaa","aaa",pcStore);
 
@@ -635,7 +586,7 @@ public class CompanyTest {
 
         ParameterCategoryStore parameterCategoryStore = new ParameterCategoryStore();
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        parameterCategoryStore.listAdd(pc);
+        parameterCategoryStore.listAdd();
 
         TestType tt = company.createTestType("aaa","aaa","aaa",parameterCategoryStore);
 

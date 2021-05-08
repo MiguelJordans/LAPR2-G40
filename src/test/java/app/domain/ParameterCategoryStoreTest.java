@@ -34,7 +34,7 @@ public class ParameterCategoryStoreTest {
 
         ParameterCategoryStore pc = new ParameterCategoryStore();
         ParameterCategory aa = pc.CreateParameterCategory("AAA", "aaaaa", "aaa");
-        pc.listAdd(aa);
+        pc.listAdd();
 
         boolean expected = false;
 
@@ -49,7 +49,7 @@ public class ParameterCategoryStoreTest {
 
         ParameterCategoryStore pc = new ParameterCategoryStore();
         ParameterCategory aa = pc.CreateParameterCategory("AAA", "aaaaa", "aaa");
-        pc.listAdd(aa);
+        pc.listAdd();
 
         boolean expected = true;
 
@@ -92,7 +92,7 @@ public class ParameterCategoryStoreTest {
 
         ParameterCategoryStore pc = new ParameterCategoryStore();
         ParameterCategory aa = pc.CreateParameterCategory("AAA", "aaaaa", "aaa");
-        pc.listAdd(aa);
+        pc.listAdd();
 
         boolean expected = false;
 
@@ -109,7 +109,7 @@ public class ParameterCategoryStoreTest {
 
         boolean expected = true;
 
-        boolean actual = pc.listAdd(aa);
+        boolean actual = pc.listAdd();
 
         Assert.assertEquals(expected, actual);
 
@@ -120,11 +120,11 @@ public class ParameterCategoryStoreTest {
 
         ParameterCategoryStore pc = new ParameterCategoryStore();
         ParameterCategory aa = pc.CreateParameterCategory("AAA", "aaaaa", "aaa");
-        pc.listAdd(aa);
+        pc.listAdd();
 
         boolean expected = true;
 
-        boolean actual = pc.listAdd(aa);
+        boolean actual = pc.listAdd();
 
         Assert.assertEquals(expected, actual);
 
@@ -135,7 +135,7 @@ public class ParameterCategoryStoreTest {
 
         ParameterCategoryStore pc = new ParameterCategoryStore();
         ParameterCategory aa = pc.CreateParameterCategory("AAA", "aaaaa", "aaa");
-        pc.listAdd(aa);
+        pc.listAdd();
 
         ParameterCategory expected = pc.getParameterCategory(0);
 
@@ -165,7 +165,7 @@ public class ParameterCategoryStoreTest {
 
         ParameterCategoryStore pcStore = new ParameterCategoryStore();
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcStore.listAdd(pc);
+        pcStore.listAdd();
 
         pcStore.getParameterCategoryList();
 

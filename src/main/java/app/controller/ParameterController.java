@@ -8,7 +8,6 @@ public class ParameterController {
 
     private Company company;
     private ParameterStore store;
-    private List<Parameter> ppList;
 
     public ParameterController(){
         this(App.getInstance().getCompany());

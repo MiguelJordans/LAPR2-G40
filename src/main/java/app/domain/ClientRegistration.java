@@ -143,7 +143,7 @@ public class ClientRegistration {
         if (StringUtils.isBlank(auxStrCitizenCardNumber)) {
             throw new IllegalArgumentException("Citizen card number cannot be empty.");
         }
-        if (!(auxStrCitizenCardNumber.length() == 16)) {
+        if (auxStrCitizenCardNumber.length() != 16) {
             throw new IllegalArgumentException("Citizen card number must have 16 digit numbers.");
         }
 
@@ -165,7 +165,7 @@ public class ClientRegistration {
         if (StringUtils.isBlank(auxStrPhoneNumber)) {
             throw new IllegalArgumentException("Phone number cannot be empty.");
         }
-        if (!(auxStrPhoneNumber.length() == 11)) {
+        if (auxStrPhoneNumber.length() != 11) {
             throw new IllegalArgumentException("Phone number must have 11 digit numbers.");
         }
 
@@ -187,7 +187,7 @@ public class ClientRegistration {
         if (StringUtils.isBlank(auxStrTINnumber)) {
             throw new IllegalArgumentException("TIN number cannot be empty.");
         }
-        if (!(auxStrTINnumber.length() == 10)) {
+        if (auxStrTINnumber.length() != 10) {
             throw new IllegalArgumentException("TIN number must have 10 digit numbers.");
         }
 
@@ -209,7 +209,7 @@ public class ClientRegistration {
         if (StringUtils.isBlank(auxStrNHSnumber)) {
             throw new IllegalArgumentException("TIN number cannot be empty.");
         }
-        if (!(auxStrNHSnumber.length() == 10)) {
+        if (auxStrNHSnumber.length() != 10) {
             throw new IllegalArgumentException("TIN number must have 10 digit numbers.");
         }
 
