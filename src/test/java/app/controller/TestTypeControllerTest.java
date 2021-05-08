@@ -132,7 +132,7 @@ public class TestTypeControllerTest {
 
     }
 
-    @Test
+    @Test(expected = NullPointerException.class)
     public void getTestTypeList(){
 
         TestTypeController ctrl = new TestTypeController();

@@ -1,6 +1,6 @@
 package app.controller;
 
-import app.domain.Company;
+import app.domain.*;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -99,6 +99,15 @@ public class ParameterControllerTest {
         String actual = (ctrl.getPP());
 
         Assert.assertEquals(expected,actual);
+
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void getParameterList(){
+
+        ParameterController ctrl = new ParameterController();
+
+        ctrl.getParameterList();
 
     }
 
