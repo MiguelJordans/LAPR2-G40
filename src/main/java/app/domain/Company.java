@@ -17,8 +17,8 @@ import java.util.List;
 
 public class Company {
 
-    private String designation;
-    private AuthFacade authFacade;
+    private final String designation;
+    private final AuthFacade authFacade;
 
     public Company(String designation) {
         if (StringUtils.isBlank(designation))
@@ -62,8 +62,6 @@ public class Company {
         return testTypeList = new TestTypeStore();
     }
 
-    //public List<TestType> getTestType(){return testTypeStore.getTt();}
-
     public boolean addTestType(TestType tt) {
         testTypeStore.listAdd(tt);
         return true;
@@ -76,7 +74,7 @@ public class Company {
         return true;
     }
 
-    public boolean saveTestType(TestType tt) {
+    public boolean saveTestType() {
         testTypeStore.saveTestType();
         return true;
     }
@@ -113,7 +111,6 @@ public class Company {
         return parameterList = new ParameterStore();
     }
 
-    //public List<TestType> getTestType(){return testTypeStore.getTt();}
 
     public boolean addParameter(Parameter pp) {
         parameterStore.listAdd(pp);
@@ -127,7 +124,7 @@ public class Company {
         return true;
     }
 
-    public boolean saveParameter(Parameter pp) {
+    public boolean saveParameter() {
         parameterStore.saveParameter();
         return true;
     }
@@ -183,7 +180,7 @@ public class Company {
         return true;
     }
 
-    public boolean saveParameterCategory(ParameterCategory pc) {
+    public boolean saveParameterCategory() {
         parameterCategoryStore.saveParameterCategory();
         return true;
     }
@@ -231,7 +228,7 @@ public class Company {
         return true;
     }
 
-    public boolean saveClinicalAnalysisLaboratory(ClinicalAnalysisLaboratory cal) {
+    public boolean saveClinicalAnalysisLaboratory() {
         clinicalAnalysisLaboratoryStore.saveClinicalAnalysisLaboratory();
         return true;
     }

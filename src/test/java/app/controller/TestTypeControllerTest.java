@@ -1,8 +1,6 @@
 package app.controller;
 
-import app.domain.Company;
-import app.domain.ParameterCategory;
-import app.domain.ParameterCategoryStore;
+import app.domain.*;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -131,6 +129,23 @@ public class TestTypeControllerTest {
         String actual = (ctrl.getTT()).toString();
 
         Assert.assertEquals(expected,actual);
+
+    }
+
+    @Test
+    public void getTestTypeList(){
+
+        TestTypeController ctrl = new TestTypeController();
+        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+        TestTypeStore testTypeStore = new TestTypeStore();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcStore.listAdd(pc);
+
+        TestType tt = new TestType("aaa","aaa","aaa",pcStore);
+        testTypeStore.listAdd(tt);
+
+        ctrl.getTestTypeList();
 
     }
 

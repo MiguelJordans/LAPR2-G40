@@ -193,16 +193,4 @@ public class TestTypeStoreTest {
 
     }
 
-    @Test
-    public void getTestTypeList(){
-
-        TestTypeStore tt = new TestTypeStore();
-        ParameterCategoryStore pcStore = new ParameterCategoryStore();
-        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcStore.listAdd(pc);
-
-        tt.getTestTypeList();
-
-    }
-
 }
