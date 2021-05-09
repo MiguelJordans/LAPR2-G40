@@ -18,11 +18,11 @@ public class ClinicalAnalysisLaboratoryStore {
     /**
      * Creates a Clinical Analysis Laboratory.
      *
-     * @param laboratoryID - the Clinical Analysis Laboratory's laboratory ID
-     * @param name         - the Clinical Analysis Laboratory's name
-     * @param address      - the Clinical Analysis Laboratory's address
-     * @param phoneNumber  - the Clinical Analysis Laboratory's phone number
-     * @param tinNumber    - the Clinical Analysis Laboratory's TIN number
+     * @param laboratoryID the Clinical Analysis Laboratory's laboratory ID
+     * @param name the Clinical Analysis Laboratory's name
+     * @param address the Clinical Analysis Laboratory's address
+     * @param phoneNumber the Clinical Analysis Laboratory's phone number
+     * @param tinNumber the Clinical Analysis Laboratory's TIN number
      */
 
     public ClinicalAnalysisLaboratory CreateClinicalAnalysisLaboratory(String laboratoryID, String name, String address, String phoneNumber, String tinNumber) {
@@ -32,7 +32,7 @@ public class ClinicalAnalysisLaboratoryStore {
     /**
      * Validates a Clinical Analysis Laboratory.
      *
-     * @param cal - the object Clinical Analysis Laboratory
+     * @param cal the object Clinical Analysis Laboratory
      * @return the validation of the Clinical Analysis Laboratory being created
      */
     public boolean validateClinicalAnalysisLaboratory(ClinicalAnalysisLaboratory cal) {
@@ -45,7 +45,7 @@ public class ClinicalAnalysisLaboratoryStore {
     /**
      * Checks if the new object created is already in the list.
      *
-     * @param cal - the object Clinical Analysis Laboratory
+     * @param cal the object Clinical Analysis Laboratory
      * @return true if the list contains the Clinical Analysis Laboratory and false if it doesn't
      */
     public boolean listContain(ClinicalAnalysisLaboratory cal) {
@@ -73,7 +73,7 @@ public class ClinicalAnalysisLaboratoryStore {
     /**
      * Adds an instance of Clinical Analysis Laboratory to the list.
      *
-     * @param cal - the object Clinical Analysis Laboratory
+     * @param cal the object Clinical Analysis Laboratory
      * @return the addition of the Clinical Analysis Laboratory to the list
      */
     public boolean listAdd(ClinicalAnalysisLaboratory cal) {
@@ -84,7 +84,7 @@ public class ClinicalAnalysisLaboratoryStore {
     /**
      * Replaces the element at the specified position in the list with the specified element.
      *
-     * @param i - the index of the element to replace
+     * @param i the index of the element to replace
      * @return the element previously at the specified position
      */
     public ClinicalAnalysisLaboratory getClinicalAnalysisLaboratory(int i) {
@@ -99,6 +99,4 @@ public class ClinicalAnalysisLaboratoryStore {
     public ClinicalAnalysisLaboratory getCal() {
         return cal;
     }
-
-
 }

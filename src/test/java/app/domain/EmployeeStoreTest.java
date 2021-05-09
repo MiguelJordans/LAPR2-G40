@@ -1,3 +1,4 @@
+
 package app.domain;
 
 import org.junit.Assert;

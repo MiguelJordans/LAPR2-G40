@@ -8,6 +8,7 @@ public class EmployeeTest {
 
 //CheckNameRules
 
+
     @Test(expected = IllegalArgumentException.class)
     public void checkNameBlank() {
 
@@ -364,6 +365,19 @@ public class EmployeeTest {
 
 
         String actual = emp.getSocCode();
+        Assert.assertEquals(expected, actual);
+
+    }
+
+    @Test
+    public void EmployeeToString(){
+
+        Employee emp = new Employee("DanielCosta", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001","1234567","specialistdoctor","123456");
+
+        String expected = emp.toString();
+
+        String actual = emp.toString();
+
         Assert.assertEquals(expected, actual);
 
     }

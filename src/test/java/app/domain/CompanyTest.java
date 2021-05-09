@@ -1279,4 +1279,57 @@ public class CompanyTest {
 
     }
 
+    @Test
+    public void Employee1(){
+
+        Company company = new Company("aaaa");
+
+        EmployeeStore employeeStore = company.Employee();
+
+
+    }
+
+    @Test
+    public void EmployeeNotNull(){
+
+        Company company = new Company("aaaa");
+
+        EmployeeStore employeeStore = company.Employee();
+
+        Assert.assertNotNull(employeeStore);
+
+
+    }
+
+    @Test
+    public void getClientRegistrationStore(){
+
+        Company company = new Company("aaaa");
+
+        ClientRegistrationStore clientRegistrationStore = company.getClientRegistrationStore();
+
+    }
+
+    @Test
+    public void getClientRegistrationStoreNotNull(){
+
+        Company company = new Company("aaaa");
+
+        ClientRegistrationStore clientRegistrationStore = company.getClientRegistrationStore();
+
+        Assert.assertNotNull(clientRegistrationStore);
+
+    }
+
+    @Test
+    public void Employee(){
+
+        Company company = new Company("aaaa");
+
+        Employee emp = company.createEmployee("aaaa","aaaa","aaaa@dn.pt","11111111111","111111111","1111111","employee","111111");
+
+    }
+
+
+
 }

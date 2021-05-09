@@ -192,5 +192,6 @@ public class TestType {
                 " Test Code: " + testCode  +
                 ", Description:" + description +
                 ", CollectingMethod:" + collectingMethod;
+
     }
 }

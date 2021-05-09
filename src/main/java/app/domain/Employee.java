@@ -2,15 +2,17 @@ package app.domain;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;
+
 import java.util.regex.Pattern;
 
 public class Employee {
 
-    String name, address, phoneNumber, email, orgRole;
-    String employeeId;
-    String socCode, doctorIndexNumber;
+    private String name, address, phoneNumber, email, orgRole;
+    private String employeeId;
+    private String socCode, doctorIndexNumber;
 
 
+<<<<<<< HEAD
     /**
      * Creates an instance of an Employee.
      *
@@ -25,6 +27,9 @@ public class Employee {
      */
 
     public Employee (String name, String address, String email, String phoneNumber, String employeeId, String socCode, String orgRole, String doctorIndexNumber){
+=======
+    public Employee(String name, String address, String email, String phoneNumber, String employeeId, String socCode, String orgRole, String doctorIndexNumber) {
+>>>>>>> 8f1b4ca68415a3cd92bfee29e722351925694e8a
 
         checkNameRules(name);
         checkAddressRules(address);
@@ -46,6 +51,7 @@ public class Employee {
     }
 
     //Checks
+<<<<<<< HEAD
 
     /**
      * Checks the Doctor Index Number rules
@@ -54,16 +60,20 @@ public class Employee {
      *
      */
     public void checkDoctorIndexNumber (String doctorIndexNumber){
+=======
+    public void checkDoctorIndexNumber(String doctorIndexNumber) {
+>>>>>>> 8f1b4ca68415a3cd92bfee29e722351925694e8a
 
-        if (StringUtils.isBlank(doctorIndexNumber)){
+        if (StringUtils.isBlank(doctorIndexNumber)) {
             throw new IllegalArgumentException("Doctor Index Number can't be empty.");
         }
-        if (doctorIndexNumber.length()!=6){
+        if (doctorIndexNumber.length() != 6) {
             throw new IllegalArgumentException("Doctor Index Number needs to have exactly 6 digits.");
         }
 
     }
 
+<<<<<<< HEAD
     /**
      * Checks the Organization Role rules
      *
@@ -72,8 +82,11 @@ public class Employee {
      */
 
     public void checkOrgRole (String orgRole){
+=======
+    public void checkOrgRole(String orgRole) {
+>>>>>>> 8f1b4ca68415a3cd92bfee29e722351925694e8a
 
-        String aux = orgRole.trim() ;
+        String aux = orgRole.trim();
         aux = aux.toLowerCase();
 
         if (StringUtils.isBlank(orgRole)) {
@@ -92,7 +105,7 @@ public class Employee {
      *
      */
 
-    public void checkNameRules(String name){
+    public void checkNameRules(String name) {
 
         String aux = name.trim();
         aux = aux.toLowerCase();
@@ -113,6 +126,7 @@ public class Employee {
 
     }
 
+<<<<<<< HEAD
     /**
      * Checks the Employee's address rules
      *
@@ -121,19 +135,23 @@ public class Employee {
      */
 
     public void checkAddressRules (String address){
+=======
+    public void checkAddressRules(String address) {
+>>>>>>> 8f1b4ca68415a3cd92bfee29e722351925694e8a
         String aux = address.trim();
         aux = aux.toLowerCase();
 
-        if(StringUtils.isBlank(address)){
+        if (StringUtils.isBlank(address)) {
             throw new IllegalArgumentException("Address cannot be empty.");
         }
 
-        if (!(aux.length() <= 30)){
+        if (!(aux.length() <= 30)) {
             throw new IllegalArgumentException("Address cannot have more than 30 characters.");
         }
 
     }
 
+<<<<<<< HEAD
     /**
      * Checks the Employee's email rules
      *
@@ -142,6 +160,9 @@ public class Employee {
      */
 
     public void checkEmailRules(String email){
+=======
+    public void checkEmailRules(String email) {
+>>>>>>> 8f1b4ca68415a3cd92bfee29e722351925694e8a
 
         if (StringUtils.isBlank(email)) {
             throw new IllegalArgumentException("Email cannot be empty.");
@@ -151,7 +172,7 @@ public class Employee {
 
         Pattern pat = Pattern.compile(emailRegex);
 
-        if (!pat.matcher(email).matches()){
+        if (!pat.matcher(email).matches()) {
             throw new IllegalArgumentException("Invalid Email format.");
         }
 
@@ -165,7 +186,7 @@ public class Employee {
      */
 
     public void checkPhoneNumberRules(String phoneNumber) {
-        String auxTrimPhoneNumber = phoneNumber.replaceAll("\s", "");
+        String auxTrimPhoneNumber = phoneNumber.replaceAll("\\s", "");
         char[] auxChar = auxTrimPhoneNumber.toCharArray();
 
         if (StringUtils.isBlank(phoneNumber)) {
@@ -182,6 +203,7 @@ public class Employee {
         }
     }
 
+<<<<<<< HEAD
     /**
      * Checks the Employee's ID rules
      *
@@ -190,19 +212,23 @@ public class Employee {
      */
 
     public void checkEmployeeId (String employeeId){
+=======
+    public void checkEmployeeId(String employeeId) {
+>>>>>>> 8f1b4ca68415a3cd92bfee29e722351925694e8a
 
 
-        String auxEmployeeId = employeeId.replaceAll("\s","");
+        String auxEmployeeId = employeeId.replaceAll("\\s", "");
 
-        if (StringUtils.isBlank(auxEmployeeId)){
+        if (StringUtils.isBlank(auxEmployeeId)) {
             throw new IllegalArgumentException("Employee ID cannot be empty.");
         }
-        if (!(auxEmployeeId.length()==9)){
+        if (!(auxEmployeeId.length() == 9)) {
             throw new IllegalArgumentException("Employee ID has an invalid format.");
         }
 
     }
 
+<<<<<<< HEAD
     /**
      * Checks the Employee's SOC Code rules
      *
@@ -211,11 +237,14 @@ public class Employee {
      */
 
     public void checkSocCode (String socCode){
+=======
+    public void checkSocCode(String socCode) {
+>>>>>>> 8f1b4ca68415a3cd92bfee29e722351925694e8a
 
-        String auxSocCode = socCode.replaceAll("\s","");
+        String auxSocCode = socCode.replaceAll("\\s", "");
         char[] auxchar = auxSocCode.toCharArray();
 
-        if (StringUtils.isBlank(auxSocCode)){
+        if (StringUtils.isBlank(auxSocCode)) {
             throw new IllegalArgumentException("SOC code cannot be empty.");
         }
         if (!(auxSocCode.length() == 7)) {
@@ -231,6 +260,7 @@ public class Employee {
         }
 
     }
+<<<<<<< HEAD
 
 
 
@@ -304,6 +334,41 @@ public class Employee {
      */
 
     public String getSocCode(){return socCode;}
+=======
+
+    //Gets
+    public String getDoctorIndexNumber() {
+        return doctorIndexNumber;
+    }
+
+    public String getOrgRole() {
+        return orgRole;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public String getEmployeeId() {
+        return employeeId;
+    }
+
+    public String getSocCode() {
+        return socCode;
+    }
+>>>>>>> 8f1b4ca68415a3cd92bfee29e722351925694e8a
 
 
     /**
@@ -318,6 +383,7 @@ public class Employee {
     }
 
     //Sets
+<<<<<<< HEAD
 
     /**
      * Modifies the Specialist Doctor's Doctor Index Number
@@ -388,8 +454,56 @@ public class Employee {
      */
 
     public void setSocCode(String socCode){this.socCode = socCode;}
+=======
+    public void setDoctorIndexNumber(String doctorIndexNumber) {
+        this.doctorIndexNumber = doctorIndexNumber;
+    }
+
+    public void setOrgRole(String orgRole) {
+        this.orgRole = orgRole;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public void setEmployeeId(String employeeId) {
+        this.employeeId = employeeId;
+    }
+>>>>>>> 8f1b4ca68415a3cd92bfee29e722351925694e8a
+
+    public void setSocCode(String socCode) {
+        this.socCode = socCode;
+    }
+
+<<<<<<< HEAD
 
 
-
-
+=======
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", email='" + email + '\'' +
+                ", orgRole='" + orgRole + '\'' +
+                ", employeeId='" + employeeId + '\'' +
+                ", socCode='" + socCode + '\'' +
+                ", doctorIndexNumber='" + doctorIndexNumber + '\'' +
+                '}';
+    }
+>>>>>>> 8f1b4ca68415a3cd92bfee29e722351925694e8a
 }

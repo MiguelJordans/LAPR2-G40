@@ -53,7 +53,7 @@ public class ClientRegistrationTest {
     public void setBirthdate() {
 
         ClientRegistration cr = new ClientRegistration("Jason", "2344@gmail.com", "Male", "23/06/1999",
-            "5647748895858574", "05968742634","7468496874", "7456375876");
+                "5647748895858574", "05968742634","7468496874", "7456375876");
 
         String expected = "11/01/1980";
         cr.setBirthdate(expected);
@@ -145,6 +145,29 @@ public class ClientRegistrationTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
+    public void checkNameIsInvalid2() {
+
+        ClientRegistration cr = new ClientRegistration("++++", "2344@gmail.com", "Male", "23/06/1999",
+                "5647748895858574", "05968742634", "7468496874", "7456375876");
+
+    }
+
+    @Test
+    public void checkNameIsInvalid3() {
+
+        ClientRegistration cr = new ClientRegistration("aaa", "2344@gmail.com", "Male", "23/06/1999",
+                "5647748895858574", "05968742634", "7468496874", "7456375876");
+
+    }
+
+    @Test
+    public void checkNameIsInvalid4() {
+
+        ClientRegistration cr = new ClientRegistration("zzz", "2344@gmail.com", "Male", "23/06/1999",
+                "5647748895858574", "05968742634", "7468496874", "7456375876");
+
+    }
+    @Test(expected = IllegalArgumentException.class)
     public void checkEmailBlank() {
 
         ClientRegistration cr = new ClientRegistration("Jason", "", "Male", "23/06/1999",
@@ -177,6 +200,22 @@ public class ClientRegistrationTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
+    public void checkBirthdateBlank() {
+
+        ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "",
+                "5647748895858574", "05968742634", "7468496874", "7456375876");
+
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void checkBirthdateInvalidFormat() {
+
+        ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "235254354363",
+                "5647748895858574", "05968742634", "7468496874", "7456375876");
+
+    }
+
+    @Test(expected = IllegalArgumentException.class)
     public void checkCitizenCardNumberBlank() {
 
         ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "23/06/1999",
@@ -197,6 +236,46 @@ public class ClientRegistrationTest {
 
         ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "23/06/1999",
                 "XXX7748895858574", "05968742634", "7468496874", "7456375876");
+
+    }
+
+    @Test
+    public void checkCitizenCardNumberIsInvalid2() {
+
+        ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "23/06/1999",
+                "++++++++++++++++", "05968742634", "7468496874", "7456375876");
+
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void checkCitizenCardNumberIsInvalid3() {
+
+        ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "23/06/1999",
+                "aaaaaaaaaaaaaaaa", "05968742634", "7468496874", "7456375876");
+
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void checkCitizenCardNumberIsInvalid4() {
+
+        ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "23/06/1999",
+                "zzzzzzzzzzzzzzzz", "05968742634", "7468496874", "7456375876");
+
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void checkCitizenCardNumberIsInvalid5() {
+
+        ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "23/06/1999",
+                "AAAAAAAAAAAAAAAA", "05968742634", "7468496874", "7456375876");
+
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void checkCitizenCardNumberIsInvalid6() {
+
+        ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "23/06/1999",
+                "ZZZZZZZZZZZZZZZZ", "05968742634", "7468496874", "7456375876");
 
     }
 
@@ -224,6 +303,46 @@ public class ClientRegistrationTest {
 
     }
 
+    @Test
+    public void checkPhoneNumberIsInvalid2() {
+
+        ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "23/06/1999",
+                "5647748895858574", "+++++++++++", "7468496874", "7456375876");
+
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void checkPhoneNumberIsInvalid3() {
+
+        ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "23/06/1999",
+                "5647748895858574", "aaaaaaaaaaa", "7468496874", "7456375876");
+
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void checkPhoneNumberIsInvalid4() {
+
+        ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "23/06/1999",
+                "5647748895858574", "zzzzzzzzzzz", "7468496874", "7456375876");
+
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void checkPhoneNumberIsInvalid5() {
+
+        ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "23/06/1999",
+                "5647748895858574", "AAAAAAAAAAA", "7468496874", "7456375876");
+
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void checkPhoneNumberIsInvalid6() {
+
+        ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "23/06/1999",
+                "5647748895858574", "ZZZZZZZZZZZ", "7468496874", "7456375876");
+
+    }
+
     @Test(expected = IllegalArgumentException.class)
     public void checkTINNumberBlank() {
 
@@ -248,6 +367,46 @@ public class ClientRegistrationTest {
 
     }
 
+    @Test
+    public void checkTINNumberIsInvalid2() {
+
+        ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "23/06/1999",
+                "5647748895858574", "05968742634", "**********", "7456375876");
+
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void checkTINNumberIsInvalid3() {
+
+        ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "23/06/1999",
+                "5647748895858574", "05968742634", "aaaaaaaaaa", "7456375876");
+
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void checkTINNumberIsInvalid4() {
+
+        ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "23/06/1999",
+                "5647748895858574", "05968742634", "zzzzzzzzzz", "7456375876");
+
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void checkTINNumberIsInvalid5() {
+
+        ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "23/06/1999",
+                "5647748895858574", "05968742634", "AAAAAAAAAA", "7456375876");
+
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void checkTINNumberIsInvalid6() {
+
+        ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "23/06/1999",
+                "5647748895858574", "05968742634", "ZZZZZZZZZZ", "7456375876");
+
+    }
+
     @Test(expected = IllegalArgumentException.class)
     public void checkNHSNumberBlank() {
 
@@ -269,6 +428,46 @@ public class ClientRegistrationTest {
 
         ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "23/06/1999",
                 "5647748895858574", "05968742634", "7468496874", "XXX6375876");
+
+    }
+
+    @Test
+    public void checkNHSNumberIsInvalid2() {
+
+        ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "23/06/1999",
+                "5647748895858574", "05968742634", "7468496874", "**********");
+
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void checkNHSNumberIsInvalid3() {
+
+        ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "23/06/1999",
+                "5647748895858574", "05968742634", "7468496874", "aaaaaaaaaa");
+
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void checkNHSNumberIsInvalid4() {
+
+        ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "23/06/1999",
+                "5647748895858574", "05968742634", "7468496874", "zzzzzzzzzz");
+
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void checkNHSNumberIsInvalid5() {
+
+        ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "23/06/1999",
+                "5647748895858574", "05968742634", "7468496874", "AAAAAAAAAA");
+
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void checkNHSNumberIsInvalid6() {
+
+        ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "23/06/1999",
+                "5647748895858574", "05968742634", "7468496874", "ZZZZZZZZZZ");
 
     }
 
