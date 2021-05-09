@@ -128,7 +128,7 @@ There is a dependency to "US009 Specify a new type of test and its collecting me
 |                                                               | ... knowing to which organization the user belongs to? | System | IE: has registered all |
 | Step/Msg 2: request data (laboratoryID, name, address, phoneNumber, tinNumber) | n/a | | |
 | Step/Msg 3: types requested data | ... saving the inputted data? | ClinicalAnalysisLaboratory | IE: object created in step/msg 1 has its own data |
-| Step/Msg 4: shows the test types it can operate and asks to select the test(s) | ... knowing the test types to show? | System | IE: test types are defined by the system |
+| Step/Msg 4: shows the test types it can operate and asks to select the test(s) | ... knowing the test types to show? | Company | IE: test types are defined by the system |
 | Step/Msg 5: selects the test(s) | ... saving the selected data? | ClinicalAnalysisLaboratory | IE: object created in step/msg 1 has its own data |
 | Step/Msg 6: confirms the selected test types | ... saving the selected test types? | ClinicalAnalysisLaboratory | IE: object created in step 1 operates one or more test types |
 | Step/Msg 7: shows all data and requests a confirmation | ... validating the data locally (e.g.: mandatory vs non-mandatory data)? | Company | IE: knows its own data |
