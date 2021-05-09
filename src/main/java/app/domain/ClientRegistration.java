@@ -269,6 +269,11 @@ public class ClientRegistration {
 
     }
 
+    private int calculateAge(Date birthDate) {
+        LocalDate date = birthDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        return Period.between(date, LocalDate.now()).getYears();
+    }
+
     /**
      * Check if birth date respects the acceptance criteria
      *
