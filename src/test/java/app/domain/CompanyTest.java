@@ -288,6 +288,43 @@ public class CompanyTest {
     }
 
     @Test
+    public void getTestTypeNotNull() {
+
+        Company company = new Company("aaaa");
+        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcStore.listAdd();
+
+        TestType tt = company.createTestType("aaa","aaa","aaa",pcStore);
+        company.listAdd(tt);
+
+        TestType expected = company.getTestType(0);
+
+        Assert.assertNotNull(expected);
+
+    }
+
+    @Test
+    public void getTestType2() {
+
+        Company company = new Company("aaaa");
+        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcStore.listAdd();
+
+        TestType tt = company.createTestType("aaa","aaa","aaa",pcStore);
+        company.listAdd(tt);
+
+        TestType expected = company.getTestType(0);
+        TestType actual = company.getTestType(0);
+
+        Assert.assertEquals(new TestType("aaa","aaa","aaa",pcStore),actual);
+
+    }
+
+    @Test
     public void getTt() {
 
         Company company = new Company("aaaa");
