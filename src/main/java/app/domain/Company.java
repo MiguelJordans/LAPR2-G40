@@ -36,16 +36,16 @@ public class Company {
         return authFacade;
     }
 
-    public TestType createTestType(String testCode, String description, String collectingMethod,ParameterCategoryStore pcStore) {
-        return new TestType(testCode, description, collectingMethod,pcStore);
+    public TestType createTestType(String testCode, String description, String collectingMethod, ParameterCategoryStore pcStore) {
+        return new TestType(testCode, description, collectingMethod, pcStore);
     }
 
     public ClinicalAnalysisLaboratory createClinicalAnalysisLaboratory(String laboratoryID, String name, String address, String phoneNumber, String TINnumber) {
         return new ClinicalAnalysisLaboratory(laboratoryID, name, address, phoneNumber, TINnumber);
     }
 
-    public Parameter createParameter(String code, String description, String name,ParameterCategoryStore pcStore) {
-        return new Parameter(code, description, name,pcStore);
+    public Parameter createParameter(String code, String description, String name, ParameterCategoryStore pcStore) {
+        return new Parameter(code, description, name, pcStore);
     }
 
     public ParameterCategory createParameterCategory(String code, String description, String nhsld) {
@@ -156,7 +156,7 @@ public class Company {
     }
 
     public List<Parameter> getParameter() {
-        return  parameterStore.getParameterList();
+        return parameterStore.getParameterList();
     }
 
     public boolean validateParameterCategory(ParameterCategory pc) {
@@ -232,5 +232,58 @@ public class Company {
 
     public ClinicalAnalysisLaboratoryStore getClinicalAnalysisLaboratoryStore() {
         return clinicalAnalysisLaboratoryStore;
+    }
+
+    // Client Registration
+
+    ClientRegistrationStore clientRegistrationStore = new ClientRegistrationStore();
+
+    private static ClientRegistrationStore clientRegistrationList;
+
+    public static ClientRegistrationStore ClientRegistration() {
+        return clientRegistrationList = new ClientRegistrationStore();
+    }
+
+    /*
+    public List<ClientRegistration> getClientRegistration() {
+        return clientRegistrationStore.getCr();
+    }
+     */
+
+    public boolean addClientRegistration(ClientRegistration cr) {
+        clientRegistrationStore.listAdd(cr);
+        return true;
+    }
+
+    public boolean validateClientRegistration(ClientRegistration cr) {
+        clientRegistrationStore.validateClientRegistration(cr);
+        return true;
+    }
+
+    public boolean saveClientRegistration(ClientRegistration cr) {
+        clientRegistrationStore.saveClientRegistration();
+        return true;
+    }
+
+    public boolean listContainsClientRegistration(ClientRegistration cr) {
+        clientRegistrationStore.listContain(cr);
+        return true;
+    }
+
+    public boolean listAdd(ClientRegistration cr) {
+        clientRegistrationStore.listAdd(cr);
+        return true;
+    }
+
+    public ClientRegistration getClientRegistration(int i) {
+        return clientRegistrationStore.getClientRegistration(i);
+    }
+
+    public ClientRegistration getCr() {
+        return clientRegistrationStore.cr;
+    }
+
+    public ClientRegistrationStore getClientRegistrationStore() {
+        return clientRegistrationStore;
     }
 }
