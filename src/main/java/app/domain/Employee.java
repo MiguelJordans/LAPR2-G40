@@ -110,7 +110,7 @@ public class Employee {
     }
 
     public void checkPhoneNumberRules(String phoneNumber) {
-        String auxTrimPhoneNumber = phoneNumber.replaceAll("\s", "");
+        String auxTrimPhoneNumber = phoneNumber.replaceAll("\\s", "");
         char[] auxChar = auxTrimPhoneNumber.toCharArray();
 
         if (StringUtils.isBlank(phoneNumber)) {
@@ -130,7 +130,7 @@ public class Employee {
     public void checkEmployeeId (String employeeId){
 
 
-        String auxEmployeeId = employeeId.replaceAll("\s","");
+        String auxEmployeeId = employeeId.replaceAll("\\s","");
 
         if (StringUtils.isBlank(auxEmployeeId)){
             throw new IllegalArgumentException("Employee ID cannot be empty.");
@@ -143,7 +143,7 @@ public class Employee {
 
     public void checkSocCode (String socCode){
 
-        String auxSocCode = socCode.replaceAll("\s","");
+        String auxSocCode = socCode.replaceAll("\\s","");
         char[] auxchar = auxSocCode.toCharArray();
 
         if (StringUtils.isBlank(auxSocCode)){
