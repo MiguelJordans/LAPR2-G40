@@ -270,17 +270,22 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 ### ClientRegistration
 
-  package app.domain;
-
-  import org.apache.commons.lang3.StringUtils;
-
-  import java.time.LocalDate;
-  import java.time.Period;
-  import java.time.ZoneId;
-  import java.util.Date;
-  import java.util.regex.Pattern;
-
-  public class ClientRegistration {
+>package app.domain;
+>
+>import org.apache.commons.lang3.StringUtils;
+>
+>import javax.swing.text.DateFormatter;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.ZoneId;
+import java.util.Date;
+import java.util.logging.SimpleFormatter;
+import java.util.regex.Pattern;
+>
+>public class ClientRegistration {
 
     /**
      * Private Atributes that are only directly access in this class.
@@ -561,6 +566,10 @@ Other software classes (i.e. Pure Fabrication) identified:
 
     private void checkBirthdateRules(String birthdate){
 
+        if (StringUtils.isBlank(birthdate)) {
+            throw new IllegalArgumentException("Birth date cannot be empty.");
+        }
+
     }
 
     /**
@@ -687,6 +696,7 @@ Other software classes (i.e. Pure Fabrication) identified:
 }
 
 
+
 ### ClientRegistrationStore
 
 >package app.domain;
@@ -694,7 +704,7 @@ Other software classes (i.e. Pure Fabrication) identified:
 >import java.util.ArrayList;
 >import java.util.Date;
 >import java.util.List;
-
+>
 >public class ClientRegistrationStore {
 
     List<ClientRegistration> clientRegistrationList;
@@ -806,13 +816,12 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 ### ClientRegistrationController
 
-package app.controller;
-
-import app.domain.ClientRegistrationStore;
-import app.domain.Company;
-
-
-public class ClientRegistrationController {
+>package app.controller;
+>
+>import app.domain.ClientRegistrationStore;
+>import app.domain.Company;
+>
+>public class ClientRegistrationController {
 
     private Company company;
     private ClientRegistrationStore store;
@@ -875,6 +884,55 @@ public class ClientRegistrationController {
 
 }
 
+### ClientRegistrationUI
+
+>package app.ui.console;
+>
+>import app.controller.ClientRegistrationController;
+>import app.ui.console.utils.Utils;
+>
+>
+>public class ClientRegistrationUI implements Runnable{
+
+    private ClientRegistrationController ctrl;
+
+    public ClientRegistrationUI() {
+        this.ctrl = new ClientRegistrationController();
+    }
+
+    @Override
+    public void run() {
+        boolean count = true;
+        boolean exception = false;
+        do {
+            try {
+                String name = Utils.readLineFromConsole("Please enter the name of the client");
+                String email = Utils.readLineFromConsole("Please enter the email1 of the client");
+                String sex = Utils.readLineFromConsole("Please enter the sex of the client");
+                String birthdate = Utils.readLineFromConsole("Please enter the birth date of the client");
+                String citizenCardNumber = Utils.readLineFromConsole("Please enter the citizen card number of the client");
+                String phoneNumber = Utils.readLineFromConsole("Please enter the phone number of the client");
+                String tinNumber = Utils.readLineFromConsole("Please enter the TIN number of the client");
+                String nhsNumber = Utils.readLineFromConsole("Please enter the NHS number of the client");
+                ctrl.CreateClientRegistration(name, email, sex, birthdate, citizenCardNumber, phoneNumber, tinNumber, nhsNumber);
+                exception = false;
+
+            } catch (Exception e){
+                e.printStackTrace();
+                System.out.println("Incorrect input of data (an error has occured)! Please, try again.");
+                exception = true;
+            }
+        } while (exception);
+
+        count = Utils.confirm("Client created! Do you want to save it?" + ctrl.getCr());
+        if (count) {
+            if (ctrl.saveClientRegistration()) {
+                System.out.println("Client was saved with success!");
+            }
+        }
+    }
+
+}
 
 
 # 6. Integration and Demo 

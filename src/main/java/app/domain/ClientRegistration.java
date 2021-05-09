@@ -294,6 +294,10 @@ public class ClientRegistration {
 
     private void checkBirthdateRules(String birthdate){
 
+        if (StringUtils.isBlank(birthdate)) {
+            throw new IllegalArgumentException("Birth date cannot be empty.");
+        }
+
     }
 
     /**
