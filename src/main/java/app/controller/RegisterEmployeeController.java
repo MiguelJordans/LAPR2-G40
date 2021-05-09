@@ -11,11 +11,23 @@ public class RegisterEmployeeController {
     private Company company;
     private EmployeeStore store;
 
+    /**
+     * Creates an empty Clinical Analysis Laboratory controller.
+     */
+
     public RegisterEmployeeController() {
         this(App.getInstance().getCompany());
     }
 
+    /**
+     * Instance of a ParameterCategory.
+     *
+     * @param company - the company that administrates the system
+     */
+
     public RegisterEmployeeController(Company company) {this.company = company;}
+
+
 
     public void Employee(String name, String address, String email, String phoneNumber, String employeeId, String socCode, String orgRole, String doctorIndexNumber){
         store = company.getEmployeeStore();
