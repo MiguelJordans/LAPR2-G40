@@ -54,7 +54,7 @@ public class Employee {
         if (StringUtils.isBlank(orgRole)) {
             throw new IllegalArgumentException("Organization role cannot be empty.");
         }
-        if (!((aux.equals("specialistdoctor")) || (aux.equals("employee")))) {
+        if (!((aux.equalsIgnoreCase("specialistdoctor")) || (aux.equalsIgnoreCase("employee")))) {
             throw new IllegalArgumentException("Please select between \"employee\" and \"specialist doctor\".");
         }
         for (int i = 0; i < auxchar.length; i++) {

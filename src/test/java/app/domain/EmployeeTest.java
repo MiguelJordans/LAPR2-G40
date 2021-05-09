@@ -157,7 +157,7 @@ public class EmployeeTest {
 
 
     //setters
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void setDoctorIndexNumber() {
         //Arrange
         Employee emp = new Employee("Daniel Costa", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001","1234567","specialist doctor","123456");
@@ -171,7 +171,7 @@ public class EmployeeTest {
         Assert.assertEquals(expected, actual);
     }
 
-    @Test
+    @Test(expected =IllegalArgumentException.class)
     public void setOrgRole() {
         //Arrange
         Employee emp = new Employee("FirstCal", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001","1234567","doctor specialist","123456");
@@ -199,7 +199,7 @@ public class EmployeeTest {
         Assert.assertEquals(expected, actual);
     }
 
-    @Test
+    @Test(expected =IllegalArgumentException.class)
     public void setAddress() {
         //Arrange
         Employee emp = new Employee("DanielCosta", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001","1234567","specialist doctor","123456");
@@ -213,7 +213,7 @@ public class EmployeeTest {
         Assert.assertEquals(expected, actual);
     }
 
-    @Test
+    @Test(expected =IllegalArgumentException.class)
     public void setEmail() {
         //Arrange
         Employee emp = new Employee("DanielCosta", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001","1234567","specialist doctor","123456");
@@ -227,7 +227,7 @@ public class EmployeeTest {
         Assert.assertEquals(expected, actual);
     }
 
-    @Test
+    @Test(expected =IllegalArgumentException.class)
     public void setPhoneNumber() {
         //Arrange
         Employee emp = new Employee("DanielCosta", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001","1234567","specialist doctor","123456");
@@ -241,7 +241,7 @@ public class EmployeeTest {
         Assert.assertEquals(expected, actual);
     }
 
-    @Test
+    @Test(expected =IllegalArgumentException.class)
     public void setEmployeeId() {
         //Arrange
         Employee emp = new Employee("DanielCosta", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001","1234567","specialist doctor","123456");
@@ -255,7 +255,7 @@ public class EmployeeTest {
         Assert.assertEquals(expected, actual);
     }
 
-    @Test
+    @Test(expected =IllegalArgumentException.class)
     public void setSocCode() {
         //Arrange
         Employee emp = new Employee("DanielCosta", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001","1234567","specialist doctor","123456");
@@ -268,4 +268,69 @@ public class EmployeeTest {
         String actual = emp.getSocCode();
         Assert.assertEquals(expected, actual);
     }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void getDoctorIndexNumber(){
+
+        Employee emp = new Employee("DanielCosta", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001","1234567","specialist doctor","123456");
+
+        emp.getDoctorIndexNumber();
+
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void getName(){
+
+        Employee emp = new Employee("DanielCosta", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001","1234567","specialist doctor","123456");
+
+        emp.getName();
+
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void getAdress(){
+
+        Employee emp = new Employee("DanielCosta", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001","1234567","specialist doctor","123456");
+
+        emp.getAddress();
+
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void getEmail(){
+
+        Employee emp = new Employee("DanielCosta", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001","1234567","specialist doctor","123456");
+
+        emp.getEmail();
+
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void getPhoneNumber(){
+
+        Employee emp = new Employee("DanielCosta", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001","1234567","specialist doctor","123456");
+
+        emp.getPhoneNumber();
+
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void getEmployeeId(){
+
+        Employee emp = new Employee("DanielCosta", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001","1234567","specialist doctor","123456");
+
+        emp.getEmployeeId();
+
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void getSocCode(){
+
+        Employee emp = new Employee("DanielCosta", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001","1234567","specialist doctor","123456");
+
+        emp.getSocCode();
+
+    }
+
+
 }

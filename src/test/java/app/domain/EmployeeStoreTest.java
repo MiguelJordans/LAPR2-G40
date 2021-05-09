@@ -21,7 +21,7 @@ public class EmployeeStoreTest {
         store.listAdd(emp);
 
         //Act
-        boolean expected = true;
+        boolean expected = false;
         boolean actual = store.validateEmployee(emp);
 
         //Assert
@@ -36,7 +36,7 @@ public class EmployeeStoreTest {
         store.listAdd(emp);
 
         //Act
-        boolean expected = false;
+        boolean expected =false;
         boolean actual = store.validateEmployee(emp);
 
         //Assert
@@ -51,7 +51,7 @@ public class EmployeeStoreTest {
         Employee emp = store.NewEmployee("Daniel", "3425 Stone Street", "dasc@gmail.com","01492235687", "DASC00001","1234567", "specialistdoctor", "123456");
 
         //Act
-        boolean expected = true;
+        boolean expected = false;
         boolean actual = store.listContain(emp);
 
         //Assert
@@ -82,7 +82,7 @@ public class EmployeeStoreTest {
         store.listAdd(emp);
 
         //Act
-        boolean expected = true;
+        boolean expected = false;
         boolean actual = store.saveEmployee();
 
         //Assert
@@ -124,7 +124,7 @@ public class EmployeeStoreTest {
         Employee emp = store.NewEmployee("Daniel", "3425 Stone Street", "dasc@gmail.com","01492235687", "DASC00001","1234567", "specialistdoctor", "123456");
 
         //Act
-        boolean expected = false;
+        boolean expected = true;
         boolean actual = store.listAdd(emp);
 
         //Assert

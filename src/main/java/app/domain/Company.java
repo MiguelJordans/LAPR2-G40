@@ -12,7 +12,6 @@ import java.util.List;
  * @author Mariana Lages <1200902@isep.ipp.pt>
  * @author Lucas Silva <1200759@isep.ipp.pt>
  * @author Daniel Costa <1200581@isep.ipp.pt>
- * @author Marcin Basinski <1200300@isep.ipp.pt>
  */
 
 public class Company {
@@ -238,7 +237,7 @@ public class Company {
         return clinicalAnalysisLaboratoryStore;
     }
 
-<<<<<<< HEAD
+
 //Register New Employee
 
     EmployeeStore employeeStore = new EmployeeStore();
@@ -287,7 +286,7 @@ public class Company {
         return employeeStore;
     }
 
-=======
+
     // Client Registration
 
     ClientRegistrationStore clientRegistrationStore = new ClientRegistrationStore();
@@ -334,5 +333,5 @@ public class Company {
     public ClientRegistrationStore getClientRegistrationStore() {
         return clientRegistrationStore;
     }
->>>>>>> 59ad007a445cbb5127985f771f2fed4af636ba79
+
 }
