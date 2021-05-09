@@ -3,6 +3,7 @@ package app.ui.console;
 import app.controller.ClientRegistrationController;
 import app.ui.console.utils.Utils;
 
+
 public class ClientRegistrationUI implements Runnable{
 
     private ClientRegistrationController ctrl;

@@ -45,7 +45,7 @@ As a receptionist of the laboratory, I want to register a client.
 > * Citizen Card: 16 digit number
 > * NHS: 10 digit number
 > * TIN: 10 digit number
-> * Birth day: in which format: DD/MM/YY
+> * Birth day: in which format: DD/MM/YYYY
 > * Sex: should only be Male/Female or include more options.
 > * Phone number: 11 digit number
 > * The sex is opcional. All other fields are required.
@@ -66,6 +66,48 @@ As a receptionist of the laboratory, I want to register a client.
 >**Answer:** The client only receives an e-mail informing that the registration was successful and that he can start to use the system. The e-mail includes the client password.
 
 
+>**Question:** How should the system send a email to the client with the password?
+> 
+>**Answer:** Considering a set of technical restrictions, during the development of the Integrative Project we will not use any e-mail or SMS API services to send messages. 
+> All the e-mail and SMS messages should be written to a file with the name emailAndSMSMessages.txt. This file simulates the use of e-mail and SMS API services.
+
+
+>**Question:** Do clients have to change their password after registration? (first login)
+> 
+>**Answer:** No.
+
+
+>**Question:** Can they change their password whenever they want?
+> 
+>**Answer:** No. For now, there are no user story or use case to update the password.
+
+
+>**Question** Does the email have to be validated as a valid address or do we just accept whatever input the receptionist writes?
+> 
+>**Answer** You should use a regular expression to validate the e-mail address.
+
+
+>**Question** Also, does the phone number has to be validated as a valid phone number? And can it be registered with a prefix (+44) or just the number?
+> 
+>**Answer** This lab only operates in England, there is no need to use the prefix.
+
+
+>**Question** Is there any restrictions to the client age?
+> 
+>**Answer** A client should not have more than 150 years of age. Although there are important developments in the pursuit of eternal youth, for now this value is ok.
+
+
+>**Question** What should be the maximum length of the String with the name of the Client?
+> 
+>**Answer** A string with no more than 35 characters.
+
+
+>**Question** Should each client have an unique ID, generated during their creation?
+> 
+>**Answer** No.
+
+
+
 
 ### 1.3. Acceptance Criteria
 
@@ -74,13 +116,16 @@ As a receptionist of the laboratory, I want to register a client.
 * **AC3:** The password should have 10 alphanumeric characters.
 * **AC4:** The creation of a new client with the same attributes of an aleardy existing one should be treated as an error.
 * **AC5:** Each attribute has a specific format:
-  * Citizen Card: 16 digit number
-  * NHS: 10 digit number
-  * TIN: 10 digit number
+  * Name: No more than 35 characters.
+  * Citizen Card: 16 digit number.
+  * NHS: 10 digit number.
+  * TIN: 10 digit number.
   * Birthday - in which format: DD/MM/YYYY.
   * Sex - should only be Male/Female or include more options.
-  * Phone number: 11 digit number
+  * Phone number: 11 digit number.
 * **AC6:** The registration email includes the client password.
+* **AC7:** The age must be less than 150 years old.
+
 ### 1.4. Found out Dependencies
 
 No dependencies were found.
@@ -143,24 +188,30 @@ No dependencies were found.
 
 | Interaction ID | Question: Which class is responsible for... | Answer  | Justification (with patterns)  |
 |:-------------  |:--------------------- |:------------|:---------------------------- |
-| Step 1  		 |							 |             |                              |
-| Step 2  		 |							 |             |                              |
-| Step 3  		 |							 |             |                              |
-| Step 4  		 |							 |             |                              |
-| Step 5  		 |							 |             |                              |
-| Step 6  		 |							 |             |                              |              
+| Step/Msg 1: Starts the registration of a new client |	...interacting with the actor | ClientRegistrationUI | Pure Fabrication: there is no reason to assign this responsibility to any existing class in the Domain Model |
+| Step/Msg 1: Starts the registration of a new client | ...coordinating the US? | ClientRegistrationController | It's a controller | 
+| Step/Msg 1: Starts the registration of a new client | ...instantiating a new client? | Company | The company knows the client. |
+| Step/Msg 1: Starts the registration of a new client | ...knowing which user is using the system? | UserSession | IE: cf. A&A component documentation |
+| Step/Msg 1: Starts the registration of a new client | ...knowing to which organization the user belongs to? | System | n/a |
+| Step/Msg 2: Requests data (name, citizen card number, phone number, email, TIF number, NSH number, sex, birth date) |	n/a | n/a | n/a |
+| Step/Msg 3: Types requested data | ...saving the inputted data? | ClientRegistration | IE: object created in step 1 has its own data. |
+| Step/Msg 4: Shows the data and requests confirmation | ...validating the data locally (e.g.: mandatory or non-mandatory data)? | Company | IE: knows its own data. |
+| Step/Msg 5: Confirms the data | ... saving the created clinical analysis laboratory? | Company | IE: adopts/records all the ClinicalAnalysisLaboratory objects |
+| Step/Msg 6: Informs the operation success | ...inform the operation success? | ClientRegistrationUI | IE: responsible for user interaction |              
 
 ### Systematization ##
 
 According to the taken rationale, the conceptual classes promoted to software classes are: 
 
- * Class1
- * Class2
- * Class3
+ * Company
+ * UserSession
+ * System
+ * ClientRegistration
 
 Other software classes (i.e. Pure Fabrication) identified: 
- * xxxxUI  
- * xxxxController
+ * ClientRegistrationUI  
+ * ClientRegistrationController
+ * ClientRegistrationStore
 
 ## 3.2. Sequence Diagram (SD)
 
@@ -172,21 +223,43 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 *In this section, it is suggested to present an UML static view representing the main domain related software classes that are involved in fulfilling the requirement as well as and their relations, attributes and methods.*
 
-![US003_CD](US003_CD.svg)
+![US003_CD](US003_CD2.svg)
 
-# 4. Tests 
-*In this section, it is suggested to systematize how the tests were designed to allow a correct measurement of requirements fulfilling.* 
+# 4. Tests
 
-**_DO NOT COPY ALL DEVELOPED TESTS HERE_**
+## AC5
 
-**Test 1:** Check that it is not possible to create an instance of the Example class with null values. 
+**Test 1:** Check that it is not possible to create an instance of the Client with a blank attribute (E.g.: name). 
 
 	@Test(expected = IllegalArgumentException.class)
-		public void ensureNullIsNotAllowed() {
-		Exemplo instance = new Exemplo(null, null);
-	}
+    public void checkNameBlank() {
 
-*It is also recommended to organize this content by subsections.* 
+        ClientRegistration cr = new ClientRegistration("", "2344@gmail.com", "Male", "23/06/1999",
+                "5647748895858574", "05968742634","7468496874", "7456375876");
+
+    }
+
+**Test 2:** Check that it is not possible to create an instance of the Client with an oversized attribute (E.g.: name).
+ 
+    @Test(expected = IllegalArgumentException.class)
+    public void checkNameIsTooBig() {
+
+        ClientRegistration cr = new ClientRegistration("The biggest and most unnecessary name you'll ever read", "2344@gmail.com", "Male", "23/06/1999",
+                "5647748895858574", "05968742634", "7468496874", "7456375876");
+
+    }
+
+**Test 3:** Check that it is not possible to create an instance of the Client with an oversized attribute (E.g.: name).
+
+    @Test(expected = IllegalArgumentException.class)
+    public void checkNameIsInvalid() {
+
+        ClientRegistration cr = new ClientRegistration("xXVenomShock99Xx", "2344@gmail.com", "Male", "23/06/1999",
+                "5647748895858574", "05968742634", "7468496874", "7456375876");
+
+    }
+
+#### This kind of tests are made to all the other attributes (with some exceptions).
 
 # 5. Construction (Implementation)
 

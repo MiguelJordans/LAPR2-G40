@@ -2,9 +2,17 @@ package app.domain;
 
 import org.apache.commons.lang3.StringUtils;
 
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.ZoneId;
+import java.util.Date;
 import java.util.regex.Pattern;
 
 public class ClientRegistration {
+
+    /**
+     * Private Atributes that are only directly access in this class.
+     */
 
     private String name;
     private String email;
@@ -16,7 +24,21 @@ public class ClientRegistration {
     private String nhsNumber;
 
 
-    public ClientRegistration (String name, String email, String sex, String birthdate, String citizenCardNumber, String phoneNumber, String tinNumber, String nhsNumber){
+    /**
+     * Constructs an instance of Client.
+     *
+     * @param name - the Client's name.
+     * @param email - the Client's email.
+     * @param sex - the Client's sex.
+     * @param birthdate - the Client's birth date.
+     * @param citizenCardNumber - the Client's citizen card number.
+     * @param phoneNumber - the Client's phone number.
+     * @param tinNumber - the Client's TIN number.
+     * @param nhsNumber - the Client's NHS number.
+     */
+
+
+    public ClientRegistration (String name, String email, String sex, String birthdate, String citizenCardNumber, String phoneNumber, String tinNumber, String nhsNumber) {
 
         checkNameRules(name);
         checkEmailRules(email);
@@ -39,65 +61,148 @@ public class ClientRegistration {
 
     }
 
-    //  Gets --------------------------------------------------------------------
+    //  Get Methods --------------------------------------------------------------------
 
-    public String getName() {
-        return name;
-    }
+    /**
+     * Returns the name of the Client.
+     *
+     * @return the name of the Client.
+     */
 
-    public String getEmail() {
-        return email;
-    }
+    public String getName() { return name; }
 
-    public String getSex() {
-        return sex;
-    }
+    /**
+     * Returns the email of the Client.
+     *
+     * @return the email of the Client.
+     */
 
-    public String getBirthdate() {
-        return birthdate;
-    }
+    public String getEmail() { return email; }
 
-    public String getCitizenCardNumber() {
-        return citizenCardNumber;
-    }
+    /**
+     * Returns the sex of the Client.
+     *
+     * @return the sex of the Client.
+     */
 
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
+    public String getSex() { return sex; }
+
+    /**
+     * Returns the birth date of the Client.
+     *
+     * @return the birth date of the Client.
+     */
+
+    public String getBirthdate() { return birthdate; }
+
+    /**
+     * Returns the citizen card number of the Client.
+     *
+     * @return the citizen card number of the Client.
+     */
+
+    public String getCitizenCardNumber() { return citizenCardNumber; }
+
+    /**
+     * Returns the phone number of the Client.
+     *
+     * @return the phone number of the Client.
+     */
+
+    public String getPhoneNumber() { return phoneNumber; }
+
+    /**
+     * Returns the TIN number of the Client.
+     *
+     * @return the TIN number of the Client.
+     */
 
     public String getTinNumber() { return tinNumber; }
 
+    /**
+     * Returns the NHS number of the Client.
+     *
+     * @return the NHS number of the Client.
+     */
+
     public String getNhsNumber() { return nhsNumber; }
 
-    //  Sets -------------------------------------------------------------------
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    //  Set Methods -------------------------------------------------------------------
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
 
-    public void setSex(String sex) {
-        this.sex = sex;
-    }
+    /**
+     * Modifies the name of the Client.
+     *
+     * @param name - the Client's name.
+     */
 
-    public void setBirthdate(String birthdate) {
-        this.birthdate = birthdate;
-    }
+    public void setName(String name) { this.name = name; }
+
+    /**
+     * Modifies the email of the Client.
+     *
+     * @param email - the Client's email.
+     */
+
+    public void setEmail(String email) { this.email = email; }
+
+    /**
+     * Modifies the sex of the Client.
+     *
+     * @param sex - the Client's sex.
+     */
+
+    public void setSex(String sex) { this.sex = sex; }
+
+    /**
+     * Modifies the birth date of the Client.
+     *
+     * @param birthdate - the Client's birth date.
+     */
+
+    public void setBirthdate(String birthdate) { this.birthdate = birthdate; }
+
+    /**
+     * Modifies the citizen card number of the Client.
+     *
+     * @param citizenCardNumber - the Client's citizen card number.
+     */
 
     public void setCitizenCardNumber(String citizenCardNumber) { this.citizenCardNumber = citizenCardNumber; }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
+    /**
+     * Modifies the phone number of the Client.
+     *
+     * @param phoneNumber - the Client's phone number.
+     */
+
+    public void setPhoneNumber(String phoneNumber) { this.phoneNumber = phoneNumber; }
+
+    /**
+     * Modifies the TIN number of the Client.
+     *
+     * @param tinNumber - the Client's TIN number.
+     */
 
     public void setTinNumber(String tinNumber) { this.tinNumber = tinNumber; }
 
+    /**
+     * Modifies the NHS number of the Client.
+     *
+     * @param nhsNumber - the Client's NHS number.
+     */
+
     public void setNhsNumber(String nhsNumber) { this.nhsNumber = nhsNumber; }
 
-    //  Checks ---------------------------------------------------------------------
+
+    //  Check Methods ---------------------------------------------------------------------
+
+    /**
+     * Checks the Client's name rules.
+     *
+     * @param name - the Client's name.
+     */
 
     private void checkNameRules(String name){
 
@@ -108,8 +213,8 @@ public class ClientRegistration {
         if (StringUtils.isBlank(name)) {
             throw new IllegalArgumentException("Name cannot be empty.");
         }
-        if (!(name.length() < 30)) {
-            throw new IllegalArgumentException("Name cannot have more than 30 characters.");
+        if (name.length() >= 36) {
+            throw new IllegalArgumentException("Name cannot have more than 35 characters.");
         }
         for (int i = 0; i < auxchar.length; i++) {
             char ch = auxchar[i];
@@ -120,11 +225,21 @@ public class ClientRegistration {
 
     }
 
+    /**
+     * Checks the Client's email rules.
+     *
+     * @param email - the Client's email.
+     */
+
     private void checkEmailRules(String email){
 
         if (StringUtils.isBlank(email)) {
             throw new IllegalArgumentException("Email cannot be empty.");
         }
+
+        /**
+         *  @Author of this check rules in lines (247-253): Paulo Maio.
+         */
 
         String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\." + "[a-zA-Z0-9_+&*-]+)*@" + "(?:[a-zA-Z0-9-]+\\.)+[a-z" + "A-Z]{2,7}$";
 
@@ -135,6 +250,12 @@ public class ClientRegistration {
         }
 
     }
+
+    /**
+     * Checks the Client's sex rules.
+     *
+     * @param sex - the Client's sex.
+     */
 
     private void checkSexRules(String sex){
 
@@ -148,9 +269,28 @@ public class ClientRegistration {
 
     }
 
+    /**
+     * Check if birth date respects the acceptance criteria
+     *
+     * @param birthDate - Client birth date (xx/yy/zzz)
+     */
+
+
+    /**
+     * Checks the Client's birth date rules.
+     *
+     * @param birthdate - the Client's birth date.
+     */
+
     private void checkBirthdateRules(String birthdate){
 
     }
+
+    /**
+     * Checks the Client's citizen card number rules.
+     *
+     * @param citizenCardNumber - the Client's citizen card number.
+     */
 
     private void checkCitizenCardNumberRules(String citizenCardNumber){
 
@@ -173,6 +313,12 @@ public class ClientRegistration {
 
     }
 
+    /**
+     * Checks the Client's phone number rules.
+     *
+     * @param phoneNumber - the Client's phone number.
+     */
+
     private void checkPhoneNumberRules(String phoneNumber){
 
         String auxStrPhoneNumber = phoneNumber.replaceAll("\\s", "");
@@ -193,6 +339,12 @@ public class ClientRegistration {
         }
 
     }
+
+    /**
+     * Checks the Client's TIN number rules.
+     *
+     * @param tinNumber - the Client's TIN number.
+     */
 
     private void checkTINNumberRules(String tinNumber) {
 
@@ -215,6 +367,12 @@ public class ClientRegistration {
 
     }
 
+    /**
+     * Checks the Client's NHS number rules.
+     *
+     * @param nhsNumber - the Client's NHS number.
+     */
+
     private void checkNHSNumberRules(String nhsNumber) {
 
         String auxStrNHSnumber = nhsNumber.replaceAll("\\s", "");
@@ -235,6 +393,13 @@ public class ClientRegistration {
         }
 
     }
+
+    /**
+     * Returns the textual description of the Client in the format: name, email,
+     * sex, birth date, citizen card number, phone number, TIN number. NHS number.
+     *
+     * @return
+     */
 
     @Override
     public String toString() {
