@@ -160,7 +160,7 @@ public class ClinicalAnalysisLaboratory {
         if (StringUtils.isBlank(name)) {
             throw new IllegalArgumentException("Name cannot be blank.");
         }
-        if (name.length() >= 30) {
+        if (name.length() >= 20) {
             throw new IllegalArgumentException("Name cannot have more than 30 characters.");
         }
         for (int i = 0; i < auxchar.length; i++) {
@@ -211,7 +211,7 @@ public class ClinicalAnalysisLaboratory {
     /**
      * Checks the TIN number rules.
      *
-     * @param tinNumber - the Clinical Analysis Laboratory's TIN number
+     * @param tinNumber the Clinical Analysis Laboratory's TIN number
      */
     private void checkTinNumberRules(String tinNumber) {
         String auxTrimTINnumber = tinNumber.replaceAll("\\s", "");
@@ -235,7 +235,7 @@ public class ClinicalAnalysisLaboratory {
      * Returns the textual description of the Clinical Analysis Laboratory in the format: laboratory ID, name,
      * address, phone number, TIN number.
      *
-     * @return
+     * @return the Clinical Analysis Laboratory's characteristics
      */
     @Override
     public String toString() {
