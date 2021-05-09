@@ -7,7 +7,7 @@ import org.junit.Test;
 public class EmployeeTest {
 
 //CheckNameRules
-    /*
+
 
     @Test(expected = IllegalArgumentException.class)
     public void checkNameBlank() {
@@ -367,7 +367,7 @@ public class EmployeeTest {
         String actual = emp.getSocCode();
         Assert.assertEquals(expected, actual);
 
-    }*/
+    }
 
 
 }
