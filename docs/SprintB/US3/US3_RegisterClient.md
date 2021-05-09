@@ -270,9 +270,7 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 ### ClientRegistration
 
-<<<<<<< HEAD
      public class ClientRegistration {
-=======
 >package app.domain;
 >
 >import org.apache.commons.lang3.StringUtils;
@@ -289,7 +287,7 @@ import java.util.logging.SimpleFormatter;
 import java.util.regex.Pattern;
 >
 >public class ClientRegistration {
->>>>>>> bce466baa656f4eb0b7ec7cd281a3ca76eb79a46
+
 
     /**
      * Private Atributes that are only directly access in this class.
@@ -703,11 +701,8 @@ import java.util.regex.Pattern;
 
 ### ClientRegistrationStore
 
-<<<<<<< HEAD
-
-
     public class ClientRegistrationStore {
-=======
+
 >package app.domain;
 >
 >import java.util.ArrayList;
@@ -715,7 +710,6 @@ import java.util.regex.Pattern;
 >import java.util.List;
 >
 >public class ClientRegistrationStore {
->>>>>>> bce466baa656f4eb0b7ec7cd281a3ca76eb79a46
 
     List<ClientRegistration> clientRegistrationList;
     ClientRegistration cr;
@@ -826,16 +820,12 @@ import java.util.regex.Pattern;
 
 ### ClientRegistrationController
 
-<<<<<<< HEAD
-    public class ClientRegistrationController {
-=======
 >package app.controller;
 >
 >import app.domain.ClientRegistrationStore;
 >import app.domain.Company;
 >
 >public class ClientRegistrationController {
->>>>>>> bce466baa656f4eb0b7ec7cd281a3ca76eb79a46
 
     private Company company;
     private ClientRegistrationStore store;
