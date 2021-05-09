@@ -61,14 +61,7 @@ public class EmployeeUI implements Runnable {
         count = Utils.confirm("Employee created! Do you want to save it?" + ctrl.getEmp());
         if (count) {
             if (ctrl.SaveEmployee()) {
-<<<<<<< HEAD
-                System.out.println("Client was saved with success!");
-                System.out.println("Going to generate a new password.");
-
-=======
                 System.out.println("Employee was saved with success!");
->>>>>>> 8f1b4ca68415a3cd92bfee29e722351925694e8a
-
             }
         }
     }
