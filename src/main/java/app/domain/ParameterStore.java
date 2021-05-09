@@ -10,8 +10,8 @@ public class ParameterStore {
 
     public ParameterStore(){this.list = new ArrayList<>();}
 
-    public Parameter CreateParameter(String description,String code,String name){
-        return this.pp = new Parameter(code,description,name);
+    public Parameter CreateParameter(String description,String code,String name,ParameterCategoryStore pcStore){
+        return this.pp = new Parameter(code,description,name,pcStore);
     }
 
     public boolean validateParameter(Parameter pp){

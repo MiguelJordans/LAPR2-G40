@@ -110,7 +110,11 @@ public class CompanyTest {
 
         Company company = new Company("aaaa");
 
-        Parameter pp = company.createParameter("aaaaa","aaa","aaa");
+        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        parameterCategoryStore.listAdd();
+
+        Parameter pp = new Parameter("1abcE","yes","aaa",parameterCategoryStore);
 
     }
     @Test
@@ -127,7 +131,11 @@ public class CompanyTest {
 
         Company company = new Company("aaaa");
 
-        Parameter pp = company.createParameter("aaaaa","aaa","aaa");
+        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        parameterCategoryStore.listAdd();
+
+        Parameter pp = new Parameter("1abcE","yes","aaa",parameterCategoryStore);
 
         Assert.assertNotNull(pp);
 
@@ -457,7 +465,11 @@ public class CompanyTest {
         Company company = new Company("aaaa");
         TestTypeStore testTypeStore = new TestTypeStore();
 
-        Parameter pp = company.createParameter("aaa","aaa","aaa");
+        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        parameterCategoryStore.listAdd();
+
+        Parameter pp = new Parameter("1abcE","yes","aaa",parameterCategoryStore);
 
     }
 
@@ -476,7 +488,11 @@ public class CompanyTest {
         Company company = new Company("aaaa");
         TestTypeStore testTypeStore = new TestTypeStore();
 
-        Parameter pp = company.createParameter("aaa","aaa","aaa");
+        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        parameterCategoryStore.listAdd();
+
+        Parameter pp = new Parameter("1abcE","yes","aaa",parameterCategoryStore);
 
         Assert.assertNotNull(pp);
 
@@ -488,7 +504,11 @@ public class CompanyTest {
         Company company = new Company("aaaa");
         TestTypeStore testTypeStore = new TestTypeStore();
 
-        Parameter pp = company.createParameter("aaa","aaa","aaa");
+        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        parameterCategoryStore.listAdd();
+
+        Parameter pp = new Parameter("1abcE","yes","aaa",parameterCategoryStore);
 
         Assert.assertTrue(company.validateParameter(pp));
 
@@ -499,7 +519,11 @@ public class CompanyTest {
 
         Company company = new Company("aaaa");
 
-        Parameter pp = company.createParameter("aaa","aaa","aaa");
+        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        parameterCategoryStore.listAdd();
+
+        Parameter pp = new Parameter("1abcE","yes","aaa",parameterCategoryStore);
 
         Assert.assertTrue(company.saveParameter());
 
@@ -511,7 +535,11 @@ public class CompanyTest {
         Company company = new Company("aaaa");
         TestTypeStore testTypeStore = new TestTypeStore();
 
-        Parameter pp = company.createParameter("aaa","aaa","aaa");
+        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        parameterCategoryStore.listAdd();
+
+        Parameter pp = new Parameter("1abcE","yes","aaa",parameterCategoryStore);
 
         Assert.assertTrue(company.listContainsParameter(pp));
 
@@ -523,7 +551,11 @@ public class CompanyTest {
         Company company = new Company("aaaa");
         TestTypeStore testTypeStore = new TestTypeStore();
 
-        Parameter pp = company.createParameter("aaa","aaa","aaa");
+        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        parameterCategoryStore.listAdd();
+
+        Parameter pp = new Parameter("1abcE","yes","aaa",parameterCategoryStore);
 
         Assert.assertTrue(company.parameterListAdd(pp));
 
@@ -534,7 +566,11 @@ public class CompanyTest {
 
         Company company = new Company("aaaa");
 
-        Parameter pp = company.createParameter("aaa","aaa","aaa");
+        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        parameterCategoryStore.listAdd();
+
+        Parameter pp = new Parameter("1abcE","yes","aaa",parameterCategoryStore);
         company.parameterListAdd(pp);
 
         Parameter expected = pp;
@@ -550,7 +586,11 @@ public class CompanyTest {
 
         Company company = new Company("aaaa");
 
-        Parameter pp = company.createParameter("aaa","aaa","aaa");
+        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        parameterCategoryStore.listAdd();
+
+        Parameter pp = new Parameter("1abcE","yes","aaa",parameterCategoryStore);
 
         Parameter expected = company.getPP();
 

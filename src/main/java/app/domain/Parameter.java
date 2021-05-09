@@ -8,17 +8,19 @@ public class Parameter {
     private String name;
     private String description;
 
-    //private Category category; Quando já estiver implementado a class Category
+    private ParameterCategoryStore pp;
 
-    public Parameter(String code, String description, String name) {
+    public Parameter(String code, String description, String name,ParameterCategoryStore ppStore) {
 
         checkTestCode(code);
         checkName(name);
         checkDescription(description);
+        checkCategoriesList(ppStore);
 
         this.code = code;
         this.name = name;
         this.description = description;
+        this.pp = ppStore;
 
     }
 
@@ -51,6 +53,12 @@ public class Parameter {
         if (description.length() > 20)
             throw new IllegalArgumentException("Description not valid! Cannot have more than 15 chars.");
 
+    }
+
+    public void checkCategoriesList(ParameterCategoryStore ppStore){
+        if(ppStore.list.isEmpty()) {
+            throw new IllegalArgumentException("Categories not valid! List is null!");
+        }
     }
 
     public String getCode() {

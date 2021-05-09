@@ -44,8 +44,8 @@ public class Company {
         return new ClinicalAnalysisLaboratory(laboratoryID, name, address, phoneNumber, TINnumber);
     }
 
-    public Parameter createParameter(String code, String description, String name) {
-        return new Parameter(code, description, name);
+    public Parameter createParameter(String code, String description, String name,ParameterCategoryStore pcStore) {
+        return new Parameter(code, description, name,pcStore);
     }
 
     public ParameterCategory createParameterCategory(String code, String description, String nhsld) {

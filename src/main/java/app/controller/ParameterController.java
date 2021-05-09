@@ -17,9 +17,9 @@ public class ParameterController {
         this.company=company;
     }
 
-    public void CreateParameter(String description,String code,String name){
+    public void CreateParameter(String description,String code,String name,ParameterCategoryStore pcStore){
         store = company.getParameterStore();
-        store.CreateParameter(description,code,name);
+        store.CreateParameter(description,code,name,pcStore);
     }
 
     public String getPP(){ return store.getPp().toString(); }
