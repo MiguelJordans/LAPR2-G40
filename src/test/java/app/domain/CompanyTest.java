@@ -317,10 +317,9 @@ public class CompanyTest {
         TestType tt = company.createTestType("aaa","aaa","aaa",pcStore);
         company.listAdd(tt);
 
-        TestType expected = company.getTestType(0);
         TestType actual = company.getTestType(0);
 
-        Assert.assertEquals(new TestType("aaa","aaa","aaa",pcStore),actual);
+        Assert.assertEquals(company.getTestType(0),actual);
 
     }
 
