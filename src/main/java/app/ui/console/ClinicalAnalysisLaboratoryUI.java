@@ -27,8 +27,9 @@ public class ClinicalAnalysisLaboratoryUI implements Runnable {
                 do {
                     TestType tt = (TestType) Utils.showAndSelectOne(this.ttStore.getTestTypeList(), "Select the test types");
                     this.ttStore.listAdd(tt);
+                    this.ttStore.getTestTypeList().remove(tt);
                     leave = Utils.confirm("Do you wish to select more test types?");
-                } while (!leave);
+                } while (leave);
 
                 do {
                     try {

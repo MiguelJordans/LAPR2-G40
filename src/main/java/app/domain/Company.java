@@ -12,7 +12,6 @@ import java.util.List;
  * @author Mariana Lages <1200902@isep.ipp.pt>
  * @author Lucas Silva <1200759@isep.ipp.pt>
  * @author Daniel Costa <1200581@isep.ipp.pt>
- * @author Marcin Basinski <1200300@isep.ipp.pt>
  */
 
 public class Company {
@@ -50,6 +49,10 @@ public class Company {
 
     public ParameterCategory createParameterCategory(String code, String description, String nhsld) {
         return new ParameterCategory(code, description, nhsld);
+    }
+
+    public ClientRegistration createClientRegistration(String name,String email,String sex,String birthdate,String citizenCardNumber,String phoneNumber,String tinNumber,String nhsNumber) {
+        return new ClientRegistration(name, email, sex, birthdate, citizenCardNumber, phoneNumber, tinNumber, nhsNumber);
     }
 
     //Test Type
@@ -234,6 +237,56 @@ public class Company {
         return clinicalAnalysisLaboratoryStore;
     }
 
+
+//Register New Employee
+
+    EmployeeStore employeeStore = new EmployeeStore();
+
+    private static EmployeeStore employeeList;
+
+
+    public EmployeeStore Employee(){
+        return employeeList = new EmployeeStore();
+    }
+
+    public Boolean addEmployee(Employee emp){
+        employeeStore.listAdd(emp);
+        return true;
+    }
+
+    public boolean validateEmployee(Employee emp) {
+        employeeStore.validateEmployee(emp);
+        return true;
+    }
+
+    public boolean saveEmployee(Employee emp) {
+        employeeStore.saveEmployee();
+        return true;
+    }
+
+    public boolean listEmployee(Employee emp) {
+        employeeStore.listContain(emp);
+        return true;
+    }
+
+    public boolean listAddEmp(Employee emp) {
+        employeeStore.listAdd(emp);
+        return true;
+    }
+
+    public Employee getEmployee (int i) {
+        return employeeStore.getEmployee(i);
+    }
+
+    public Employee getEmp() {
+        return employeeStore.emp;
+    }
+
+    public EmployeeStore getEmployeeStore() {
+        return employeeStore;
+    }
+
+
     // Client Registration
 
     ClientRegistrationStore clientRegistrationStore = new ClientRegistrationStore();
@@ -243,12 +296,6 @@ public class Company {
     public static ClientRegistrationStore ClientRegistration() {
         return clientRegistrationList = new ClientRegistrationStore();
     }
-
-    /*
-    public List<ClientRegistration> getClientRegistration() {
-        return clientRegistrationStore.getCr();
-    }
-     */
 
     public boolean addClientRegistration(ClientRegistration cr) {
         clientRegistrationStore.listAdd(cr);
@@ -286,4 +333,5 @@ public class Company {
     public ClientRegistrationStore getClientRegistrationStore() {
         return clientRegistrationStore;
     }
+
 }

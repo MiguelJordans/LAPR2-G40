@@ -68,7 +68,7 @@ Employee ID; Organization Role; Name; Address; Phone Number; E-Mail; Standard Oc
 ### 1.3. Acceptance Criteria
 
 * **AC1:** Each user must have a single role defined in the system. The "auth" component available on the repository must be reused (without modifications).
-
+* **AC2:** The employee ID should be generated from the initials of the employee name and should include a number. The number should have 5 digits and it increases automatically when a new employee is registered in the system. For instance, if the company has 20 employees and the administrator wants to register a specialist doctor with the name Ana Maria Santos Moura, then the the employee ID for this specialist doctor should be AMSM00021.
 ### 1.4. Found out Dependencies
 
 *Identify here any found out dependency to other US and/or requirements.*

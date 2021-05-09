@@ -18,7 +18,7 @@ public class ClinicalAnalysisLaboratoryController {
     /**
      * Instance of a Clinical Analysis Laboratory.
      *
-     * @param company - the company that administrates the system
+     * @param company the company that administrates the system
      */
     public ClinicalAnalysisLaboratoryController(Company company) {
         this.company = company;
@@ -27,11 +27,11 @@ public class ClinicalAnalysisLaboratoryController {
     /**
      * Creates a Clinical Analysis Laboratory.
      *
-     * @param laboratoryID - the Clinical Analysis Laboratory's laboratory ID
-     * @param name         - the Clinical Analysis Laboratory's name
-     * @param address      - the Clinical Analysis Laboratory's address
-     * @param phoneNumber  - the Clinical Analysis Laboratory's phone number
-     * @param tinNumber    - the Clinical Analysis Laboratory's TIN number
+     * @param laboratoryID the Clinical Analysis Laboratory's laboratory ID
+     * @param name the Clinical Analysis Laboratory's name
+     * @param address the Clinical Analysis Laboratory's address
+     * @param phoneNumber the Clinical Analysis Laboratory's phone number
+     * @param tinNumber the Clinical Analysis Laboratory's TIN number
      */
     public void CreateClinicalAnalysisLaboratory(String laboratoryID, String name, String address, String phoneNumber, String tinNumber) {
         store = company.getClinicalAnalysisLaboratoryStore();
