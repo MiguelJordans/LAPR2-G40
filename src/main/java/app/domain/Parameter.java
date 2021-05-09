@@ -25,7 +25,7 @@ public class Parameter {
     public void checkTestCode(String code) {
 
         if (StringUtils.isBlank(code))
-            throw new IllegalArgumentException("Test Code cannot be blank.");
+            throw new IllegalArgumentException("Code cannot be blank.");
 
 
         if (!(code.matches("^[a-zA-Z0-9]*$")) || code.length() > 5)
@@ -36,7 +36,7 @@ public class Parameter {
     public void checkName(String name) {
 
         if (StringUtils.isBlank(name))
-            throw new IllegalArgumentException("Collecting Method cannot be blank.");
+            throw new IllegalArgumentException("Name cannot be blank.");
 
         if (name.length() > 8)
             throw new IllegalArgumentException("Name not valid! Cannot have more than 8 chars.");

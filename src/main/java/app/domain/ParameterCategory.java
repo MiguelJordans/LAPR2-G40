@@ -25,7 +25,7 @@ public class ParameterCategory {
     public void checkTestCode(String code) {
 
         if (StringUtils.isBlank(code))
-            throw new IllegalArgumentException("Test Code cannot be blank.");
+            throw new IllegalArgumentException("Code cannot be blank.");
 
         if (code.length()<4 || code.length() > 8)
             throw new IllegalArgumentException("Code not valid! Code must have 4 to 8 chars.");
@@ -35,10 +35,10 @@ public class ParameterCategory {
     public void checkNhsld(String nhsld) {
 
         if (StringUtils.isBlank(nhsld))
-            throw new IllegalArgumentException("Collecting Method cannot be blank.");
+            throw new IllegalArgumentException("NHSLD cannot be blank.");
 
         if (nhsld.length() > 8)
-            throw new IllegalArgumentException("Name not valid! Cannot have more than 8 chars.");
+            throw new IllegalArgumentException("NHSLD not valid! Cannot have more than 8 chars.");
 
     }
 

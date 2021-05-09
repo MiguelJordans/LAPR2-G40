@@ -129,6 +129,15 @@ public class ParameterCategoryTest {
 
     }
 
+    @Test
+    public void checkCode() {
+
+        ParameterCategory pc = new ParameterCategory("1234","ye22s","aaa");
+
+        Assert.assertNotNull(pc);
+
+    }
+
     @Test(expected = IllegalArgumentException.class)
     public void checkNHSLDTooManyChars1() {
 
@@ -150,6 +159,15 @@ public class ParameterCategoryTest {
 
     }
 
+    @Test
+    public void checkNHSLD() {
+
+        ParameterCategory pc = new ParameterCategory("1abcE","ye22s","3232");
+
+        Assert.assertNotNull(pc);
+
+    }
+
     @Test(expected = IllegalArgumentException.class)
     public void checkDescriptionTooManyChars1() {
 
@@ -168,6 +186,15 @@ public class ParameterCategoryTest {
     public void checkDescriptionBlank() {
 
         ParameterCategory pc = new ParameterCategory("1abcE","","aaa");
+
+    }
+
+    @Test
+    public void checkDescription() {
+
+        ParameterCategory pc = new ParameterCategory("1abcE","asdasdas","aaa");
+
+        Assert.assertNotNull(pc);
 
     }
 

@@ -146,6 +146,15 @@ public class ParameterTest {
 
     }
 
+    @Test
+    public void checkCode() {
+
+        Parameter pp = new Parameter("1231","22222","aaa");
+
+        Assert.assertNotNull(pp);
+
+    }
+
     @Test(expected = IllegalArgumentException.class)
     public void checkNameTooManyChars1() {
 
@@ -167,6 +176,15 @@ public class ParameterTest {
 
     }
 
+    @Test
+    public void checkName() {
+
+        Parameter pp = new Parameter("2","22222","aaaaaa");
+
+        Assert.assertNotNull(pp);
+
+    }
+
     @Test(expected = IllegalArgumentException.class)
     public void checkDescriptionTooManyChars1() {
 
@@ -178,6 +196,15 @@ public class ParameterTest {
     public void checkDescriptionTooManyChars2() {
 
         Parameter pp = new Parameter("12","2222232323gdfgdfgd233234234234sdgfsdgsdgs2","aaa");
+
+    }
+
+    @Test
+    public void checkDescriptionDescription() {
+
+        Parameter pp = new Parameter("12","222fg2","aaa");
+
+        Assert.assertNotNull(pp);
 
     }
 

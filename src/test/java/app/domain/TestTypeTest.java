@@ -195,6 +195,17 @@ public class TestTypeTest {
 
     }
 
+    @Test
+    public void checkCollectingMethod() {
+
+        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("AAAAa","aaa","aaaa");
+        pcStore.listAdd();
+        TestType tt = new TestType("1111","23232s","aaaa",pcStore);
+
+        Assert.assertNotNull(tt);
+    }
+
     @Test(expected = IllegalArgumentException.class)
     public void checkDescriptionTooManyChars1() {
 
@@ -218,7 +229,7 @@ public class TestTypeTest {
         TestType tt = new TestType("1111","","2",pcStore);
 
     }
-
+    
     @Test
     public void setPp() {
 
@@ -305,6 +316,14 @@ public class TestTypeTest {
         pcStore.listAdd();
 
         TestType tt = new TestType("1111","aaaaa","2",pcStore);
+
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void checkCategoryListBlank() {
+
+        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+        TestType tt = new TestType("1111","aaa","2",pcStore);
 
     }
 

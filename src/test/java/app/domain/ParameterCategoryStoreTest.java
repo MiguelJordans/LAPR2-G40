@@ -171,4 +171,28 @@ public class ParameterCategoryStoreTest {
 
     }
 
+    @Test
+    public void getCategoryStoreListNull(){
+
+
+        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+        ParameterCategory pc = null;
+        pcStore.listAdd();
+
+       Assert.assertNull(null);
+
+    }
+
+    @Test
+    public void getCategoryStoreListNotNull(){
+
+
+        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcStore.listAdd();
+
+        Assert.assertNotNull(pcStore.getParameterCategoryList());
+
+    }
+
 }
