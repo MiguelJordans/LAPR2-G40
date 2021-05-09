@@ -84,6 +84,7 @@
 
 | Interaction ID | Question: Which class is responsible for... | Answer | Justification (with patterns) |
 |:-------------  |:--------------------- |:------------|:---------------------------- |
+<<<<<<< HEAD
 | Step/Msg 1: starts a new parameter category |	...instantiating a new Parameter Category | ParameterCategoryUI | Pure Fabrication: there is no reason to assign this responsibility to any existing class in the Domain Model |
 | 		                                      |	...coordinating the US? | CreateParameterCategoryController | Controller |
 | 	                                          |	...starts new parameter category? | Company | Creator: R1/2 |
@@ -95,6 +96,19 @@
 |  	                                                     |	...validating the data globally (e.g..:duplicated)? | Company | IE : adopts/records all the ParameterCategory objects |
 | Step/Msg 5:confirms the data | ...saving the created parameter category? | Company | IE: adopts/records all the ParameterCategory objects |
 | Step/Msg 6:informing operation success | ...informing operation success? | ParameterCategoryUI | IE: responsible for user interaction |              
+=======
+| Step/Msg 1: 		 |	...instantiating a new Parameter Category		 |            |                            |
+| 		 |	...coordinating the US?		 |  ParameterCategoryController           | Controller                             |
+| 		 |	...starts new parameter category?		 |  Company            |       Creator: R1/2                        |
+| 		 |		...knowing the user using the system?	 | UserSession             |  IE: cf. A&A component documentation                            |
+| 		 |	...knowing to which organization the user belongs to	| Company           | IE: has registed all?                           |
+| Step/Msg 2: request data (i.e.,code,description,nhsld) 		 | n/a							 |             |                              |
+| Step/Msg 3: types requested data  		 |		...saving the input data					 | ParameterCategory            |      IE: The object created in step 1 has its own data                        |
+| Step/Msg 4: shows the data and requests a confirmation  		 |	...validating the data locally (e.g..:mandatory vs. nom-mandatory data)?						 |   ParameterCategoryStore         |    IE: knows its own data                          |
+|  	 |	...validanting the data globally (e.g..:duplicated)?		 |  ParameterCategoryStore          |      IE : adopts/records all the ParameterCategory objects                       |
+| Step/Msg 5:confirms the data		 | ...saving the created parameter category							 |  ParameterCategoryStore           |  IE: adopts/records all the ParameterCategory objects                            |
+| Step/Msg 6:informing operation sucess	 | 	...informing operation sucess			 |  ParameterCategoryUI	         |    IE: responible for user interaction                           |              
+>>>>>>> b308047a688a2f8b78042b6198c7f28a1543ba4a
 
 ### Systematization ##
 
