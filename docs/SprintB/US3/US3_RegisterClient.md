@@ -189,14 +189,14 @@ No dependencies were found.
 | Interaction ID | Question: Which class is responsible for... | Answer  | Justification (with patterns)  |
 |:-------------  |:--------------------- |:------------|:---------------------------- |
 | Step/Msg 1: Starts the registration of a new client |	...interacting with the actor | ClientRegistrationUI | Pure Fabrication: there is no reason to assign this responsibility to any existing class in the Domain Model |
-| Step/Msg 1: Starts the registration of a new client | ...coordinating the US? | ClientRegistrationController | It's a controller | 
-| Step/Msg 1: Starts the registration of a new client | ...instantiating a new client? | Company | The company knows the client. |
-| Step/Msg 1: Starts the registration of a new client | ...knowing which user is using the system? | UserSession | IE: cf. A&A component documentation |
-| Step/Msg 1: Starts the registration of a new client | ...knowing to which organization the user belongs to? | System | n/a |
+|  | ...coordinating the US? | ClientRegistrationController | It's a controller | 
+|  | ...instantiating a new client? | Company | The company knows the client. |
+| | ...knowing which user is using the system? | UserSession | IE: cf. A&A component documentation |
+| | ...knowing to which organization the user belongs to? |Company| n/a |
 | Step/Msg 2: Requests data (name, citizen card number, phone number, email, TIF number, NSH number, sex, birth date) |	n/a | n/a | n/a |
 | Step/Msg 3: Types requested data | ...saving the inputted data? | ClientRegistration | IE: object created in step 1 has its own data. |
-| Step/Msg 4: Shows the data and requests confirmation | ...validating the data locally (e.g.: mandatory or non-mandatory data)? | Company | IE: knows its own data. |
-| Step/Msg 5: Confirms the data | ... saving the created clinical analysis laboratory? | Company | IE: adopts/records all the ClinicalAnalysisLaboratory objects |
+| Step/Msg 4: Shows the data and requests confirmation | ...validating the data locally (e.g.: mandatory or non-mandatory data)? | ClientRegistrationStore | IE: knows its own data. |
+| Step/Msg 5: Confirms the data | ... saving the created clinical analysis laboratory? | ClientRegistrationStore | IE: adopts/records all the ClinicalAnalysisLaboratory objects |
 | Step/Msg 6: Informs the operation success | ...inform the operation success? | ClientRegistrationUI | IE: responsible for user interaction |              
 
 ### Systematization ##
@@ -217,20 +217,20 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 *In this section, it is suggested to present an UML dynamic view stating the sequence of domain related software objects' interactions that allows to fulfill the requirement.* 
 
-![US003_SD](US003_SD.svg)
+![US003_SD](US003_V2_SD.svg)
 
 ## 3.3. Class Diagram (CD)
 
 *In this section, it is suggested to present an UML static view representing the main domain related software classes that are involved in fulfilling the requirement as well as and their relations, attributes and methods.*
 
-![US003_CD](US003_CD2.svg)
+![US003_CD](US003_CD.svg)
 
 # 4. Tests
 
-<<<<<<< HEAD
-=======
+
+
 ## AC5
->>>>>>> 8f1b4ca68415a3cd92bfee29e722351925694e8a
+
 
 **Test 1:** Check that it is not possible to create an instance of the Client with a blank attribute (E.g.: name). 
 
@@ -270,17 +270,7 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 ### ClientRegistration
 
-  package app.domain;
-
-  import org.apache.commons.lang3.StringUtils;
-
-  import java.time.LocalDate;
-  import java.time.Period;
-  import java.time.ZoneId;
-  import java.util.Date;
-  import java.util.regex.Pattern;
-
-  public class ClientRegistration {
+     public class ClientRegistration {
 
     /**
      * Private Atributes that are only directly access in this class.
@@ -689,13 +679,9 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 ### ClientRegistrationStore
 
->package app.domain;
->
->import java.util.ArrayList;
->import java.util.Date;
->import java.util.List;
 
->public class ClientRegistrationStore {
+
+    public class ClientRegistrationStore {
 
     List<ClientRegistration> clientRegistrationList;
     ClientRegistration cr;
@@ -806,13 +792,7 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 ### ClientRegistrationController
 
-package app.controller;
-
-import app.domain.ClientRegistrationStore;
-import app.domain.Company;
-
-
-public class ClientRegistrationController {
+    public class ClientRegistrationController {
 
     private Company company;
     private ClientRegistrationStore store;
@@ -879,8 +859,54 @@ public class ClientRegistrationController {
 
 # 6. Integration and Demo 
 
-*In this section, it is suggested to describe the efforts made to integrate this functionality with the other features of the system.*
+    public ClientRegistration createClientRegistration(String name,String email,String sex,String birthdate,String citizenCardNumber,String phoneNumber,String tinNumber,String nhsNumber) {
+    return new ClientRegistration(name, email, sex, birthdate, citizenCardNumber, phoneNumber, tinNumber, nhsNumber);
+    }
 
+    ClientRegistrationStore clientRegistrationStore = new ClientRegistrationStore();
+
+    private static ClientRegistrationStore clientRegistrationList;
+
+    public static ClientRegistrationStore ClientRegistration() {
+        return clientRegistrationList = new ClientRegistrationStore();
+    }
+
+    public boolean addClientRegistration(ClientRegistration cr) {
+        clientRegistrationStore.listAdd(cr);
+        return true;
+    }
+
+    public boolean validateClientRegistration(ClientRegistration cr) {
+        clientRegistrationStore.validateClientRegistration(cr);
+        return true;
+    }
+
+    public boolean saveClientRegistration(ClientRegistration cr) {
+        clientRegistrationStore.saveClientRegistration();
+        return true;
+    }
+
+    public boolean listContainsClientRegistration(ClientRegistration cr) {
+        clientRegistrationStore.listContain(cr);
+        return true;
+    }
+
+    public boolean listAdd(ClientRegistration cr) {
+        clientRegistrationStore.listAdd(cr);
+        return true;
+    }
+
+    public ClientRegistration getClientRegistration(int i) {
+        return clientRegistrationStore.getClientRegistration(i);
+    }
+
+    public ClientRegistration getCr() {
+        return clientRegistrationStore.cr;
+    }
+
+    public ClientRegistrationStore getClientRegistrationStore() {
+        return clientRegistrationStore;
+    }
 
 # 7. Observations
 

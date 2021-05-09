@@ -95,11 +95,11 @@
 |                                            | ... knowing to which organization the user belongs to? | System | IE: has registered all |
 | Step/Msg 2: request data (code, short name, description) | n/a | | |
 | Step/Msg 3: types requested data | ... saving the inputted data? | Parameter | IE: object created in step/msg 1 has its own data |
-| Step/Msg 4: shows the parameter categories it can operate and asks to select one | ... knowing the parameter categories to show? | System | IE: parameter category are defined by the system |
+| Step/Msg 4: shows the parameter categories it can operate and asks to select one | ... knowing the parameter categories to show? | Company | IE: parameter category are defined by the system |
 | Step/Msg 5: selects the parameter category | ... saving the selected data? | Parameter | IE: object created in step/msg 1 has its own data |
-| Step/Msg 6: confirms the selected parameter category | ... saving the selected parameter category? | Parameter | IE: object created in step 1 operates one or more parameter categories |
-| Step/Msg 7: shows all data and requests a confirmation | ... validating the data locally (e.g.: mandatory vs non-mandatory data)? | Company | IE: knows its own data |
-|                                                        | ... validating the data globally (e.g.: duplicated)? | Company | IE: knows all the Parameter objects |
+| Step/Msg 6: confirms the selected parameter category | ... saving the selected parameter category? | ParameterStore | IE: object created in step 1 operates one or more parameter categories |
+| Step/Msg 7: shows all data and requests a confirmation | ... validating the data locally (e.g.: mandatory vs non-mandatory data)? | ParameterStore | IE: knows its own data |
+|                                                        | ... validating the data globally (e.g.: duplicated)? | ParameterStore | IE: knows all the Parameter objects |
 | Step/Msg 8: confirms the data | ... saving the created Parameter? | Company | IE: adopts/records all the Parameter objects |
 | Step/Msg 9: informs operation success | ... informing operation success? | ParameterUI | IE: responsible for user interaction |            
 
