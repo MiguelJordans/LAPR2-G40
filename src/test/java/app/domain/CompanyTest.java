@@ -825,32 +825,6 @@ public class CompanyTest {
 
     }
 
-
-    @Test
-    public void getClinicalAnalysisLaboratoryStoreNull(){
-
-        Company company = new Company("aaaa");
-
-        company.clinicalAnalysisLaboratoryStore=null;
-
-        ClinicalAnalysisLaboratoryStore clinicalAnalysisLaboratoryStore = company.getClinicalAnalysisLaboratoryStore();
-
-        Assert.assertNull(clinicalAnalysisLaboratoryStore);
-
-    }
-
-    @Test
-    public void getClinicalAnalysisLaboratoryStoreNotNull(){
-
-        Company company = new Company("aaaa");
-
-        ClinicalAnalysisLaboratoryStore clinicalAnalysisLaboratoryStore = company.getClinicalAnalysisLaboratoryStore();
-
-        Assert.assertNotNull(clinicalAnalysisLaboratoryStore);
-
-    }
-
-
     @Test
     public void getClinicalAnalysisLaboratoryStoreNull(){
 
@@ -1008,15 +982,10 @@ public class CompanyTest {
 
         Company company = new Company("aaa");
 
-<<<<<<< HEAD
+
        List<TestType> testType =  company.getTestType();
 
        Assert.assertNotNull(testType);
-=======
-        List<TestType> testType =  company.getTestType();
-
-        Assert.assertNotNull(testType);
->>>>>>> 807abb7027b3e34cea03cc057a508ad13e636d31
 
     }
 
@@ -1045,7 +1014,7 @@ public class CompanyTest {
 
     }
 
-<<<<<<< HEAD
+
     @Test
     public void listAddAnalysisLaboratoryNotNull(){
 
@@ -1060,6 +1029,148 @@ public class CompanyTest {
 
     }
 
-=======
->>>>>>> 807abb7027b3e34cea03cc057a508ad13e636d31
+    @Test
+    public void clientRegistration() {
+
+        Company company = new Company("aaaa");
+
+        ClientRegistration cr = company.createClientRegistration("aaa","aaa@dn.pt","male","aaaa","1111111111111111","11111111111","1111111111","1111111111");
+
+    }
+
+    @Test
+    public void clientRegistrationNotNull() {
+
+        Company company = new Company("aaaa");
+
+        ClientRegistration cr = company.createClientRegistration("aaa","aaa@dn.pt","male","aaaa","1111111111111111","11111111111","1111111111","1111111111");
+
+        Assert.assertNotNull(cr);
+
+    }
+
+    @Test
+    public void clientRegistrationNull() {
+
+        ClientRegistration cr = null;
+
+        Assert.assertNull(cr);
+
+    }
+
+    @Test
+    public void ClientRegistration(){
+
+        Company company = new Company("aaaa");
+
+
+        ClientRegistrationStore clientRegistrationStore = company.ClientRegistration();
+
+
+    }
+
+    @Test
+    public void ClientRegistrationNotNull(){
+
+        Company company = new Company("aaaa");
+
+
+        ClientRegistrationStore clientRegistrationStore = company.ClientRegistration();
+
+        Assert.assertNotNull(clientRegistrationStore);
+
+    }
+
+    @Test
+    public void addClientRegistration(){
+
+        Company company = new Company("aaaa");
+
+
+        ClientRegistration cr = company.createClientRegistration("aaa","aaa@dn.pt","male","aaaa","1111111111111111","11111111111","1111111111","1111111111");
+
+        Assert.assertTrue(company.addClientRegistration(cr));
+
+    }
+
+    @Test
+    public void validatelientRegistration(){
+
+        Company company = new Company("aaaa");
+
+
+        ClientRegistration cr = company.createClientRegistration("aaa","aaa@dn.pt","male","aaaa","1111111111111111","11111111111","1111111111","1111111111");
+
+        Assert.assertTrue(company.validateClientRegistration(cr));
+
+    }
+
+    @Test
+    public void saveClientRegistration(){
+
+        Company company = new Company("aaaa");
+
+
+        ClientRegistration cr = company.createClientRegistration("aaa","aaa@dn.pt","male","aaaa","1111111111111111","11111111111","1111111111","1111111111");
+
+        Assert.assertTrue(company.saveClientRegistration(cr));
+
+    }
+
+    @Test
+    public void listContainsClientRegistration(){
+
+        Company company = new Company("aaaa");
+
+
+        ClientRegistration cr = company.createClientRegistration("aaa","aaa@dn.pt","male","aaaa","1111111111111111","11111111111","1111111111","1111111111");
+
+        Assert.assertTrue(company.listContainsClientRegistration(cr));
+
+    }
+
+    @Test
+    public void listAddClientRegistration(){
+
+        Company company = new Company("aaaa");
+
+
+        ClientRegistration cr = company.createClientRegistration("aaa","aaa@dn.pt","male","aaaa","1111111111111111","11111111111","1111111111","1111111111");
+
+        Assert.assertTrue(company.listAdd(cr));
+
+    }
+
+    @Test
+    public void getCR(){
+
+        Company company = new Company("aaaa");
+
+        ClientRegistration cr = company.createClientRegistration("aaa","aaa@dn.pt","male","aaaa","1111111111111111","11111111111","1111111111","1111111111");
+
+        ClientRegistration expected = company.getCr();
+        ClientRegistration actual = company.getCr();
+
+        Assert.assertEquals(expected,actual);
+
+
+    }
+
+    @Test
+    public void getClientRegistration(){
+
+        Company company = new Company("aaaa");
+
+        ClientRegistration cr = company.createClientRegistration("aaa","aaa@dn.pt","male","aaaa","1111111111111111","11111111111","1111111111","1111111111");
+        company.listAdd(cr);
+
+
+        ClientRegistration expected = company.getClientRegistration(0);
+        ClientRegistration actual = company.getClientRegistration(0);
+
+        Assert.assertEquals(expected,actual);
+
+    }
+
+
 }

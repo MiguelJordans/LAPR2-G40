@@ -52,6 +52,10 @@ public class Company {
         return new ParameterCategory(code, description, nhsld);
     }
 
+    public ClientRegistration createClientRegistration(String name,String email,String sex,String birthdate,String citizenCardNumber,String phoneNumber,String tinNumber,String nhsNumber) {
+        return new ClientRegistration(name, email, sex, birthdate, citizenCardNumber, phoneNumber, tinNumber, nhsNumber);
+    }
+
     //Test Type
 
     TestTypeStore testTypeStore = new TestTypeStore();
@@ -243,12 +247,6 @@ public class Company {
     public static ClientRegistrationStore ClientRegistration() {
         return clientRegistrationList = new ClientRegistrationStore();
     }
-
-    /*
-    public List<ClientRegistration> getClientRegistration() {
-        return clientRegistrationStore.getCr();
-    }
-     */
 
     public boolean addClientRegistration(ClientRegistration cr) {
         clientRegistrationStore.listAdd(cr);

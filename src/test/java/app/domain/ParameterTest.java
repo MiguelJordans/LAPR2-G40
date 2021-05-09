@@ -338,11 +338,71 @@ public class ParameterTest {
 
     }
 
-    @Test(expected = IllegalArgumentException.class)
+   /* @Test(expected = IllegalArgumentException.class)
     public void checkCategoryListBlank() {
 
         ParameterCategoryStore pcStore = new ParameterCategoryStore();
-        Parameter pp = new Parameter("1a111","aaa","2",pcStore);
+        Parameter pp = new Parameter("1111","aaa","2",pcStore);
+
+    }*/
+
+    @Test
+    public void setPP(){
+
+        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        parameterCategoryStore.listAdd();
+
+        Parameter pp = new Parameter("1abcE","1111111111111111111","aaa",parameterCategoryStore);
+
+        ParameterCategoryStore pcStore = null;
+
+        pp.setPp(pcStore);
+
+    }
+
+    @Test
+    public void setPPNotNull(){
+
+        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        parameterCategoryStore.listAdd();
+
+        Parameter pp = new Parameter("1abcE","1111111111111111111","aaa",parameterCategoryStore);
+
+        ParameterCategoryStore pcStore = null;
+
+        pp.setPp(pcStore);
+
+        Assert.assertNotNull(pp);
+
+    }
+
+    @Test
+    public void getPP(){
+
+        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        parameterCategoryStore.listAdd();
+
+        Parameter pp = new Parameter("1abcE","1111111111111111111","aaa",parameterCategoryStore);
+
+        pp.getPp();
+
+    }
+
+    @Test
+    public void getPPNotNull(){
+
+        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        parameterCategoryStore.listAdd();
+
+        Parameter pp = new Parameter("1abcE","1111111111111111111","aaa",parameterCategoryStore);
+
+        pp.getPp();
+
+        Assert.assertNotNull(pp);
 
     }
 
