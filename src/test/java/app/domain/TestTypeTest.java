@@ -2,8 +2,6 @@ package app.domain;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class TestTypeTest {
 
     @Test
@@ -11,7 +9,7 @@ public class TestTypeTest {
 
         ParameterCategoryStore pcStore = new ParameterCategoryStore();
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcStore.listAdd(pc);
+        pcStore.listAdd();
 
         TestType tt = new TestType("1abcE","yes","aaa",pcStore);
 
@@ -30,7 +28,7 @@ public class TestTypeTest {
 
         ParameterCategoryStore pcStore = new ParameterCategoryStore();
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcStore.listAdd(pc);
+        pcStore.listAdd();
 
         TestType tt = new TestType("1111","23232s","aaa42342",pcStore);
 
@@ -50,7 +48,7 @@ public class TestTypeTest {
         ParameterCategoryStore pcStore = new ParameterCategoryStore();
 
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcStore.listAdd(pc);
+        pcStore.listAdd();
 
         TestType tt = new TestType("1111","23232s","aaa42342",pcStore);
 
@@ -81,7 +79,7 @@ public class TestTypeTest {
         ParameterCategoryStore pcStore = new ParameterCategoryStore();
 
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcStore.listAdd(pc);
+        pcStore.listAdd();
         TestType tt = new TestType("1111","23232s","aaa42342",pcStore);
 
         String expected ="1abcd";
@@ -110,7 +108,7 @@ public class TestTypeTest {
 
         ParameterCategoryStore pcStore = new ParameterCategoryStore();
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcStore.listAdd(pc);
+        pcStore.listAdd();
         TestType tt = new TestType("1111","23232s","aaa42342",pcStore);
 
         String expected ="aaaaaaaa";
@@ -197,6 +195,17 @@ public class TestTypeTest {
 
     }
 
+    @Test
+    public void checkCollectingMethod() {
+
+        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("AAAAa","aaa","aaaa");
+        pcStore.listAdd();
+        TestType tt = new TestType("1111","23232s","aaaa",pcStore);
+
+        Assert.assertNotNull(tt);
+    }
+
     @Test(expected = IllegalArgumentException.class)
     public void checkDescriptionTooManyChars1() {
 
@@ -227,7 +236,7 @@ public class TestTypeTest {
         ParameterCategoryStore pcStore = new ParameterCategoryStore();
 
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcStore.listAdd(pc);
+        pcStore.listAdd();
 
         TestType tt = new TestType("1111","aaa","2",pcStore);
 
@@ -292,7 +301,7 @@ public class TestTypeTest {
 
         ParameterCategoryStore pcStore = new ParameterCategoryStore();
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcStore.listAdd(pc);
+        pcStore.listAdd();
 
         TestType tt = new TestType("1111","aaaaa","2",pcStore);
 
@@ -300,12 +309,34 @@ public class TestTypeTest {
 
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void checkCategoryList(){
         ParameterCategoryStore pcStore = new ParameterCategoryStore();
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcStore.listAdd();
 
         TestType tt = new TestType("1111","aaaaa","2",pcStore);
+
+    }
+
+   /* @Test(expected = IllegalArgumentException.class)
+    public void checkCategoryListBlank() {
+
+        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+        TestType tt = new TestType("1111","aaa","2",pcStore);
+
+    }*/
+
+    @Test
+    public void getPP(){
+
+        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcStore.listAdd();
+
+        TestType tt = new TestType("1111","aaaaa","2",pcStore);
+
+        Assert.assertNotNull(tt.getPP());
 
     }
 

@@ -1,6 +1,6 @@
 package app.controller;
 
-import app.domain.Company;
+import app.domain.*;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -26,21 +26,33 @@ public class ParameterControllerTest {
     public void createValidParameter(){
 
         ParameterController ctrl = new ParameterController();
-        ctrl.CreateParameter("aaa","aaa","aaa");
+        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcStore.listAdd();
+
+        ctrl.CreateParameter("aaa","aaa","aaa",pcStore);
 
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void createInvalidParameter(){
         ParameterController ctrl = new ParameterController();
-        ctrl.CreateParameter("aaa","+++","aaa");
+        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcStore.listAdd();
+
+        ctrl.CreateParameter("aaa","+++","aaa",pcStore);
     }
 
     @Test
     public void saveParameter() {
 
         ParameterController ctrl = new ParameterController();
-        ctrl.CreateParameter("aaa","aaa","aaa");
+        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcStore.listAdd();
+
+        ctrl.CreateParameter("aaa","aaa","aaa",pcStore);
 
         Assert.assertTrue(ctrl.saveParameter());
 
@@ -50,8 +62,11 @@ public class ParameterControllerTest {
     public void saveParameterInvalid() {
 
         ParameterController ctrl = new ParameterController();
+        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcStore.listAdd();
 
-        ctrl.CreateParameter("aaa","+++","aaa");
+        ctrl.CreateParameter("aaa","+++","aaa",pcStore);
 
         Assert.assertTrue(ctrl.saveParameter());
 
@@ -61,8 +76,11 @@ public class ParameterControllerTest {
     public void saveParameterValid() {
 
         ParameterController ctrl = new ParameterController();
+        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcStore.listAdd();
 
-        ctrl.CreateParameter("aaa","aaa","aaa");
+        ctrl.CreateParameter("aaa","aaa","aaa",pcStore);
 
         Assert.assertTrue(ctrl.saveParameter());
 
@@ -72,8 +90,11 @@ public class ParameterControllerTest {
     public void getParameter() {
 
         ParameterController ctrl = new ParameterController();
+        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcStore.listAdd();
 
-        ctrl.CreateParameter("aaa","aaa","aaa");
+        ctrl.CreateParameter("aaa","aaa","aaa",pcStore);
 
         String expected =  " Code: " + "aaa"  +
                 ", Description:" + "aaa" +
@@ -89,8 +110,11 @@ public class ParameterControllerTest {
     public void getTestTypeInvalid() {
 
         ParameterController ctrl = new ParameterController();
+        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcStore.listAdd();
 
-        ctrl.CreateParameter("aaa","+++","aaa");
+        ctrl.CreateParameter("aaa","+++","aaa",pcStore);
 
         String expected =  " Code: " + "aaa"  +
                 ", Description:" + "+++" +
@@ -99,6 +123,15 @@ public class ParameterControllerTest {
         String actual = (ctrl.getPP());
 
         Assert.assertEquals(expected,actual);
+
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void getParameterList(){
+
+        ParameterController ctrl = new ParameterController();
+
+        ctrl.getParameterList();
 
     }
 

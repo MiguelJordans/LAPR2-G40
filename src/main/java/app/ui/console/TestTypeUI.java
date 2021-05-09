@@ -29,8 +29,8 @@ public class TestTypeUI implements Runnable {
             do {
                 boolean exception = false;
                 do {
-                    ParameterCategory pc = (ParameterCategory) Utils.showAndSelectOne(this.pcStore.getParameterCategoryList(), "Select the test types");
-                    this.pcStore.listAdd(pc);
+                    ParameterCategory pc = (ParameterCategory) Utils.showAndSelectOne(this.pcStore.getParameterCategoryList(), "Select the categories");
+                    this.pcStore.listAdd();
                     leave = Utils.confirm("Do you wish to select more parameters?");
                 } while (leave);
                 do {
@@ -40,7 +40,7 @@ public class TestTypeUI implements Runnable {
                         String description = Utils.readLineFromConsole("Please enter the description of the test type");
                         String testCode = Utils.readLineFromConsole("Please enter the testCode of the Test Type");
 
-                        ParameterCategoryStore pc = (ParameterCategoryStore) Utils.showAndSelectOne(this.pcStore.getParameterCategoryList(), "Select the test types");
+                        ParameterCategoryStore pc = (ParameterCategoryStore) Utils.showAndSelectOne(this.pcStore.getParameterCategoryList(), "Select the categories");
                         ctrl.CreateTestType(description, testCode, collectingMethod, pc);
 
                         exception = false;

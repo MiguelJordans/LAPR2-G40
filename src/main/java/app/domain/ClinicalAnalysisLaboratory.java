@@ -160,7 +160,7 @@ public class ClinicalAnalysisLaboratory {
         if (StringUtils.isBlank(name)) {
             throw new IllegalArgumentException("Name cannot be blank.");
         }
-        if (!(name.length() < 30)) {
+        if (name.length() >= 30) {
             throw new IllegalArgumentException("Name cannot have more than 30 characters.");
         }
         for (int i = 0; i < auxchar.length; i++) {
@@ -180,7 +180,7 @@ public class ClinicalAnalysisLaboratory {
         if (StringUtils.isBlank(address)) {
             throw new IllegalArgumentException("Address cannot be blank.");
         }
-        if (!(address.length() < 30)) {
+        if (address.length() >= 30) {
             throw new IllegalArgumentException("Address cannot have more than 30 characters.");
         }
     }
@@ -197,7 +197,7 @@ public class ClinicalAnalysisLaboratory {
         if (StringUtils.isBlank(phoneNumber)) {
             throw new IllegalArgumentException("Phone number cannot be blank.");
         }
-        if (!(phoneNumber.length() == 11)) {
+        if (phoneNumber.length() != 11) {
             throw new IllegalArgumentException("Phone number must be 11 digit numbers.");
         }
         for (int i = 0; i < auxChar.length; i++) {
@@ -220,7 +220,7 @@ public class ClinicalAnalysisLaboratory {
         if (StringUtils.isBlank(tinNumber)) {
             throw new IllegalArgumentException("TIN number cannot be blank.");
         }
-        if (!(tinNumber.length() == 10)) {
+        if (tinNumber.length() != 10) {
             throw new IllegalArgumentException("TIN number must be 10 digit numbers.");
         }
         for (int i = 0; i < auxChar.length; i++) {

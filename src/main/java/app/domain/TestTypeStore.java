@@ -5,10 +5,8 @@ import java.util.List;
 
 public class TestTypeStore {
 
-    static List<TestType> list = new ArrayList<TestType>();
+    static List<TestType> list = new ArrayList<>();
     TestType tt;
-
-    public TestTypeStore(){}
 
     public TestType CreateTestType(String description,String testCode,String collectingMethod,ParameterCategoryStore pc){
         return this.tt = new TestType(testCode,description,collectingMethod,pc);

@@ -12,7 +12,7 @@ public class ClinicalAnalysisLaboratoryStore {
      * Constructor.
      */
     public ClinicalAnalysisLaboratoryStore() {
-        this.clinicalAnalysisLaboratoryList = new ArrayList<ClinicalAnalysisLaboratory>();
+        this.clinicalAnalysisLaboratoryList = new ArrayList<>();
     }
 
     /**

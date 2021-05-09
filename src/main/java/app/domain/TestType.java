@@ -9,9 +9,6 @@ public class TestType {
     private String description;
     private String collectingMethod;
 
-
-    private ParameterCategoryStore ppStore;
-    private List<Parameter> ppList;
     private ParameterCategoryStore pp;
 
     public TestType(String testCode, String description, String collectingMethod,ParameterCategoryStore ppStore) {
@@ -84,6 +81,11 @@ public class TestType {
     public void setPp(ParameterCategoryStore ppsstore) {
         this.pp = ppsstore;
     }
+
+    public ParameterCategoryStore getPP() {
+        return pp;
+    }
+
     @Override
     public String toString() {
         return

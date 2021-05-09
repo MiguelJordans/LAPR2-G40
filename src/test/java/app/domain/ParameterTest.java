@@ -10,7 +10,11 @@ public class ParameterTest {
     @Test
     public void checkParameterToString1() {
 
-        Parameter pp = new Parameter("1abcE","yes","aaa");
+        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        parameterCategoryStore.listAdd();
+
+        Parameter pp = new Parameter("1abcE","yes","aaa",parameterCategoryStore);
 
         String expected = " Code: " + "1abcE"  +
                 ", Description:" + "yes" +
@@ -25,7 +29,11 @@ public class ParameterTest {
     @Test
     public void checkParameterToString2() {
 
-        Parameter pp = new Parameter("11111","22222","aaa");
+        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        parameterCategoryStore.listAdd();
+
+        Parameter pp = new Parameter("11111","22222","aaa",parameterCategoryStore);
 
         String expected = " Code: " + "11111"  +
                 ", Description:" + "22222" +
@@ -40,7 +48,11 @@ public class ParameterTest {
     @Test
     public void setCode1(){
 
-        Parameter pp = new Parameter("11111","22222","aaa");
+        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        parameterCategoryStore.listAdd();
+
+        Parameter pp = new Parameter("1abcE","yes","aaa",parameterCategoryStore);
 
         String expected ="1abcd";
         pp.setCode(expected);
@@ -52,7 +64,11 @@ public class ParameterTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void setCode2(){
-        Parameter pp = new Parameter("11111","22222","aaa");
+        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        parameterCategoryStore.listAdd();
+
+        Parameter pp = new Parameter("1abcE","yes","aaa",parameterCategoryStore);
 
         String expected ="ABCDED";
         pp.setCode(expected);
@@ -64,7 +80,11 @@ public class ParameterTest {
 
     @Test
     public void setDescription1(){
-        Parameter pp = new Parameter("11111","22222","aaa");
+        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        parameterCategoryStore.listAdd();
+
+        Parameter pp = new Parameter("1abcE","yes","aaa",parameterCategoryStore);
 
         String expected ="1abcd";
         pp.setDescription(expected);
@@ -76,21 +96,27 @@ public class ParameterTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void setDescription2(){
-        ParameterCategoryStore pcStore = new ParameterCategoryStore();
-        TestType tt = new TestType("ABCDE","ABCDE'","swab",pcStore);
+        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        parameterCategoryStore.listAdd();
+
+        Parameter pp = new Parameter("1abcE","yes","aaa",parameterCategoryStore);
 
         String expected ="1abcdAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-        tt.setDescription(expected);
+        pp.setDescription(expected);
 
-        String Actual = tt.getDescription();
+        String Actual = pp.getDescription();
 
         Assert.assertEquals(expected,Actual);
     }
 
     @Test
     public void setName1(){
-        Parameter pp = new Parameter("11111","22222","aaa");
+        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        parameterCategoryStore.listAdd();
 
+        Parameter pp = new Parameter("1abcE","yes","aaa",parameterCategoryStore);
         String expected ="aaaaaaaa";
         pp.setName(expected);
 
@@ -101,7 +127,11 @@ public class ParameterTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void setName2(){
-        Parameter pp = new Parameter("11111","22222","aaa");
+        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        parameterCategoryStore.listAdd();
+
+        Parameter pp = new Parameter("1abcE","yes","aaa",parameterCategoryStore);
 
         String expected ="ASDASDASDASDASDASDASDa";
         pp.setName(expected);
@@ -114,77 +144,160 @@ public class ParameterTest {
     @Test(expected = IllegalArgumentException.class)
     public void checkCodeNotAlphaNumeric1() {
 
-        Parameter pp = new Parameter("+´+111","22222","aaa");
+        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        parameterCategoryStore.listAdd();
+
+        Parameter pp = new Parameter("****","yes","aaa",parameterCategoryStore);
 
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void checkCodeNotAlphaNumeric2() {
 
-        Parameter pp = new Parameter(".-.","22222","aaa");
+        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        parameterCategoryStore.listAdd();
+
+        Parameter pp = new Parameter("_:_","yes","aaa",parameterCategoryStore);
 
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void checkCodeTooManyChars() {
 
-        Parameter pp = new Parameter("11112312312311","22222","aaa");
+        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        parameterCategoryStore.listAdd();
+
+        Parameter pp = new Parameter("112312312312312312312312","yes","aaa",parameterCategoryStore);
 
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void checkCodeTooManyChars2() {
 
-        Parameter pp = new Parameter("111ASSSDS11","22222","aaa");
+        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        parameterCategoryStore.listAdd();
+
+        Parameter pp = new Parameter("1a4353453453453453453","aaaa","aaaaaa",parameterCategoryStore);
 
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void checkCodeBlank() {
 
-        Parameter pp = new Parameter("","22222","aaa");
+        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        parameterCategoryStore.listAdd();
+
+        Parameter pp = new Parameter("","yes","aaa",parameterCategoryStore);
+
+    }
+
+    @Test
+    public void checkCode() {
+
+        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        parameterCategoryStore.listAdd();
+
+        Parameter pp = new Parameter("1abcE","yes","aaa",parameterCategoryStore);
+
+        Assert.assertNotNull(pp);
 
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void checkNameTooManyChars1() {
 
-        Parameter pp = new Parameter("11111","AAAAA222","aa212312312312312a");
+        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        parameterCategoryStore.listAdd();
+
+        Parameter pp = new Parameter("1abcE","yes","aasdasdasdasdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",parameterCategoryStore);
 
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void checkNameTooManyChars2() {
 
-        Parameter pp = new Parameter("11111","2","aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        parameterCategoryStore.listAdd();
+
+        Parameter pp = new Parameter("1abcE","yes","aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",parameterCategoryStore);
 
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void checkNameBlank() {
 
-        Parameter pp = new Parameter("2","22222","");
+        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        parameterCategoryStore.listAdd();
+
+        Parameter pp = new Parameter("1abcE","yes","",parameterCategoryStore);
+
+    }
+
+    @Test
+    public void checkName() {
+
+        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        parameterCategoryStore.listAdd();
+
+        Parameter pp = new Parameter("1abcE","yes","aaa",parameterCategoryStore);
+
+        Assert.assertNotNull(pp);
 
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void checkDescriptionTooManyChars1() {
 
-        Parameter pp = new Parameter("3","22AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA222","aaa");
+        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        parameterCategoryStore.listAdd();
+
+        Parameter pp = new Parameter("1abcE","yaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaes","aaa",parameterCategoryStore);
 
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void checkDescriptionTooManyChars2() {
 
-        Parameter pp = new Parameter("12","2222232323gdfgdfgd233234234234sdgfsdgsdgs2","aaa");
+        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        parameterCategoryStore.listAdd();
+
+        Parameter pp = new Parameter("1abcE","ySSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSes","aaa",parameterCategoryStore);
+
+    }
+
+    @Test
+    public void checkDescriptionDescription() {
+
+        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        parameterCategoryStore.listAdd();
+
+        Parameter pp = new Parameter("1abcE","yes","aaa",parameterCategoryStore);
+
+        Assert.assertNotNull(pp);
 
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void checkDescriptionBlank() {
 
-        Parameter pp = new Parameter("21","","aaa");
+        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        parameterCategoryStore.listAdd();
+
+        Parameter pp = new Parameter("1abcE","","aaa",parameterCategoryStore);
 
     }
 
