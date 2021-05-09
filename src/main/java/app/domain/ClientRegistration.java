@@ -269,11 +269,6 @@ public class ClientRegistration {
 
     }
 
-    private int clientAge(Date date) {
-        LocalDate date2 = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-        return Period.between(date2, LocalDate.now()).getYears();
-    }
-
     /**
      * Check if birth date respects the acceptance criteria
      *
