@@ -103,15 +103,14 @@ There is a dependency to "US009 Specify a new type of test and its collecting me
 
 ## 2. OO Analysis
 
-### 2.1. Relevant Domain Model Excerpt 
-*In this section, it is suggested to present an excerpt of the domain model that is seen as relevant to fulfill this requirement.* 
+### 2.1. Relevant Domain Model Excerpt
 
 ![US8_DM](US8_DM.svg)
 
 
 ### 2.2. Other Remarks
 
-*Use this section to capture some aditional notes/remarks that must be taken into consideration into the design activity. In some case, it might be usefull to add other analysis artifacts (e.g. activity or state diagrams).*
+*Use this section to capture some additional notes/remarks that must be taken into consideration into the design activity. In some case, it might be usefull to add other analysis artifacts (e.g. activity or state diagrams).*
 
 
 ## 3. Design - User Story Realization 
@@ -126,16 +125,16 @@ There is a dependency to "US009 Specify a new type of test and its collecting me
 |                                                               | ... coordinating the US? | ClinicalAnalysisLaboratoryController | Controller |
 |                                                               | ... instantiating a new Clinical Analysis Laboratory? | Company | Creator (Rule 1): in the DM Company has a Clinical Analysis Laboratory |
 |                                                               | ... knowing the user using the system? | UserSession | IE: cf. A&A component documentation |
-|                                                               | ... knowing to which organization the user belongs to? | System | IE: has registed all? |
+|                                                               | ... knowing to which organization the user belongs to? | System | IE: has registered all |
 | Step/Msg 2: request data (laboratoryID, name, address, phoneNumber, tinNumber) | n/a | | |
 | Step/Msg 3: types requested data | ... saving the inputted data? | ClinicalAnalysisLaboratory | IE: object created in step/msg 1 has its own data |
-| Step/Msg 4: shows the test types it can operate and asks to select the test(s) |	... knowing the test types to show? | System | IE: test types are defined by the system? |
+| Step/Msg 4: shows the test types it can operate and asks to select the test(s) | ... knowing the test types to show? | System | IE: test types are defined by the system |
 | Step/Msg 5: selects the test(s) | ... saving the selected data? | ClinicalAnalysisLaboratory | IE: object created in step/msg 1 has its own data |
 | Step/Msg 6: confirms the selected test types | ... saving the selected test types? | ClinicalAnalysisLaboratory | IE: object created in step 1 operates one or more test types |
 | Step/Msg 7: shows all data and requests a confirmation | ... validating the data locally (e.g.: mandatory vs non-mandatory data)? | Company | IE: knows its own data |
 |                                                        | ... validating the data globally (e.g.: duplicated)? | Company | IE: knows all the ClinicalAnalysisLaboratory objects |
-| Step/Msg 8: confirms the data | ... saving the created clinical analysis laboratory? | Company | IE: adopts/records all the ClinicalAnalysisLaboratory objects |
-| Step/Msg 9: informs operation success | ... informing operation success? | UI | IE: responsible for user interaction |
+| Step/Msg 8: confirms the data | ... saving the created Clinical Analysis Laboratory? | Company | IE: adopts/records all the ClinicalAnalysisLaboratory objects |
+| Step/Msg 9: informs operation success | ... informing operation success? | ClinicalAnalysisLaboratoryUI | IE: responsible for user interaction |
 
 
 ### Systematization ##
@@ -152,24 +151,15 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 ## 3.2. Sequence Diagram (SD)
 
-*In this section, it is suggested to present an UML dynamic view stating the sequence of domain related software objects' interactions that allows to fulfill the requirement.*
-
 ![US8_SD](US8_SD.svg)
 
 
 ## 3.3. Class Diagram (CD)
 
-*In this section, it is suggested to present an UML static view representing the main domain related software classes that are involved in fulfilling the requirement as well as and their relations, attributes and methods.*
-
-![US8_CD](US8_CD.svg)
+![US8-CD](US8-CD.svg)
 
 
 # 4. Tests
-
-*In this section, it is suggested to systematize how the tests were designed to allow a correct measurement of requirements fulfilling.* 
-
-**_DO NOT COPY ALL DEVELOPED TESTS HERE_**
-
 
 **Test 1:** Check that it is not possible to create an instance of ClinicalAnalysisLaboratory class with null values. 
 
@@ -288,8 +278,6 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 # 5. Construction (Implementation)
 
-*In this section, it is suggested to provide, if necessary, some evidence that the construction/implementation is in accordance with the previously carried out design. Furthermore, it is recommeded to mention/describe the existence of other relevant (e.g. configuration) files and highlight relevant commits.*
-
 ### ClinicalAnalysisLaboratory
 
     public class ClinicalAnalysisLaboratory {
@@ -303,11 +291,11 @@ Other software classes (i.e. Pure Fabrication) identified:
         /**
         * Constructs an instance of Clinical Analysis Laboratory.
         *
-        * @param laboratoryID - the Clinical Analysis Laboratory's laboratory ID
-        * @param name         - the Clinical Analysis Laboratory's name
-        * @param address      - the Clinical Analysis Laboratory's address
-        * @param phoneNumber  - the Clinical Analysis Laboratory's phone number
-        * @param tinNumber    - the Clinical Analysis Laboratory's TIN number
+        * @param laboratoryID the Clinical Analysis Laboratory's laboratory ID
+        * @param name the Clinical Analysis Laboratory's name
+        * @param address the Clinical Analysis Laboratory's address
+        * @param phoneNumber the Clinical Analysis Laboratory's phone number
+        * @param tinNumber the Clinical Analysis Laboratory's TIN number
         */
         public ClinicalAnalysisLaboratory(String laboratoryID, String name, String address, String phoneNumber, String tinNumber) {
             this.laboratoryID = laboratoryID;
@@ -375,7 +363,7 @@ Other software classes (i.e. Pure Fabrication) identified:
         /**
         * Modifies the laboratory ID of the Clinical Analysis Laboratory.
         *
-        * @param laboratoryID - the Clinical Analysis Laboratory's laboratory ID
+        * @param laboratoryID the Clinical Analysis Laboratory's laboratory ID
         */
         public void setLaboratoryID(String laboratoryID) {
             this.laboratoryID = laboratoryID;
@@ -384,7 +372,7 @@ Other software classes (i.e. Pure Fabrication) identified:
         /**
         * Modifies the name of the Clinical Analysis Laboratory.
         *
-        * @param name - the Clinical Analysis Laboratory's name
+        * @param name the Clinical Analysis Laboratory's name
         */
         public void setName(String name) {
             checkNameRules(name);
@@ -394,7 +382,7 @@ Other software classes (i.e. Pure Fabrication) identified:
         /**
         * Modifies the address of the Clinical Analysis Laboratory.
         *
-        * @param address - the Clinical Analysis Laboratory's address
+        * @param address the Clinical Analysis Laboratory's address
         */
         public void setAddress(String address) {
             checkAddressRules(address);
@@ -404,7 +392,7 @@ Other software classes (i.e. Pure Fabrication) identified:
         /**
         * Modifies the phone number of the Clinical Analysis Laboratory.
         *
-        * @param phoneNumber - the Clinical Analysis Laboratory's phone number
+        * @param phoneNumber the Clinical Analysis Laboratory's phone number
         */
         public void setPhoneNumber(String phoneNumber) {
             checkPhoneNumberRules(phoneNumber);
@@ -414,7 +402,7 @@ Other software classes (i.e. Pure Fabrication) identified:
         /**
         * Modifies the TIN number of the Clinical Analysis Laboratory.
         *
-        * @param tinNumber - the Clinical Analysis Laboratory's TIN number
+        * @param tinNumber the Clinical Analysis Laboratory's TIN number
         */
         public void setTINnumber(String tinNumber) {
             checkTinNumberRules(tinNumber);
@@ -426,7 +414,7 @@ Other software classes (i.e. Pure Fabrication) identified:
         /**
         * Checks the laboratory ID rules.
         *
-        * @param laboratoryID - the Clinical Analysis Laboratory's laboratory ID
+        * @param laboratoryID the Clinical Analysis Laboratory's laboratory ID
         */
         private void checkLaboratoryIDRules(String laboratoryID) {
             if (StringUtils.isBlank(laboratoryID)) {
@@ -440,7 +428,7 @@ Other software classes (i.e. Pure Fabrication) identified:
         /**
         * Checks the name rules.
         *
-        * @param name - the Clinical Analysis Laboratory's name
+        * @param name the Clinical Analysis Laboratory's name
         */
         private void checkNameRules(String name) {
             String aux = name.trim();
@@ -464,7 +452,7 @@ Other software classes (i.e. Pure Fabrication) identified:
         /**
         * Checks the address rules.
         *
-        * @param address - the Clinical Analysis Laboratory's address
+        * @param address the Clinical Analysis Laboratory's address
         */
         private void checkAddressRules(String address) {
             if (StringUtils.isBlank(address)) {
@@ -478,7 +466,7 @@ Other software classes (i.e. Pure Fabrication) identified:
         /**
         * Checks the phone number rules.
         *
-        * @param phoneNumber - the Clinical Analysis Laboratory's phone number
+        * @param phoneNumber the Clinical Analysis Laboratory's phone number
         */
         private void checkPhoneNumberRules(String phoneNumber) {
             String auxTrimPhoneNumber = phoneNumber.replaceAll("\\s", "");

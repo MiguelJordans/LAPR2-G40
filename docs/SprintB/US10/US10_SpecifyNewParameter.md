@@ -60,9 +60,7 @@
 
 ### 1.6. System Sequence Diagram (SSD)
 
-*Insert here a SSD depicting the envisioned Actor-System interactions and throughout which data is inputted and outputted to fulfill the requirement. All interactions must be numbered.*
-
-![US10_SSD](US10_SSD.svg)
+![US10-SSD](US10-SSD.svg)
 
 
 ### 1.7 Other Relevant Remarks
@@ -73,13 +71,12 @@
 ## 2. OO Analysis
 
 ### 2.1. Relevant Domain Model Excerpt 
-*In this section, it is suggested to present an excerpt of the domain model that is seen as relevant to fulfill this requirement.* 
 
-![US10_DM](US10_DM.svg)
+![US10-DM](US10-DM.svg)
 
 ### 2.2. Other Remarks
 
-*Use this section to capture some aditional notes/remarks that must be taken into consideration into the design activity. In some case, it might be usefull to add other analysis artifacts (e.g. activity or state diagrams).* 
+*Use this section to capture some additional notes/remarks that must be taken into consideration into the design activity. In some case, it might be usefull to add other analysis artifacts (e.g. activity or state diagrams).* 
 
 
 
@@ -90,57 +87,138 @@
 **The rationale grounds on the SSD interactions and the identified input/output data.**
 
 | Interaction ID | Question: Which class is responsible for... | Answer  | Justification (with patterns)  |
-|:-------------  |:--------------------- |:------------|:---------------------------- |
-| Step 1  		 |							 |             |                              |
-| Step 2  		 |							 |             |                              |
-| Step 3  		 |							 |             |                              |
-| Step 4  		 |							 |             |                              |
-| Step 5  		 |							 |             |                              |
-| Step 6  		 |							 |             |                              |              
+| Step/Msg 1: asks to create a new Parameter | ... interacting with the actor? | ParameterUI | Pure Fabrication: there is no reason to assign this responsibility to any existing class in the Domain Model |
+|                                            | ... coordinating the US? | ParameterController | Controller |
+|                                            | ... instantiating a new Parameter? | Company | Creator (Rule 1): in the DM Company has a Parameter |
+|                                            | ... knowing the user using the system? | UserSession | IE: cf. A&A component documentation |
+|                                            | ... knowing to which organization the user belongs to? | System | IE: has registered all |
+| Step/Msg 2: request data (code, short name, description) | n/a | | |
+| Step/Msg 3: types requested data | ... saving the inputted data? | Parameter | IE: object created in step/msg 1 has its own data |
+| Step/Msg 4: shows the parameter categories it can operate and asks to select one | ... knowing the parameter categories to show? | System | IE: parameter category are defined by the system |
+| Step/Msg 5: selects the parameter category | ... saving the selected data? | Parameter | IE: object created in step/msg 1 has its own data |
+| Step/Msg 6: confirms the selected parameter category | ... saving the selected parameter category? | Parameter | IE: object created in step 1 operates one or more parameter categories |
+| Step/Msg 7: shows all data and requests a confirmation | ... validating the data locally (e.g.: mandatory vs non-mandatory data)? | Company | IE: knows its own data |
+|                                                        | ... validating the data globally (e.g.: duplicated)? | Company | IE: knows all the Parameter objects |
+| Step/Msg 8: confirms the data | ... saving the created Parameter? | Company | IE: adopts/records all the Parameter objects |
+| Step/Msg 9: informs operation success | ... informing operation success? | ParameterUI | IE: responsible for user interaction |            
 
 ### Systematization ##
 
 According to the taken rationale, the conceptual classes promoted to software classes are: 
 
- * Class1
- * Class2
- * Class3
+ * Company
+ * Parameter
 
 Other software classes (i.e. Pure Fabrication) identified: 
- * xxxxUI  
- * xxxxController
+ * ParameterUI  
+ * ParameterController
+ * ParameterStore
 
 ## 3.2. Sequence Diagram (SD)
 
-*In this section, it is suggested to present an UML dynamic view stating the sequence of domain related software objects' interactions that allows to fulfill the requirement.* 
-
-![US10_SD](US10_SD.svg)
+![US10-SD](US10-SD.svg)
 
 ## 3.3. Class Diagram (CD)
 
-*In this section, it is suggested to present an UML static view representing the main domain related software classes that are involved in fulfilling the requirement as well as and their relations, attributes and methods.*
+![US10-CD](US10-CD.svg)
 
-![US10_CD](US10_CD.svg)
 
 # 4. Tests 
-*In this section, it is suggested to systematize how the tests were designed to allow a correct measurement of requirements fulfilling.* 
 
-**_DO NOT COPY ALL DEVELOPED TESTS HERE_**
+### AC1
 
-**Test 1:** Check that it is not possible to create an instance of the Example class with null values. 
+**Test 1:** Check that it is not possible to create an instance of Parameter class with code blank.
 
 	@Test(expected = IllegalArgumentException.class)
-		public void ensureNullIsNotAllowed() {
-		Exemplo instance = new Exemplo(null, null);
-	}
+    public void checkCodeBlank() {
 
-*It is also recommended to organize this content by subsections.* 
+        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        parameterCategoryStore.listAdd();
+
+        Parameter pp = new Parameter("","yes","aaa",parameterCategoryStore);
+    }
+
+**Test 2:** Check that it is not possible to create an instance of Parameter class with code not alphanumeric.
+
+    @Test(expected = IllegalArgumentException.class)
+    public void checkCodeNotAlphaNumeric1() {
+
+        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        parameterCategoryStore.listAdd();
+
+        Parameter pp = new Parameter("****","yes","aaa",parameterCategoryStore);
+    }
+
+**Test 3:** Check that it is not possible to create an instance of Parameter class with code with more characters than the maximum.
+
+    @Test(expected = IllegalArgumentException.class)
+    public void checkCodeTooManyChars() {
+
+        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        parameterCategoryStore.listAdd();
+
+        Parameter pp = new Parameter("112312312312312312312312","yes","aaa",parameterCategoryStore);
+    }
+
+### AC2
+
+**Test 4:** Check that it is not possible to create an instance of Parameter class with short name blank.
+
+    @Test(expected = IllegalArgumentException.class)
+    public void checkNameBlank() {
+
+        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        parameterCategoryStore.listAdd();
+
+        Parameter pp = new Parameter("1abcE","yes","",parameterCategoryStore);
+    }
+
+**Test 5:** Check that it is not possible to create an instance of Parameter class with short name with more characters than the maximum.
+
+    @Test(expected = IllegalArgumentException.class)
+    public void checkNameTooManyChars1() {
+
+        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        parameterCategoryStore.listAdd();
+
+        Parameter pp = new Parameter("1abcE","yes","aasdasdasdasdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",parameterCategoryStore);
+    }
+
+### AC3
+
+**Test 6:** Check that it is not possible to create an instance of Parameter class with description blank.
+
+    @Test(expected = IllegalArgumentException.class)
+    public void checkDescriptionBlank() {
+
+        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        parameterCategoryStore.listAdd();
+
+        Parameter pp = new Parameter("1abcE","","aaa",parameterCategoryStore);
+    }
+
+**Test 7:** Check that it is not possible to create an instance of Parameter class with description with more characters than the maximum.
+
+    @Test(expected = IllegalArgumentException.class)
+    public void checkDescriptionTooManyChars1() {
+
+        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        parameterCategoryStore.listAdd();
+
+        Parameter pp = new Parameter("1abcE","yaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaes","aaa",parameterCategoryStore);
+    }
 
 # 5. Construction (Implementation)
 
-*In this section, it is suggested to provide, if necessary, some evidence that the construction/implementation is in accordance with the previously carried out design. Furthermore, it is recommeded to mention/describe the existence of other relevant (e.g. configuration) files and highlight relevant commits.*
+## Parameter
 
-*It is also recommended to organize this content by subsections.* 
 
 # 6. Integration and Demo 
 

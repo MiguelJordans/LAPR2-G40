@@ -13,11 +13,11 @@ public class ClinicalAnalysisLaboratory {
     /**
      * Constructs an instance of Clinical Analysis Laboratory.
      *
-     * @param laboratoryID - the Clinical Analysis Laboratory's laboratory ID
-     * @param name         - the Clinical Analysis Laboratory's name
-     * @param address      - the Clinical Analysis Laboratory's address
-     * @param phoneNumber  - the Clinical Analysis Laboratory's phone number
-     * @param tinNumber    - the Clinical Analysis Laboratory's TIN number
+     * @param laboratoryID the Clinical Analysis Laboratory's laboratory ID
+     * @param name the Clinical Analysis Laboratory's name
+     * @param address the Clinical Analysis Laboratory's address
+     * @param phoneNumber the Clinical Analysis Laboratory's phone number
+     * @param tinNumber the Clinical Analysis Laboratory's TIN number
      */
     public ClinicalAnalysisLaboratory(String laboratoryID, String name, String address, String phoneNumber, String tinNumber) {
         this.laboratoryID = laboratoryID;
@@ -85,7 +85,7 @@ public class ClinicalAnalysisLaboratory {
     /**
      * Modifies the laboratory ID of the Clinical Analysis Laboratory.
      *
-     * @param laboratoryID - the Clinical Analysis Laboratory's laboratory ID
+     * @param laboratoryID the Clinical Analysis Laboratory's laboratory ID
      */
     public void setLaboratoryID(String laboratoryID) {
         this.laboratoryID = laboratoryID;
@@ -94,7 +94,7 @@ public class ClinicalAnalysisLaboratory {
     /**
      * Modifies the name of the Clinical Analysis Laboratory.
      *
-     * @param name - the Clinical Analysis Laboratory's name
+     * @param name the Clinical Analysis Laboratory's name
      */
     public void setName(String name) {
         checkNameRules(name);
@@ -104,7 +104,7 @@ public class ClinicalAnalysisLaboratory {
     /**
      * Modifies the address of the Clinical Analysis Laboratory.
      *
-     * @param address - the Clinical Analysis Laboratory's address
+     * @param address the Clinical Analysis Laboratory's address
      */
     public void setAddress(String address) {
         checkAddressRules(address);
@@ -114,7 +114,7 @@ public class ClinicalAnalysisLaboratory {
     /**
      * Modifies the phone number of the Clinical Analysis Laboratory.
      *
-     * @param phoneNumber - the Clinical Analysis Laboratory's phone number
+     * @param phoneNumber the Clinical Analysis Laboratory's phone number
      */
     public void setPhoneNumber(String phoneNumber) {
         checkPhoneNumberRules(phoneNumber);
@@ -124,9 +124,9 @@ public class ClinicalAnalysisLaboratory {
     /**
      * Modifies the TIN number of the Clinical Analysis Laboratory.
      *
-     * @param tinNumber - the Clinical Analysis Laboratory's TIN number
+     * @param tinNumber the Clinical Analysis Laboratory's TIN number
      */
-    public void setTINnumber(String tinNumber) {
+    public void setTinNumber(String tinNumber) {
         checkTinNumberRules(tinNumber);
         this.tinNumber = tinNumber;
     }
@@ -136,7 +136,7 @@ public class ClinicalAnalysisLaboratory {
     /**
      * Checks the laboratory ID rules.
      *
-     * @param laboratoryID - the Clinical Analysis Laboratory's laboratory ID
+     * @param laboratoryID the Clinical Analysis Laboratory's laboratory ID
      */
     private void checkLaboratoryIDRules(String laboratoryID) {
         if (StringUtils.isBlank(laboratoryID)) {
@@ -150,7 +150,7 @@ public class ClinicalAnalysisLaboratory {
     /**
      * Checks the name rules.
      *
-     * @param name - the Clinical Analysis Laboratory's name
+     * @param name the Clinical Analysis Laboratory's name
      */
     private void checkNameRules(String name) {
         String aux = name.trim();
@@ -174,7 +174,7 @@ public class ClinicalAnalysisLaboratory {
     /**
      * Checks the address rules.
      *
-     * @param address - the Clinical Analysis Laboratory's address
+     * @param address the Clinical Analysis Laboratory's address
      */
     private void checkAddressRules(String address) {
         if (StringUtils.isBlank(address)) {
@@ -188,7 +188,7 @@ public class ClinicalAnalysisLaboratory {
     /**
      * Checks the phone number rules.
      *
-     * @param phoneNumber - the Clinical Analysis Laboratory's phone number
+     * @param phoneNumber the Clinical Analysis Laboratory's phone number
      */
     private void checkPhoneNumberRules(String phoneNumber) {
         String auxTrimPhoneNumber = phoneNumber.replaceAll("\\s", "");

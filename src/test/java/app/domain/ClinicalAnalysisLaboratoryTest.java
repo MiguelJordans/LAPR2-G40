@@ -153,7 +153,7 @@ public class ClinicalAnalysisLaboratoryTest {
 
         //Act
         String expected = "7426591354";
-        cal.setTINnumber(expected);
+        cal.setTinNumber(expected);
 
         //Assert
         String actual = cal.getTINnumber();

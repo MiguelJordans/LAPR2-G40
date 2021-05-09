@@ -10,26 +10,29 @@
 
 **From the Specifications Document:**
 
->"Blood Tests are frequently characterized by measuring several parameters wich for presentation/reporting purposes are organized by categories.For example, parameters such as the number of Red Blood Cells(RBC), White Blood Cells(RBC) and Platelets(PLT) are usually presented under the blood count(Hemogram) category."*
+>"Blood Tests are frequently characterized by measuring several parameters which for presentation/reporting purposes are organized by categories.For example, parameters such as the number of Red Blood Cells(RBC), White Blood Cells(RBC) and Platelets(PLT) are usually presented under the blood count (Hemogram) category."
 
->"Regardless, such tests rely on measuring one or more parameters that can be grouped/organized by categories."*
+>"Regardless, such tests rely on measuring one or more parameters that can be grouped/organized by categories."
 
 **From the client clarifications:**
 
->**Question**: What are the data that characterize a parameter category?*
+>**Question**: What are the information related to a Parameter Category?
 >
->**Answer**:Simply consider a code, a description and an NHS identifier*
+>**Answer**: Each category has a name and a unique code. There are no subcategories.
 
-
->**Question**: What are the business rules applicable to such data?*
+>**Question**: Regarding the creation of a new category, what should be the format of the code in terms of length, should it be alphanumeric or numbers only? Also, can we assume that both attributes are mandatory?
 >
->**Answer:**
+>**Answer:** The format of the attributes of one category are:
+> * Name: is a string with no more than 10 characters;
+> * Code: are five alphanumeric characters. The code is unique and is not automatically generated.
+> 
+> Both attributes are mandatory.
 
 ### 1.3. Acceptance Criteria
 
-* **AC1:** Code must be unique having 4 to 8 chars.
-* **AC2:** Description cannot be empty and has, at maximum, 40 chars.
-* **AC3:** NHS identifier is not mandatory.
+* **AC1:** Name is a string with no more than 10 characters
+* **AC2:** Code is unique and has five alphanumeric characters
+* **AC3:** Code is not automatically generated
 
 ### 1.4. Found out Dependencies
 
@@ -40,15 +43,16 @@
 **Input data**
 
 * Typed data:
-    * a code,
-    * a description,
-    * a NHS indentified.
+    * Name
+    * Code
     
-**Selected data**: (none) 
+**Selected data**: 
+
+*There is no selected data*
 
 **Output Data**
 
-*(In)Success of the operation*
+* (In)Success of the operation
 
 ### 1.6. System Sequence Diagram (SSD)
 
@@ -78,19 +82,19 @@
 
 **The rationale grounds on the SSD interactions and the identified input/output data.**
 
-| Interaction ID | Question: Which class is responsible for... | Answer  | Justification (with patterns)  |
+| Interaction ID | Question: Which class is responsible for... | Answer | Justification (with patterns) |
 |:-------------  |:--------------------- |:------------|:---------------------------- |
-| Step/Msg 1: 		 |	...instantiating a new Parameter Category		 |            |                            |
-| 		 |	...coordinating the US?		 |  CreateParameterCategoryController           | Controller                             |
-| 		 |	...starts new parameter category?		 |  Company            |       Creator: R1/2                        |
-| 		 |		...knowing the user using the system?	 | UserSession             |  IE: cf. A&A component documentation                            |
-| 		 |	...knowing to which organization the user belongs to	| System            | IE: has registed all?                           |
-| Step/Msg 2: request data (i.e.,code,description,nhsld) 		 | n/a							 |             |                              |
-| Step/Msg 3: types requested data  		 |		...saving the input data					 | ParameterCategory            |      IE: The object created in step 1 has its own data                        |
-| Step/Msg 4: shows the data and requests a confirmation  		 |	...validating the data locally (e.g..:mandatory vs. nom-mandatory data)?						 |   ParameterCategory          |    IE: knows its own data                          |
-|  	 |	...validanting the data globally (e.g..:duplicated)?		 |  Company           |      IE : adopts/records all the ParameterCategory objects                       |
-| Step/Msg 5:confirms the data		 | ...saving the created parameter category							 |  Company           |  IE: adopts/records all the ParameterCategory objects                            |
-| Step/Msg 6:informing operation sucess	 | 	...informing operation sucess			 |  UI	         |    IE: responible for user interaction                           |              
+| Step/Msg 1: starts a new parameter category |	...instantiating a new Parameter Category | ParameterCategoryUI | Pure Fabrication: there is no reason to assign this responsibility to any existing class in the Domain Model |
+| 		                                      |	...coordinating the US? | CreateParameterCategoryController | Controller |
+| 	                                          |	...starts new parameter category? | Company | Creator: R1/2 |
+| 		                                      |	...knowing the user using the system? | UserSession | IE: cf. A&A component documentation |
+| 	                                          |	...knowing to which organization the user belongs to? | System | IE: has registered all |
+| Step/Msg 2: request data (name, code) | n/a | | |
+| Step/Msg 3: types requested data | ...saving the input data | ParameterCategory | IE: the object created in step 1 has its own data |
+| Step/Msg 4: shows the data and requests a confirmation |	...validating the data locally (e.g..:mandatory vs. nom-mandatory data)? | ParameterCategory | IE: knows its own data |
+|  	                                                     |	...validating the data globally (e.g..:duplicated)? | Company | IE : adopts/records all the ParameterCategory objects |
+| Step/Msg 5:confirms the data | ...saving the created parameter category? | Company | IE: adopts/records all the ParameterCategory objects |
+| Step/Msg 6:informing operation success | ...informing operation success? | ParameterCategoryUI | IE: responsible for user interaction |              
 
 ### Systematization ##
 
@@ -98,8 +102,6 @@ According to the taken rationale, the conceptual classes promoted to software cl
 
  * Company
  * ParameterCategory
- * UserSession  
- * UI ?
 
 Other software classes (i.e. Pure Fabrication) identified: 
 
