@@ -303,7 +303,6 @@ public class CompanyTest {
     public void saveParameter() {
 
         Company company = new Company("aaaa");
-        TestTypeStore testTypeStore = new TestTypeStore();
 
         Parameter pp = company.createParameter("aaa","aaa","aaa");
 
@@ -408,10 +407,36 @@ public class CompanyTest {
 
     @Test
     public void testSaveTestType() {
+
+        Company company = new Company("aaaa");
+
+        TestType tt = company.createTestType("aaa","aaa","aaa");
+
+        Assert.assertTrue(company.saveTestType(tt));
+
     }
 
     @Test
     public void testListContainsTestType() {
+
+        Company company = new Company("aaaa");
+
+        TestType tt = company.createTestType("aaa","aaa","aaa");
+
+        Assert.assertTrue(company.listContainsTestType(tt));
+
+    }
+
+    @Test
+    public void testListContainsTestTypeInvalid() {
+
+        Company company = new Company("aaaa");
+
+        TestType tt = company.createTestType("aaa","aaa","aaa");
+        company.addTestType(tt);
+
+        Assert.assertFalse(company.listContainsTestType(tt));
+
     }
 
     @Test

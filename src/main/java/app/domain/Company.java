@@ -34,6 +34,10 @@ public class Company {
         return authFacade;
     }
 
+    public ClientRegistration createClientRegistration(String name, String email, String sex, String birthdate, String citizenCardNumber, String phoneNumber, String tinNumber, String nhsNumber) {
+        return new ClientRegistration(name, email, sex, birthdate, citizenCardNumber, phoneNumber, tinNumber, nhsNumber);
+    }
+
     public TestType createTestType(String testCode, String description, String collectingMethod) {
         return new TestType(testCode, description, collectingMethod);
     }
@@ -256,5 +260,58 @@ public class Company {
 
     public ClinicalAnalysisLaboratoryStore getClinicalAnalysisLaboratoryStore() {
         return clinicalAnalysisLaboratoryStore;
+    }
+
+    // Client Registration
+
+    ClientRegistrationStore clientRegistrationStore = new ClientRegistrationStore();
+
+    private static ClientRegistrationStore clientRegistrationList;
+
+    public static ClientRegistrationStore ClientRegistration() {
+        return clientRegistrationList = new ClientRegistrationStore();
+    }
+
+    /*
+    public List<ClientRegistration> getClientRegistration() {
+        return clientRegistrationStore.getCr();
+    }
+     */
+
+    public boolean addClientRegistration(ClientRegistration cr) {
+        clientRegistrationStore.listAdd(cr);
+        return true;
+    }
+
+    public boolean validateClientRegistration(ClientRegistration cr) {
+        clientRegistrationStore.validateClientRegistration(cr);
+        return true;
+    }
+
+    public boolean saveClientRegistration(ClientRegistration cr) {
+        clientRegistrationStore.saveClientRegistration();
+        return true;
+    }
+
+    public boolean listContainsClientRegistration(ClientRegistration cr) {
+        clientRegistrationStore.listContain(cr);
+        return true;
+    }
+
+    public boolean listAdd(ClientRegistration cr) {
+        clientRegistrationStore.listAdd(cr);
+        return true;
+    }
+
+    public ClientRegistration getClientRegistration(int i) {
+        return clientRegistrationStore.getClientRegistration(i);
+    }
+
+    public ClientRegistration getCr() {
+        return clientRegistrationStore.cr;
+    }
+
+    public ClientRegistrationStore getClientRegistrationStore() {
+        return clientRegistrationStore;
     }
 }
