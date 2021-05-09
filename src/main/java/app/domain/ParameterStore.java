@@ -12,21 +12,22 @@ public class ParameterStore {
      * Constructor.
      */
 
-    public ParameterStore(){this.list = new ArrayList<>();}
+    public ParameterStore() {
+        this.list = new ArrayList<>();
+    }
 
     /**
-     *
      * Creates a Parameter (Calling the Parameter constructor)
      *
      * @param description the Parameter's description
-     * @param code the Parameter's code
-     * @param name the Parameter's name
-     * @param pcStore the Parameter's category list
+     * @param code        the Parameter's code
+     * @param name        the Parameter's name
+     * @param pcStore     the Parameter's category list
      * @return the parameter created
      */
 
-    public Parameter CreateParameter(String description,String code,String name,ParameterCategoryStore pcStore){
-        return this.pp = new Parameter(code,description,name,pcStore);
+    public Parameter CreateParameter(String description, String code, String name, ParameterCategoryStore pcStore) {
+        return this.pp = new Parameter(code, description, name, pcStore);
     }
 
     /**
@@ -37,8 +38,8 @@ public class ParameterStore {
      */
 
 
-    public boolean validateParameter(Parameter pp){
-        if(pp==null||listContain(pp)){
+    public boolean validateParameter(Parameter pp) {
+        if (pp == null || listContain(pp)) {
             return false;
         }
         return true;
@@ -51,8 +52,8 @@ public class ParameterStore {
      * @return true if the list contains the parameter and false if it doesn't
      */
 
-    public boolean listContain(Parameter pp){
-        if(this.list.contains(pp)){
+    public boolean listContain(Parameter pp) {
+        if (this.list.contains(pp)) {
             return true;
         } else {
             return false;
@@ -65,8 +66,8 @@ public class ParameterStore {
      * @return the saving of an instance of a parameter.
      */
 
-    public boolean saveParameter(){
-        if(validateParameter(this.pp)){
+    public boolean saveParameter() {
+        if (validateParameter(this.pp)) {
             listAdd(pp);
             return true;
         } else {
@@ -82,7 +83,7 @@ public class ParameterStore {
      * @return the addition of the parameter to the list
      */
 
-    public boolean listAdd(Parameter pp){
+    public boolean listAdd(Parameter pp) {
         list.add(pp);
         return true;
     }
@@ -94,7 +95,7 @@ public class ParameterStore {
      * @return the element previously at the specified postion
      */
 
-    public Parameter getParameter(int i){
+    public Parameter getParameter(int i) {
         return list.get(i);
     }
 
@@ -117,5 +118,4 @@ public class ParameterStore {
     public List<Parameter> getParameterList() {
         return list;
     }
-
 }

@@ -87,6 +87,7 @@
 **The rationale grounds on the SSD interactions and the identified input/output data.**
 
 | Interaction ID | Question: Which class is responsible for... | Answer  | Justification (with patterns)  |
+|:-------------  |:--------------------- |:------------|:---------------------------- |
 | Step/Msg 1: asks to create a new Parameter | ... interacting with the actor? | ParameterUI | Pure Fabrication: there is no reason to assign this responsibility to any existing class in the Domain Model |
 |                                            | ... coordinating the US? | ParameterController | Controller |
 |                                            | ... instantiating a new Parameter? | Company | Creator (Rule 1): in the DM Company has a Parameter |
@@ -219,11 +220,493 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 ## Parameter
 
+    public class Parameter {
+
+        private String code;
+        private String name;
+        private String description;
+
+        private ParameterCategoryStore pp;
+
+
+        /**
+        * Constructs an instance of Parameter
+        *
+        * @param code the Parameter's code
+        * @param description the Parameter's description
+        * @param name the Parameter's name
+        * @param ppStore the Parameter's category list
+        */
+
+        public Parameter(String code, String description, String name,ParameterCategoryStore ppStore) {
+
+            checkCode(code);
+            checkName(name);
+            checkDescription(description);
+            checkCategoriesList(ppStore);
+
+            this.code = code;
+            this.name = name;
+            this.description = description;
+            this.pp = ppStore;
+
+        }
+
+        //Checks-----------------------------------------------------------------------------------------
+
+        /**
+        * Checks the Parameter's code (according to the acceptance criteria).
+        *
+        * @param code the Parameter's code
+        */
+
+        public void checkCode(String code) {
+
+            if (StringUtils.isBlank(code))
+                throw new IllegalArgumentException("Code cannot be blank.");
+
+
+            if (!(code.matches("^[a-zA-Z0-9]*$")) || code.length() > 5)
+                throw new IllegalArgumentException("Code not valid! Must be alphanumeric and have less than 5 chars.");
+
+        }
+
+        /**
+        * Checks the Parameter's name (according to the acceptance criteira).
+        *
+        * @param name the Parameter's name
+        */
+
+        public void checkName(String name) {
+
+            if (StringUtils.isBlank(name))
+                throw new IllegalArgumentException("Name cannot be blank.");
+
+            if (name.length() > 8)
+                throw new IllegalArgumentException("Name not valid! Cannot have more than 8 chars.");
+
+        }
+
+        /**
+        * Checks the Parameter's description (according to the acceptance criteria)
+        *
+        * @param description the Parameter's description
+        */
+
+        public void checkDescription(String description) {
+
+            if (StringUtils.isBlank(description))
+                throw new IllegalArgumentException("Description cannot be blank.");
+
+            if (description.length() > 20)
+                throw new IllegalArgumentException("Description not valid! Cannot have more than 15 chars.");
+
+        }
+
+        /**
+        * Checks the Parameter's category list (according to the acceptance criteria)
+        *
+        * @param ppStore the Parameter's category list
+        */
+
+        public void checkCategoriesList(ParameterCategoryStore ppStore){
+            if(ppStore.list.isEmpty()) {
+                throw new IllegalArgumentException("Categories not valid! List is null!");
+            }
+        }
+
+        //Get ------------------------------------------------------------------
+
+        /**
+        * Returns the code of the Parameter
+        *
+        * @return the code of the Parameter
+        */
+
+        public String getCode() {
+            return code;
+        }
+
+        /**
+        * Returns the description of the Parameter
+        *
+        * @return the description of the Parameter
+        */
+
+        public String getDescription() {
+            return description;
+        }
+
+        /**
+        * Returns the name of the Parameter
+        *
+        * @return the name of of the Parameter
+        */
+
+        public String getName() {
+            return name;
+        }
+
+        /**
+        * Returns the category list of the Parameter
+        *
+        * @return the category list of the Parameter
+        */
+
+        public ParameterCategoryStore getPp() {
+            return pp;
+        }
+
+        //Sets---------------------------------------------------------------------
+
+        /**
+        * Modifies the category list of the Parameter
+        *
+        * @param pp modifies the category list of the Parameter
+        */
+
+        public void setPp(ParameterCategoryStore pp) {
+            checkCategoriesList(pp);
+            this.pp = pp;
+        }
+
+        /**
+        * Modifies the name of the Parameter
+        *
+        * @param name modifies the name of the Parameter
+        */
+
+        public void setName(String name) {
+            checkName(name);
+            this.name = name;
+        }
+
+        /**
+        * Modifies the description of the Parameter
+        *
+        * @param description modifies the description of the Parameter
+        */
+
+        public void setDescription(String description) {
+            checkDescription(description);
+            this.description = description;
+        }
+
+        /**
+        * Modifies the code of the Parameter
+        *
+        * @param code modifies the code of the Parameter
+        */
+
+        public void setCode(String code) {
+            checkCode(code);
+            this.code = code;
+        }
+
+        /**
+        * Returns the textual description of the Parameter in the format : Code, Description, Name.
+        *
+        * @return
+        */
+
+
+        @Override
+        public String toString() {
+            return
+                    " Code: " + code  +
+                            ", Description:" + description +
+                            ", Name:" + name;
+
+        }
+    }
+
+## Parameter Controller
+
+    public class ParameterController {
+
+        private Company company;
+        private ParameterStore store;
+
+        /**
+        * Creates an empty Parameter controller.
+        */
+
+        public ParameterController(){
+            this(App.getInstance().getCompany());
+        }
+
+        /**
+        * Instance of a Parameter.
+        *
+        * @param company - the company that administrates the system
+        */
+
+        public ParameterController(Company company){
+            this.company=company;
+        }
+
+        /**
+        * Creates a Parameter(Calling the Parameter constructor implemented in the parameterStore)
+        *
+        * @param description the parameter's description
+        * @param code the parameter's code
+        * @param name the parameter's name
+        * @param pcStore the parameter's category list
+        */
+
+        public void CreateParameter(String description,String code,String name,ParameterCategoryStore pcStore){
+            store = company.getParameterStore();
+            store.CreateParameter(description,code,name,pcStore);
+        }
+
+        /**
+        * Transforms into string.
+        *
+        * @return the Parameter's info in string format
+        */
+
+        public String getPP(){ return store.getPp().toString(); }
+
+        /**
+        * Saves an instance of Parameter.
+        *
+        * @return the saving of an instance of a Parameter.
+        */
+
+        public boolean saveParameter() {
+            return this.store.saveParameter();
+        }
+
+        /**
+        * Returns the list of parameters already created
+        *
+        * @return the list of parameters already created
+        */
+
+        public List<Parameter> getParameterList() {
+            return store.getParameterList();
+        }
+    }
+
+##ParameterStore
+
+    public class ParameterStore {
+
+        List<Parameter> list;
+        Parameter pp;
+
+        /**
+        * Constructor.
+        */
+
+        public ParameterStore() {
+            this.list = new ArrayList<>();
+        }
+
+        /**
+        * Creates a Parameter (Calling the Parameter constructor)
+        *
+        * @param description the Parameter's description
+        * @param code        the Parameter's code
+        * @param name        the Parameter's name
+        * @param pcStore     the Parameter's category list
+        * @return the parameter created
+        */
+
+        public Parameter CreateParameter(String description, String code, String name, ParameterCategoryStore pcStore) {
+            return this.pp = new Parameter(code, description, name, pcStore);
+        }
+
+        /**
+        * Validates a parameter
+        *
+        * @param pp the object Parameter
+        * @return the validation of the Parameter being created
+        */
+
+
+        public boolean validateParameter(Parameter pp) {
+            if (pp == null || listContain(pp)) {
+                return false;
+            }
+            return true;
+        }
+
+        /**
+        * Checks if the new objected created is already in the list
+        *
+        * @param pp the object parameter
+        * @return true if the list contains the parameter and false if it doesn't
+        */
+
+        public boolean listContain(Parameter pp) {
+            if (this.list.contains(pp)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        /**
+        * Saves an instance of parameter.
+        *
+        * @return the saving of an instance of a parameter.
+        */
+
+        public boolean saveParameter() {
+            if (validateParameter(this.pp)) {
+                listAdd(pp);
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        /**
+        * Adds an instance of parameter to the list.
+        *
+        * @param pp - the parameter object
+        * @return the addition of the parameter to the list
+        */
+
+        public boolean listAdd(Parameter pp) {
+            list.add(pp);
+            return true;
+        }
+
+        /**
+        * Replaces the element of the specified position in the list with the specified element.
+        *
+        * @param i the index of the element to replace
+        * @return the element previously at the specified postion
+        */
+
+        public Parameter getParameter(int i) {
+            return list.get(i);
+        }
+
+        /**
+        * Gets Parameter from the list.
+        *
+        * @return the parameter requested
+        */
+
+        public Parameter getPp() {
+            return pp;
+        }
+
+        /**
+        * Returns the list of parameters already created
+        *
+        * @return the list of parameters already created
+        */
+
+        public List<Parameter> getParameterList() {
+            return list;
+        }
+    }
+
+##ParameterUI
+
+    public class ParameterUI implements Runnable {
+
+        private ParameterController ctrl;
+        private ParameterCategoryStore pcStore;
+
+        public ParameterUI() {
+            this.ctrl = new ParameterController();
+            this.pcStore = new ParameterCategoryStore();
+        }
+
+        @Override
+        public void run() {
+            boolean count = true;
+            boolean leave = false;
+            if (this.pcStore.getParameterCategoryList() == null || this.pcStore.getParameterCategoryList().isEmpty()) {
+                System.out.println("The list is empty! Please, try adding at least one parameter in order to create the laboratory.");
+            } else {
+                do {
+                    boolean exception = false;
+                    do {
+                        ParameterCategory pc = (ParameterCategory) Utils.showAndSelectOne(this.pcStore.getParameterCategoryList(), "Select the categories");
+                        this.pcStore.listAdd();
+                        leave = Utils.confirm("Do you wish to select more parameters?");
+                    } while (leave);
+                    do {
+                        try {
+                            String name = Utils.readLineFromConsole("Please enter the name of the parameter");
+                            String description = Utils.readLineFromConsole("Please enter the description of the parameter");
+                            String code = Utils.readLineFromConsole("Please enter the code of the parameter");
+
+                            ParameterCategoryStore pc = (ParameterCategoryStore) Utils.showAndSelectOne(this.pcStore.getParameterCategoryList(), "Select the categories");
+
+                            ctrl.CreateParameter(description, code, name, pc);
+                            exception = false;
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                            System.out.println("Incorrect input of data (an error has ocurred), please try again.");
+                            exception = true;
+                        }
+                    } while (exception);
+                    count = Utils.confirm("Parameter created! Do you wish to save it?" + ctrl.getPP());
+                    if (count) {
+                        if (ctrl.saveParameter()) {
+                            System.out.println("Parameter was saved with sucess!");
+                        }
+                    }
+                }while (!count);
+            }
+        }
+    }
+
 
 # 6. Integration and Demo 
 
-*In this section, it is suggested to describe the efforts made to integrate this functionality with the other features of the system.*
+## Integration in the Company class
 
+    public Parameter createParameter(String code, String description, String name, ParameterCategoryStore pcStore) {
+        return new Parameter(code, description, name, pcStore);
+    }
+
+    ParameterStore parameterStore = new ParameterStore();
+
+    private static ParameterStore parameterList;
+
+    public static ParameterStore Parameter() {
+        return parameterList = new ParameterStore();
+    }
+    
+    public boolean validateParameter(Parameter pp) {
+        parameterStore.validateParameter(pp);
+        return true;
+    }
+
+    public boolean saveParameter() {
+        parameterStore.saveParameter();
+        return true;
+    }
+
+    public boolean listContainsParameter(Parameter pp) {
+        parameterStore.listContain(pp);
+        return true;
+    }
+
+    public boolean parameterListAdd(Parameter pp) {
+        parameterStore.listAdd(pp);
+        return true;
+    }
+
+    public Parameter getParameter(int i) {
+        return parameterStore.getParameter(i);
+    }
+
+    public Parameter getPP() {
+        return parameterStore.pp;
+    }
+
+    public ParameterStore getParameterStore() {
+        return parameterStore;
+    }
 
 # 7. Observations
 

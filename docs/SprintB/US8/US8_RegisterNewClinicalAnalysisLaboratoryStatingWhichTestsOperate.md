@@ -145,7 +145,7 @@ According to the taken rationale, the conceptual classes promoted to software cl
  * ClinicalAnalysisLaboratory
 
 Other software classes (i.e. Pure Fabrication) identified: 
- * ClinicalAnalysisLaboratoryUI  
+ * ClinicalAnalysisLaboratoryUI
  * ClinicalAnalysisLaboratoryController
  * ClinicalAnalysisLaboratoryStore
 
@@ -156,7 +156,7 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 ## 3.3. Class Diagram (CD)
 
-![US8-CD](US8-CD.svg)
+![US8_CD](US8_CD.svg)
 
 
 # 4. Tests
@@ -735,8 +735,51 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 # 6. Integration and Demo 
 
-- Options list in AdminUI
-- Team members in DevTeamUI
+## Integration in the Company class
+
+    public ClinicalAnalysisLaboratory createClinicalAnalysisLaboratory(String laboratoryID, String name, String address, String phoneNumber, String TINnumber) {
+    return new ClinicalAnalysisLaboratory(laboratoryID, name, address, phoneNumber, TINnumber);
+    }
+
+    ClinicalAnalysisLaboratoryStore clinicalAnalysisLaboratoryStore = new ClinicalAnalysisLaboratoryStore();
+
+    private static ClinicalAnalysisLaboratoryStore clinicalAnalysisLaboratoryList;
+
+    public static ClinicalAnalysisLaboratoryStore ClinicalAnalysisLaboratory() {
+        return clinicalAnalysisLaboratoryList = new ClinicalAnalysisLaboratoryStore();
+    }
+
+    public boolean validateClinicalAnalysisLaboratory(ClinicalAnalysisLaboratory cal) {
+        clinicalAnalysisLaboratoryStore.validateClinicalAnalysisLaboratory(cal);
+        return true;
+    }
+
+    public boolean saveClinicalAnalysisLaboratory() {
+        clinicalAnalysisLaboratoryStore.saveClinicalAnalysisLaboratory();
+        return true;
+    }
+
+    public boolean listContainsClinicalAnalysisLaboratory(ClinicalAnalysisLaboratory cal) {
+        clinicalAnalysisLaboratoryStore.listContain(cal);
+        return true;
+    }
+
+    public boolean listAddAnalysisLaboratory(ClinicalAnalysisLaboratory cal) {
+        clinicalAnalysisLaboratoryStore.listAdd(cal);
+        return true;
+    }
+
+    public ClinicalAnalysisLaboratory getClinicalAnalysisLaboratory(int i) {
+          return clinicalAnalysisLaboratoryStore.getClinicalAnalysisLaboratory(i);
+    }
+
+    public ClinicalAnalysisLaboratory getCal() {
+          return clinicalAnalysisLaboratoryStore.cal;
+    }
+
+    public ClinicalAnalysisLaboratoryStore getClinicalAnalysisLaboratoryStore() {
+          return clinicalAnalysisLaboratoryStore;
+    }
 
 # 7. Observations
 

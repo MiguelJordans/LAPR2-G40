@@ -141,8 +141,8 @@ public class Company {
 
     // US08 - ClinicalAnalysisLaboratory --------------------------------------------------------
 
-    public ClinicalAnalysisLaboratory createClinicalAnalysisLaboratory(String laboratoryID, String name, String address, String phoneNumber, String TINnumber) {
-        return new ClinicalAnalysisLaboratory(laboratoryID, name, address, phoneNumber, TINnumber);
+    public ClinicalAnalysisLaboratory createClinicalAnalysisLaboratory(String laboratoryID, String name, String address, String phoneNumber, String tinNumber) {
+        return new ClinicalAnalysisLaboratory(laboratoryID, name, address, phoneNumber, tinNumber);
     }
 
     ClinicalAnalysisLaboratoryStore clinicalAnalysisLaboratoryStore = new ClinicalAnalysisLaboratoryStore();
@@ -200,8 +200,6 @@ public class Company {
         return testTypeList = new TestTypeStore();
     }
 
-    //public List
-
     public boolean validateTestType(TestType tt) {
         testTypeStore.validateTestType(tt);
         return true;
@@ -247,8 +245,6 @@ public class Company {
     public static ParameterStore Parameter() {
         return parameterList = new ParameterStore();
     }
-
-    //public List
 
     public boolean validateParameter(Parameter pp) {
         parameterStore.validateParameter(pp);

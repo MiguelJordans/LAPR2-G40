@@ -100,7 +100,7 @@ When the administrator (US9) specifies a new type of test, the administrator als
 
 ### 3.1. Rationale
 
-**The rationale grounds on the SSD interactions and the identified input/output data.**
+**The rationale grounds on the SSD interactions, and the identified input/output data.**
 
 | Interaction ID | Question: Which class is responsible for... | Answer | Justification (with patterns) |
 |:-------------- |:--------------------- |:------------|:---------------------------- |
@@ -726,7 +726,7 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 # 6. Integration and Demo 
 
-###Integration in the company
+###Integration in the Company class
 
     public TestType createTestType(String testCode, String description, String collectingMethod, ParameterCategoryStore pcStore) {
     return new TestType(testCode, description, collectingMethod, pcStore);
