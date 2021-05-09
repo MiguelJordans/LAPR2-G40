@@ -1276,7 +1276,7 @@ public class CompanyTest {
 
         EmployeeStore employeeStore = company.getEmployeeStore();
 
-        
+
     }
 
 }

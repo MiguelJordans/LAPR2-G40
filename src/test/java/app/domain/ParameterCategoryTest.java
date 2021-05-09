@@ -162,7 +162,7 @@ public class ParameterCategoryTest {
     @Test
     public void checkNHSLD() {
 
-        ParameterCategory pc = new ParameterCategory("1abcE","ye22s","3232");
+        ParameterCategory pc = new ParameterCategory("1abcE","ye22s","333");
 
         Assert.assertNotNull(pc);
 
