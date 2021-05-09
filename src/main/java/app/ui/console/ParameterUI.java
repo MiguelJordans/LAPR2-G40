@@ -24,7 +24,7 @@ public class ParameterUI implements Runnable {
 
 
         if (this.pcStore.getParameterCategoryList() == null || this.pcStore.getParameterCategoryList().isEmpty()) {
-            System.out.println("The list is empty! Please, try adding at least one parameter in order to create the parameter.");
+            System.out.println("The list is empty! Please, try adding at least one parameter in order to create the laboratory.");
         } else {
             do {
                 boolean exception = false;
@@ -35,12 +35,12 @@ public class ParameterUI implements Runnable {
                 do {
                     try {
 
-                        String nhsld = Utils.readLineFromConsole("Please enter the nhsld for the Parameter");
+                        String code = Utils.readLineFromConsole("Please enter the code of the Parameter");
                         String description = Utils.readLineFromConsole("Please enter the description of the Parameter");
-                        String Code = Utils.readLineFromConsole("Please enter the code of the Parameter");
+                        String nhsld = Utils.readLineFromConsole("Please enter the nhsld of the Parameter");
 
                         ParameterCategoryStore pc1 = pcStore;
-                        ctrl.CreateParameter(description, Code,nhsld, pc1);
+                        ctrl.CreateParameter(description, code, nhsld, pc1);
 
                         exception = false;
 
@@ -58,7 +58,7 @@ public class ParameterUI implements Runnable {
                 if (count) {
 
                     if (this.ctrl.saveParameter()) {
-                        System.out.println("Test type was saved with success!");
+                        System.out.println("Parameter was saved with success!");
 
                     }
                 }
