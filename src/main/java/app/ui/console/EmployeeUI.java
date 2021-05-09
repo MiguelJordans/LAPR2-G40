@@ -1,7 +1,9 @@
 package app.ui.console;
 
 import app.controller.RegisterEmployeeController;
+import app.domain.Employee;
 import app.ui.console.utils.Utils;
+
 
 public class EmployeeUI implements Runnable {
 
@@ -43,6 +45,9 @@ public class EmployeeUI implements Runnable {
         if (count) {
             if (ctrl.SaveEmployee()) {
                 System.out.println("Client was saved with success!");
+                System.out.println("Going to generate a new password.");
+
+
             }
         }
     }

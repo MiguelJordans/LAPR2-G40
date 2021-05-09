@@ -1,5 +1,6 @@
 package app.domain;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;
 import java.util.regex.Pattern;
 
@@ -9,6 +10,19 @@ public class Employee {
     String employeeId;
     String socCode, doctorIndexNumber;
 
+
+    /**
+     * Creates an instance of an Employee.
+     *
+     * @param name                   - the Employee's name
+     * @param address                - the Employee's address
+     * @param email                  - the Employee's email
+     * @param phoneNumber            - the Employee's phone number
+     * @param employeeId             - the Employee's ID
+     * @param socCode                - the Employee's SOC Code
+     * @param orgRole                - the Employee's organization role
+     * @param doctorIndexNumber      - the Specialist Doctor Doctor Index Number
+     */
 
     public Employee (String name, String address, String email, String phoneNumber, String employeeId, String socCode, String orgRole, String doctorIndexNumber){
 
@@ -32,6 +46,13 @@ public class Employee {
     }
 
     //Checks
+
+    /**
+     * Checks the Doctor Index Number rules
+     *
+     * @param doctorIndexNumber  - the Specialist Doctor Doctor Index Number
+     *
+     */
     public void checkDoctorIndexNumber (String doctorIndexNumber){
 
         if (StringUtils.isBlank(doctorIndexNumber)){
@@ -42,6 +63,13 @@ public class Employee {
         }
 
     }
+
+    /**
+     * Checks the Organization Role rules
+     *
+     * @param orgRole  - the Employee's organization role
+     *
+     */
 
     public void checkOrgRole (String orgRole){
 
@@ -57,6 +85,12 @@ public class Employee {
 
     }
 
+    /**
+     * Checks the Employee's name rules
+     *
+     * @param name  - the Employee's name rules
+     *
+     */
 
     public void checkNameRules(String name){
 
@@ -79,6 +113,13 @@ public class Employee {
 
     }
 
+    /**
+     * Checks the Employee's address rules
+     *
+     * @param address  - the Employee's address rules
+     *
+     */
+
     public void checkAddressRules (String address){
         String aux = address.trim();
         aux = aux.toLowerCase();
@@ -92,6 +133,13 @@ public class Employee {
         }
 
     }
+
+    /**
+     * Checks the Employee's email rules
+     *
+     * @param email  - the Employee's email rules
+     *
+     */
 
     public void checkEmailRules(String email){
 
@@ -108,6 +156,13 @@ public class Employee {
         }
 
     }
+
+    /**
+     * Checks the Employee's Phone Number rules
+     *
+     * @param phoneNumber  - the Employee's phone number rules
+     *
+     */
 
     public void checkPhoneNumberRules(String phoneNumber) {
         String auxTrimPhoneNumber = phoneNumber.replaceAll("\s", "");
@@ -127,6 +182,13 @@ public class Employee {
         }
     }
 
+    /**
+     * Checks the Employee's ID rules
+     *
+     * @param employeeId  - the Employee's ID rules
+     *
+     */
+
     public void checkEmployeeId (String employeeId){
 
 
@@ -140,6 +202,13 @@ public class Employee {
         }
 
     }
+
+    /**
+     * Checks the Employee's SOC Code rules
+     *
+     * @param socCode  - the Employee's SOC Code rules
+     *
+     */
 
     public void checkSocCode (String socCode){
 
@@ -162,39 +231,165 @@ public class Employee {
         }
 
     }
-//Gets
+
+
+
+    //Gets
+
+
+    /**
+     * Returns the Doctor Index Number of the Employee.
+     *
+     * @return the Doctor Index Number of the Employee
+     */
+
     public String getDoctorIndexNumber(){return doctorIndexNumber;}
+
+    /**
+     * Returns the Organization Role of the Employee.
+     *
+     * @return the Organization Role of the Employee
+     */
 
     public String getOrgRole(){return orgRole;}
 
+    /**
+     * Returns the Name of the Employee.
+     *
+     * @return the Name of the Employee
+     */
+
     public String getName(){return name;}
+
+    /**
+     * Returns the Address of the Employee.
+     *
+     * @return the Address of the Employee
+     */
 
     public String getAddress(){return address;}
 
+
+    /**
+     * Returns the Email of the Employee.
+     *
+     * @return the Email of the Employee
+     */
+
     public String getEmail(){return email;}
+
+
+    /**
+     * Returns the Phone Number of the Employee.
+     *
+     * @return the Phone Number of the Employee
+     */
 
     public String getPhoneNumber(){return phoneNumber;}
 
+
+    /**
+     * Returns the Employee ID of the Employee.
+     *
+     * @return the Employee ID of the Employee
+     */
+
     public String getEmployeeId(){return employeeId;}
+
+
+    /**
+     * Returns the SOC Code of the Employee.
+     *
+     * @return the SOC Code of the Employee
+     */
 
     public String getSocCode(){return socCode;}
 
+
+    /**
+     * Returns the randomly generated password.
+     *
+     * @return the randomly generated password.
+     */
+    private String getPassword() {
+        int lenght = 10;
+
+        return RandomStringUtils.randomAlphanumeric(lenght);
+    }
+
     //Sets
+
+    /**
+     * Modifies the Specialist Doctor's Doctor Index Number
+     *
+     * @param doctorIndexNumber      - the Specialist Doctor Doctor Index Number
+     */
+
     public void setDoctorIndexNumber(String doctorIndexNumber){this.doctorIndexNumber = doctorIndexNumber;}
+
+    /**
+     * Modifies the employee's organization role
+     *
+     * @param orgRole      - the employee's organization role
+     */
 
     public void setOrgRole(String orgRole){this.orgRole = orgRole;}
 
+
+    /**
+     * Modifies the employee's name
+     *
+     * @param name      - the employee's name
+     */
+
     public void setName(String name){this.name = name;}
+
+
+    /**
+     * Modifies the employee's address
+     *
+     * @param address      - the employee's address
+     */
 
     public void setAddress(String address){this.address = address;}
 
+
+    /**
+     * Modifies the employee's email
+     *
+     * @param email      - the employee's email
+     */
+
     public void setEmail(String email){this.email = email;}
+
+
+    /**
+     * Modifies the employee's phone number
+     *
+     * @param phoneNumber      - the employee's phone number
+     */
 
     public void setPhoneNumber(String phoneNumber){this.phoneNumber = phoneNumber;}
 
+
+    /**
+     * Modifies the employee's ID
+     *
+     * @param employeeId      - the employee's ID
+     */
+
     public void setEmployeeId(String employeeId){this.employeeId = employeeId;}
 
+
+    /**
+     * Modifies the employee's SOC Code
+     *
+     * @param socCode      - the employee's SOC Code
+     */
+
     public void setSocCode(String socCode){this.socCode = socCode;}
+
+
 
 
 }

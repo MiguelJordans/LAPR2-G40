@@ -24,6 +24,7 @@ public class ClinicalAnalysisLaboratoryStore {
      * @param phoneNumber  - the Clinical Analysis Laboratory's phone number
      * @param tinNumber    - the Clinical Analysis Laboratory's TIN number
      */
+
     public ClinicalAnalysisLaboratory CreateClinicalAnalysisLaboratory(String laboratoryID, String name, String address, String phoneNumber, String tinNumber) {
         return this.cal = new ClinicalAnalysisLaboratory(laboratoryID, name, address, phoneNumber, tinNumber);
     }

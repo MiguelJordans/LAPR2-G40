@@ -177,7 +177,6 @@ Other software classes (i.e. Pure Fabrication) identified:
 # 4. Tests 
 *In this section, it is suggested to systematize how the tests were designed to allow a correct measurement of requirements fulfilling.* 
 
-**_DO NOT COPY ALL DEVELOPED TESTS HERE_**
 
 **Test 1:** Check that it is not possible to create an instance of the Example class with null values. 
 
