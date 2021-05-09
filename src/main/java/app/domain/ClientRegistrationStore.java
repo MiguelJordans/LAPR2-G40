@@ -5,17 +5,17 @@ import java.util.List;
 
 public class ClientRegistrationStore {
 
-    List<ClientRegistration> list;
+    List<ClientRegistration> clientRegistrationList;
     ClientRegistration cr;
 
-    public ClientRegistrationStore(){this.list = new ArrayList<ClientRegistration>();}
+    public ClientRegistrationStore(){this.clientRegistrationList = new ArrayList<ClientRegistration>();}
 
 
-    public ClientRegistration CreateClientRegistration(String name, String email, String sex, String birthdate, long citizenCardNumber, long phoneNumber, long tinNumber, long nhsNumber){
+    public ClientRegistration CreateClientRegistration(String name, String email, String sex, String birthdate, String citizenCardNumber, String phoneNumber, String tinNumber, String nhsNumber){
         return this.cr = new ClientRegistration(name, email, sex, birthdate, citizenCardNumber, phoneNumber, tinNumber, nhsNumber);
     }
 
-    public boolean ValidateClientRegistration(ClientRegistration cr){
+    public boolean validateClientRegistration(ClientRegistration cr){
 
         if(cr == null||listContain(cr)){
             return false;
@@ -25,15 +25,15 @@ public class ClientRegistrationStore {
     }
 
     public boolean listContain(ClientRegistration cr){
-        if(this.list.contains(cr)){
+        if(this.clientRegistrationList.contains(cr)){
             return true;
         } else {
             return false;
         }
     }
 
-    public boolean SaveClientRegistration(){
-        if(ValidateClientRegistration(this.cr)){
+    public boolean saveClientRegistration(){
+        if(validateClientRegistration(this.cr)){
             listAdd(cr);
             return true;
         } else {
@@ -43,8 +43,15 @@ public class ClientRegistrationStore {
     }
 
     public boolean listAdd(ClientRegistration cr){
-        list.add(cr);
+        clientRegistrationList.add(cr);
         return true;
     }
 
+    public ClientRegistration getClientRegistration(int i) {
+        return clientRegistrationList.get(i);
+    }
+
+    public ClientRegistration getCr() {
+        return cr;
+    }
 }

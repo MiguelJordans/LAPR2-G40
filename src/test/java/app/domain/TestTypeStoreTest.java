@@ -11,7 +11,11 @@ public class TestTypeStoreTest {
     public void createTestType() {
 
         TestTypeStore tt = new TestTypeStore();
-        TestType aa = tt.CreateTestType("AAA","aaa","aaa");
+        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcStore.listAdd();
+        TestType aa = tt.CreateTestType("AAA","aaa","aaa",pcStore);
 
     }
 
@@ -19,7 +23,10 @@ public class TestTypeStoreTest {
     public void validateTestType1() {
 
         TestTypeStore tt = new TestTypeStore();
-        TestType aa = tt.CreateTestType("AAA","aaa","aaa");
+        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcStore.listAdd();
+        TestType aa = tt.CreateTestType("AAA","aaa","aaa",pcStore);
 
         boolean expected = true;
 
@@ -33,7 +40,10 @@ public class TestTypeStoreTest {
     public void validateTestType2() {
 
         TestTypeStore tt = new TestTypeStore();
-        TestType aa = tt.CreateTestType("aaa","aaa","aaa");
+        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcStore.listAdd();
+        TestType aa = tt.CreateTestType("aaa","aaa","aaa",pcStore);
         tt.listAdd(aa);
 
         boolean expected = false;
@@ -48,7 +58,10 @@ public class TestTypeStoreTest {
     public void listContain1() {
 
         TestTypeStore tt = new TestTypeStore();
-        TestType aa = tt.CreateTestType("aaa","aaa","aaa");
+        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcStore.listAdd();
+        TestType aa = tt.CreateTestType("aaa","aaa","aaa",pcStore);
         tt.listAdd(aa);
 
         boolean expected = true;
@@ -63,7 +76,10 @@ public class TestTypeStoreTest {
     public void listContain2() {
 
         TestTypeStore tt = new TestTypeStore();
-        TestType aa = tt.CreateTestType("aaa","aaa","aaa");
+        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcStore.listAdd();
+        TestType aa = tt.CreateTestType("aaa","aaa","aaa",pcStore);
 
         boolean expected = false;
 
@@ -77,7 +93,10 @@ public class TestTypeStoreTest {
     public void saveTestType1() {
 
         TestTypeStore tt = new TestTypeStore();
-        TestType aa = tt.CreateTestType("aaa","aaa","aaa");
+        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcStore.listAdd();
+        TestType aa = tt.CreateTestType("aaa","aaa","aaa",pcStore);
 
         boolean expected = true;
 
@@ -91,7 +110,10 @@ public class TestTypeStoreTest {
     public void saveTestType2() {
 
         TestTypeStore tt = new TestTypeStore();
-        TestType aa = tt.CreateTestType("aaa","aaa","aaa");
+        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcStore.listAdd();
+        TestType aa = tt.CreateTestType("aaa","aaa","aaa",pcStore);
         tt.listAdd(aa);
 
         boolean expected = false;
@@ -105,7 +127,10 @@ public class TestTypeStoreTest {
     @Test
     public void listAdd1() {
         TestTypeStore tt = new TestTypeStore();
-        TestType aa = tt.CreateTestType("aaa","aaa","aaa");
+        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcStore.listAdd();
+        TestType aa = tt.CreateTestType("aaa","aaa","aaa",pcStore);
 
         boolean expected = true;
 
@@ -119,7 +144,10 @@ public class TestTypeStoreTest {
     public void listAdd2() {
 
         TestTypeStore tt = new TestTypeStore();
-        TestType aa = tt.CreateTestType("aaa","aaa","aaa");
+        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcStore.listAdd();
+        TestType aa = tt.CreateTestType("aaa","aaa","aaa",pcStore);
         tt.listAdd(aa);
 
         boolean expected = true;
@@ -134,10 +162,13 @@ public class TestTypeStoreTest {
     public void getTestType1() {
 
         TestTypeStore tt = new TestTypeStore();
-        TestType aa = tt.CreateTestType("aaa","aaa","aaa");
+        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcStore.listAdd();
+        TestType aa = tt.CreateTestType("aaa","aaa","aaa",pcStore);
         tt.listAdd(aa);
 
-        TestType expected = aa;
+        TestType expected = tt.getTestType(0);
 
         TestType actual = tt.getTestType(0);
 
@@ -149,7 +180,10 @@ public class TestTypeStoreTest {
     public void getTt() {
 
         TestTypeStore tt = new TestTypeStore();
-        TestType aa = tt.CreateTestType("aaa","aaa","aaa");
+        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcStore.listAdd();
+        TestType aa = tt.CreateTestType("aaa","aaa","aaa",pcStore);
 
         TestType expected = aa;
 
@@ -158,4 +192,5 @@ public class TestTypeStoreTest {
         assertEquals(expected,actual);
 
     }
+
 }

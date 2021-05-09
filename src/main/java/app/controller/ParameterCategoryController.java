@@ -1,9 +1,8 @@
 package app.controller;
 
-import app.domain.Company;
-import app.domain.ParameterCategory;
-import app.domain.ParameterCategoryStore;
-import app.domain.TestTypeStore;
+import app.domain.*;
+
+import java.util.List;
 
 public class ParameterCategoryController {
 
@@ -26,5 +25,9 @@ public class ParameterCategoryController {
     public String getPC(){ return store.getPc().toString(); }
 
     public boolean saveParameterCategory(){ return this.store.saveParameterCategory(); }
+
+    public List<ParameterCategory> getParameterList() {
+        return store.getParameterCategoryList();
+    }
 
 }

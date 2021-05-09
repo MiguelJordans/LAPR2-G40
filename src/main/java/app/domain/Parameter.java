@@ -8,24 +8,26 @@ public class Parameter {
     private String name;
     private String description;
 
-    //private Category category; Quando já estiver implementado a class Category
+    private ParameterCategoryStore pp;
 
-    public Parameter(String code, String description, String name) {
+    public Parameter(String code, String description, String name,ParameterCategoryStore ppStore) {
 
         checkTestCode(code);
         checkName(name);
         checkDescription(description);
+        checkCategoriesList(ppStore);
 
         this.code = code;
         this.name = name;
         this.description = description;
+        this.pp = ppStore;
 
     }
 
     public void checkTestCode(String code) {
 
         if (StringUtils.isBlank(code))
-            throw new IllegalArgumentException("Test Code cannot be blank.");
+            throw new IllegalArgumentException("Code cannot be blank.");
 
 
         if (!(code.matches("^[a-zA-Z0-9]*$")) || code.length() > 5)
@@ -36,7 +38,7 @@ public class Parameter {
     public void checkName(String name) {
 
         if (StringUtils.isBlank(name))
-            throw new IllegalArgumentException("Collecting Method cannot be blank.");
+            throw new IllegalArgumentException("Name cannot be blank.");
 
         if (name.length() > 8)
             throw new IllegalArgumentException("Name not valid! Cannot have more than 8 chars.");
@@ -53,6 +55,12 @@ public class Parameter {
 
     }
 
+    public void checkCategoriesList(ParameterCategoryStore ppStore){
+        if(ppStore.list.isEmpty()) {
+            throw new IllegalArgumentException("Categories not valid! List is null!");
+        }
+    }
+
     public String getCode() {
         return code;
     }
@@ -63,6 +71,15 @@ public class Parameter {
 
     public String getName() {
         return name;
+    }
+
+    public ParameterCategoryStore getPp() {
+        return pp;
+    }
+
+    public void setPp(ParameterCategoryStore pp) {
+        checkCategoriesList(pp);
+        this.pp = pp;
     }
 
     public void setName(String name) {

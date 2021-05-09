@@ -5,13 +5,11 @@ import java.util.List;
 
 public class TestTypeStore {
 
-    List<TestType> list;
+    static List<TestType> list = new ArrayList<>();
     TestType tt;
 
-    public TestTypeStore(){this.list = new ArrayList<TestType>();}
-
-    public TestType CreateTestType(String description,String testCode,String collectingMethod){
-        return this.tt = new TestType(testCode,description,collectingMethod);
+    public TestType CreateTestType(String description,String testCode,String collectingMethod,ParameterCategoryStore pc){
+        return this.tt = new TestType(testCode,description,collectingMethod,pc);
     }
 
     public boolean validateTestType(TestType tt){
