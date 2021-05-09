@@ -36,25 +36,16 @@ public class Company {
         return authFacade;
     }
 
-<<<<<<< HEAD
-    public ClientRegistration createClientRegistration(String name, String email, String sex, String birthdate, String citizenCardNumber, String phoneNumber, String tinNumber, String nhsNumber) {
-        return new ClientRegistration(name, email, sex, birthdate, citizenCardNumber, phoneNumber, tinNumber, nhsNumber);
-    }
-
-    public TestType createTestType(String testCode, String description, String collectingMethod) {
-        return new TestType(testCode, description, collectingMethod);
-=======
-    public TestType createTestType(String testCode, String description, String collectingMethod,ParameterCategoryStore pcStore) {
-        return new TestType(testCode, description, collectingMethod,pcStore);
->>>>>>> 572ba4e47e62a9a0c0766ff63eabb9bf25b301eb
+    public TestType createTestType(String testCode, String description, String collectingMethod, ParameterCategoryStore pcStore) {
+        return new TestType(testCode, description, collectingMethod, pcStore);
     }
 
     public ClinicalAnalysisLaboratory createClinicalAnalysisLaboratory(String laboratoryID, String name, String address, String phoneNumber, String TINnumber) {
         return new ClinicalAnalysisLaboratory(laboratoryID, name, address, phoneNumber, TINnumber);
     }
 
-    public Parameter createParameter(String code, String description, String name,ParameterCategoryStore pcStore) {
-        return new Parameter(code, description, name,pcStore);
+    public Parameter createParameter(String code, String description, String name, ParameterCategoryStore pcStore) {
+        return new Parameter(code, description, name, pcStore);
     }
 
     public ParameterCategory createParameterCategory(String code, String description, String nhsld) {
@@ -165,7 +156,7 @@ public class Company {
     }
 
     public List<Parameter> getParameter() {
-        return  parameterStore.getParameterList();
+        return parameterStore.getParameterList();
     }
 
     public boolean validateParameterCategory(ParameterCategory pc) {
@@ -242,7 +233,6 @@ public class Company {
     public ClinicalAnalysisLaboratoryStore getClinicalAnalysisLaboratoryStore() {
         return clinicalAnalysisLaboratoryStore;
     }
-<<<<<<< HEAD
 
     // Client Registration
 
@@ -297,6 +287,3 @@ public class Company {
         return clientRegistrationStore;
     }
 }
-=======
-}
->>>>>>> 572ba4e47e62a9a0c0766ff63eabb9bf25b301eb
