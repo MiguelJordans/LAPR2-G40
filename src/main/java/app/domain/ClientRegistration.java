@@ -2,10 +2,15 @@ package app.domain;
 
 import org.apache.commons.lang3.StringUtils;
 
+import javax.swing.text.DateFormatter;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.ZoneId;
 import java.util.Date;
+import java.util.logging.SimpleFormatter;
 import java.util.regex.Pattern;
 
 public class ClientRegistration {

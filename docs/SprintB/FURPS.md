@@ -31,8 +31,6 @@ _Specifies functionalities that:_
 ***
 - Localisation
 
-"The application must support the English language only."
-
 ***
 - Online help
   
@@ -53,7 +51,9 @@ _Specifies functionalities that:_
 ***
 - Reporting
 
-"The client receives the notification by SMS and e-mail."
+"The client receives the notification by SMS."
+
+"The client receives the notification by e-mail."
 
 "The company is also required to generate daily (automatic) reports."
 
@@ -81,9 +81,7 @@ _Specifies functionalities that:_
 
 "Recording the results in the software application."
 
-
 ***
-
 ###
 
 ## Usability 
@@ -100,6 +98,11 @@ documentation; consistency and standards._
 
 "Only the specialist doctor is allowed to access all client data."
 
+"The time complexity analysis of the algorithms should be properly documented in the application user manual (in the annexes) that must be delivered with the application."
+
+"At least two sorting algorithms should be evaluated and documented in the application user manual (in the annexes) that must be delivered with the application."
+
+"The accuracy of the prediction models should be analysed and documented in the application user manual (in the annexes) that must be delivered with the application."
 ***
 
 - Aesthetics
@@ -113,12 +116,10 @@ documentation; consistency and standards._
 
 
 ###
+***
 
 ## Reliability
 _Refers to the integrity, compliance and interoperability of the software. The requirements to be considered are: frequency and severity of failure, possibility of recovery, possibility of prediction, accuracy, average time between failures._
-***
-
-At least two sorting algorithms should be evaluated and documented in the application user manual (in the annexes) that must be delivered with the application.
 ***
 
 - Accuracy
@@ -133,8 +134,8 @@ At least two sorting algorithms should be evaluated and documented in the applic
 ***
 - Recoverability
 
-"Whenever the system fails, there should be no data loss.
-The system should not fail more than 5 days in one year."
+"Whenever the system fails, there should be no data loss."
+"The system should not fail more than 5 days in one year."
 ***
 
 ###
@@ -166,10 +167,7 @@ Recovery time
 
 "The complexity analysis must be accompanied by the observation of the execution time of the algorithms for inputs of variable size in order to observe the asymptotic behaviour."
 
-"It is intended that the choice of the ordering algorithm is based on the algorithm complexity (mainly the execution time)"
-
 "The implemented algorithm should be analysed in terms of its worst-case time complexity, and it should be compared to a provided benchmark algorithm."
-
 
 ***
 ###
@@ -186,6 +184,8 @@ configurability, installability, scalability and more._
 "The system should be developed having in mind the need to easily support other kinds of tests."
 
 "Such tests rely on measuring one or more parameters that can be grouped/organized by categories."
+
+"It is intended that the choice of the ordering algorithm is based on the algorithm complexity (mainly the execution time)"
 ***
 
 - Auditability
@@ -220,10 +220,6 @@ configurability, installability, scalability and more._
 
 "The application should implement a brute-force algorithm (an algorithm which examines each subsequence) to determine the contiguous subsequence with maximum sum, for any interval of time registered."
 
-"The application will be deployed to a machine with 8GB of RAM."
-***
-
-"The time complexity analysis of the algorithms should be properly documented in the application user manual (in the annexes) that must be delivered with the application."
 ***
 - Testability
 
@@ -231,63 +227,89 @@ configurability, installability, scalability and more._
 
 "The unit tests should be implemented using the JUnit 4 framework."
 
+***
+
 ###
 
-### Design Constraints
+### Design Requirement
 
 _Specifies or constraints the system design process. Examples may include: programming languages, software process, mandatory standards/patterns, use of development tools, class library, etc._
 
 ###
+***
 
-### Implementation Constraints
+### Implementation Requirement
 
-_Specifies or constraints the code or construction of a system such
+_Specifies or constraints the code or construction of a system
 such as: mandatory standards/patterns, implementation languages,
 database integrity, resource limits, operating system._
 
+- 3rd party components
 
-"The application must be developed in Java language"
+***
+
 - Implementation languages
 
+"The application must be developed in Java language"
+
+***
+
+- Platform support
+
 "Using the IntelliJ IDE or NetBeans."
-- Platform Support
 
 "The JaCoCo plugin should be used to generate the coverage report."
-- Platform Support
+
+***
+
+- Resource limits
+
+"The application will be deployed to a machine with 8GB of RAM."
+
+***
+
+- Standards-compliance
 
 "The NHS required that both simple linear and multiple linear regression algorithms should be evaluated to select the best model."
-- Standards-compliance
-
-"The accuracy of the prediction models should be analysed and documented in the application user manual (in the annexes) that must be delivered with the application."
-- Standards-compliance
 
 "Adopt recognized coding standards (e.g., CamelCase)."
-- Standards-compliance
 
 "Use Javadoc to generate useful documentation for Java code."
-- Standards-compliance
 
 ###
+***
 
-### Interface Constraints
+### Interface Requirement
 _Specifies or constraints the features inherent to the interaction of the
 system being developed with other external systems._
 
+- External systems
 
 "that is automatically generated using an external API"
-- External Systems
-  
+
 "all the information demanded by the NHS (and) should send them to the NHS using their API."
-- External Systems
 
-"All the images/figures produced during the sofware development process should be recorded in SVG format."
+***
+
 - Interface formats
 
-The application graphical interface is to be developed in JavaFX 11."
-- Interface formats
+"All the images/figures produced during the software development process should be recorded in SVG format."
+
+"The application graphical interface is to be developed in JavaFX 11."
 
 ###
+***
 
-### Physical Constraints
+### Physical Requirements
 
 _Specifies a limitation or physical requirement regarding the hardware used to house the system, as for example: material, shape, size or weight._
+
+- Shape
+
+***
+
+- Size
+
+*** 
+
+- Weight

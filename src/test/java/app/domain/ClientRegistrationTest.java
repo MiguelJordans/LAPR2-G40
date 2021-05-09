@@ -200,6 +200,22 @@ public class ClientRegistrationTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
+    public void checkBirthdateBlank() {
+
+        ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "",
+                "5647748895858574", "05968742634", "7468496874", "7456375876");
+
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void checkBirthdateInvalidFormat() {
+
+        ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "235254354363",
+                "5647748895858574", "05968742634", "7468496874", "7456375876");
+
+    }
+
+    @Test(expected = IllegalArgumentException.class)
     public void checkCitizenCardNumberBlank() {
 
         ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "23/06/1999",
