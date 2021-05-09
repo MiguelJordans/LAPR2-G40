@@ -332,5 +332,4 @@ public class Company {
     public ParameterCategoryStore getParameterCategoryStore() {
         return parameterCategoryStore;
     }
-
 }
