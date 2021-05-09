@@ -327,4 +327,17 @@ public class TestTypeTest {
 
     }*/
 
+    @Test
+    public void getPP(){
+
+        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcStore.listAdd();
+
+        TestType tt = new TestType("1111","aaaaa","2",pcStore);
+
+        Assert.assertNotNull(tt.getPP());
+
+    }
+
 }
