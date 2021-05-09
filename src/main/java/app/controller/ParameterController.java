@@ -55,7 +55,9 @@ public class ParameterController {
      * @return the saving of an instance of a Parameter.
      */
 
-    public boolean saveParameter(){ return this.store.saveParameter(); }
+    public boolean saveParameter() {
+        return this.store.saveParameter();
+    }
 
     /**
      * Returns the list of parameters already created
@@ -66,5 +68,4 @@ public class ParameterController {
     public List<Parameter> getParameterList() {
         return store.getParameterList();
     }
-
 }
