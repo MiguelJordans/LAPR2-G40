@@ -1,8 +1,5 @@
 package app.domain;
-<<<<<<< HEAD
-=======
 
->>>>>>> 572ba4e47e62a9a0c0766ff63eabb9bf25b301eb
 import org.junit.Assert;
 import org.junit.Test;
 
