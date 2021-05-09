@@ -1,16 +1,17 @@
 package app.domain;
 
 import org.apache.commons.lang3.StringUtils;
+
 import java.util.regex.Pattern;
 
 public class Employee {
 
-    String name, address, phoneNumber, email, orgRole;
-    String employeeId;
-    String socCode, doctorIndexNumber;
+    private String name, address, phoneNumber, email, orgRole;
+    private String employeeId;
+    private String socCode, doctorIndexNumber;
 
 
-    public Employee (String name, String address, String email, String phoneNumber, String employeeId, String socCode, String orgRole, String doctorIndexNumber){
+    public Employee(String name, String address, String email, String phoneNumber, String employeeId, String socCode, String orgRole, String doctorIndexNumber) {
 
         checkNameRules(name);
         checkAddressRules(address);
@@ -32,20 +33,20 @@ public class Employee {
     }
 
     //Checks
-    public void checkDoctorIndexNumber (String doctorIndexNumber){
+    public void checkDoctorIndexNumber(String doctorIndexNumber) {
 
-        if (StringUtils.isBlank(doctorIndexNumber)){
+        if (StringUtils.isBlank(doctorIndexNumber)) {
             throw new IllegalArgumentException("Doctor Index Number can't be empty.");
         }
-        if (doctorIndexNumber.length()!=6){
+        if (doctorIndexNumber.length() != 6) {
             throw new IllegalArgumentException("Doctor Index Number needs to have exactly 6 digits.");
         }
 
     }
 
-    public void checkOrgRole (String orgRole){
+    public void checkOrgRole(String orgRole) {
 
-        String aux = orgRole.trim() ;
+        String aux = orgRole.trim();
         aux = aux.toLowerCase();
 
         if (StringUtils.isBlank(orgRole)) {
@@ -58,7 +59,7 @@ public class Employee {
     }
 
 
-    public void checkNameRules(String name){
+    public void checkNameRules(String name) {
 
         String aux = name.trim();
         aux = aux.toLowerCase();
@@ -79,21 +80,21 @@ public class Employee {
 
     }
 
-    public void checkAddressRules (String address){
+    public void checkAddressRules(String address) {
         String aux = address.trim();
         aux = aux.toLowerCase();
 
-        if(StringUtils.isBlank(address)){
+        if (StringUtils.isBlank(address)) {
             throw new IllegalArgumentException("Address cannot be empty.");
         }
 
-        if (!(aux.length() <= 30)){
+        if (!(aux.length() <= 30)) {
             throw new IllegalArgumentException("Address cannot have more than 30 characters.");
         }
 
     }
 
-    public void checkEmailRules(String email){
+    public void checkEmailRules(String email) {
 
         if (StringUtils.isBlank(email)) {
             throw new IllegalArgumentException("Email cannot be empty.");
@@ -103,7 +104,7 @@ public class Employee {
 
         Pattern pat = Pattern.compile(emailRegex);
 
-        if (!pat.matcher(email).matches()){
+        if (!pat.matcher(email).matches()) {
             throw new IllegalArgumentException("Invalid Email format.");
         }
 
@@ -127,26 +128,26 @@ public class Employee {
         }
     }
 
-    public void checkEmployeeId (String employeeId){
+    public void checkEmployeeId(String employeeId) {
 
 
-        String auxEmployeeId = employeeId.replaceAll("\\s","");
+        String auxEmployeeId = employeeId.replaceAll("\\s", "");
 
-        if (StringUtils.isBlank(auxEmployeeId)){
+        if (StringUtils.isBlank(auxEmployeeId)) {
             throw new IllegalArgumentException("Employee ID cannot be empty.");
         }
-        if (!(auxEmployeeId.length()==9)){
+        if (!(auxEmployeeId.length() == 9)) {
             throw new IllegalArgumentException("Employee ID has an invalid format.");
         }
 
     }
 
-    public void checkSocCode (String socCode){
+    public void checkSocCode(String socCode) {
 
-        String auxSocCode = socCode.replaceAll("\\s","");
+        String auxSocCode = socCode.replaceAll("\\s", "");
         char[] auxchar = auxSocCode.toCharArray();
 
-        if (StringUtils.isBlank(auxSocCode)){
+        if (StringUtils.isBlank(auxSocCode)) {
             throw new IllegalArgumentException("SOC code cannot be empty.");
         }
         if (!(auxSocCode.length() == 7)) {
@@ -162,39 +163,84 @@ public class Employee {
         }
 
     }
-//Gets
-    public String getDoctorIndexNumber(){return doctorIndexNumber;}
 
-    public String getOrgRole(){return orgRole;}
+    //Gets
+    public String getDoctorIndexNumber() {
+        return doctorIndexNumber;
+    }
 
-    public String getName(){return name;}
+    public String getOrgRole() {
+        return orgRole;
+    }
 
-    public String getAddress(){return address;}
+    public String getName() {
+        return name;
+    }
 
-    public String getEmail(){return email;}
+    public String getAddress() {
+        return address;
+    }
 
-    public String getPhoneNumber(){return phoneNumber;}
+    public String getEmail() {
+        return email;
+    }
 
-    public String getEmployeeId(){return employeeId;}
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
 
-    public String getSocCode(){return socCode;}
+    public String getEmployeeId() {
+        return employeeId;
+    }
+
+    public String getSocCode() {
+        return socCode;
+    }
 
     //Sets
-    public void setDoctorIndexNumber(String doctorIndexNumber){this.doctorIndexNumber = doctorIndexNumber;}
+    public void setDoctorIndexNumber(String doctorIndexNumber) {
+        this.doctorIndexNumber = doctorIndexNumber;
+    }
 
-    public void setOrgRole(String orgRole){this.orgRole = orgRole;}
+    public void setOrgRole(String orgRole) {
+        this.orgRole = orgRole;
+    }
 
-    public void setName(String name){this.name = name;}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-    public void setAddress(String address){this.address = address;}
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
-    public void setEmail(String email){this.email = email;}
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-    public void setPhoneNumber(String phoneNumber){this.phoneNumber = phoneNumber;}
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
 
-    public void setEmployeeId(String employeeId){this.employeeId = employeeId;}
+    public void setEmployeeId(String employeeId) {
+        this.employeeId = employeeId;
+    }
 
-    public void setSocCode(String socCode){this.socCode = socCode;}
+    public void setSocCode(String socCode) {
+        this.socCode = socCode;
+    }
 
-
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", email='" + email + '\'' +
+                ", orgRole='" + orgRole + '\'' +
+                ", employeeId='" + employeeId + '\'' +
+                ", socCode='" + socCode + '\'' +
+                ", doctorIndexNumber='" + doctorIndexNumber + '\'' +
+                '}';
+    }
 }

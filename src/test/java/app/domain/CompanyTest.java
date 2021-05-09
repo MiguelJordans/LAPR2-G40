@@ -1280,7 +1280,7 @@ public class CompanyTest {
     }
 
     @Test
-    public void Employee(){
+    public void Employee1(){
 
         Company company = new Company("aaaa");
 
@@ -1320,5 +1320,16 @@ public class CompanyTest {
         Assert.assertNotNull(clientRegistrationStore);
 
     }
+
+    @Test
+    public void Employee(){
+
+        Company company = new Company("aaaa");
+
+        Employee emp = company.createEmployee("aaaa","aaaa","aaaa@dn.pt","11111111111","111111111","1111111","employee","111111");
+
+    }
+
+
 
 }

@@ -14,13 +14,13 @@ public class AdminUI implements Runnable {
     }
 
     public void run() {
+
         List<MenuItem> options = new ArrayList<MenuItem>();
         options.add(new MenuItem("Specify a new parameter category ", new ParameterCategoryUI()));
         options.add(new MenuItem("Create a new Test Type ", new TestTypeUI()));
         options.add(new MenuItem("Register a new Clinical Analysis Laboratory", new ClinicalAnalysisLaboratoryUI()));
         options.add(new MenuItem("Specify a new parameter ", new ParameterUI()));
         options.add(new MenuItem("Register a new employee ", new EmployeeUI()));
-        options.add(new MenuItem("Register a new client ", new ClientRegistrationUI()));
 
         int option = 0;
         do {
