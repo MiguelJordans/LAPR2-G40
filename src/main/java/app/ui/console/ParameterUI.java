@@ -27,7 +27,7 @@ public class ParameterUI implements Runnable {
             do {
                 boolean exception = false;
                 do {
-                    ParameterCategory pc = (ParameterCategory) Utils.showAndSelectOne(this.pcStore.getParameterCategoryList(), "Select the test types");
+                    ParameterCategory pc = (ParameterCategory) Utils.showAndSelectOne(this.pcStore.getParameterCategoryList(), "Select the categories");
                     this.pcStore.listAdd();
                     leave = Utils.confirm("Do you wish to select more parameters?");
                 } while (leave);
@@ -37,7 +37,7 @@ public class ParameterUI implements Runnable {
                         String description = Utils.readLineFromConsole("Please enter the description of the parameter");
                         String code = Utils.readLineFromConsole("Please enter the code of the parameter");
 
-                        ParameterCategoryStore pc = (ParameterCategoryStore) Utils.showAndSelectOne(this.pcStore.getParameterCategoryList(), "Select the test types");
+                        ParameterCategoryStore pc = (ParameterCategoryStore) Utils.showAndSelectOne(this.pcStore.getParameterCategoryList(), "Select the categories");
 
                         ctrl.CreateParameter(description, code, name, pc);
                         exception = false;
