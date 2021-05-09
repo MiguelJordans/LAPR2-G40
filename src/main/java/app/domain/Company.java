@@ -253,4 +253,53 @@ public class Company {
     public ClinicalAnalysisLaboratoryStore getClinicalAnalysisLaboratoryStore() {
         return clinicalAnalysisLaboratoryStore;
     }
+
+//Register New Employee
+
+    EmployeeStore employeeStore = new EmployeeStore();
+
+    private static EmployeeStore employeeList;
+
+
+    public EmployeeStore Employee(){
+        return employeeList = new EmployeeStore();
+    }
+
+    public Boolean addEmployee(Employee emp){
+        employeeStore.listAdd(emp);
+        return true;
+    }
+
+    public boolean validateEmployee(Employee emp) {
+        employeeStore.validateEmployee(emp);
+        return true;
+    }
+
+    public boolean saveEmployee(Employee emp) {
+        employeeStore.saveEmployee();
+        return true;
+    }
+
+    public boolean listEmployee(Employee emp) {
+        employeeStore.listContain(emp);
+        return true;
+    }
+
+    public boolean listAddEmp(Employee emp) {
+        employeeStore.listAdd(emp);
+        return true;
+    }
+
+    public Employee getEmployee (int i) {
+        return employeeStore.getEmployee(i);
+    }
+
+    public Employee getEmp() {
+        return employeeStore.emp;
+    }
+
+    public EmployeeStore getEmployeeStore() {
+        return employeeStore;
+    }
+
 }

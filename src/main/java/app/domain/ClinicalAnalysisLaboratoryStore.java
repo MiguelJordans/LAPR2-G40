@@ -52,4 +52,6 @@ public class ClinicalAnalysisLaboratoryStore {
     public ClinicalAnalysisLaboratory getCal() {
         return cal;
     }
+
+
 }
