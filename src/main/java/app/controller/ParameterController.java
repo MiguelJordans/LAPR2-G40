@@ -1,8 +1,8 @@
 package app.controller;
 
-import app.domain.Company;
-import app.domain.ParameterStore;
-import app.domain.TestTypeStore;
+import app.domain.*;
+
+import java.util.List;
 
 public class ParameterController {
 
@@ -17,13 +17,17 @@ public class ParameterController {
         this.company=company;
     }
 
-    public void CreateParameter(String description,String code,String name){
+    public void CreateParameter(String description,String code,String name,ParameterCategoryStore pcStore){
         store = company.getParameterStore();
-        store.CreateParameter(description,code,name);
+        store.CreateParameter(description,code,name,pcStore);
     }
 
     public String getPP(){ return store.getPp().toString(); }
 
     public boolean saveParameter(){ return this.store.saveParameter(); }
+
+    public List<Parameter> getParameterList() {
+        return store.getParameterList();
+    }
 
 }

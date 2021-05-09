@@ -97,4 +97,13 @@ public class ParameterCategoryControllerTest {
 
     }
 
+    @Test(expected = NullPointerException.class)
+    public void getParameterCategoryList(){
+
+        ParameterCategoryController ctrl = new ParameterCategoryController();
+
+        ctrl.getParameterList();
+
+    }
+
 }

@@ -3,10 +3,12 @@ package app.domain;
 import auth.AuthFacade;
 import org.apache.commons.lang3.StringUtils;
 
+import java.util.List;
+
 /**
  *
  * @author Paulo Maio <pam@isep.ipp.pt>
- * @author Miguel Jordão <1201477@isep.ipp.pt>
+ * @author Miguel JordÃ£o <1201477@isep.ipp.pt>
  * @author Mariana Lages <1200902@isep.ipp.pt>
  * @author Lucas Silva <1200759@isep.ipp.pt>
  * @author Daniel Costa <1200581@isep.ipp.pt>
@@ -15,8 +17,8 @@ import org.apache.commons.lang3.StringUtils;
 
 public class Company {
 
-    private String designation;
-    private AuthFacade authFacade;
+    private final String designation;
+    private final AuthFacade authFacade;
 
     public Company(String designation) {
         if (StringUtils.isBlank(designation))
@@ -34,20 +36,25 @@ public class Company {
         return authFacade;
     }
 
+<<<<<<< HEAD
     public ClientRegistration createClientRegistration(String name, String email, String sex, String birthdate, String citizenCardNumber, String phoneNumber, String tinNumber, String nhsNumber) {
         return new ClientRegistration(name, email, sex, birthdate, citizenCardNumber, phoneNumber, tinNumber, nhsNumber);
     }
 
     public TestType createTestType(String testCode, String description, String collectingMethod) {
         return new TestType(testCode, description, collectingMethod);
+=======
+    public TestType createTestType(String testCode, String description, String collectingMethod,ParameterCategoryStore pcStore) {
+        return new TestType(testCode, description, collectingMethod,pcStore);
+>>>>>>> 572ba4e47e62a9a0c0766ff63eabb9bf25b301eb
     }
 
     public ClinicalAnalysisLaboratory createClinicalAnalysisLaboratory(String laboratoryID, String name, String address, String phoneNumber, String TINnumber) {
         return new ClinicalAnalysisLaboratory(laboratoryID, name, address, phoneNumber, TINnumber);
     }
 
-    public Parameter createParameter(String code, String description, String name) {
-        return new Parameter(code, description, name);
+    public Parameter createParameter(String code, String description, String name,ParameterCategoryStore pcStore) {
+        return new Parameter(code, description, name,pcStore);
     }
 
     public ParameterCategory createParameterCategory(String code, String description, String nhsld) {
@@ -64,13 +71,6 @@ public class Company {
         return testTypeList = new TestTypeStore();
     }
 
-    //public List<TestType> getTestType(){return testTypeStore.getTt();}
-
-    public boolean addTestType(TestType tt) {
-        testTypeStore.listAdd(tt);
-        return true;
-    }
-
     //public List
 
     public boolean validateTestType(TestType tt) {
@@ -78,7 +78,7 @@ public class Company {
         return true;
     }
 
-    public boolean saveTestType(TestType tt) {
+    public boolean saveTestType() {
         testTypeStore.saveTestType();
         return true;
     }
@@ -98,7 +98,7 @@ public class Company {
     }
 
     public TestType getTt() {
-        return testTypeStore.tt;
+        return testTypeStore.getTt();
     }
 
     public TestTypeStore getTestTypeStore() {
@@ -115,13 +115,6 @@ public class Company {
         return parameterList = new ParameterStore();
     }
 
-    //public List<TestType> getTestType(){return testTypeStore.getTt();}
-
-    public boolean addParameter(Parameter pp) {
-        parameterStore.listAdd(pp);
-        return true;
-    }
-
     //public List
 
     public boolean validateParameter(Parameter pp) {
@@ -129,7 +122,7 @@ public class Company {
         return true;
     }
 
-    public boolean saveParameter(Parameter pp) {
+    public boolean saveParameter() {
         parameterStore.saveParameter();
         return true;
     }
@@ -167,32 +160,31 @@ public class Company {
         return parameterCategoryList = new ParameterCategoryStore();
     }
 
-    //public List<TestType> getTestType(){return testTypeStore.getTt();}
-
-    public boolean addParameterCategory(ParameterCategory pc) {
-        parameterCategoryStore.listAdd(pc);
-        return true;
+    public List<TestType> getTestType() {
+        return testTypeStore.getTestTypeList();
     }
 
-    //public List
+    public List<Parameter> getParameter() {
+        return  parameterStore.getParameterList();
+    }
 
-    public boolean validateTestType(ParameterCategory pc) {
+    public boolean validateParameterCategory(ParameterCategory pc) {
         parameterCategoryStore.validateParameterCategory(pc);
         return true;
     }
 
-    public boolean saveTestType(ParameterCategory pc) {
+    public boolean saveParameterCategory() {
         parameterCategoryStore.saveParameterCategory();
         return true;
     }
 
-    public boolean listContainsTestType(ParameterCategory pc) {
+    public boolean listContainsParameterCategory(ParameterCategory pc) {
         parameterCategoryStore.listContain(pc);
         return true;
     }
 
-    public boolean listAdd(ParameterCategory pc) {
-        parameterCategoryStore.listAdd(pc);
+    public boolean listAddParameterCategory(ParameterCategory pc) {
+        parameterCategoryStore.listAdd();
         return true;
     }
 
@@ -219,23 +211,12 @@ public class Company {
         return clinicalAnalysisLaboratoryList = new ClinicalAnalysisLaboratoryStore();
     }
 
-    /*
-    public List<ClinicalAnalysisLaboratory> getClinicalAnalysisLaboratory() {
-        return clinicalAnalysisLaboratoryStore.getCal();
-    }
-     */
-
-    public boolean addClinicalAnalysisLaboratory(ClinicalAnalysisLaboratory cal) {
-        clinicalAnalysisLaboratoryStore.listAdd(cal);
-        return true;
-    }
-
     public boolean validateClinicalAnalysisLaboratory(ClinicalAnalysisLaboratory cal) {
         clinicalAnalysisLaboratoryStore.validateClinicalAnalysisLaboratory(cal);
         return true;
     }
 
-    public boolean saveClinicalAnalysisLaboratory(ClinicalAnalysisLaboratory cal) {
+    public boolean saveClinicalAnalysisLaboratory() {
         clinicalAnalysisLaboratoryStore.saveClinicalAnalysisLaboratory();
         return true;
     }
@@ -245,7 +226,7 @@ public class Company {
         return true;
     }
 
-    public boolean listAdd(ClinicalAnalysisLaboratory cal) {
+    public boolean listAddAnalysisLaboratory(ClinicalAnalysisLaboratory cal) {
         clinicalAnalysisLaboratoryStore.listAdd(cal);
         return true;
     }
@@ -261,6 +242,7 @@ public class Company {
     public ClinicalAnalysisLaboratoryStore getClinicalAnalysisLaboratoryStore() {
         return clinicalAnalysisLaboratoryStore;
     }
+<<<<<<< HEAD
 
     // Client Registration
 
@@ -315,3 +297,6 @@ public class Company {
         return clientRegistrationStore;
     }
 }
+=======
+}
+>>>>>>> 572ba4e47e62a9a0c0766ff63eabb9bf25b301eb

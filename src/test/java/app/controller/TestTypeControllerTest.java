@@ -1,6 +1,6 @@
 package app.controller;
 
-import app.domain.Company;
+import app.domain.*;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -26,21 +26,36 @@ public class TestTypeControllerTest {
     public void createValidTestType(){
 
         TestTypeController ctrl = new TestTypeController();
-        ctrl.CreateTestType("aaa","aaa","aaa");
+        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcStore.listAdd();
+
+        ctrl.CreateTestType("aaa","aaa","aaa",pcStore);
 
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void createInvalidTestType(){
         TestTypeController ctrl = new TestTypeController();
-        ctrl.CreateTestType("aaa","+++","aaa");
+        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcStore.listAdd();
+
+        ctrl.CreateTestType("aaa","+++","aaa",pcStore);
     }
 
     @Test
     public void saveTestType() {
 
        TestTypeController ctrl = new TestTypeController();
-       ctrl.CreateTestType("aaa","aaa","aaa");
+        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcStore.listAdd();
+
+       ctrl.CreateTestType("aaa","aaa","aaa",pcStore);
 
        Assert.assertTrue(ctrl.saveTestType());
 
@@ -50,8 +65,12 @@ public class TestTypeControllerTest {
     public void saveTestTypeInvalid() {
 
         TestTypeController ctrl = new TestTypeController();
+        ParameterCategoryStore pcStore = new ParameterCategoryStore();
 
-        ctrl.CreateTestType("aaa","+++","aaa");
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcStore.listAdd();
+
+        ctrl.CreateTestType("aaa","+++","aaa",pcStore);
 
         Assert.assertTrue(ctrl.saveTestType());
 
@@ -61,8 +80,12 @@ public class TestTypeControllerTest {
     public void saveTestTypeValid() {
 
         TestTypeController ctrl = new TestTypeController();
+        ParameterCategoryStore pcStore = new ParameterCategoryStore();
 
-        ctrl.CreateTestType("aaa","aaa","aaa");
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcStore.listAdd();
+
+        ctrl.CreateTestType("aaa","aaa","aaa",pcStore);
 
         Assert.assertTrue(ctrl.saveTestType());
 
@@ -72,8 +95,12 @@ public class TestTypeControllerTest {
     public void getTestType() {
 
         TestTypeController ctrl = new TestTypeController();
+        ParameterCategoryStore pcStore = new ParameterCategoryStore();
 
-        ctrl.CreateTestType("aaa","aaa","aaa");
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcStore.listAdd();
+
+        ctrl.CreateTestType("aaa","aaa","aaa",pcStore);
 
         String expected =  " Test Code: " + "aaa"  +
                 ", Description:" + "aaa" +
@@ -89,8 +116,12 @@ public class TestTypeControllerTest {
     public void getTestTypeInvalid() {
 
         TestTypeController ctrl = new TestTypeController();
+        ParameterCategoryStore pcStore = new ParameterCategoryStore();
 
-        ctrl.CreateTestType("aaa","+++","aaa");
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcStore.listAdd();
+
+        ctrl.CreateTestType("aaa","+++","aaa",pcStore);
 
         String expected =  " Test Code: " + "aaa"  +
                 ", Description:" + "+++" +
@@ -98,6 +129,23 @@ public class TestTypeControllerTest {
         String actual = (ctrl.getTT()).toString();
 
         Assert.assertEquals(expected,actual);
+
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void getTestTypeList(){
+
+        TestTypeController ctrl = new TestTypeController();
+        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+        TestTypeStore testTypeStore = new TestTypeStore();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcStore.listAdd();
+
+        TestType tt = new TestType("aaa","aaa","aaa",pcStore);
+        testTypeStore.listAdd(tt);
+
+        ctrl.getTestTypeList();
 
     }
 
