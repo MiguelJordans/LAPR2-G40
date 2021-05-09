@@ -19,41 +19,50 @@ public class ParameterUI implements Runnable {
 
     @Override
     public void run() {
+
         boolean count = true;
-        boolean leave = false;
+
+
         if (this.pcStore.getParameterCategoryList() == null || this.pcStore.getParameterCategoryList().isEmpty()) {
-            System.out.println("The list is empty! Please, try adding at least one parameter in order to create the laboratory.");
+            System.out.println("The list is empty! Please, try adding at least one parameter in order to create the parameter.");
         } else {
             do {
                 boolean exception = false;
-                do {
-                    ParameterCategory pc = (ParameterCategory) Utils.showAndSelectOne(this.pcStore.getParameterCategoryList(), "Select the categories");
-                    this.pcStore.listAdd();
-                    leave = Utils.confirm("Do you wish to select more parameters?");
-                } while (leave);
+
+                ParameterCategory pc = (ParameterCategory) Utils.showAndSelectOne(this.pcStore.getParameterCategoryList(), "Select the category");
+                this.pcStore.listAdd();
+
                 do {
                     try {
-                        String name = Utils.readLineFromConsole("Please enter the name of the parameter");
-                        String description = Utils.readLineFromConsole("Please enter the description of the parameter");
-                        String code = Utils.readLineFromConsole("Please enter the code of the parameter");
 
-                        ParameterCategoryStore pc = (ParameterCategoryStore) Utils.showAndSelectOne(this.pcStore.getParameterCategoryList(), "Select the categories");
+                        String nhsld = Utils.readLineFromConsole("Please enter the nhsld for the Parameter");
+                        String description = Utils.readLineFromConsole("Please enter the description of the Parameter");
+                        String Code = Utils.readLineFromConsole("Please enter the code of the Parameter");
 
-                        ctrl.CreateParameter(description, code, name, pc);
+                        ParameterCategoryStore pc1 = pcStore;
+                        ctrl.CreateParameter(description, Code,nhsld, pc1);
+
                         exception = false;
+
                     } catch (Exception e) {
+
                         e.printStackTrace();
-                        System.out.println("Incorrect input of data (an error has ocurred), please try again.");
+                        System.out.println("Incorrect input of data (an error has occurred), please try again.");
                         exception = true;
+
                     }
                 } while (exception);
+
                 count = Utils.confirm("Parameter created! Do you wish to save it?" + ctrl.getPP());
+
                 if (count) {
-                    if (ctrl.saveParameter()) {
-                        System.out.println("Parameter was saved with sucess!");
+
+                    if (this.ctrl.saveParameter()) {
+                        System.out.println("Test type was saved with success!");
+
                     }
                 }
-            }while (!count);
+            } while (!count);
         }
     }
 }
