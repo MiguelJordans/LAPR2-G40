@@ -88,7 +88,7 @@ public class CompanyTest {
 
     }
 
-   @Test
+    @Test
     public void createClinicalAnalysisLaboratory() {
 
         Company company = new Company("aaaa");
@@ -215,7 +215,7 @@ public class CompanyTest {
     }
 
 
-   @Test
+    @Test
     public void testType() {
 
         Company company = new Company("aaaa");
@@ -391,7 +391,7 @@ public class CompanyTest {
 
         Assert.assertEquals(expected,actual);
 
-   }
+    }
 
     @Test
     public void getTestTypeStore() {
@@ -412,7 +412,7 @@ public class CompanyTest {
 
         Company company = new Company("aaa");
 
-       ClinicalAnalysisLaboratoryStore calstore = company.ClinicalAnalysisLaboratory();
+        ClinicalAnalysisLaboratoryStore calstore = company.ClinicalAnalysisLaboratory();
 
     }
 
@@ -810,7 +810,32 @@ public class CompanyTest {
 
         Company company = new Company("aaaa");
 
-       ClinicalAnalysisLaboratoryStore clinicalAnalysisLaboratoryStore = company.getClinicalAnalysisLaboratoryStore();
+        ClinicalAnalysisLaboratoryStore clinicalAnalysisLaboratoryStore = company.getClinicalAnalysisLaboratoryStore();
+
+    }
+
+    @Test
+    public void getClinicalAnalysisLaboratoryStoreNotNull(){
+
+        Company company = new Company("aaaa");
+
+        ClinicalAnalysisLaboratoryStore clinicalAnalysisLaboratoryStore = company.getClinicalAnalysisLaboratoryStore();
+
+        Assert.assertNotNull(clinicalAnalysisLaboratoryStore);
+
+    }
+
+
+    @Test
+    public void getClinicalAnalysisLaboratoryStoreNull(){
+
+        Company company = new Company("aaaa");
+
+        company.clinicalAnalysisLaboratoryStore=null;
+
+        ClinicalAnalysisLaboratoryStore clinicalAnalysisLaboratoryStore = company.getClinicalAnalysisLaboratoryStore();
+
+        Assert.assertNull(clinicalAnalysisLaboratoryStore);
 
     }
 
@@ -983,9 +1008,15 @@ public class CompanyTest {
 
         Company company = new Company("aaa");
 
+<<<<<<< HEAD
        List<TestType> testType =  company.getTestType();
 
        Assert.assertNotNull(testType);
+=======
+        List<TestType> testType =  company.getTestType();
+
+        Assert.assertNotNull(testType);
+>>>>>>> 807abb7027b3e34cea03cc057a508ad13e636d31
 
     }
 
@@ -1014,6 +1045,7 @@ public class CompanyTest {
 
     }
 
+<<<<<<< HEAD
     @Test
     public void listAddAnalysisLaboratoryNotNull(){
 
@@ -1028,4 +1060,6 @@ public class CompanyTest {
 
     }
 
+=======
+>>>>>>> 807abb7027b3e34cea03cc057a508ad13e636d31
 }
