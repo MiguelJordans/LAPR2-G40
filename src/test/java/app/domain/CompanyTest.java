@@ -1172,24 +1172,24 @@ public class CompanyTest {
 
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void addEmployee() {
 
         Company company = new Company("aaaa");
 
-        Employee emp = new Employee("DanielCosta", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001","1234567","specialist doctor","123456");
+        Employee emp = new Employee("DanielCosta", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001","1234567","specialistdoctor","123456");
 
        Assert.assertTrue(company.addEmployee(emp));
 
 
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void listEmployee() {
 
         Company company = new Company("aaaa");
 
-        Employee emp = new Employee("DanielCosta", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001","1234567","specialist doctor","123456");
+        Employee emp = new Employee("DanielCosta", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001","1234567","specialistdoctor","123456");
         company.listAddEmp(emp);
 
         Assert.assertTrue(company.listEmployee(emp));
@@ -1197,48 +1197,48 @@ public class CompanyTest {
 
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void validateEmployee() {
 
         Company company = new Company("aaaa");
 
-        Employee emp = new Employee("DanielCosta", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001","1234567","specialist doctor","123456");
+        Employee emp = new Employee("DanielCosta", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001","1234567","specialistdoctor","123456");
 
         Assert.assertTrue(company.validateEmployee(emp));
 
 
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void saveEmployee() {
 
         Company company = new Company("aaaa");
 
-        Employee emp = new Employee("DanielCosta", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001","1234567","specialist doctor","123456");
+        Employee emp = new Employee("DanielCosta", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001","1234567","specialistdoctor","123456");
 
         Assert.assertTrue(company.saveEmployee(emp));
 
 
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void listAddEmployee() {
 
         Company company = new Company("aaaa");
 
-        Employee emp = new Employee("DanielCosta", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001","1234567","specialist doctor","123456");
+        Employee emp = new Employee("DanielCosta", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001","1234567","specialistdoctor","123456");
 
         Assert.assertTrue(company.listAddEmp(emp));
 
 
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void getEmployee() {
 
         Company company = new Company("aaaa");
 
-        Employee emp = new Employee("DanielCosta", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001","1234567","specialist doctor","123456");
+        Employee emp = new Employee("DanielCosta", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001","1234567","specialistdoctor","123456");
         company.listAddEmp(emp);
 
         Employee expected = company.getEmployee(0);
@@ -1250,12 +1250,12 @@ public class CompanyTest {
 
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void getEmp() {
 
         Company company = new Company("aaaa");
 
-        Employee emp = new Employee("DanielCosta", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001","1234567","specialist doctor","123456");
+        Employee emp = new Employee("DanielCosta", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001","1234567","specialistdoctor","123456");
         company.listAddEmp(emp);
 
         Employee expected = company.getEmp();
@@ -1267,12 +1267,12 @@ public class CompanyTest {
 
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void getEmployeeStore() {
 
         Company company = new Company("aaaa");
 
-        Employee emp = new Employee("DanielCosta", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001","1234567","specialist doctor","123456");
+        Employee emp = new Employee("DanielCosta", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001","1234567","specialistdoctor","123456");
 
         EmployeeStore employeeStore = company.getEmployeeStore();
 

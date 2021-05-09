@@ -1,10 +1,7 @@
 package app.controller;
 
-import junit.framework.TestCase;
 import org.junit.Assert;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class RegisterEmployeeControllerTest {
 
@@ -51,7 +48,6 @@ public class RegisterEmployeeControllerTest {
 
         ctrl.Employee("Daniel", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001", "1234567", "specialistdoctor", "123456");
 
-
         String expected = (ctrl.getEmp());
         String actual = (ctrl.getEmp());
 
@@ -64,7 +60,6 @@ public class RegisterEmployeeControllerTest {
         RegisterEmployeeController ctrl = new RegisterEmployeeController();
 
         ctrl.Employee("++++++", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001", "1234567", "specialistdoctor", "123456");
-
 
         String expected = "name: " + "++++++" + ", address: " + "3425 Stone Street" + ", email: " + "dasc@gmail.com" + ", Phone number: " + "01492235687" + "employeeId: " + "DASC00001" + ", socCode: " + "1234567" + ", orgRole: " + "specialistdoctor" + ", doctorIndexNumber: " + "123456";
         String actual = (ctrl.getEmp());

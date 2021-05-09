@@ -23,7 +23,7 @@ public class EmployeeUI implements Runnable {
                 String phoneNumber = Utils.readLineFromConsole("Please enter the phone number of the employee");
                 String employeeId = Utils.readLineFromConsole("Please enter the Employee ID of the employee");
                 String socCode = Utils.readLineFromConsole("Please enter the SOC Code of the employee");
-                String orgRole = Utils.readLineFromConsole("Please enter the employee's organization role, choose between \"employee\" and \"specialist doctor\"");
+                String orgRole = Utils.readLineFromConsole("Please enter the employee's organization role, choose between \"employee\" and \"specialistdoctor\"");
                 if (orgRole.equals("specialistdoctor")){
                     String doctorIndexNumber = Utils.readLineFromConsole("Please enter the Doctor Index Number");
                     ctrl.Employee(name, address, email, phoneNumber, employeeId, socCode, orgRole, doctorIndexNumber);

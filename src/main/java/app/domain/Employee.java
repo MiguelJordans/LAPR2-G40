@@ -9,6 +9,7 @@ public class Employee {
     String employeeId;
     String socCode, doctorIndexNumber;
 
+
     public Employee (String name, String address, String email, String phoneNumber, String employeeId, String socCode, String orgRole, String doctorIndexNumber){
 
         checkNameRules(name);
@@ -33,8 +34,6 @@ public class Employee {
     //Checks
     public void checkDoctorIndexNumber (String doctorIndexNumber){
 
-
-
         if (StringUtils.isBlank(doctorIndexNumber)){
             throw new IllegalArgumentException("Doctor Index Number can't be empty.");
         }
@@ -42,26 +41,18 @@ public class Employee {
             throw new IllegalArgumentException("Doctor Index Number needs to have exactly 6 digits.");
         }
 
-
     }
 
     public void checkOrgRole (String orgRole){
 
-        String aux = orgRole.trim();
+        String aux = orgRole.trim() ;
         aux = aux.toLowerCase();
-        char[] auxchar = aux.toCharArray();
 
         if (StringUtils.isBlank(orgRole)) {
             throw new IllegalArgumentException("Organization role cannot be empty.");
         }
         if (!((aux.equalsIgnoreCase("specialistdoctor")) || (aux.equalsIgnoreCase("employee")))) {
             throw new IllegalArgumentException("Please select between \"employee\" and \"specialist doctor\".");
-        }
-        for (int i = 0; i < auxchar.length; i++) {
-            char ch = auxchar[i];
-            if (!(ch >= 'a' && ch <= 'z')) {
-                throw new IllegalArgumentException("Invalid Organization Role.");
-            }
         }
 
     }
@@ -76,8 +67,8 @@ public class Employee {
         if (StringUtils.isBlank(name)) {
             throw new IllegalArgumentException("Name cannot be empty.");
         }
-        if (!(name.length() < 20)) {
-            throw new IllegalArgumentException("Name cannot have more than 20 characters.");
+        if (!(name.length() < 30)) {
+            throw new IllegalArgumentException("Name cannot have more than 30 characters.");
         }
         for (int i = 0; i < auxchar.length; i++) {
             char ch = auxchar[i];
@@ -119,7 +110,7 @@ public class Employee {
     }
 
     public void checkPhoneNumberRules(String phoneNumber) {
-        String auxTrimPhoneNumber = phoneNumber.replaceAll("\\s", "");
+        String auxTrimPhoneNumber = phoneNumber.replaceAll("\s", "");
         char[] auxChar = auxTrimPhoneNumber.toCharArray();
 
         if (StringUtils.isBlank(phoneNumber)) {
@@ -161,6 +152,7 @@ public class Employee {
         if (!(auxSocCode.length() == 7)) {
             throw new IllegalArgumentException("SOC code must have 7 digits.");
         }
+
 
         for (int i = 0; i < auxchar.length; i++) {
             char ch = auxchar[i];
