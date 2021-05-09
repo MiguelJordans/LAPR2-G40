@@ -73,6 +73,15 @@ public class Parameter {
         return name;
     }
 
+    public ParameterCategoryStore getPp() {
+        return pp;
+    }
+
+    public void setPp(ParameterCategoryStore pp) {
+        checkCategoriesList(pp);
+        this.pp = pp;
+    }
+
     public void setName(String name) {
         checkName(name);
         this.name = name;

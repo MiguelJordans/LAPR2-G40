@@ -3,8 +3,6 @@ package app.domain;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class ParameterTest {
 
     @Test
@@ -298,6 +296,53 @@ public class ParameterTest {
         parameterCategoryStore.listAdd();
 
         Parameter pp = new Parameter("1abcE","","aaa",parameterCategoryStore);
+
+    }
+
+    @Test
+    public void checkDescriptionDescription2() {
+
+        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        parameterCategoryStore.listAdd();
+
+        Parameter pp = new Parameter("1abcE","11111111111111111111","aaa",parameterCategoryStore);
+
+        Assert.assertNotNull(pp);
+
+    }
+
+    @Test
+    public void checkDescriptionDescription3() {
+
+        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        parameterCategoryStore.listAdd();
+
+        Parameter pp = new Parameter("1abcE","1111111111111111111","aaa",parameterCategoryStore);
+
+        Assert.assertNotNull(pp);
+
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void checkDescriptionDescription4() {
+
+        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        parameterCategoryStore.listAdd();
+
+        Parameter pp = new Parameter("1abcE","111111111111111111111","aaa",parameterCategoryStore);
+
+        Assert.assertNotNull(pp);
+
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void checkCategoryListBlank() {
+
+        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+        Parameter pp = new Parameter("1a111","aaa","2",pcStore);
 
     }
 

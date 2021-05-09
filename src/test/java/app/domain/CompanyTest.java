@@ -4,6 +4,8 @@ import auth.AuthFacade;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.List;
+
 public class CompanyTest {
 
     @Test
@@ -50,6 +52,17 @@ public class CompanyTest {
         AuthFacade actual = company.getAuthFacade();
 
         Assert.assertEquals(expected,actual);
+
+    }
+
+    @Test
+    public void getAuthFacadeNotNull(){
+
+        Company company = new Company("aaaa");
+
+        AuthFacade expected =  company.getAuthFacade();
+
+        Assert.assertNotNull(expected);
 
     }
 
@@ -117,8 +130,39 @@ public class CompanyTest {
         Parameter pp = new Parameter("1abcE","yes","aaa",parameterCategoryStore);
 
     }
+
+    @Test
+    public void createParameter2() {
+
+        Company company = new Company("aaaa");
+
+        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        parameterCategoryStore.listAdd();
+
+        Parameter pp = company.createParameter("1abcE","yes","aaa",parameterCategoryStore);
+
+    }
+
+    @Test
+    public void createParameter3() {
+
+        Company company = new Company("aaaa");
+
+        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        parameterCategoryStore.listAdd();
+
+        Parameter pp = company.createParameter("1abcE","yes","aaa",parameterCategoryStore);
+
+        Assert.assertNotNull(pp);
+
+    }
+
     @Test
     public void createParameterNull() {
+
+        Company company = new Company("aaaa");
 
         Parameter pp = null;
 
@@ -771,6 +815,31 @@ public class CompanyTest {
     }
 
     @Test
+    public void getClinicalAnalysisLaboratoryStoreNotNull(){
+
+        Company company = new Company("aaaa");
+
+        ClinicalAnalysisLaboratoryStore clinicalAnalysisLaboratoryStore = company.getClinicalAnalysisLaboratoryStore();
+
+        Assert.assertNotNull(clinicalAnalysisLaboratoryStore);
+
+    }
+
+
+    @Test
+    public void getClinicalAnalysisLaboratoryStoreNull(){
+
+        Company company = new Company("aaaa");
+
+        company.clinicalAnalysisLaboratoryStore=null;
+
+        ClinicalAnalysisLaboratoryStore clinicalAnalysisLaboratoryStore = company.getClinicalAnalysisLaboratoryStore();
+
+        Assert.assertNull(clinicalAnalysisLaboratoryStore);
+
+    }
+
+    @Test
     public void listAddParameterCategory(){
 
         Company company = new Company("aaaa");
@@ -826,7 +895,11 @@ public class CompanyTest {
     @Test
     public void ParameterCategoryStoreNull() {
 
-        ParameterCategoryStore parameterCategoryStore = null;
+        Company company = new Company("aaaa");
+
+        company.parameterCategoryStore=null;
+
+        ParameterCategoryStore parameterCategoryStore = company.getParameterCategoryStore();
 
         Assert.assertNull(parameterCategoryStore);
 
@@ -906,6 +979,17 @@ public class CompanyTest {
     }
 
     @Test
+    public void getTestTypeListNull1(){
+
+        Company company = new Company("aaa");
+
+       List<TestType> testType =  company.getTestType();
+
+       Assert.assertNotNull(testType);
+
+    }
+
+    @Test
     public void getParameterList(){
 
         ParameterStore parameterStore = new ParameterStore();
@@ -913,6 +997,34 @@ public class CompanyTest {
         Company company = new Company("aaa");
 
         company.getParameter();
+
+    }
+
+    @Test
+    public void listAddAnalysisLaboratory(){
+
+        Company company = new Company("aaa");
+
+        ClinicalAnalysisLaboratoryStore clinicalAnalysisLaboratoryStore = new ClinicalAnalysisLaboratoryStore();
+
+        ClinicalAnalysisLaboratory cal = company.createClinicalAnalysisLaboratory("a23aa","aaa","aaa","69999999999","6999999999");
+        company.listAddAnalysisLaboratory(cal);
+
+        Assert.assertTrue(company.listAddAnalysisLaboratory(cal));
+
+    }
+
+    @Test
+    public void listAddAnalysisLaboratoryNotNull(){
+
+        Company company = new Company("aaa");
+
+        ClinicalAnalysisLaboratoryStore clinicalAnalysisLaboratoryStore = new ClinicalAnalysisLaboratoryStore();
+
+        ClinicalAnalysisLaboratory cal = company.createClinicalAnalysisLaboratory("a23aa","aaa","aaa","69999999999","6999999999");
+        company.listAddAnalysisLaboratory(cal);
+
+        Assert.assertNotNull(company.listAddAnalysisLaboratory(cal));
 
     }
 

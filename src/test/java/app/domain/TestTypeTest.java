@@ -319,13 +319,13 @@ public class TestTypeTest {
 
     }
 
-   /* @Test(expected = IllegalArgumentException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void checkCategoryListBlank() {
 
         ParameterCategoryStore pcStore = new ParameterCategoryStore();
         TestType tt = new TestType("1111","aaa","2",pcStore);
 
-    }*/
+    }
 
     @Test
     public void getPP(){
@@ -337,6 +337,73 @@ public class TestTypeTest {
         TestType tt = new TestType("1111","aaaaa","2",pcStore);
 
         Assert.assertNotNull(tt.getPP());
+
+    }
+
+    @Test
+    public void checkCollectingMethod3(){
+
+        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcStore.listAdd();
+
+        TestType tt = new TestType("1111","aaaaa","11111111111111111111",pcStore);
+
+    }
+
+    @Test
+    public void checkCollectingMethod4(){
+
+        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcStore.listAdd();
+
+        TestType tt = new TestType("1111","aaaaa","1111111111111111111",pcStore);
+
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void checkCollectingMethod5(){
+
+        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcStore.listAdd();
+
+        TestType tt = new TestType("1111","aaaaa","111111111111111111111",pcStore);
+
+    }
+
+
+    @Test
+    public void checkDescription3(){
+
+        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcStore.listAdd();
+
+        TestType tt = new TestType("1111","111111111111111","11111111111111111111",pcStore);
+
+    }
+
+    @Test
+    public void checkDescription4(){
+
+        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcStore.listAdd();
+
+        TestType tt = new TestType("1111","11111111111111","1111111111111111111",pcStore);
+
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void checkDescription5(){
+
+        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcStore.listAdd();
+
+        TestType tt = new TestType("1111","111111111111111","111111111111111111111",pcStore);
 
     }
 
