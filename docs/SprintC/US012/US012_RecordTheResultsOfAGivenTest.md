@@ -1,4 +1,4 @@
-# US XXX - XXXX XXXX
+# US 12 - RecordTheResultsOfAGivenTest
 
 ## 1. Requirements Engineering
 
@@ -7,30 +7,61 @@
 
 ### 1.1. User Story Description
 
-*Insert here the User Story as described by the client.*
+*As a clinical chemistry technologist, I intend to record the results of a given test.*
 
 ### 1.2. Customer Specifications and Clarifications 
 
-*Insert here any related specification and/or clarification provided by the client together with **your interpretation**. When possible, provide a link to such specifications/clarifications.*
+**From the specifications document:**
+
+> “At the company's headquarters, the clinical chemistry technologist receives the samples (delivered by a courier) and performs the chemical analysis, recording the results in the software application.”
+
+> “… the application uses an external module that is responsible for doing an automatic validation using test reference values.”
+
+> “At the same time, the results are also available in the central application where the medical lab technicians who collect the samples, the clinical chemistry technologist, the specialist doctor, and the laboratory coordinator can check them.”
+
+**From the client clarifications:**
+
+> **Question:** When the Clinical Chemistry Technologist wants to record the results of a test, how does he have access to that test? By an internal code, NHS code…?
+> 
+> **Answer:** Each sample has a unique barcode. The clinical chemistry technologist should use the sample barcode number to find the test for which the sample was collected.
+
+> **Question** Should the system present a result for each test parameter, or a single result for the test to be recorded?
+> 
+> **Answer:** The Clinical Chemistry Technologist should register a value/result for each parameter of the test.
 
 ### 1.3. Acceptance Criteria
 
-*Insert here the client acceptance criteria.*
+* **AC1:** The application should use an external module that is responsible for providing the test reference values. The application can use an external module for each type of test. For instance, when the results are for blood tests parameters, the external module BloodReferenceValues1API can be used. When the results are for Covid-19 tests parameters, the external module CovidReferenceValues1API can be used. In any case, the API request should include, at most: (i) a key to access the module (e.g.: “KEY1234”); (ii) a parameter identifier; (iii) the reference date; and (iv) reference measurement unit (e.g.: "mg").
+* **AC2:** Each test result is characterized by a parameter code, a result and metric.
+* **AC3:** Each sample has a unique barcode.
 
 ### 1.4. Found out Dependencies
 
-*Identify here any found out dependency to other US and/or requirements.*
+There is a dependency to “US9 Specify a new type of test and its collecting methods” and to “US10 Specify a new parameter and categorize it” since at least a type of test and a parameter must exist to record its results.
 
 ### 1.5 Input and Output Data
 
-*Identity here the data to be inputted by the system actor as well as the output data that the system have/needs to present in order to properly support the actor actions. Regarding the inputted data, it is suggested to distinguish between typed data and selected data (e.g. from a list)*
+**Input Data:**
 
+* Typed data:
+    * Result
+    * Value
+    * Metric
+
+
+* Selected data:
+    * Test parameter
+
+
+**Output Data:**
+
+* (In)Success of the operation
 
 ### 1.6. System Sequence Diagram (SSD)
 
 *Insert here a SSD depicting the envisioned Actor-System interactions and throughout which data is inputted and outputted to fulfill the requirement. All interactions must be numbered.*
 
-![USXX-SSD](USXX-SSD.svg)
+![US12_SSD](US12_SSD.svg)
 
 
 ### 1.7 Other Relevant Remarks
@@ -43,11 +74,11 @@
 ### 2.1. Relevant Domain Model Excerpt 
 *In this section, it is suggested to present an excerpt of the domain model that is seen as relevant to fulfill this requirement.* 
 
-![USXX-MD](USXX-MD.svg)
+![US12_DM](US12_DM.svg)
 
 ### 2.2. Other Remarks
 
-*Use this section to capture some aditional notes/remarks that must be taken into consideration into the design activity. In some case, it might be usefull to add other analysis artifacts (e.g. activity or state diagrams).* 
+*Use this section to capture some additional notes/remarks that must be taken into consideration into the design activity. In some case, it might be usefull to add other analysis artifacts (e.g. activity or state diagrams).* 
 
 
 
@@ -59,12 +90,12 @@
 
 | Interaction ID | Question: Which class is responsible for... | Answer  | Justification (with patterns)  |
 |:-------------  |:--------------------- |:------------|:---------------------------- |
-| Step 1  		 |							 |             |                              |
-| Step 2  		 |							 |             |                              |
-| Step 3  		 |							 |             |                              |
-| Step 4  		 |							 |             |                              |
-| Step 5  		 |							 |             |                              |
-| Step 6  		 |							 |             |                              |              
+| Step/Msg 1:  		 |							 |             |                              |
+| Step/Msg 2:  		 |							 |             |                              |
+| Step/Msg 3:  		 |							 |             |                              |
+| Step/Msg 4:  		 |							 |             |                              |
+| Step/Msg 5:  		 |							 |             |                              |
+| Step/Msg 6:  		 |							 |             |                              |              
 
 ### Systematization ##
 
@@ -82,13 +113,14 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 *In this section, it is suggested to present an UML dynamic view stating the sequence of domain related software objects' interactions that allows to fulfill the requirement.* 
 
-![USXX-SD](USXX-SD.svg)
+![US12_SD](US12_SD.svg)
+![SD_AddTestResult](SD_AddTestResult.svg)
 
 ## 3.3. Class Diagram (CD)
 
 *In this section, it is suggested to present an UML static view representing the main domain related software classes that are involved in fulfilling the requirement as well as and their relations, attributes and methods.*
 
-![USXX-CD](USXX-CD.svg)
+![US12_CD](US12_CD.svg)
 
 # 4. Tests 
 *In this section, it is suggested to systematize how the tests were designed to allow a correct measurement of requirements fulfilling.* 
@@ -102,13 +134,13 @@ Other software classes (i.e. Pure Fabrication) identified:
 		Exemplo instance = new Exemplo(null, null);
 	}
 
-*It is also recommended to organize this content by subsections.* 
+*It is also recommended organizing this content by subsections.* 
 
 # 5. Construction (Implementation)
 
 *In this section, it is suggested to provide, if necessary, some evidence that the construction/implementation is in accordance with the previously carried out design. Furthermore, it is recommeded to mention/describe the existence of other relevant (e.g. configuration) files and highlight relevant commits.*
 
-*It is also recommended to organize this content by subsections.* 
+*It is also recommended organizing this content by subsections.* 
 
 # 6. Integration and Demo 
 
