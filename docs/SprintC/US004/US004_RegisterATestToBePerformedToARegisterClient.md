@@ -1,4 +1,4 @@
-# US XXX - XXXX XXXX
+# US 004 - Register a Test to be performed to a registered Client.
 
 ## 1. Requirements Engineering
 
@@ -7,31 +7,74 @@
 
 ### 1.1. User Story Description
 
-*Insert here the User Story as described by the client.*
+As a receptionist of the laboratory, I intend to register a test to be performed to a registered client.
 
 ### 1.2. Customer Specifications and Clarifications 
 
-*Insert here any related specification and/or clarification provided by the client together with **your interpretation**. When possible, provide a link to such specifications/clarifications.*
+**From the specifications document:**
+
+>“a receptionist asks the client’s citizen card number, the lab order which contains the type of test and parameters to be measured and registers
+>in the application the test to be performed to that client.”
+
+
+**From the client clarifications:**
+
+>**Question**: Other than the attributes already mentioned (test code, NHS code, designation) are there any other attributes that characterize a test? On those attributes, what requirements are there? For example, the characters on a designation, the code length, etc
+>
+>**Answer**: The test attributes are:
+>Test code : Sequential number with 12 digits. The code is automatically generated.
+>NHS code: 12 alphanumeric characters.
+
+
+>**Question**: When the receptionist chooses the test type, should the categories appear, and then when selecting the category, the receptionist can choose the parameters for the test? Or when the Receptionist chooses the test type, should appear all the parameters that it includes immediately?
+>
+>**Answer**: Firstly, the receptionist should choose a test type. Then choose a category from a set of categories. Last, the receptionist should choose a parameter.
+
+
+>**Question**: Since the Client has a Lab Order which contains the type of test and all the parameters to be measured, all the parameters selected by the Receptionist need to be equal to the Lab Order's parameters?
+>
+>**Answer**: Yes. 
 
 ### 1.3. Acceptance Criteria
 
-*Insert here the client acceptance criteria.*
+* **AC1**: The receptionist must select the parameters to be analyzed from all possible parameters in accordance with the test type.
 
 ### 1.4. Found out Dependencies
 
-*Identify here any found out dependency to other US and/or requirements.*
+* There is a dependency to "US009 Specify a new type of test and its collecting methods" since at least a test type must exist to be selected by the receptionist and to be performed to a registered client. 
+  
+
+* There is a dependency to "US010 Specify a new parameter and categorize it" since at least a parameter must exist to be measured.
 
 ### 1.5 Input and Output Data
 
-*Identity here the data to be inputted by the system actor as well as the output data that the system have/needs to present in order to properly support the actor actions. Regarding the inputted data, it is suggested to distinguish between typed data and selected data (e.g. from a list)*
+**Input Data:**
+
+* Typed data:
+    * None
+
+
+* Selected data:
+    * Test Type
+    * Parameter(s)
+
+
+**Output Data:**
+
+* List of test types
+* List of test parameters
+* (In)Success of the operation
 
 
 ### 1.6. System Sequence Diagram (SSD)
 
-*Insert here a SSD depicting the envisioned Actor-System interactions and throughout which data is inputted and outputted to fulfill the requirement. All interactions must be numbered.*
+### **Version 1**
 
-![USXX-SSD](USXX-SSD.svg)
+![US04-SSD1](US04_SSD1.svg)
 
+### **Version 2**
+
+![US04-SSD2](US04_SSD2.svg)
 
 ### 1.7 Other Relevant Remarks
 
@@ -43,7 +86,7 @@
 ### 2.1. Relevant Domain Model Excerpt 
 *In this section, it is suggested to present an excerpt of the domain model that is seen as relevant to fulfill this requirement.* 
 
-![USXX-MD](USXX-MD.svg)
+![US04-MD](US04_MD.svg)
 
 ### 2.2. Other Remarks
 
