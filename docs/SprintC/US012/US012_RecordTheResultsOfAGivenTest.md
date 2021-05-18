@@ -65,12 +65,12 @@ There is a dependency to:
 **Input Data:**
 
 * Typed data:
-  * Barcode number
-  * Parameter result
+  * Sample barcode number
+  * Value/result (for each parameter)
 
 
 * Selected data:
-    * Test parameter
+  * Test parameter
 
 
 **Output Data:**
