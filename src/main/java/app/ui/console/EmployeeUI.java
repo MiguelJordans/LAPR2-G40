@@ -1,7 +1,7 @@
 package app.ui.console;
 
 import app.controller.RegisterEmployeeController;
-import app.domain.Employee;
+import app.domain.model.Employee;
 import app.ui.console.utils.Utils;
 
 

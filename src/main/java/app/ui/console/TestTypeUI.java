@@ -1,10 +1,10 @@
 package app.ui.console;
 
 import app.controller.TestTypeController;
-import app.domain.Parameter;
-import app.domain.ParameterCategory;
-import app.domain.ParameterCategoryStore;
-import app.domain.ParameterStore;
+import app.domain.model.Parameter;
+import app.domain.model.ParameterCategory;
+import app.domain.model.ParameterCategoryStore;
+import app.domain.model.ParameterStore;
 import app.ui.console.utils.Utils;
 
 public class TestTypeUI implements Runnable {

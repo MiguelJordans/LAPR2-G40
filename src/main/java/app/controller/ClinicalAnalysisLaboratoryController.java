@@ -1,7 +1,7 @@
 package app.controller;
 
-import app.domain.Company;
-import app.domain.ClinicalAnalysisLaboratoryStore;
+import app.domain.model.Company;
+import app.domain.model.ClinicalAnalysisLaboratoryStore;
 
 public class ClinicalAnalysisLaboratoryController {
 

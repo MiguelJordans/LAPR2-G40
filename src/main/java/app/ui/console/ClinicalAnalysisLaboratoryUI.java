@@ -1,8 +1,8 @@
 package app.ui.console;
 
 import app.controller.ClinicalAnalysisLaboratoryController;
-import app.domain.TestType;
-import app.domain.TestTypeStore;
+import app.domain.model.TestType;
+import app.domain.model.TestTypeStore;
 import app.ui.console.utils.Utils;
 
 public class ClinicalAnalysisLaboratoryUI implements Runnable {

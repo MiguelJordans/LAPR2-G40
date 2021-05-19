@@ -3,7 +3,7 @@ package app.ui.console;
 import app.controller.ParameterCategoryController;
 import app.controller.ParameterController;
 import app.controller.TestTypeController;
-import app.domain.ParameterCategory;
+import app.domain.model.ParameterCategory;
 import app.ui.console.utils.Utils;
 
 public class ParameterCategoryUI implements Runnable {

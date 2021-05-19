@@ -1,9 +1,9 @@
 package app.controller;
 
-import app.domain.Company;
-import app.domain.ParameterCategoryStore;
-import app.domain.TestType;
-import app.domain.TestTypeStore;
+import app.domain.model.Company;
+import app.domain.model.ParameterCategoryStore;
+import app.domain.model.TestType;
+import app.domain.model.TestTypeStore;
 
 import java.util.List;
 

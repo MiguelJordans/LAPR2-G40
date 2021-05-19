@@ -1,9 +1,7 @@
 package app.controller;
 
-import app.domain.EmployeeStore;
-import app.domain.Company;
-import auth.AuthFacade;
-
+import app.domain.model.EmployeeStore;
+import app.domain.model.Company;
 
 public class RegisterEmployeeController {
 

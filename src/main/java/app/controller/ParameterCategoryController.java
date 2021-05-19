@@ -1,6 +1,6 @@
 package app.controller;
 
-import app.domain.*;
+import app.domain.model.*;
 
 import java.util.List;
 
