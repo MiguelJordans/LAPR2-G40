@@ -338,7 +338,7 @@ public class ParameterTest {
 
     }
 
-   /* @Test(expected = IllegalArgumentException.class)
+    /*@Test(expected = IllegalArgumentException.class)
     public void checkCategoryListBlank() {
 
         ParameterCategoryStore pcStore = new ParameterCategoryStore();

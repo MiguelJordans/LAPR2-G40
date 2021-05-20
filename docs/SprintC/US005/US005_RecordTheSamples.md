@@ -42,9 +42,9 @@ As a medical lab technician, I want to record the samples collected in the scope
 
 ### 1.4. Found out Dependencies
 
-*There is a dependency to “US009 Specify a new test type” since at least a test type must exist to classify the sample(s) being created*
+*There is a dependency to "US004 Register a test to be performed to a registered client" since at least one test must be registered in the system.*
 
-*There is a dependency to “US007 Register a new employee” since at least a Medical Lab technician should be register in order to create a sample.*
+*There is a dependency to “US007 Register a new employee” since at least a Medical Lab technician should be registered in order to create a sample.*
 
 
 ### 1.5 Input and Output Data
@@ -54,11 +54,11 @@ As a medical lab technician, I want to record the samples collected in the scope
 * Typed data:
     * Number of samples that the actor wishes to create.
     
-**Selected data**: List of tests (without a sample(s)).
+**Selected data**: List of registered tests (without a sample(s)).
 
 **Output Data**
 
-* List of existing test types,
+* List of registered test(s),
 * (In)Success of the operation.
 
 ### 1.6. System Sequence Diagram (SSD)

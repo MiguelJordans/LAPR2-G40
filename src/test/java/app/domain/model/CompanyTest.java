@@ -1177,9 +1177,9 @@ public class CompanyTest {
 
         Company company = new Company("aaaa");
 
-        Employee emp = new Employee("DanielCosta", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001","1234567","specialistdoctor","123456");
+        Employee emp = new Employee("DanielCosta", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001", "1234567", "specialistdoctor", "123456");
 
-       Assert.assertTrue(company.addEmployee(emp));
+        Assert.assertTrue(company.addEmployee(emp));
 
 
     }
@@ -1189,7 +1189,7 @@ public class CompanyTest {
 
         Company company = new Company("aaaa");
 
-        Employee emp = new Employee("DanielCosta", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001","1234567","specialistdoctor","123456");
+        Employee emp = new Employee("DanielCosta", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001", "1234567", "specialistdoctor", "123456");
         company.listAddEmp(emp);
 
         Assert.assertTrue(company.listEmployee(emp));
@@ -1202,7 +1202,7 @@ public class CompanyTest {
 
         Company company = new Company("aaaa");
 
-        Employee emp = new Employee("DanielCosta", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001","1234567","specialistdoctor","123456");
+        Employee emp = new Employee("DanielCosta", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001", "1234567", "specialistdoctor", "123456");
 
         Assert.assertTrue(company.validateEmployee(emp));
 
@@ -1214,7 +1214,7 @@ public class CompanyTest {
 
         Company company = new Company("aaaa");
 
-        Employee emp = new Employee("DanielCosta", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001","1234567","specialistdoctor","123456");
+        Employee emp = new Employee("DanielCosta", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001", "1234567", "specialistdoctor", "123456");
 
         Assert.assertTrue(company.saveEmployee(emp));
 
@@ -1226,7 +1226,7 @@ public class CompanyTest {
 
         Company company = new Company("aaaa");
 
-        Employee emp = new Employee("DanielCosta", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001","1234567","specialistdoctor","123456");
+        Employee emp = new Employee("DanielCosta", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001", "1234567", "specialistdoctor", "123456");
 
         Assert.assertTrue(company.listAddEmp(emp));
 
@@ -1238,14 +1238,14 @@ public class CompanyTest {
 
         Company company = new Company("aaaa");
 
-        Employee emp = new Employee("DanielCosta", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001","1234567","specialistdoctor","123456");
+        Employee emp = new Employee("DanielCosta", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001", "1234567", "specialistdoctor", "123456");
         company.listAddEmp(emp);
 
         Employee expected = company.getEmployee(0);
         Employee actual = company.getEmployee(0);
 
 
-        Assert.assertEquals(expected,actual);
+        Assert.assertEquals(expected, actual);
 
 
     }
@@ -1255,14 +1255,14 @@ public class CompanyTest {
 
         Company company = new Company("aaaa");
 
-        Employee emp = new Employee("DanielCosta", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001","1234567","specialistdoctor","123456");
+        Employee emp = new Employee("DanielCosta", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001", "1234567", "specialistdoctor", "123456");
         company.listAddEmp(emp);
 
         Employee expected = company.getEmp();
         Employee actual = company.getEmp();
 
 
-        Assert.assertEquals(expected,actual);
+        Assert.assertEquals(expected, actual);
 
 
     }
@@ -1272,7 +1272,7 @@ public class CompanyTest {
 
         Company company = new Company("aaaa");
 
-        Employee emp = new Employee("DanielCosta", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001","1234567","specialistdoctor","123456");
+        Employee emp = new Employee("DanielCosta", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001", "1234567", "specialistdoctor", "123456");
 
         EmployeeStore employeeStore = company.getEmployeeStore();
 
@@ -1280,7 +1280,7 @@ public class CompanyTest {
     }
 
     @Test
-    public void Employee1(){
+    public void Employee1() {
 
         Company company = new Company("aaaa");
 
@@ -1290,7 +1290,7 @@ public class CompanyTest {
     }
 
     @Test
-    public void EmployeeNotNull(){
+    public void EmployeeNotNull() {
 
         Company company = new Company("aaaa");
 
@@ -1302,7 +1302,7 @@ public class CompanyTest {
     }
 
     @Test
-    public void getClientRegistrationStore(){
+    public void getClientRegistrationStore() {
 
         Company company = new Company("aaaa");
 
@@ -1311,7 +1311,7 @@ public class CompanyTest {
     }
 
     @Test
-    public void getClientRegistrationStoreNotNull(){
+    public void getClientRegistrationStoreNotNull() {
 
         Company company = new Company("aaaa");
 
@@ -1322,11 +1322,11 @@ public class CompanyTest {
     }
 
     @Test
-    public void Employee(){
+    public void Employee() {
 
         Company company = new Company("aaaa");
 
-        Employee emp = company.createEmployee("aaaa","aaaa","aaaa@dn.pt","11111111111","111111111","1111111","employee","111111");
+        Employee emp = company.createEmployee("aaaa", "aaaa", "aaaa@dn.pt", "11111111111", "111111111", "1111111", "employee", "111111");
 
     }
 
