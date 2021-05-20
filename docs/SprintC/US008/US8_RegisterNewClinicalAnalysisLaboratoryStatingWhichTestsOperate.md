@@ -9,7 +9,7 @@
 
 *As an administrator, I want to register a new clinical analysis laboratory stating which kind of test(s) it operates.*
 
-### 1.2. Customer Specifications and Clarifications 
+### 1.2. Customer Specifications and Clarifications
 
 **From the specifications document:**
 
@@ -18,11 +18,11 @@
 **From the client clarifications:**
 
 > **Question:** What are that data that characterize a Clinical Analysis Laboratory?
-> 
+>
 > **Answer:** Each Clinical Analysis Laboratory is characterized by the following attributes: Laboratory ID, name, address, phone number and TIN number.
 
 > **Question:** Which type/format has LaboratoryID, address, name, phone number, and TIN number on Clinical Analysis Laboratory?
-> 
+>
 > **Answer:** Each Clinical Analysis Laboratory is characterized by the following attributes:
 >
 > * Laboratory ID: 5 alphanumeric characters;
@@ -39,15 +39,15 @@
 > **Answer:** No.
 
 > **Question:** Are the test types in US8 typed in or selected from those that the program has?
-> 
+>
 > **Answer:** The test types are selected from a list.
 
 > **Question:** Should the employees be allocated to the clinical lab in which they work? Or, for example, can one medical lab technician work in more than one clinical analysis laboratory?
-> 
+>
 > **Answer:** Each Receptionist and each Medical Lab Technician can work in any CLinical Analysis Laboratory of the Many Labs network.
 
 > **Question:** Are two Clinical Analysis Laboratories with the same attributes allowed to exist?
-> 
+>
 > **Answer:** Only the name of two Clinical Analysis Laboratories can be the same.
 
 
@@ -59,7 +59,7 @@
 * **AC4:** Phone number has 11 digit numbers
 * **AC5:** TIN number has 10 digit numbers
 * **AC6:** A Clinical Analysis Laboratory cannot be registered without all its attributes
-* **AC7:** All types of test are performed by the lab
+* **AC7:** The test types are selected from a list
 * **AC8:** A Clinical Analysis Laboratory must always perform clinical blood tests.
 * **AC9:** Only the name of two Clinical Analysis Laboratories can be the same
 
@@ -74,15 +74,15 @@ There is a dependency to "US009 Specify a new type of test and its collecting me
 **Input Data:**
 
 * Typed data:
-    * Laboratory ID
-    * Name
-    * Address
-    * Phone number
-    * TIN number
+  * Laboratory ID
+  * Name
+  * Address
+  * Phone number
+  * TIN number
 
 
 * Selected data:
-    * Test type(s)
+  * Test type(s)
 
 
 **Output Data:**
@@ -98,7 +98,7 @@ There is a dependency to "US009 Specify a new type of test and its collecting me
 
 ### 1.7 Other Relevant Remarks
 
-*Use this section to capture other relevant information that is related with this US such as (i) special requirements ; (ii) data and/or technology variations; (iii) how often this US is held.* 
+*Use this section to capture other relevant information that is related with this US such as (i) special requirements ; (ii) data and/or technology variations; (iii) how often this US is held.*
 
 
 ## 2. OO Analysis
@@ -113,7 +113,7 @@ There is a dependency to "US009 Specify a new type of test and its collecting me
 *Use this section to capture some additional notes/remarks that must be taken into consideration into the design activity. In some case, it might be usefull to add other analysis artifacts (e.g. activity or state diagrams).*
 
 
-## 3. Design - User Story Realization 
+## 3. Design - User Story Realization
 
 ### 3.1. Rationale
 
@@ -124,14 +124,13 @@ There is a dependency to "US009 Specify a new type of test and its collecting me
 | Step/Msg 1: asks to create a new Clinical Analysis Laboratory | ... interacting with the actor? | ClinicalAnalysisLaboratoryUI | Pure Fabrication: there is no reason to assign this responsibility to any existing class in the Domain Model |
 |                                                               | ... coordinating the US? | ClinicalAnalysisLaboratoryController | Controller |
 |                                                               | ... instantiating a new Clinical Analysis Laboratory? | Company | Creator (Rule 1): in the DM Company has a Clinical Analysis Laboratory |
-|                                                               | ... knowing the user using the system? | UserSession | IE: cf. A&A component documentation |
-|                                                               | ... knowing to which organization the user belongs to? | System | IE: has registered all |
+|                                                               | ... knowing to which organization the user belongs to? | Company | IE: has registered all |
 | Step/Msg 2: request data (laboratoryID, name, address, phoneNumber, tinNumber) | n/a | | |
 | Step/Msg 3: types requested data | ... saving the inputted data? | ClinicalAnalysisLaboratory | IE: object created in step/msg 1 has its own data |
-| Step/Msg 4: shows the test types it can operate and asks to select the test(s) | ... knowing the test types to show? | Company | IE: test types are defined by the system |
-| Step/Msg 5: selects the test(s) | ... saving the selected data? | ClinicalAnalysisLaboratory | IE: object created in step/msg 1 has its own data |
-| Step/Msg 6: confirms the selected test types | ... saving the selected test types? | ClinicalAnalysisLaboratory | IE: object created in step 1 operates one or more test types |
-| Step/Msg 7: shows all data and requests a confirmation | ... validating the data locally (e.g.: mandatory vs non-mandatory data)? | Company | IE: knows its own data |
+| Step/Msg 4: shows test types to be selected | ... knowing the test types to show? | Company | IE: test types are defined by the system |
+| Step/Msg 5: selects one test | ... saving the selected data? | ClinicalAnalysisLaboratory | IE: object created in step/msg 1 has its own data |
+| Step/Msg 6: added with success | ... saving the selected test types? | ClinicalAnalysisLaboratory | IE: object created in step 1 operates one or more test types |
+| Step/Msg 7: shows the data and requests a confirmation | ... validating the data locally (e.g.: mandatory vs non-mandatory data)? | Company | IE: knows its own data |
 |                                                        | ... validating the data globally (e.g.: duplicated)? | Company | IE: knows all the ClinicalAnalysisLaboratory objects |
 | Step/Msg 8: confirms the data | ... saving the created Clinical Analysis Laboratory? | Company | IE: adopts/records all the ClinicalAnalysisLaboratory objects |
 | Step/Msg 9: informs operation success | ... informing operation success? | ClinicalAnalysisLaboratoryUI | IE: responsible for user interaction |
@@ -139,15 +138,15 @@ There is a dependency to "US009 Specify a new type of test and its collecting me
 
 ### Systematization ##
 
-According to the taken rationale, the conceptual classes promoted to software classes are: 
+According to the taken rationale, the conceptual classes promoted to software classes are:
 
- * Company
- * ClinicalAnalysisLaboratory
+* Company
+* ClinicalAnalysisLaboratory
 
-Other software classes (i.e. Pure Fabrication) identified: 
- * ClinicalAnalysisLaboratoryUI
- * ClinicalAnalysisLaboratoryController
- * ClinicalAnalysisLaboratoryStore
+Other software classes (i.e. Pure Fabrication) identified:
+* ClinicalAnalysisLaboratoryUI
+* ClinicalAnalysisLaboratoryController
+* ClinicalAnalysisLaboratoryStore
 
 ## 3.2. Sequence Diagram (SD)
 
@@ -161,7 +160,7 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 # 4. Tests
 
-**Test 1:** Check that it is not possible to create an instance of ClinicalAnalysisLaboratory class with null values. 
+**Test 1:** Check that it is not possible to create an instance of ClinicalAnalysisLaboratory class with null values.
 
 	@Test(expected = IllegalArgumentException.class)
     public void ClinicalAnalysisLaboratoryNull() {
@@ -733,7 +732,7 @@ Other software classes (i.e. Pure Fabrication) identified:
         }
     }
 
-# 6. Integration and Demo 
+# 6. Integration and Demo
 
 ## Integration in the Company class
 
@@ -782,8 +781,3 @@ Other software classes (i.e. Pure Fabrication) identified:
     }
 
 # 7. Observations
-
-
-
-
-

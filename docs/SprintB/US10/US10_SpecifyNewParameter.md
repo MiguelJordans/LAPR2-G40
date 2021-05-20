@@ -91,8 +91,7 @@
 | Step/Msg 1: asks to create a new Parameter | ... interacting with the actor? | ParameterUI | Pure Fabrication: there is no reason to assign this responsibility to any existing class in the Domain Model |
 |                                            | ... coordinating the US? | ParameterController | Controller |
 |                                            | ... instantiating a new Parameter? | Company | Creator (Rule 1): in the DM Company has a Parameter |
-|                                            | ... knowing the user using the system? | UserSession | IE: cf. A&A component documentation |
-|                                            | ... knowing to which organization the user belongs to? | System | IE: has registered all |
+|                                            | ... knowing to which organization the user belongs to? | Company | IE: has registered all |
 | Step/Msg 2: request data (code, short name, description) | n/a | | |
 | Step/Msg 3: types requested data | ... saving the inputted data? | Parameter | IE: object created in step/msg 1 has its own data |
 | Step/Msg 4: shows the parameter categories it can operate and asks to select one | ... knowing the parameter categories to show? | Company | IE: parameter category are defined by the system |

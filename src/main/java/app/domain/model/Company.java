@@ -8,7 +8,7 @@ import java.util.List;
 /**
  *
  * @author Paulo Maio <pam@isep.ipp.pt>
- * @author Miguel JordÃ£o <1201477@isep.ipp.pt>
+ * @author Miguel Jordão <1201487@isep.ipp.pt>
  * @author Mariana Lages <1200902@isep.ipp.pt>
  * @author Lucas Silva <1200759@isep.ipp.pt>
  * @author Daniel Costa <1200581@isep.ipp.pt>
