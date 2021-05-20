@@ -1,5 +1,8 @@
 package app.domain.model;
 
+import net.sourceforge.barbecue.Barcode;
+import net.sourceforge.barbecue.BarcodeFactory;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,6 +48,7 @@ public class TestTypeStore {
      */
 
     public boolean listContain(TestType tt){
+
         if(this.list.contains(tt)){
             return true;
         } else {
