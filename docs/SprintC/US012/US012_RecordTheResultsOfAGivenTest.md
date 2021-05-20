@@ -111,12 +111,17 @@ There is a dependency to:
 
 | Interaction ID | Question: Which class is responsible for... | Answer  | Justification (with patterns)  |
 |:-------------  |:--------------------- |:------------|:---------------------------- |
-| Step/Msg 1:  		 |							 |             |                              |
-| Step/Msg 2:  		 |							 |             |                              |
-| Step/Msg 3:  		 |							 |             |                              |
-| Step/Msg 4:  		 |							 |             |                              |
-| Step/Msg 5:  		 |							 |             |                              |
-| Step/Msg 6:  		 |							 |             |                              |              
+| Step/Msg 1: asks to record the results of a given test |							 |             |                              |
+| Step/Msg 2: request sample barcode number | n/a | | |
+| Step/Msg 3: types the sample barcode number |							 |             |                              |
+| Step/Msg 4: shows the parameters and asks to select one |							 |             |                              |
+| Step/Msg 5: selects test parameter |							 |             |                              |
+| Step/Msg 6: request the result value and metric |							 |             |                              |              
+| Step/Msg 7: types requested data |							 |             |                              |              
+| Step/Msg 8: shows all data and requests a confirmation |							 |             |                              |              
+| Step/Msg 9: confirms all data | ... saving the test results? |             |                              |              
+| Step/Msg 6: informs operation success | ... informing operation success? |             |                              |
+
 
 ### Systematization ##
 
@@ -132,10 +137,16 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 ## 3.2. Sequence Diagram (SD)
 
-*In this section, it is suggested to present an UML dynamic view stating the sequence of domain related software objects' interactions that allows to fulfill the requirement.* 
-
 ![US12_SD](US12_SD.svg)
-![SD_AddTestResult](SD_AddTestResult.svg)
+  
+
+* SD_AddTestResult(parameterCode, result, metric)
+![SD_AddTestResult(parameterCode, result, metric)](SD_AddTestResult.svg)
+
+
+* SD_GetTestParameterList(sampleID)
+![SD_GetTestParameterList(sampleID)](SD_GetTestParameterList.svg)
+
 
 ## 3.3. Class Diagram (CD)
 
