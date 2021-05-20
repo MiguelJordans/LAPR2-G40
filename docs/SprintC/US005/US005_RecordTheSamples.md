@@ -28,6 +28,11 @@ As a medical lab technician, I want to record the samples collected in the scope
 >
 >**Answer**: The API will be used to generate/print barcodes.
 
+>**Question**: During the current sprint, how should we allow the barcodes to be printed. After generating them via the API, should we save the barcode images to the disk?
+>
+>**Answer**: Each generated barcode should be saved in a folder as a jpeg file. 
+
+
 ### 1.3. Acceptance Criteria
 
 * **AC1:** The system should support several barcode APIs. The API to use is defined by configuration.
@@ -38,11 +43,11 @@ As a medical lab technician, I want to record the samples collected in the scope
 * **AC6:** The medical lab technician selects a test and the system asks for the number of samples to collect.
 * **AC7:** A test can have more than 1 sample.
 * **AC8:** The API will be used to generate/print barcodes.
-
+* **AC9:** Each generated barcode should be saved in a folder as a jpeg file. 
 
 ### 1.4. Found out Dependencies
 
-*There is a dependency to "US004 Register a test to be performed to a registered client" since at least one test must be registered in the system.*
+*There is a dependency to "US004 Register a test to be performed to a registered client" since at least one test must be registered in the system in order to create a sample.*
 
 *There is a dependency to “US007 Register a new employee” since at least a Medical Lab technician should be registered in order to create a sample.*
 
@@ -63,28 +68,21 @@ As a medical lab technician, I want to record the samples collected in the scope
 
 ### 1.6. System Sequence Diagram (SSD)
 
-*Insert here a SSD depicting the envisioned Actor-System interactions and throughout which data is inputted and outputted to fulfill the requirement. All interactions must be numbered.*
-
-![USXX-SSD](USXX-SSD.svg)
-
+![US005-SSD](US005_SSD.svg)
 
 ### 1.7 Other Relevant Remarks
 
 *Use this section to capture other relevant information that is related with this US such as (i) special requirements ; (ii) data and/or technology variations; (iii) how often this US is held.* 
 
-
 ## 2. OO Analysis
 
 ### 2.1. Relevant Domain Model Excerpt 
-*In this section, it is suggested to present an excerpt of the domain model that is seen as relevant to fulfill this requirement.* 
 
-![USXX-MD](USXX-MD.svg)
+![US005-MD](US005_MD.svg)
 
 ### 2.2. Other Remarks
 
 *Use this section to capture some aditional notes/remarks that must be taken into consideration into the design activity. In some case, it might be usefull to add other analysis artifacts (e.g. activity or state diagrams).* 
-
-
 
 ## 3. Design - User Story Realization 
 
@@ -115,15 +113,11 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 ## 3.2. Sequence Diagram (SD)
 
-*In this section, it is suggested to present an UML dynamic view stating the sequence of domain related software objects' interactions that allows to fulfill the requirement.* 
-
-![USXX-SD](USXX-SD.svg)
+![US005-SD](US005_SD.svg)
 
 ## 3.3. Class Diagram (CD)
 
-*In this section, it is suggested to present an UML static view representing the main domain related software classes that are involved in fulfilling the requirement as well as and their relations, attributes and methods.*
-
-![USXX-CD](USXX-CD.svg)
+![US005-CD](US005_CD.svg)
 
 # 4. Tests 
 *In this section, it is suggested to systematize how the tests were designed to allow a correct measurement of requirements fulfilling.* 
