@@ -219,7 +219,7 @@ public class ClientRegistration {
             throw new IllegalArgumentException("Name cannot be empty.");
         }
         if (!(name.length() < 36)) {
-            throw new IllegalArgumentException("Name cannot have more than 35 characters.");
+                throw new IllegalArgumentException("Name cannot have more than 35 characters.");
         }
         for (int i = 0; i < auxchar.length; i++) {
             char ch = auxchar[i];
