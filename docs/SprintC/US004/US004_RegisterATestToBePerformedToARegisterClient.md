@@ -70,11 +70,9 @@ As a receptionist of the laboratory, I intend to register a test to be performed
 
 ### **Version 1**
 
-![US04-SSD1](US04_SSD1.svg)
+![US04-SSD](US04_SSD.svg)
 
-### **Version 2**
 
-![US04-SSD2](US04_SSD2.svg)
 
 ### 1.7 Other Relevant Remarks
 
