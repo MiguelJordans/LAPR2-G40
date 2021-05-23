@@ -1,30 +1,52 @@
-# US XXX - XXXX XXXX
+# US 14 - As a specialist doctor, I intend to make the diagnosis and write a report for a given test
 
 ## 1. Requirements Engineering
-
-*In this section, it is suggested to capture the requirement description and specifications as provided by the client as well as any further clarification on it. It is also suggested to capture the requirements acceptance criteria and existing dependencies to other requirements. At last, identfy the involved input and output data and depicted an Actor-System interaction in order to fulfill the requirement.*
 
 
 ### 1.1. User Story Description
 
-*Insert here the User Story as described by the client.*
+*As a specialist doctor, I intend to make the diagnosis and write a report for a
+given test*
 
 ### 1.2. Customer Specifications and Clarifications 
+*From the Specifications Document*
 
-*Insert here any related specification and/or clarification provided by the client together with **your interpretation**. When possible, provide a link to such specifications/clarifications.*
+>To facilitate and simplify the validation work performed by the specialist doctor, the application
+uses an external module that is responsible for doing an automatic validation using test reference
+values.
 
+
+*From the Client Clarifications*
+
+>*Question:* What characterizes a diagnosis? What it needs to have in it to be a valid diagnosis?
+> 
+> *Answer:* The report contains the diagnosis. The report is free text and should have no more than 400 words.
+
+>*Question:* Regarding the tests that the Specialist Doctor can write a report about. Should the SD chose from a list of tests? and Should him only receive a list of test that have completed all the previous steps?
+> 
+> *Answer*: The system shows all tests ready (that have completed all the previous steps) to make the diagnosys and the Specialist Doctor selects one test. Then, the Specialist Doctor writes the report for the selected test.
 ### 1.3. Acceptance Criteria
 
-*Insert here the client acceptance criteria.*
-
+* **AC1:** The report and the diagnosis have, at most, 400 characters.
 ### 1.4. Found out Dependencies
 
-*Identify here any found out dependency to other US and/or requirements.*
+
+* **From Sprint B:**
+    * *There is a dependency to **US07** since you need to have a Specialist Doctor registered to make the diagnosis and write the reports.*
+
+* **From Sprint C:**
+    * *There is a dependency to **US12** since you need to have the test results from the Clinical Chemistry Technologist.*
 
 ### 1.5 Input and Output Data
 
-*Identity here the data to be inputted by the system actor as well as the output data that the system have/needs to present in order to properly support the actor actions. Regarding the inputted data, it is suggested to distinguish between typed data and selected data (e.g. from a list)*
+**Input Data**
 
+* Typed data:
+    * Report;
+    * Diagnostic;
+  
+* Selected data:
+    * Test;
 
 ### 1.6. System Sequence Diagram (SSD)
 
