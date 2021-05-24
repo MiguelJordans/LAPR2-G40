@@ -86,6 +86,57 @@ public class Company {
         return clientRegistrationStore;
     }
 
+    //US05 - Sample -----------------------------------------------------------------------------
+
+    public Sample createSample(TestType tt) {
+        return new Sample(tt);
+    }
+
+    SampleStore sampleStore = new SampleStore();
+
+    private static SampleStore sampleList;
+
+    public static SampleStore Sample() {
+        return sampleList = new SampleStore();
+    }
+
+    public boolean addSample(Sample sm) {
+        sampleStore.listAdd(sm);
+        return true;
+    }
+
+    public boolean validateSample(Sample sm) {
+        sampleStore.validateSample(sm);
+        return true;
+    }
+
+    public boolean saveSample(Sample sm) {
+        sampleStore.saveSample();
+        return true;
+    }
+
+    public boolean listContainsSample(Sample sm) {
+        sampleStore.listContain(sm);
+        return true;
+    }
+
+    public boolean listAdd(Sample sm) {
+        sampleStore.listAdd(sm);
+        return true;
+    }
+
+    public Sample getSample(int i) {
+        return sampleStore.getSample(i);
+    }
+
+    public Sample getSm() {
+        return sampleStore.getSm();
+    }
+
+    public SampleStore getSampleStore() {
+        return sampleStore;
+    }
+
     // US07 - Employee --------------------------------------------------------------------------
 
     public Employee createEmployee(String name, String address, String email, String phoneNumber, String employeeId, String socCode, String orgRole, String doctorIndexNumber){

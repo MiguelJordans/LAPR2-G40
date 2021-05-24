@@ -1,8 +1,5 @@
 package app.domain.model;
 
-import net.sourceforge.barbecue.Barcode;
-import net.sourceforge.barbecue.BarcodeFactory;
-
 import java.util.ArrayList;
 import java.util.List;
 
