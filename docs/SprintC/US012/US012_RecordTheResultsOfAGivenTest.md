@@ -111,29 +111,31 @@ There is a dependency to:
 
 | Interaction ID | Question: Which class is responsible for... | Answer  | Justification (with patterns)  |
 |:-------------  |:--------------------- |:------------|:---------------------------- |
-| Step/Msg 1: asks to record the results of a given test |							 |             |                              |
+| Step/Msg 1: asks to record the results of a given test | ... interacting with the actor? | TestResultUI | Pure Fabrication: there is no reason to assign this responsibility to any existing class in the Domain Model |
+|                                                        | ... coordinating the US? | TestResultController | Controller |
 | Step/Msg 2: request sample barcode number | n/a | | |
-| Step/Msg 3: types the sample barcode number |							 |             |                              |
-| Step/Msg 4: shows the parameters and asks to select one |							 |             |                              |
-| Step/Msg 5: selects test parameter |							 |             |                              |
-| Step/Msg 6: request the result value and metric |							 |             |                              |              
-| Step/Msg 7: types requested data |							 |             |                              |              
-| Step/Msg 8: shows all data and requests a confirmation |							 |             |                              |              
-| Step/Msg 9: confirms all data | ... saving the test results? |             |                              |              
-| Step/Msg 6: informs operation success | ... informing operation success? |             |                              |
+| Step/Msg 3: types the sample barcode number | | | |
+| Step/Msg 4: shows the parameters and asks to select one | | | |
+| Step/Msg 5: selects test parameter | | | |
+| Step/Msg 6: request the result value and metric | | | |              
+| Step/Msg 7: types requested data | ... saving the inputted data? | TestResult | IE: object recorded in step/msg 1 has its own data |
+| Step/Msg 8: shows all data and requests a confirmation | ... validating the data locally (e.g.: mandatory vs non-mandatory data)? | | |
+|                                                        | ... validating the data globally (e.g.: duplicated)? | 
+| Step/Msg 9: confirms all data | ... saving the test results? | | |
+| Step/Msg 6: informs operation success | ... informing operation success? | | |
 
 
 ### Systematization ##
 
 According to the taken rationale, the conceptual classes promoted to software classes are: 
 
- * Class1
- * Class2
- * Class3
+ * TestResult
+ * TestParameter
 
 Other software classes (i.e. Pure Fabrication) identified: 
- * xxxxUI  
- * xxxxController
+ * TestResultUI  
+ * TestResultController
+ * TestResultStore
 
 ## 3.2. Sequence Diagram (SD)
 
