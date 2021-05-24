@@ -84,11 +84,11 @@ public class ParameterCategoryTest {
         Assert.assertEquals(expected,Actual);
     }
 
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void setNHSLD1(){
         ParameterCategory pc = new ParameterCategory("1abcE","ye22s","aaa");
 
-        String expected ="aaaaaaaa";
+        String expected ="aaaaaaa";
         pc.setName(expected);
 
         String Actual = pc.getNhsld();
@@ -189,10 +189,10 @@ public class ParameterCategoryTest {
 
     }
 
-    @Test
-    public void checkDescription() {
+    @Test (expected = IllegalArgumentException.class)
+    public void checkDescription() { //compor
 
-        ParameterCategory pc = new ParameterCategory("1abcE","asdasdas","aaa");
+        ParameterCategory pc = new ParameterCategory("1abcE","","aaa");
 
         Assert.assertNotNull(pc);
 

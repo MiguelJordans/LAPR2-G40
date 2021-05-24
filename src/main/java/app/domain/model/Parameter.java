@@ -10,6 +10,10 @@ public class Parameter {
 
     private ParameterCategoryStore pp;
 
+    private final int CODE_MAX = 5;
+    private final int NAME_MAX = 8;
+    private final int DESCRIPTION_MAX = 20;
+
 
     /**
      * Constructs an instance of Parameter
@@ -48,7 +52,7 @@ public class Parameter {
             throw new IllegalArgumentException("Code cannot be blank.");
 
 
-        if (!(code.matches("^[a-zA-Z0-9]*$")) || code.length() > 5)
+        if (!(code.matches("^[a-zA-Z0-9]*$")) || code.length() > CODE_MAX)
             throw new IllegalArgumentException("Code not valid! Must be alphanumeric and have less than 5 chars.");
 
     }
@@ -64,7 +68,7 @@ public class Parameter {
         if (StringUtils.isBlank(name))
             throw new IllegalArgumentException("Name cannot be blank.");
 
-        if (name.length() > 8)
+        if (name.length() > NAME_MAX)
             throw new IllegalArgumentException("Name not valid! Cannot have more than 8 chars.");
 
     }
@@ -80,7 +84,7 @@ public class Parameter {
         if (StringUtils.isBlank(description))
             throw new IllegalArgumentException("Description cannot be blank.");
 
-        if (description.length() > 20)
+        if (description.length() > DESCRIPTION_MAX)
             throw new IllegalArgumentException("Description not valid! Cannot have more than 15 chars.");
 
     }

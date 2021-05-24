@@ -1,11 +1,9 @@
-/*package app.domain.model;
+package app.domain.model;
 
 import net.sourceforge.barbecue.Barcode;
-import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.BarcodeFactory;
 import net.sourceforge.barbecue.BarcodeImageHandler;
 
-import java.awt.*;
 import java.awt.image.BufferedImage;
 
 public class Sample {
@@ -13,22 +11,22 @@ public class Sample {
     private final double MIN = 100000000000l;
     private final double MAX = 999999999999l;
 
-    private TestTypeStore ts;
+    private TestType tt;
     private Barcode barcode;
 
-    public Sample(TestTypeStore ts){
+    public Sample(TestType ts){
 
         String barcodeText = Double.toString(generateNumber());
 
-        this.ts=ts;
+        this.tt=tt;
 
-        try {
+       /* try {
             this.barcode = generateEAN13Barcode(barcodeText);
             generateEAN13BarcodeImage(this.barcode);
         }
         catch (IllegalAccessException e){
             e.printStackTrace();
-        }
+        }*/
 
     }
 
@@ -45,7 +43,8 @@ public class Sample {
 
     public double generateNumber(){
         double random_bar = Math.floor(Math.random()*(MAX-MIN+1)+MIN);
+
         return random_bar;
     }
 
-}  */
+}

@@ -10,6 +10,11 @@ public class ParameterCategory {
     private String nhsld;
     private String description;
 
+    private final int CODE_MAX = 5;
+    private final int CODE_MIN= 4;
+    private final int NHSLD_MAX = 5;
+    private final int DESCRIPTION_MAX = 5;
+
     /**
      * Constructs an instance of ParameterCategory.
      *
@@ -43,7 +48,7 @@ public class ParameterCategory {
         if (StringUtils.isBlank(code))
             throw new IllegalArgumentException("Code cannot be blank.");
 
-        if (code.length()<4 || code.length() > 8)
+        if (code.length()<CODE_MIN || code.length() > CODE_MAX)
             throw new IllegalArgumentException("Code not valid! Code must have 4 to 8 chars.");
 
     }
@@ -60,7 +65,7 @@ public class ParameterCategory {
             throw new IllegalArgumentException("NHSLD cannot be blank.");
 
 
-        if (nhsld.length() > 8)
+        if (nhsld.length() > NHSLD_MAX)
             throw new IllegalArgumentException("NHSLD not valid! Cannot have more than 8 chars.");
 
     }
@@ -76,7 +81,7 @@ public class ParameterCategory {
         if (StringUtils.isBlank(description))
             throw new IllegalArgumentException("Description cannot be blank.");
 
-        if (description.length() > 40)
+        if (description.length() > DESCRIPTION_MAX)
             throw new IllegalArgumentException("Description not valid! Cannot have more than 40 chars.");
 
     }

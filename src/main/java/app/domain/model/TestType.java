@@ -10,6 +10,10 @@ public class TestType {
 
     private ParameterCategoryStore pp;
 
+    private final int TESTCODE_MAX = 5;
+    private final int COLLECTINGMETHOD_MAX = 20;
+    private final int DESCRIPTION_MAX = 15;
+
 
     /**
      * Constructs an instance of Test Type
@@ -48,7 +52,7 @@ public class TestType {
         if (StringUtils.isBlank(testCode))
             throw new IllegalArgumentException("Test Code cannot be blank.");
 
-        if (!(testCode.matches("^[a-zA-Z0-9]*$")) || testCode.length() > 5)
+        if (!(testCode.matches("^[a-zA-Z0-9]*$")) || testCode.length() > TESTCODE_MAX)
             throw new IllegalArgumentException("Test Code not valid! Must be alphanumeric and have less than 5 chars.");
 
     }
@@ -62,7 +66,7 @@ public class TestType {
     public void checkCollectingMethod(String collectingMethod) {
         if (StringUtils.isBlank(collectingMethod))
             throw new IllegalArgumentException("Collecting Method cannot be blank.");
-        if (collectingMethod.length() > 20)
+        if (collectingMethod.length() > COLLECTINGMETHOD_MAX)
             throw new IllegalArgumentException("Collecting Method not valid! Cannot have more than 20 chars.");
     }
 
@@ -76,7 +80,7 @@ public class TestType {
         if (StringUtils.isBlank(description))
             throw new IllegalArgumentException("Description cannot be blank.");
 
-        if (description.length() > 15)
+        if (description.length() > DESCRIPTION_MAX)
             throw new IllegalArgumentException("Description not valid! Cannot have more than 15 chars.");
 
     }
