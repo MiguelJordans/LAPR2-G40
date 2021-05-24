@@ -1,5 +1,10 @@
 package app.domain.model;
 
+import net.sourceforge.barbecue.Barcode;
+import net.sourceforge.barbecue.BarcodeFactory;
+import net.sourceforge.barbecue.BarcodeImageHandler;
+
+import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,6 +12,9 @@ public class SampleStore {
 
         static List<Sample> list = new ArrayList<>();
         Sample sm;
+
+        private final double MIN = 100000000000l; //The number generated must have 12 digits to be in the UPC format
+        private final double MAX = 999999999999l;
 
         /**
          *
@@ -18,7 +26,21 @@ public class SampleStore {
          */
 
         public Sample CreateSample(TestType tt){
-            return this.sm = new Sample(tt);
+
+            String barcodeText = Double.toString(generateNumber());
+
+            try {
+
+                Barcode barcode = generateEAN13Barcode(barcodeText);
+                generateEAN13BarcodeImage(barcode);
+                return this.sm = new Sample(tt,barcode);
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            return this.sm = null; //If the barcode isn't correcty generated the object must be null
+
         }
 
         /**
@@ -109,4 +131,22 @@ public class SampleStore {
         public List<Sample> getSampleList() {
             return list;
         }
+
+    public Barcode generateEAN13Barcode(String barcodeText) throws Exception  {
+
+        Barcode barcode = BarcodeFactory.createUPCA(barcodeText);
+
+        return barcode;
     }
+
+    public BufferedImage generateEAN13BarcodeImage(Barcode barcode) throws Exception {
+        return BarcodeImageHandler.getImage(barcode);
+    }
+
+    public double generateNumber(){
+        double random_bar = Math.floor(Math.random()*(MAX-MIN+1)+MIN);
+
+        return random_bar;
+     }
+
+}

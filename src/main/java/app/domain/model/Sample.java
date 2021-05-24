@@ -8,19 +8,18 @@ import java.awt.image.BufferedImage;
 
 public class Sample {
 
-    private final double MIN = 100000000000l;
+    private final double MIN = 100000000000l; //The number generated must have 12 digits to be in the UPC format
     private final double MAX = 999999999999l;
 
     private TestType tt;
     private Barcode barcode;
 
-    public Sample(TestType ts){
-
-        String barcodeText = Double.toString(generateNumber());
+    public Sample(TestType ts,Barcode barcode) {
 
         this.tt=tt;
+        this.barcode=barcode;
 
-       /* try {
+     /* try {
             this.barcode = generateEAN13Barcode(barcodeText);
             generateEAN13BarcodeImage(this.barcode);
         }
@@ -28,23 +27,6 @@ public class Sample {
             e.printStackTrace();
         }*/
 
-    }
-
-    public Barcode generateEAN13Barcode(String barcodeText) throws Exception  {
-
-         Barcode barcode = BarcodeFactory.createEAN13(barcodeText);
-
-         return barcode;
-    }
-
-    public BufferedImage generateEAN13BarcodeImage(Barcode barcode) throws Exception {
-        return BarcodeImageHandler.getImage(barcode);
-    }
-
-    public double generateNumber(){
-        double random_bar = Math.floor(Math.random()*(MAX-MIN+1)+MIN);
-
-        return random_bar;
     }
 
 }

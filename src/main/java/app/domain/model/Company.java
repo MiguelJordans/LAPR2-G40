@@ -1,6 +1,7 @@
 package app.domain.model;
 
 import auth.AuthFacade;
+import net.sourceforge.barbecue.Barcode;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.List;
@@ -88,8 +89,10 @@ public class Company {
 
     //US05 - Sample -----------------------------------------------------------------------------
 
-    public Sample createSample(TestType tt) {
-        return new Sample(tt);
+    public Sample createSample(TestType tt, Barcode barcode) {
+
+        return new Sample(tt,barcode);
+
     }
 
     SampleStore sampleStore = new SampleStore();
