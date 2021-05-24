@@ -1,0 +1,19 @@
+
+After completing the chemical analysis, the results of all chemical analyses are analysed by a
+specialist doctor who makes a diagnosis and writes a report that afterwards will be delivered to the
+client
+To facilitate and simplify the validation work performed by the specialist doctor, the application
+uses an external module that is responsible for doing an automatic validation using test reference
+values.
+After the specialist doctor has completed the diagnosis, the results of the clinical analyses and the
+report become available in the system and must be validated by the laboratory coordinator.
+
+- Explicação do Jordão:
+o diagnostico é algo que fica na empresa como comprovativo/analise de um teste o report é um "texto" descritivo sobre os resultados do teste para um cliente, eqnt que o diagnostico apresenta informaçoes mais técnicas o report expõem essas informações
+
+Questão: vcs vao fazer o report e o diagnosis em stores diferentes ou vão juntar tudo na msm store??
+como têm que tar juntos até pensei que podiam ficar no msm objeto e tar a ser tudo tratado na msm store mas nao tenho a certeza se isso seria a melhor move?
+R: faz so 1 store tipo primeiro crias o diagnostico so dps é que crias o report
+
+
+-O diagnóstico faz parte do report e o diagnóstico é feito automaticamente supostamente, através de um api externo com os valores de referência de cada parametro.
