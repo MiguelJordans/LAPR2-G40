@@ -1,6 +1,8 @@
 package app.ui.console;
 
 import app.controller.TestTypeController;
+import app.domain.mappers.CategoryListMapper;
+import app.domain.mappers.dto.CategoryListDTO;
 import app.domain.model.Parameter;
 import app.domain.model.ParameterCategory;
 import app.domain.model.ParameterCategoryStore;
@@ -10,11 +12,15 @@ import app.ui.console.utils.Utils;
 public class TestTypeUI implements Runnable {
 
     private TestTypeController ctrl;
+
+    private CategoryListMapper pcMapper;
+
     private ParameterCategoryStore pcStore;
 
     public TestTypeUI() {
         this.ctrl = new TestTypeController();
         this.pcStore = new ParameterCategoryStore();
+        this.pcMapper = new CategoryListMapper();
     }
 
     @Override

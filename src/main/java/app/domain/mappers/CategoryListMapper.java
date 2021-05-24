@@ -1,0 +1,24 @@
+package app.domain.mappers;
+
+import app.domain.mappers.dto.CategoryListDTO;
+import app.domain.model.ParameterCategory;
+import app.domain.model.ParameterCategoryStore;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class CategoryListMapper {
+    private CategoryListDTO toDTO(ParameterCategory cat) {
+        return new CategoryListDTO(cat.getCode(), cat.getNhsld(), cat.getDescription());
+    }
+
+    public List<CategoryListDTO> toDTO(ParameterCategoryStore catStore) {
+        List<ParameterCategory> catList = catStore.getParameterCategoryList();
+        List<CategoryListDTO> categoriesDTO = new ArrayList<>();
+        for (ParameterCategory cat : catList) {
+            categoriesDTO.add(this.toDTO(cat));
+        }
+        return categoriesDTO;
+    }
+
+}

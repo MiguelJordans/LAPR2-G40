@@ -12,8 +12,8 @@ public class ParameterCategory {
 
     private final int CODE_MAX = 5;
     private final int CODE_MIN= 4;
-    private final int NHSLD_MAX = 5;
-    private final int DESCRIPTION_MAX = 5;
+    private final int NHSLD_MAX = 10;
+    private final int DESCRIPTION_MAX = 40;
 
     /**
      * Constructs an instance of ParameterCategory.
