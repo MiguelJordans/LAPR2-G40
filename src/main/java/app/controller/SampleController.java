@@ -2,6 +2,7 @@ package app.controller;
 
 import app.domain.model.*;
 
+import java.io.IOException;
 import java.util.List;
 
 public class SampleController {
@@ -91,6 +92,10 @@ public class SampleController {
     public List<Sample> showList(){
          return smStore.showList();
 
+    }
+
+    public void barcodeImage() throws IOException {
+        this.smStore.barcodeImage();
     }
 
 

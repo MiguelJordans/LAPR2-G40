@@ -1,6 +1,11 @@
 package app.domain.model;
 
 import net.sourceforge.barbecue.Barcode;
+
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,6 +13,9 @@ public class SampleStore {
 
         static List<Sample> list = new ArrayList<>();
         static List<Sample> sampleListTemporary = new ArrayList<>();
+        SampleAdapter sa = new SampleAdapter();
+        BufferedImage barcodeImage;
+        Barcode barcode;
         Sample sm;
 
         /**
@@ -21,9 +29,7 @@ public class SampleStore {
 
         public Sample CreateSample(TestType tt){
 
-            SampleAdapter sa = new SampleAdapter();
-
-            Barcode barcode = sa.getBarcode();
+            barcode = sa.getBarcode();
 
             return this.sm = new Sample(tt,barcode);
 
@@ -127,6 +133,22 @@ public class SampleStore {
                 System.out.println(sm1.toString());
             }
             return list;
+        }
+
+        public void barcodeImage() throws IOException {
+
+            try {
+                barcodeImage = sa.generateUPCBarcodeImage(barcode);
+            } catch (Exception e){
+                System.out.println("ERROR : Couldn't create the image!");
+            }
+
+            String filename = "BarcodeImage_"+sm.getTr().getTestCode();
+
+            File outputfile = new File("Barcodes\\"+filename+".jpg");
+
+            ImageIO.write(barcodeImage, "jpg", outputfile);
+
         }
 
 }

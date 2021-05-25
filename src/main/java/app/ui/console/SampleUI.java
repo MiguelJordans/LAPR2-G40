@@ -37,6 +37,7 @@ public class SampleUI implements Runnable {
                         int n = Utils.readIntegerFromConsole("Type the number of samples that you wish to create");
 
                         ctrl.CreateSample(tt, n);
+                        ctrl.barcodeImage();
 
 
                         exception = false;

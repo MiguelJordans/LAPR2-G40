@@ -3,12 +3,15 @@ package app.domain.model;
 import net.sourceforge.barbecue.Barcode;
 import net.sourceforge.barbecue.BarcodeFactory;
 import net.sourceforge.barbecue.BarcodeImageHandler;
+import org.apache.commons.lang3.RandomStringUtils;
 
 import java.awt.image.BufferedImage;
+
 
 public class SampleAdapter {
 
     private Barcode barcode;
+    private BufferedImage barcodeImage;
 
     private final double MIN = 10000000000l; //The number generated must have 12 digits to be in the UPC format
     private final double MAX = 99999999999l;
@@ -16,13 +19,15 @@ public class SampleAdapter {
 
     public SampleAdapter() {
 
-       // String barcodeText = Double.toString(generateNumber());
+        String barcodeText = generateNumber();
 
-        String barcodeText = "11111111111"; //O generate não esta a retornar um número válido
+
+       // String barcodeText1 = "11111111111"; //O generate não esta a retornar um número válido
 
         try {
 
             this.barcode = generateUPCBarcode(barcodeText);
+            this.barcodeImage = generateUPCBarcodeImage(barcode);
 
         } catch (Exception e) {
             System.out.println("Barcode couldn't be created! Verify barcodeText!");
@@ -37,12 +42,14 @@ public class SampleAdapter {
         return barcode;
     }
 
-    public BufferedImage generateEAN13BarcodeImage(Barcode barcode) throws Exception {
+    public BufferedImage generateUPCBarcodeImage(Barcode barcode) throws Exception {
         return BarcodeImageHandler.getImage(barcode);
     }
 
-    public double generateNumber(){
-        double random_bar = Math.floor(Math.random()*(MAX-MIN+1)+MIN);
+    public String generateNumber(){
+
+        String random_bar = RandomStringUtils.randomNumeric(11);
+
 
         return random_bar;
     }
