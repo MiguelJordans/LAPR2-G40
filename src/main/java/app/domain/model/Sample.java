@@ -1,32 +1,52 @@
 package app.domain.model;
 
 import net.sourceforge.barbecue.Barcode;
-import net.sourceforge.barbecue.BarcodeFactory;
-import net.sourceforge.barbecue.BarcodeImageHandler;
-
-import java.awt.image.BufferedImage;
 
 public class Sample {
 
-    private final double MIN = 100000000000l; //The number generated must have 12 digits to be in the UPC format
-    private final double MAX = 999999999999l;
-
-    private TestType tt;
+    private TestType tr;
     private Barcode barcode;
 
-    public Sample(TestType ts,Barcode barcode) {
+    public Sample(TestType tr,Barcode barcode) {
 
-        this.tt=tt;
+        checkTest(tr);
+        checkBarcode(barcode);
+
+        this.tr=tr;
         this.barcode=barcode;
-
-     /* try {
-            this.barcode = generateEAN13Barcode(barcodeText);
-            generateEAN13BarcodeImage(this.barcode);
-        }
-        catch (IllegalAccessException e){
-            e.printStackTrace();
-        }*/
 
     }
 
+    public void checkTest(TestType tr){
+        if(tr.equals(null)) throw new IllegalArgumentException("Test is null! Please choose a test that has atrributes!");
+
+    }
+
+    public void checkBarcode(Barcode barcode){
+        if (barcode.equals(null)) throw  new IllegalArgumentException("Barcode is null! Please verify the creation of the barcode!");
+    }
+
+    public Barcode getBarcode() {
+        return barcode;
+    }
+
+    public TestType getTr() {
+        return tr;
+    }
+
+    public void setBarcode(Barcode barcode) {
+        this.barcode = barcode;
+    }
+
+    public void setTr(TestType tr) {
+        this.tr = tr;
+    }
+
+    @Override
+    public String toString() {
+        return "Sample {" +
+                "Test=" + tr +
+                ", Barcode=" + barcode +
+                '}';
+    }
 }

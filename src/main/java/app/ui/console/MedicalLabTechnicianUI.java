@@ -13,6 +13,7 @@ public class MedicalLabTechnicianUI implements Runnable {
     public void run() {
         List<MenuItem> options = new ArrayList<MenuItem>();
         options.add(new MenuItem("Register new sample(s) ", new SampleUI()));
+        options.add(new MenuItem("See all samples registered", new SampleUI()));
 
         int option = 0;
         do {
