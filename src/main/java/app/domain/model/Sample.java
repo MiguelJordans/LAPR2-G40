@@ -1,50 +1,52 @@
 package app.domain.model;
 
 import net.sourceforge.barbecue.Barcode;
-import net.sourceforge.barbecue.BarcodeFactory;
-import net.sourceforge.barbecue.BarcodeImageHandler;
-
-import java.awt.image.BufferedImage;
 
 public class Sample {
 
-    private final double MIN = 100000000000l;
-    private final double MAX = 999999999999l;
-
-    private TestType tt;
+    private TestType tr;
     private Barcode barcode;
 
-    public Sample(TestType ts){
+    public Sample(TestType tr,Barcode barcode) {
 
-        String barcodeText = Double.toString(generateNumber());
+        checkTest(tr);
+        checkBarcode(barcode);
 
-        this.tt=tt;
-
-       /* try {
-            this.barcode = generateEAN13Barcode(barcodeText);
-            generateEAN13BarcodeImage(this.barcode);
-        }
-        catch (IllegalAccessException e){
-            e.printStackTrace();
-        }*/
+        this.tr=tr;
+        this.barcode=barcode;
 
     }
 
-    public Barcode generateEAN13Barcode(String barcodeText) throws Exception  {
+    public void checkTest(TestType tr){
+        if(tr.equals(null)) throw new IllegalArgumentException("Test is null! Please choose a test that has atrributes!");
 
-         Barcode barcode = BarcodeFactory.createEAN13(barcodeText);
-
-         return barcode;
     }
 
-    public BufferedImage generateEAN13BarcodeImage(Barcode barcode) throws Exception {
-        return BarcodeImageHandler.getImage(barcode);
+    public void checkBarcode(Barcode barcode){
+        if (barcode.equals(null)) throw  new IllegalArgumentException("Barcode is null! Please verify the creation of the barcode!");
     }
 
-    public double generateNumber(){
-        double random_bar = Math.floor(Math.random()*(MAX-MIN+1)+MIN);
-
-        return random_bar;
+    public Barcode getBarcode() {
+        return barcode;
     }
 
+    public TestType getTr() {
+        return tr;
+    }
+
+    public void setBarcode(Barcode barcode) {
+        this.barcode = barcode;
+    }
+
+    public void setTr(TestType tr) {
+        this.tr = tr;
+    }
+
+    @Override
+    public String toString() {
+        return "Sample {" +
+                "Test=" + tr +
+                ", Barcode=" + barcode +
+                '}';
+    }
 }

@@ -1,10 +1,16 @@
 package app.domain.model;
 
 import auth.AuthFacade;
+import net.sourceforge.barbecue.Barcode;
 import org.apache.commons.lang3.StringUtils;
 
+<<<<<<< HEAD
 import java.util.Date;
+=======
+import java.util.HashSet;
+>>>>>>> ab89394ea738b46871e63957f85ce32e10a26497
 import java.util.List;
+import java.util.Set;
 
 /**
  *
@@ -13,6 +19,7 @@ import java.util.List;
  * @author Mariana Lages <1200902@isep.ipp.pt>
  * @author Lucas Silva <1200759@isep.ipp.pt>
  * @author Daniel Costa <1200581@isep.ipp.pt>
+ * @author Marcin Basinski <1200300@isep.ipp.pt>
  */
 
 public class Company {
@@ -96,8 +103,10 @@ public class Company {
 
     //US05 - Sample -----------------------------------------------------------------------------
 
-    public Sample createSample(TestType tt) {
-        return new Sample(tt);
+    public Sample createSample(TestType tt, Barcode barcode) {
+
+        return new Sample(tt,barcode);
+
     }
 
     SampleStore sampleStore = new SampleStore();
@@ -390,5 +399,22 @@ public class Company {
 
     public ParameterCategoryStore getParameterCategoryStore() {
         return parameterCategoryStore;
+    }
+
+    // US015 VALIDATE TEST
+
+    TestStore testStore = new TestStore();
+
+    public HashSet<Test> getInvalidTestList() {
+        return testStore.getInvalidTestList();
+    }
+
+    public boolean saveTest(Test t) {
+
+        return testStore.saveTest(t);
+    }
+
+    public TestStore getTestStore() {
+        return testStore;
     }
 }
