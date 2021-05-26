@@ -26,8 +26,8 @@ public class ParameterStore {
      * @return the parameter created
      */
 
-    public Parameter CreateParameter(String description, String code, String name, ParameterCategoryStore pcStore) {
-        return this.pp = new Parameter(code, description, name, pcStore);
+    public Parameter CreateParameter(String description, String code, String name, List<ParameterCategory> pcList) {
+        return this.pp = new Parameter(code, description, name, pcList);
     }
 
     /**

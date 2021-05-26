@@ -3,6 +3,9 @@ package app.domain.model;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 public class ParameterStoreTest {
@@ -10,26 +13,28 @@ public class ParameterStoreTest {
     @Test
     public void createParameter() {
 
-        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        parameterCategoryStore.listAdd();
+        pcList.add(pc);
 
         ParameterStore pcStore = new ParameterStore();
 
-        Parameter aa = pcStore.CreateParameter("AAA", "aaa", "aaa",parameterCategoryStore);
+        Parameter aa = pcStore.CreateParameter("AAA", "aaa", "aaa",pcList);
 
     }
 
     @Test
     public void validateParameter1() {
 
-        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        parameterCategoryStore.listAdd();
+        pcList.add(pc);
 
         ParameterStore pp = new ParameterStore();
 
-        Parameter aa = pp.CreateParameter("AAA", "aaa", "aaa",parameterCategoryStore);
+        Parameter aa = pp.CreateParameter("AAA", "aaa", "aaa",pcList);
 
         boolean expected = true;
 
@@ -42,13 +47,14 @@ public class ParameterStoreTest {
     @Test
     public void validateParameter2() {
 
-        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        parameterCategoryStore.listAdd();
+        pcList.add(pc);
 
         ParameterStore pp = new ParameterStore();
 
-        Parameter aa = pp.CreateParameter("AAA", "aaa", "aaa",parameterCategoryStore);
+        Parameter aa = pp.CreateParameter("AAA", "aaa", "aaa",pcList);
         pp.listAdd(aa);
 
         boolean expected = false;
@@ -62,13 +68,14 @@ public class ParameterStoreTest {
     @Test
     public void listContainParameter1() {
 
-        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        parameterCategoryStore.listAdd();
+        pcList.add(pc);
 
         ParameterStore pp = new ParameterStore();
 
-        Parameter aa = pp.CreateParameter("AAA", "aaa", "aaa",parameterCategoryStore);
+        Parameter aa = pp.CreateParameter("AAA", "aaa", "aaa",pcList);
         pp.listAdd(aa);
 
         boolean expected = true;
@@ -82,13 +89,14 @@ public class ParameterStoreTest {
     @Test
     public void listContainParameter2() {
 
-        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        parameterCategoryStore.listAdd();
+        pcList.add(pc);
 
         ParameterStore pp = new ParameterStore();
 
-        Parameter aa = pp.CreateParameter("AAA", "aaa", "aaa",parameterCategoryStore);
+        Parameter aa = pp.CreateParameter("AAA", "aaa", "aaa",pcList);
 
         boolean expected = false;
 
@@ -101,13 +109,14 @@ public class ParameterStoreTest {
     @Test
     public void saveParameter1() {
 
-        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        parameterCategoryStore.listAdd();
+        pcList.add(pc);
 
         ParameterStore pp = new ParameterStore();
 
-        Parameter aa = pp.CreateParameter("AAA", "aaa", "aaa",parameterCategoryStore);
+        Parameter aa = pp.CreateParameter("AAA", "aaa", "aaa",pcList);
 
         boolean expected = true;
 
@@ -120,13 +129,14 @@ public class ParameterStoreTest {
     @Test
     public void saveParameter2() {
 
-        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        parameterCategoryStore.listAdd();
+        pcList.add(pc);
 
         ParameterStore pp = new ParameterStore();
 
-        Parameter aa = pp.CreateParameter("AAA", "aaa", "aaa",parameterCategoryStore);
+        Parameter aa = pp.CreateParameter("AAA", "aaa", "aaa",pcList);
         pp.listAdd(aa);
 
         boolean expected = false;
@@ -139,13 +149,14 @@ public class ParameterStoreTest {
 
     @Test
     public void listAddParameter1() {
-        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        parameterCategoryStore.listAdd();
+        pcList.add(pc);
 
         ParameterStore pp = new ParameterStore();
 
-        Parameter aa = pp.CreateParameter("AAA", "aaa", "aaa",parameterCategoryStore);
+        Parameter aa = pp.CreateParameter("AAA", "aaa", "aaa",pcList);
 
         boolean expected = true;
 
@@ -158,13 +169,14 @@ public class ParameterStoreTest {
     @Test
     public void listAddParameter2() {
 
-        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        parameterCategoryStore.listAdd();
+        pcList.add(pc);
 
         ParameterStore pp = new ParameterStore();
 
-        Parameter aa = pp.CreateParameter("AAA", "aaa", "aaa",parameterCategoryStore);
+        Parameter aa = pp.CreateParameter("AAA", "aaa", "aaa",pcList);
         pp.listAdd(aa);
 
         boolean expected = true;
@@ -178,13 +190,14 @@ public class ParameterStoreTest {
     @Test
     public void getParameter1() {
 
-        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        parameterCategoryStore.listAdd();
+        pcList.add(pc);
 
         ParameterStore pp = new ParameterStore();
 
-        Parameter aa = pp.CreateParameter("AAA", "aaa", "aaa",parameterCategoryStore);
+        Parameter aa = pp.CreateParameter("AAA", "aaa", "aaa",pcList);
         pp.listAdd(aa);
 
         Parameter expected = aa;
@@ -198,13 +211,14 @@ public class ParameterStoreTest {
     @Test
     public void getPP() {
 
-        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        parameterCategoryStore.listAdd();
+        pcList.add(pc);
 
         ParameterStore pp = new ParameterStore();
 
-        Parameter aa = pp.CreateParameter("AAA", "aaa", "aaa",parameterCategoryStore);
+        Parameter aa = pp.CreateParameter("AAA", "aaa", "aaa",pcList);
 
         Parameter expected = aa;
 
@@ -218,7 +232,10 @@ public class ParameterStoreTest {
     public void getParameterList(){
 
         ParameterStore pp = new ParameterStore();
-        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
 
         pp.getParameterList();
 

@@ -25,8 +25,8 @@ public class ClinicalAnalysisLaboratoryStore {
      * @param tinNumber the Clinical Analysis Laboratory's TIN number
      */
 
-    public ClinicalAnalysisLaboratory CreateClinicalAnalysisLaboratory(String laboratoryID, String name, String address, String phoneNumber, String tinNumber) {
-        return this.cal = new ClinicalAnalysisLaboratory(laboratoryID, name, address, phoneNumber, tinNumber);
+    public ClinicalAnalysisLaboratory CreateClinicalAnalysisLaboratory(String laboratoryID, String name, String address, String phoneNumber, String tinNumber,List<TestType> ttList) {
+        return this.cal = new ClinicalAnalysisLaboratory(laboratoryID, name, address, phoneNumber, tinNumber,ttList);
     }
 
     /**
@@ -98,5 +98,9 @@ public class ClinicalAnalysisLaboratoryStore {
      */
     public ClinicalAnalysisLaboratory getCal() {
         return cal;
+    }
+
+    public List<ClinicalAnalysisLaboratory> getClinicalAnalysisLaboratoryList() {
+        return this.clinicalAnalysisLaboratoryList;
     }
 }

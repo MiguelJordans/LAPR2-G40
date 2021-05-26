@@ -1,18 +1,23 @@
 package app.domain.model;
 
+import org.apache.commons.lang3.ObjectUtils;
 import org.junit.Assert;
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ParameterTest {
 
     @Test
     public void checkParameterToString1() {
 
-        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
-        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        parameterCategoryStore.listAdd();
+        List<ParameterCategory> pcList = new ArrayList<>();
 
-        Parameter pp = new Parameter("1abcE","yes","aaa",parameterCategoryStore);
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        Parameter pp = new Parameter("1abcE","yes","aaa",pcList);
 
         String expected = " Code: " + "1abcE"  +
                 ", Description:" + "yes" +
@@ -27,11 +32,12 @@ public class ParameterTest {
     @Test
     public void checkParameterToString2() {
 
-        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
-        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        parameterCategoryStore.listAdd();
+        List<ParameterCategory> pcList = new ArrayList<>();
 
-        Parameter pp = new Parameter("11111","22222","aaa",parameterCategoryStore);
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        Parameter pp = new Parameter("11111","22222","aaa",pcList);
 
         String expected = " Code: " + "11111"  +
                 ", Description:" + "22222" +
@@ -46,11 +52,12 @@ public class ParameterTest {
     @Test
     public void setCode1(){
 
-        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
-        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        parameterCategoryStore.listAdd();
+        List<ParameterCategory> pcList = new ArrayList<>();
 
-        Parameter pp = new Parameter("1abcE","yes","aaa",parameterCategoryStore);
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        Parameter pp = new Parameter("1abcE","yes","aaa",pcList);
 
         String expected ="1abcd";
         pp.setCode(expected);
@@ -62,11 +69,12 @@ public class ParameterTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void setCode2(){
-        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
-        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        parameterCategoryStore.listAdd();
+        List<ParameterCategory> pcList = new ArrayList<>();
 
-        Parameter pp = new Parameter("1abcE","yes","aaa",parameterCategoryStore);
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        Parameter pp = new Parameter("1abcE","yes","aaa",pcList);
 
         String expected ="ABCDED";
         pp.setCode(expected);
@@ -78,11 +86,12 @@ public class ParameterTest {
 
     @Test
     public void setDescription1(){
-        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
-        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        parameterCategoryStore.listAdd();
+        List<ParameterCategory> pcList = new ArrayList<>();
 
-        Parameter pp = new Parameter("1abcE","yes","aaa",parameterCategoryStore);
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        Parameter pp = new Parameter("1abcE","yes","aaa",pcList);
 
         String expected ="1abcd";
         pp.setDescription(expected);
@@ -94,11 +103,12 @@ public class ParameterTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void setDescription2(){
-        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
-        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        parameterCategoryStore.listAdd();
+        List<ParameterCategory> pcList = new ArrayList<>();
 
-        Parameter pp = new Parameter("1abcE","yes","aaa",parameterCategoryStore);
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        Parameter pp = new Parameter("1abcE","yes","aaa",pcList);
 
         String expected ="1abcdAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
         pp.setDescription(expected);
@@ -110,11 +120,12 @@ public class ParameterTest {
 
     @Test
     public void setName1(){
-        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
-        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        parameterCategoryStore.listAdd();
+        List<ParameterCategory> pcList = new ArrayList<>();
 
-        Parameter pp = new Parameter("1abcE","yes","aaa",parameterCategoryStore);
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        Parameter pp = new Parameter("1abcE","yes","aaa",pcList);
         String expected ="aaaaaaaa";
         pp.setName(expected);
 
@@ -125,11 +136,12 @@ public class ParameterTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void setName2(){
-        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
-        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        parameterCategoryStore.listAdd();
+        List<ParameterCategory> pcList = new ArrayList<>();
 
-        Parameter pp = new Parameter("1abcE","yes","aaa",parameterCategoryStore);
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        Parameter pp = new Parameter("1abcE","yes","aaa",pcList);
 
         String expected ="ASDASDASDASDASDASDASDa";
         pp.setName(expected);
@@ -142,66 +154,72 @@ public class ParameterTest {
     @Test(expected = IllegalArgumentException.class)
     public void checkCodeNotAlphaNumeric1() {
 
-        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
-        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        parameterCategoryStore.listAdd();
+        List<ParameterCategory> pcList = new ArrayList<>();
 
-        Parameter pp = new Parameter("****","yes","aaa",parameterCategoryStore);
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        Parameter pp = new Parameter("****","yes","aaa",pcList);
 
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void checkCodeNotAlphaNumeric2() {
 
-        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
-        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        parameterCategoryStore.listAdd();
+        List<ParameterCategory> pcList = new ArrayList<>();
 
-        Parameter pp = new Parameter("_:_","yes","aaa",parameterCategoryStore);
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        Parameter pp = new Parameter("_:_","yes","aaa",pcList);
 
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void checkCodeTooManyChars() {
 
-        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
-        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        parameterCategoryStore.listAdd();
+        List<ParameterCategory> pcList = new ArrayList<>();
 
-        Parameter pp = new Parameter("112312312312312312312312","yes","aaa",parameterCategoryStore);
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        Parameter pp = new Parameter("112312312312312312312312","yes","aaa",pcList);
 
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void checkCodeTooManyChars2() {
 
-        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
-        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        parameterCategoryStore.listAdd();
+        List<ParameterCategory> pcList = new ArrayList<>();
 
-        Parameter pp = new Parameter("1a4353453453453453453","aaaa","aaaaaa",parameterCategoryStore);
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        Parameter pp = new Parameter("1a4353453453453453453","aaaa","aaaaaa",pcList);
 
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void checkCodeBlank() {
 
-        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
-        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        parameterCategoryStore.listAdd();
+        List<ParameterCategory> pcList = new ArrayList<>();
 
-        Parameter pp = new Parameter("","yes","aaa",parameterCategoryStore);
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        Parameter pp = new Parameter("","yes","aaa",pcList);
 
     }
 
     @Test
     public void checkCode() {
 
-        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
-        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        parameterCategoryStore.listAdd();
+        List<ParameterCategory> pcList = new ArrayList<>();
 
-        Parameter pp = new Parameter("1abcE","yes","aaa",parameterCategoryStore);
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        Parameter pp = new Parameter("1abcE","yes","aaa",pcList);
 
         Assert.assertNotNull(pp);
 
@@ -210,44 +228,48 @@ public class ParameterTest {
     @Test(expected = IllegalArgumentException.class)
     public void checkNameTooManyChars1() {
 
-        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
-        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        parameterCategoryStore.listAdd();
+        List<ParameterCategory> pcList = new ArrayList<>();
 
-        Parameter pp = new Parameter("1abcE","yes","aasdasdasdasdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",parameterCategoryStore);
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        Parameter pp = new Parameter("1abcE","yes","aasdasdasdasdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",pcList);
 
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void checkNameTooManyChars2() {
 
-        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
-        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        parameterCategoryStore.listAdd();
+        List<ParameterCategory> pcList = new ArrayList<>();
 
-        Parameter pp = new Parameter("1abcE","yes","aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",parameterCategoryStore);
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        Parameter pp = new Parameter("1abcE","yes","aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",pcList);
 
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void checkNameBlank() {
 
-        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
-        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        parameterCategoryStore.listAdd();
+        List<ParameterCategory> pcList = new ArrayList<>();
 
-        Parameter pp = new Parameter("1abcE","yes","",parameterCategoryStore);
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        Parameter pp = new Parameter("1abcE","yes","",pcList);
 
     }
 
     @Test
     public void checkName() {
 
-        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
-        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        parameterCategoryStore.listAdd();
+        List<ParameterCategory> pcList = new ArrayList<>();
 
-        Parameter pp = new Parameter("1abcE","yes","aaa",parameterCategoryStore);
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        Parameter pp = new Parameter("1abcE","yes","aaa",pcList);
 
         Assert.assertNotNull(pp);
 
@@ -256,33 +278,36 @@ public class ParameterTest {
     @Test(expected = IllegalArgumentException.class)
     public void checkDescriptionTooManyChars1() {
 
-        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
-        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        parameterCategoryStore.listAdd();
+        List<ParameterCategory> pcList = new ArrayList<>();
 
-        Parameter pp = new Parameter("1abcE","yaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaes","aaa",parameterCategoryStore);
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        Parameter pp = new Parameter("1abcE","yaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaes","aaa",pcList);
 
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void checkDescriptionTooManyChars2() {
 
-        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
-        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        parameterCategoryStore.listAdd();
+        List<ParameterCategory> pcList = new ArrayList<>();
 
-        Parameter pp = new Parameter("1abcE","ySSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSes","aaa",parameterCategoryStore);
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        Parameter pp = new Parameter("1abcE","ySSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSes","aaa",pcList);
 
     }
 
     @Test
     public void checkDescriptionDescription() {
 
-        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
-        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        parameterCategoryStore.listAdd();
+        List<ParameterCategory> pcList = new ArrayList<>();
 
-        Parameter pp = new Parameter("1abcE","yes","aaa",parameterCategoryStore);
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        Parameter pp = new Parameter("1abcE","yes","aaa",pcList);
 
         Assert.assertNotNull(pp);
 
@@ -291,22 +316,24 @@ public class ParameterTest {
     @Test(expected = IllegalArgumentException.class)
     public void checkDescriptionBlank() {
 
-        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
-        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        parameterCategoryStore.listAdd();
+        List<ParameterCategory> pcList = new ArrayList<>();
 
-        Parameter pp = new Parameter("1abcE","","aaa",parameterCategoryStore);
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        Parameter pp = new Parameter("1abcE","","aaa",pcList);
 
     }
 
     @Test
     public void checkDescriptionDescription2() {
 
-        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
-        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        parameterCategoryStore.listAdd();
+        List<ParameterCategory> pcList = new ArrayList<>();
 
-        Parameter pp = new Parameter("1abcE","11111111111111111111","aaa",parameterCategoryStore);
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        Parameter pp = new Parameter("1abcE","11111111111111111111","aaa",pcList);
 
         Assert.assertNotNull(pp);
 
@@ -315,11 +342,12 @@ public class ParameterTest {
     @Test
     public void checkDescriptionDescription3() {
 
-        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
-        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        parameterCategoryStore.listAdd();
+        List<ParameterCategory> pcList = new ArrayList<>();
 
-        Parameter pp = new Parameter("1abcE","1111111111111111111","aaa",parameterCategoryStore);
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        Parameter pp = new Parameter("1abcE","1111111111111111111","aaa",pcList);
 
         Assert.assertNotNull(pp);
 
@@ -328,79 +356,69 @@ public class ParameterTest {
     @Test(expected = IllegalArgumentException.class)
     public void checkDescriptionDescription4() {
 
-        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
-        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        parameterCategoryStore.listAdd();
+        List<ParameterCategory> pcList = new ArrayList<>();
 
-        Parameter pp = new Parameter("1abcE","111111111111111111111","aaa",parameterCategoryStore);
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        Parameter pp = new Parameter("1abcE","111111111111111111111","aaa",pcList);
 
         Assert.assertNotNull(pp);
 
     }
 
-    /*@Test(expected = IllegalArgumentException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void checkCategoryListBlank() {
 
-        ParameterCategoryStore pcStore = new ParameterCategoryStore();
-        Parameter pp = new Parameter("1111","aaa","2",pcStore);
+        List<ParameterCategory> pcList = new ArrayList<>();
 
-    }*/
-
-    @Test
-    public void setPP(){
-
-        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        parameterCategoryStore.listAdd();
 
-        Parameter pp = new Parameter("1abcE","1111111111111111111","aaa",parameterCategoryStore);
-
-        ParameterCategoryStore pcStore = null;
-
-        pp.setPp(pcStore);
+        Parameter pp = new Parameter("1111","aaa","2",pcList);
 
     }
 
-    @Test
-    public void setPPNotNull(){
+    @Test(expected = NullPointerException.class)
+    public void setPcList(){
 
-        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        parameterCategoryStore.listAdd();
+        pcList.add(pc);
 
-        Parameter pp = new Parameter("1abcE","1111111111111111111","aaa",parameterCategoryStore);
+        Parameter pp = new Parameter("1abcE","1111111111111111111","aaa",pcList);
 
-        ParameterCategoryStore pcStore = null;
+        List<ParameterCategory> pcList1 = null;
 
-        pp.setPp(pcStore);
-
-        Assert.assertNotNull(pp);
+        pp.setPcList(pcList1);
 
     }
 
     @Test
     public void getPP(){
 
-        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        parameterCategoryStore.listAdd();
+        pcList.add(pc);
 
-        Parameter pp = new Parameter("1abcE","1111111111111111111","aaa",parameterCategoryStore);
+        Parameter pp = new Parameter("1abcE","1111111111111111111","aaa",pcList);
 
-        pp.getPp();
+        pp.getPcList();
 
     }
 
     @Test
     public void getPPNotNull(){
 
-        ParameterCategoryStore  parameterCategoryStore = new ParameterCategoryStore();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        parameterCategoryStore.listAdd();
+        pcList.add(pc);
 
-        Parameter pp = new Parameter("1abcE","1111111111111111111","aaa",parameterCategoryStore);
+        Parameter pp = new Parameter("1abcE","1111111111111111111","aaa",pcList);
 
-        pp.getPp();
+        pp.getPcList();
 
         Assert.assertNotNull(pp);
 

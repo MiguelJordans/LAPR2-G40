@@ -37,7 +37,7 @@ public class RegisteredSampleUI implements Runnable {
                     for (Sample sm1 : ctrl.getSampleList()) {
 
                         if (code.equals(sm1.getTr().getTestCode())) {
-                            list.add(sm1);
+                            System.out.println(sm1);
                         }
                         flag = true;
                     }
@@ -45,10 +45,6 @@ public class RegisteredSampleUI implements Runnable {
                     System.out.println("The list is empty! Please try to add samples before!");
                 }
             } while (!flag);
-
-            if (list.isEmpty()) throw new NullPointerException("List is empty! Check the test code!");
-
-            Utils.showList(list, "Samples registered for the desired test:");
 
             count = Utils.confirm("Do you wish to see more samples?");
 

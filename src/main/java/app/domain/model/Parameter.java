@@ -1,6 +1,9 @@
 package app.domain.model;
 
+import app.domain.shared.Constants;
 import org.apache.commons.lang3.StringUtils;
+
+import java.util.List;
 
 public class Parameter {
 
@@ -8,12 +11,7 @@ public class Parameter {
     private String name;
     private String description;
 
-    private ParameterCategoryStore pp;
-
-    private final int CODE_MAX = 5;
-    private final int NAME_MAX = 8;
-    private final int DESCRIPTION_MAX = 20;
-
+    private List<ParameterCategory> pcList;
 
     /**
      * Constructs an instance of Parameter
@@ -21,20 +19,20 @@ public class Parameter {
      * @param code the Parameter's code
      * @param description the Parameter's description
      * @param name the Parameter's name
-     * @param ppStore the Parameter's category list
+     * @param pcList the Parameter's category list
      */
 
-    public Parameter(String code, String description, String name,ParameterCategoryStore ppStore) {
+    public Parameter(String code, String description, String name, List<ParameterCategory> pcList) {
 
         checkCode(code);
         checkName(name);
         checkDescription(description);
-        checkCategoriesList(ppStore);
+        checkCategoriesList(pcList);
 
         this.code = code;
         this.name = name;
         this.description = description;
-        this.pp = ppStore;
+        this.pcList = pcList;
 
     }
 
@@ -52,7 +50,7 @@ public class Parameter {
             throw new IllegalArgumentException("Code cannot be blank.");
 
 
-        if (!(code.matches("^[a-zA-Z0-9]*$")) || code.length() > CODE_MAX)
+        if (!(code.matches("^[a-zA-Z0-9]*$")) || code.length() > Constants.CODE_PARAMETER_MAX)
             throw new IllegalArgumentException("Code not valid! Must be alphanumeric and have less than 5 chars.");
 
     }
@@ -68,7 +66,7 @@ public class Parameter {
         if (StringUtils.isBlank(name))
             throw new IllegalArgumentException("Name cannot be blank.");
 
-        if (name.length() > NAME_MAX)
+        if (name.length() > Constants.NAME_MAX)
             throw new IllegalArgumentException("Name not valid! Cannot have more than 8 chars.");
 
     }
@@ -84,7 +82,7 @@ public class Parameter {
         if (StringUtils.isBlank(description))
             throw new IllegalArgumentException("Description cannot be blank.");
 
-        if (description.length() > DESCRIPTION_MAX)
+        if (description.length() > Constants.DESCRIPTION_PARAMETER_MAX)
             throw new IllegalArgumentException("Description not valid! Cannot have more than 15 chars.");
 
     }
@@ -92,11 +90,11 @@ public class Parameter {
     /**
      * Checks the Parameter's category list (according to the acceptance criteria)
      *
-     * @param ppStore the Parameter's category list
+     * @param pcList the Parameter's category list
      */
 
-    public void checkCategoriesList(ParameterCategoryStore ppStore){
-        if(ppStore.list.isEmpty()) {
+    public void checkCategoriesList(List<ParameterCategory> pcList){
+        if(pcList.isEmpty()) {
             throw new IllegalArgumentException("Categories not valid! List is null!");
         }
     }
@@ -139,8 +137,8 @@ public class Parameter {
      * @return the category list of the Parameter
      */
 
-    public ParameterCategoryStore getPp() {
-        return pp;
+    public List<ParameterCategory> getPcList() {
+        return pcList;
     }
 
     //Sets---------------------------------------------------------------------
@@ -148,12 +146,12 @@ public class Parameter {
     /**
      * Modifies the category list of the Parameter
      *
-     * @param pp modifies the category list of the Parameter
+     * @param pcList modifies the category list of the Parameter
      */
 
-    public void setPp(ParameterCategoryStore pp) {
-        checkCategoriesList(pp);
-        this.pp = pp;
+    public void setPcList(List<ParameterCategory> pcList) {
+        checkCategoriesList(pcList);
+        this.pcList = pcList;
     }
 
     /**

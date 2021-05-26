@@ -35,19 +35,17 @@ public class SampleController {
      * Creates a test type (Calling the TestType constructor implemented in the TestTypeStore)
      */
 
-    public void CreateSample(TestType tt, int n) {
+    public void CreateSample(TestType tt, int n) throws IOException {
 
         smStore = company.getSampleStore();
 
         for (int i = 0; i < n; i++) {
             //sampleListTemporary.add(smStore.CreateSample(tt)); O controller não esta a conseguir criar a sample deve ter aqui um erro
-            smStore.CreateSample(tt);
-            smStore.saveSample();
-           /* try {
-                smStore.createTemporaryList();
-            } catch (Exception e) {
-                System.out.println("Couldn't add the sample to the temporary list!");
-            }*/
+            this.smStore.CreateSample(tt);
+            //this.smStore.addToTemporaryList();
+            this.smStore.saveSample();
+            this.smStore.barcodeImage();
+
         }
     }
 
@@ -88,15 +86,18 @@ public class SampleController {
     public List<Sample> getSampleList() {
         return smStore.getSampleList();
     }
+    /*public List<Sample> getSampleListTemporaryList() {
+        return smStore.getSampleListTemporary();
+    }*/
 
     public List<Sample> showList(){
          return smStore.showList();
 
     }
 
-    public void barcodeImage() throws IOException {
-        this.smStore.barcodeImage();
-    }
+    /*public void addElementsToSampleList() {
 
+        for(Sample sm1 : g)
 
+    }*/
 }

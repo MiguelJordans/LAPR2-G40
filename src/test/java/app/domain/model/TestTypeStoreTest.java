@@ -3,6 +3,9 @@ package app.domain.model;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 public class TestTypeStoreTest {
@@ -11,11 +14,11 @@ public class TestTypeStoreTest {
     public void createTestType() {
 
         TestTypeStore tt = new TestTypeStore();
-        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+        List<ParameterCategory> pcList = new ArrayList<>();
 
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcStore.listAdd();
-        TestType aa = tt.CreateTestType("AAA","aaa","aaa",pcStore);
+        pcList.add(pc);
+        TestType aa = tt.CreateTestType("AAA","aaa","aaa",pcList);
 
     }
 
@@ -23,10 +26,11 @@ public class TestTypeStoreTest {
     public void validateTestType1() {
 
         TestTypeStore tt = new TestTypeStore();
-        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcStore.listAdd();
-        TestType aa = tt.CreateTestType("AAA","aaa","aaa",pcStore);
+        pcList.add(pc);
+        TestType aa = tt.CreateTestType("AAA","aaa","aaa",pcList);
 
         boolean expected = true;
 
@@ -40,10 +44,11 @@ public class TestTypeStoreTest {
     public void validateTestType2() {
 
         TestTypeStore tt = new TestTypeStore();
-        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcStore.listAdd();
-        TestType aa = tt.CreateTestType("aaa","aaa","aaa",pcStore);
+        pcList.add(pc);
+        TestType aa = tt.CreateTestType("aaa","aaa","aaa",pcList);
         tt.listAdd(aa);
 
         boolean expected = false;
@@ -58,10 +63,11 @@ public class TestTypeStoreTest {
     public void listContain1() {
 
         TestTypeStore tt = new TestTypeStore();
-        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcStore.listAdd();
-        TestType aa = tt.CreateTestType("aaa","aaa","aaa",pcStore);
+        pcList.add(pc);
+        TestType aa = tt.CreateTestType("aaa","aaa","aaa",pcList);
         tt.listAdd(aa);
 
         boolean expected = true;
@@ -76,10 +82,11 @@ public class TestTypeStoreTest {
     public void listContain2() {
 
         TestTypeStore tt = new TestTypeStore();
-        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcStore.listAdd();
-        TestType aa = tt.CreateTestType("aaa","aaa","aaa",pcStore);
+        pcList.add(pc);
+        TestType aa = tt.CreateTestType("aaa","aaa","aaa",pcList);
 
         boolean expected = false;
 
@@ -93,10 +100,11 @@ public class TestTypeStoreTest {
     public void saveTestType1() {
 
         TestTypeStore tt = new TestTypeStore();
-        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcStore.listAdd();
-        TestType aa = tt.CreateTestType("aaa","aaa","aaa",pcStore);
+        pcList.add(pc);
+        TestType aa = tt.CreateTestType("aaa","aaa","aaa",pcList);
 
         boolean expected = true;
 
@@ -110,10 +118,11 @@ public class TestTypeStoreTest {
     public void saveTestType2() {
 
         TestTypeStore tt = new TestTypeStore();
-        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcStore.listAdd();
-        TestType aa = tt.CreateTestType("aaa","aaa","aaa",pcStore);
+        pcList.add(pc);
+        TestType aa = tt.CreateTestType("aaa","aaa","aaa",pcList);
         tt.listAdd(aa);
 
         boolean expected = false;
@@ -127,10 +136,11 @@ public class TestTypeStoreTest {
     @Test
     public void listAdd1() {
         TestTypeStore tt = new TestTypeStore();
-        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcStore.listAdd();
-        TestType aa = tt.CreateTestType("aaa","aaa","aaa",pcStore);
+        pcList.add(pc);
+        TestType aa = tt.CreateTestType("aaa","aaa","aaa",pcList);
 
         boolean expected = true;
 
@@ -144,10 +154,11 @@ public class TestTypeStoreTest {
     public void listAdd2() {
 
         TestTypeStore tt = new TestTypeStore();
-        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcStore.listAdd();
-        TestType aa = tt.CreateTestType("aaa","aaa","aaa",pcStore);
+        pcList.add(pc);
+        TestType aa = tt.CreateTestType("aaa","aaa","aaa",pcList);
         tt.listAdd(aa);
 
         boolean expected = true;
@@ -162,10 +173,11 @@ public class TestTypeStoreTest {
     public void getTestType1() {
 
         TestTypeStore tt = new TestTypeStore();
-        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcStore.listAdd();
-        TestType aa = tt.CreateTestType("aaa","aaa","aaa",pcStore);
+        pcList.add(pc);
+        TestType aa = tt.CreateTestType("aaa","aaa","aaa",pcList);
         tt.listAdd(aa);
 
         TestType expected = tt.getTestType(0);
@@ -180,10 +192,11 @@ public class TestTypeStoreTest {
     public void getTt() {
 
         TestTypeStore tt = new TestTypeStore();
-        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcStore.listAdd();
-        TestType aa = tt.CreateTestType("aaa","aaa","aaa",pcStore);
+        pcList.add(pc);
+        TestType aa = tt.CreateTestType("aaa","aaa","aaa",pcList);
 
         TestType expected = aa;
 

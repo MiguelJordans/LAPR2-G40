@@ -12,27 +12,34 @@ public class SampleAdapter {
 
     private Barcode barcode;
     private BufferedImage barcodeImage;
-
-    private final double MIN = 10000000000l; //The number generated must have 12 digits to be in the UPC format
-    private final double MAX = 99999999999l;
-
+    private String barcodeText;
 
     public SampleAdapter() {
 
-        String barcodeText = generateNumber();
+    }
 
-
-       // String barcodeText1 = "11111111111"; //O generate não esta a retornar um número válido
+    public Barcode generateBarcode(String barcodeText){
 
         try {
-
+            this.barcodeText=barcodeText;
             this.barcode = generateUPCBarcode(barcodeText);
-            this.barcodeImage = generateUPCBarcodeImage(barcode);
 
         } catch (Exception e) {
             System.out.println("Barcode couldn't be created! Verify barcodeText!");
         }
 
+        return barcode;
+
+    }
+
+    public BufferedImage generateBarcodeImage(Barcode barcode){
+
+        try{
+            this.barcodeImage = generateUPCBarcodeImage(barcode);
+        } catch (Exception e){
+            System.out.println("Barcode image couldn't be created! Verify the barcode!");
+        }
+        return barcodeImage;
     }
 
     public Barcode generateUPCBarcode(String barcodeText) throws Exception  {
@@ -54,7 +61,13 @@ public class SampleAdapter {
         return random_bar;
     }
 
+
+
     public Barcode getBarcode() {
         return barcode;
+    }
+
+    public String getBarcodeText() {
+        return barcodeText;
     }
 }

@@ -40,49 +40,10 @@ public class Company {
 
     // US03 - ClientRegistration ----------------------------------------------------------------
 
-    public Client createClient(String name, String email, String sex, Date birthdate, String citizenCardNumber, String phoneNumber, String tinNumber, String nhsNumber) {
-        return new Client(name, email, sex, birthdate, citizenCardNumber, phoneNumber, tinNumber, nhsNumber);
-    }
-
     ClientStore clientStore = new ClientStore();
 
-    private static ClientStore clientList;
-
-    public static ClientStore Client() {
-        return clientList = new ClientStore();
-    }
-
-    public boolean addClient(Client cr) {
-        clientStore.listAdd(cr);
-        return true;
-    }
-
-    public boolean validateClient(Client cr) {
-        clientStore.validateClient(cr);
-        return true;
-    }
-
-    public boolean saveClient(Client cr) {
-        clientStore.saveClient();
-        return true;
-    }
-
-    public boolean listContainsClient(Client cr) {
-        clientStore.listContain(cr);
-        return true;
-    }
-
-    public boolean listAdd(Client cr) {
-        clientStore.listAdd(cr);
-        return true;
-    }
-
-    public Client getClient(int i) {
-        return clientStore.getClient(i);
-    }
-
-    public Client getCr() {
-        return clientStore.cr;
+    public List<Client> getClientList() {
+        return clientStore.getClientList();
     }
 
     public ClientStore getClientStore() {
@@ -100,51 +61,10 @@ public class Company {
 
     //US05 - Sample -----------------------------------------------------------------------------
 
-    public Sample createSample(TestType tt, Barcode barcode) {
-
-        return new Sample(tt, barcode);
-
-    }
-
     SampleStore sampleStore = new SampleStore();
 
-    private static SampleStore sampleList;
-
-    public static SampleStore Sample() {
-        return sampleList = new SampleStore();
-    }
-
-    public boolean addSample(Sample sm) {
-        sampleStore.listAdd(sm);
-        return true;
-    }
-
-    public boolean validateSample(Sample sm) {
-        sampleStore.validateSample(sm);
-        return true;
-    }
-
-    public boolean saveSample(Sample sm) {
-        sampleStore.saveSample();
-        return true;
-    }
-
-    public boolean listContainsSample(Sample sm) {
-        sampleStore.listContain(sm);
-        return true;
-    }
-
-    public boolean listAdd(Sample sm) {
-        sampleStore.listAdd(sm);
-        return true;
-    }
-
-    public Sample getSample(int i) {
-        return sampleStore.getSample(i);
-    }
-
-    public Sample getSm() {
-        return sampleStore.getSm();
+    public List<Sample> getSampleList() {
+        return sampleStore.getSampleList();
     }
 
     public SampleStore getSampleStore() {
@@ -153,50 +73,10 @@ public class Company {
 
     // US07 - Employee --------------------------------------------------------------------------
 
-    public Employee createEmployee(String name, String address, String email, String phoneNumber, String employeeId, String socCode, String orgRole, String doctorIndexNumber) {
-        return new Employee(name, address, email, phoneNumber, employeeId, socCode, orgRole, doctorIndexNumber);
-    }
-
     EmployeeStore employeeStore = new EmployeeStore();
 
-    private static EmployeeStore employeeList;
-
-
-    public EmployeeStore Employee() {
-        return employeeList = new EmployeeStore();
-    }
-
-    public Boolean addEmployee(Employee emp) {
-        employeeStore.listAdd(emp);
-        return true;
-    }
-
-    public boolean validateEmployee(Employee emp) {
-        employeeStore.validateEmployee(emp);
-        return true;
-    }
-
-    public boolean saveEmployee(Employee emp) {
-        employeeStore.saveEmployee();
-        return true;
-    }
-
-    public boolean listEmployee(Employee emp) {
-        employeeStore.listContain(emp);
-        return true;
-    }
-
-    public boolean listAddEmp(Employee emp) {
-        employeeStore.listAdd(emp);
-        return true;
-    }
-
-    public Employee getEmployee(int i) {
-        return employeeStore.getEmployee(i);
-    }
-
-    public Employee getEmp() {
-        return employeeStore.emp;
+    public List<Employee> getEmployeeList() {
+        return employeeStore.getEmployeeList();
     }
 
     public EmployeeStore getEmployeeStore() {
@@ -206,44 +86,11 @@ public class Company {
 
     // US08 - ClinicalAnalysisLaboratory --------------------------------------------------------
 
-    public ClinicalAnalysisLaboratory createClinicalAnalysisLaboratory(String laboratoryID, String name, String address, String phoneNumber, String tinNumber) {
-        return new ClinicalAnalysisLaboratory(laboratoryID, name, address, phoneNumber, tinNumber);
-    }
 
     ClinicalAnalysisLaboratoryStore clinicalAnalysisLaboratoryStore = new ClinicalAnalysisLaboratoryStore();
 
-    private static ClinicalAnalysisLaboratoryStore clinicalAnalysisLaboratoryList;
-
-    public static ClinicalAnalysisLaboratoryStore ClinicalAnalysisLaboratory() {
-        return clinicalAnalysisLaboratoryList = new ClinicalAnalysisLaboratoryStore();
-    }
-
-    public boolean validateClinicalAnalysisLaboratory(ClinicalAnalysisLaboratory cal) {
-        clinicalAnalysisLaboratoryStore.validateClinicalAnalysisLaboratory(cal);
-        return true;
-    }
-
-    public boolean saveClinicalAnalysisLaboratory() {
-        clinicalAnalysisLaboratoryStore.saveClinicalAnalysisLaboratory();
-        return true;
-    }
-
-    public boolean listContainsClinicalAnalysisLaboratory(ClinicalAnalysisLaboratory cal) {
-        clinicalAnalysisLaboratoryStore.listContain(cal);
-        return true;
-    }
-
-    public boolean listAddAnalysisLaboratory(ClinicalAnalysisLaboratory cal) {
-        clinicalAnalysisLaboratoryStore.listAdd(cal);
-        return true;
-    }
-
-    public ClinicalAnalysisLaboratory getClinicalAnalysisLaboratory(int i) {
-        return clinicalAnalysisLaboratoryStore.getClinicalAnalysisLaboratory(i);
-    }
-
-    public ClinicalAnalysisLaboratory getCal() {
-        return clinicalAnalysisLaboratoryStore.cal;
+    public List<ClinicalAnalysisLaboratory> getClinicalAnalysisLaboratoryList() {
+        return clinicalAnalysisLaboratoryStore.getClinicalAnalysisLaboratoryList();
     }
 
     public ClinicalAnalysisLaboratoryStore getClinicalAnalysisLaboratoryStore() {
@@ -253,44 +100,10 @@ public class Company {
 
     // US09 - TestType --------------------------------------------------------------------------
 
-    public TestType createTestType(String testCode, String description, String collectingMethod, ParameterCategoryStore pcStore) {
-        return new TestType(testCode, description, collectingMethod, pcStore);
-    }
-
     TestTypeStore testTypeStore = new TestTypeStore();
 
-    private static TestTypeStore testTypeList;
-
-    public static TestTypeStore TestType() {
-        return testTypeList = new TestTypeStore();
-    }
-
-    public boolean validateTestType(TestType tt) {
-        testTypeStore.validateTestType(tt);
-        return true;
-    }
-
-    public boolean saveTestType() {
-        testTypeStore.saveTestType();
-        return true;
-    }
-
-    public boolean listContainsTestType(TestType tt) {
-        testTypeStore.listContain(tt);
-        return true;
-    }
-
-    public boolean listAdd(TestType tt) {
-        testTypeStore.listAdd(tt);
-        return true;
-    }
-
-    public TestType getTestType(int i) {
-        return testTypeStore.getTestType(i);
-    }
-
-    public TestType getTt() {
-        return testTypeStore.getTt();
+    public List<TestType> getTestTypeList() {
+        return testTypeStore.getTestTypeList();
     }
 
     public TestTypeStore getTestTypeStore() {
@@ -299,44 +112,10 @@ public class Company {
 
     // US10 - Parameter -------------------------------------------------------------------------
 
-    public Parameter createParameter(String code, String description, String name, ParameterCategoryStore pcStore) {
-        return new Parameter(code, description, name, pcStore);
-    }
-
     ParameterStore parameterStore = new ParameterStore();
 
-    private static ParameterStore parameterList;
-
-    public static ParameterStore Parameter() {
-        return parameterList = new ParameterStore();
-    }
-
-    public boolean validateParameter(Parameter pp) {
-        parameterStore.validateParameter(pp);
-        return true;
-    }
-
-    public boolean saveParameter() {
-        parameterStore.saveParameter();
-        return true;
-    }
-
-    public boolean listContainsParameter(Parameter pp) {
-        parameterStore.listContain(pp);
-        return true;
-    }
-
-    public boolean parameterListAdd(Parameter pp) {
-        parameterStore.listAdd(pp);
-        return true;
-    }
-
-    public Parameter getParameter(int i) {
-        return parameterStore.getParameter(i);
-    }
-
-    public Parameter getPP() {
-        return parameterStore.pp;
+    public List<Parameter> getParameterList() {
+        return parameterStore.getParameterList();
     }
 
     public ParameterStore getParameterStore() {
@@ -346,52 +125,10 @@ public class Company {
 
     // US11 - ParameterCategory -----------------------------------------------------------------
 
-    public ParameterCategory createParameterCategory(String code, String description, String nhsld) {
-        return new ParameterCategory(code, description, nhsld);
-    }
-
     ParameterCategoryStore parameterCategoryStore = new ParameterCategoryStore();
 
-    private static ParameterCategoryStore parameterCategoryList;
-
-    public static ParameterCategoryStore ParameterCategory() {
-        return parameterCategoryList = new ParameterCategoryStore();
-    }
-
-    public List<TestType> getTestType() {
-        return testTypeStore.getTestTypeList();
-    }
-
-    public List<Parameter> getParameter() {
-        return parameterStore.getParameterList();
-    }
-
-    public boolean validateParameterCategory(ParameterCategory pc) {
-        parameterCategoryStore.validateParameterCategory(pc);
-        return true;
-    }
-
-    public boolean saveParameterCategory() {
-        parameterCategoryStore.saveParameterCategory();
-        return true;
-    }
-
-    public boolean listContainsParameterCategory(ParameterCategory pc) {
-        parameterCategoryStore.listContain(pc);
-        return true;
-    }
-
-    public boolean listAddParameterCategory(ParameterCategory pc) {
-        parameterCategoryStore.listAdd();
-        return true;
-    }
-
-    public ParameterCategory getParameterCategory(int i) {
-        return parameterCategoryStore.getParameterCategory(i);
-    }
-
-    public ParameterCategory getPC() {
-        return parameterCategoryStore.pc;
+    public List<ParameterCategory> getParameterCategoryList() {
+        return parameterCategoryStore.getParameterCategoryList();
     }
 
     public ParameterCategoryStore getParameterCategoryStore() {

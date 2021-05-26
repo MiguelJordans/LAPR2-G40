@@ -1,5 +1,6 @@
 package app.domain.model;
 
+import app.domain.shared.Constants;
 import org.apache.commons.lang3.StringUtils;
 
 
@@ -9,11 +10,6 @@ public class ParameterCategory {
     private String code;
     private String nhsld;
     private String description;
-
-    private final int CODE_MAX = 5;
-    private final int CODE_MIN= 4;
-    private final int NHSLD_MAX = 10;
-    private final int DESCRIPTION_MAX = 40;
 
     /**
      * Constructs an instance of ParameterCategory.
@@ -48,7 +44,7 @@ public class ParameterCategory {
         if (StringUtils.isBlank(code))
             throw new IllegalArgumentException("Code cannot be blank.");
 
-        if (code.length()<CODE_MIN || code.length() > CODE_MAX)
+        if (code.length()< Constants.CODE_MIN || code.length() > Constants.CODE_CATEGORY_MAX)
             throw new IllegalArgumentException("Code not valid! Code must have 4 to 8 chars.");
 
     }
@@ -65,7 +61,7 @@ public class ParameterCategory {
             throw new IllegalArgumentException("NHSLD cannot be blank.");
 
 
-        if (nhsld.length() > NHSLD_MAX)
+        if (nhsld.length() > Constants.NHSLD_MAX)
             throw new IllegalArgumentException("NHSLD not valid! Cannot have more than 8 chars.");
 
     }
@@ -81,7 +77,7 @@ public class ParameterCategory {
         if (StringUtils.isBlank(description))
             throw new IllegalArgumentException("Description cannot be blank.");
 
-        if (description.length() > DESCRIPTION_MAX)
+        if (description.length() > Constants.DESCRIPTION_CATEGORY_MAX)
             throw new IllegalArgumentException("Description not valid! Cannot have more than 40 chars.");
 
     }

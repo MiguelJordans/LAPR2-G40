@@ -3,19 +3,22 @@ package app.domain.model;
 import app.domain.shared.Constants;
 import org.apache.commons.lang3.StringUtils;
 
+import java.util.List;
+
 public class TestType {
 
     private String testCode;
     private String description;
     private String collectingMethod;
 
-    private ParameterCategoryStore pp;
+    private List<ParameterCategory> pcList;
 
-    private final int TESTCODE_MAX = 5;
-    private final int COLLECTINGMETHOD_MAX = 20;
-    private final int DESCRIPTION_MAX = 15;
-
+<<<<<<< HEAD
     private String ExternalModule;
+=======
+    private State state;
+    private Selection selection;
+>>>>>>> da1a645666dd4f441e5604e08cc8080f327eaad1
 
     /**
      * Constructs an instance of Test Type
@@ -23,21 +26,30 @@ public class TestType {
      * @param testCode         the Test Type's test code
      * @param description      the Test Type's description
      * @param collectingMethod the Test Type's collecting method
+<<<<<<< HEAD
      * @param ppStore          the Test Type's category list
      */
 
     public TestType(String testCode, String description, String collectingMethod, ParameterCategoryStore ppStore) {
+=======
+     * @param pcList the Test Type's category list
+     */
+
+    public TestType(String testCode, String description, String collectingMethod, List<ParameterCategory> pcList) {
+>>>>>>> da1a645666dd4f441e5604e08cc8080f327eaad1
 
         checkTestCode(testCode);
         checkCollectingMethod(collectingMethod);
         checkDescription(description);
-        checkCategoriesList(ppStore);
+        checkCategoriesList(pcList);
 
         this.testCode = testCode;
         this.collectingMethod = collectingMethod;
         this.description = description;
 
-        this.pp = ppStore;
+        this.pcList = pcList;
+        this.state = State.CREATED;
+        this.selection = Selection.FREE;
 
     }
 
@@ -54,7 +66,7 @@ public class TestType {
         if (StringUtils.isBlank(testCode))
             throw new IllegalArgumentException("Test Code cannot be blank.");
 
-        if (!(testCode.matches("^[a-zA-Z0-9]*$")) || testCode.length() > TESTCODE_MAX)
+        if (!(testCode.matches("^[a-zA-Z0-9]*$")) || testCode.length() > Constants.TESTCODE_MAX)
             throw new IllegalArgumentException("Test Code not valid! Must be alphanumeric and have less than 5 chars.");
 
     }
@@ -68,7 +80,7 @@ public class TestType {
     public void checkCollectingMethod(String collectingMethod) {
         if (StringUtils.isBlank(collectingMethod))
             throw new IllegalArgumentException("Collecting Method cannot be blank.");
-        if (collectingMethod.length() > COLLECTINGMETHOD_MAX)
+        if (collectingMethod.length() > Constants.COLLECTINGMETHOD_MAX)
             throw new IllegalArgumentException("Collecting Method not valid! Cannot have more than 20 chars.");
     }
 
@@ -82,7 +94,7 @@ public class TestType {
         if (StringUtils.isBlank(description))
             throw new IllegalArgumentException("Description cannot be blank.");
 
-        if (description.length() > DESCRIPTION_MAX)
+        if (description.length() > Constants.DESCRIPTION_MAX)
             throw new IllegalArgumentException("Description not valid! Cannot have more than 15 chars.");
 
     }
@@ -90,11 +102,16 @@ public class TestType {
     /**
      * Checks the categories list (according to the acceptance criteira).
      *
-     * @param ppStore the Test Type's categories
+     * @param pcList the Test Type's categories
      */
 
+<<<<<<< HEAD
     public void checkCategoriesList(ParameterCategoryStore ppStore) {
         if (ppStore.list.isEmpty()) {
+=======
+    public void checkCategoriesList(List<ParameterCategory> pcList){
+        if(pcList.isEmpty()) {
+>>>>>>> da1a645666dd4f441e5604e08cc8080f327eaad1
             throw new IllegalArgumentException("Categories not valid! List is null!");
         }
     }
@@ -137,8 +154,8 @@ public class TestType {
      * @return the categories list of the Test Type
      */
 
-    public ParameterCategoryStore getPP() {
-        return pp;
+    public List<ParameterCategory> getPcList() {
+        return pcList;
     }
 
     //Sets ----------------------------------------------------------------
@@ -179,11 +196,11 @@ public class TestType {
     /**
      * Modifies the category list of the Test Type
      *
-     * @param ppsstore modifies the category list the Test Type
+     * @param pcList modifies the category list the Test Type
      */
 
-    public void setPp(ParameterCategoryStore ppsstore) {
-        this.pp = ppsstore;
+    public void setPcList(List<ParameterCategory> pcList) {
+        this.pcList = pcList;
     }
 
     public String getExternalModule() {
@@ -217,4 +234,83 @@ public class TestType {
 
     }
 
+<<<<<<< HEAD
+=======
+    enum State{
+        CREATED,
+        SAMPLE_COLLECTED,
+        SAMPLE_ANALYSED,
+        DIAGNOSTIC_MADE,
+        VALIDATED;
+    }
+
+    enum Selection{
+        SELECTED,
+        FREE;
+    }
+
+    public void setState(State state) {
+       this.state=state;
+    }
+
+    public void setState(String s){
+        switch (s){
+            case "CREATED":
+                setState(State.CREATED);
+                break;
+            case "SAMPLE_COLLECTED" :
+                setState(State.SAMPLE_COLLECTED);
+                break;
+            case "SAMPLE_ANALYSED" :
+                setState(State.SAMPLE_ANALYSED);
+                break;
+            case "DIAGNOSTIC_MADE":
+                setState(State.DIAGNOSTIC_MADE);
+                break;
+            case "VALIDATED":
+                setState(State.VALIDATED);
+                break;
+            default:
+                break;
+        }
+    }
+
+    public String getSelection() {
+        return selection.name();
+    }
+
+    public void setSelection(Selection selection) {
+        this.selection=selection;
+    }
+
+    public void setSelection(String s){
+        switch (s){
+            case "SELECTED":
+                setSelection(Selection.SELECTED);
+                break;
+            case "FREE" :
+                setSelection(selection.FREE);
+                break;
+            default:
+                break;
+        }
+    }
+
+    public String getState() {
+        return state.name();
+    }
+
+
+    public boolean compareState(String state){
+
+
+            if(state.equals("SAMPLE_ANALYSED")||state.equals("SAMPLE_COLLECTED")||state.equals("DIAGNOSTIC_MADE")||state.equals("VALIDATED")){
+                return false;
+            }
+
+        return true;
+
+    }
+
+>>>>>>> da1a645666dd4f441e5604e08cc8080f327eaad1
 }

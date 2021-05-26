@@ -119,4 +119,7 @@ public class EmployeeStore {
     }
 
 
+    public List<Employee> getEmployeeList() {
+        return this.employeeList;
+    }
 }
