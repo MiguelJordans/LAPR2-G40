@@ -2,6 +2,8 @@ package app.domain.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.time.LocalDate;
+import java.util.HashSet;
 
 public class TestStore {
 
@@ -35,8 +37,8 @@ public class TestStore {
         return true;
     }
 
-    public boolean saveTest(Test test){
-        if(validateTest(test)){
+    public boolean saveTest(Test test) {
+        if (validateTest(test)) {
             testList.add(test);
             testNumber++;
             return true;
@@ -59,28 +61,20 @@ public class TestStore {
         }
         return false;
     }
-    
-import java.time.LocalDate;
-import java.util.HashSet;
 
-public class TestStore {
-    HashSet<Test> testList= new HashSet<>();
-
-    public HashSet<Test> getInvalidTestList(){
-        HashSet<Test> invalidTests= new HashSet<>();
-        for(Test temp: testList){
-            if(!temp.isValid()){
+    public HashSet<Test> getInvalidTestList() {
+        HashSet<Test> invalidTests = new HashSet<>();
+        for (Test temp : testList) {
+            if (!temp.isValid()) {
                 invalidTests.add(temp);
             }
         }
         return invalidTests;//implement;
     }
-    public boolean saveTest(Test t){
-        return testList.add(t);
-    }
+
 
     public boolean validateTest(String testId, LocalDate instant) {
-        for(Test temp: testList){
+        for (Test temp : testList) {
             /*
             if(temp.id().equals(testId)){
                 temp.validate(instant);
@@ -89,3 +83,4 @@ public class TestStore {
         return true;
     }
 }
+

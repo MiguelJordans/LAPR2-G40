@@ -4,16 +4,11 @@ import auth.AuthFacade;
 import net.sourceforge.barbecue.Barcode;
 import org.apache.commons.lang3.StringUtils;
 
-<<<<<<< HEAD
 import java.util.Date;
-=======
 import java.util.HashSet;
->>>>>>> ab89394ea738b46871e63957f85ce32e10a26497
 import java.util.List;
-import java.util.Set;
 
 /**
- *
  * @author Paulo Maio <pam@isep.ipp.pt>
  * @author Miguel Jordão <1201487@isep.ipp.pt>
  * @author Mariana Lages <1200902@isep.ipp.pt>
@@ -98,14 +93,16 @@ public class Company {
 
     private TestStore testStore;
 
-    public TestStore getTestStore() { return testStore; }
+    public TestStore getTestStore() {
+        return testStore;
+    }
 
 
     //US05 - Sample -----------------------------------------------------------------------------
 
     public Sample createSample(TestType tt, Barcode barcode) {
 
-        return new Sample(tt,barcode);
+        return new Sample(tt, barcode);
 
     }
 
@@ -156,7 +153,7 @@ public class Company {
 
     // US07 - Employee --------------------------------------------------------------------------
 
-    public Employee createEmployee(String name, String address, String email, String phoneNumber, String employeeId, String socCode, String orgRole, String doctorIndexNumber){
+    public Employee createEmployee(String name, String address, String email, String phoneNumber, String employeeId, String socCode, String orgRole, String doctorIndexNumber) {
         return new Employee(name, address, email, phoneNumber, employeeId, socCode, orgRole, doctorIndexNumber);
     }
 
@@ -165,11 +162,11 @@ public class Company {
     private static EmployeeStore employeeList;
 
 
-    public EmployeeStore Employee(){
+    public EmployeeStore Employee() {
         return employeeList = new EmployeeStore();
     }
 
-    public Boolean addEmployee(Employee emp){
+    public Boolean addEmployee(Employee emp) {
         employeeStore.listAdd(emp);
         return true;
     }
@@ -194,7 +191,7 @@ public class Company {
         return true;
     }
 
-    public Employee getEmployee (int i) {
+    public Employee getEmployee(int i) {
         return employeeStore.getEmployee(i);
     }
 
@@ -403,18 +400,11 @@ public class Company {
 
     // US15 - ValidateTest -----------------------------------------------------------------
 
-    TestStore testStore = new TestStore();
-
     public HashSet<Test> getInvalidTestList() {
         return testStore.getInvalidTestList();
     }
 
     public boolean saveTest(Test t) {
-
         return testStore.saveTest(t);
-    }
-
-    public TestStore getTestStore() {
-        return testStore;
     }
 }

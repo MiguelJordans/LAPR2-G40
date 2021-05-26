@@ -15,7 +15,7 @@ public class Test {
     private static int codeTest = 1;
 
 
-    public Test (String citizenCardNumber,String testCode, String nhsCode, TestType testType) {
+    public Test(String citizenCardNumber, String testCode, String nhsCode, TestType testType) {
         checkNshCode(nhsCode);
 
         this.citizenCardNumber = citizenCardNumber;
@@ -44,20 +44,18 @@ public class Test {
             throw new IllegalArgumentException("the nhs code must be 12 characters long");
     }
 
-    public enum State{
+    public enum State {
         REGISTERED, SAMPLECOLLECTED, ANALYZED, DIAGNOSED, VALIDATED
     }
 
-import java.time.LocalDate;
 
-public class Test {
-
-    public boolean isValid(){
+    public boolean isValid() {
         return false;
     }
 
-    public boolean validate(LocalDate date){
+    public boolean validate(LocalDate date) {
         // this.validationDate=date;
         return true;
     }
 }
+
