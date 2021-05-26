@@ -3,14 +3,30 @@ package app.domain.model;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
-public class ClientRegistrationTest {
+public class ClientTest {
+
+    String datestr = "23-06-1999";
+    SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+    Date date;
+
+    {
+        try {
+            date = dateFormat.parse(datestr);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 
     @Test
     public void setName() {
 
-        ClientRegistration cr = new ClientRegistration("Jason", "2344@gmail.com", "Male", "23/06/1999",
+        Client cr = new Client("Jason", "2344@gmail.com", "Male", date,
                 "5647748895858574", "05968742634","7468496874", "7456375876");
 
         String expected = "Waterson";
@@ -24,7 +40,7 @@ public class ClientRegistrationTest {
     @Test
     public void setEmail() {
 
-        ClientRegistration cr = new ClientRegistration("Jack", "2344@gmail.com", "Male", "29/01/1989",
+        Client cr = new Client("Jack", "2344@gmail.com", "Male", date,
                 "5647748333858574", "05968742634","7468496874", "7456375876");
 
         String expected = "fish@hotmail.com";
@@ -38,7 +54,7 @@ public class ClientRegistrationTest {
     @Test
     public void setSex() {
 
-        ClientRegistration cr = new ClientRegistration("Mary", "2344@gmail.com", "Male", "23/06/1999",
+        Client cr = new Client("Mary", "2344@gmail.com", "Male", date,
                 "5647748895858574", "05968742634","7468496874", "7456375876");
 
         String expected = "Female";
@@ -52,21 +68,27 @@ public class ClientRegistrationTest {
     @Test
     public void setBirthdate() {
 
-        ClientRegistration cr = new ClientRegistration("Jason", "2344@gmail.com", "Male", "23/06/1999",
+        Client cr = new Client("Jason", "2344@gmail.com", "Male", date,
                 "5647748895858574", "05968742634","7468496874", "7456375876");
 
-        String expected = "11/01/1980";
-        cr.setBirthdate(expected);
+        String expected = "11-01-1980";
+        try {
+            date = dateFormat.parse(expected);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
 
-        String verify = cr.getBirthdate();
-        Assert.assertEquals(expected, verify);
+        cr.setBirthdate(date);
+
+        Date verify = cr.getBirthdate();
+        Assert.assertEquals(date, verify);
 
     }
 
     @Test
     public void setCitizenCardNumber() {
 
-        ClientRegistration cr = new ClientRegistration("Jason", "2344@gmail.com", "Male", "23/06/1999",
+        Client cr = new Client("Jason", "2344@gmail.com", "Male", date,
                 "5647748895858574", "05968742634","7468496874", "7456375876");
 
         String expected = "5647744654343574";
@@ -80,7 +102,7 @@ public class ClientRegistrationTest {
     @Test
     public void setPhoneNumber() {
 
-        ClientRegistration cr = new ClientRegistration("Jason", "2344@gmail.com", "Male", "23/06/1999",
+        Client cr = new Client("Jason", "2344@gmail.com", "Male", date,
                 "5647748895858574", "05968742634","7468496874", "7456375876");
 
         String expected = "05968753648";
@@ -94,7 +116,7 @@ public class ClientRegistrationTest {
     @Test
     public void setTinNumber() {
 
-        ClientRegistration cr = new ClientRegistration("Jason", "2344@gmail.com", "Male", "23/06/1999",
+        Client cr = new Client("Jason", "2344@gmail.com", "Male", date,
                 "5647748895858574", "05968742634","7468496874", "7456375876");
 
         String expected = "7468499878";
@@ -108,7 +130,7 @@ public class ClientRegistrationTest {
     @Test
     public void setNhsNumber() {
 
-        ClientRegistration cr = new ClientRegistration("Jason", "2344@gmail.com", "Male", "23/06/1999",
+        Client cr = new Client("Jason", "2344@gmail.com", "Male", date,
                 "5647748895858574", "05968742634","7468496874", "7456375876");
 
         String expected = "7456311123";
@@ -122,7 +144,7 @@ public class ClientRegistrationTest {
     @Test(expected = IllegalArgumentException.class)
     public void checkNameBlank() {
 
-        ClientRegistration cr = new ClientRegistration("", "2344@gmail.com", "Male", "23/06/1999",
+        Client cr = new Client("", "2344@gmail.com", "Male", date,
                 "5647748895858574", "05968742634","7468496874", "7456375876");
 
     }
@@ -131,7 +153,7 @@ public class ClientRegistrationTest {
     @Test(expected = IllegalArgumentException.class)
     public void checkNameIsTooBig() {
 
-        ClientRegistration cr = new ClientRegistration("The biggest and most unnecessary name you'll ever read", "2344@gmail.com", "Male", "23/06/1999",
+        Client cr = new Client("The biggest and most unnecessary name you'll ever read", "2344@gmail.com", "Male", date,
                 "5647748895858574", "05968742634", "7468496874", "7456375876");
 
     }
@@ -139,7 +161,7 @@ public class ClientRegistrationTest {
     @Test(expected = IllegalArgumentException.class)
     public void checkNameIsInvalid() {
 
-        ClientRegistration cr = new ClientRegistration("xXVenomShock99Xx", "2344@gmail.com", "Male", "23/06/1999",
+        Client cr = new Client("xXVenomShock99Xx", "2344@gmail.com", "Male", date,
                 "5647748895858574", "05968742634", "7468496874", "7456375876");
 
     }
@@ -147,7 +169,7 @@ public class ClientRegistrationTest {
     @Test(expected = IllegalArgumentException.class)
     public void checkNameIsInvalid2() {
 
-        ClientRegistration cr = new ClientRegistration("++++", "2344@gmail.com", "Male", "23/06/1999",
+        Client cr = new Client("++++", "2344@gmail.com", "Male", date,
                 "5647748895858574", "05968742634", "7468496874", "7456375876");
 
     }
@@ -155,7 +177,7 @@ public class ClientRegistrationTest {
     @Test
     public void checkNameIsInvalid3() {
 
-        ClientRegistration cr = new ClientRegistration("aaa", "2344@gmail.com", "Male", "23/06/1999",
+        Client cr = new Client("aaa", "2344@gmail.com", "Male", date,
                 "5647748895858574", "05968742634", "7468496874", "7456375876");
 
     }
@@ -163,14 +185,14 @@ public class ClientRegistrationTest {
     @Test
     public void checkNameIsInvalid4() {
 
-        ClientRegistration cr = new ClientRegistration("zzz", "2344@gmail.com", "Male", "23/06/1999",
+        Client cr = new Client("zzz", "2344@gmail.com", "Male", date,
                 "5647748895858574", "05968742634", "7468496874", "7456375876");
 
     }
     @Test(expected = IllegalArgumentException.class)
     public void checkEmailBlank() {
 
-        ClientRegistration cr = new ClientRegistration("Jason", "", "Male", "23/06/1999",
+        Client cr = new Client("Jason", "", "Male", date,
                 "5647748895858574", "05968742634", "7468496874", "7456375876");
 
     }
@@ -178,7 +200,7 @@ public class ClientRegistrationTest {
     @Test(expected = IllegalArgumentException.class)
     public void checkEmailIsInvalid() {
 
-        ClientRegistration cr = new ClientRegistration("Jason", "I won't use an email here", "Male", "23/06/1999",
+        Client cr = new Client("Jason", "I won't use an email here", "Male", date,
                 "5647748895858574", "05968742634", "7468496874", "7456375876");
 
     }
@@ -186,7 +208,7 @@ public class ClientRegistrationTest {
     @Test(expected = IllegalArgumentException.class)
     public void checkSexBlank() {
 
-        ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "", "23/06/1999",
+        Client cr = new Client("Jason", "someemail@gmail.com", "", date,
                 "5647748895858574", "05968742634", "7468496874", "7456375876");
 
     }
@@ -194,39 +216,23 @@ public class ClientRegistrationTest {
     @Test(expected = IllegalArgumentException.class)
     public void checkSexIsInvalid() {
 
-        ClientRegistration cr = new ClientRegistration("Jason", "6664@gmail.com", "Pink Attack Helicopter", "23/06/1999",
+        Client cr = new Client("Jason", "6664@gmail.com", "Pink Attack Helicopter", date,
                 "5647748895858574", "05968742634", "7468496874", "7456375876");
 
     }
 
-   @Test(expected = IllegalArgumentException.class)
-    public void checkBirthdateBlank() {
-
-        ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "",
-                "5647748895858574", "05968742634", "7468496874", "7456375876");
-
-    }
-
-   /* @Test(expected = IllegalArgumentException.class)
-    public void checkBirthdateInvalidFormat() {
-
-        ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "235254354363",
-                "5647748895858574", "05968742634", "7468496874", "7456375876");
-
-    }*/
-
-   /* @Test(expected = IllegalArgumentException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void checkCitizenCardNumberBlank() {
 
-        ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "23/06/1999",
+        Client cr = new Client("Jason", "someemail@gmail.com", "Male", date,
                 "", "05968742634", "7468496874", "7456375876");
 
-    }*/
+    }
 
     @Test(expected = IllegalArgumentException.class)
     public void checkCitizenCardNumberIsTooBig() {
 
-        ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "23/06/1999",
+        Client cr = new Client("Jason", "someemail@gmail.com", "Male", date,
                 "456789876543234567876543234", "05968742634", "7468496874", "7456375876");
 
     }
@@ -234,7 +240,7 @@ public class ClientRegistrationTest {
     @Test(expected = IllegalArgumentException.class)
     public void checkCitizenCardNumberIsInvalid() {
 
-        ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "23/06/1999",
+        Client cr = new Client("Jason", "someemail@gmail.com", "Male", date,
                 "XXX7748895858574", "05968742634", "7468496874", "7456375876");
 
     }
@@ -242,7 +248,7 @@ public class ClientRegistrationTest {
     @Test
     public void checkCitizenCardNumberIsInvalid2() {
 
-        ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "23/06/1999",
+        Client cr = new Client("Jason", "someemail@gmail.com", "Male", date,
                 "++++++++++++++++", "05968742634", "7468496874", "7456375876");
 
     }
@@ -250,7 +256,7 @@ public class ClientRegistrationTest {
     @Test(expected = IllegalArgumentException.class)
     public void checkCitizenCardNumberIsInvalid3() {
 
-        ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "23/06/1999",
+        Client cr = new Client("Jason", "someemail@gmail.com", "Male", date,
                 "aaaaaaaaaaaaaaaa", "05968742634", "7468496874", "7456375876");
 
     }
@@ -258,7 +264,7 @@ public class ClientRegistrationTest {
     @Test(expected = IllegalArgumentException.class)
     public void checkCitizenCardNumberIsInvalid4() {
 
-        ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "23/06/1999",
+        Client cr = new Client("Jason", "someemail@gmail.com", "Male", date,
                 "zzzzzzzzzzzzzzzz", "05968742634", "7468496874", "7456375876");
 
     }
@@ -266,7 +272,7 @@ public class ClientRegistrationTest {
     @Test(expected = IllegalArgumentException.class)
     public void checkCitizenCardNumberIsInvalid5() {
 
-        ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "23/06/1999",
+        Client cr = new Client("Jason", "someemail@gmail.com", "Male", date,
                 "AAAAAAAAAAAAAAAA", "05968742634", "7468496874", "7456375876");
 
     }
@@ -274,7 +280,7 @@ public class ClientRegistrationTest {
     @Test(expected = IllegalArgumentException.class)
     public void checkCitizenCardNumberIsInvalid6() {
 
-        ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "23/06/1999",
+        Client cr = new Client("Jason", "someemail@gmail.com", "Male", date,
                 "ZZZZZZZZZZZZZZZZ", "05968742634", "7468496874", "7456375876");
 
     }
@@ -282,7 +288,7 @@ public class ClientRegistrationTest {
     @Test(expected = IllegalArgumentException.class)
     public void checkPhoneNumberBlank() {
 
-        ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "23/06/1999",
+        Client cr = new Client("Jason", "someemail@gmail.com", "Male", date,
                 "5647748895858574", "", "7468496874", "7456375876");
 
     }
@@ -290,7 +296,7 @@ public class ClientRegistrationTest {
     @Test(expected = IllegalArgumentException.class)
     public void checkPhoneNumberIsTooBig() {
 
-        ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "23/06/1999",
+        Client cr = new Client("Jason", "someemail@gmail.com", "Male", date,
                 "5647748895858574", "0596874263405968742634", "7468496874", "7456375876");
 
     }
@@ -298,7 +304,7 @@ public class ClientRegistrationTest {
     @Test(expected = IllegalArgumentException.class)
     public void checkPhoneNumberIsInvalid() {
 
-        ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "23/06/1999",
+        Client cr = new Client("Jason", "someemail@gmail.com", "Male", date,
                 "5647748895858574", "XXX68742634", "7468496874", "7456375876");
 
     }
@@ -306,7 +312,7 @@ public class ClientRegistrationTest {
     @Test
     public void checkPhoneNumberIsInvalid2() {
 
-        ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "23/06/1999",
+        Client cr = new Client("Jason", "someemail@gmail.com", "Male", date,
                 "5647748895858574", "+++++++++++", "7468496874", "7456375876");
 
     }
@@ -314,7 +320,7 @@ public class ClientRegistrationTest {
     @Test(expected = IllegalArgumentException.class)
     public void checkPhoneNumberIsInvalid3() {
 
-        ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "23/06/1999",
+        Client cr = new Client("Jason", "someemail@gmail.com", "Male", date,
                 "5647748895858574", "aaaaaaaaaaa", "7468496874", "7456375876");
 
     }
@@ -322,7 +328,7 @@ public class ClientRegistrationTest {
     @Test(expected = IllegalArgumentException.class)
     public void checkPhoneNumberIsInvalid4() {
 
-        ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "23/06/1999",
+        Client cr = new Client("Jason", "someemail@gmail.com", "Male", date,
                 "5647748895858574", "zzzzzzzzzzz", "7468496874", "7456375876");
 
     }
@@ -330,7 +336,7 @@ public class ClientRegistrationTest {
     @Test(expected = IllegalArgumentException.class)
     public void checkPhoneNumberIsInvalid5() {
 
-        ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "23/06/1999",
+        Client cr = new Client("Jason", "someemail@gmail.com", "Male", date,
                 "5647748895858574", "AAAAAAAAAAA", "7468496874", "7456375876");
 
     }
@@ -338,7 +344,7 @@ public class ClientRegistrationTest {
     @Test(expected = IllegalArgumentException.class)
     public void checkPhoneNumberIsInvalid6() {
 
-        ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "23/06/1999",
+        Client cr = new Client("Jason", "someemail@gmail.com", "Male", date,
                 "5647748895858574", "ZZZZZZZZZZZ", "7468496874", "7456375876");
 
     }
@@ -346,7 +352,7 @@ public class ClientRegistrationTest {
     @Test(expected = IllegalArgumentException.class)
     public void checkTINNumberBlank() {
 
-        ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "23/06/1999",
+        Client cr = new Client("Jason", "someemail@gmail.com", "Male", date,
                 "5647748895858574", "05968742634", "", "7456375876");
 
     }
@@ -354,7 +360,7 @@ public class ClientRegistrationTest {
     @Test(expected = IllegalArgumentException.class)
     public void checkTINNumberIsTooBig() {
 
-        ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "23/06/1999",
+        Client cr = new Client("Jason", "someemail@gmail.com", "Male", date,
                 "5647748895858574", "05968742634", "74684968747468496874", "7456375876");
 
     }
@@ -362,7 +368,7 @@ public class ClientRegistrationTest {
     @Test(expected = IllegalArgumentException.class)
     public void checkTINNumberIsInvalid() {
 
-        ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "23/06/1999",
+        Client cr = new Client("Jason", "someemail@gmail.com", "Male", date,
                 "5647748895858574", "05968742634", "XXX8496874", "7456375876");
 
     }
@@ -370,7 +376,7 @@ public class ClientRegistrationTest {
     @Test
     public void checkTINNumberIsInvalid2() {
 
-        ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "23/06/1999",
+        Client cr = new Client("Jason", "someemail@gmail.com", "Male", date,
                 "5647748895858574", "05968742634", "**********", "7456375876");
 
     }
@@ -378,7 +384,7 @@ public class ClientRegistrationTest {
     @Test(expected = IllegalArgumentException.class)
     public void checkTINNumberIsInvalid3() {
 
-        ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "23/06/1999",
+        Client cr = new Client("Jason", "someemail@gmail.com", "Male", date,
                 "5647748895858574", "05968742634", "aaaaaaaaaa", "7456375876");
 
     }
@@ -386,7 +392,7 @@ public class ClientRegistrationTest {
     @Test(expected = IllegalArgumentException.class)
     public void checkTINNumberIsInvalid4() {
 
-        ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "23/06/1999",
+        Client cr = new Client("Jason", "someemail@gmail.com", "Male", date,
                 "5647748895858574", "05968742634", "zzzzzzzzzz", "7456375876");
 
     }
@@ -394,7 +400,7 @@ public class ClientRegistrationTest {
     @Test(expected = IllegalArgumentException.class)
     public void checkTINNumberIsInvalid5() {
 
-        ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "23/06/1999",
+        Client cr = new Client("Jason", "someemail@gmail.com", "Male", date,
                 "5647748895858574", "05968742634", "AAAAAAAAAA", "7456375876");
 
     }
@@ -402,7 +408,7 @@ public class ClientRegistrationTest {
     @Test(expected = IllegalArgumentException.class)
     public void checkTINNumberIsInvalid6() {
 
-        ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "23/06/1999",
+        Client cr = new Client("Jason", "someemail@gmail.com", "Male", date,
                 "5647748895858574", "05968742634", "ZZZZZZZZZZ", "7456375876");
 
     }
@@ -410,7 +416,7 @@ public class ClientRegistrationTest {
     @Test(expected = IllegalArgumentException.class)
     public void checkNHSNumberBlank() {
 
-        ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "23/06/1999",
+        Client cr = new Client("Jason", "someemail@gmail.com", "Male", date,
                 "5647748895858574", "05968742634", "7468496874", "");
 
     }
@@ -418,7 +424,7 @@ public class ClientRegistrationTest {
     @Test(expected = IllegalArgumentException.class)
     public void checkNHSNumberIsTooBig() {
 
-        ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "23/06/1999",
+        Client cr = new Client("Jason", "someemail@gmail.com", "Male", date,
                 "5647748895858574", "05968742634", "7468496874", "74563758767456375876");
 
     }
@@ -426,7 +432,7 @@ public class ClientRegistrationTest {
     @Test(expected = IllegalArgumentException.class)
     public void checkNHSNumberIsInvalid() {
 
-        ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "23/06/1999",
+        Client cr = new Client("Jason", "someemail@gmail.com", "Male", date,
                 "5647748895858574", "05968742634", "7468496874", "XXX6375876");
 
     }
@@ -434,7 +440,7 @@ public class ClientRegistrationTest {
     @Test
     public void checkNHSNumberIsInvalid2() {
 
-        ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "23/06/1999",
+        Client cr = new Client("Jason", "someemail@gmail.com", "Male", date,
                 "5647748895858574", "05968742634", "7468496874", "**********");
 
     }
@@ -442,7 +448,7 @@ public class ClientRegistrationTest {
     @Test(expected = IllegalArgumentException.class)
     public void checkNHSNumberIsInvalid3() {
 
-        ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "23/06/1999",
+        Client cr = new Client("Jason", "someemail@gmail.com", "Male", date,
                 "5647748895858574", "05968742634", "7468496874", "aaaaaaaaaa");
 
     }
@@ -450,7 +456,7 @@ public class ClientRegistrationTest {
     @Test(expected = IllegalArgumentException.class)
     public void checkNHSNumberIsInvalid4() {
 
-        ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "23/06/1999",
+        Client cr = new Client("Jason", "someemail@gmail.com", "Male", date,
                 "5647748895858574", "05968742634", "7468496874", "zzzzzzzzzz");
 
     }
@@ -458,7 +464,7 @@ public class ClientRegistrationTest {
     @Test(expected = IllegalArgumentException.class)
     public void checkNHSNumberIsInvalid5() {
 
-        ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "23/06/1999",
+        Client cr = new Client("Jason", "someemail@gmail.com", "Male", date,
                 "5647748895858574", "05968742634", "7468496874", "AAAAAAAAAA");
 
     }
@@ -466,7 +472,7 @@ public class ClientRegistrationTest {
     @Test(expected = IllegalArgumentException.class)
     public void checkNHSNumberIsInvalid6() {
 
-        ClientRegistration cr = new ClientRegistration("Jason", "someemail@gmail.com", "Male", "23/06/1999",
+        Client cr = new Client("Jason", "someemail@gmail.com", "Male", date,
                 "5647748895858574", "05968742634", "7468496874", "ZZZZZZZZZZ");
 
     }
@@ -474,10 +480,10 @@ public class ClientRegistrationTest {
     @Test
     public void testToString() {
 
-        ClientRegistration cr = new ClientRegistration("Jason", "2344@gmail.com", "Male", "23/06/1999",
+        Client cr = new Client("Jason", "2344@gmail.com", "Male", date,
                 "5647748895858574", "05968742634","7468496874", "7456375876");
 
-        String expected = "Client: " + "Jason" + ", Email: " + "2344@gmail.com" + ", Sex: " + "Male" + ", Birth date: " + "23/06/1999" +
+        String expected = "Client: " + "Jason" + ", Email: " + "2344@gmail.com" + ", Sex: " + "Male" + ", Birth date: " + date +
                 ", Citizen Card Number: " + "5647748895858574" + ", Phone Number: " + "05968742634" +
                 ", TIN Number: " + "7468496874" + ", NHS Number: " + "7456375876";
 

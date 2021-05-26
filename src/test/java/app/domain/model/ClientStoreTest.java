@@ -3,9 +3,23 @@ package app.domain.model;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
-public class ClientRegistrationStoreTest {
+public class ClientStoreTest {
+
+    String datestr = "23-06-1999";
+    SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+    Date date;
+
+    {
+        try {
+            date = dateFormat.parse(datestr);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
 
     @Test
     public void createClientRegistration() {
@@ -14,12 +28,12 @@ public class ClientRegistrationStoreTest {
     @Test
     public void validateClientRegistration() {
 
-        ClientRegistrationStore store = new ClientRegistrationStore();
-        ClientRegistration cr = store.CreateClientRegistration("Jason", "2344@gmail.com", "Male", "23/06/1999",
+        ClientStore store = new ClientStore();
+        Client cr = store.CreateClient("Jason", "2344@gmail.com", "Male", date,
                 "5647748895858574", "05968742634","7468496874", "7456375876");
 
         boolean expected = true;
-        boolean verify = store.validateClientRegistration(cr);
+        boolean verify = store.validateClient(cr);
 
         Assert.assertEquals(expected, verify);
 
@@ -28,8 +42,8 @@ public class ClientRegistrationStoreTest {
     @Test
     public void listContain() {
 
-        ClientRegistrationStore store = new ClientRegistrationStore();
-        ClientRegistration cr = store.CreateClientRegistration("Jason", "2344@gmail.com", "Male", "23/06/1999",
+        ClientStore store = new ClientStore();
+        Client cr = store.CreateClient("Jason", "2344@gmail.com", "Male", date,
                 "5647748895858574", "05968742634","7468496874", "7456375876");
         store.listAdd(cr);
 
@@ -44,12 +58,12 @@ public class ClientRegistrationStoreTest {
     @Test
     public void saveClientRegistration() {
 
-        ClientRegistrationStore store = new ClientRegistrationStore();
-        ClientRegistration cr = store.CreateClientRegistration("Jason", "2344@gmail.com", "Male", "23/06/1999",
+        ClientStore store = new ClientStore();
+        Client cr = store.CreateClient("Jason", "2344@gmail.com", "Male", date,
                 "5647748895858574", "05968742634","7468496874", "7456375876");
 
         boolean expected = true;
-        boolean verify = store.saveClientRegistration();
+        boolean verify = store.saveClient();
 
         Assert.assertEquals(expected, verify);
 
@@ -58,8 +72,8 @@ public class ClientRegistrationStoreTest {
     @Test
     public void listAdd() {
 
-        ClientRegistrationStore store = new ClientRegistrationStore();
-        ClientRegistration cr = store.CreateClientRegistration("Jason", "2344@gmail.com", "Male", "23/06/1999",
+        ClientStore store = new ClientStore();
+        Client cr = store.CreateClient("Jason", "2344@gmail.com", "Male", date,
                 "5647748895858574", "05968742634","7468496874", "7456375876");
 
         boolean expected = true;
@@ -69,14 +83,14 @@ public class ClientRegistrationStoreTest {
     }
 
     @Test
-    public void getClientRegistration() {
+    public void getClient() {
 
-        ClientRegistrationStore store = new ClientRegistrationStore();
-        ClientRegistration cr = store.CreateClientRegistration("Jason", "2344@gmail.com", "Male", "23/06/1999",
+        ClientStore store = new ClientStore();
+        Client cr = store.CreateClient("Jason", "2344@gmail.com", "Male", date,
                 "5647748895858574", "05968742634","7468496874", "7456375876");
         store.listAdd(cr);
 
-        ClientRegistration verify = store.getClientRegistration(0);
+        Client verify = store.getClient(0);
 
         Assert.assertEquals(cr, verify);
 
@@ -85,11 +99,11 @@ public class ClientRegistrationStoreTest {
     @Test
     public void getCr() {
 
-        ClientRegistrationStore store = new ClientRegistrationStore();
-        ClientRegistration cr = store.CreateClientRegistration("Jason", "2344@gmail.com", "Male", "23/06/1999",
+        ClientStore store = new ClientStore();
+        Client cr = store.CreateClient("Jason", "2344@gmail.com", "Male", date,
                 "5647748895858574", "05968742634","7468496874", "7456375876");
 
-        ClientRegistration verify = store.getCr();
+        Client verify = store.getCr();
 
         Assert.assertEquals(cr, verify);
 

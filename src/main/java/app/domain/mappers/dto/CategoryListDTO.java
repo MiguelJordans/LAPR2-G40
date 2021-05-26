@@ -1,26 +1,19 @@
 package app.domain.mappers.dto;
 
 public class CategoryListDTO {
-
     private String code;
-    private String nhsld;
-    private String description;
+    private String name;
 
-    public CategoryListDTO(String code, String nhsld,String description) {
+    public CategoryListDTO(String code, String name) {
         this.code = code;
-        this.nhsld = nhsld;
-        this.description=description;
+        this.name = name;
     }
 
     public String getCode() {
         return code;
     }
 
-    public String getNhsld() {
-        return nhsld;
-    }
-
-    public String getDescription() {
-        return description;
+    public String getName() {
+        return name;
     }
 }

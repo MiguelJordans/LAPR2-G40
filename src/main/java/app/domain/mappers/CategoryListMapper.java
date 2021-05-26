@@ -9,7 +9,7 @@ import java.util.List;
 
 public class CategoryListMapper {
     private CategoryListDTO toDTO(ParameterCategory cat) {
-        return new CategoryListDTO(cat.getCode(), cat.getNhsld(), cat.getDescription());
+        return new CategoryListDTO(cat.getCode(), cat.getNhsld());
     }
 
     public List<CategoryListDTO> toDTO(ParameterCategoryStore catStore) {

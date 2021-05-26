@@ -1,5 +1,6 @@
 package app.domain.model;
 
+import app.domain.shared.Constants;
 import org.apache.commons.lang3.StringUtils;
 
 import javax.swing.text.DateFormatter;
@@ -13,7 +14,7 @@ import java.util.Date;
 import java.util.logging.SimpleFormatter;
 import java.util.regex.Pattern;
 
-public class ClientRegistration {
+public class Client {
 
     /**
      * Private Atributes that are only directly access in this class.
@@ -22,7 +23,7 @@ public class ClientRegistration {
     private String name;
     private String email;
     private String sex;
-    private String birthdate;
+    private Date birthdate;
     private String citizenCardNumber;
     private String phoneNumber;
     private String tinNumber;
@@ -43,7 +44,7 @@ public class ClientRegistration {
      */
 
 
-    public ClientRegistration (String name, String email, String sex, String birthdate, String citizenCardNumber, String phoneNumber, String tinNumber, String nhsNumber) {
+    public Client(String name, String email, String sex, Date birthdate, String citizenCardNumber, String phoneNumber, String tinNumber, String nhsNumber) {
 
         checkNameRules(name);
         checkEmailRules(email);
@@ -98,7 +99,7 @@ public class ClientRegistration {
      * @return the birth date of the Client.
      */
 
-    public String getBirthdate() { return birthdate; }
+    public Date getBirthdate() { return birthdate; }
 
     /**
      * Returns the citizen card number of the Client.
@@ -166,7 +167,7 @@ public class ClientRegistration {
      * @param birthdate - the Client's birth date.
      */
 
-    public void setBirthdate(String birthdate) { this.birthdate = birthdate; }
+    public void setBirthdate(Date birthdate) { this.birthdate = birthdate; }
 
     /**
      * Modifies the citizen card number of the Client.
@@ -274,30 +275,32 @@ public class ClientRegistration {
 
     }
 
-    private int calculateAge(Date birthDate) {
-        LocalDate date = birthDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+    /** Calculate the age of the client
+     *
+     * @param birthdate - Client birth date (xx/yy/zzz)
+     * @return - age of the client
+     */
+
+    private int calculateAge(Date birthdate) {
+        LocalDate date = birthdate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
         return Period.between(date, LocalDate.now()).getYears();
     }
 
-    /**
-     * Check if birth date respects the acceptance criteria
+    /** Check if birth date respects the acceptance criteria
      *
-     * @param birthDate - Client birth date (xx/yy/zzz)
+     * @param birthdate - Client birth date (xx/yy/zzz)
      */
 
+    private void checkBirthdateRules(Date birthdate) {
+        int age = calculateAge(birthdate);
 
-    /**
-     * Checks the Client's birth date rules.
-     *
-     * @param birthdate - the Client's birth date.
-     */
-
-    private void checkBirthdateRules(String birthdate){
-
-        if (StringUtils.isBlank(birthdate)) {
-            throw new IllegalArgumentException("Birth date cannot be empty.");
+        if (age < Constants.MIN_CLIENT_AGE) {
+            throw new IllegalArgumentException("Age cannot be negative");
         }
 
+        if (age > Constants.MAX_CLIENT_AGE) {
+            throw new IllegalArgumentException("Age cannot be superior of 150 years");
+        }
     }
 
     /**
