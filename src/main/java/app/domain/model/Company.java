@@ -3,6 +3,7 @@ package app.domain.model;
 import auth.AuthFacade;
 import org.apache.commons.lang3.StringUtils;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -37,54 +38,61 @@ public class Company {
 
     // US03 - ClientRegistration ----------------------------------------------------------------
 
-    public ClientRegistration createClientRegistration(String name,String email,String sex,String birthdate,String citizenCardNumber,String phoneNumber,String tinNumber,String nhsNumber) {
-        return new ClientRegistration(name, email, sex, birthdate, citizenCardNumber, phoneNumber, tinNumber, nhsNumber);
+    public Client createClient(String name, String email, String sex, Date birthdate, String citizenCardNumber, String phoneNumber, String tinNumber, String nhsNumber) {
+        return new Client(name, email, sex, birthdate, citizenCardNumber, phoneNumber, tinNumber, nhsNumber);
     }
 
-    ClientRegistrationStore clientRegistrationStore = new ClientRegistrationStore();
+    ClientStore clientStore = new ClientStore();
 
-    private static ClientRegistrationStore clientRegistrationList;
+    private static ClientStore clientList;
 
-    public static ClientRegistrationStore ClientRegistration() {
-        return clientRegistrationList = new ClientRegistrationStore();
+    public static ClientStore Client() {
+        return clientList = new ClientStore();
     }
 
-    public boolean addClientRegistration(ClientRegistration cr) {
-        clientRegistrationStore.listAdd(cr);
+    public boolean addClient(Client cr) {
+        clientStore.listAdd(cr);
         return true;
     }
 
-    public boolean validateClientRegistration(ClientRegistration cr) {
-        clientRegistrationStore.validateClientRegistration(cr);
+    public boolean validateClient(Client cr) {
+        clientStore.validateClient(cr);
         return true;
     }
 
-    public boolean saveClientRegistration(ClientRegistration cr) {
-        clientRegistrationStore.saveClientRegistration();
+    public boolean saveClient(Client cr) {
+        clientStore.saveClient();
         return true;
     }
 
-    public boolean listContainsClientRegistration(ClientRegistration cr) {
-        clientRegistrationStore.listContain(cr);
+    public boolean listContainsClient(Client cr) {
+        clientStore.listContain(cr);
         return true;
     }
 
-    public boolean listAdd(ClientRegistration cr) {
-        clientRegistrationStore.listAdd(cr);
+    public boolean listAdd(Client cr) {
+        clientStore.listAdd(cr);
         return true;
     }
 
-    public ClientRegistration getClientRegistration(int i) {
-        return clientRegistrationStore.getClientRegistration(i);
+    public Client getClient(int i) {
+        return clientStore.getClient(i);
     }
 
-    public ClientRegistration getCr() {
-        return clientRegistrationStore.cr;
+    public Client getCr() {
+        return clientStore.cr;
     }
 
-    public ClientRegistrationStore getClientRegistrationStore() {
-        return clientRegistrationStore;
+    public ClientStore getClientStore() {
+        return clientStore;
     }
+
+    //US04 - Test -------------------------------------------------------------------------------
+
+    private TestStore testStore;
+
+    public TestStore getTestStore() { return testStore; }
+
 
     //US05 - Sample -----------------------------------------------------------------------------
 

@@ -4,16 +4,16 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class ClientRegistrationStore {
+public class ClientStore {
 
-    List<ClientRegistration> clientRegistrationList;
-    ClientRegistration cr;
+    List<Client> clientList;
+    Client cr;
 
     /**
      * Constructor.
      */
 
-    public ClientRegistrationStore(){this.clientRegistrationList = new ArrayList<ClientRegistration>();}
+    public ClientStore(){this.clientList = new ArrayList<Client>();}
 
     /**
      * Creates a Client.
@@ -28,8 +28,8 @@ public class ClientRegistrationStore {
      * @param nhsNumber - the Client's NHS number.
      */
 
-    public ClientRegistration CreateClientRegistration(String name, String email, String sex, String birthdate, String citizenCardNumber, String phoneNumber, String tinNumber, String nhsNumber){
-        return this.cr = new ClientRegistration(name, email, sex, birthdate, citizenCardNumber, phoneNumber, tinNumber, nhsNumber);
+    public Client CreateClient(String name, String email, String sex, Date birthdate, String citizenCardNumber, String phoneNumber, String tinNumber, String nhsNumber){
+        return this.cr = new Client(name, email, sex, birthdate, citizenCardNumber, phoneNumber, tinNumber, nhsNumber);
     }
 
     /**
@@ -39,7 +39,7 @@ public class ClientRegistrationStore {
      * @return the validation of the Client being created.
      */
 
-    public boolean validateClientRegistration(ClientRegistration cr){
+    public boolean validateClient(Client cr){
 
         if(cr == null||listContain(cr)){
             return false;
@@ -55,8 +55,8 @@ public class ClientRegistrationStore {
      * @return true if the list contains the Client and false if it doesn't.
      */
 
-    public boolean listContain(ClientRegistration cr){
-        if(this.clientRegistrationList.contains(cr)){
+    public boolean listContain(Client cr){
+        if(this.clientList.contains(cr)){
             return true;
         } else {
             return false;
@@ -69,8 +69,8 @@ public class ClientRegistrationStore {
      * @return the saving of an instance of a Client.
      */
 
-    public boolean saveClientRegistration(){
-        if(validateClientRegistration(this.cr)){
+    public boolean saveClient(){
+        if(validateClient(this.cr)){
             listAdd(cr);
             return true;
         } else {
@@ -86,8 +86,8 @@ public class ClientRegistrationStore {
      * @return the addition of the Client to the list.
      */
 
-    public boolean listAdd(ClientRegistration cr){
-        clientRegistrationList.add(cr);
+    public boolean listAdd(Client cr){
+        clientList.add(cr);
         return true;
     }
 
@@ -98,8 +98,8 @@ public class ClientRegistrationStore {
      * @return the element previously at the specified position.
      */
 
-    public ClientRegistration getClientRegistration(int i) {
-        return clientRegistrationList.get(i);
+    public Client getClient(int i) {
+        return clientList.get(i);
     }
 
     /**
@@ -108,7 +108,19 @@ public class ClientRegistrationStore {
      * @return the Client requested.
      */
 
-    public ClientRegistration getCr() {
+    public Client getCr() {
         return cr;
+    }
+
+
+    public boolean checkExistingClient(String citizenCardNumber){
+
+        for (Client client : clientList){
+            if (client.getCitizenCardNumber().equalsIgnoreCase(citizenCardNumber)) {
+                return true;
+            }
+
+        }
+        return false;
     }
 }

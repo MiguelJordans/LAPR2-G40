@@ -1,19 +1,21 @@
 package app.controller;
 
-import app.domain.model.ClientRegistrationStore;
+import app.domain.model.ClientStore;
 import app.domain.model.Company;
 
+import java.util.Date;
 
-public class ClientRegistrationController {
+
+public class ClientController {
 
     private Company company;
-    private ClientRegistrationStore store;
+    private ClientStore store;
 
     /**
      * Creates an empty Client controller.
      */
 
-    public ClientRegistrationController() {
+    public ClientController() {
         this(App.getInstance().getCompany());
     }
 
@@ -23,7 +25,7 @@ public class ClientRegistrationController {
      * @param company - the company that administrates the system.
      */
 
-    public ClientRegistrationController(Company company) {
+    public ClientController(Company company) {
         this.company = company;
     }
 
@@ -40,9 +42,9 @@ public class ClientRegistrationController {
      * @param nhsNumber - the Client's NHS number.
      */
 
-    public void CreateClientRegistration(String name, String email, String sex, String birthdate, String citizenCardNumber, String phoneNumber, String tinNumber, String nhsNumber) {
-        store = company.getClientRegistrationStore();
-        store.CreateClientRegistration(name, email, sex, birthdate, citizenCardNumber, phoneNumber, tinNumber, nhsNumber);
+    public void CreateClient(String name, String email, String sex, Date birthdate, String citizenCardNumber, String phoneNumber, String tinNumber, String nhsNumber) {
+        store = company.getClientStore();
+        store.CreateClient(name, email, sex, birthdate, citizenCardNumber, phoneNumber, tinNumber, nhsNumber);
     }
 
     /**
@@ -61,8 +63,8 @@ public class ClientRegistrationController {
      * @return the saving of an instance of a Client.
      */
 
-    public boolean saveClientRegistration() {
-        return this.store.saveClientRegistration();
+    public boolean saveClient() {
+        return this.store.saveClient();
     }
 
 }

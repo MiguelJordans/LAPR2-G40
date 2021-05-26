@@ -892,7 +892,7 @@ import java.util.regex.Pattern;
 
 >package app.ui.console;
 >
->import app.controller.ClientRegistrationController;
+>import app.controller.ClientController;
 >import app.ui.console.utils.Utils;
 >
 >
