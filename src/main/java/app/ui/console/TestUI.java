@@ -115,7 +115,7 @@ public class TestUI {
                 List<String> parameterName = new ArrayList<>();
                 String name, select;
 
-                for (int r = 0; r < n; r++) {
+                for (int r = 0; r < catNumber; r++) {
                     for (Parameter par : parameterList) {
                         if (par.getCat().getName().equals(categories[r])) {
                             parameterName.add(par.getName());
@@ -164,7 +164,7 @@ public class TestUI {
                 System.out.println("Test Type: " + testType.getDescription());
                 System.out.print("Categories: ");
 
-                for (int c = 0; c < n; c++) {
+                for (int c = 0; c < catNumber; c++) {
                     System.out.print(categories[c] + "; ");
                 }
                 System.out.println();

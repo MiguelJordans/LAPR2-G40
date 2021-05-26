@@ -1,13 +1,12 @@
 package app.domain.model;
 
-<<<<<<< HEAD
 import java.util.ArrayList;
 import java.util.List;
 
 public class TestStore {
 
     private final List<Test> testList = new ArrayList<>();
-    private static int numberTests = 1;
+    private static int testNumber = 1;
 
     public List<Test> getTests() {
         return testList;
@@ -39,7 +38,7 @@ public class TestStore {
     public boolean saveTest(Test test){
         if(validateTest(test)){
             testList.add(test);
-            numberTests++;
+            testNumber++;
             return true;
         }
         return false;
@@ -48,7 +47,7 @@ public class TestStore {
     public String generateId() {
         String id;
 
-        id = String.format("%012d", numberTests);
+        id = String.format("%012d", testNumber);
         return id;
     }
 
@@ -60,8 +59,7 @@ public class TestStore {
         }
         return false;
     }
-
-=======
+    
 import java.time.LocalDate;
 import java.util.HashSet;
 
@@ -90,5 +88,4 @@ public class TestStore {
         }
         return true;
     }
->>>>>>> ab89394ea738b46871e63957f85ce32e10a26497
 }

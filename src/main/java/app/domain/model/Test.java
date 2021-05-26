@@ -1,7 +1,8 @@
 package app.domain.model;
 
-<<<<<<< HEAD
 import org.apache.commons.lang3.StringUtils;
+
+import java.time.LocalDate;
 
 public class Test {
 
@@ -47,7 +48,6 @@ public class Test {
         REGISTERED, SAMPLECOLLECTED, ANALYZED, DIAGNOSED, VALIDATED
     }
 
-=======
 import java.time.LocalDate;
 
 public class Test {
@@ -60,5 +60,4 @@ public class Test {
         // this.validationDate=date;
         return true;
     }
->>>>>>> ab89394ea738b46871e63957f85ce32e10a26497
 }
