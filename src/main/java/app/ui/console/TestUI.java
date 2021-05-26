@@ -44,22 +44,7 @@ public class TestUI implements Runnable {
             System.out.println("NECESSARY DATA: ");
             System.out.println("--------------------");
 
-
-            System.out.println();
-            ttn = Utils.showAndSelectOne(testTypeDescription, "Test Type List").toString();
-            for(TestType tt : testTypesList) {
-                if(tt.getDescription().equalsIgnoreCase(ttn)){
-                    testType = tt;
-                }
-            }
-            List<ParameterCategory> categoriesList = new ArrayList<>();
-            for(int p=0;p < testType.getPP().getParameterCategoryList().size();p++) {
-                categoriesList.add(testType.getCat()[p]);
-            }
-            List<Parameter> parameterList = testController.getParameterStore();
-
             boolean exception = false;
-
 
             do {
 
@@ -234,13 +219,6 @@ public class TestUI implements Runnable {
             System.out.println("ERROR: Parameter list and Parameter Category list are empty");
         }
     }
-<<<<<<< HEAD
 }
 
  */
-=======
-<<<<<<< HEAD
-
-}*/
-
->>>>>>> da1a645666dd4f441e5604e08cc8080f327eaad1

@@ -3,7 +3,7 @@ package app.domain.model;
 public class TestParameterResult {
 
     String paramID;
-     double result;
+    double result;
     private RefValue refValue;
 
     public TestParameterResult(String paramID, double result) {

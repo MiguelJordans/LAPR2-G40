@@ -1,4 +1,4 @@
-/*package app.controller;
+package app.controller;
 
 import app.domain.model.*;
 
@@ -61,4 +61,4 @@ public class TestController {
     public boolean saveTest() {
         return testStore.saveTest(test);
     }
-}*/
+}

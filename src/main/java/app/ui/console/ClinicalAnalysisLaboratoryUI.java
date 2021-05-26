@@ -52,18 +52,11 @@ public class ClinicalAnalysisLaboratoryUI implements Runnable {
                         String name = Utils.readLineFromConsole("Please enter the name of the Clinical Analysis Laboratory");
                         String address = Utils.readLineFromConsole("Please enter the address of the Clinical Analysis Laboratory");
                         String phoneNumber = Utils.readLineFromConsole("Please enter the phone number of the Clinical Analysis Laboratory");
-                        String tinNumber = Utils.readLineFromConsole("Please enter the TIN number of the Clinical Analysis Laboratory");
+                        String TINnumber = Utils.readLineFromConsole("Please enter the TIN number of the Clinical Analysis Laboratory");
 
-<<<<<<< HEAD
-                        this.ctrl.CreateClinicalAnalysisLaboratory(laboratoryID, name, address, phoneNumber, tinNumber);
-                    } catch (Exception e){
-                        e.printStackTrace();
-                        System.out.println("Incorrect input of data (an error has occurred)! Please, try again.");
-=======
                         this.ctrl.CreateClinicalAnalysisLaboratory(laboratoryID, name, address, phoneNumber, TINnumber,ttList);
                     } catch (Exception e){
                         System.out.println("Incorrect input of data (an error has occured)! Please, try again.");
->>>>>>> da1a645666dd4f441e5604e08cc8080f327eaad1
                         exception = true;
                     }
                 } while (exception);

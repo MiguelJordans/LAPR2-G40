@@ -13,30 +13,21 @@ public class TestType {
 
     private List<ParameterCategory> pcList;
 
-<<<<<<< HEAD
-    private String ExternalModule;
-=======
     private State state;
     private Selection selection;
->>>>>>> da1a645666dd4f441e5604e08cc8080f327eaad1
+
+    private String ExternalModule;
 
     /**
      * Constructs an instance of Test Type
      *
-     * @param testCode         the Test Type's test code
-     * @param description      the Test Type's description
+     * @param testCode the Test Type's test code
+     * @param description the Test Type's description
      * @param collectingMethod the Test Type's collecting method
-<<<<<<< HEAD
-     * @param ppStore          the Test Type's category list
-     */
-
-    public TestType(String testCode, String description, String collectingMethod, ParameterCategoryStore ppStore) {
-=======
      * @param pcList the Test Type's category list
      */
 
     public TestType(String testCode, String description, String collectingMethod, List<ParameterCategory> pcList) {
->>>>>>> da1a645666dd4f441e5604e08cc8080f327eaad1
 
         checkTestCode(testCode);
         checkCollectingMethod(collectingMethod);
@@ -105,13 +96,8 @@ public class TestType {
      * @param pcList the Test Type's categories
      */
 
-<<<<<<< HEAD
-    public void checkCategoriesList(ParameterCategoryStore ppStore) {
-        if (ppStore.list.isEmpty()) {
-=======
     public void checkCategoriesList(List<ParameterCategory> pcList){
         if(pcList.isEmpty()) {
->>>>>>> da1a645666dd4f441e5604e08cc8080f327eaad1
             throw new IllegalArgumentException("Categories not valid! List is null!");
         }
     }
@@ -203,22 +189,6 @@ public class TestType {
         this.pcList = pcList;
     }
 
-    public String getExternalModule() {
-        return ExternalModule;
-    }
-
-    public String setExternalModule(String testCode) {
-
-        if(testCode.equals("BL000")) {
-            return Constants.EM_REFERENCE_API;
-        }
-
-        if(testCode.equals("COV19")) {
-            return Constants.COVID_REFERENCE_API;
-        }
-        return null;
-    }
-
     /**
      * Returns the textual description of the Test Type in the format : Test Code, Description, CollectingMethod.
      *
@@ -228,14 +198,12 @@ public class TestType {
     @Override
     public String toString() {
         return
-                " Test Code: " + testCode +
-                        ", Description:" + description +
-                        ", CollectingMethod:" + collectingMethod;
+                " Test Code: " + testCode  +
+                ", Description:" + description +
+                ", CollectingMethod:" + collectingMethod;
 
     }
 
-<<<<<<< HEAD
-=======
     enum State{
         CREATED,
         SAMPLE_COLLECTED,
@@ -312,5 +280,21 @@ public class TestType {
 
     }
 
->>>>>>> da1a645666dd4f441e5604e08cc8080f327eaad1
+    public String getExternalModule() {
+        return ExternalModule;
+    }
+
+    public String setExternalModule(String testCode) {
+
+        if(testCode.equals("BL000")) {
+            return Constants.EM_REFERENCE_API;
+        }
+
+        if(testCode.equals("COV19")) {
+            return Constants.COVID_REFERENCE_API;
+        }
+        return null;
+    }
+
+
 }

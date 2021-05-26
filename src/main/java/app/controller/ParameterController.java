@@ -33,7 +33,7 @@ public class ParameterController {
      * @param description the parameter's description
      * @param code the parameter's code
      * @param name the parameter's name
-     * @param pcStore the parameter's category list
+     * @param pcList the parameter's category list
      */
 
     public void CreateParameter(String description,String code,String name,List<ParameterCategory> pcList){

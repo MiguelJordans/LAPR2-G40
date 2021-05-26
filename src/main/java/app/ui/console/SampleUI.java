@@ -46,7 +46,7 @@ public class SampleUI implements Runnable {
 
                     if (tt == null) {
                         List<MenuItem> options = new ArrayList<MenuItem>();
-                        options.add(new MenuItem("DN", new AdminUI()));
+                        options.add(new MenuItem("DN", new MedicalLabTechnicianUI()));
                         options.get(0).run();
                     }
 
