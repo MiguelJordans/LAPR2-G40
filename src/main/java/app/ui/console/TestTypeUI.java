@@ -7,30 +7,45 @@ import app.domain.model.ParameterCategoryStore;
 import app.domain.model.ParameterStore;
 import app.ui.console.utils.Utils;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class TestTypeUI implements Runnable {
 
     private TestTypeController ctrl;
     private ParameterCategoryStore pcStore;
+    private List<ParameterCategory> pcList;
 
     public TestTypeUI() {
         this.ctrl = new TestTypeController();
         this.pcStore = new ParameterCategoryStore();
+        this.pcList = new ArrayList<>();
     }
 
     @Override
     public void run() {
 
         boolean count = true;
-
+        boolean leave = false;
 
         if (this.pcStore.getParameterCategoryList() == null || this.pcStore.getParameterCategoryList().isEmpty()) {
             System.out.println("The list is empty! Please, try adding at least one parameter in order to create the laboratory.");
         } else {
             do {
                 boolean exception = false;
+                do {
 
                     ParameterCategory pc = (ParameterCategory) Utils.showAndSelectOne(this.pcStore.getParameterCategoryList(), "Select the category");
-                    this.pcStore.listAdd();
+                    this.pcList.add(pc);
+
+                    if (pc == null) {
+                        List<MenuItem> options = new ArrayList<MenuItem>();
+                        options.add(new MenuItem("DN", new AdminUI()));
+                        options.get(0).run();
+                    }
+
+                    leave = Utils.confirm("Do you wish to select more categories?");
+                }while (leave);
 
                 do {
                     try {
@@ -39,8 +54,8 @@ public class TestTypeUI implements Runnable {
                         String description = Utils.readLineFromConsole("Please enter the description of the test type");
                         String testCode = Utils.readLineFromConsole("Please enter the testCode of the Test Type");
 
-                        ParameterCategoryStore pc1 = pcStore;
-                        ctrl.CreateTestType(description, testCode, collectingMethod, pc1);
+
+                        ctrl.CreateTestType(description, testCode, collectingMethod, pcList);
 
                         exception = false;
 

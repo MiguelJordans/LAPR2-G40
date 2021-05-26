@@ -143,7 +143,7 @@ public class SampleStore {
                 System.out.println("ERROR : Couldn't create the image!");
             }
 
-            String filename = "BarcodeImage_"+sm.getTr().getTestCode();
+            String filename = "BarcodeImage_"+sm.getTr().getTestCode()+"_"+sa.getBarcodeText();
 
             File outputfile = new File("Barcodes\\"+filename+".jpg");
 

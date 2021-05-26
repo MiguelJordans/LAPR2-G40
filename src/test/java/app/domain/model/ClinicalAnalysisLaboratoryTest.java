@@ -3,6 +3,9 @@ package app.domain.model;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ClinicalAnalysisLaboratoryTest {
 
     //  Gets --------------------------------------------------------------------
@@ -10,8 +13,17 @@ public class ClinicalAnalysisLaboratoryTest {
     @Test
     public void getLaboratoryID(){
 
+        List<TestType> ttList = new ArrayList<>();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE","yes","aaa",pcList);
+        ttList.add(tt);
+
         //Arrange
-        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "143 Fore St", "01492235687", "3245681253");
+        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "143 Fore St", "01492235687", "3245681253",ttList);
 
         //Act
         String expected = "LAB01";
@@ -25,8 +37,17 @@ public class ClinicalAnalysisLaboratoryTest {
     @Test
     public void getName(){
 
+        List<TestType> ttList = new ArrayList<>();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE","yes","aaa",pcList);
+        ttList.add(tt);
+
         //Arrange
-        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "143 Fore St", "01492235687", "3245681253");
+        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "143 Fore St", "01492235687", "3245681253",ttList);
 
         //Act
         String expected = "FirstCal";
@@ -40,8 +61,17 @@ public class ClinicalAnalysisLaboratoryTest {
     @Test
     public void getAddress(){
 
+        List<TestType> ttList = new ArrayList<>();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE","yes","aaa",pcList);
+        ttList.add(tt);
+
         //Arrange
-        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "143 Fore St", "01492235687", "3245681253");
+        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "143 Fore St", "01492235687", "3245681253",ttList);
 
         //Act
         String expected = "143 Fore St";
@@ -55,8 +85,17 @@ public class ClinicalAnalysisLaboratoryTest {
     @Test
     public void getPhoneNumber(){
 
+        List<TestType> ttList = new ArrayList<>();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE","yes","aaa",pcList);
+        ttList.add(tt);
+
         //Arrange
-        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "143 Fore St", "01492235687", "3245681253");
+        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "143 Fore St", "01492235687", "3245681253",ttList);
 
         //Act
         String expected = "01492235687";
@@ -70,8 +109,17 @@ public class ClinicalAnalysisLaboratoryTest {
     @Test
     public void getTinNumber(){
 
+        List<TestType> ttList = new ArrayList<>();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE","yes","aaa",pcList);
+        ttList.add(tt);
+
         //Arrange
-        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "143 Fore St", "01492235687", "3245681253");
+        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "143 Fore St", "01492235687", "3245681253",ttList);
 
         //Act
         String expected = "3245681253";
@@ -88,8 +136,17 @@ public class ClinicalAnalysisLaboratoryTest {
     @Test
     public void setLaboratoryID() {
 
+        List<TestType> ttList = new ArrayList<>();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE","yes","aaa",pcList);
+        ttList.add(tt);
+
         //Arrange
-        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "143 Fore St", "01492235687", "3245681253");
+        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "143 Fore St", "01492235687", "3245681253",ttList);
 
         //Act
         String expected = "LAB02";
@@ -103,8 +160,17 @@ public class ClinicalAnalysisLaboratoryTest {
     @Test
     public void setName() {
 
+        List<TestType> ttList = new ArrayList<>();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE","yes","aaa",pcList);
+        ttList.add(tt);
+
         //Arrange
-        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "3245681253");
+        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "3245681253",ttList);
 
         //Act
         String expected = "SecondCal";
@@ -118,8 +184,17 @@ public class ClinicalAnalysisLaboratoryTest {
     @Test
     public void setAddress() {
 
+        List<TestType> ttList = new ArrayList<>();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE","yes","aaa",pcList);
+        ttList.add(tt);
+
         //Arrange
-        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "3245681253");
+        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "3245681253",ttList);
 
         //Act
         String expected = "3426 Stone Street";
@@ -133,8 +208,17 @@ public class ClinicalAnalysisLaboratoryTest {
     @Test
     public void setPhoneNumber() {
 
+        List<TestType> ttList = new ArrayList<>();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE","yes","aaa",pcList);
+        ttList.add(tt);
+
         //Arrange
-        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "3245681253");
+        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "3245681253",ttList);
 
         //Act
         String expected = "08546329165";
@@ -148,8 +232,17 @@ public class ClinicalAnalysisLaboratoryTest {
     @Test
     public void setTinNumber() {
 
+        List<TestType> ttList = new ArrayList<>();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE","yes","aaa",pcList);
+        ttList.add(tt);
+
         //Arrange
-        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "3245681253");
+        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "3245681253",ttList);
 
         //Act
         String expected = "7426591354";
@@ -163,7 +256,16 @@ public class ClinicalAnalysisLaboratoryTest {
     @Test(expected = IllegalArgumentException.class)
     public void ClinicalAnalysisLaboratoryNull() {
 
-        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory(null, null,null,null,null);
+        List<TestType> ttList = new ArrayList<>();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE","yes","aaa",pcList);
+        ttList.add(tt);
+
+        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory(null, null,null,null,null,null);
     }
 
 
@@ -172,25 +274,61 @@ public class ClinicalAnalysisLaboratoryTest {
     @Test
     public void ValidLaboratoryID() {
 
-        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "3245681253");
+        List<TestType> ttList = new ArrayList<>();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE","yes","aaa",pcList);
+        ttList.add(tt);
+
+        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "3245681253",ttList);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void checkLaboratoryIDBlank() {
 
-        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory(" ", "FirstCal", "3425 Stone Street", "01492235687", "3245681253");
+        List<TestType> ttList = new ArrayList<>();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE","yes","aaa",pcList);
+        ttList.add(tt);
+
+        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory(" ", "FirstCal", "3425 Stone Street", "01492235687", "3245681253",ttList);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void checkLaboratoryIDNotAlphanumeric() {
 
-        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("1a?.", "FirstCal", "3425 Stone Street", "01492235687", "3245681253");
+        List<TestType> ttList = new ArrayList<>();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE","yes","aaa",pcList);
+        ttList.add(tt);
+
+        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("1a?.", "FirstCal", "3425 Stone Street", "01492235687", "3245681253",ttList);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void checkLaboratoryIDTooManyChars() {
 
-        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("12aB8c", "FirstCal", "3425 Stone Street", "01492235687", "3245681253");
+        List<TestType> ttList = new ArrayList<>();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE","yes","aaa",pcList);
+        ttList.add(tt);
+
+        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("12aB8c", "FirstCal", "3425 Stone Street", "01492235687", "3245681253",ttList);
     }
 
 
@@ -199,43 +337,106 @@ public class ClinicalAnalysisLaboratoryTest {
     @Test
     public void ValidName() {
 
-        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "3245681253");
+        List<TestType> ttList = new ArrayList<>();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE","yes","aaa",pcList);
+        ttList.add(tt);
+
+        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "3245681253",ttList);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void checkNameBlank() {
 
-        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", " ", "3425 Stone Street", "01492235687", "3245681253");
+        List<TestType> ttList = new ArrayList<>();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE","yes","aaa",pcList);
+        ttList.add(tt);
+
+        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", " ", "3425 Stone Street", "01492235687", "3245681253",ttList);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void checkNameTooManyChars() {
 
-        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstClinicalAnalysisLaboratory", "3425 Stone Street", "01492235687", "3245681253");
+        List<TestType> ttList = new ArrayList<>();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE","yes","aaa",pcList);
+        ttList.add(tt);
+
+        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstClinicalAnalysisLaboratory", "3425 Stone Street", "01492235687", "3245681253",ttList);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void checkNameNotOnlyLetters1() {
 
-        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "651fvs6DN", "3425 Stone Street", "01492235687", "3245681253");
+        List<TestType> ttList = new ArrayList<>();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE","yes","aaa",pcList);
+        ttList.add(tt);
+
+        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "651fvs6DN", "3425 Stone Street", "01492235687", "3245681253",ttList);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void checkNameNotOnlyLetters2() {
 
-        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "++++", "3425 Stone Street", "01492235687", "3245681253");
+        List<TestType> ttList = new ArrayList<>();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE","yes","aaa",pcList);
+        ttList.add(tt);
+
+        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "++++", "3425 Stone Street", "01492235687", "3245681253",ttList);
     }
 
     @Test
     public void checkNameNotOnlyLetters3() {
 
-        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "aaa", "3425 Stone Street", "01492235687", "3245681253");
+        List<TestType> ttList = new ArrayList<>();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE","yes","aaa",pcList);
+        ttList.add(tt);
+
+        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "aaa", "3425 Stone Street", "01492235687", "3245681253",ttList);
     }
 
     @Test
     public void checkNameNotOnlyLetters4() {
 
-        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "zzz", "3425 Stone Street", "01492235687", "3245681253");
+        List<TestType> ttList = new ArrayList<>();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE","yes","aaa",pcList);
+        ttList.add(tt);
+
+        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "zzz", "3425 Stone Street", "01492235687", "3245681253",ttList);
     }
 
 
@@ -244,19 +445,46 @@ public class ClinicalAnalysisLaboratoryTest {
     @Test
     public void ValidAddress() {
 
-        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "3245681253");
+        List<TestType> ttList = new ArrayList<>();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE","yes","aaa",pcList);
+        ttList.add(tt);
+
+        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "3245681253",ttList);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void checkAddressBlank() {
 
-        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", " ", "01492235687", "3245681253");
+        List<TestType> ttList = new ArrayList<>();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE","yes","aaa",pcList);
+        ttList.add(tt);
+
+        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", " ", "01492235687", "3245681253",ttList);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void checkAddressTooManyChars() {
 
-        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "342892491625416825 Stone Street", "01492235687", "3245681253");
+        List<TestType> ttList = new ArrayList<>();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE","yes","aaa",pcList);
+        ttList.add(tt);
+
+        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "342892491625416825 Stone Street", "01492235687", "3245681253",ttList);
     }
 
 
@@ -265,55 +493,136 @@ public class ClinicalAnalysisLaboratoryTest {
     @Test
     public void ValidPhoneNumber() {
 
-        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "3245681253");
+        List<TestType> ttList = new ArrayList<>();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE","yes","aaa",pcList);
+        ttList.add(tt);
+
+        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "3245681253",ttList);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void checkPhoneNumberBlank() {
 
-        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", " ", "3245681253");
+        List<TestType> ttList = new ArrayList<>();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE","yes","aaa",pcList);
+        ttList.add(tt);
+
+        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", " ", "3245681253",ttList);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void checkPhoneNumberTooManyChars() {
 
-        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "014922356870", "3245681253");
+        List<TestType> ttList = new ArrayList<>();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE","yes","aaa",pcList);
+        ttList.add(tt);
+
+        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "014922356870", "3245681253",ttList);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void checkPhoneNumberNotOnlyNumbers1() {
 
-        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01422dqas35", "3245681253");
+        List<TestType> ttList = new ArrayList<>();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE","yes","aaa",pcList);
+        ttList.add(tt);
+
+        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01422dqas35", "3245681253",ttList);
     }
 
     @Test
     public void checkPhoneNumberNotOnlyNumbers2() {
 
-        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "+++++++++++", "3245681253");
+        List<TestType> ttList = new ArrayList<>();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE","yes","aaa",pcList);
+        ttList.add(tt);
+
+        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "+++++++++++", "3245681253",ttList);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void checkPhoneNumberNotOnlyNumbers3() {
 
-        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "aaaaaaaaaaa", "3245681253");
+        List<TestType> ttList = new ArrayList<>();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE","yes","aaa",pcList);
+        ttList.add(tt);
+
+        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "aaaaaaaaaaa", "3245681253",ttList);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void checkPhoneNumberNotOnlyNumbers4() {
 
-        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "zzzzzzzzzzz", "3245681253");
+        List<TestType> ttList = new ArrayList<>();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE","yes","aaa",pcList);
+        ttList.add(tt);
+
+        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "zzzzzzzzzzz", "3245681253",ttList);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void checkPhoneNumberNotOnlyNumbers5() {
 
-        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "AAAAAAAAAAA", "3245681253");
+        List<TestType> ttList = new ArrayList<>();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE","yes","aaa",pcList);
+        ttList.add(tt);
+
+        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "AAAAAAAAAAA", "3245681253",ttList);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void checkPhoneNumberNotOnlyNumbers6() {
 
-        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "ZZZZZZZZZZZ", "3245681253");
+        List<TestType> ttList = new ArrayList<>();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE","yes","aaa",pcList);
+        ttList.add(tt);
+
+        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "ZZZZZZZZZZZ", "3245681253",ttList);
     }
 
 
@@ -322,55 +631,136 @@ public class ClinicalAnalysisLaboratoryTest {
     @Test
     public void ValidTinNumber() {
 
-        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "3245681253");
+        List<TestType> ttList = new ArrayList<>();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE","yes","aaa",pcList);
+        ttList.add(tt);
+
+        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "3245681253",ttList);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void checkTinNumberBlank() {
 
-        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "014922356870", " ");
+        List<TestType> ttList = new ArrayList<>();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE","yes","aaa",pcList);
+        ttList.add(tt);
+
+        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "014922356870", " ",ttList);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void checkTinNumberTooManyChars() {
 
-        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "32456812530");
+        List<TestType> ttList = new ArrayList<>();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE","yes","aaa",pcList);
+        ttList.add(tt);
+
+        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "32456812530",ttList);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void checkTinNumberNotOnlyNumbers1() {
 
-        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "326erFC813");
+        List<TestType> ttList = new ArrayList<>();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE","yes","aaa",pcList);
+        ttList.add(tt);
+
+        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "326erFC813",ttList);
     }
 
     @Test
     public void checkTinNumberNotOnlyNumbers2() {
 
-        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "??????????");
+        List<TestType> ttList = new ArrayList<>();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE","yes","aaa",pcList);
+        ttList.add(tt);
+
+        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "??????????",ttList);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void checkTinNumberNotOnlyNumbers3() {
 
-        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "aaaaaaaaaa");
+        List<TestType> ttList = new ArrayList<>();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE","yes","aaa",pcList);
+        ttList.add(tt);
+
+        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "aaaaaaaaaa",ttList);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void checkTinNumberNotOnlyNumbers4() {
 
-        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "AAAAAAAAAA");
+        List<TestType> ttList = new ArrayList<>();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE","yes","aaa",pcList);
+        ttList.add(tt);
+
+        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "AAAAAAAAAA",ttList);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void checkTinNumberNotOnlyNumbers5() {
 
-        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "zzzzzzzzzz");
+        List<TestType> ttList = new ArrayList<>();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE","yes","aaa",pcList);
+        ttList.add(tt);
+
+        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "zzzzzzzzzz",ttList);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void checkTinNumberNotOnlyNumbers6() {
 
-        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "ZZZZZZZZZZ");
+        List<TestType> ttList = new ArrayList<>();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE","yes","aaa",pcList);
+        ttList.add(tt);
+
+        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "ZZZZZZZZZZ",ttList);
     }
 
 
@@ -379,8 +769,17 @@ public class ClinicalAnalysisLaboratoryTest {
     @Test
     public void checkClinicalAnalysisLaboratoryToString() {
 
+        List<TestType> ttList = new ArrayList<>();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE","yes","aaa",pcList);
+        ttList.add(tt);
+
         //Arrange
-        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "3245681253");
+        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "3245681253",ttList);
 
         //Act
         String expected = "LaboratoryID: " + "LAB01" + ", Name: " + "FirstCal" + ", Address: " + "3425 Stone Street" + ", Phone number: " + "01492235687" + ", TIN number: " + "3245681253";

@@ -12,17 +12,11 @@ public class SampleAdapter {
 
     private Barcode barcode;
     private BufferedImage barcodeImage;
-
-    private final double MIN = 10000000000l; //The number generated must have 12 digits to be in the UPC format
-    private final double MAX = 99999999999l;
-
+    private String barcodeText;
 
     public SampleAdapter() {
 
-        String barcodeText = generateNumber();
-
-
-       // String barcodeText1 = "11111111111"; //O generate não esta a retornar um número válido
+        barcodeText = generateNumber();
 
         try {
 
@@ -56,5 +50,9 @@ public class SampleAdapter {
 
     public Barcode getBarcode() {
         return barcode;
+    }
+
+    public String getBarcodeText() {
+        return barcodeText;
     }
 }

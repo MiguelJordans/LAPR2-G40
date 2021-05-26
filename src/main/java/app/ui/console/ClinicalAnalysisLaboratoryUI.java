@@ -5,30 +5,39 @@ import app.domain.model.TestType;
 import app.domain.model.TestTypeStore;
 import app.ui.console.utils.Utils;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ClinicalAnalysisLaboratoryUI implements Runnable {
 
     private ClinicalAnalysisLaboratoryController ctrl;
     private TestTypeStore ttStore;
+    private List<TestType> ttList;
 
     public ClinicalAnalysisLaboratoryUI() {
         this.ctrl = new ClinicalAnalysisLaboratoryController();
         this.ttStore = new TestTypeStore();
+        this.ttList = new ArrayList<>();
     }
 
     @Override
     public void run() {
+
         boolean count = true;
         boolean leave = false;
+
         if (this.ttStore.getTestTypeList() == null || this.ttStore.getTestTypeList().isEmpty()) {
             System.out.println("The list is empty! Please, try adding at least one test type in order to create the laboratory.");
         } else {
             do {
                 boolean exception = false;
                 do {
+
                     TestType tt = (TestType) Utils.showAndSelectOne(this.ttStore.getTestTypeList(), "Select the test types");
-                    this.ttStore.listAdd(tt);
-                    this.ttStore.getTestTypeList().remove(tt);
+                    this.ttList.add(tt);
+
                     leave = Utils.confirm("Do you wish to select more test types?");
+
                 } while (leave);
 
                 do {
@@ -39,9 +48,8 @@ public class ClinicalAnalysisLaboratoryUI implements Runnable {
                         String phoneNumber = Utils.readLineFromConsole("Please enter the phone number of the Clinical Analysis Laboratory");
                         String TINnumber = Utils.readLineFromConsole("Please enter the TIN number of the Clinical Analysis Laboratory");
 
-                        this.ctrl.CreateClinicalAnalysisLaboratory(laboratoryID, name, address, phoneNumber, TINnumber);
+                        this.ctrl.CreateClinicalAnalysisLaboratory(laboratoryID, name, address, phoneNumber, TINnumber,ttList);
                     } catch (Exception e){
-                        e.printStackTrace();
                         System.out.println("Incorrect input of data (an error has occured)! Please, try again.");
                         exception = true;
                     }

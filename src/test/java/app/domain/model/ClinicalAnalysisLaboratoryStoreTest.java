@@ -3,6 +3,9 @@ package app.domain.model;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ClinicalAnalysisLaboratoryStoreTest {
 
     @Test
@@ -12,9 +15,18 @@ public class ClinicalAnalysisLaboratoryStoreTest {
     @Test
     public void validateClinicalAnalysisLaboratory() {
 
+        List<TestType> ttList = new ArrayList<>();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE","yes","aaa",pcList);
+        ttList.add(tt);
+
         //Arrange
         ClinicalAnalysisLaboratoryStore store = new ClinicalAnalysisLaboratoryStore();
-        ClinicalAnalysisLaboratory cal = store.CreateClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "3245681253");
+        ClinicalAnalysisLaboratory cal = store.CreateClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "3245681253",ttList);
 
         //Act
         boolean expected = true;
@@ -27,9 +39,18 @@ public class ClinicalAnalysisLaboratoryStoreTest {
     @Test
     public void listContain() {
 
+        List<TestType> ttList = new ArrayList<>();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE","yes","aaa",pcList);
+        ttList.add(tt);
+
         //Arrange
         ClinicalAnalysisLaboratoryStore store = new ClinicalAnalysisLaboratoryStore();
-        ClinicalAnalysisLaboratory cal = store.CreateClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "3245681253");
+        ClinicalAnalysisLaboratory cal = store.CreateClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "3245681253",ttList);
         store.listAdd(cal);
 
         //Act
@@ -43,9 +64,18 @@ public class ClinicalAnalysisLaboratoryStoreTest {
     @Test
     public void saveClinicalAnalysisLaboratory() {
 
+        List<TestType> ttList = new ArrayList<>();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE","yes","aaa",pcList);
+        ttList.add(tt);
+
         //Arrange
         ClinicalAnalysisLaboratoryStore store = new ClinicalAnalysisLaboratoryStore();
-        ClinicalAnalysisLaboratory cal = store.CreateClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "3245681253");
+        ClinicalAnalysisLaboratory cal = store.CreateClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "3245681253",ttList);
 
         //Act
         boolean expected = true;
@@ -58,9 +88,18 @@ public class ClinicalAnalysisLaboratoryStoreTest {
     @Test
     public void listAdd() {
 
+        List<TestType> ttList = new ArrayList<>();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE","yes","aaa",pcList);
+        ttList.add(tt);
+
         //Arrange
         ClinicalAnalysisLaboratoryStore store = new ClinicalAnalysisLaboratoryStore();
-        ClinicalAnalysisLaboratory cal = store.CreateClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "3245681253");
+        ClinicalAnalysisLaboratory cal = store.CreateClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "3245681253",ttList);
 
         //Act
         boolean expected = true;
@@ -73,9 +112,18 @@ public class ClinicalAnalysisLaboratoryStoreTest {
     @Test
     public void getClinicalAnalysisLaboratory() {
 
+        List<TestType> ttList = new ArrayList<>();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE","yes","aaa",pcList);
+        ttList.add(tt);
+
         //Arrange
         ClinicalAnalysisLaboratoryStore store = new ClinicalAnalysisLaboratoryStore();
-        ClinicalAnalysisLaboratory cal = store.CreateClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "3245681253");
+        ClinicalAnalysisLaboratory cal = store.CreateClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "3245681253",ttList);
         store.listAdd(cal);
 
         //Act
@@ -89,9 +137,18 @@ public class ClinicalAnalysisLaboratoryStoreTest {
     @Test
     public void getCal() {
 
+        List<TestType> ttList = new ArrayList<>();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE","yes","aaa",pcList);
+        ttList.add(tt);
+
         //Arrange
         ClinicalAnalysisLaboratoryStore store = new ClinicalAnalysisLaboratoryStore();
-        ClinicalAnalysisLaboratory cal = store.CreateClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "3245681253");
+        ClinicalAnalysisLaboratory cal = store.CreateClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "3245681253",ttList);
 
         //Act
         ClinicalAnalysisLaboratory expected = cal;

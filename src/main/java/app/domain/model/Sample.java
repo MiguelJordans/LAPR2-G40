@@ -18,12 +18,12 @@ public class Sample {
     }
 
     public void checkTest(TestType tr){
-        if(tr.equals(null)) throw new IllegalArgumentException("Test is null! Please choose a test that has atrributes!");
+        if(tr==null||tr.equals(null)) throw new NullPointerException("Test is null! Please choose a test that has atrributes!");
 
     }
 
     public void checkBarcode(Barcode barcode){
-        if (barcode.equals(null)) throw  new IllegalArgumentException("Barcode is null! Please verify the creation of the barcode!");
+        if (barcode==null||barcode.equals(null)) throw new NullPointerException("Barcode is null! Please verify the creation of the barcode!");
     }
 
     public Barcode getBarcode() {

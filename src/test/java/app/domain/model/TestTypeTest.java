@@ -2,16 +2,20 @@ package app.domain.model;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class TestTypeTest {
 
     @Test
     public void checkParameterToString1() {
 
-        ParameterCategoryStore pcStore = new ParameterCategoryStore();
-        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcStore.listAdd();
+        List<ParameterCategory> pcList = new ArrayList<>();
 
-        TestType tt = new TestType("1abcE","yes","aaa",pcStore);
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE","yes","aaa",pcList);
 
         String expected = " Test Code: " + "1abcE"  +
                 ", Description:" + "yes" +
@@ -23,14 +27,16 @@ public class TestTypeTest {
 
     }
 
+
     @Test
     public void checkParameterToString2() {
 
-        ParameterCategoryStore pcStore = new ParameterCategoryStore();
-        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcStore.listAdd();
+        List<ParameterCategory> pcList = new ArrayList<>();
 
-        TestType tt = new TestType("1111","23232s","aaa42342",pcStore);
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1111","23232s","aaa42342",pcList);
 
         String expected = " Test Code: " + "1111"  +
                 ", Description:" + "23232s" +
@@ -45,12 +51,12 @@ public class TestTypeTest {
     @Test
     public void setTestCode1(){
 
-        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+        List<ParameterCategory> pcList = new ArrayList<>();
 
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcStore.listAdd();
+        pcList.add(pc);
 
-        TestType tt = new TestType("1111","23232s","aaa42342",pcStore);
+        TestType tt = new TestType("1111","23232s","aaa42342",pcList);
 
         String expected ="1abcd";
         tt.setTestCode(expected);
@@ -62,8 +68,12 @@ public class TestTypeTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void setTestCode2(){
-        ParameterCategoryStore pcStore = new ParameterCategoryStore();
-        TestType tt = new TestType("1111","23232s","aaa42342",pcStore);
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1111","23232s","aaa42342",pcList);
 
         String expected ="1SDASDASDASDA";
         tt.setTestCode(expected);
@@ -76,11 +86,12 @@ public class TestTypeTest {
     @Test
     public void setDescription1(){
 
-        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+        List<ParameterCategory> pcList = new ArrayList<>();
 
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcStore.listAdd();
-        TestType tt = new TestType("1111","23232s","aaa42342",pcStore);
+        pcList.add(pc);
+
+        TestType tt = new TestType("1111","23232s","aaa42342",pcList);
 
         String expected ="1abcd";
         tt.setDescription(expected);
@@ -92,8 +103,12 @@ public class TestTypeTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void setDescription2(){
-        ParameterCategoryStore pcStore = new ParameterCategoryStore();
-        TestType tt = new TestType("1111","23232s","aaa42342",pcStore);
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1111","23232s","aaa42342",pcList);
 
         String expected ="1abAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAcd";
         tt.setDescription(expected);
@@ -106,10 +121,12 @@ public class TestTypeTest {
     @Test
     public void setCollectingMethod1(){
 
-        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcStore.listAdd();
-        TestType tt = new TestType("1111","23232s","aaa42342",pcStore);
+        pcList.add(pc);
+
+        TestType tt = new TestType("1111","23232s","aaa42342",pcList);
 
         String expected ="aaaaaaaa";
         tt.setCollectingMethod(expected);
@@ -121,8 +138,12 @@ public class TestTypeTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void setCollectingMethod2(){
-        ParameterCategoryStore pcStore = new ParameterCategoryStore();
-        TestType tt = new TestType("1111","23232s","aaa42342",pcStore);
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1111","23232s","aaa42342",pcList);
 
         String expected ="aaaaaASDASDASDASDASDASDASDASDASDASDAaaa";
         tt.setCollectingMethod(expected);
@@ -135,73 +156,99 @@ public class TestTypeTest {
     @Test(expected = IllegalArgumentException.class)
     public void checkTestCodeNotAlphaNumeric1() {
 
-        ParameterCategoryStore pcStore = new ParameterCategoryStore();
-        TestType tt = new TestType("+++","23232s","aaa42342",pcStore);
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("+++","23232s","aaa42342",pcList);
 
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void checkTestCodeNotAlphaNumeric2() {
 
-        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+        List<ParameterCategory> pcList = new ArrayList<>();
 
-        TestType tt = new TestType("...","23232s","aaa42342",pcStore);
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("+...","23232s","aaa42342",pcList);
 
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void checkTestCodeTooManyChars() {
 
-        ParameterCategoryStore pcStore = new ParameterCategoryStore();
-        TestType tt = new TestType("11aaaaaa11","23232s","aaa42342",pcStore);
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+        TestType tt = new TestType("11aaaaaa11","23232s","aaa42342",pcList);
 
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void checkTestCodeTooManyChars2() {
 
-        ParameterCategoryStore pcStore = new ParameterCategoryStore();
-        TestType tt = new TestType("111asdasdasdas1","23232s","aaa42342",pcStore);
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+        TestType tt = new TestType("111asdasdasdas1","23232s","aaa42342",pcList);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void checkTestCodeBlank() {
 
-        ParameterCategoryStore pcStore = new ParameterCategoryStore();
-        TestType tt = new TestType("","23232s","aaa42342",pcStore);
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+        TestType tt = new TestType("","23232s","aaa42342",pcList);
 
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void checkCollectingMethodTooManyChars1() {
 
-        ParameterCategoryStore pcStore = new ParameterCategoryStore();
-        TestType tt = new TestType("1111","23232s","aaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA42342",pcStore);
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+        TestType tt = new TestType("1111","23232s","aaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA42342",pcList);
 
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void checkCollectingMethodTooManyChars2() {
 
-        ParameterCategoryStore pcStore = new ParameterCategoryStore();
-        TestType tt = new TestType("1111","23232s","aaaAAAAAAAAA1231231231231231AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA42342",pcStore);
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+        TestType tt = new TestType("1111","23232s","aaaAAAAAAAAA1231231231231231AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA42342",pcList);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void checkCollectingMethodBlank() {
 
-        ParameterCategoryStore pcStore = new ParameterCategoryStore();
-        TestType tt = new TestType("1111","23232s","",pcStore);
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+        TestType tt = new TestType("1111","23232s","",pcList);
 
     }
 
     @Test
     public void checkCollectingMethod() {
 
-        ParameterCategoryStore pcStore = new ParameterCategoryStore();
-        ParameterCategory pc = new ParameterCategory("AAAAa","aaa","aaaa");
-        pcStore.listAdd();
-        TestType tt = new TestType("1111","23232s","aaaa",pcStore);
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+        TestType tt = new TestType("1111","23232s","aaaa",pcList);
 
         Assert.assertNotNull(tt);
     }
@@ -209,40 +256,49 @@ public class TestTypeTest {
     @Test(expected = IllegalArgumentException.class)
     public void checkDescriptionTooManyChars1() {
 
-        ParameterCategoryStore pcStore = new ParameterCategoryStore();
-        TestType tt = new TestType("1111","232asdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasda32s","2",pcStore);
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+        TestType tt = new TestType("1111","232asdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasda32s","2",pcList);
 
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void checkDescriptionTooManyChars2() {
 
-        ParameterCategoryStore pcStore = new ParameterCategoryStore();
-        TestType tt = new TestType("1111","2312312312312312312312312312312312312312312312232s","2",pcStore);
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+        TestType tt = new TestType("1111","2312312312312312312312312312312312312312312312232s","2",pcList);
 
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void checkDescriptionBlank() {
 
-        ParameterCategoryStore pcStore = new ParameterCategoryStore();
-        TestType tt = new TestType("1111","","2",pcStore);
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+        TestType tt = new TestType("1111","","2",pcList);
 
     }
 
     @Test
     public void setPp() {
 
-        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+        List<ParameterCategory> pcList = new ArrayList<>();
 
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcStore.listAdd();
+        pcList.add(pc);
 
-        TestType tt = new TestType("1111","aaa","2",pcStore);
+        TestType tt = new TestType("1111","aaa","2",pcList);
 
-        ParameterCategoryStore pctt = new ParameterCategoryStore();
+        List<ParameterCategory> pctt = new ArrayList<>();
 
-        tt.setPp(pctt);
+        tt.setPcList(pctt);
 
 
     }
@@ -250,8 +306,11 @@ public class TestTypeTest {
     @Test
     public void getTestCode() {
 
-        ParameterCategoryStore pcStore = new ParameterCategoryStore();
-        TestType tt = new TestType("1111","aaaaa","2",pcStore);
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+        TestType tt = new TestType("1111","aaaaa","2",pcList);
 
         tt.getTestCode();
 
@@ -260,8 +319,11 @@ public class TestTypeTest {
     @Test
     public void setTestCode() {
 
-        ParameterCategoryStore pcStore = new ParameterCategoryStore();
-        TestType tt = new TestType("1111","aaaaa","2",pcStore);
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+        TestType tt = new TestType("1111","aaaaa","2",pcList);
 
         tt.setTestCode("dn");
 
@@ -270,8 +332,11 @@ public class TestTypeTest {
     @Test
     public void getDescription(){
 
-        ParameterCategoryStore pcStore = new ParameterCategoryStore();
-        TestType tt = new TestType("1111","aaaaa","2",pcStore);
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+        TestType tt = new TestType("1111","aaaaa","2",pcList);
 
         tt.getDescription();
 
@@ -280,8 +345,11 @@ public class TestTypeTest {
     @Test
     public void setDescription(){
 
-        ParameterCategoryStore pcStore = new ParameterCategoryStore();
-        TestType tt = new TestType("1111","aaaaa","2",pcStore);
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+        TestType tt = new TestType("1111","aaaaa","2",pcList);
 
         tt.setDescription("aaaa");
 
@@ -290,8 +358,11 @@ public class TestTypeTest {
     @Test
     public void getCollectingMethod(){
 
-        ParameterCategoryStore pcStore = new ParameterCategoryStore();
-        TestType tt = new TestType("1111","aaaaa","2",pcStore);
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+        TestType tt = new TestType("1111","aaaaa","2",pcList);
 
         tt.getCollectingMethod();
     }
@@ -299,11 +370,12 @@ public class TestTypeTest {
     @Test
     public void setCollectingMethod(){
 
-        ParameterCategoryStore pcStore = new ParameterCategoryStore();
-        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcStore.listAdd();
+        List<ParameterCategory> pcList = new ArrayList<>();
 
-        TestType tt = new TestType("1111","aaaaa","2",pcStore);
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1111","aaaaa","2",pcList);
 
         tt.setCollectingMethod("aaaa");
 
@@ -311,65 +383,73 @@ public class TestTypeTest {
 
     @Test
     public void checkCategoryList(){
-        ParameterCategoryStore pcStore = new ParameterCategoryStore();
-        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcStore.listAdd();
+        List<ParameterCategory> pcList = new ArrayList<>();
 
-        TestType tt = new TestType("1111","aaaaa","2",pcStore);
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1111","aaaaa","2",pcList);
 
     }
 
-   /* @Test(expected = IllegalArgumentException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void checkCategoryListBlank() {
 
-        ParameterCategoryStore pcStore = new ParameterCategoryStore();
-        TestType tt = new TestType("1111","aaa","2",pcStore);
+        List<ParameterCategory> pcList = new ArrayList<>();
 
-    }*/
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+
+        TestType tt = new TestType("1111","aaa","2",pcList);
+
+    }
 
     @Test
-    public void getPP(){
+    public void getPcList(){
 
-        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcStore.listAdd();
+        pcList.add(pc);
 
-        TestType tt = new TestType("1111","aaaaa","2",pcStore);
+        TestType tt = new TestType("1111","aaaaa","2",pcList);
 
-        Assert.assertNotNull(tt.getPP());
+        Assert.assertNotNull(tt.getPcList());
 
     }
 
     @Test
     public void checkCollectingMethod3(){
 
-        ParameterCategoryStore pcStore = new ParameterCategoryStore();
-        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcStore.listAdd();
+        List<ParameterCategory> pcList = new ArrayList<>();
 
-        TestType tt = new TestType("1111","aaaaa","11111111111111111111",pcStore);
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1111","aaaaa","11111111111111111111",pcList);
 
     }
 
     @Test
     public void checkCollectingMethod4(){
 
-        ParameterCategoryStore pcStore = new ParameterCategoryStore();
-        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcStore.listAdd();
+        List<ParameterCategory> pcList = new ArrayList<>();
 
-        TestType tt = new TestType("1111","aaaaa","1111111111111111111",pcStore);
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1111","aaaaa","1111111111111111111",pcList);
 
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void checkCollectingMethod5(){
 
-        ParameterCategoryStore pcStore = new ParameterCategoryStore();
-        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcStore.listAdd();
+        List<ParameterCategory> pcList = new ArrayList<>();
 
-        TestType tt = new TestType("1111","aaaaa","111111111111111111111",pcStore);
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1111","aaaaa","111111111111111111111",pcList);
 
     }
 
@@ -377,33 +457,36 @@ public class TestTypeTest {
     @Test
     public void checkDescription3(){
 
-        ParameterCategoryStore pcStore = new ParameterCategoryStore();
-        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcStore.listAdd();
+        List<ParameterCategory> pcList = new ArrayList<>();
 
-        TestType tt = new TestType("1111","111111111111111","11111111111111111111",pcStore);
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1111","111111111111111","11111111111111111111",pcList);
 
     }
 
     @Test
     public void checkDescription4(){
 
-        ParameterCategoryStore pcStore = new ParameterCategoryStore();
-        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcStore.listAdd();
+        List<ParameterCategory> pcList = new ArrayList<>();
 
-        TestType tt = new TestType("1111","11111111111111","1111111111111111111",pcStore);
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1111","11111111111111","1111111111111111111",pcList);
 
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void checkDescription5(){
 
-        ParameterCategoryStore pcStore = new ParameterCategoryStore();
-        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcStore.listAdd();
+        List<ParameterCategory> pcList = new ArrayList<>();
 
-        TestType tt = new TestType("1111","111111111111111","111111111111111111111",pcStore);
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1111","111111111111111","111111111111111111111",pcList);
 
     }
 

@@ -15,12 +15,12 @@ public class TestTypeStore {
      * @param description the Test Type's description
      * @param testCode the Test Type's test code
      * @param collectingMethod the Test Type's collecting method
-     * @param pc the Test Type's category list
+     * @param pcList the Test Type's category list
      * @return the test type created
      */
 
-    public TestType CreateTestType(String description,String testCode,String collectingMethod,ParameterCategoryStore pc){
-        return this.tt = new TestType(testCode,description,collectingMethod,pc);
+    public TestType CreateTestType(String description,String testCode,String collectingMethod,List<ParameterCategory> pcList){
+        return this.tt = new TestType(testCode,description,collectingMethod,pcList);
     }
 
     /**

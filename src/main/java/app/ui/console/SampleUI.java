@@ -3,7 +3,13 @@ package app.ui.console;
 import app.controller.SampleController;
 import app.controller.TestTypeController;
 import app.domain.model.*;
+import app.domain.shared.Constants;
 import app.ui.console.utils.Utils;
+
+import javax.swing.plaf.nimbus.State;
+import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SampleUI implements Runnable {
 
@@ -20,6 +26,9 @@ public class SampleUI implements Runnable {
 
         boolean count = true;
         boolean flag = true;
+        boolean m = false;
+
+        TestType tt = null;
 
         if (this.ttStore.getTestTypeList() == null || this.ttStore.getTestTypeList().isEmpty()) {
             System.out.println("The list is empty! Please, try adding at least one test in order to create the sample(s)!");
@@ -27,18 +36,31 @@ public class SampleUI implements Runnable {
         } else {
             do {
                 boolean exception = false;
+                do {
 
-                    TestType tt = (TestType) Utils.showAndSelectOne(this.ttStore.getTestTypeList(), "Select the test");
-                    this.ttStore.getTestTypeList().remove(tt);
+                    tt = (TestType) Utils.showAndSelectOne(this.ttStore.getTestTypeList(), "Select the test");
+
+                    if (!(tt == null))
+                        m = tt.compareState(tt.getState());
+
+                    if (tt == null) {
+                        List<MenuItem> options = new ArrayList<MenuItem>();
+                        options.add(new MenuItem("DN", new AdminUI()));
+                        options.get(0).run();
+                    }
+
+                    if (!m) {
+                        System.out.println("Please choose a valid test(sample is already collected!)");
+                    }
+
+                } while (!m);
 
                 do {
                     try {
 
                         int n = Utils.readIntegerFromConsole("Type the number of samples that you wish to create");
 
-                        ctrl.CreateSample(tt, n);
-                        ctrl.barcodeImage();
-
+                        this.ctrl.CreateSample(tt, n);
 
                         exception = false;
 
@@ -68,7 +90,9 @@ public class SampleUI implements Runnable {
 
                 }
 
+
             } while (count);
+            tt.setState("SAMPLE_COLLECTED");
         }
     }
 }

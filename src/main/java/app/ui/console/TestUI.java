@@ -1,4 +1,4 @@
-package app.ui.console;
+/*package app.ui.console;
 
 import app.controller.App;
 import app.controller.ParameterCategoryController;
@@ -71,7 +71,7 @@ public class TestUI {
                 }
             }
             List<ParameterCategory> categoriesList = new ArrayList<>();
-            for(int p=0;p < testType.getCat().length;p++) {
+            for(int p=0;p < testType.getPP().getParameterCategoryList().size();p++) {
                 categoriesList.add(testType.getCat()[p]);
             }
             List<Parameter> parameterList = testController.getParameterStore();
@@ -202,4 +202,4 @@ public class TestUI {
         }
     }
 
-}
+}*/

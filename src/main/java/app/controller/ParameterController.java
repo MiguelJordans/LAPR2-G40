@@ -36,9 +36,9 @@ public class ParameterController {
      * @param pcStore the parameter's category list
      */
 
-    public void CreateParameter(String description,String code,String name,ParameterCategoryStore pcStore){
+    public void CreateParameter(String description,String code,String name,List<ParameterCategory> pcList){
         store = company.getParameterStore();
-        store.CreateParameter(description,code,name,pcStore);
+        store.CreateParameter(description,code,name,pcList);
     }
 
     /**

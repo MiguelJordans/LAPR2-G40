@@ -2,6 +2,9 @@ package app.controller;
 
 import app.domain.model.Company;
 import app.domain.model.ClinicalAnalysisLaboratoryStore;
+import app.domain.model.TestType;
+
+import java.util.List;
 
 public class ClinicalAnalysisLaboratoryController {
 
@@ -33,9 +36,9 @@ public class ClinicalAnalysisLaboratoryController {
      * @param phoneNumber the Clinical Analysis Laboratory's phone number
      * @param tinNumber the Clinical Analysis Laboratory's TIN number
      */
-    public void CreateClinicalAnalysisLaboratory(String laboratoryID, String name, String address, String phoneNumber, String tinNumber) {
+    public void CreateClinicalAnalysisLaboratory(String laboratoryID, String name, String address, String phoneNumber, String tinNumber, List<TestType> ttList) {
         store = company.getClinicalAnalysisLaboratoryStore();
-        store.CreateClinicalAnalysisLaboratory(laboratoryID, name, address, phoneNumber, tinNumber);
+        store.CreateClinicalAnalysisLaboratory(laboratoryID, name, address, phoneNumber, tinNumber,ttList);
     }
 
     /**

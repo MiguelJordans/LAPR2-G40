@@ -1,9 +1,6 @@
 package app.controller;
 
-import app.domain.model.Company;
-import app.domain.model.ParameterCategoryStore;
-import app.domain.model.TestType;
-import app.domain.model.TestTypeStore;
+import app.domain.model.*;
 
 import java.util.List;
 
@@ -40,9 +37,9 @@ public class TestTypeController {
      * @param pc the Test type's category list
      */
 
-    public void CreateTestType(String description, String testCode, String collectingMethod, ParameterCategoryStore pc){
+    public void CreateTestType(String description, String testCode, String collectingMethod, List<ParameterCategory> pcList){
         store = company.getTestTypeStore();
-        store.CreateTestType(description,testCode,collectingMethod,pc);
+        store.CreateTestType(description,testCode,collectingMethod,pcList);
     }
 
     /**

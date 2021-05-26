@@ -1,6 +1,8 @@
 package app.domain.model;
 import org.apache.commons.lang3.StringUtils;
 
+import java.util.List;
+
 public class ClinicalAnalysisLaboratory {
 
     private String laboratoryID;
@@ -8,6 +10,7 @@ public class ClinicalAnalysisLaboratory {
     private String address;
     private String phoneNumber;
     private String tinNumber;
+    private List<TestType> ttList;
 
     private final int LABORATORY_MAX = 5;
     private final int NAME_MAX = 20;
@@ -24,18 +27,22 @@ public class ClinicalAnalysisLaboratory {
      * @param phoneNumber the Clinical Analysis Laboratory's phone number
      * @param tinNumber the Clinical Analysis Laboratory's TIN number
      */
-    public ClinicalAnalysisLaboratory(String laboratoryID, String name, String address, String phoneNumber, String tinNumber) {
-        this.laboratoryID = laboratoryID;
-        this.name = name;
-        this.address = address;
-        this.phoneNumber = phoneNumber;
-        this.tinNumber = tinNumber;
+    public ClinicalAnalysisLaboratory(String laboratoryID, String name, String address, String phoneNumber, String tinNumber, List<TestType> ttList) {
 
         checkLaboratoryIDRules(laboratoryID);
         checkNameRules(name);
         checkAddressRules(address);
         checkPhoneNumberRules(phoneNumber);
         checkTinNumberRules(tinNumber);
+        checkTestTypeList(ttList);
+
+        this.laboratoryID = laboratoryID;
+        this.name = name;
+        this.address = address;
+        this.phoneNumber = phoneNumber;
+        this.tinNumber = tinNumber;
+        this.ttList = ttList;
+
     }
 
     //  Gets --------------------------------------------------------------------
@@ -84,6 +91,8 @@ public class ClinicalAnalysisLaboratory {
     public String getTINnumber() {
         return tinNumber;
     }
+
+    public List<TestType> getTtList(){return ttList;}
 
     //  Sets --------------------------------------------------------------------
 
@@ -134,6 +143,10 @@ public class ClinicalAnalysisLaboratory {
     public void setTinNumber(String tinNumber) {
         checkTinNumberRules(tinNumber);
         this.tinNumber = tinNumber;
+    }
+
+    public void setTtList(List<TestType> ttList){
+        this.ttList = ttList;
     }
 
     //  Checks --------------------------------------------------------------------
@@ -235,6 +248,14 @@ public class ClinicalAnalysisLaboratory {
             }
         }
     }
+
+    public void checkTestTypeList(List<TestType> ttList){
+        if(ttList.isEmpty()) {
+            throw new IllegalArgumentException("Test type list is not valid! List is null!");
+        }
+    }
+
+
 
     /**
      * Returns the textual description of the Clinical Analysis Laboratory in the format: laboratory ID, name,
