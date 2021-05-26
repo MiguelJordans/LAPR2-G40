@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
-public class TestUI {
+public class TestUI implements Runnable {
 
     TestController testController;
     ParameterController parameterController;
@@ -41,28 +41,10 @@ public class TestUI {
 
             System.out.println();
             System.out.println();
-            System.out.println("INFORMATION REQUIRED");
+            System.out.println("NECESSARY DATA: ");
             System.out.println("--------------------");
-            String citizenCardNumber = Utils.readLineFromConsole("Citizen Card Number: ");
-            if (!testController.searchClient(citizenCardNumber)) {
-                System.out.println("Client not found!");
-                return;
-            }
-            String nhsCode = Utils.readLineFromConsole("NHS Code: ");
-            if (testController.validateNhsCode(nhsCode)){
-                System.out.println("There is already a test registered with that NHS Code!");
-                return;
-            }
-            List<TestType> testTypesList = testController.getTestType();
 
-            TestType testType = null;
-            String ttn;
-            List<String> testTypeDescription = new ArrayList<>();
-
-            for (TestType tp : testTypesList) {
-                testTypeDescription.add(tp.getDescription());
-            }
-
+<<<<<<< HEAD
             System.out.println();
             ttn = Utils.showAndSelectOne(testTypeDescription, "Test Type List").toString();
             for(TestType tt : testTypesList) {
@@ -75,131 +57,187 @@ public class TestUI {
                 categoriesList.add(testType.getCat()[p]);
             }
             List<Parameter> parameterList = testController.getParameterStore();
+=======
+            boolean exception = false;
+>>>>>>> 7c2b3d8b6b0655471d59eac501ae68601315abcd
 
-            int catNumber;
+            do {
 
-            catNumber = Utils.readIntegerFromConsole("How many categories will the test have?");
-            String[] categories = new String[catNumber];
+                try {
+                    String citizenCardNumber = Utils.readLineFromConsole("Please enter the Citizen Card Number of the desired Client: ");
+                    String nhsCode = Utils.readLineFromConsole("Please enter the NHS Code of the Client: ");
 
-            List<String> categoryName = new ArrayList<>();
-
-            for (ParameterCategory pc : categoriesList) {
-                categoryName.add(pc.getName());
-            }
-
-
-            for (int c = 0; c < catNumber; c++) {
-                categories[c] = (String) Utils.showAndSelectOne(categoryName, "Category List");
-            }
-
-            boolean result = false;
-            boolean duplicates = false;
-
-            for (int j = 0; j < categories.length; j++) {
-                for (int k = 0; k < categories.length; k++) {
-                    if (k != j && categories[k].equals(categories[j])) {
-                        duplicates = true;
-                        break;
+                    if (!testController.searchClient(citizenCardNumber)) {
+                        System.out.println("No Client was found");
+                        return;
                     }
-                }
-            }
+                    if (testController.validateNhsCode(nhsCode)){
+                        System.out.println("The written NHS Code has already been used");
+                        return;
+                    }
 
-            int m = 0;
+                    List<TestType> testTypesList = testController.getTestType();
 
-            if (!duplicates) {
+                    TestType testType = null;
+                    String ttselected;
+                    List<String> testTypeDescription = new ArrayList<>();
 
-                selectedParameters = new ArrayList<>();
-                m = Utils.readIntegerFromConsole("How many parameters will the test have?");
+                    for (TestType ttp : testTypesList) {
+                        testTypeDescription.add(ttp.getDescription());
+                    }
 
-
-                List<String> parameterName = new ArrayList<>();
-                String name, select;
-
-                for (int r = 0; r < catNumber; r++) {
-                    for (Parameter par : parameterList) {
-                        if (par.getCat().getName().equals(categories[r])) {
-                            parameterName.add(par.getName());
+                    System.out.println();
+                    ttselected = Utils.showAndSelectOne(testTypeDescription, "Test Type List").toString();
+                    for(TestType tt : testTypesList) {
+                        if(tt.getDescription().equalsIgnoreCase(ttselected)){
+                            testType = tt;
                         }
                     }
-                }
+                    List<ParameterCategory> categoriesList = new ArrayList<>();
+                    for(int p=0;p < testType.getPP().getParameterCategoryList().size();p++) {
+                        categoriesList.add(testType.getPP().getPc()[p]);
+                    }
+                    List<Parameter> parameterList = testController.getParameterStore();
+
+                    int catNumber;
+
+                    catNumber = Utils.readIntegerFromConsole("Please enter the number of categories the test might have");
+                    String[] categories = new String[catNumber];
+
+                    List<String> categoryName = new ArrayList<>();
+
+                    for (ParameterCategory pc : categoriesList) {
+                        categoryName.add(pc.getName());
+                    }
 
 
-                for (int l = 0; l < m; l++) {
-                    System.out.println();
-                    select = (String) Utils.showAndSelectOne(parameterName, "Parameter List");
-                    for (int c = 0; c < parameterName.size(); c++) {
-                        if (select.equals(parameterList.get(c).getName())) {
-                            selectedParameters.add(parameterList.get(c));
+                    for (int c = 0; c < catNumber; c++) {
+                        categories[c] = (String) Utils.showAndSelectOne(categoryName, "Category List");
+                    }
+
+                    boolean result = false;
+                    boolean duplicates = false;
+
+                    for (int j = 0; j < categories.length; j++) {
+                        for (int k = 0; k < categories.length; k++) {
+                            if (k != j && categories[k].equals(categories[j])) {
+                                duplicates = true;
+                                break;
+                            }
                         }
                     }
-                }
 
-                java.util.HashSet unique = new HashSet();
-                for (Parameter p : selectedParameters){
-                    if(!unique.add(p)){
-                        duplicates = true;
+                    int m = 0;
+
+                    if (!duplicates) {
+
+                        selectedParameters = new ArrayList<>();
+                        m = Utils.readIntegerFromConsole("Please enter the number of parameters the test might have?");
+
+
+                        List<String> parameterName = new ArrayList<>();
+                        String name, select;
+
+                        for (int r = 0; r < catNumber; r++) {
+                            for (Parameter par : parameterList) {
+                                if (par.getCat().getName().equals(categories[r])) {
+                                    parameterName.add(par.getName());
+                                }
+                            }
+                        }
+
+
+                        for (int l = 0; l < m; l++) {
+                            System.out.println();
+                            select = (String) Utils.showAndSelectOne(parameterName, "Parameter List");
+                            for (int c = 0; c < parameterName.size(); c++) {
+                                if (select.equals(parameterList.get(c).getName())) {
+                                    selectedParameters.add(parameterList.get(c));
+                                }
+                            }
+                        }
+
+                        java.util.HashSet unique = new HashSet();
+                        for (Parameter p : selectedParameters){
+                            if(!unique.add(p)){
+                                duplicates = true;
+                            }
+                        }
+
+                        if (!duplicates) {
+                            try {
+                                result = testController.createTest(citizenCardNumber, nhsCode, testType, selectedParameters);
+                            } catch (Exception ignored) {
+                            }
+                        } else {
+                            System.out.print("ERROR: Repeated parameters!");
+                        }
+                        System.out.println();
+                    } else {
+                        System.out.print("ERROR: Repeated categories!");
                     }
-                }
 
-                if (!duplicates) {
-                    try {
-                        result = testController.createTest(citizenCardNumber, nhsCode, testType, selectedParameters);
-                    } catch (Exception ignored) {
+                    System.out.println();
+
+                    if (result) {
+                        System.out.println();
+                        System.out.println("TEST DATA");
+                        System.out.println("-------------");
+                        System.out.println("NHS Code: " + nhsCode);
+                        System.out.println("Test Type: " + testType.getDescription());
+                        System.out.print("Categories: ");
+
+                        for (int c = 0; c < catNumber; c++) {
+                            System.out.print(categories[c] + "; ");
+                        }
+                        System.out.println();
+                        System.out.print("Parameters: ");
+                        for (int c = 0; c < m; c++) {
+                            System.out.print(selectedParameters.get(c).getName() + "; ");
+                        }
+
+                        result = Utils.confirm("Test registered! Do you want to save it? (s - confirm / n - cancel)");
+
+                        if (result) {
+                            result = testController.saveTest();
+                        } else {
+                            System.out.println();
+                            System.out.println("Canceled with success!");
+                            return;
+                        }
+
+                        System.out.println();
+                        if (result) {
+                            System.out.println("Test saved with success!");
+
+                            System.out.println();
+                            System.out.println();
+
+                            App app = App.getInstance();
+                            Company company = app.getCompany();
+
+                        } else {
+                            System.out.println("An Error has occurred with the save.");
+                        }
                     }
-                } else {
-                    System.out.print("There cannot be repeated parameters!");
-                }
-                System.out.println();
-            } else {
-                System.out.print("There cannot be repeated categories!");
-            }
 
-            System.out.println();
-
-            if (result) {
-                System.out.println();
-                System.out.println("TEST DATA");
-                System.out.println("-------------");
-                System.out.println("NHS Code: " + nhsCode);
-                System.out.println("Test Type: " + testType.getDescription());
-                System.out.print("Categories: ");
-
-                for (int c = 0; c < catNumber; c++) {
-                    System.out.print(categories[c] + "; ");
-                }
-                System.out.println();
-                System.out.print("Parameters: ");
-                for (int c = 0; c < m; c++) {
-                    System.out.print(selectedParameters.get(c).getName() + "; ");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    System.out.println("Incorrect input of data (an error has occurred)! Please, try again.");
+                    exception = true;
                 }
 
-                result = Utils.confirm("s -> confirm    n -> cancel");
+            } while (exception);
 
-                if (result) {
-                    result = testController.saveTest();
-                } else {
-                    System.out.println();
-                    System.out.println("Operation Canceled");
-                    return;
-                }
 
-                System.out.println();
-                if (result) {
-                    System.out.println("Test saved with success!");
 
-                    System.out.println();
-                    System.out.println();
-
-                    App app = App.getInstance();
-                    Company company = app.getCompany();
-
-                } else {
-                    System.out.println("Error with test save!");
-                }
-            }
         } else {
-            System.out.println("Parameter Category list and Parameter List cannot be empty");
+            System.out.println("ERROR: Parameter list and Parameter Category list are empty");
         }
     }
+<<<<<<< HEAD
 
 }*/
+=======
+}
+>>>>>>> 7c2b3d8b6b0655471d59eac501ae68601315abcd
