@@ -12,10 +12,10 @@ public class TestController {
     ParameterStore parameterStore;
     TestStore testStore;
     Test test = null;
-    String id;
-    List<Parameter> ppList;
+    String testID;
+    TestType tt;
 
-    public TestController(){
+    public TestController() {
 
         App app = App.getInstance();
         Company company = app.getCompany();
@@ -27,33 +27,38 @@ public class TestController {
 
     }
 
-    public List<TestType> getTestType (){
+    public List<TestType> getTestTypeList() {
         return testTypeStore.getTestTypeList();
     }
 
-    public List<Parameter> getParameterStore (){
+    public List<Parameter> getParameterList() {
         return parameterStore.getParameterList();
     }
 
-    public List<ParameterCategory> getParameterCategoryStore(){
+    public List<ParameterCategory> getParameterCategoryList() {
         return parameterCategoryStore.getParameterCategoryList();
     }
 
-    public boolean searchClient (String citizenCardNumber){
+    public void setTt(TestType tt) {
+        this.tt = tt;
+    }
+
+    public boolean searchClient(String citizenCardNumber) {
         return clientStore.checkExistingClient(citizenCardNumber);
     }
 
-    public boolean validateNhsCode (String nhsCode) {
+    public boolean validateNhsCode(String nhsCode) {
         return testStore.validateNhsCode(nhsCode);
     }
 
-    public boolean createTest (String citizenCardNumber, String nhsCode, TestType tt, List<Parameter> ppList){
-        id = testStore.generateId();
-        test = testStore.createTest(citizenCardNumber, id, nhsCode, tt);
+    public boolean createTest(String citizenCardNumber, String nhsCode, TestType tt, List<Parameter> parameters) {
+        testID = testStore.generateTestID();
+        test = testStore.createTest(citizenCardNumber, testID, nhsCode, tt);
+        test.CreateTestParameter(testID, parameters);
         return test != null;
     }
 
-    public boolean saveTest (){
+    public boolean saveTest() {
         return testStore.saveTest(test);
     }
 }

@@ -21,7 +21,7 @@ public class ClientUI implements Runnable{
         do {
             try {
                 String name = Utils.readLineFromConsole("Please enter the name of the client");
-                String email = Utils.readLineFromConsole("Please enter the email1 of the client");
+                String email = Utils.readLineFromConsole("Please enter the email of the client");
                 String sex = Utils.readLineFromConsole("Please enter the sex of the client");
                 Date birthdate = Utils.readDateFromConsole("Please enter the birth date of the client");
                 String citizenCardNumber = Utils.readLineFromConsole("Please enter the citizen card number of the client");
@@ -33,7 +33,7 @@ public class ClientUI implements Runnable{
 
             } catch (Exception e){
                 e.printStackTrace();
-                System.out.println("Incorrect input of data (an error has occured)! Please, try again.");
+                System.out.println("Incorrect input of data (an error has occurred)! Please, try again.");
                 exception = true;
             }
         } while (exception);

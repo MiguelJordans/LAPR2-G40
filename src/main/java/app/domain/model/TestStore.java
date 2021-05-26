@@ -7,15 +7,15 @@ import java.util.HashSet;
 
 public class TestStore {
 
-    private final List<Test> testList = new ArrayList<>();
+    private final List<Test> tests = new ArrayList<>();
     private static int testNumber = 1;
 
     public List<Test> getTests() {
-        return testList;
+        return tests;
     }
 
-    public Test createTest(String citizenCardNumber, String id, String nhsCode, TestType testType) {
-        Test test = new Test(citizenCardNumber, id, nhsCode, testType);
+    public Test createTest(String citizenCardNumber, String testID, String nhsCode, TestType testType) {
+        Test test = new Test(citizenCardNumber, testID, nhsCode, testType);
 
         if (validateTest(test)) {
             return test;
@@ -28,33 +28,32 @@ public class TestStore {
         if (test == null)
             return false;
 
-        for (Test test1 : testList) {
-            if (test1.getTestCode().equalsIgnoreCase(test.getTestCode()) || (test1.getNhsCode().equalsIgnoreCase(test.getNhsCode()))) {
+        for (Test test1 : tests) {
+            if (test1.getTestID().equalsIgnoreCase(test.getTestID()) || (test1.getNhsCode().equalsIgnoreCase(test.getNhsCode()))) {
                 return false;
             }
         }
-
         return true;
     }
 
     public boolean saveTest(Test test) {
         if (validateTest(test)) {
-            testList.add(test);
+            tests.add(test);
             testNumber++;
             return true;
         }
         return false;
     }
 
-    public String generateId() {
-        String id;
+    public String generateTestID() {
+        String testID;
 
-        id = String.format("%012d", testNumber);
-        return id;
+        testID = String.format("%012d", testNumber);
+        return testID;
     }
 
     public boolean validateNhsCode(String nhsCode) {
-        for (Test test1 : testList) {
+        for (Test test1 : tests) {
             if (test1.getNhsCode().equalsIgnoreCase(nhsCode)) {
                 return true;
             }
@@ -64,7 +63,7 @@ public class TestStore {
 
     public HashSet<Test> getInvalidTestList() {
         HashSet<Test> invalidTests = new HashSet<>();
-        for (Test temp : testList) {
+        for (Test temp : tests) {
             if (!temp.isValid()) {
                 invalidTests.add(temp);
             }
@@ -72,15 +71,16 @@ public class TestStore {
         return invalidTests;//implement;
     }
 
-
+/*
     public boolean validateTest(String testId, LocalDate instant) {
-        for (Test temp : testList) {
-            /*
-            if(temp.id().equals(testId)){
+        for (Test temp : tests) {
+            if (temp.getTestID().equals(testId)) {
                 temp.validate(instant);
-            }*/
+            }
         }
         return true;
     }
+
+ */
 }
 

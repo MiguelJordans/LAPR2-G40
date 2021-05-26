@@ -25,10 +25,12 @@ public class TestValidationController {
     public HashSet<Test> invalidTests() {
         return testStore.getInvalidTestList();
     }
-
+/*
     public boolean validateTest(String testId){
         LocalDate instant = LocalDate.now();
         return testStore.validateTest(testId,instant);
 
     }
+
+ */
 }

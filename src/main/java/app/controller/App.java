@@ -75,6 +75,7 @@ public class App {
     {
         this.authFacade.addUserRole(Constants.ROLE_ADMIN,Constants.ROLE_ADMIN);
         this.authFacade.addUserRole(Constants.ROLE_RECEPTIONIST,Constants.ROLE_RECEPTIONIST);
+        this.authFacade.addUserRole(Constants.ROLE_CLINICAL_CHEMISTRY_TECHNOLOGIST,Constants.ROLE_CLINICAL_CHEMISTRY_TECHNOLOGIST);
 
 
         this.authFacade.addUserWithRole("Main Administrator", "admin@lei.sem2.pt", "123456",Constants.ROLE_ADMIN);
@@ -82,8 +83,9 @@ public class App {
         this.authFacade.addUserWithRole("Mariana Lages", "1200902@lei.sem2.pt", "123456",Constants.ROLE_ADMIN);
         this.authFacade.addUserWithRole("Daniel Costa", "1200581@lei.sem2.pt", "123456",Constants.ROLE_ADMIN);
         this.authFacade.addUserWithRole("Lucas Silva", "1200759@lei.sem2.pt", "123456",Constants.ROLE_ADMIN);
-        this.authFacade.addUserWithRole("Recepcionist", "receptionist@lei.sem2.pt", "123456",Constants.ROLE_RECEPTIONIST);
+        this.authFacade.addUserWithRole("Receptionist", "receptionist@lei.sem2.pt", "123456",Constants.ROLE_RECEPTIONIST);
         this.authFacade.addUserWithRole("Medical lab technician", "mlt@lei.sem2.pt", "123456",Constants.ROLE_ADMIN);
+        this.authFacade.addUserWithRole("Clinical Chemistry Technologist", "cct@lei.sem2.pt", "123456",Constants.ROLE_CLINICAL_CHEMISTRY_TECHNOLOGIST);
     }
 
     // Extracted from https://www.javaworld.com/article/2073352/core-java/core-java-simply-singleton.html?page=2

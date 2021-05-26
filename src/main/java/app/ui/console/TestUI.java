@@ -1,4 +1,4 @@
-package app.ui.console;
+/*package app.ui.console;
 
 import app.controller.App;
 import app.controller.ParameterCategoryController;
@@ -56,7 +56,7 @@ public class TestUI implements Runnable {
                         System.out.println("No Client was found");
                         return;
                     }
-                    if (testController.validateNhsCode(nhsCode)){
+                    if (testController.validateNhsCode(nhsCode)) {
                         System.out.println("The written NHS Code has already been used");
                         return;
                     }
@@ -73,16 +73,16 @@ public class TestUI implements Runnable {
 
                     System.out.println();
                     ttselected = Utils.showAndSelectOne(testTypeDescription, "Test Type List").toString();
-                    for(TestType tt : testTypesList) {
-                        if(tt.getDescription().equalsIgnoreCase(ttselected)){
+                    for (TestType tt : testTypesList) {
+                        if (tt.getDescription().equalsIgnoreCase(ttselected)) {
                             testType = tt;
                         }
                     }
                     List<ParameterCategory> categoriesList = new ArrayList<>();
-                    for(int p=0;p < testType.getPP().getParameterCategoryList().size();p++) {
+                    for (int p = 0; p < testType.getPP().getParameterCategoryList().size(); p++) {
                         categoriesList.add(testType.getPP().getPc()[p]);
                     }
-                    List<Parameter> parameterList = testController.getParameterStore();
+                    List<Parameter> parameterList = testController.getParameterList();
 
                     int catNumber;
 
@@ -143,8 +143,8 @@ public class TestUI implements Runnable {
                         }
 
                         java.util.HashSet unique = new HashSet();
-                        for (Parameter p : selectedParameters){
-                            if(!unique.add(p)){
+                        for (Parameter p : selectedParameters) {
+                            if (!unique.add(p)) {
                                 duplicates = true;
                             }
                         }
@@ -215,9 +215,10 @@ public class TestUI implements Runnable {
             } while (exception);
 
 
-
         } else {
             System.out.println("ERROR: Parameter list and Parameter Category list are empty");
         }
     }
 }
+
+ */

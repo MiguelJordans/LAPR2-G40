@@ -1,5 +1,6 @@
 package app.domain.model;
 
+import app.domain.shared.Constants;
 import org.apache.commons.lang3.StringUtils;
 
 public class TestType {
@@ -14,17 +15,18 @@ public class TestType {
     private final int COLLECTINGMETHOD_MAX = 20;
     private final int DESCRIPTION_MAX = 15;
 
+    private String ExternalModule;
 
     /**
      * Constructs an instance of Test Type
      *
-     * @param testCode the Test Type's test code
-     * @param description the Test Type's description
+     * @param testCode         the Test Type's test code
+     * @param description      the Test Type's description
      * @param collectingMethod the Test Type's collecting method
-     * @param ppStore the Test Type's category list
+     * @param ppStore          the Test Type's category list
      */
 
-    public TestType(String testCode, String description, String collectingMethod,ParameterCategoryStore ppStore) {
+    public TestType(String testCode, String description, String collectingMethod, ParameterCategoryStore ppStore) {
 
         checkTestCode(testCode);
         checkCollectingMethod(collectingMethod);
@@ -91,8 +93,8 @@ public class TestType {
      * @param ppStore the Test Type's categories
      */
 
-    public void checkCategoriesList(ParameterCategoryStore ppStore){
-        if(ppStore.list.isEmpty()) {
+    public void checkCategoriesList(ParameterCategoryStore ppStore) {
+        if (ppStore.list.isEmpty()) {
             throw new IllegalArgumentException("Categories not valid! List is null!");
         }
     }
@@ -184,6 +186,22 @@ public class TestType {
         this.pp = ppsstore;
     }
 
+    public String getExternalModule() {
+        return ExternalModule;
+    }
+
+    public String setExternalModule(String testCode) {
+
+        if(testCode.equals("BL000")) {
+            return Constants.EM_REFERENCE_API;
+        }
+
+        if(testCode.equals("COV19")) {
+            return Constants.COVID_REFERENCE_API;
+        }
+        return null;
+    }
+
     /**
      * Returns the textual description of the Test Type in the format : Test Code, Description, CollectingMethod.
      *
@@ -193,9 +211,10 @@ public class TestType {
     @Override
     public String toString() {
         return
-                " Test Code: " + testCode  +
-                ", Description:" + description +
-                ", CollectingMethod:" + collectingMethod;
+                " Test Code: " + testCode +
+                        ", Description:" + description +
+                        ", CollectingMethod:" + collectingMethod;
 
     }
+
 }
