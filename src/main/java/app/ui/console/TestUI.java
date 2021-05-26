@@ -44,7 +44,7 @@ public class TestUI implements Runnable {
             System.out.println("NECESSARY DATA: ");
             System.out.println("--------------------");
 
-<<<<<<< HEAD
+
             System.out.println();
             ttn = Utils.showAndSelectOne(testTypeDescription, "Test Type List").toString();
             for(TestType tt : testTypesList) {
@@ -57,9 +57,9 @@ public class TestUI implements Runnable {
                 categoriesList.add(testType.getCat()[p]);
             }
             List<Parameter> parameterList = testController.getParameterStore();
-=======
+
             boolean exception = false;
->>>>>>> 7c2b3d8b6b0655471d59eac501ae68601315abcd
+
 
             do {
 
@@ -238,6 +238,4 @@ public class TestUI implements Runnable {
 <<<<<<< HEAD
 
 }*/
-=======
-}
->>>>>>> 7c2b3d8b6b0655471d59eac501ae68601315abcd
+

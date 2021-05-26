@@ -206,9 +206,6 @@ public class Company {
 
     // US08 - ClinicalAnalysisLaboratory --------------------------------------------------------
 
-    public ClinicalAnalysisLaboratory createClinicalAnalysisLaboratory(String laboratoryID, String name, String address, String phoneNumber, String tinNumber) {
-        return new ClinicalAnalysisLaboratory(laboratoryID, name, address, phoneNumber, tinNumber);
-    }
 
     ClinicalAnalysisLaboratoryStore clinicalAnalysisLaboratoryStore = new ClinicalAnalysisLaboratoryStore();
 
@@ -253,9 +250,7 @@ public class Company {
 
     // US09 - TestType --------------------------------------------------------------------------
 
-    public TestType createTestType(String testCode, String description, String collectingMethod, ParameterCategoryStore pcStore) {
-        return new TestType(testCode, description, collectingMethod, pcStore);
-    }
+
 
     TestTypeStore testTypeStore = new TestTypeStore();
 
@@ -298,11 +293,7 @@ public class Company {
     }
 
     // US10 - Parameter -------------------------------------------------------------------------
-
-    public Parameter createParameter(String code, String description, String name, ParameterCategoryStore pcStore) {
-        return new Parameter(code, description, name, pcStore);
-    }
-
+    
     ParameterStore parameterStore = new ParameterStore();
 
     private static ParameterStore parameterList;
