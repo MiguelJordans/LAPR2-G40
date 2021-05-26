@@ -99,4 +99,8 @@ public class ClinicalAnalysisLaboratoryStore {
     public ClinicalAnalysisLaboratory getCal() {
         return cal;
     }
+
+    public List<ClinicalAnalysisLaboratory> getClinicalAnalysisLaboratoryList() {
+        return this.clinicalAnalysisLaboratoryList;
+    }
 }

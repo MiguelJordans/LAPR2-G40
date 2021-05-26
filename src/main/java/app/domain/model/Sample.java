@@ -45,7 +45,7 @@ public class Sample {
     @Override
     public String toString() {
         return "Sample {" +
-                "Test=" + tr +
+                " Test code=" + tr.getTestCode() +
                 ", Barcode=" + barcode +
                 '}';
     }

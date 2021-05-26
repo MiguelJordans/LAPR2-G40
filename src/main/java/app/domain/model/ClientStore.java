@@ -123,4 +123,8 @@ public class ClientStore {
         }
         return false;
     }
+
+    public List<Client> getClientList() {
+        return this.clientList;
+    }
 }

@@ -16,17 +16,30 @@ public class SampleAdapter {
 
     public SampleAdapter() {
 
-        barcodeText = generateNumber();
+    }
+
+    public Barcode generateBarcode(String barcodeText){
 
         try {
-
+            this.barcodeText=barcodeText;
             this.barcode = generateUPCBarcode(barcodeText);
-            this.barcodeImage = generateUPCBarcodeImage(barcode);
 
         } catch (Exception e) {
             System.out.println("Barcode couldn't be created! Verify barcodeText!");
         }
 
+        return barcode;
+
+    }
+
+    public BufferedImage generateBarcodeImage(Barcode barcode){
+
+        try{
+            this.barcodeImage = generateUPCBarcodeImage(barcode);
+        } catch (Exception e){
+            System.out.println("Barcode image couldn't be created! Verify the barcode!");
+        }
+        return barcodeImage;
     }
 
     public Barcode generateUPCBarcode(String barcodeText) throws Exception  {
@@ -47,6 +60,8 @@ public class SampleAdapter {
 
         return random_bar;
     }
+
+
 
     public Barcode getBarcode() {
         return barcode;

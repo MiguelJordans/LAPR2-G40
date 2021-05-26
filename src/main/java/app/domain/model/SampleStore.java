@@ -1,6 +1,7 @@
 package app.domain.model;
 
 import net.sourceforge.barbecue.Barcode;
+import org.apache.commons.lang3.RandomStringUtils;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -29,11 +30,22 @@ public class SampleStore {
 
         public Sample CreateSample(TestType tt){
 
+            sa.generateBarcode(generateNumber());
+
             barcode = sa.getBarcode();
+            barcodeImage = sa.generateBarcodeImage(sa.getBarcode());
 
             return this.sm = new Sample(tt,barcode);
 
         }
+
+    public String generateNumber(){
+
+        String random_bar = RandomStringUtils.randomNumeric(11);
+
+
+        return random_bar;
+    }
 
         public void createTemporaryList(){
             sampleListTemporary.add(sm);
@@ -136,12 +148,6 @@ public class SampleStore {
         }
 
         public void barcodeImage() throws IOException {
-
-            try {
-                barcodeImage = sa.generateUPCBarcodeImage(barcode);
-            } catch (Exception e){
-                System.out.println("ERROR : Couldn't create the image!");
-            }
 
             String filename = "BarcodeImage_"+sm.getTr().getTestCode()+"_"+sa.getBarcodeText();
 

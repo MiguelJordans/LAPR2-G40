@@ -27,6 +27,7 @@ public class SampleUI implements Runnable {
         boolean count = true;
         boolean flag = true;
         boolean m = false;
+        boolean nbol = false;
 
         TestType tt = null;
 
@@ -77,21 +78,25 @@ public class SampleUI implements Runnable {
 
                 if (count) {
 
-                    Utils.showList(ctrl.getSampleList(), "Do you wish to delete any?");
-                    flag = Utils.confirm("");
-                    count = flag;
+                    do {
+                        Utils.showListWithouThe0(ctrl.getSampleList(), "Do you wish to delete any?");
+                        flag = Utils.confirm("");
+                        count = flag;
+                        nbol = flag;
 
-                    if (flag) {
-                        int a = Utils.readIntegerFromConsole("Type the number of the sample that you wish to delete");
-                        ctrl.getSampleList().remove(a - 1);
-                        Utils.showList(ctrl.getSampleList(), "");
+                        if (flag) {
+                            int a = Utils.readIntegerFromConsole("Type the number of the sample that you wish to delete");
+                            ctrl.getSampleList().remove(a - 1);
+                            count = !flag;
 
-                    }
+                        }
 
+                    }while(nbol);
                 }
 
 
             } while (count);
+
             tt.setState("SAMPLE_COLLECTED");
         }
     }

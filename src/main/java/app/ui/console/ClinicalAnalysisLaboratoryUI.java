@@ -36,6 +36,12 @@ public class ClinicalAnalysisLaboratoryUI implements Runnable {
                     TestType tt = (TestType) Utils.showAndSelectOne(this.ttStore.getTestTypeList(), "Select the test types");
                     this.ttList.add(tt);
 
+                    if (tt == null) {
+                        List<MenuItem> options = new ArrayList<MenuItem>();
+                        options.add(new MenuItem("DN", new AdminUI()));
+                        options.get(0).run();
+                    }
+
                     leave = Utils.confirm("Do you wish to select more test types?");
 
                 } while (leave);

@@ -122,6 +122,20 @@ public class Utils {
         System.out.println("0 - Cancel");
     }
 
+    static public void showListWithouThe0(List list, String header)
+    {
+        System.out.println(header);
+
+        int index = 0;
+        for (Object o : list)
+        {
+            index++;
+
+            System.out.println(index + ". " + o.toString());
+        }
+
+    }
+
     static public Object selectsObject(List list)
     {
         String input;
