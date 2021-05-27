@@ -1,0 +1,16 @@
+
+V	java:S107/"AConstructor has 8 parameters, which is greater than 7 authorized.(…Ğ¿›
+T
+java:S1128">Remove this unused import 'java.util.logging.SimpleFormatter'.(ÇöÁ
+Q
+java:S1128";Remove this unused import 'javax.swing.text.DateFormatter'.(Øúã¾
+M
+java:S1128	"7Remove this unused import 'java.text.SimpleDateFormat'.(ú¡ÙÛ
+K
+java:S1128"5Remove this unused import 'java.text.ParseException'.(ñ®ï•
+G
+java:S1128"1Remove this unused import 'java.text.DateFormat'.(÷Œá¼
+@
+java:S1940Ş")Use the opposite operator (">=") instead.(­¼óø
+c
+java:S5998ú"LRefactor this repetition that can lead to a stack overflow for large inputs.(šÏ¶Ë

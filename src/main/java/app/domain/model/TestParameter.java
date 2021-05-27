@@ -27,4 +27,9 @@ public class TestParameter {
     public void setTpr(TestParameterResult tpr) {
         this.tpr = tpr;
     }
+
+    @Override
+    public String toString() {
+        return this.tpr.toString();
+    }
 }

@@ -22,16 +22,16 @@ public class RecordTestResultController {
         String testID = "000000000003"; //Buscar teste correspondente através do número do barcode
         List<Test> tests = testStore.getTests();
 
-        for (Test test : tests) {
+        for (Test t1 : tests) {
             if(test.getTestID().equals(testID)) {
-                this.test = test;
+                this.test = t1;
             }
         }
         return null;
     }
 
-    public List<Parameter> getParameters(String sampleBarcodeNumber) {
-        getCorrespondingTest(sampleBarcodeNumber);
+    public List<Parameter> getParameters(String sampleID) {
+        getCorrespondingTest(sampleID);
 
         if(test == null) {
             return null;

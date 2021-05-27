@@ -135,9 +135,8 @@ public class Company {
         return parameterCategoryStore;
     }
 
-    // U12 ----------------------------------------------------------
+    // US12 - RecordTestResults (only needs the test store which is already defined) ---------------------------------------------------------
 
-    
 
     // US15 - ValidateTest -----------------------------------------------------------------
 

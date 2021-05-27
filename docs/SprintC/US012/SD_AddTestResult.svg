@@ -84,19 +84,19 @@
       ><path d="M142 32 L142 47 L53 47 L53 32 ZM0 0 L0 104 L256 104 L256 63 L202 63 L202 33 L256 33 L256 0 Z"
       /></clipPath
       ><clipPath clipPathUnits="userSpaceOnUse" id="clipPath27"
-      ><path d="M157 32 L157 47 L65 47 L65 32 ZM261 77 L261 92 L52 92 L52 77 ZM0 0 L0 104 L364 104 L364 97 L563 97 L563 104 L731 104 L731 16 L688 16 L688 1 L731 1 L731 0 Z"
+      ><path d="M157 32 L157 47 L65 47 L65 32 ZM307 78 L307 93 L52 93 L52 78 ZM0 0 L0 104 L364 104 L364 97 L610 97 L610 104 L731 104 L731 16 L688 16 L688 1 L731 1 L731 0 Z"
       /></clipPath
       ><clipPath clipPathUnits="userSpaceOnUse" id="clipPath28"
       ><path d="M0 0 L408 0 L408 104 L0 104 L0 0 Z"
       /></clipPath
       ><clipPath clipPathUnits="userSpaceOnUse" id="clipPath29"
-      ><path d="M261 31 L261 46 L52 46 L52 31 ZM0 0 L0 104 L64 104 L64 102 L127 102 L127 104 L408 104 L408 66 L364 66 L364 51 L408 51 L408 0 L157 0 L157 1 L65 1 L65 0 Z"
+      ><path d="M307 32 L307 47 L52 47 L52 32 ZM0 0 L0 104 L64 104 L64 102 L127 102 L127 104 L408 104 L408 66 L364 66 L364 51 L408 51 L408 0 L157 0 L157 1 L65 1 L65 0 Z"
       /></clipPath
       ><clipPath clipPathUnits="userSpaceOnUse" id="clipPath30"
       ><path d="M0 0 L692 0 L692 104 L0 104 L0 0 Z"
       /></clipPath
       ><clipPath clipPathUnits="userSpaceOnUse" id="clipPath31"
-      ><path d="M251 32 L251 47 L52 47 L52 32 ZM0 0 L0 104 L692 104 L692 63 L638 63 L638 33 L692 33 L692 0 Z"
+      ><path d="M298 32 L298 47 L52 47 L52 32 ZM0 0 L0 104 L692 104 L692 63 L638 63 L638 33 L692 33 L692 0 Z"
       /></clipPath
       ><clipPath clipPathUnits="userSpaceOnUse" id="clipPath32"
       ><path d="M127 33 L127 48 L64 48 L64 33 ZM0 0 L0 104 L408 104 L408 0 Z"
@@ -138,10 +138,10 @@
       ><path d="M-63 -15 L126 -15 L126 30 L-63 30 L-63 -15 Z"
       /></clipPath
       ><clipPath clipPathUnits="userSpaceOnUse" id="clipPath45"
-      ><path d="M-199 -15 L398 -15 L398 30 L-199 30 L-199 -15 Z"
+      ><path d="M-246 -15 L492 -15 L492 30 L-246 30 L-246 -15 Z"
       /></clipPath
       ><clipPath clipPathUnits="userSpaceOnUse" id="clipPath46"
-      ><path d="M-209 -15 L418 -15 L418 30 L-209 30 L-209 -15 Z"
+      ><path d="M-255 -15 L510 -15 L510 30 L-255 30 L-255 -15 Z"
       /></clipPath
       ><clipPath clipPathUnits="userSpaceOnUse" id="clipPath47"
       ><path d="M-92 -15 L184 -15 L184 30 L-92 30 L-92 -15 Z"
@@ -381,14 +381,14 @@
       >1.6.2: ok</text
     ></g
     ><g font-size="11px" transform="translate(638,366)" fill-opacity="1" fill="white" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="white" stroke-opacity="1"
-    ><rect x="0" width="199" height="15" y="0" clip-path="url(#clipPath45)" stroke="none"
-      /><text fill="black" x="10" xml:space="preserve" y="12" clip-path="url(#clipPath45)" stroke="none"
-      >1.6.1: create(result, metric, refValue)</text
+    ><rect x="0" width="246" height="15" y="0" clip-path="url(#clipPath45)" stroke="none"
+      /><text fill="black" x="9" xml:space="preserve" y="12" clip-path="url(#clipPath45)" stroke="none"
+      >1.6.1: create(parameterCode, result, refValue)</text
     ></g
-    ><g font-size="11px" transform="translate(326,346)" fill-opacity="1" fill="white" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="white" stroke-opacity="1"
-    ><rect x="0" width="209" height="15" y="0" clip-path="url(#clipPath46)" stroke="none"
-      /><text fill="black" x="9" xml:space="preserve" y="12" clip-path="url(#clipPath46)" stroke="none"
-      >1.6: addResult(result, metric, refValue)</text
+    ><g font-size="11px" transform="translate(326,347)" fill-opacity="1" fill="white" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="white" stroke-opacity="1"
+    ><rect x="0" width="255" height="15" y="0" clip-path="url(#clipPath46)" stroke="none"
+      /><text fill="black" x="10" xml:space="preserve" y="12" clip-path="url(#clipPath46)" stroke="none"
+      >1.6: addResult(parameterCode, result, refValue)</text
     ></g
     ><g font-size="11px" transform="translate(339,301)" fill-opacity="1" fill="white" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="white" stroke-opacity="1"
     ><rect x="0" width="92" height="15" y="0" clip-path="url(#clipPath47)" stroke="none"

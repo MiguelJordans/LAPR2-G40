@@ -16,7 +16,7 @@ public class Test {
 
     private List<TestParameter> tpList;
 
-    final int NHSCODE_SIZE = 12;
+    final static int NHSCODE_SIZE = 12;
     static int testCode = 1;
 
 
@@ -26,7 +26,6 @@ public class Test {
         this.citizenCardNumber = citizenCardNumber;
         this.testID = testCode;
         this.nhsCode = nhsCode;
-        this.tt = tt;
         state = State.REGISTERED;
         tpList = new ArrayList<>();
     }

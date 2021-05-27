@@ -26,4 +26,9 @@ public class TestParameterResult {
     public void setRefValue(RefValue refValue) {
         this.refValue = refValue;
     }
+
+    @Override
+    public String toString() {
+        return "Parameter: " + paramID + "\n Result: " + result + ", " + refValue.getMetric() + "Reference values: \n" + "Max: " + refValue.getRefValueMax() + "\n Min: " + refValue.getRefValueMin();
+    }
 }
