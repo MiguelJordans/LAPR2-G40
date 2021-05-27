@@ -1,19 +1,17 @@
 package app.controller;
 
-import app.domain.model.Employee;
-import app.domain.model.EmployeeStore;
-import app.domain.model.Company;
+import app.domain.model.*;
 
-public class RegisterEmployeeController {
+public class SpecialistDoctorController {
 
     private Company company;
-    private EmployeeStore store;
+    private SpecialistDoctorStore store;
 
     /**
      * Creates an empty Register Employee controller.
      */
 
-    public RegisterEmployeeController() {
+    public SpecialistDoctorController() {
         this(App.getInstance().getCompany());
     }
 
@@ -23,7 +21,7 @@ public class RegisterEmployeeController {
      * @param company - the company that administrates the system
      */
 
-    public RegisterEmployeeController(Company company) {this.company = company;}
+    public SpecialistDoctorController(Company company) {this.company = company;}
 
 
     /**
@@ -37,11 +35,11 @@ public class RegisterEmployeeController {
      * @param orgRole                - the Employee's organization role
      */
 
-
-    public void Employee(String name, String address, String email, String phoneNumber, String socCode, String orgRole){
-        store = company.getEmployeeStore();
-        store.NewEmployee(name, address, email, phoneNumber, socCode, orgRole);
+    public void SpecialistDoctor(String name, String address, String email, String phoneNumber, String socCode, String orgRole, String doctorIndexNumber){
+        store = company.getSpecialistDoctorStore();
+        store.NewSpecialistDoctor(name, address, email, phoneNumber, socCode, orgRole, doctorIndexNumber);
     }
+
 
     /**
      * Transforms into string.
@@ -49,7 +47,7 @@ public class RegisterEmployeeController {
      * @return the Employee's info in string format
      */
 
-    public Employee getEmp() { return store.getEmp();}
+    public SpecialistDoctor getSp() { return store.getSD();}
 
     /**
      * Saves an instance of an Employee.
@@ -57,7 +55,7 @@ public class RegisterEmployeeController {
      * @return the saving of an Employee
      */
 
-    public boolean SaveEmployee() { return this.store.saveEmployee();}
+    public boolean saveSpecialistDoctor() { return this.store.saveEmployee();}
 
 
 }

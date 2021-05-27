@@ -4,17 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class EmployeeStore {
+public class SpecialistDoctorStore {
 
-    List <Employee> employeeList;
-    Employee emp;
+    List <SpecialistDoctor> specialistDoctorList;
+    SpecialistDoctor sd;
 
     private static int employeeN;
 
     /**
      * Constructor
      */
-    public EmployeeStore(){this.employeeList = new ArrayList<>();}
+    public SpecialistDoctorStore(){this.specialistDoctorList = new ArrayList<>();}
 
     /**
      * Creates an instance of an Employee.
@@ -27,23 +27,23 @@ public class EmployeeStore {
      * @param orgRole                - the Employee's organization role
      */
 
-    public Employee NewEmployee (String name, String address, String email, String phoneNumber, String socCode, String orgRole){
+    public SpecialistDoctor NewSpecialistDoctor (String name, String address, String email, String phoneNumber, String socCode, String orgRole, String doctorIndexNumber){
 
         String ID = generateEmployeeID(name);
 
-        return this.emp = new Employee(name, address, email, phoneNumber, ID, socCode, orgRole);
+        return this.sd = new SpecialistDoctor(name, address, email, phoneNumber, ID, socCode, orgRole, doctorIndexNumber);
     }
 
     /**
      * Validates an instance of an Employee.
      *
-     * @param emp - the object Employee
+
      * @return the validation of the Employee being created
      */
 
-    public boolean validateEmployee (Employee emp){
+    public boolean validateSpecialistDoctor (SpecialistDoctor sd){
 
-        if (emp == null || listContain(emp)){
+        if (sd == null || listContain(sd)){
             return false;
         }
         return true;
@@ -56,12 +56,12 @@ public class EmployeeStore {
      *
      *
      *
-     * @param emp - the object Employee
+
      * @return true if the list contains the Employee and false if it doesn't
      */
 
-    public boolean listContain(Employee emp){
-        if(this.employeeList.contains(emp)){
+    public boolean listContain(SpecialistDoctor sd){
+        if(this.specialistDoctorList.contains(sd)){
             return true;
         } else {
             return false;
@@ -75,8 +75,8 @@ public class EmployeeStore {
      */
 
     public boolean saveEmployee(){
-        if(validateEmployee(this.emp)){
-            listAdd(emp);
+        if(validateSpecialistDoctor(this.sd)){
+            listAdd(sd);
             return true;
         } else {
             return false;
@@ -88,12 +88,12 @@ public class EmployeeStore {
      * Adds an instance of Employee to the list
      *
      *
-     * @param emp - the object Employee
+
      * @return the addition of Employee to the list
      */
 
-    public boolean listAdd(Employee emp){
-        employeeList.add(emp);
+    public boolean listAdd(SpecialistDoctor sd){
+        specialistDoctorList.add(sd);
         return true;
     }
 
@@ -105,8 +105,8 @@ public class EmployeeStore {
      * @return the element previously at the specified position
      */
 
-    public Employee getEmployee (int i){
-        return employeeList.get(i);
+    public SpecialistDoctor getSpecialistDoctor(int i){
+        return specialistDoctorList.get(i);
     }
 
 
@@ -117,13 +117,13 @@ public class EmployeeStore {
      * @return the Employee requested
      */
 
-    public Employee getEmp (){
-        return emp;
+    public SpecialistDoctor getSD (){
+        return sd;
     }
 
 
-    public List<Employee> getEmployeeList() {
-        return this.employeeList;
+    public List<SpecialistDoctor> getSpecialistDoctorList() {
+        return this.specialistDoctorList;
     }
 
     public String generateEmployeeID(String name){

@@ -1,10 +1,31 @@
 package app.domain.model;
 
-import auth.mappers.dto.EmployeeDto;
+import app.domain.shared.Constants;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class OrgRole {
 
-    public void createEmployee (EmployeeDto empDto){
+    List<String> orgRoles;
+
+    public OrgRole(){
+
+        orgRoles = new ArrayList<>();
+        orgRoles.add(Constants.ROLE_MEDICAL_LAB_TECHNICIAN);
+        orgRoles.add(Constants.ROLE_RECEPTIONIST);
+        orgRoles.add(Constants.ROLE_CLINICAL_CHEMISTRY_TECHNOLOGIST);
+        orgRoles.add(Constants.ROLE_SPECIALIST_DOCTOR);
+        orgRoles.add(Constants.ROLE_LABORATORY_COORDINATOR);
+    }
+
+
+    public void orgRoles(){
+
+        for(String s : orgRoles){
+            System.out.println(s);
+        }
 
     }
+
 }
