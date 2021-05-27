@@ -1,6 +1,7 @@
 package app.ui.console;
 
 import app.controller.ClientController;
+import app.domain.model.ClientStore;
 import app.ui.console.utils.Utils;
 
 import java.util.Date;
@@ -9,8 +10,10 @@ import java.util.Date;
 public class ClientUI implements Runnable{
 
     private ClientController ctrl;
+    private ClientStore clientStore;
 
     public ClientUI() {
+
         this.ctrl = new ClientController();
     }
 
@@ -38,10 +41,11 @@ public class ClientUI implements Runnable{
             }
         } while (exception);
 
-        count = Utils.confirm("Client created! Do you want to save it(s/n)?" + ctrl.getCr());
+        count = Utils.confirm("Client created! Do you want to save it(s/n)?" + ctrl.getCr().toString());
         if (count) {
             if (ctrl.saveClient()) {
                 System.out.println("Save successful!");
+                ctrl.generateUserInformation(this.ctrl.getCr().getName(),this.ctrl.getCr().getEmail());
             }
         }
     }

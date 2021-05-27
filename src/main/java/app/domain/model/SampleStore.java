@@ -1,5 +1,6 @@
 package app.domain.model;
 
+import app.domain.shared.Constants;
 import net.sourceforge.barbecue.Barcode;
 import org.apache.commons.lang3.RandomStringUtils;
 
@@ -149,9 +150,9 @@ public class SampleStore {
 
         public void barcodeImage() throws IOException {
 
-            String filename = "BarcodeImage_"+sm.getTr().getTestCode()+"_"+sa.getBarcodeText();
+            String filename = Constants.BARCODE_IMAGE+"_"+sm.getTr().getTestCode()+"_"+sa.getBarcodeText();
 
-            File outputfile = new File("Barcodes\\"+filename+".jpg");
+            File outputfile = new File(Constants.PATH+filename+".jpg");
 
             ImageIO.write(barcodeImage, "jpg", outputfile);
 

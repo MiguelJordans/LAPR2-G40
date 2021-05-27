@@ -1,7 +1,10 @@
 package app.controller;
 
+import app.domain.model.Client;
 import app.domain.model.ClientStore;
 import app.domain.model.Company;
+import app.domain.model.SampleAdapter;
+import app.ui.console.GeneratePassword;
 
 import java.util.Date;
 
@@ -53,8 +56,8 @@ public class ClientController {
      * @return the Client's info in string format
      */
 
-    public String getCr() {
-        return store.getCr().toString();
+    public Client getCr() {
+        return store.getCr();
     }
 
     /**
@@ -67,4 +70,9 @@ public class ClientController {
         return this.store.saveClient();
     }
 
+    public void generateUserInformation(String name, String email) {
+
+        store.generateUserInformation(name,email);
+
+    }
 }

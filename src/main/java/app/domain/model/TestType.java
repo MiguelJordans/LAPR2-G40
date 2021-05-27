@@ -291,8 +291,6 @@ public class TestType {
 
     }
 
-
-
     public String getExternalModule() {
         return ExternalModule;
     }
