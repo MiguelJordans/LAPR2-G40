@@ -60,8 +60,7 @@ public class TestTypeUI implements Runnable {
                         exception = false;
 
                     } catch (Exception e) {
-
-                        e.printStackTrace();
+                        System.out.println(e.getMessage());
                         System.out.println("Incorrect input of data (an error has occurred), please try again.");
                         exception = true;
 

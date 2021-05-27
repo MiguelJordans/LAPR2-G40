@@ -15,10 +15,12 @@ public class SampleUI implements Runnable {
 
     private SampleController ctrl;
     private TestTypeStore ttStore;
+    private TestStore trStore;
 
     public SampleUI() {
         this.ctrl = new SampleController();
         this.ttStore = new TestTypeStore();
+        this.trStore = new TestStore();
     }
 
     @Override
@@ -39,19 +41,17 @@ public class SampleUI implements Runnable {
                 boolean exception = false;
                 do {
 
-                    tt = (TestType) Utils.showAndSelectOne(this.ttStore.getTestTypeList(), "Select the test");
+                    tt = (TestType) Utils.showAndSelectOne(this.ttStore.getTestTypeList(), "Select the test: \n");
 
                     if (!(tt == null))
                         m = tt.compareState(tt.getState());
 
-                    if (tt == null) {
-                        List<MenuItem> options = new ArrayList<MenuItem>();
-                        options.add(new MenuItem("DN", new MedicalLabTechnicianUI()));
-                        options.get(0).run();
-                    }
 
                     if (!m) {
-                        System.out.println("Please choose a valid test(sample is already collected!)");
+                        if(tt==null){
+                            System.out.println("Please choose a valid test!\n");
+                        } else
+                        System.out.println("Please choose a valid test (sample is already collected!)");
                     }
 
                 } while (!m);
@@ -66,7 +66,7 @@ public class SampleUI implements Runnable {
                         exception = false;
 
                     } catch (Exception e) {
-
+                        System.out.println(e.getMessage());
                         System.out.println("Incorrect input of data (an error has occurred), please try again.");
                         exception = true;
 

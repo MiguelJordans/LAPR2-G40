@@ -42,6 +42,7 @@ public class RegisteredSampleUI implements Runnable {
                         flag = true;
                     }
                 } catch (Exception e) {
+                    System.out.println(e.getMessage());
                     System.out.println("The list is empty! Please try to add samples before!");
                 }
             } while (!flag);

@@ -95,10 +95,10 @@ public class App {
         TestStore testStore = company.getTestStore();
 
         ParameterCategory parameterCategory = new ParameterCategory("12345", "categoria","1212");
-        // parameterCategoryStore.saveParameterCategory();
+        parameterCategoryStore.saveParameterCategory();
         parameterCategoryStore.getParameterCategoryList().add(parameterCategory);
         ParameterCategory parameterCategory1 = new ParameterCategory("12346", "cat","1212");
-        //parameterCategoryStore.saveParameterCategory();
+        parameterCategoryStore.saveParameterCategory();
         parameterCategoryStore.getParameterCategoryList().add(parameterCategory1);
 
         List<ParameterCategory> categories1 = new ArrayList<>();
@@ -108,18 +108,30 @@ public class App {
 
         TestType bloodTest = new TestType("BL000", "Blood Test", "Needle", categories2);
         testTypeStore.saveTestType();
+        testTypeStore.getTestTypeList().add(bloodTest);
         TestType covidTest = new TestType("COV19", "Covid Test", "Swap", categories1);
         testTypeStore.saveTestType();
+        testTypeStore.getTestTypeList().add(covidTest);
 
-        parameterStore.CreateParameter("IgGAN","000","paramCv1",categories1);
+        Parameter p1 = new Parameter("IgGAN","000","paramCv1",categories1);
+      //  parameterStore.CreateParameter("IgGAN","000","paramCv1",categories1);
         parameterStore.saveParameter();
-        parameterStore.CreateParameter("ESR00", "aaa", "paramBl1", categories1);
+        parameterStore.getParameterList().add(p1);
+        Parameter p2 = new Parameter("ESR00", "aaa", "paramBl1", categories1);
+       // parameterStore.CreateParameter("ESR00", "aaa", "paramBl1", categories1);
         parameterStore.saveParameter();
-        parameterStore.CreateParameter("HB000", "bbb", "paramBl2", categories2);
+        parameterStore.getParameterList().add(p2);
+        Parameter p3 = new Parameter("HB000", "bbb", "paramBl2", categories2);
+       // parameterStore.CreateParameter("HB000", "bbb", "paramBl2", categories2);
         parameterStore.saveParameter();
+        parameterStore.getParameterList().add(p3);
 
         Test test = new Test("1234567890123456", "100000000000", "999999999999", bloodTest);
+        //testStore.getTestList().add(test);
+        //testStore.saveTest(test);
         Test test1 = new Test("1234567890123456", "100000000001", "999999999991", covidTest);
+        //testStore.getTestList().add(test1);
+        //testStore.saveTest(test1);
 
     }
 

@@ -32,7 +32,7 @@ public class ClientUI implements Runnable{
                 exception = false;
 
             } catch (Exception e){
-                e.printStackTrace();
+                System.out.println(e.getMessage());
                 System.out.println("Incorrect input of data (an error has occured)! Please, try again.");
                 exception = true;
             }

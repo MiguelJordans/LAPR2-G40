@@ -280,6 +280,19 @@ public class TestType {
 
     }
 
+    public boolean compareSelection(String selection){
+
+
+        if(selection.equals("SELECTED")){
+            return false;
+        }
+
+        return true;
+
+    }
+
+
+
     public String getExternalModule() {
         return ExternalModule;
     }

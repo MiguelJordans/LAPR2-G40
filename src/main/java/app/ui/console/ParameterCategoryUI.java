@@ -26,7 +26,7 @@ public class ParameterCategoryUI implements Runnable {
                 ctrl.CreateParameterCategory(description, code, nhsld);
                 exception = false;
             } catch (Exception e) {
-                e.printStackTrace();
+                System.out.println(e.getMessage());
                 System.out.println("Incorrect input of data (an error has ocurred), please try again.");
                 exception = true;
             }

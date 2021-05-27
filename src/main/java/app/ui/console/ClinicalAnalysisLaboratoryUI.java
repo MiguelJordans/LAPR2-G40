@@ -37,12 +37,10 @@ public class ClinicalAnalysisLaboratoryUI implements Runnable {
                     this.ttList.add(tt);
 
                     if (tt == null) {
-                        List<MenuItem> options = new ArrayList<MenuItem>();
-                        options.add(new MenuItem("DN", new AdminUI()));
-                        options.get(0).run();
+                        System.out.println("Please choose a valid test type!");
+                    } else {
+                        leave = Utils.confirm("Do you wish to select more test types?");
                     }
-
-                    leave = Utils.confirm("Do you wish to select more test types?");
 
                 } while (leave);
 
@@ -56,6 +54,7 @@ public class ClinicalAnalysisLaboratoryUI implements Runnable {
 
                         this.ctrl.CreateClinicalAnalysisLaboratory(laboratoryID, name, address, phoneNumber, TINnumber,ttList);
                     } catch (Exception e){
+                        System.out.println(e.getMessage());
                         System.out.println("Incorrect input of data (an error has occured)! Please, try again.");
                         exception = true;
                     }
