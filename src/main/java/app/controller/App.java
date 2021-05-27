@@ -1,6 +1,6 @@
 package app.controller;
 
-import app.domain.model.Company;
+import app.domain.model.*;
 import app.domain.shared.Constants;
 import auth.AuthFacade;
 import auth.UserSession;
@@ -8,6 +8,8 @@ import auth.UserSession;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
 /**
@@ -86,6 +88,39 @@ public class App {
         this.authFacade.addUserWithRole("Recepcionist", "receptionist@lei.sem2.pt", "123456",Constants.ROLE_RECEPTIONIST);
         this.authFacade.addUserWithRole("Medical lab technician", "mlt@lei.sem2.pt", "123456",Constants.ROLE_MEDICAL_LAB_TECHNICIAN);
         this.authFacade.addUserWithRole("Clinical Chemistry Technologist", "cct@lei.sem2.pt", "123456",Constants.ROLE_CLINICAL_CHEMISTRY_TECHNOLOGIST);
+
+        TestTypeStore testTypeStore = company.getTestTypeStore();
+        ParameterCategoryStore parameterCategoryStore = company.getParameterCategoryStore();
+        ParameterStore parameterStore = company.getParameterStore();
+        TestStore testStore = company.getTestStore();
+
+        ParameterCategory parameterCategory = new ParameterCategory("12345", "categoria","1212");
+        // parameterCategoryStore.saveParameterCategory();
+        parameterCategoryStore.getParameterCategoryList().add(parameterCategory);
+        ParameterCategory parameterCategory1 = new ParameterCategory("12346", "cat","1212");
+        //parameterCategoryStore.saveParameterCategory();
+        parameterCategoryStore.getParameterCategoryList().add(parameterCategory1);
+
+        List<ParameterCategory> categories1 = new ArrayList<>();
+        categories1.add(parameterCategory);
+        List<ParameterCategory> categories2 = new ArrayList<>();
+        categories2.add(parameterCategory1);
+
+        TestType bloodTest = new TestType("BL000", "Blood Test", "Needle", categories2);
+        testTypeStore.saveTestType();
+        TestType covidTest = new TestType("COV19", "Covid Test", "Swap", categories1);
+        testTypeStore.saveTestType();
+
+        parameterStore.CreateParameter("IgGAN","000","paramCv1",categories1);
+        parameterStore.saveParameter();
+        parameterStore.CreateParameter("ESR00", "aaa", "paramBl1", categories1);
+        parameterStore.saveParameter();
+        parameterStore.CreateParameter("HB000", "bbb", "paramBl2", categories2);
+        parameterStore.saveParameter();
+
+        Test test = new Test("1234567890123456", "100000000000", "999999999999", bloodTest);
+        Test test1 = new Test("1234567890123456", "100000000001", "999999999991", covidTest);
+
     }
 
     // Extracted from https://www.javaworld.com/article/2073352/core-java/core-java-simply-singleton.html?page=2
