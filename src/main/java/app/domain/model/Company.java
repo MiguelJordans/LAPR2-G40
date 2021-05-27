@@ -52,7 +52,9 @@ public class Company {
 
     //US04 - Test -------------------------------------------------------------------------------
 
-    private TestStore testStore;
+    TestStore testStore = new TestStore();
+
+    public List<Test> getTestList(){return testStore.getTestsList();}
 
     public TestStore getTestStore() {
         return testStore;

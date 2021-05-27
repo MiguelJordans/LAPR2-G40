@@ -20,7 +20,7 @@ public class RecordTestResultController {
 
     private Test getCorrespondingTest(String sampleBarcodeNumber) {
         String testID = "000000000003"; //Buscar teste correspondente através do número do barcode
-        List<Test> tests = testStore.getTests();
+        List<Test> tests = testStore.getTestsList();
 
         for (Test t1 : tests) {
             if(test.getTestID().equals(testID)) {

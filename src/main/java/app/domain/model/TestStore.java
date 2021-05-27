@@ -7,11 +7,11 @@ import java.util.HashSet;
 
 public class TestStore {
 
-    private static List<Test> tests = new ArrayList<>();
+    private static List<Test> testsList = new ArrayList<>();
     private static int testNumber = 1;
 
-    public List<Test> getTests() {
-        return tests;
+    public List<Test> getTestsList() {
+        return testsList;
     }
 
     public Test createTest(String citizenCardNumber, String testID, String nhsCode, TestType testType) {
@@ -28,7 +28,7 @@ public class TestStore {
         if (test == null)
             return false;
 
-        for (Test test1 : tests) {
+        for (Test test1 : testsList) {
             if (test1.getTestID().equalsIgnoreCase(test.getTestID()) || (test1.getNhsCode().equalsIgnoreCase(test.getNhsCode()))) {
                 return false;
             }
@@ -38,7 +38,7 @@ public class TestStore {
 
     public boolean saveTest(Test test) {
         if (validateTest(test)) {
-            tests.add(test);
+            testsList.add(test);
             testNumber++;
             return true;
         }
@@ -53,7 +53,7 @@ public class TestStore {
     }
 
     public boolean validateNhsCode(String nhsCode) {
-        for (Test test1 : tests) {
+        for (Test test1 : testsList) {
             if (test1.getNhsCode().equalsIgnoreCase(nhsCode)) {
                 return true;
             }
@@ -63,7 +63,7 @@ public class TestStore {
 
     public HashSet<Test> getInvalidTestList() {
         HashSet<Test> invalidTests = new HashSet<>();
-        for (Test temp : tests) {
+        for (Test temp : testsList) {
             if (!temp.isValid()) {
                 invalidTests.add(temp);
             }
@@ -72,7 +72,7 @@ public class TestStore {
     }
 
     public List<Test> getTestList(){
-        return tests;
+        return testsList;
     }
 
 /*
