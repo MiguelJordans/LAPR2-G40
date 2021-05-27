@@ -135,6 +135,10 @@ public class Company {
         return parameterCategoryStore;
     }
 
+    // U12 ----------------------------------------------------------
+
+    
+
     // US15 - ValidateTest -----------------------------------------------------------------
 
     public HashSet<Test> getInvalidTestList() {
