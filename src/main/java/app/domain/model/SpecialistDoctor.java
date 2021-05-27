@@ -5,11 +5,10 @@ import org.apache.commons.lang3.StringUtils;
 
 import java.util.regex.Pattern;
 
-public class Employee {
-
+public class SpecialistDoctor {
     private String name, address, phoneNumber, email, orgRole;
     private String employeeId;
-    private String socCode;
+    private String socCode, doctorIndexNumber;
 
     /**
      * Contructs an instance of Employee
@@ -21,9 +20,10 @@ public class Employee {
      * @param employeeId the Employee's employee ID
      * @param socCode the Employee's socCode
      * @param orgRole the Employee's organization role
+     * @param doctorIndexNumber the Employee's doctor index number
      */
 
-    public Employee(String name, String address, String email, String phoneNumber, String employeeId, String socCode, String orgRole) {
+    public SpecialistDoctor(String name, String address, String email, String phoneNumber, String employeeId, String socCode, String orgRole, String doctorIndexNumber) {
 
         checkNameRules(name);
         checkAddressRules(address);
@@ -32,6 +32,7 @@ public class Employee {
         checkEmployeeId(employeeId);
         checkSocCode(socCode);
         checkOrgRole(orgRole);
+        checkDoctorIndexNumber(doctorIndexNumber);
 
         this.name = name;
         this.address = address;
@@ -40,11 +41,28 @@ public class Employee {
         this.employeeId = employeeId;
         this.socCode = socCode;
         this.orgRole = orgRole;
-
+        this.doctorIndexNumber = doctorIndexNumber;
 
     }
 
     //Checks
+
+    /**
+     * Checks the Employee's doctor index number (according to the acceptance criteira)
+     *
+     * @param doctorIndexNumber the Employee's doctor index number
+     */
+
+    public void checkDoctorIndexNumber(String doctorIndexNumber) {
+
+        if (StringUtils.isBlank(doctorIndexNumber)) {
+            throw new IllegalArgumentException("Doctor Index Number can't be empty.");
+        }
+        if (doctorIndexNumber.length() != Constants.DOCTOR_INDEX_NUMBER_MAX) {
+            throw new IllegalArgumentException("Doctor Index Number needs to have exactly 6 digits.");
+        }
+
+    }
 
     /**
      * Checks the Employee's organization role (according to the acceptance criteira)
@@ -202,6 +220,16 @@ public class Employee {
     //Gets
 
     /**
+     * Returns the doctor index number of the Employee
+     *
+     * @return the doctor index number of the Employee
+     */
+
+    public String getDoctorIndexNumber() {
+        return doctorIndexNumber;
+    }
+
+    /**
      * Returns the organization role of the Employee
      *
      * @return the organization role of the Employee
@@ -272,6 +300,16 @@ public class Employee {
     }
 
     //Sets
+
+    /**
+     * Modifies the doctor index number
+     *
+     * @param doctorIndexNumber modifies the doctor index number of the Employee
+     */
+
+    public void setDoctorIndexNumber(String doctorIndexNumber) {
+        this.doctorIndexNumber = doctorIndexNumber;
+    }
 
     /**
      * Modifies the organization role
@@ -362,6 +400,8 @@ public class Employee {
                 ", orgRole='" + orgRole + '\'' +
                 ", employeeId='" + employeeId + '\'' +
                 ", socCode='" + socCode + '\'' +
+                ", doctorIndexNumber='" + doctorIndexNumber + '\'' +
                 '}';
     }
+
 }

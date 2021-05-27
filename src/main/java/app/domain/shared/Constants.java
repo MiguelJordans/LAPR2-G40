@@ -10,6 +10,9 @@ public class Constants {
     public static final String ROLE_RECEPTIONIST = "RECEPTIONIST";
     public static final String ROLE_MEDICAL_LAB_TECHNICIAN = "MEDICAL_LAB_TECHNICIAN";
     public static final String ROLE_CLINICAL_CHEMISTRY_TECHNOLOGIST ="CLINICAL_CHEMISTRY_TECHNOLOGIST";
+    public static final String ROLE_SPECIALIST_DOCTOR ="SPECIALIST_DOCTOR";
+    public static final String ROLE_LABORATORY_COORDINATOR ="LABORATORY_COORDINATOR";
+
     public static final String ROLE_CLIENT="CLIENT";
 
     public static final String PARAMS_FILENAME = "config.properties";
@@ -38,7 +41,7 @@ public class Constants {
     public static final int TIN_NUMBER_SIZE = 10;
 
     public static final int DOCTOR_INDEX_NUMBER_MAX=6;
-    public final int NAME_EMPLOYEE_MAX=30;
+    public static final int NAME_EMPLOYEE_MAX=30;
     public static final int ADRESS_EMPLOYEE_MAX=30;
     public static final int PHONE_NUMBER_MAX=11;
     public static final int SOC_MAX=7;
@@ -52,5 +55,6 @@ public class Constants {
 
     public static final String CLIENT_NOTIFICATION="Client_Notification";
     public static final String PATH_CLIENT="ClientNotification\\";
+
 
 }

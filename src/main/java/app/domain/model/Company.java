@@ -52,7 +52,9 @@ public class Company {
 
     //US04 - Test -------------------------------------------------------------------------------
 
-    private TestStore testStore;
+    TestStore testStore = new TestStore();
+
+    public List<Test> getTestList(){return testStore.getTestsList();}
 
     public TestStore getTestStore() {
         return testStore;
@@ -75,13 +77,21 @@ public class Company {
 
     EmployeeStore employeeStore = new EmployeeStore();
 
+    SpecialistDoctorStore specialistDoctorStore = new SpecialistDoctorStore();
+
     public List<Employee> getEmployeeList() {
         return employeeStore.getEmployeeList();
+    }
+
+    public List<SpecialistDoctor> getSpecialistDoctorList(){
+        return specialistDoctorStore.getSpecialistDoctorList();
     }
 
     public EmployeeStore getEmployeeStore() {
         return employeeStore;
     }
+
+    public SpecialistDoctorStore getSpecialistDoctorStore() { return specialistDoctorStore; }
 
 
     // US08 - ClinicalAnalysisLaboratory --------------------------------------------------------
@@ -147,4 +157,6 @@ public class Company {
     public boolean saveTest(Test t) {
         return testStore.saveTest(t);
     }
+
+
 }
