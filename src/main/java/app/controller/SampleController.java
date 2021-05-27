@@ -35,7 +35,7 @@ public class SampleController {
      * Creates a test type (Calling the TestType constructor implemented in the TestTypeStore)
      */
 
-    public void CreateSample(TestType tt, int n) throws IOException {
+    public void CreateSample(TestType tt, int n) throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException {
 
         smStore = company.getSampleStore();
 
@@ -44,7 +44,7 @@ public class SampleController {
             this.smStore.CreateSample(tt);
             //this.smStore.addToTemporaryList();
             this.smStore.saveSample();
-            this.smStore.barcodeImage();
+            //this.smStore.barcodeImage();
 
         }
     }
@@ -90,6 +90,8 @@ public class SampleController {
          return smStore.showList();
 
     }
+
+
 
     /*public void addElementsToSampleList() {
 

@@ -49,6 +49,7 @@ public class Constants {
     public static final int ACCESS_KEY = 12345;
     public static final String COVID_REFERENCE_API = "app.domain.model.RefValueAdapter1";
     public static final String EM_REFERENCE_API = "app.domain.model.RefValueAdapter2";
+    public static final String BC_REFERENCE_API = "app.domain.model.BarcodeAdapter1";
 
     public static final String BARCODE_IMAGE="BarcodeImage";
     public static final String PATH ="Barcodes\\";

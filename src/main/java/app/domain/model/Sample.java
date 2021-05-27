@@ -1,13 +1,11 @@
 package app.domain.model;
 
-import net.sourceforge.barbecue.Barcode;
-
 public class Sample {
 
     private TestType tr;
-    private Barcode barcode;
+    private String barcode;
 
-    public Sample(TestType tr,Barcode barcode) {
+    public Sample(TestType tr,String barcode) {
 
         checkTest(tr);
         checkBarcode(barcode);
@@ -22,11 +20,11 @@ public class Sample {
 
     }
 
-    public void checkBarcode(Barcode barcode){
+    public void checkBarcode(String barcode){
         if (barcode==null||barcode.equals(null)) throw new NullPointerException("Barcode is null! Please verify the creation of the barcode!");
     }
 
-    public Barcode getBarcode() {
+    public String getBarcode() {
         return barcode;
     }
 
@@ -34,7 +32,7 @@ public class Sample {
         return tr;
     }
 
-    public void setBarcode(Barcode barcode) {
+    public void setBarcode(String barcode) {
         checkBarcode(barcode);
         this.barcode = barcode;
     }
