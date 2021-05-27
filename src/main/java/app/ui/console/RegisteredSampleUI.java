@@ -29,14 +29,14 @@ public class RegisteredSampleUI implements Runnable {
 
         do {
 
-            String code = Utils.readLineFromConsole("Type the test code to see the registered samples of that test: ");
+            String code = Utils.readLineFromConsole("Type the test ID to see the registered samples of that test: ");
 
             do {
 
                 try {
                     for (Sample sm1 : smStore.getSampleList()) {
 
-                        if (code.equals(sm1.getTr().getTestCode())) {
+                        if (code.equals(sm1.getTr().getTestID())) {
                             System.out.println(sm1);
                         } else {
                             System.out.println("Test code invalid! Please try to type a valid test!");

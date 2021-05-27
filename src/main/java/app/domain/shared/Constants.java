@@ -57,5 +57,4 @@ public class Constants {
     public static final String CLIENT_NOTIFICATION="Client_Notification";
     public static final String PATH_CLIENT="ClientNotification\\";
 
-
 }

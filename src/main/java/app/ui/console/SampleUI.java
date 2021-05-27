@@ -31,9 +31,9 @@ public class SampleUI implements Runnable {
         boolean m = false;
         boolean nbol = false;
 
-        TestType tt = null;
+        Test tr = null;
 
-        if (this.ttStore.getTestTypeList() == null || this.ttStore.getTestTypeList().isEmpty()) {
+        if (this.trStore.getTestList() == null || this.trStore.getTestList().isEmpty()) {
             System.out.println("The list is empty! Please, try adding at least one test in order to create the sample(s)!");
 
         } else {
@@ -41,14 +41,14 @@ public class SampleUI implements Runnable {
                 boolean exception = false;
                 do {
 
-                    tt = (TestType) Utils.showAndSelectOne(this.ttStore.getTestTypeList(), "Select the test: \n");
+                    tr = (Test) Utils.showAndSelectOne(this.trStore.getTestList(), "Select the test: \n");
 
-                    if (!(tt == null))
-                        m = tt.compareState(tt.getState());
+                    if (!(tr == null))
+                        m = tr.compareState(tr.getState());
 
 
                     if (!m) {
-                        if(tt==null){
+                        if(tr==null){
                             System.out.println("Please choose a valid test!\n");
                         } else
                         System.out.println("Please choose a valid test (sample is already collected!)\n");
@@ -61,7 +61,7 @@ public class SampleUI implements Runnable {
 
                         int n = Utils.readIntegerFromConsole("Type the number of samples that you wish to create: ");
 
-                        this.ctrl.CreateSample(tt, n);
+                        this.ctrl.CreateSample(tr, n);
 
                         exception = false;
 
@@ -97,7 +97,7 @@ public class SampleUI implements Runnable {
 
             } while (count);
 
-            tt.setState("SAMPLE_COLLECTED");
+            tr.setState("SAMPLE_COLLECTED");
 
         }
     }

@@ -26,12 +26,8 @@ public class Test {
         this.citizenCardNumber = citizenCardNumber;
         this.testID = testCode;
         this.nhsCode = nhsCode;
-        state = State.REGISTERED;
+        state = State.CREATED;
         tpList = new ArrayList<>();
-    }
-
-    public enum State {
-        REGISTERED, SAMPLECOLLECTED, ANALYZED, DIAGNOSED, VALIDATED
     }
 
     public String getTestID() {
@@ -40,10 +36,6 @@ public class Test {
 
     public String getNhsCode() {
         return nhsCode;
-    }
-
-    public State getState() {
-        return state;
     }
 
     public List<Parameter> getParamList() {
@@ -57,10 +49,6 @@ public class Test {
 
     public List<TestParameter> getTpList() {
         return tpList;
-    }
-
-    public void setState(State state) {
-        this.state = state;
     }
 
     private void checkNhsCode(String nhsCode) {
@@ -119,6 +107,67 @@ public class Test {
     public boolean validate(LocalDate date) {
         // this.validationDate=date;
         return true;
+    }
+
+    enum State{
+        CREATED,
+        SAMPLE_COLLECTED,
+        SAMPLE_ANALYSED,
+        DIAGNOSTIC_MADE,
+        VALIDATED;
+    }
+
+    public void setState(State state) {
+        this.state=state;
+    }
+
+    public void setState(String s){
+        switch (s){
+            case "CREATED":
+                setState(State.CREATED);
+                break;
+            case "SAMPLE_COLLECTED" :
+                setState(State.SAMPLE_COLLECTED);
+                break;
+            case "SAMPLE_ANALYSED" :
+                setState(State.SAMPLE_ANALYSED);
+                break;
+            case "DIAGNOSTIC_MADE":
+                setState(State.DIAGNOSTIC_MADE);
+                break;
+            case "VALIDATED":
+                setState(State.VALIDATED);
+                break;
+            default:
+                break;
+        }
+    }
+
+    public boolean compareState(String state){
+
+
+        if(state.equals("SAMPLE_ANALYSED")||state.equals("SAMPLE_COLLECTED")||state.equals("DIAGNOSTIC_MADE")||state.equals("VALIDATED")){
+            return false;
+        }
+
+        return true;
+
+    }
+
+    public String getState() {
+        return state.name();
+    }
+
+    @Override
+    public String toString() {
+        return "Test{" +
+                "citizenCardNumber='" + citizenCardNumber + '\'' +
+                ", testID='" + testID + '\'' +
+                ", nhsCode='" + nhsCode + '\'' +
+                ", tt=" + tt +
+                ", state=" + state +
+                ", tpList=" + tpList +
+                '}';
     }
 }
 

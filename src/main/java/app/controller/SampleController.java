@@ -35,13 +35,13 @@ public class SampleController {
      * Creates a test type (Calling the TestType constructor implemented in the TestTypeStore)
      */
 
-    public void CreateSample(TestType tt, int n) throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException {
+    public void CreateSample(Test tr, int n) throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException {
 
         smStore = company.getSampleStore();
 
         for (int i = 0; i < n; i++) {
             //sampleListTemporary.add(smStore.CreateSample(tt)); O controller não esta a conseguir criar a sample deve ter aqui um erro
-            this.smStore.CreateSample(tt);
+            this.smStore.CreateSample(tr);
             //this.smStore.addToTemporaryList();
             this.smStore.saveSample();
             //this.smStore.barcodeImage();
@@ -88,10 +88,7 @@ public class SampleController {
 
     public List<Sample> showList(){
          return smStore.showList();
-
     }
-
-
 
     /*public void addElementsToSampleList() {
 

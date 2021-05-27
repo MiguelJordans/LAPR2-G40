@@ -2,10 +2,10 @@ package app.domain.model;
 
 public class Sample {
 
-    private TestType tr;
+    private Test tr;
     private String barcode;
 
-    public Sample(TestType tr,String barcode) {
+    public Sample(Test tr,String barcode) {
 
         checkTest(tr);
         checkBarcode(barcode);
@@ -15,7 +15,7 @@ public class Sample {
 
     }
 
-    public void checkTest(TestType tr){
+    public void checkTest(Test tr){
         if(tr==null||tr.equals(null)) throw new NullPointerException("Test is null! Please choose a test that has atrributes!");
 
     }
@@ -28,7 +28,7 @@ public class Sample {
         return barcode;
     }
 
-    public TestType getTr() {
+    public Test getTr() {
         return tr;
     }
 
@@ -37,7 +37,7 @@ public class Sample {
         this.barcode = barcode;
     }
 
-    public void setTr(TestType tr) {
+    public void setTr(Test tr) {
         checkTest(tr);
         this.tr = tr;
     }
@@ -45,7 +45,7 @@ public class Sample {
     @Override
     public String toString() {
         return "Sample {" +
-                " Test code=" + tr.getTestCode() +
+                " Test ID=" + tr.getTestID() +
                 ", Barcode=" + barcode +
                 '}';
     }

@@ -16,23 +16,22 @@ public class SampleStore {
     /**
      * Creates a Sample (Calling the Sample constructor)
      *
-     * @param tt The test that the actor wished to created a sample of
      * @return the sample created
      */
 
-    public Sample CreateSample(TestType tt) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+    public Sample CreateSample(Test tr) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
         Class<?> eClass = Class.forName(Constants.BC_REFERENCE_API);
         BarcodeAdapter ba = (BarcodeAdapter) eClass.newInstance();
 
         String barcodeText = generateNumber();
-        String filename = Constants.BARCODE_IMAGE + "_" + tt.getTestCode() + "_" + barcodeText;
+        String filename = Constants.BARCODE_IMAGE + "_" + tr.getTestID() + "_" + barcodeText;
 
         ba.generateBarcodeandBarcodeImage(barcodeText, filename);
 
         barcode = ba.getBarcode();
 
-        return this.sm = new Sample(tt, barcode);
+        return this.sm = new Sample(tr, barcode);
 
     }
 

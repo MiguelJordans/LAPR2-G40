@@ -14,7 +14,6 @@ public class TestType {
     private List<ParameterCategory> pcList;
 
     private State state;
-    private Selection selection;
 
     private String ExternalModule;
 
@@ -40,7 +39,7 @@ public class TestType {
 
         this.pcList = pcList;
         this.state = State.CREATED;
-        this.selection = Selection.FREE;
+
 
     }
 
@@ -212,12 +211,7 @@ public class TestType {
         VALIDATED;
     }
 
-    enum Selection{
-        SELECTED,
-        FREE;
-    }
-
-    public void setState(State state) {
+    /*public void setState(State state) {
        this.state=state;
     }
 
@@ -243,27 +237,6 @@ public class TestType {
         }
     }
 
-    public String getSelection() {
-        return selection.name();
-    }
-
-    public void setSelection(Selection selection) {
-        this.selection=selection;
-    }
-
-    public void setSelection(String s){
-        switch (s){
-            case "SELECTED":
-                setSelection(Selection.SELECTED);
-                break;
-            case "FREE" :
-                setSelection(selection.FREE);
-                break;
-            default:
-                break;
-        }
-    }
-
     public String getState() {
         return state.name();
     }
@@ -278,7 +251,7 @@ public class TestType {
 
         return true;
 
-    }
+    }*/
 
     public boolean compareSelection(String selection){
 
