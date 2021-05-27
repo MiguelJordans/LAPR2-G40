@@ -29,7 +29,7 @@ public class RegisteredSampleUI implements Runnable {
 
         do {
 
-            String code = Utils.readLineFromConsole("Type the test code to see the registered samples of that test");
+            String code = Utils.readLineFromConsole("Type the test code to see the registered samples of that test: ");
 
             do {
 

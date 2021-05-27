@@ -20,14 +20,14 @@ public class ClientUI implements Runnable{
         boolean exception = false;
         do {
             try {
-                String name = Utils.readLineFromConsole("Please enter the name of the client");
-                String email = Utils.readLineFromConsole("Please enter the email1 of the client");
-                String sex = Utils.readLineFromConsole("Please enter the sex of the client");
-                Date birthdate = Utils.readDateFromConsole("Please enter the birth date of the client");
-                String citizenCardNumber = Utils.readLineFromConsole("Please enter the citizen card number of the client");
-                String phoneNumber = Utils.readLineFromConsole("Please enter the phone number of the client");
-                String tinNumber = Utils.readLineFromConsole("Please enter the TIN number of the client");
-                String nhsNumber = Utils.readLineFromConsole("Please enter the NHS number of the client");
+                String name = Utils.readLineFromConsole("Please enter the name of the client: ");
+                String email = Utils.readLineFromConsole("Please enter the email1 of the client: ");
+                String sex = Utils.readLineFromConsole("Please enter the sex of the client: ");
+                Date birthdate = Utils.readDateFromConsole("Please enter the birth date of the client: ");
+                String citizenCardNumber = Utils.readLineFromConsole("Please enter the citizen card number of the client: ");
+                String phoneNumber = Utils.readLineFromConsole("Please enter the phone number of the client: ");
+                String tinNumber = Utils.readLineFromConsole("Please enter the TIN number of the client: ");
+                String nhsNumber = Utils.readLineFromConsole("Please enter the NHS number of the client: ");
                 ctrl.CreateClient(name, email, sex, birthdate, citizenCardNumber, phoneNumber, tinNumber, nhsNumber);
                 exception = false;
 
@@ -38,10 +38,10 @@ public class ClientUI implements Runnable{
             }
         } while (exception);
 
-        count = Utils.confirm("Client created! Do you want to save it?" + ctrl.getCr());
+        count = Utils.confirm("Client created! Do you want to save it(s/n)?" + ctrl.getCr());
         if (count) {
             if (ctrl.saveClient()) {
-                System.out.println("Client was saved with success!");
+                System.out.println("Save successful!");
             }
         }
     }

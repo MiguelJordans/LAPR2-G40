@@ -21,7 +21,7 @@ public class RecordTestResultUI implements Runnable {
     public void run() {
         boolean exception = false;
         do {
-            String sampleID = Utils.readLineFromConsole("Please enter the sample barcode number of the test");
+            String sampleID = Utils.readLineFromConsole("Please enter the sample barcode number of the test: ");
 
             try {
                 List<Parameter> parameters = ctrl.getParameters(sampleID);
@@ -30,7 +30,7 @@ public class RecordTestResultUI implements Runnable {
                     System.out.println();
                     System.out.println("Parameters: " + param.getName());
 
-                    double result = Utils.readDoubleFromConsole("Please insert the result/value");
+                    double result = Utils.readDoubleFromConsole("Please insert the result/value: ");
                     ctrl.addTestParameterResult(param.getCode(), result);
                 }
             } catch (Exception e) {

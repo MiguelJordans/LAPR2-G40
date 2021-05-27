@@ -26,7 +26,7 @@ public class TestTypeUI implements Runnable {
     public void run() {
 
         boolean count = true;
-        boolean leave = false;
+        boolean leave = true;
 
         if (this.pcStore.getParameterCategoryList() == null || this.pcStore.getParameterCategoryList().isEmpty()) {
             System.out.println("The list is empty! Please, try adding at least one parameter in order to create the laboratory.");
@@ -35,16 +35,15 @@ public class TestTypeUI implements Runnable {
                 boolean exception = false;
                 do {
 
-                    ParameterCategory pc = (ParameterCategory) Utils.showAndSelectOne(this.pcStore.getParameterCategoryList(), "Select the category");
+                    ParameterCategory pc = (ParameterCategory) Utils.showAndSelectOne(this.pcStore.getParameterCategoryList(), "Select the category: ");
                     this.pcList.add(pc);
 
                     if (pc == null) {
-                        List<MenuItem> options = new ArrayList<MenuItem>();
-                        options.add(new MenuItem("DN", new AdminUI()));
-                        options.get(0).run();
+                        System.out.println("Please choose a valid category!\n");
+                    } else {
+                        leave = Utils.confirm("Do you wish to select more categories(s/n)?");
                     }
 
-                    leave = Utils.confirm("Do you wish to select more categories?");
                 }while (leave);
 
                 do {
@@ -67,12 +66,12 @@ public class TestTypeUI implements Runnable {
                     }
                 } while (exception);
 
-                count = Utils.confirm("Test Type created! Do you wish to save it?" + ctrl.getTT());
+                count = Utils.confirm("Test Type created! Do you wish to save it(s/n)?" + ctrl.getTT());
 
                 if (count) {
 
                     if (this.ctrl.saveTestType()) {
-                        System.out.println("Test type was saved with success!");
+                        System.out.println("Save successful!");
 
                     }
                 }

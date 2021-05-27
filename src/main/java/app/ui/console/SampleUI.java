@@ -51,7 +51,7 @@ public class SampleUI implements Runnable {
                         if(tt==null){
                             System.out.println("Please choose a valid test!\n");
                         } else
-                        System.out.println("Please choose a valid test (sample is already collected!)");
+                        System.out.println("Please choose a valid test (sample is already collected!)\n");
                     }
 
                 } while (!m);
@@ -59,7 +59,7 @@ public class SampleUI implements Runnable {
                 do {
                     try {
 
-                        int n = Utils.readIntegerFromConsole("Type the number of samples that you wish to create");
+                        int n = Utils.readIntegerFromConsole("Type the number of samples that you wish to create: ");
 
                         this.ctrl.CreateSample(tt, n);
 
@@ -74,18 +74,18 @@ public class SampleUI implements Runnable {
                 } while (exception);
 
 
-                count = Utils.confirm("Sample(s) created! Do you wish to see them?");
+                count = Utils.confirm("Sample(s) created! Do you wish to see it(them) (s/n)?");
 
                 if (count) {
 
                     do {
-                        Utils.showListWithouThe0(ctrl.getSampleList(), "Do you wish to delete any?");
+                        Utils.showListWithouThe0(ctrl.getSampleList(), "Do you wish to delete any?(s/n)");
                         flag = Utils.confirm("");
                         count = flag;
                         nbol = flag;
 
                         if (flag) {
-                            int a = Utils.readIntegerFromConsole("Type the number of the sample that you wish to delete");
+                            int a = Utils.readIntegerFromConsole("Type the number of the sample that you wish to delete: ");
                             ctrl.getSampleList().remove(a - 1);
                             count = !flag;
 
@@ -98,6 +98,7 @@ public class SampleUI implements Runnable {
             } while (count);
 
             tt.setState("SAMPLE_COLLECTED");
+
         }
     }
 }
