@@ -1,8 +1,6 @@
 
 l
 <src/main/java/app/controller/RecordTestResultController.java,1\f\1fd1e700307b14128deb854e5c3e6c27e0e3adb9
-d
-4src/main/java/app/ui/console/RecordTestResultUI.java,c\1\c16354235a4b29ed1a8945335a6e6a1001ca19e7
 a
 1src/main/java/app/domain/model/TestParameter.java,4\d\4dc3d189ec133a85b04dfd016faa819500cb5976
 [
