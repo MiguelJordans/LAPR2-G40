@@ -1,6 +1,5 @@
 package app.domain.model;
 
-import app.ui.console.ClientNotification;
 import app.ui.console.GeneratePassword;
 import auth.AuthFacade;
 

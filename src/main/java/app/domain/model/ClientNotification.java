@@ -1,4 +1,4 @@
-package app.ui.console;
+package app.domain.model;
 
 import app.domain.shared.Constants;
 
@@ -14,7 +14,7 @@ public class ClientNotification {
 
     public void generateClientNotification(String name,String email,String password)  {
 
-        String filename = Constants.CLIENT_NOTIFICATION+"_"+name;
+        String filename = Constants.CLIENT_NOTIFICATION+"_"+name+".txt";
         File clientNotification = new File(Constants.PATH_CLIENT+filename);
 
         try{
