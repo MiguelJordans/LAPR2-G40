@@ -1,0 +1,8 @@
+
+E
+java:S1066."/Merge this if statement with the enclosing one.(ù£òù
+S	java:S106&"9Replace this use of System.out or System.err by a logger.(©şêÜúÿÿÿÿ
+M	java:S106'"9Replace this use of System.out or System.err by a logger.(ÒÆÔQ
+S	java:S106/"9Replace this use of System.out or System.err by a logger.(™úôÁüÿÿÿÿ
+J
+java:S1068"/Remove this unused "clientStore" private field.(ÆÍÀ¹ıÿÿÿÿ

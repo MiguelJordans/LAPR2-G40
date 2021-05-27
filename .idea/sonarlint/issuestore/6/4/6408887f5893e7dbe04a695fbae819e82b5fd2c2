@@ -1,0 +1,8 @@
+
+D
+java:S1121".Extract the assignment out of this expression.(ÛäÉÿ
+h	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŽòÆƒûÿÿÿÿ
+W
+java:S1126*"AReplace this if-then-else statement by a single return statement.(œ½é•
+V
+java:S11268"AReplace this if-then-else statement by a single return statement.(¿Ì¼C

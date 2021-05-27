@@ -1,0 +1,10 @@
+
+m	java:S117%"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ë—öø8Œ§Ğøš/
+P
+java:S1121'".Extract the assignment out of this expression.(­§ŒÜúÿÿÿÿ8§Ğøš/
+j	java:S100#"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‡¢³à8‘§Ğøš/
+c
+java:S11263"AReplace this if-then-else statement by a single return statement.(ÚÅŒ¨ùÿÿÿÿ8‘§Ğøš/
+c
+java:S1126E"AReplace this if-then-else statement by a single return statement.(·†€»şÿÿÿÿ8’§Ğøš/
+V	java:S106¡"9Replace this use of System.out or System.err by a logger.(¨½ì‚8†Š‹üš/

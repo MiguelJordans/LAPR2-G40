@@ -26,6 +26,28 @@
 				<dependencies>
 
 					<dependency>
+						<groupId>com.example1</groupId>
+						<artifactId>ExternalModule3API</artifactId>
+						<version>1.0.0</version>
+						<scope>system</scope>
+						<systemPath>${basedir}/lib/ExternalModule3API-1.0.0.jar</systemPath>
+					</dependency>
+					<dependency>
+						<groupId>com.example2</groupId>
+						<artifactId>ExternalModule2API</artifactId>
+						<version>1.0.0</version>
+						<scope>system</scope>
+						<systemPath>${basedir}/lib/ExternalModule2API-1.0.0.jar</systemPath>
+					</dependency>
+					<dependency>
+						<groupId>com.example3</groupId>
+						<artifactId>CovidReferenceValues1API</artifactId>
+						<version>1.0.0</version>
+						<scope>system</scope>
+						<systemPath>${basedir}/lib/CovidReferenceValues1API-1.0.0.jar</systemPath>
+					</dependency>
+
+					<dependency>
 					<groupId>com.example1</groupId>
 					<artifactId>ExternalModule3API</artifactId>
 					<version>1.0.0</version>
