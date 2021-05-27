@@ -1,9 +1,6 @@
 package app.controller;
 
-import app.domain.model.Company;
-import app.domain.model.Parameter;
-import app.domain.model.Test;
-import app.domain.model.TestStore;
+import app.domain.model.*;
 
 import java.util.List;
 
