@@ -2,10 +2,12 @@ package app.domain.model;
 
 import app.ui.console.ClientNotification;
 import app.ui.console.GeneratePassword;
+import auth.AuthFacade;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class ClientStore {
 
@@ -133,11 +135,20 @@ public class ClientStore {
         return this.clientList;
     }
 
-    public void generateUserInformation(String name, String email) {
+    public void generateUserInformation(String name, String email,String role) {
 
         gp.password();
 
-        cn.generateClientNotification(name,email,gp.getPassword());
+        String password = gp.getPassword();
+
+        cn.generateClientNotification(name,email,password);
+
+        AuthFacade cc = new AuthFacade();
+
+        if(!cc.existsUser(email)){
+            role = role.toUpperCase(Locale.ROOT);
+            cc.addUserWithRole(name,email,password,role);
+        }
 
     }
 }

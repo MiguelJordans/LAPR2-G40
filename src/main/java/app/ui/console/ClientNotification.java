@@ -19,7 +19,7 @@ public class ClientNotification {
 
         try{
             FileWriter fw = new FileWriter(clientNotification);
-            fw.write("CLIENT INFORMATION: \n\n Name: "+name+"\nEmail: "+email+"\nPassword: "+password);
+            fw.write("CLIENT INFORMATION: \n\nName: "+name+"\nEmail: "+email+"\nPassword: "+password);
             fw.close();
         } catch (IOException e){
             e.getMessage();

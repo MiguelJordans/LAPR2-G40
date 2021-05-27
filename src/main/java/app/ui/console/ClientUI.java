@@ -45,7 +45,7 @@ public class ClientUI implements Runnable{
         if (count) {
             if (ctrl.saveClient()) {
                 System.out.println("Save successful!");
-                ctrl.generateUserInformation(this.ctrl.getCr().getName(),this.ctrl.getCr().getEmail());
+                ctrl.generateUserInformation(this.ctrl.getCr().getName(),this.ctrl.getCr().getEmail(),"client");
             }
         }
     }
