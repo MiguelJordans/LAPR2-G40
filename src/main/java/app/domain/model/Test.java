@@ -20,7 +20,7 @@ public class Test {
     static int testCode = 1;
 
 
-    public Test(String citizenCardNumber, String testCode, String nhsCode, TestType testType) {
+    public Test(String citizenCardNumber, String testCode, String nhsCode, TestType tt) {
         checkNhsCode(nhsCode);
 
         this.citizenCardNumber = citizenCardNumber;
@@ -66,7 +66,7 @@ public class Test {
 
     private void checkNhsCode(String nhsCode) {
         if (StringUtils.isBlank(nhsCode))
-            throw new IllegalArgumentException("The NHS code cannot be blank.");
+            throw new IllegalArgumentException("The NHS code cannot be empty.");
         if (!nhsCode.matches("[a-zA-Z0-9]+$")) {
             throw new IllegalArgumentException("NHS code only accepts letters and numbers.");
         }

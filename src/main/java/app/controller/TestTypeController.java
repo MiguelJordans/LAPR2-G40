@@ -34,7 +34,7 @@ public class TestTypeController {
      * @param description the Test type's description
      * @param testCode the Test type's test code
      * @param collectingMethod the Test type's collecting method
-     * @param pc the Test type's category list
+     * @param pcList the Test type's category list
      */
 
     public void CreateTestType(String description, String testCode, String collectingMethod, List<ParameterCategory> pcList){
