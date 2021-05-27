@@ -57,5 +57,11 @@ public class SpecialistDoctorController {
 
     public boolean saveSpecialistDoctor() { return this.store.saveEmployee();}
 
+    public void generateUserInformation(String name, String email,String role) {
+
+        store.generateUserInformation(name,email,role);
+
+    }
+
 
 }

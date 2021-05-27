@@ -82,6 +82,7 @@ public class EmployeeUI implements Runnable {
             if (count) {
                 if (ctrl1.saveSpecialistDoctor()) {
                     System.out.println("Save successful!");
+                    ctrl1.generateUserInformation(this.ctrl.getEmp().getName(),this.ctrl.getEmp().getEmail(),this.ctrl.getEmp().getOrgRole());
                 }
             }
         } else
@@ -90,6 +91,7 @@ public class EmployeeUI implements Runnable {
         if (count) {
             if (ctrl.SaveEmployee()) {
                 System.out.println("Save successful!");
+                ctrl.generateUserInformation(this.ctrl.getEmp().getName(),this.ctrl.getEmp().getEmail(),this.ctrl.getEmp().getOrgRole());
             }
         }
     }

@@ -1,5 +1,8 @@
 package app.domain.model;
 
+import app.ui.console.GeneratePassword;
+import auth.AuthFacade;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,6 +11,8 @@ public class SpecialistDoctorStore {
 
     List <SpecialistDoctor> specialistDoctorList;
     SpecialistDoctor sd;
+
+    private GeneratePassword gp = new GeneratePassword();
 
     private static int employeeN;
 
@@ -139,6 +144,22 @@ public class SpecialistDoctorStore {
         employeID = chars + String.format("%05d",employeeN);
 
         return employeID;
+    }
+
+    public void generateUserInformation(String name, String email, String role) {
+
+        gp.password();
+
+        String password = gp.getPassword();
+
+        AuthFacade cc = new AuthFacade();
+
+        if(!cc.existsUser(email)){
+            cc.addUserWithRole(name,email,password,role);
+        }
+
+        System.out.println("Employee information: "+role+"\nEmail: "+email+"\nPassword: "+password);
+
     }
 
 }

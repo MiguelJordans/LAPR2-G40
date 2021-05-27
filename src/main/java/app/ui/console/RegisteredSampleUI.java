@@ -34,10 +34,12 @@ public class RegisteredSampleUI implements Runnable {
             do {
 
                 try {
-                    for (Sample sm1 : ctrl.getSampleList()) {
+                    for (Sample sm1 : smStore.getSampleList()) {
 
                         if (code.equals(sm1.getTr().getTestCode())) {
                             System.out.println(sm1);
+                        } else {
+                            System.out.println("Test code invalid! Please try to type a valid test!");
                         }
                         flag = true;
                     }

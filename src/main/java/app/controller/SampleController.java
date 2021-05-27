@@ -69,7 +69,6 @@ public class SampleController {
         return this.smStore.saveSample();
     }
 
-
     public boolean saveSamples() {
         for (Sample sm1 : sampleListTemporary) {
              smStore.getSampleList().add(sm1);
@@ -86,9 +85,6 @@ public class SampleController {
     public List<Sample> getSampleList() {
         return smStore.getSampleList();
     }
-    /*public List<Sample> getSampleListTemporaryList() {
-        return smStore.getSampleListTemporary();
-    }*/
 
     public List<Sample> showList(){
          return smStore.showList();

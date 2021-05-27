@@ -59,5 +59,9 @@ public class RegisterEmployeeController {
 
     public boolean SaveEmployee() { return this.store.saveEmployee();}
 
+    public void generateUserInformation(String name, String email,String role) {
 
+        store.generateUserInformation(name,email,role);
+
+    }
 }

@@ -1,13 +1,19 @@
 package app.domain.model;
 
+import app.ui.console.GeneratePassword;
+import auth.AuthFacade;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 
 public class EmployeeStore {
 
     List <Employee> employeeList;
     Employee emp;
+
+    private GeneratePassword gp = new GeneratePassword();
 
     private static int employeeN;
 
@@ -141,4 +147,19 @@ public class EmployeeStore {
         return employeID;
     }
 
+    public void generateUserInformation(String name, String email, String role) {
+
+        gp.password();
+
+        String password = gp.getPassword();
+
+        AuthFacade cc = new AuthFacade();
+
+        if(!cc.existsUser(email)){
+            cc.addUserWithRole(name,email,password,role);
+        }
+
+        System.out.println("Employee information: "+role+"\nEmail: "+email+"\nPassword: "+password);
+
+    }
 }
