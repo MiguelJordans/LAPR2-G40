@@ -99,7 +99,7 @@ public class Utils {
 
     static public Object showAndSelectOne(List list, String header)
     {
-        showList(list,header);
+        showListWithouThe0(list,header);
         return selectsObject(list);
     }
     static public int showAndSelectIndex(List list, String header)

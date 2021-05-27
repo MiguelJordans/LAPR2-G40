@@ -1,4 +1,4 @@
-/*package app.ui.console;
+/* package app.ui.console;
 
 import app.controller.App;
 import app.controller.ParameterCategoryController;
@@ -20,6 +20,8 @@ public class TestUI implements Runnable {
     ParameterController parameterController;
     ParameterCategoryController parameterCategoryController;
     List<Parameter> selectedParameters = new ArrayList<>();
+
+    private int catNumber;
 
     public TestUI() {
         testController = new TestController();
@@ -61,7 +63,7 @@ public class TestUI implements Runnable {
                         return;
                     }
 
-                    List<TestType> testTypesList = testController.getTestType();
+                    List<TestType> testTypesList = testController.getTestTypeList();
 
                     TestType testType = null;
                     String ttselected;
@@ -79,12 +81,10 @@ public class TestUI implements Runnable {
                         }
                     }
                     List<ParameterCategory> categoriesList = new ArrayList<>();
-                    for (int p = 0; p < testType.getPP().getParameterCategoryList().size(); p++) {
-                        categoriesList.add(testType.getPP().getPc()[p]);
+                    for (int p = 0; p < testType.getPcList().size(); p++) {
+                        categoriesList.add(testType.getPcList().getPc()[p]);
                     }
                     List<Parameter> parameterList = testController.getParameterList();
-
-                    int catNumber;
 
                     catNumber = Utils.readIntegerFromConsole("Please enter the number of categories the test might have");
                     String[] categories = new String[catNumber];
@@ -124,9 +124,9 @@ public class TestUI implements Runnable {
                         String name, select;
 
                         for (int r = 0; r < catNumber; r++) {
-                            for (Parameter par : parameterList) {
-                                if (par.getCat().getName().equals(categories[r])) {
-                                    parameterName.add(par.getName());
+                            for (Parameter pp : parameterList) {
+                                if (pp.getPcList().getName().equals(categories[r])) {
+                                    parameterName.add(pp.getName());
                                 }
                             }
                         }
@@ -221,4 +221,4 @@ public class TestUI implements Runnable {
     }
 }
 
- */
+*/

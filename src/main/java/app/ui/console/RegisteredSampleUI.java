@@ -29,7 +29,7 @@ public class RegisteredSampleUI implements Runnable {
 
         do {
 
-            String code = Utils.readLineFromConsole("Type the test code to see the registered samples of that test");
+            String code = Utils.readLineFromConsole("Type the test code to see the registered samples of that test: ");
 
             do {
 
@@ -42,6 +42,7 @@ public class RegisteredSampleUI implements Runnable {
                         flag = true;
                     }
                 } catch (Exception e) {
+                    System.out.println(e.getMessage());
                     System.out.println("The list is empty! Please try to add samples before!");
                 }
             } while (!flag);

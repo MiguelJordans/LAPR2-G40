@@ -53,16 +53,6 @@ public class SampleAdapter {
         return BarcodeImageHandler.getImage(barcode);
     }
 
-    public String generateNumber(){
-
-        String random_bar = RandomStringUtils.randomNumeric(11);
-
-
-        return random_bar;
-    }
-
-
-
     public Barcode getBarcode() {
         return barcode;
     }

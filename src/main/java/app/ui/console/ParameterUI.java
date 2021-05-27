@@ -26,6 +26,7 @@ public class ParameterUI implements Runnable {
     public void run() {
 
         boolean count = true;
+        boolean leave = true;
 
 
         if (this.pcStore.getParameterCategoryList() == null || this.pcStore.getParameterCategoryList().isEmpty()) {
@@ -33,22 +34,25 @@ public class ParameterUI implements Runnable {
         } else {
             do {
                 boolean exception = false;
+                do {
 
-                ParameterCategory pc = (ParameterCategory) Utils.showAndSelectOne(this.pcStore.getParameterCategoryList(), "Select the category");
-                this.pcList.add(pc);
+                    ParameterCategory pc = (ParameterCategory) Utils.showAndSelectOne(this.pcStore.getParameterCategoryList(), "Select the category: ");
+                    this.pcList.add(pc);
 
-                if (pc == null) {
-                    List<MenuItem> options = new ArrayList<MenuItem>();
-                    options.add(new MenuItem("DN", new AdminUI()));
-                    options.get(0).run();
-                }
+                    if (pc == null) {
+                        System.out.println("Please choose a valid category!\n");
+                    } else {
+                        leave=false;
+                    }
+
+                }while (leave);
 
                 do {
                     try {
 
-                        String code = Utils.readLineFromConsole("Please enter the code of the Parameter");
-                        String description = Utils.readLineFromConsole("Please enter the description of the Parameter");
-                        String nhsld = Utils.readLineFromConsole("Please enter the nhsld of the Parameter");
+                        String code = Utils.readLineFromConsole("Please enter the code of the parameter: ");
+                        String description = Utils.readLineFromConsole("Please enter the description of the parameter: ");
+                        String nhsld = Utils.readLineFromConsole("Please enter the nhsld of the parameter: ");
 
 
                         ctrl.CreateParameter(description, code, nhsld, pcList);
@@ -57,19 +61,19 @@ public class ParameterUI implements Runnable {
 
                     } catch (Exception e) {
 
-                        e.printStackTrace();
+                        System.out.println(e.getMessage());
                         System.out.println("Incorrect input of data (an error has occurred), please try again.");
                         exception = true;
 
                     }
                 } while (exception);
 
-                count = Utils.confirm("Parameter created! Do you wish to save it?" + ctrl.getPP());
+                count = Utils.confirm("Parameter created! Do you wish to save it(s/n)?" + ctrl.getPP());
 
                 if (count) {
 
                     if (this.ctrl.saveParameter()) {
-                        System.out.println("Parameter was saved with success!");
+                        System.out.println("Save successful!");
 
                     }
                 }

@@ -35,10 +35,12 @@ public class Sample {
     }
 
     public void setBarcode(Barcode barcode) {
+        checkBarcode(barcode);
         this.barcode = barcode;
     }
 
     public void setTr(TestType tr) {
+        checkTest(tr);
         this.tr = tr;
     }
 

@@ -1,5 +1,8 @@
 package app.domain.model;
 
+import app.ui.console.ClientNotification;
+import app.ui.console.GeneratePassword;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -8,6 +11,8 @@ public class ClientStore {
 
     List<Client> clientList;
     Client cr;
+    private GeneratePassword gp = new GeneratePassword();
+    private ClientNotification cn = new ClientNotification();
 
     /**
      * Constructor.
@@ -126,5 +131,13 @@ public class ClientStore {
 
     public List<Client> getClientList() {
         return this.clientList;
+    }
+
+    public void generateUserInformation(String name, String email) {
+
+        gp.password();
+
+        cn.generateClientNotification(name,email,gp.getPassword());
+
     }
 }

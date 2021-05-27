@@ -30,38 +30,38 @@ public class EmployeeUI implements Runnable {
                 String orgRole = Utils.readLineFromConsole("Please enter the employee's organization role, choose between \"employee\" and \"specialistdoctor\"");
 
                 if (orgRole.equals("specialistdoctor")) {
-                    String name = Utils.readLineFromConsole("Please enter the name of the employee");
-                    String address = Utils.readLineFromConsole("Please enter the address of the employee");
-                    String email = Utils.readLineFromConsole("Please enter the email of the employee");
-                    String phoneNumber = Utils.readLineFromConsole("Please enter the phone number of the employee");
-                    String employeeId = Utils.readLineFromConsole("Please enter the Employee ID of the employee");
-                    String socCode = Utils.readLineFromConsole("Please enter the SOC Code of the employee");
-                    String doctorIndexNumber = Utils.readLineFromConsole("Please enter the Doctor Index Number");
+                    String name = Utils.readLineFromConsole("Please enter the name of the employee: ");
+                    String address = Utils.readLineFromConsole("Please enter the address of the employee: ");
+                    String email = Utils.readLineFromConsole("Please enter the email of the employee: ");
+                    String phoneNumber = Utils.readLineFromConsole("Please enter the phone number of the employee: ");
+                    String employeeId = Utils.readLineFromConsole("Please enter the Employee ID of the employee: ");
+                    String socCode = Utils.readLineFromConsole("Please enter the SOC Code of the employee: ");
+                    String doctorIndexNumber = Utils.readLineFromConsole("Please enter the Doctor Index Number: ");
                     ctrl.Employee(name, address, email, phoneNumber, employeeId, socCode, orgRole, doctorIndexNumber);
                 } else {
-                    String name = Utils.readLineFromConsole("Please enter the name of the employee");
-                    String address = Utils.readLineFromConsole("Please enter the address of the employee");
-                    String email = Utils.readLineFromConsole("Please enter the email of the employee");
-                    String phoneNumber = Utils.readLineFromConsole("Please enter the phone number of the employee");
-                    String employeeId = Utils.readLineFromConsole("Please enter the Employee ID of the employee");
-                    String socCode = Utils.readLineFromConsole("Please enter the SOC Code of the employee");
+                    String name = Utils.readLineFromConsole("Please enter the name of the employee: ");
+                    String address = Utils.readLineFromConsole("Please enter the address of the employee: ");
+                    String email = Utils.readLineFromConsole("Please enter the email of the employee: ");
+                    String phoneNumber = Utils.readLineFromConsole("Please enter the phone number of the employee: ");
+                    String employeeId = Utils.readLineFromConsole("Please enter the Employee ID of the employee: ");
+                    String socCode = Utils.readLineFromConsole("Please enter the SOC Code of the employee:");
                     ctrl.Employee(name, address, email, phoneNumber, employeeId, socCode, orgRole,"111111");
                 }
 
                 exception = false;
 
             } catch (Exception e) {
-                e.printStackTrace();
+                System.out.println(e.getMessage());
                 System.out.println("Incorrect input of data (an error has occured)! Please, try again.");
                 exception = true;
             }
 
         } while (exception);
 
-        count = Utils.confirm("Employee created! Do you want to save it?" + ctrl.getEmp());
+        count = Utils.confirm("Employee created! Do you want to save it(s/n)?" + ctrl.getEmp());
         if (count) {
             if (ctrl.SaveEmployee()) {
-                System.out.println("Employee was saved with success!");
+                System.out.println("Save successful!");
             }
         }
     }

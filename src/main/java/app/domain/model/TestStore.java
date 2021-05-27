@@ -7,7 +7,7 @@ import java.util.HashSet;
 
 public class TestStore {
 
-    private final List<Test> tests = new ArrayList<>();
+    private static List<Test> tests = new ArrayList<>();
     private static int testNumber = 1;
 
     public List<Test> getTests() {
@@ -69,6 +69,10 @@ public class TestStore {
             }
         }
         return invalidTests;//implement;
+    }
+
+    public List<Test> getTestList(){
+        return tests;
     }
 
 /*
