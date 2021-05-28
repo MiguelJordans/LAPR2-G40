@@ -1,25 +1,16 @@
 package app.ui.console;
 
 import app.controller.SampleController;
-import app.controller.TestTypeController;
 import app.domain.model.*;
-import app.domain.shared.Constants;
 import app.ui.console.utils.Utils;
-
-import javax.swing.plaf.nimbus.State;
-import java.awt.*;
-import java.util.ArrayList;
-import java.util.List;
 
 public class SampleUI implements Runnable {
 
     private SampleController ctrl;
-    private TestTypeStore ttStore;
     private TestStore trStore;
 
     public SampleUI() {
         this.ctrl = new SampleController();
-        this.ttStore = new TestTypeStore();
         this.trStore = new TestStore();
     }
 
@@ -43,7 +34,7 @@ public class SampleUI implements Runnable {
 
                     tr = (Test) Utils.showAndSelectOne(this.trStore.getTestList(), "Select the test: \n");
 
-                    if (!(tr == null))
+                    if (tr != null)
                         m = tr.compareState(tr.getState());
 
 

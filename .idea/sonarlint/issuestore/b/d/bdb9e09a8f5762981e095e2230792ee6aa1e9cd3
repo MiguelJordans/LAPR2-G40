@@ -1,9 +1,0 @@
-
-ˆ
-java:S1319@"mThe return type of this method should be an interface such as "Set" rather than the implementation "HashSet".(»ñÓùÿÿÿÿ
-~
-java:S4144J"\Update this method so that its implementation is not identical to "getTestsList" on line 13.(Ÿ¢ıÊúÿÿÿÿ8¦Ç¯ùš/
-X
-java:S2696*"6Make the enclosing method "static" or remove this set.(ÿÌÑùıÿÿÿÿ8•ığš/
-V	java:S125G"<This block of commented-out lines of code should be removed.(±àÑ€ÿÿÿÿÿ
-V	java:S125O"<This block of commented-out lines of code should be removed.(Ôêâ©ıÿÿÿÿ

@@ -2,9 +2,10 @@ package app.domain.model;
 
 import app.domain.shared.Constants;
 import net.sourceforge.barbecue.Barcode;
+import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.BarcodeFactory;
 import net.sourceforge.barbecue.BarcodeImageHandler;
-import org.apache.commons.lang3.RandomStringUtils;
+import net.sourceforge.barbecue.output.OutputException;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -15,16 +16,15 @@ public class BarcodeAdapter1 implements BarcodeAdapter {
 
     private Barcode barcode;
     private BufferedImage barcodeImage;
-    private String barcodeText;
 
     public BarcodeAdapter1() {
-
+      //Object created in order to create a barcode
     }
 
     public String generateBarcodeandBarcodeImage(String barcodeText,String filename){
 
         try {
-            this.barcodeText=barcodeText;
+
             this.barcode = generateUPCBarcode(barcodeText);
 
         } catch (Exception e) {
@@ -53,14 +53,14 @@ public class BarcodeAdapter1 implements BarcodeAdapter {
 
     }
 
-    private Barcode generateUPCBarcode(String barcodeText) throws Exception  {
+    private Barcode generateUPCBarcode(String barcodeText) throws BarcodeException {
 
-        Barcode barcode = BarcodeFactory.createUPCA(barcodeText);
+        Barcode bC = BarcodeFactory.createUPCA(barcodeText);
 
-        return barcode;
+        return bC;
     }
 
-    private BufferedImage generateUPCBarcodeImage(Barcode barcode) throws Exception {
+    private BufferedImage generateUPCBarcodeImage(Barcode barcode) throws OutputException {
         return BarcodeImageHandler.getImage(barcode);
     }
 

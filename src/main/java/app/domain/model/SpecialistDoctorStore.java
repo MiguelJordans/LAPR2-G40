@@ -32,11 +32,13 @@ public class SpecialistDoctorStore {
      * @param orgRole                - the Employee's organization role
      */
 
-    public SpecialistDoctor NewSpecialistDoctor (String name, String address, String email, String phoneNumber, String socCode, String orgRole, String doctorIndexNumber){
+    public SpecialistDoctor newSpecialistDoctor (String name, String address, String email, String phoneNumber, String socCode, String orgRole, String doctorIndexNumber){
 
-        String ID = generateEmployeeID(name);
+        String iD = generateEmployeeID(name);
 
-        return this.sd = new SpecialistDoctor(name, address, email, phoneNumber, ID, socCode, orgRole, doctorIndexNumber);
+        this.sd = new SpecialistDoctor(name, address, email, phoneNumber, iD, socCode, orgRole, doctorIndexNumber);
+
+        return this.sd;
     }
 
     /**

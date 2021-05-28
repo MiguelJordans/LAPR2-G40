@@ -19,7 +19,7 @@ public class ClientStore {
      * Constructor.
      */
 
-    public ClientStore(){this.clientList = new ArrayList<Client>();}
+    public ClientStore(){this.clientList = new ArrayList<>();}
 
     /**
      * Creates a Client.
@@ -34,8 +34,11 @@ public class ClientStore {
      * @param nhsNumber - the Client's NHS number.
      */
 
-    public Client CreateClient(String name, String email, String sex, Date birthdate, String citizenCardNumber, String phoneNumber, String tinNumber, String nhsNumber){
-        return this.cr = new Client(name, email, sex, birthdate, citizenCardNumber, phoneNumber, tinNumber, nhsNumber);
+    public Client createClient(String name, String email, String sex, Date birthdate, String citizenCardNumber, String phoneNumber, String tinNumber, String nhsNumber){
+
+        this.cr = new Client(name, email, sex, birthdate, citizenCardNumber, phoneNumber, tinNumber, nhsNumber);
+
+        return this.cr;
     }
 
     /**

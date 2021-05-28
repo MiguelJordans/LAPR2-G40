@@ -1,12 +1,10 @@
 package app.domain.model;
 
 import auth.AuthFacade;
-import net.sourceforge.barbecue.Barcode;
 import org.apache.commons.lang3.StringUtils;
 
-import java.util.Date;
-import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * @author Paulo Maio <pam@isep.ipp.pt>
@@ -150,7 +148,7 @@ public class Company {
 
     // US15 - ValidateTest -----------------------------------------------------------------
 
-    public HashSet<Test> getInvalidTestList() {
+    public Set<Test> getInvalidTestList() {
         return testStore.getInvalidTestList();
     }
 

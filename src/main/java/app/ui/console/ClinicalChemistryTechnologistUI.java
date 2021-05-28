@@ -11,7 +11,7 @@ import java.util.List;
 
 public class ClinicalChemistryTechnologistUI implements Runnable{
     public ClinicalChemistryTechnologistUI() {
-
+          //ClinicalChemistryTechnologist menu
     }
 
     public void run() {

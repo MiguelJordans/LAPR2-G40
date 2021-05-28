@@ -3,15 +3,10 @@ package app.domain.model;
 import app.domain.shared.Constants;
 import org.apache.commons.lang3.StringUtils;
 
-import javax.swing.text.DateFormatter;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.ZoneId;
 import java.util.Date;
-import java.util.logging.SimpleFormatter;
 import java.util.regex.Pattern;
 
 public class Client {
@@ -219,7 +214,7 @@ public class Client {
         if (StringUtils.isBlank(name)) {
             throw new IllegalArgumentException("Name cannot be empty.");
         }
-        if (!(name.length() < 36)) {
+        if ((name.length() >= 36)) {
                 throw new IllegalArgumentException("Name cannot have more than 35 characters.");
         }
         for (int i = 0; i < auxchar.length; i++) {

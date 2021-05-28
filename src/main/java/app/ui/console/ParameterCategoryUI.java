@@ -1,9 +1,6 @@
 package app.ui.console;
 
 import app.controller.ParameterCategoryController;
-import app.controller.ParameterController;
-import app.controller.TestTypeController;
-import app.domain.model.ParameterCategory;
 import app.ui.console.utils.Utils;
 
 public class ParameterCategoryUI implements Runnable {
@@ -34,8 +31,9 @@ public class ParameterCategoryUI implements Runnable {
 
         cont = Utils.confirm("Parameter Category created! Do you wish to save it(s/n)?" + ctrl.getPC());
         if (cont) {
-            if (ctrl.saveParameterCategory()) ;
-            System.out.println("Save successful!");
+            if (ctrl.saveParameterCategory()) System.out.println("Save successful!");
+            else System.out.println("Save not sucessful! (Please try again!)");
+
         }
     }
 }

@@ -16,7 +16,7 @@ public class Test {
 
     private List<TestParameter> tpList;
 
-    final static int NHSCODE_SIZE = 12;
+    static int nhsSize = 12;
     static int testCode = 1;
 
 
@@ -57,12 +57,12 @@ public class Test {
         if (!nhsCode.matches("[a-zA-Z0-9]+$")) {
             throw new IllegalArgumentException("NHS code only accepts letters and numbers.");
         }
-        if (nhsCode.length() != NHSCODE_SIZE) {
+        if (nhsCode.length() != nhsSize) {
             throw new IllegalArgumentException("The NHS code must be 12 characters long.");
         }
     }
 
-    public void CreateTestParameter(String testID, List<Parameter> parameters) {
+    public void createTestParameter(String testID, List<Parameter> parameters) {
         TestParameter tp;
         for(Parameter param : parameters) {
             tp = new TestParameter(testID, param);

@@ -15,7 +15,7 @@ public class EmployeeStoreTest {
 
         //Arrange
         EmployeeStore store = new EmployeeStore();
-        Employee emp = store.NewEmployee("Daniel", "3425 Stone Street", "dasc@gmail.com", "01492235687", "1234567", "specialistdoctor");
+        Employee emp = store.newEmployee("Daniel", "3425 Stone Street", "dasc@gmail.com", "01492235687", "1234567", "specialistdoctor");
         store.listAdd(emp);
 
         //Act
@@ -31,7 +31,7 @@ public class EmployeeStoreTest {
 
         //Arrange
         EmployeeStore store = new EmployeeStore();
-        Employee emp = store.NewEmployee("Daniel", "3425 Stone Street", "dasc@gmail.com", "01492235687", "1234567", "specialistdoctor");
+        Employee emp = store.newEmployee("Daniel", "3425 Stone Street", "dasc@gmail.com", "01492235687", "1234567", "specialistdoctor");
         store.listAdd(emp);
 
         //Act
@@ -47,7 +47,7 @@ public class EmployeeStoreTest {
 
         //Arrange
         EmployeeStore store = new EmployeeStore();
-        Employee emp = store.NewEmployee("Daniel", "3425 Stone Street", "dasc@gmail.com", "01492235687", "1234567", "specialistdoctor");
+        Employee emp = store.newEmployee("Daniel", "3425 Stone Street", "dasc@gmail.com", "01492235687", "1234567", "specialistdoctor");
 
         //Act
         boolean expected = false;
@@ -63,7 +63,7 @@ public class EmployeeStoreTest {
 
         //Arrange
         EmployeeStore store = new EmployeeStore();
-        Employee emp = store.NewEmployee("Daniel", "3425 Stone Street", "dasc@gmail.com", "01492235687", "1234567", "specialistdoctor");
+        Employee emp = store.newEmployee("Daniel", "3425 Stone Street", "dasc@gmail.com", "01492235687", "1234567", "specialistdoctor");
 
         //Act
         boolean expected = false;
@@ -78,7 +78,7 @@ public class EmployeeStoreTest {
     public void saveEmployee() {
         //Arrange
         EmployeeStore store = new EmployeeStore();
-        Employee emp = store.NewEmployee("Daniel", "3425 Stone Street", "dasc@gmail.com", "01492235687", "1234567", "specialistdoctor");
+        Employee emp = store.newEmployee("Daniel", "3425 Stone Street", "dasc@gmail.com", "01492235687", "1234567", "specialistdoctor");
         store.listAdd(emp);
 
         //Act
@@ -93,7 +93,7 @@ public class EmployeeStoreTest {
     public void saveEmployee2() {
         //Arrange
         EmployeeStore store = new EmployeeStore();
-        Employee emp = store.NewEmployee("Daniel", "3425 Stone Street", "dasc@gmail.com", "01492235687", "1234567", "specialistdoctor");
+        Employee emp = store.newEmployee("Daniel", "3425 Stone Street", "dasc@gmail.com", "01492235687", "1234567", "specialistdoctor");
         store.listAdd(emp);
 
         //Act
@@ -108,7 +108,7 @@ public class EmployeeStoreTest {
     public void listAdd() {
         //Arrange
         EmployeeStore store = new EmployeeStore();
-        Employee emp = store.NewEmployee("Daniel", "3425 Stone Street", "dasc@gmail.com", "01492235687", "1234567", "specialistdoctor");
+        Employee emp = store.newEmployee("Daniel", "3425 Stone Street", "dasc@gmail.com", "01492235687", "1234567", "specialistdoctor");
 
         //Act
         boolean expected = true;
@@ -122,7 +122,7 @@ public class EmployeeStoreTest {
     public void listAdd2() {
         //Arrange
         EmployeeStore store = new EmployeeStore();
-        Employee emp = store.NewEmployee("Daniel", "3425 Stone Street", "dasc@gmail.com", "01492235687", "1234567", "specialistdoctor");
+        Employee emp = store.newEmployee("Daniel", "3425 Stone Street", "dasc@gmail.com", "01492235687", "1234567", "specialistdoctor");
 
         //Act
         boolean expected = true;
@@ -136,7 +136,7 @@ public class EmployeeStoreTest {
     public void getEmployee() {
         //Arrange
         EmployeeStore store = new EmployeeStore();
-        Employee emp = store.NewEmployee("Daniel", "3425 Stone Street", "dasc@gmail.com", "01492235687", "1234567", "specialistdoctor");
+        Employee emp = store.newEmployee("Daniel", "3425 Stone Street", "dasc@gmail.com", "01492235687", "1234567", "specialistdoctor");
         store.listAdd(emp);
 
         //Act
@@ -152,7 +152,7 @@ public class EmployeeStoreTest {
 
         //Arrange
         EmployeeStore store = new EmployeeStore();
-        Employee emp = store.NewEmployee("Daniel", "3425 Stone Street", "dasc@gmail.com", "01492235687", "1234567", "specialistdoctor");
+        Employee emp = store.newEmployee("Daniel", "3425 Stone Street", "dasc@gmail.com", "01492235687", "1234567", "specialistdoctor");
 
         //Act
         Employee expected = emp;

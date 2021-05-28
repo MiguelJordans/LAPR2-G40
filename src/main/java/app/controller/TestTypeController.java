@@ -39,7 +39,7 @@ public class TestTypeController {
 
     public void CreateTestType(String description, String testCode, String collectingMethod, List<ParameterCategory> pcList){
         store = company.getTestTypeStore();
-        store.CreateTestType(description,testCode,collectingMethod,pcList);
+        store.createTestType(description,testCode,collectingMethod,pcList);
     }
 
     /**

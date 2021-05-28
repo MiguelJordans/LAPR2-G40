@@ -41,7 +41,7 @@ public class SampleController {
 
         for (int i = 0; i < n; i++) {
             //sampleListTemporary.add(smStore.CreateSample(tt)); O controller não esta a conseguir criar a sample deve ter aqui um erro
-            this.smStore.CreateSample(tr);
+            this.smStore.createSample(tr);
             //this.smStore.addToTemporaryList();
             this.smStore.saveSample();
             //this.smStore.barcodeImage();

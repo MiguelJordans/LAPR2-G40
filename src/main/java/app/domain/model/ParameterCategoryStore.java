@@ -17,7 +17,7 @@ public class ParameterCategoryStore {
      * @return the parameter category created
      */
 
-    public ParameterCategory CreateParameterCategory(String description,String code,String nhsld){
+    public ParameterCategory createParameterCategory(String description,String code,String nhsld){
         return this.pc = new ParameterCategory(code,description,nhsld);
     }
 

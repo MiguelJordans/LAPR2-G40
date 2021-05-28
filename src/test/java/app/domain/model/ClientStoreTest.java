@@ -29,7 +29,7 @@ public class ClientStoreTest {
     public void validateClientRegistration() {
 
         ClientStore store = new ClientStore();
-        Client cr = store.CreateClient("Jason", "2344@gmail.com", "Male", date,
+        Client cr = store.createClient("Jason", "2344@gmail.com", "Male", date,
                 "5647748895858574", "05968742634","7468496874", "7456375876");
 
         boolean expected = true;
@@ -43,7 +43,7 @@ public class ClientStoreTest {
     public void listContain() {
 
         ClientStore store = new ClientStore();
-        Client cr = store.CreateClient("Jason", "2344@gmail.com", "Male", date,
+        Client cr = store.createClient("Jason", "2344@gmail.com", "Male", date,
                 "5647748895858574", "05968742634","7468496874", "7456375876");
         store.listAdd(cr);
 
@@ -59,7 +59,7 @@ public class ClientStoreTest {
     public void saveClientRegistration() {
 
         ClientStore store = new ClientStore();
-        Client cr = store.CreateClient("Jason", "2344@gmail.com", "Male", date,
+        Client cr = store.createClient("Jason", "2344@gmail.com", "Male", date,
                 "5647748895858574", "05968742634","7468496874", "7456375876");
 
         boolean expected = true;
@@ -73,7 +73,7 @@ public class ClientStoreTest {
     public void listAdd() {
 
         ClientStore store = new ClientStore();
-        Client cr = store.CreateClient("Jason", "2344@gmail.com", "Male", date,
+        Client cr = store.createClient("Jason", "2344@gmail.com", "Male", date,
                 "5647748895858574", "05968742634","7468496874", "7456375876");
 
         boolean expected = true;
@@ -86,7 +86,7 @@ public class ClientStoreTest {
     public void getClient() {
 
         ClientStore store = new ClientStore();
-        Client cr = store.CreateClient("Jason", "2344@gmail.com", "Male", date,
+        Client cr = store.createClient("Jason", "2344@gmail.com", "Male", date,
                 "5647748895858574", "05968742634","7468496874", "7456375876");
         store.listAdd(cr);
 
@@ -100,7 +100,7 @@ public class ClientStoreTest {
     public void getCr() {
 
         ClientStore store = new ClientStore();
-        Client cr = store.CreateClient("Jason", "2344@gmail.com", "Male", date,
+        Client cr = store.createClient("Jason", "2344@gmail.com", "Male", date,
                 "5647748895858574", "05968742634","7468496874", "7456375876");
 
         Client verify = store.getCr();

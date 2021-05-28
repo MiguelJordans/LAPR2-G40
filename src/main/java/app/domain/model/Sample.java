@@ -7,21 +7,9 @@ public class Sample {
 
     public Sample(Test tr,String barcode) {
 
-        checkTest(tr);
-        checkBarcode(barcode);
-
         this.tr=tr;
         this.barcode=barcode;
 
-    }
-
-    public void checkTest(Test tr){
-        if(tr==null||tr.equals(null)) throw new NullPointerException("Test is null! Please choose a test that has atrributes!");
-
-    }
-
-    public void checkBarcode(String barcode){
-        if (barcode==null||barcode.equals(null)) throw new NullPointerException("Barcode is null! Please verify the creation of the barcode!");
     }
 
     public String getBarcode() {
@@ -33,12 +21,11 @@ public class Sample {
     }
 
     public void setBarcode(String barcode) {
-        checkBarcode(barcode);
+
         this.barcode = barcode;
     }
 
     public void setTr(Test tr) {
-        checkTest(tr);
         this.tr = tr;
     }
 

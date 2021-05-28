@@ -1,10 +1,8 @@
 package app.ui.console;
 
 import app.controller.ParameterController;
-import app.controller.TestTypeController;
 import app.domain.model.ParameterCategory;
 import app.domain.model.ParameterCategoryStore;
-import app.domain.model.ParameterStore;
 import app.ui.console.utils.Utils;
 
 import java.util.ArrayList;
@@ -75,7 +73,7 @@ public class ParameterUI implements Runnable {
                     if (this.ctrl.saveParameter()) {
                         System.out.println("Save successful!");
 
-                    }
+                    } else System.out.println("Save not sucessful! Please try again.");
                 }
             } while (!count);
         }

@@ -37,7 +37,7 @@ public class ParameterCategoryController {
 
     public void CreateParameterCategory(String description,String testCode,String nhsld){
         store = company.getParameterCategoryStore();
-        store.CreateParameterCategory(description,testCode,nhsld);
+        store.createParameterCategory(description,testCode,nhsld);
     }
 
     /**

@@ -50,9 +50,9 @@ public class ClinicalAnalysisLaboratoryUI implements Runnable {
                         String name = Utils.readLineFromConsole("Please enter the name of the Clinical Analysis Laboratory: ");
                         String address = Utils.readLineFromConsole("Please enter the address of the Clinical Analysis Laboratory: ");
                         String phoneNumber = Utils.readLineFromConsole("Please enter the phone number of the Clinical Analysis Laboratory: ");
-                        String TINnumber = Utils.readLineFromConsole("Please enter the TIN number of the Clinical Analysis Laboratory: ");
+                        String tINnumber = Utils.readLineFromConsole("Please enter the TIN number of the Clinical Analysis Laboratory: ");
 
-                        this.ctrl.CreateClinicalAnalysisLaboratory(laboratoryID, name, address, phoneNumber, TINnumber,ttList);
+                        this.ctrl.createClinicalAnalysisLaboratory(laboratoryID, name, address, phoneNumber, tINnumber,ttList);
                     } catch (Exception e){
                         System.out.println(e.getMessage());
                         System.out.println("Incorrect input of data (an error has occured)! Please, try again.");
@@ -61,10 +61,8 @@ public class ClinicalAnalysisLaboratoryUI implements Runnable {
                 } while (exception);
 
                 count = Utils.confirm("Clinical Analysis Laboratory created! Do you want to save it(s/n)?" + ctrl.getCAL());
-                if (count) {
-                    if (this.ctrl.saveClinicalAnalysisLaboratory()) {
+                if (count && this.ctrl.saveClinicalAnalysisLaboratory()) {
                         System.out.println("Save successful!");
-                    }
                 }
             } while (!count);
         }

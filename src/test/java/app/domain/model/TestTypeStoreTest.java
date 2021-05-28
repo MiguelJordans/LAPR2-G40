@@ -18,7 +18,7 @@ public class TestTypeStoreTest {
 
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
         pcList.add(pc);
-        TestType aa = tt.CreateTestType("AAA","aaa","aaa",pcList);
+        TestType aa = tt.createTestType("AAA","aaa","aaa",pcList);
 
     }
 
@@ -30,7 +30,7 @@ public class TestTypeStoreTest {
 
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
         pcList.add(pc);
-        TestType aa = tt.CreateTestType("AAA","aaa","aaa",pcList);
+        TestType aa = tt.createTestType("AAA","aaa","aaa",pcList);
 
         boolean expected = true;
 
@@ -48,7 +48,7 @@ public class TestTypeStoreTest {
 
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
         pcList.add(pc);
-        TestType aa = tt.CreateTestType("aaa","aaa","aaa",pcList);
+        TestType aa = tt.createTestType("aaa","aaa","aaa",pcList);
         tt.listAdd(aa);
 
         boolean expected = false;
@@ -67,7 +67,7 @@ public class TestTypeStoreTest {
 
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
         pcList.add(pc);
-        TestType aa = tt.CreateTestType("aaa","aaa","aaa",pcList);
+        TestType aa = tt.createTestType("aaa","aaa","aaa",pcList);
         tt.listAdd(aa);
 
         boolean expected = true;
@@ -86,7 +86,7 @@ public class TestTypeStoreTest {
 
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
         pcList.add(pc);
-        TestType aa = tt.CreateTestType("aaa","aaa","aaa",pcList);
+        TestType aa = tt.createTestType("aaa","aaa","aaa",pcList);
 
         boolean expected = false;
 
@@ -104,7 +104,7 @@ public class TestTypeStoreTest {
 
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
         pcList.add(pc);
-        TestType aa = tt.CreateTestType("aaa","aaa","aaa",pcList);
+        TestType aa = tt.createTestType("aaa","aaa","aaa",pcList);
 
         boolean expected = true;
 
@@ -122,7 +122,7 @@ public class TestTypeStoreTest {
 
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
         pcList.add(pc);
-        TestType aa = tt.CreateTestType("aaa","aaa","aaa",pcList);
+        TestType aa = tt.createTestType("aaa","aaa","aaa",pcList);
         tt.listAdd(aa);
 
         boolean expected = false;
@@ -140,7 +140,7 @@ public class TestTypeStoreTest {
 
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
         pcList.add(pc);
-        TestType aa = tt.CreateTestType("aaa","aaa","aaa",pcList);
+        TestType aa = tt.createTestType("aaa","aaa","aaa",pcList);
 
         boolean expected = true;
 
@@ -158,7 +158,7 @@ public class TestTypeStoreTest {
 
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
         pcList.add(pc);
-        TestType aa = tt.CreateTestType("aaa","aaa","aaa",pcList);
+        TestType aa = tt.createTestType("aaa","aaa","aaa",pcList);
         tt.listAdd(aa);
 
         boolean expected = true;
@@ -177,7 +177,7 @@ public class TestTypeStoreTest {
 
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
         pcList.add(pc);
-        TestType aa = tt.CreateTestType("aaa","aaa","aaa",pcList);
+        TestType aa = tt.createTestType("aaa","aaa","aaa",pcList);
         tt.listAdd(aa);
 
         TestType expected = tt.getTestType(0);
@@ -196,7 +196,7 @@ public class TestTypeStoreTest {
 
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
         pcList.add(pc);
-        TestType aa = tt.CreateTestType("aaa","aaa","aaa",pcList);
+        TestType aa = tt.createTestType("aaa","aaa","aaa",pcList);
 
         TestType expected = aa;
 

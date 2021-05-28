@@ -9,7 +9,7 @@ import java.io.IOException;
 public class ClientNotification {
 
     public ClientNotification(){
-
+           //Objected created in order to create the email to the client
     }
 
     public void generateClientNotification(String name,String email,String password)  {
@@ -17,15 +17,12 @@ public class ClientNotification {
         String filename = Constants.CLIENT_NOTIFICATION+"_"+name+".txt";
         File clientNotification = new File(Constants.PATH_CLIENT+filename);
 
-        try{
-            FileWriter fw = new FileWriter(clientNotification);
+        try(FileWriter fw = new FileWriter(clientNotification)){
             fw.write("CLIENT INFORMATION: \n\nName: "+name+"\nEmail: "+email+"\nPassword: "+password);
-            fw.close();
+
         } catch (IOException e){
-            e.getMessage();
+            System.out.println(e.getMessage());
             System.out.println("File couldn't be created!");
         }
-
     }
-
 }

@@ -19,7 +19,7 @@ public class SampleStore {
      * @return the sample created
      */
 
-    public Sample CreateSample(Test tr) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+    public Sample createSample(Test tr) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
         Class<?> eClass = Class.forName(Constants.BC_REFERENCE_API);
         BarcodeAdapter ba = (BarcodeAdapter) eClass.newInstance();
@@ -31,16 +31,18 @@ public class SampleStore {
 
         barcode = ba.getBarcode();
 
-        return this.sm = new Sample(tr, barcode);
+        this.sm = new Sample(tr, barcode);
+
+        return this.sm;
 
     }
 
     public String generateNumber() {
 
-        String random_bar = RandomStringUtils.randomNumeric(11);
+        String randomBar = RandomStringUtils.randomNumeric(11);
 
 
-        return random_bar;
+        return randomBar;
     }
 
     public void createTemporaryList() {
@@ -142,21 +144,5 @@ public class SampleStore {
         }
         return list;
     }
-
-       /* public void barcodeImage() throws IOException {
-
-            String filename = Constants.BARCODE_IMAGE+"_"+sm.getTr().getTestCode()+"_"+sa.getBarcodeText();
-
-            File outputfile = new File(Constants.PATH+filename+".jpg");
-
-            ImageIO.write(barcodeImage, "jpg", outputfile);
-
-        }*/
-
-      /*  public String generateFileName(TestType tt){
-            String filename = Constants.BARCODE_IMAGE+"_"+tt.getTestCode()+"_"+ba.getBarcodeText();
-
-            return filename;
-        }*/
 
 }

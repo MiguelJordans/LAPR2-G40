@@ -45,7 +45,7 @@ public class ClientController {
 
     public void CreateClient(String name, String email, String sex, Date birthdate, String citizenCardNumber, String phoneNumber, String tinNumber, String nhsNumber) {
         store = company.getClientStore();
-        store.CreateClient(name, email, sex, birthdate, citizenCardNumber, phoneNumber, tinNumber, nhsNumber);
+        store.createClient(name, email, sex, birthdate, citizenCardNumber, phoneNumber, tinNumber, nhsNumber);
     }
 
     /**

@@ -13,9 +13,7 @@ public class TestType {
 
     private List<ParameterCategory> pcList;
 
-    private State state;
-
-    private String ExternalModule;
+    private String externalModule;
 
     /**
      * Constructs an instance of Test Type
@@ -38,8 +36,6 @@ public class TestType {
         this.description = description;
 
         this.pcList = pcList;
-        this.state = State.CREATED;
-
 
     }
 
@@ -203,56 +199,6 @@ public class TestType {
 
     }
 
-    enum State{
-        CREATED,
-        SAMPLE_COLLECTED,
-        SAMPLE_ANALYSED,
-        DIAGNOSTIC_MADE,
-        VALIDATED;
-    }
-
-    /*public void setState(State state) {
-       this.state=state;
-    }
-
-    public void setState(String s){
-        switch (s){
-            case "CREATED":
-                setState(State.CREATED);
-                break;
-            case "SAMPLE_COLLECTED" :
-                setState(State.SAMPLE_COLLECTED);
-                break;
-            case "SAMPLE_ANALYSED" :
-                setState(State.SAMPLE_ANALYSED);
-                break;
-            case "DIAGNOSTIC_MADE":
-                setState(State.DIAGNOSTIC_MADE);
-                break;
-            case "VALIDATED":
-                setState(State.VALIDATED);
-                break;
-            default:
-                break;
-        }
-    }
-
-    public String getState() {
-        return state.name();
-    }
-
-
-    public boolean compareState(String state){
-
-
-            if(state.equals("SAMPLE_ANALYSED")||state.equals("SAMPLE_COLLECTED")||state.equals("DIAGNOSTIC_MADE")||state.equals("VALIDATED")){
-                return false;
-            }
-
-        return true;
-
-    }*/
-
     public boolean compareSelection(String selection){
 
 
@@ -265,7 +211,7 @@ public class TestType {
     }
 
     public String getExternalModule() {
-        return ExternalModule;
+        return externalModule;
     }
 
     public String setExternalModule(String testCode) {

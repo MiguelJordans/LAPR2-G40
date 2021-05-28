@@ -19,8 +19,11 @@ public class TestTypeStore {
      * @return the test type created
      */
 
-    public TestType CreateTestType(String description,String testCode,String collectingMethod,List<ParameterCategory> pcList){
-        return this.tt = new TestType(testCode,description,collectingMethod,pcList);
+    public TestType createTestType(String description,String testCode,String collectingMethod,List<ParameterCategory> pcList){
+
+        this.tt = new TestType(testCode,description,collectingMethod,pcList);
+
+        return this.tt;
     }
 
     /**

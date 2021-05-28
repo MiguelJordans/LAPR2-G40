@@ -40,7 +40,7 @@ public class RegisterEmployeeController {
 
     public void Employee(String name, String address, String email, String phoneNumber, String socCode, String orgRole){
         store = company.getEmployeeStore();
-        store.NewEmployee(name, address, email, phoneNumber, socCode, orgRole);
+        store.newEmployee(name, address, email, phoneNumber, socCode, orgRole);
     }
 
     /**

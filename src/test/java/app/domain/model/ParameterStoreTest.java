@@ -20,7 +20,7 @@ public class ParameterStoreTest {
 
         ParameterStore pcStore = new ParameterStore();
 
-        Parameter aa = pcStore.CreateParameter("AAA", "aaa", "aaa",pcList);
+        Parameter aa = pcStore.createParameter("AAA", "aaa", "aaa",pcList);
 
     }
 
@@ -34,7 +34,7 @@ public class ParameterStoreTest {
 
         ParameterStore pp = new ParameterStore();
 
-        Parameter aa = pp.CreateParameter("AAA", "aaa", "aaa",pcList);
+        Parameter aa = pp.createParameter("AAA", "aaa", "aaa",pcList);
 
         boolean expected = true;
 
@@ -54,7 +54,7 @@ public class ParameterStoreTest {
 
         ParameterStore pp = new ParameterStore();
 
-        Parameter aa = pp.CreateParameter("AAA", "aaa", "aaa",pcList);
+        Parameter aa = pp.createParameter("AAA", "aaa", "aaa",pcList);
         pp.listAdd(aa);
 
         boolean expected = false;
@@ -75,7 +75,7 @@ public class ParameterStoreTest {
 
         ParameterStore pp = new ParameterStore();
 
-        Parameter aa = pp.CreateParameter("AAA", "aaa", "aaa",pcList);
+        Parameter aa = pp.createParameter("AAA", "aaa", "aaa",pcList);
         pp.listAdd(aa);
 
         boolean expected = true;
@@ -96,7 +96,7 @@ public class ParameterStoreTest {
 
         ParameterStore pp = new ParameterStore();
 
-        Parameter aa = pp.CreateParameter("AAA", "aaa", "aaa",pcList);
+        Parameter aa = pp.createParameter("AAA", "aaa", "aaa",pcList);
 
         boolean expected = false;
 
@@ -116,7 +116,7 @@ public class ParameterStoreTest {
 
         ParameterStore pp = new ParameterStore();
 
-        Parameter aa = pp.CreateParameter("AAA", "aaa", "aaa",pcList);
+        Parameter aa = pp.createParameter("AAA", "aaa", "aaa",pcList);
 
         boolean expected = true;
 
@@ -136,7 +136,7 @@ public class ParameterStoreTest {
 
         ParameterStore pp = new ParameterStore();
 
-        Parameter aa = pp.CreateParameter("AAA", "aaa", "aaa",pcList);
+        Parameter aa = pp.createParameter("AAA", "aaa", "aaa",pcList);
         pp.listAdd(aa);
 
         boolean expected = false;
@@ -156,7 +156,7 @@ public class ParameterStoreTest {
 
         ParameterStore pp = new ParameterStore();
 
-        Parameter aa = pp.CreateParameter("AAA", "aaa", "aaa",pcList);
+        Parameter aa = pp.createParameter("AAA", "aaa", "aaa",pcList);
 
         boolean expected = true;
 
@@ -176,7 +176,7 @@ public class ParameterStoreTest {
 
         ParameterStore pp = new ParameterStore();
 
-        Parameter aa = pp.CreateParameter("AAA", "aaa", "aaa",pcList);
+        Parameter aa = pp.createParameter("AAA", "aaa", "aaa",pcList);
         pp.listAdd(aa);
 
         boolean expected = true;
@@ -197,7 +197,7 @@ public class ParameterStoreTest {
 
         ParameterStore pp = new ParameterStore();
 
-        Parameter aa = pp.CreateParameter("AAA", "aaa", "aaa",pcList);
+        Parameter aa = pp.createParameter("AAA", "aaa", "aaa",pcList);
         pp.listAdd(aa);
 
         Parameter expected = aa;
@@ -218,7 +218,7 @@ public class ParameterStoreTest {
 
         ParameterStore pp = new ParameterStore();
 
-        Parameter aa = pp.CreateParameter("AAA", "aaa", "aaa",pcList);
+        Parameter aa = pp.createParameter("AAA", "aaa", "aaa",pcList);
 
         Parameter expected = aa;
 

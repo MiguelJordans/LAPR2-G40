@@ -54,7 +54,7 @@ public class TestController {
     public boolean createTest(String citizenCardNumber, String nhsCode, TestType tt, List<Parameter> parameters) {
         testID = testStore.generateTestID();
         test = testStore.createTest(citizenCardNumber, testID, nhsCode, tt);
-        test.CreateTestParameter(testID, parameters);
+        test.createTestParameter(testID, parameters);
         return test != null;
     }
 

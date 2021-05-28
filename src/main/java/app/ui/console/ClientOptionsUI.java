@@ -11,7 +11,7 @@ import java.util.List;
 
 public class ClientOptionsUI implements Runnable{
     public ClientOptionsUI() {
-
+        //ClientOptions menu
     }
 
     public void run() {

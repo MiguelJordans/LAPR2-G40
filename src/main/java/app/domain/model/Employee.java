@@ -7,7 +7,11 @@ import java.util.regex.Pattern;
 
 public class Employee {
 
-    private String name, address, phoneNumber, email, orgRole;
+    private String name;
+    private String address;
+    private String phoneNumber;
+    private String email;
+    private String orgRole;
     private String employeeId;
     private String socCode;
 
@@ -74,7 +78,7 @@ public class Employee {
         if (StringUtils.isBlank(name)) {
             throw new IllegalArgumentException("Name cannot be empty.");
         }
-        if (!(name.length() < Constants.NAME_EMPLOYEE_MAX)) {
+        if ((name.length() >= Constants.NAME_EMPLOYEE_MAX)) {
             throw new IllegalArgumentException("Name cannot have more than 30 characters.");
         }
         for (int i = 0; i < auxchar.length; i++) {
@@ -100,7 +104,7 @@ public class Employee {
             throw new IllegalArgumentException("Address cannot be empty.");
         }
 
-        if (!(aux.length() <= Constants.ADRESS_EMPLOYEE_MAX)) {
+        if ((aux.length() > Constants.ADRESS_EMPLOYEE_MAX)) {
             throw new IllegalArgumentException("Address cannot have more than 30 characters.");
         }
 
@@ -141,7 +145,7 @@ public class Employee {
         if (StringUtils.isBlank(phoneNumber)) {
             throw new IllegalArgumentException("Phone number cannot be blank.");
         }
-        if (!(phoneNumber.length() == Constants.PHONE_NUMBER_MAX)) {
+        if ((phoneNumber.length() != Constants.PHONE_NUMBER_MAX)) {
             throw new IllegalArgumentException("Phone number must be 11 digit numbers.");
         }
         for (int i = 0; i < auxChar.length; i++) {
@@ -186,7 +190,7 @@ public class Employee {
         if (StringUtils.isBlank(auxSocCode)) {
             throw new IllegalArgumentException("SOC code cannot be empty.");
         }
-        if (!(auxSocCode.length() == Constants.SOC_MAX)) {
+        if ((auxSocCode.length() != Constants.SOC_MAX)) {
             throw new IllegalArgumentException("SOC code must have 7 digits.");
         }
 

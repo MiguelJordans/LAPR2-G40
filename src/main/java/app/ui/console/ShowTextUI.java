@@ -1,7 +1,5 @@
 package app.ui.console;
 
-import net.sourceforge.barbecue.Barcode;
-import net.sourceforge.barbecue.BarcodeFactory;
 import org.apache.commons.lang3.StringUtils;
 
 /**

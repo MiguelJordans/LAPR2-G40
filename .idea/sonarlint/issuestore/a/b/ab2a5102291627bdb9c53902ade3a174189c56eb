@@ -1,11 +1,0 @@
-
-Y
-java:S1128">Remove this unused import 'app.controller.TestTypeController'.(Ä¢—ˆúÿÿÿÿ
-S	java:S106("9Replace this use of System.out or System.err by a logger.(—ÅÉöøÿÿÿÿ
-S	java:S106*"9Replace this use of System.out or System.err by a logger.(é…·”üÿÿÿÿ
-S	java:S106/"9Replace this use of System.out or System.err by a logger.(©þêÜúÿÿÿÿ
-N	java:S1060"9Replace this use of System.out or System.err by a logger.(à‹ÇÖ
-C
-java:S1068"(Remove this unused "ctrl" private field.(œÌ Þøÿÿÿÿ
-C
-java:S1068"(Remove this unused "list" private field.(ÊÐ§Ÿþÿÿÿÿ

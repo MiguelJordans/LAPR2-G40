@@ -26,7 +26,7 @@ public class ClinicalAnalysisLaboratoryStoreTest {
 
         //Arrange
         ClinicalAnalysisLaboratoryStore store = new ClinicalAnalysisLaboratoryStore();
-        ClinicalAnalysisLaboratory cal = store.CreateClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "3245681253",ttList);
+        ClinicalAnalysisLaboratory cal = store.createClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "3245681253",ttList);
 
         //Act
         boolean expected = true;
@@ -50,7 +50,7 @@ public class ClinicalAnalysisLaboratoryStoreTest {
 
         //Arrange
         ClinicalAnalysisLaboratoryStore store = new ClinicalAnalysisLaboratoryStore();
-        ClinicalAnalysisLaboratory cal = store.CreateClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "3245681253",ttList);
+        ClinicalAnalysisLaboratory cal = store.createClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "3245681253",ttList);
         store.listAdd(cal);
 
         //Act
@@ -75,7 +75,7 @@ public class ClinicalAnalysisLaboratoryStoreTest {
 
         //Arrange
         ClinicalAnalysisLaboratoryStore store = new ClinicalAnalysisLaboratoryStore();
-        ClinicalAnalysisLaboratory cal = store.CreateClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "3245681253",ttList);
+        ClinicalAnalysisLaboratory cal = store.createClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "3245681253",ttList);
 
         //Act
         boolean expected = true;
@@ -99,7 +99,7 @@ public class ClinicalAnalysisLaboratoryStoreTest {
 
         //Arrange
         ClinicalAnalysisLaboratoryStore store = new ClinicalAnalysisLaboratoryStore();
-        ClinicalAnalysisLaboratory cal = store.CreateClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "3245681253",ttList);
+        ClinicalAnalysisLaboratory cal = store.createClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "3245681253",ttList);
 
         //Act
         boolean expected = true;
@@ -123,7 +123,7 @@ public class ClinicalAnalysisLaboratoryStoreTest {
 
         //Arrange
         ClinicalAnalysisLaboratoryStore store = new ClinicalAnalysisLaboratoryStore();
-        ClinicalAnalysisLaboratory cal = store.CreateClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "3245681253",ttList);
+        ClinicalAnalysisLaboratory cal = store.createClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "3245681253",ttList);
         store.listAdd(cal);
 
         //Act
@@ -148,7 +148,7 @@ public class ClinicalAnalysisLaboratoryStoreTest {
 
         //Arrange
         ClinicalAnalysisLaboratoryStore store = new ClinicalAnalysisLaboratoryStore();
-        ClinicalAnalysisLaboratory cal = store.CreateClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "3245681253",ttList);
+        ClinicalAnalysisLaboratory cal = store.createClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "3245681253",ttList);
 
         //Act
         ClinicalAnalysisLaboratory expected = cal;

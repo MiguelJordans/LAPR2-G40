@@ -5,8 +5,6 @@ import auth.AuthFacade;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
-
 
 public class EmployeeStore {
 
@@ -33,11 +31,13 @@ public class EmployeeStore {
      * @param orgRole                - the Employee's organization role
      */
 
-    public Employee NewEmployee (String name, String address, String email, String phoneNumber, String socCode, String orgRole){
+    public Employee newEmployee (String name, String address, String email, String phoneNumber, String socCode, String orgRole){
 
-        String ID = generateEmployeeID(name);
+        String iD = generateEmployeeID(name);
 
-        return this.emp = new Employee(name, address, email, phoneNumber, ID, socCode, orgRole);
+        this.emp = new Employee(name, address, email, phoneNumber, iD, socCode, orgRole);
+
+        return this.emp;
     }
 
     /**

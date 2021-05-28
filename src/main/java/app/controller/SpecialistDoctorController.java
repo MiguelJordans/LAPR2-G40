@@ -37,7 +37,7 @@ public class SpecialistDoctorController {
 
     public void SpecialistDoctor(String name, String address, String email, String phoneNumber, String socCode, String orgRole, String doctorIndexNumber){
         store = company.getSpecialistDoctorStore();
-        store.NewSpecialistDoctor(name, address, email, phoneNumber, socCode, orgRole, doctorIndexNumber);
+        store.newSpecialistDoctor(name, address, email, phoneNumber, socCode, orgRole, doctorIndexNumber);
     }
 
 

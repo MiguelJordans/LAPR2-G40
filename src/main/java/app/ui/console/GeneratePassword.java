@@ -7,7 +7,7 @@ public class GeneratePassword {
     private String password;
 
     public GeneratePassword(){
-
+         //GeneratePassword menu
     }
 
     public String password(){

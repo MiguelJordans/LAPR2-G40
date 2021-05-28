@@ -36,9 +36,9 @@ public class ClinicalAnalysisLaboratoryController {
      * @param phoneNumber the Clinical Analysis Laboratory's phone number
      * @param tinNumber the Clinical Analysis Laboratory's TIN number
      */
-    public void CreateClinicalAnalysisLaboratory(String laboratoryID, String name, String address, String phoneNumber, String tinNumber, List<TestType> ttList) {
+    public void createClinicalAnalysisLaboratory(String laboratoryID, String name, String address, String phoneNumber, String tinNumber, List<TestType> ttList) {
         store = company.getClinicalAnalysisLaboratoryStore();
-        store.CreateClinicalAnalysisLaboratory(laboratoryID, name, address, phoneNumber, tinNumber,ttList);
+        store.createClinicalAnalysisLaboratory(laboratoryID, name, address, phoneNumber, tinNumber,ttList);
     }
 
     /**

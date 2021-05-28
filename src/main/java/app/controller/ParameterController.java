@@ -38,7 +38,7 @@ public class ParameterController {
 
     public void CreateParameter(String description,String code,String name,List<ParameterCategory> pcList){
         store = company.getParameterStore();
-        store.CreateParameter(description,code,name,pcList);
+        store.createParameter(description,code,name,pcList);
     }
 
     /**

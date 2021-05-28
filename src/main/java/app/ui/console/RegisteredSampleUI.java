@@ -1,22 +1,13 @@
 package app.ui.console;
 
-import app.controller.SampleController;
-import app.controller.TestTypeController;
 import app.domain.model.*;
 import app.ui.console.utils.Utils;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class RegisteredSampleUI implements Runnable {
 
-    private SampleController ctrl;
     private SampleStore smStore;
 
-    private List<Sample> list = new ArrayList<>();
-
     public RegisteredSampleUI() {
-        this.ctrl = new SampleController();
         this.smStore = new SampleStore();
     }
 

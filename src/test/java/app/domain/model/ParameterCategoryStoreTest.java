@@ -11,7 +11,7 @@ public class ParameterCategoryStoreTest {
     public void createParameterCategory() {
 
         ParameterCategoryStore pc = new ParameterCategoryStore();
-        ParameterCategory aa = pc.CreateParameterCategory("AAA", "aaaaa", "aaa");
+        ParameterCategory aa = pc.createParameterCategory("AAA", "aaaaa", "aaa");
 
     }
 
@@ -19,7 +19,7 @@ public class ParameterCategoryStoreTest {
     public void validateParameterCategory1() {
 
         ParameterCategoryStore pc = new ParameterCategoryStore();
-        ParameterCategory aa = pc.CreateParameterCategory("AAA", "aaaaa", "aaa");
+        ParameterCategory aa = pc.createParameterCategory("AAA", "aaaaa", "aaa");
 
         boolean expected = true;
 
@@ -33,7 +33,7 @@ public class ParameterCategoryStoreTest {
     public void validateParameterCategory2() {
 
         ParameterCategoryStore pc = new ParameterCategoryStore();
-        ParameterCategory aa = pc.CreateParameterCategory("AAA", "aaaaa", "aaa");
+        ParameterCategory aa = pc.createParameterCategory("AAA", "aaaaa", "aaa");
         pc.listAdd();
 
         boolean expected = false;
@@ -48,7 +48,7 @@ public class ParameterCategoryStoreTest {
     public void listContainParameterCategory1() {
 
         ParameterCategoryStore pc = new ParameterCategoryStore();
-        ParameterCategory aa = pc.CreateParameterCategory("AAA", "aaaaa", "aaa");
+        ParameterCategory aa = pc.createParameterCategory("AAA", "aaaaa", "aaa");
         pc.listAdd();
 
         boolean expected = true;
@@ -63,7 +63,7 @@ public class ParameterCategoryStoreTest {
     public void listContainParameterCategory2() {
 
         ParameterCategoryStore pc = new ParameterCategoryStore();
-        ParameterCategory aa = pc.CreateParameterCategory("AAA", "aaaaa", "aaa");
+        ParameterCategory aa = pc.createParameterCategory("AAA", "aaaaa", "aaa");
 
         boolean expected = false;
 
@@ -77,7 +77,7 @@ public class ParameterCategoryStoreTest {
     public void saveParameterCategory1() {
 
         ParameterCategoryStore pc = new ParameterCategoryStore();
-        ParameterCategory aa = pc.CreateParameterCategory("AAA", "aaaaa", "aaa");
+        ParameterCategory aa = pc.createParameterCategory("AAA", "aaaaa", "aaa");
 
         boolean expected = true;
 
@@ -91,7 +91,7 @@ public class ParameterCategoryStoreTest {
     public void saveParameterCategory2() {
 
         ParameterCategoryStore pc = new ParameterCategoryStore();
-        ParameterCategory aa = pc.CreateParameterCategory("AAA", "aaaaa", "aaa");
+        ParameterCategory aa = pc.createParameterCategory("AAA", "aaaaa", "aaa");
         pc.listAdd();
 
         boolean expected = false;
@@ -105,7 +105,7 @@ public class ParameterCategoryStoreTest {
     @Test
     public void listAddParameterCategory1() {
         ParameterCategoryStore pc = new ParameterCategoryStore();
-        ParameterCategory aa = pc.CreateParameterCategory("AAA", "aaaaa", "aaa");
+        ParameterCategory aa = pc.createParameterCategory("AAA", "aaaaa", "aaa");
 
         boolean expected = true;
 
@@ -119,7 +119,7 @@ public class ParameterCategoryStoreTest {
     public void listAddParameterCategory2() {
 
         ParameterCategoryStore pc = new ParameterCategoryStore();
-        ParameterCategory aa = pc.CreateParameterCategory("AAA", "aaaaa", "aaa");
+        ParameterCategory aa = pc.createParameterCategory("AAA", "aaaaa", "aaa");
         pc.listAdd();
 
         boolean expected = true;
@@ -134,7 +134,7 @@ public class ParameterCategoryStoreTest {
     public void getParameterCategory1() {
 
         ParameterCategoryStore pc = new ParameterCategoryStore();
-        ParameterCategory aa = pc.CreateParameterCategory("AAA", "aaaaa", "aaa");
+        ParameterCategory aa = pc.createParameterCategory("AAA", "aaaaa", "aaa");
         pc.listAdd();
 
         ParameterCategory expected = pc.getParameterCategory(0);
@@ -149,7 +149,7 @@ public class ParameterCategoryStoreTest {
     public void getPC() {
 
         ParameterCategoryStore pc = new ParameterCategoryStore();
-        ParameterCategory aa = pc.CreateParameterCategory("AAA", "aaaaa", "aaa");
+        ParameterCategory aa = pc.createParameterCategory("AAA", "aaaaa", "aaa");
 
         ParameterCategory expected = aa;
 
