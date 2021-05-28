@@ -1,0 +1,26 @@
+
+_
+java:S39735"IUse indentation to denote the code conditionally executed by this "else".(ÔÍØ
+S
+java:S2589b"8Remove this expression which always evaluates to "false"(½¸áÁýÿÿÿÿ
+F
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ
+P
+java:S1128	":Remove this unused import 'javax.swing.plaf.nimbus.State'.(ðÒ´Ò
+Y
+java:S1128">Remove this unused import 'app.controller.TestTypeController'.(Ä¢—ˆúÿÿÿÿ
+S
+java:S1128"8Remove this unused import 'app.domain.shared.Constants'.(Ö¦­óþÿÿÿÿ
+F
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ
+h
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 41 to the 15 allowed.(“–ýþ
+N	java:S106%"9Replace this use of System.out or System.err by a logger.(¿³àì
+D
+java:S1940.")Use the opposite operator ("!=") instead.(óÀÅ‰úÿÿÿÿ
+S	java:S1064"9Replace this use of System.out or System.err by a logger.(ÔŽù‚üÿÿÿÿ
+S	java:S1066"9Replace this use of System.out or System.err by a logger.(Ì† ¬ûÿÿÿÿ
+S	java:S106E"9Replace this use of System.out or System.err by a logger.(©þêÜúÿÿÿÿ
+S	java:S106F"9Replace this use of System.out or System.err by a logger.(˜éïáÿÿÿÿÿ
+M
+java:S1068"+Remove this unused "ttStore" private field.(çßóôûÿÿÿÿ8¨Õõþš/

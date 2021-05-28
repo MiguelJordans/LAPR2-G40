@@ -1,0 +1,11 @@
+
+P	java:S107%"<Method has 8 parameters, which is greater than 7 authorized.(ÃÇş|
+I
+java:S1121&".Extract the assignment out of this expression.(¡¡­ğûÿÿÿÿ
+o
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(·×³€
+b	java:S100%"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÃÇş|
+W
+java:S11262"AReplace this if-then-else statement by a single return statement.(ÅÂÉ
+W
+java:S1126A"AReplace this if-then-else statement by a single return statement.(–¢€Ô

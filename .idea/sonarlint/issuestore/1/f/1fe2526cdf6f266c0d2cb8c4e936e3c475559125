@@ -1,0 +1,22 @@
+
+]	java:S107"AConstructor has 8 parameters, which is greater than 7 authorized.(ñ™çœ8ÓØÛöš/
+B
+java:S1659	"%Declare "address" on a separate line.(ÔÎæ›8×ØÛöš/
+F
+java:S1659	")Declare "phoneNumber" on a separate line.(ÔÎæ›8×ØÛöš/
+@
+java:S1659	"#Declare "email" on a separate line.(ÔÎæ›8×ØÛöš/
+B
+java:S1659	"%Declare "orgRole" on a separate line.(ÔÎæ›8×ØÛöš/
+Q
+java:S1659"/Declare "doctorIndexNumber" on a separate line.(Œ—ú’ûÿÿÿÿ8×ØÛöš/
+F
+java:S1940_")Use the opposite operator (">=") instead.(˜ÏõÖ8ÛØÛöš/
+E
+java:S1940y"(Use the opposite operator (">") instead.(ãş´ˆ8ÜØÛöš/
+j
+java:S5998‹"LRefactor this repetition that can lead to a stack overflow for large inputs.(šÏ¶Ë8ÜØÛöš/
+G
+java:S1940¢")Use the opposite operator ("!=") instead.(à¦ä¿8ŞØÛöš/
+L
+java:S1940Ï")Use the opposite operator ("!=") instead.(¦Ô’Øùÿÿÿÿ8ßØÛöš/
