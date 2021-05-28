@@ -7,17 +7,13 @@ import java.util.regex.Pattern;
 
 public class EmployeeCheck {
 
-    public EmployeeCheck(){
-
-    }
-
     /**
      * Checks the Employee's organization role (according to the acceptance criteira)
      *
      * @param orgRole the the Employee's ordanization role
      */
 
-    public void checkOrgRole(String orgRole) {
+    public static void checkOrgRole(String orgRole) {
 
         if (StringUtils.isBlank(orgRole)) {
             throw new IllegalArgumentException("Organization role cannot be empty.");
@@ -30,7 +26,7 @@ public class EmployeeCheck {
      * @param name the Employee's name
      */
 
-    public void checkNameRules(String name) {
+    public static void checkNameRules(String name) {
 
         String aux = name.trim();
         aux = aux.toLowerCase();
@@ -57,7 +53,7 @@ public class EmployeeCheck {
      * @param address the Employee's address
      */
 
-    public void checkAddressRules(String address) {
+    public static void checkAddressRules(String address) {
         String aux = address.trim();
         aux = aux.toLowerCase();
 
@@ -77,7 +73,7 @@ public class EmployeeCheck {
      * @param email the Employee's mail
      */
 
-    public void checkEmailRules(String email) {
+    public static void checkEmailRules(String email) {
 
         if (email==""||email==null) {
             throw new IllegalArgumentException("Email cannot be empty.");
@@ -99,7 +95,7 @@ public class EmployeeCheck {
      * @param phoneNumber the Employee's phone number
      */
 
-    public void checkPhoneNumberRules(String phoneNumber) {
+    public static void checkPhoneNumberRules(String phoneNumber) {
         String auxTrimPhoneNumber = phoneNumber.replaceAll("\\s", "");
         char[] auxChar = auxTrimPhoneNumber.toCharArray();
 
@@ -123,7 +119,7 @@ public class EmployeeCheck {
      * @param employeeId the Employee's ID
      */
 
-    public void checkEmployeeId(String employeeId) {
+    public static void checkEmployeeId(String employeeId) {
 
 
         String auxEmployeeId = employeeId.replaceAll("\\s", "");
@@ -143,7 +139,7 @@ public class EmployeeCheck {
      * @param socCode the Employee's soc Code
      */
 
-    public void checkSocCode(String socCode) {
+    public static void checkSocCode(String socCode) {
 
         String auxSocCode = socCode.replaceAll("\\s", "");
         char[] auxchar = auxSocCode.toCharArray();

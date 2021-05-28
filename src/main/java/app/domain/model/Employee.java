@@ -15,8 +15,6 @@ public class Employee {
     private String employeeId;
     private String socCode;
 
-    private EmployeeCheck eC;
-
     /**
      * Contructs an instance of Employee
      *
@@ -31,13 +29,13 @@ public class Employee {
 
     public Employee(String name, String address, String email, String phoneNumber, String employeeId, String socCode, String orgRole) {
 
-        eC.checkNameRules(name);
-        eC.checkAddressRules(address);
-        eC.checkEmailRules(email);
-        eC.checkPhoneNumberRules(phoneNumber);
-        eC.checkEmployeeId(employeeId);
-        eC.checkSocCode(socCode);
-        eC.checkOrgRole(orgRole);
+        EmployeeCheck.checkNameRules(name);
+        EmployeeCheck.checkAddressRules(address);
+        EmployeeCheck.checkEmailRules(email);
+        EmployeeCheck.checkPhoneNumberRules(phoneNumber);
+        EmployeeCheck.checkEmployeeId(employeeId);
+        EmployeeCheck.checkSocCode(socCode);
+        EmployeeCheck.checkOrgRole(orgRole);
 
         this.name = name;
         this.address = address;

@@ -16,8 +16,6 @@ public class SpecialistDoctor {
     private String socCode;
     private String doctorIndexNumber;
 
-    private EmployeeCheck eC;
-
     /**
      * Contructs an instance of Employee
      *
@@ -33,13 +31,13 @@ public class SpecialistDoctor {
 
     public SpecialistDoctor(String name, String address, String email, String phoneNumber, String employeeId, String socCode, String orgRole, String doctorIndexNumber) {
 
-        eC.checkNameRules(name);
-        eC.checkAddressRules(address);
-        eC.checkEmailRules(email);
-        eC.checkPhoneNumberRules(phoneNumber);
-        eC.checkEmployeeId(employeeId);
-        eC.checkSocCode(socCode);
-        eC.checkOrgRole(orgRole);
+        EmployeeCheck.checkNameRules(name);
+        EmployeeCheck.checkAddressRules(address);
+        EmployeeCheck.checkEmailRules(email);
+        EmployeeCheck.checkPhoneNumberRules(phoneNumber);
+        EmployeeCheck.checkEmployeeId(employeeId);
+        EmployeeCheck.checkSocCode(socCode);
+        EmployeeCheck.checkOrgRole(orgRole);
         checkDoctorIndexNumber(doctorIndexNumber);
 
         this.name = name;
