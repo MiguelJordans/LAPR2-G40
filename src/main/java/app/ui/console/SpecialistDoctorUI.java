@@ -1,5 +1,6 @@
 package app.ui.console;
 
+import app.ui.console.utils.CreateDiagnosticUI;
 import app.ui.console.utils.Utils;
 
 import java.util.ArrayList;
@@ -14,7 +15,7 @@ public class SpecialistDoctorUI implements Runnable {
     @Override
     public void run() {
         List<MenuItem> options = new ArrayList<>();
-        options.add(new MenuItem("Perform the diagnostic", new ValidateTestUI()));
+        options.add(new MenuItem("Perform the diagnostic", new CreateDiagnosticUI()));
         int option = 0;
         do {
             option = Utils.showAndSelectIndex(options, "\n\nSpecialist Doctor Menu:");
