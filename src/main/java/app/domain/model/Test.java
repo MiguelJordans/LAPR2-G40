@@ -26,6 +26,7 @@ public class Test {
         this.citizenCardNumber = citizenCardNumber;
         this.testID = testCode;
         this.nhsCode = nhsCode;
+        this.tt = tt;
         state = State.CREATED;
         tpList = new ArrayList<>();
     }
@@ -41,14 +42,10 @@ public class Test {
     public List<Parameter> getParamList() {
         List<Parameter> paramList = new ArrayList<>();
 
-        for(TestParameter tp : tpList) {
+        for (TestParameter tp : tpList) {
             paramList.add(tp.getParam());
         }
         return paramList;
-    }
-
-    public List<TestParameter> getTpList() {
-        return tpList;
     }
 
     private void checkNhsCode(String nhsCode) {
@@ -64,23 +61,27 @@ public class Test {
 
     public void createTestParameter(String testID, List<Parameter> parameters) {
         TestParameter tp;
-        for(Parameter param : parameters) {
+        for (Parameter param : parameters) {
             tp = new TestParameter(testID, param);
-            tpList.add(tp);
+            this.tpList.add(tp);
         }
+    }
+
+    public List<TestParameter> getTpList() {
+        return tpList;
     }
 
     public boolean addTestParameterResult(String parameterCode, double result) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
         TestParameter tp1 = null;
 
-        for(TestParameter tp : tpList) {
-            if(tp.getParam().getCode().equals(parameterCode)) {
+        for (TestParameter tp : tpList) {
+            if (tp.getParam().getCode().equals(parameterCode)) {
                 tp1 = tp;
             }
         }
 
-        if(tp1 == null) {
+        if (tp1 == null) {
             return false;
         }
 
@@ -98,7 +99,6 @@ public class Test {
     }
 
 
-
     //US15
     public boolean isValid() {
         return false;
@@ -109,7 +109,7 @@ public class Test {
         return true;
     }
 
-    enum State{
+    enum State {
         CREATED,
         SAMPLE_COLLECTED,
         SAMPLE_ANALYSED,
@@ -118,18 +118,18 @@ public class Test {
     }
 
     public void setState(State state) {
-        this.state=state;
+        this.state = state;
     }
 
-    public void setState(String s){
-        switch (s){
+    public void setState(String s) {
+        switch (s) {
             case "CREATED":
                 setState(State.CREATED);
                 break;
-            case "SAMPLE_COLLECTED" :
+            case "SAMPLE_COLLECTED":
                 setState(State.SAMPLE_COLLECTED);
                 break;
-            case "SAMPLE_ANALYSED" :
+            case "SAMPLE_ANALYSED":
                 setState(State.SAMPLE_ANALYSED);
                 break;
             case "DIAGNOSTIC_MADE":
@@ -143,10 +143,21 @@ public class Test {
         }
     }
 
-    public boolean compareState(String state){
+    public boolean compareState(String state) {
 
 
-        if(state.equals("SAMPLE_ANALYSED")||state.equals("SAMPLE_COLLECTED")||state.equals("DIAGNOSTIC_MADE")||state.equals("VALIDATED")){
+        if (state.equals("SAMPLE_ANALYSED") || state.equals("SAMPLE_COLLECTED") || state.equals("DIAGNOSTIC_MADE") || state.equals("VALIDATED")) {
+            return false;
+        }
+
+        return true;
+
+    }
+
+    public boolean compareTestState(String state) {
+
+
+        if (state.equals("SAMPLE_ANALYSED") || state.equals("DIAGNOSTIC_MADE") || state.equals("VALIDATED")) {
             return false;
         }
 

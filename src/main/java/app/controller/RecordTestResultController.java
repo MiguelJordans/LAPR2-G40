@@ -7,34 +7,48 @@ import java.util.List;
 
 public class RecordTestResultController {
 
+    private SampleStore sampleStore;
     private TestStore testStore;
     private Test test;
 
     public RecordTestResultController() {
         App app = App.getInstance();
         Company company = app.getCompany();
+        this.sampleStore = company.getSampleStore();
         this.testStore = company.getTestStore();
     }
 
-    private Test getCorrespondingTest(String sampleBarcodeNumber) {
-        String testID = "000000000003"; //Buscar teste correspondente através do número do barcode
-        List<Test> tests = testStore.getTestsList();
+    private boolean getCorrespondingTest(String sampleID) {
+        String testID;
 
-        for (Test t1 : tests) {
-            if(test.getTestID().equals(testID)) {
-                this.test = t1;
+        List<Sample> samples = sampleStore.getSampleList();
+
+        testID = "";
+
+        for (Sample sa : samples) {
+            if (sa.getBarcode().equals(sampleID)) {
+                testID = sa.getTr().getTestID();
             }
         }
-        return null;
+
+        List<Test> tests = testStore.getTestsList();
+
+        for (Test test : tests) {
+            if (test.getTestID().equals(testID)) {
+                this.test = test;
+                return test.compareTestState("SAMPLE_COLLECTED");
+            }
+        }
+        return false;
     }
 
-    public List<Parameter> getParameters(String sampleID) {
+    public List<TestParameter> getParameters(String sampleID) {
         getCorrespondingTest(sampleID);
 
         if(test == null) {
             return null;
         }
-        return test.getParamList();
+        return test.getTpList();
     }
 
     public boolean addTestParameterResult(String parameterCode, double result) {
@@ -45,5 +59,9 @@ public class RecordTestResultController {
             return false;
         }
         return true;
+    }
+
+    public void setState() {
+        test.setState("SAMPLE_ANALYSED");
     }
 }
