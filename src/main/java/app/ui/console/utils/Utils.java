@@ -27,7 +27,7 @@ public class Utils {
             return in.readLine();
         } catch (Exception e)
         {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
             return null;
         }
     }
