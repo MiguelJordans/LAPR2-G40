@@ -11,7 +11,7 @@ public class Parameter {
     private String name;
     private String description;
 
-    private List<ParameterCategory> pcList;
+    private ParameterCategory pc;
 
     /**
      * Constructs an instance of Parameter
@@ -19,20 +19,19 @@ public class Parameter {
      * @param code the Parameter's code
      * @param description the Parameter's description
      * @param name the Parameter's name
-     * @param pcList the Parameter's category list
      */
 
-    public Parameter(String code, String description, String name, List<ParameterCategory> pcList) {
+    public Parameter(String code, String description, String name, ParameterCategory pc) {
 
         checkCode(code);
         checkName(name);
         checkDescription(description);
-        checkCategoriesList(pcList);
+        checkCategory(pc);
 
         this.code = code;
         this.name = name;
         this.description = description;
-        this.pcList = pcList;
+        this.pc=pc;
 
     }
 
@@ -90,11 +89,10 @@ public class Parameter {
     /**
      * Checks the Parameter's category list (according to the acceptance criteria)
      *
-     * @param pcList the Parameter's category list
      */
 
-    public void checkCategoriesList(List<ParameterCategory> pcList){
-        if(pcList.isEmpty()) {
+    public void checkCategory(ParameterCategory pc){
+        if(pc==null) {
             throw new IllegalArgumentException("Categories not valid! List is null!");
         }
     }
@@ -136,9 +134,8 @@ public class Parameter {
      *
      * @return the category list of the Parameter
      */
-
-    public List<ParameterCategory> getPcList() {
-        return pcList;
+    public ParameterCategory getPc() {
+        return pc;
     }
 
     //Sets---------------------------------------------------------------------
@@ -146,12 +143,11 @@ public class Parameter {
     /**
      * Modifies the category list of the Parameter
      *
-     * @param pcList modifies the category list of the Parameter
      */
 
-    public void setPcList(List<ParameterCategory> pcList) {
-        checkCategoriesList(pcList);
-        this.pcList = pcList;
+    public void setPc(ParameterCategory pc) {
+        checkCategory(pc);
+        this.pc = pc;
     }
 
     /**

@@ -14,32 +14,26 @@ public class ParameterStoreTest {
     @Test
     public void createParameter() {
 
-        List<ParameterCategory> pcList = new ArrayList<>();
-
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcList.add(pc);
 
-        ParameterStore pcStore = new ParameterStore();
+        ParameterStore ppStore = new ParameterStore();
 
-        Parameter aa = pcStore.createParameter("AAA", "aaa", "aaa",pcList);
+        Parameter aa = ppStore.createParameter("AAA", "aaa", "aaa",pc);
 
     }
 
     @Test
     public void validateParameter1() {
 
-        List<ParameterCategory> pcList = new ArrayList<>();
-
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcList.add(pc);
 
-        ParameterStore pp = new ParameterStore();
+        ParameterStore ppStore = new ParameterStore();
 
-        Parameter aa = pp.createParameter("AAA", "aaa", "aaa",pcList);
+        Parameter aa = ppStore.createParameter("AAA", "aaa", "aaa",pc);
 
         boolean expected = true;
 
-        boolean actual = pp.validateParameter(aa);
+        boolean actual = ppStore.validateParameter(aa);
 
         Assert.assertEquals(expected, actual);
 
@@ -48,19 +42,16 @@ public class ParameterStoreTest {
     @Test
     public void validateParameter2() {
 
-        List<ParameterCategory> pcList = new ArrayList<>();
-
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcList.add(pc);
 
-        ParameterStore pp = new ParameterStore();
+        ParameterStore ppStore = new ParameterStore();
 
-        Parameter aa = pp.createParameter("AAA", "aaa", "aaa",pcList);
-        pp.listAdd(aa);
+        Parameter aa = ppStore.createParameter("AAA", "aaa", "aaa",pc);
+        ppStore.listAdd(aa);
 
         boolean expected = false;
 
-        boolean actual = pp.validateParameter(aa);
+        boolean actual = ppStore.validateParameter(aa);
 
         Assert.assertEquals(expected, actual);
 
@@ -69,19 +60,16 @@ public class ParameterStoreTest {
     @Test
     public void listContainParameter1() {
 
-        List<ParameterCategory> pcList = new ArrayList<>();
-
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcList.add(pc);
 
-        ParameterStore pp = new ParameterStore();
+        ParameterStore ppStore = new ParameterStore();
 
-        Parameter aa = pp.createParameter("AAA", "aaa", "aaa",pcList);
-        pp.listAdd(aa);
+        Parameter aa = ppStore.createParameter("AAA", "aaa", "aaa",pc);
+        ppStore.listAdd(aa);
 
         boolean expected = true;
 
-        boolean actual = pp.listContain(aa);
+        boolean actual = ppStore.listContain(aa);
 
         Assert.assertEquals(expected, actual);
 
@@ -90,18 +78,15 @@ public class ParameterStoreTest {
     @Test
     public void listContainParameter2() {
 
-        List<ParameterCategory> pcList = new ArrayList<>();
-
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcList.add(pc);
 
-        ParameterStore pp = new ParameterStore();
+        ParameterStore ppStore = new ParameterStore();
 
-        Parameter aa = pp.createParameter("AAA", "aaa", "aaa",pcList);
+        Parameter aa = ppStore.createParameter("AAA", "aaa", "aaa",pc);
 
         boolean expected = false;
 
-        boolean actual = pp.listContain(aa);
+        boolean actual = ppStore.listContain(aa);
 
         Assert.assertEquals(expected, actual);
 
@@ -110,18 +95,15 @@ public class ParameterStoreTest {
     @Test
     public void saveParameter1() {
 
-        List<ParameterCategory> pcList = new ArrayList<>();
-
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcList.add(pc);
 
-        ParameterStore pp = new ParameterStore();
+        ParameterStore ppStore = new ParameterStore();
 
-        Parameter aa = pp.createParameter("AAA", "aaa", "aaa",pcList);
+        Parameter aa = ppStore.createParameter("AAA", "aaa", "aaa",pc);
 
         boolean expected = true;
 
-        boolean actual = pp.saveParameter();
+        boolean actual = ppStore.saveParameter();
 
         Assert.assertEquals(expected, actual);
 
@@ -130,19 +112,16 @@ public class ParameterStoreTest {
     @Test
     public void saveParameter2() {
 
-        List<ParameterCategory> pcList = new ArrayList<>();
-
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcList.add(pc);
 
-        ParameterStore pp = new ParameterStore();
+        ParameterStore ppStore = new ParameterStore();
 
-        Parameter aa = pp.createParameter("AAA", "aaa", "aaa",pcList);
-        pp.listAdd(aa);
+        Parameter aa = ppStore.createParameter("AAA", "aaa", "aaa",pc);
+        ppStore.listAdd(aa);
 
         boolean expected = false;
 
-        boolean actual = pp.saveParameter();
+        boolean actual = ppStore.saveParameter();
 
         Assert.assertEquals(expected, actual);
 
@@ -150,18 +129,15 @@ public class ParameterStoreTest {
 
     @Test
     public void listAddParameter1() {
-        List<ParameterCategory> pcList = new ArrayList<>();
-
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcList.add(pc);
 
-        ParameterStore pp = new ParameterStore();
+        ParameterStore ppStore = new ParameterStore();
 
-        Parameter aa = pp.createParameter("AAA", "aaa", "aaa",pcList);
+        Parameter aa = ppStore.createParameter("AAA", "aaa", "aaa",pc);
 
         boolean expected = true;
 
-        boolean actual = pp.listAdd(aa);
+        boolean actual = ppStore.listAdd(aa);
 
         Assert.assertEquals(expected, actual);
 
@@ -170,19 +146,16 @@ public class ParameterStoreTest {
     @Test
     public void listAddParameter2() {
 
-        List<ParameterCategory> pcList = new ArrayList<>();
-
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcList.add(pc);
 
-        ParameterStore pp = new ParameterStore();
+        ParameterStore ppStore = new ParameterStore();
 
-        Parameter aa = pp.createParameter("AAA", "aaa", "aaa",pcList);
-        pp.listAdd(aa);
+        Parameter aa = ppStore.createParameter("AAA", "aaa", "aaa",pc);
+        ppStore.listAdd(aa);
 
         boolean expected = true;
 
-        boolean actual = pp.listAdd(aa);
+        boolean actual = ppStore.listAdd(aa);
 
         Assert.assertEquals(expected, actual);
 
@@ -191,19 +164,16 @@ public class ParameterStoreTest {
     @Test
     public void getParameter1() {
 
-        List<ParameterCategory> pcList = new ArrayList<>();
-
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcList.add(pc);
 
-        ParameterStore pp = new ParameterStore();
+        ParameterStore ppStore = new ParameterStore();
 
-        Parameter aa = pp.createParameter("AAA", "aaa", "aaa",pcList);
-        pp.listAdd(aa);
+        Parameter aa = ppStore.createParameter("AAA", "aaa", "aaa",pc);
+        ppStore.listAdd(aa);
 
         Parameter expected = aa;
 
-        Parameter actual = pp.getParameter(0);
+        Parameter actual = ppStore.getParameter(0);
 
         assertEquals(expected, actual);
 
@@ -212,18 +182,15 @@ public class ParameterStoreTest {
     @Test
     public void getPP() {
 
-        List<ParameterCategory> pcList = new ArrayList<>();
-
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcList.add(pc);
 
-        ParameterStore pp = new ParameterStore();
+        ParameterStore ppStore = new ParameterStore();
 
-        Parameter aa = pp.createParameter("AAA", "aaa", "aaa",pcList);
+        Parameter aa = ppStore.createParameter("AAA", "aaa", "aaa",pc);
 
         Parameter expected = aa;
 
-        Parameter actual = pp.getPp();
+        Parameter actual = ppStore.getPp();
 
         assertEquals(expected, actual);
 
@@ -232,13 +199,16 @@ public class ParameterStoreTest {
     @Test
     public void getParameterList(){
 
-        ParameterStore pp = new ParameterStore();
-        List<ParameterCategory> pcList = new ArrayList<>();
-
         ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
-        pcList.add(pc);
 
-        pp.getParameterList();
+        ParameterStore ppStore = new ParameterStore();
+
+        Parameter aa = ppStore.createParameter("AAA", "aaa", "aaa",pc);
+        ppStore.saveParameter();
+
+       List<Parameter> parameterList = ppStore.getParameterList();
+
+       Assert.assertNotNull(parameterList);
 
     }
 

@@ -1,4 +1,4 @@
 package app.domain.mappers;
 
-public class TestListMapper {
+public class TestMapper {
 }

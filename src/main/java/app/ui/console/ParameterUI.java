@@ -1,6 +1,7 @@
 package app.ui.console;
 
 import app.controller.ParameterController;
+import app.domain.mappers.dto.ParameterCategoryDTO;
 import app.domain.model.ParameterCategory;
 import app.domain.stores.ParameterCategoryStore;
 import app.ui.console.utils.Utils;
@@ -11,13 +12,9 @@ import java.util.List;
 public class ParameterUI implements Runnable {
 
     private final ParameterController ctrl;
-    private final ParameterCategoryStore pcStore;
-    private final List<ParameterCategory> pcList;
 
     public ParameterUI() {
         this.ctrl = new ParameterController();
-        this.pcStore = new ParameterCategoryStore();
-        this.pcList = new ArrayList<>();
     }
 
     @Override
@@ -27,15 +24,15 @@ public class ParameterUI implements Runnable {
         boolean leave = true;
 
 
-        if (this.pcStore.getParameterCategoryList() == null || this.pcStore.getParameterCategoryList().isEmpty()) {
+        if (this.ctrl.getCategoryListDto() == null || this.ctrl.getCategoryListDto().isEmpty()) {
             System.out.println("The list is empty! Please, try adding at least one parameter in order to create the laboratory.");
         } else {
             do {
                 boolean exception = false;
                 do {
 
-                    ParameterCategory pc = (ParameterCategory) Utils.showAndSelectOne(this.pcStore.getParameterCategoryList(), "Select the category: ");
-                    this.pcList.add(pc);
+                    ParameterCategoryDTO pc = (ParameterCategoryDTO) Utils.showAndSelectOne(this.ctrl.getCategoryListDto(), "Select the category: ");
+                    ctrl.addCategory(pc);
 
                     if (pc == null) {
                         System.out.println("Please choose a valid category!\n");
@@ -53,7 +50,7 @@ public class ParameterUI implements Runnable {
                         String nhsld = Utils.readLineFromConsole("Please enter the nhsld of the parameter: ");
 
 
-                        ctrl.CreateParameter(description, code, nhsld, pcList);
+                        ctrl.createParameter(description, code, nhsld);
 
                         exception = false;
 

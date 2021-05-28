@@ -1,14 +1,20 @@
 package app.controller;
 
+import app.domain.mappers.ParameterCategoryMapper;
+import app.domain.mappers.dto.ParameterCategoryDTO;
 import app.domain.model.*;
 import app.domain.stores.ParameterStore;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ParameterController {
 
     private Company company;
     private ParameterStore store;
+    private ParameterCategoryMapper parameterCategoryMapper;
+
+    private ParameterCategory pc;
 
     /**
      * Creates an empty Parameter controller.
@@ -28,18 +34,21 @@ public class ParameterController {
         this.company=company;
     }
 
+    public void addCategory(ParameterCategoryDTO parameterCategoryDTO){
+        convertDTOintoCategory(parameterCategoryDTO);
+    }
+
     /**
      * Creates a Parameter(Calling the Parameter constructor implemented in the parameterStore)
      *
      * @param description the parameter's description
      * @param code the parameter's code
      * @param name the parameter's name
-     * @param pcList the parameter's category list
      */
 
-    public void CreateParameter(String description,String code,String name,List<ParameterCategory> pcList){
+    public void createParameter(String description,String code,String name){
         store = company.getParameterStore();
-        store.createParameter(description,code,name,pcList);
+        store.createParameter(description,code,name,pc);
     }
 
     /**
@@ -69,4 +78,24 @@ public class ParameterController {
     public List<Parameter> getParameterList() {
         return store.getParameterList();
     }
+
+    public List<ParameterCategory> getCategoryList(){return this.company.getParameterCategoryList();}
+
+    public List<ParameterCategoryDTO> getCategoryListDto() {
+
+        this.parameterCategoryMapper = new ParameterCategoryMapper();
+
+        return parameterCategoryMapper.toDTO(getCategoryList());
+
+    }
+
+    public void convertDTOintoCategory(ParameterCategoryDTO parameterCategoryDTO) {
+
+        for (ParameterCategory pc : this.getCategoryList()) {
+            if (parameterCategoryDTO.getCode() == pc.getCode()) {
+                this.pc=pc;
+            }
+        }
+    }
+
 }

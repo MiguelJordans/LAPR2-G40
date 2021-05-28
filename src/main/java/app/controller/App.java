@@ -124,15 +124,15 @@ public class App {
         testTypeStore.saveTestType();
         testTypeStore.getTestTypeList().add(covidTest);
 
-        Parameter p1 = new Parameter("IgGAN","000","paramCv1",categories1);
+        Parameter p1 = new Parameter("IgGAN","000","paramCv1",parameterCategory);
        //  parameterStore.CreateParameter("IgGAN","000","paramCv1",categories1);
         parameterStore.saveParameter();
         parameterStore.getParameterList().add(p1);
-        Parameter p2 = new Parameter("ESR00", "aaa", "paramBl1", categories1);
+        Parameter p2 = new Parameter("ESR00", "aaa", "paramBl1", parameterCategory);
        // parameterStore.CreateParameter("ESR00", "aaa", "paramBl1", categories1);
         parameterStore.saveParameter();
         parameterStore.getParameterList().add(p2);
-        Parameter p3 = new Parameter("HB000", "bbb", "paramBl2", categories2);
+        Parameter p3 = new Parameter("HB000", "bbb", "paramBl2", parameterCategory1);
        // parameterStore.CreateParameter("HB000", "bbb", "paramBl2", categories2);
         parameterStore.saveParameter();
         parameterStore.getParameterList().add(p3);

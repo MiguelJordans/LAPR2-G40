@@ -117,4 +117,5 @@ public class TestTypeStore {
     public List<TestType> getTestTypeList() {
         return list;
     }
+
 }
