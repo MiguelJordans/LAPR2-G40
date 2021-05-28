@@ -1,6 +1,7 @@
 package app.ui.console;
 
 import app.controller.SampleController;
+import app.domain.mappers.dto.TestDTO;
 import app.domain.model.*;
 import app.domain.stores.TestStore;
 import app.ui.console.utils.Utils;
@@ -12,7 +13,6 @@ public class SampleUI implements Runnable {
 
     public SampleUI() {
         this.ctrl = new SampleController();
-        this.trStore = new TestStore();
     }
 
     @Override
@@ -24,8 +24,9 @@ public class SampleUI implements Runnable {
         boolean nbol = false;
 
         Test tr = null;
+        TestDTO trDto = null;
 
-        if (this.trStore.getTestList() == null || this.trStore.getTestList().isEmpty()) {
+        if (this.ctrl.getTestListDto() == null || this.ctrl.getTestListDto().isEmpty()) {
             System.out.println("The list is empty! Please, try adding at least one test in order to create the sample(s)!");
 
         } else {
@@ -33,14 +34,14 @@ public class SampleUI implements Runnable {
                 boolean exception = false;
                 do {
 
-                    tr = (Test) Utils.showAndSelectOne(this.trStore.getTestList(), "Select the test: \n");
+                     trDto = (TestDTO) Utils.showAndSelectOne(this.ctrl.getTestListDto(), "Select the test: \n");
 
-                    if (tr != null)
-                        m = tr.compareState(tr.getState());
+                    if (trDto != null)
+                        m = trDto.compareState(trDto.getState());
 
 
                     if (!m) {
-                        if(tr==null){
+                        if(trDto==null){
                             System.out.println("Please choose a valid test!\n");
                         } else
                         System.out.println("Please choose a valid test (sample is already collected!)\n");
@@ -51,9 +52,12 @@ public class SampleUI implements Runnable {
                 do {
                     try {
 
+
                         int n = Utils.readIntegerFromConsole("Type the number of samples that you wish to create: ");
 
-                        this.ctrl.CreateSample(tr, n);
+                        ctrl.addTest(trDto);
+
+                        this.ctrl.CreateSample(n);
 
                         exception = false;
 
@@ -89,7 +93,7 @@ public class SampleUI implements Runnable {
 
             } while (count);
 
-            tr.setState("SAMPLE_COLLECTED");
+            ctrl.getSm().getTr().setState("SAMPLE_COLLECTED");
 
         }
     }

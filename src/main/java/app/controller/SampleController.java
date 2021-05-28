@@ -1,5 +1,9 @@
 package app.controller;
 
+import app.domain.mappers.SampleMapper;
+import app.domain.mappers.TestMapper;
+import app.domain.mappers.dto.SampleDTO;
+import app.domain.mappers.dto.TestDTO;
 import app.domain.model.*;
 
 import java.io.IOException;
@@ -9,8 +13,11 @@ public class SampleController {
 
     private Company company;
     private SampleStore smStore;
+    private TestMapper testMapper;
 
     static List<Sample> sampleListTemporary;
+
+    private Test tr;
 
     /**
      * Creates an empty Test Type controller
@@ -31,11 +38,15 @@ public class SampleController {
         this.company = company;
     }
 
+    public void addTest(TestDTO trDto){
+        convertDTOintoTest(trDto);
+    }
+
     /**
      * Creates a test type (Calling the TestType constructor implemented in the TestTypeStore)
      */
 
-    public void CreateSample(Test tr, int n) throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException {
+    public void CreateSample(int n) throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException {
 
         smStore = company.getSampleStore();
 
@@ -55,8 +66,8 @@ public class SampleController {
      * @return the Test Type's info in string format
      */
 
-    public String getSm() {
-        return smStore.getSm().toString();
+    public Sample getSm() {
+        return smStore.getSm();
     }
 
     /**
@@ -71,7 +82,7 @@ public class SampleController {
 
     public boolean saveSamples() {
         for (Sample sm1 : sampleListTemporary) {
-             smStore.getSampleList().add(sm1);
+            smStore.getSampleList().add(sm1);
         }
         return true;
     }
@@ -84,6 +95,28 @@ public class SampleController {
 
     public List<Sample> getSampleList() {
         return smStore.getSampleList();
+    }
+
+    public List<Test> getTestList() {
+        return this.company.getTestList();
+    }
+
+    public List<TestDTO> getTestListDto() {
+
+        this.testMapper = new TestMapper();
+
+        return testMapper.toDTO(getTestList());
+
+    }
+
+    public void convertDTOintoTest(TestDTO testDTO) {
+
+        for (Test tr : this.getTestList()) {
+            if (testDTO.getTestID() == tr.getTestID()) {
+                this.tr = tr;
+            }
+        }
+
     }
 
 }

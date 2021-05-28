@@ -1,5 +1,7 @@
 package app.controller;
 
+import app.domain.mappers.SampleMapper;
+import app.domain.mappers.dto.SampleDTO;
 import app.domain.model.*;
 import app.domain.stores.TestStore;
 
@@ -7,15 +9,21 @@ import java.util.List;
 
 public class RecordTestResultController {
 
+    private Company company;
     private SampleStore sampleStore;
     private TestStore testStore;
     private Test test;
 
-    public RecordTestResultController() {
-        App app = App.getInstance();
-        Company company = app.getCompany();
+    private SampleMapper sampleMapper;
+
+    public RecordTestResultController(){
+        this(App.getInstance().getCompany());
         this.sampleStore = company.getSampleStore();
         this.testStore = company.getTestStore();
+    }
+
+    public RecordTestResultController(Company company) {
+        this.company=company;
     }
 
     private boolean getCorrespondingTest(String sampleID) {
@@ -64,4 +72,17 @@ public class RecordTestResultController {
     public void setState() {
         test.setState("SAMPLE_ANALYSED");
     }
+
+    public List<Sample> getSampleList(){return company.getSampleList(); }
+
+    public List<SampleDTO> getSampleListDto(){
+
+        this.sampleMapper = new SampleMapper();
+
+        return sampleMapper.toDTO(getSampleList());
+
+    }
+
+
+
 }

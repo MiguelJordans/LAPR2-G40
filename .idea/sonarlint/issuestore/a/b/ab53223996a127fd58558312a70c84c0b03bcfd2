@@ -1,6 +1,0 @@
-
-c	java:S100&"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ùºÂ¢
-â
-java:S1130&"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(ùºÂ¢8˛Î’úõ/
-Q	java:S125-"<This block of commented-out lines of code should be removed.(øª¸Ô
-]	java:S125/"<This block of commented-out lines of code should be removed.(˚Êîù¸ˇˇˇˇ8‹£¯¸ö/

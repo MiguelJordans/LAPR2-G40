@@ -1,8 +1,6 @@
 package app.domain.mappers;
 
-import app.domain.mappers.dto.ParameterCategoryDTO;
 import app.domain.mappers.dto.TestTypeDTO;
-import app.domain.model.ParameterCategory;
 import app.domain.model.TestType;
 
 import java.util.ArrayList;

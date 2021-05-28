@@ -8,11 +8,11 @@ import java.util.List;
 
 public class Test {
 
-    String citizenCardNumber;
-    String testID;
-    String nhsCode;
-    TestType tt;
-    State state;
+    private String citizenCardNumber;
+    private String testID;
+    private String nhsCode;
+    private TestType tt;
+    private State state;
 
     private List<TestParameter> tpList;
 
@@ -98,6 +98,9 @@ public class Test {
         return true;
     }
 
+    public String getCitizenCardNumber() {
+        return citizenCardNumber;
+    }
 
     //US15
     public boolean isValid() {

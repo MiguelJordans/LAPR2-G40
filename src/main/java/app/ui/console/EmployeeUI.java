@@ -2,7 +2,7 @@ package app.ui.console;
 
 import app.controller.RegisterEmployeeController;
 import app.controller.SpecialistDoctorController;
-import app.domain.model.OrgRole;
+import app.domain.shared.OrgRole;
 import app.domain.shared.Constants;
 import app.ui.console.utils.Utils;
 

@@ -21,14 +21,10 @@ m
 =src/main/java/app/controller/ParameterCategoryController.java,2\3\23d7effaa727cc5c981046c12a8f9235e70b6480
 \
 ,src/main/java/app/domain/model/RefValue.java,2\c\2c88ff0298b17555153c63fef7d6efb1981aeb27
-`
-0src/main/java/app/controller/TestController.java,d\c\dcc79190b015d8cb3fbff1783551983fd16dafcd
 g
 7src/main/java/app/domain/model/TestParameterResult.java,8\9\89c14902f91af9f5afc1e3afe73a166ab424f39c
 Y
 )src/main/java/app/ui/console/AdminUI.java,0\a\0a9fb9c3271ce78061d523da4e5474691abf5009
-d
-4src/main/java/app/ui/console/RecordTestResultUI.java,c\1\c16354235a4b29ed1a8945335a6e6a1001ca19e7
 \
 ,src/main/java/app/ui/console/ShowTextUI.java,0\c\0c9f95386924b41343b7d0e0b1f36402da81d328
 d
@@ -45,10 +41,6 @@ a
 1src/main/java/app/domain/model/EmployeeSuper.java,4\d\4d9dd735c5861aff880f2270c023541544ab7176
 e
 5src/test/java/app/domain/model/EmployeeSuperTest.java,4\0\40526cc1eaa9957d64535d4b344f0819b86f0d2a
-Z
-*src/main/java/app/domain/model/Sample.java,b\a\ba164b4c03f593dbc5a575d2806dae1ffe3dfe0c
-b
-2src/main/java/app/controller/SampleController.java,a\b\ab53223996a127fd58558312a70c84c0b03bcfd2
 ^
 .src/test/java/app/domain/model/SampleTest.java,3\0\30a600e399b7ae013cc66d630992203751d9841b
 e
@@ -59,8 +51,6 @@ _
 /src/test/java/app/domain/model/CompanyTest.java,f\f\ff6dd89f0cd7857a07c771f5cf78d0af203b0511
 ^
 .src/main/java/app/domain/stores/TestStore.java,9\d\9d7c93dfb2abbc9f3e33ac38ae37e345fc6eea94
-Z
-*src/main/java/app/ui/console/SampleUI.java,0\0\00f2da694065a06112063431d06adc21c4a98f50
 t
 Dsrc/main/java/app/domain/stores/ClinicalAnalysisLaboratoryStore.java,c\8\c8dd6df835cd076f3ec4060d792ce003beebd74c
 e
@@ -75,8 +65,6 @@ Z
 *src/main/java/app/ui/console/ClientUI.java,9\c\9cca98c7265f36c23546d45d24f08beafc392de2
 b
 2src/main/java/app/controller/ClientController.java,5\a\5a87feaf6f42c59d6fb9b1b9dfbc7e3301510ae2
-[
-+src/main/java/app/domain/model/OrgRole.java,9\a\9ad03b7c4fea0a25c7c403194f8647485a7d6dac
 Z
 *src/main/java/app/ui/console/MenuItem.java,7\4\740030e937298447c12c48a7f0a934b08c3819e9
 \

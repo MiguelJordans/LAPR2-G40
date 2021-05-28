@@ -1,4 +1,4 @@
-package app.domain.model;
+package app.domain.shared;
 
 import app.domain.shared.Constants;
 
@@ -18,7 +18,6 @@ public class OrgRole {
         orgRoles.add(Constants.ROLE_SPECIALIST_DOCTOR);
         orgRoles.add(Constants.ROLE_LABORATORY_COORDINATOR);
     }
-
 
     public List<String> orgRoles(){
 
