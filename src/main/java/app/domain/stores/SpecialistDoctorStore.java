@@ -1,10 +1,13 @@
 package app.domain.stores;
 
+import app.domain.model.Company;
+import app.domain.model.EmployeeUserInformation;
 import app.domain.model.SpecialistDoctor;
 import app.ui.console.GeneratePassword;
 import auth.AuthFacade;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -14,6 +17,7 @@ public class SpecialistDoctorStore {
     SpecialistDoctor sd;
 
     private GeneratePassword gp = new GeneratePassword();
+    private EmployeeUserInformation ei = new EmployeeUserInformation();
 
     private static int employeeN;
 
@@ -149,13 +153,15 @@ public class SpecialistDoctorStore {
         return employeID;
     }
 
-    public void generateUserInformation(String name, String email, String role) {
+    public void generateUserInformation(String name, String email, String role, Company company) {
 
         gp.password();
 
         String password = gp.getPassword();
 
-        AuthFacade cc = new AuthFacade();
+        ei.generateEmployeeInformation(name,email,password,role);
+
+        AuthFacade cc = company.getAuthFacade();
 
         if(!cc.existsUser(email)){
             cc.addUserWithRole(name,email,password,role);

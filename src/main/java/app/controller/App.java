@@ -85,6 +85,7 @@ public class App {
         this.authFacade.addUserRole(Constants.ROLE_CLINICAL_CHEMISTRY_TECHNOLOGIST,Constants.ROLE_CLINICAL_CHEMISTRY_TECHNOLOGIST);
         this.authFacade.addUserRole(Constants.ROLE_CLIENT,Constants.ROLE_CLIENT);
         this.authFacade.addUserRole(Constants.ROLE_LABORATORY_COORDINATOR,Constants.ROLE_LABORATORY_COORDINATOR);
+        this.authFacade.addUserRole(Constants.ROLE_SPECIALIST_DOCTOR,Constants.ROLE_SPECIALIST_DOCTOR);
 
         this.authFacade.addUserWithRole("Main Administrator", "admin@lei.sem2.pt", "123456",Constants.ROLE_ADMIN);
         this.authFacade.addUserWithRole("Miguel Jordão", "1201487@lei.sem2.pt", "123456",Constants.ROLE_ADMIN);
@@ -94,7 +95,10 @@ public class App {
         this.authFacade.addUserWithRole("Recepcionist", "receptionist@lei.sem2.pt", "123456",Constants.ROLE_RECEPTIONIST);
         this.authFacade.addUserWithRole("Medical lab technician", "mlt@lei.sem2.pt", "123456",Constants.ROLE_MEDICAL_LAB_TECHNICIAN);
         this.authFacade.addUserWithRole("Clinical Chemistry Technologist", "cct@lei.sem2.pt", "123456",Constants.ROLE_CLINICAL_CHEMISTRY_TECHNOLOGIST);
+        this.authFacade.addUserWithRole("Laboratory Coordinator", "lcoo@lei.sem2.pt", "123456",Constants.ROLE_LABORATORY_COORDINATOR);
         this.authFacade.addUserWithRole("Client", "cc@lei.sem2.pt", "123456",Constants.ROLE_CLIENT);
+        this.authFacade.addUserWithRole("Specialist Doctor", "spd@lei.sem2.pt", "123456",Constants.ROLE_SPECIALIST_DOCTOR);
+
 
         TestTypeStore testTypeStore = company.getTestTypeStore();
         ParameterCategoryStore parameterCategoryStore = company.getParameterCategoryStore();

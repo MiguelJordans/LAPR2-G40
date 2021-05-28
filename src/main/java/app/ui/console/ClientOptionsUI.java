@@ -15,10 +15,11 @@ public class ClientOptionsUI implements Runnable{
     }
 
     public void run() {
-        List<MenuItem> options = new ArrayList<MenuItem>();
+        List<MenuItem> options = new ArrayList<>();
+        options.add(new MenuItem("DN", new ClientCheckTestUI()));
         int option = 0;
         do {
-            option = Utils.showAndSelectIndex(options, "\n\nClinical Chemistry Technologist Menu:");
+            option = Utils.showAndSelectIndex(options, "\n\nClient menu:");
 
             if ((option >= 0) && (option < options.size())) {
                 options.get(option).run();

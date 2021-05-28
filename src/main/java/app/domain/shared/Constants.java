@@ -53,7 +53,9 @@ public class Constants {
     public static final String BARCODE_IMAGE="BarcodeImage";
     public static final String PATH ="Barcodes\\";
 
-    public static final String CLIENT_NOTIFICATION="Client_Notification";
-    public static final String PATH_CLIENT="ClientNotification\\";
+    public static final String CLIENT_USER_INFORMATION="Client_UserInformation";
+    public static final String EMPLOYEE_USER_INFORMATION="Client_UserInformation";
+    public static final String PATH_CLIENT_USER_INFORMATION="ClientUserInformation\\";
+    public static final String PATH_EMPLOYEE_USER_INFORMATION="EmployeeUserInformation\\";
 
 }

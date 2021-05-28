@@ -1,7 +1,8 @@
 package app.domain.stores;
 
 import app.domain.model.Client;
-import app.domain.model.ClientNotification;
+import app.domain.model.ClientUserInformation;
+import app.domain.model.Company;
 import app.ui.console.GeneratePassword;
 import auth.AuthFacade;
 
@@ -15,7 +16,7 @@ public class ClientStore {
     List<Client> clientList;
     Client cr;
     private GeneratePassword gp = new GeneratePassword();
-    private ClientNotification cn = new ClientNotification();
+    private ClientUserInformation cn = new ClientUserInformation();
 
     /**
      * Constructor.
@@ -139,15 +140,15 @@ public class ClientStore {
         return this.clientList;
     }
 
-    public void generateUserInformation(String name, String email,String role) {
+    public void generateUserInformation(String name, String email, String role, Company company) {
 
         gp.password();
 
         String password = gp.getPassword();
 
-        cn.generateClientNotification(name,email,password);
+        cn.generateClientUserInformation(name,email,password);
 
-        AuthFacade cc = new AuthFacade();
+        AuthFacade cc = company.getAuthFacade();
 
         if(!cc.existsUser(email)){
             role = role.toUpperCase(Locale.ROOT);

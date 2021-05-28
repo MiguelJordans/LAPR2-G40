@@ -1,7 +1,9 @@
 package app.domain.stores;
 
+import app.domain.model.ClientUserInformation;
 import app.domain.model.Company;
 import app.domain.model.Employee;
+import app.domain.model.EmployeeUserInformation;
 import app.ui.console.GeneratePassword;
 import auth.AuthFacade;
 
@@ -14,6 +16,7 @@ public class EmployeeStore {
     Employee emp;
 
     private GeneratePassword gp = new GeneratePassword();
+    private EmployeeUserInformation ei = new EmployeeUserInformation();
 
     private static int employeeN;
 
@@ -154,6 +157,8 @@ public class EmployeeStore {
         gp.password();
 
         String password = gp.getPassword();
+
+        ei.generateEmployeeInformation(name,email,password,role);
 
         AuthFacade cc = company.getAuthFacade();
 

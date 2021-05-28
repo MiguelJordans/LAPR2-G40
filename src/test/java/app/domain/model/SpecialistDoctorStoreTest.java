@@ -144,9 +144,11 @@ public class SpecialistDoctorStoreTest {
         String name = "Jordao";
         String role = "SPECIALIST_DOCTOR";
 
+        Company company = new Company("aaaa");
+
         SpecialistDoctorStore store = new SpecialistDoctorStore();
 
-        store.generateUserInformation(name,email,role);
+        store.generateUserInformation(name,email,role,company);
 
     }
 

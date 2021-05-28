@@ -1,0 +1,5 @@
+MEDICAL_LAB_TECHNICIAN INFORMATION: 
+
+Name: Edu
+Email: edu@gmail.com
+Password: bFhmqyMUVl

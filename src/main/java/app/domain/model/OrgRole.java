@@ -20,11 +20,9 @@ public class OrgRole {
     }
 
 
-    public void orgRoles(){
+    public List<String> orgRoles(){
 
-        for(String s : orgRoles){
-            System.out.println(s);
-        }
+       return orgRoles;
 
     }
 

@@ -6,16 +6,16 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class ClientNotification {
+public class ClientUserInformation {
 
-    public ClientNotification(){
+    public ClientUserInformation(){
            //Objected created in order to create the email to the client
     }
 
-    public void generateClientNotification(String name,String email,String password)  {
+    public void generateClientUserInformation(String name,String email,String password)  {
 
-        String filename = Constants.CLIENT_NOTIFICATION+"_"+name+".txt";
-        File clientNotification = new File(Constants.PATH_CLIENT+filename);
+        String filename = Constants.CLIENT_USER_INFORMATION+"_"+name+".txt";
+        File clientNotification = new File(Constants.PATH_CLIENT_USER_INFORMATION+filename);
 
         try(FileWriter fw = new FileWriter(clientNotification)){
             fw.write("CLIENT INFORMATION: \n\nName: "+name+"\nEmail: "+email+"\nPassword: "+password);
