@@ -10,9 +10,9 @@ import java.util.List;
 
 public class ParameterUI implements Runnable {
 
-    private ParameterController ctrl;
-    private ParameterCategoryStore pcStore;
-    private List<ParameterCategory> pcList;
+    private final ParameterController ctrl;
+    private final ParameterCategoryStore pcStore;
+    private final List<ParameterCategory> pcList;
 
     public ParameterUI() {
         this.ctrl = new ParameterController();

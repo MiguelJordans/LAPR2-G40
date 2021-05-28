@@ -12,7 +12,6 @@ public class Constants {
     public static final String ROLE_CLINICAL_CHEMISTRY_TECHNOLOGIST ="CLINICAL_CHEMISTRY_TECHNOLOGIST";
     public static final String ROLE_SPECIALIST_DOCTOR ="SPECIALIST_DOCTOR";
     public static final String ROLE_LABORATORY_COORDINATOR ="LABORATORY_COORDINATOR";
-
     public static final String ROLE_CLIENT="CLIENT";
 
     public static final String PARAMS_FILENAME = "config.properties";
