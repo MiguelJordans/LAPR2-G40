@@ -2,6 +2,7 @@ package app.ui.console;
 
 import app.controller.RecordTestResultController;
 import app.domain.model.*;
+import app.domain.stores.TestStore;
 import app.ui.console.utils.Utils;
 
 import java.util.List;

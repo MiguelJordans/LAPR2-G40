@@ -2,7 +2,7 @@ package app.ui.console;
 
 import app.controller.ParameterController;
 import app.domain.model.ParameterCategory;
-import app.domain.model.ParameterCategoryStore;
+import app.domain.stores.ParameterCategoryStore;
 import app.ui.console.utils.Utils;
 
 import java.util.ArrayList;

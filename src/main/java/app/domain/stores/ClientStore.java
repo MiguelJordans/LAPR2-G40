@@ -1,5 +1,7 @@
-package app.domain.model;
+package app.domain.stores;
 
+import app.domain.model.Client;
+import app.domain.model.ClientNotification;
 import app.ui.console.GeneratePassword;
 import auth.AuthFacade;
 

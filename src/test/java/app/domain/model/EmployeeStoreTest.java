@@ -1,5 +1,6 @@
 package app.domain.model;
 
+import app.domain.stores.EmployeeStore;
 import org.junit.Assert;
 import org.junit.Test;
 

@@ -2,7 +2,7 @@ package app.ui.console;
 
 import app.controller.ClinicalAnalysisLaboratoryController;
 import app.domain.model.TestType;
-import app.domain.model.TestTypeStore;
+import app.domain.stores.TestTypeStore;
 import app.ui.console.utils.Utils;
 
 import java.util.ArrayList;

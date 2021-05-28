@@ -187,7 +187,7 @@ public class SampleStoreTest {
             sampleStore.createSample(test);
             List<Sample> sampleList;
 
-            sampleList=sampleStore.getSampleList();
+            sampleList = sampleStore.getSampleList();
 
             Assert.assertNotNull(sampleList);
 

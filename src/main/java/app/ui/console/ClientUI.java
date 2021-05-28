@@ -1,7 +1,7 @@
 package app.ui.console;
 
 import app.controller.ClientController;
-import app.domain.model.ClientStore;
+import app.domain.stores.ClientStore;
 import app.ui.console.utils.Utils;
 
 import java.util.Date;

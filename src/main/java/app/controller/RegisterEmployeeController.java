@@ -1,7 +1,7 @@
 package app.controller;
 
 import app.domain.model.Employee;
-import app.domain.model.EmployeeStore;
+import app.domain.stores.EmployeeStore;
 import app.domain.model.Company;
 
 public class RegisterEmployeeController {

@@ -2,6 +2,7 @@ package app.ui.console;
 
 import app.controller.SampleController;
 import app.domain.model.*;
+import app.domain.stores.TestStore;
 import app.ui.console.utils.Utils;
 
 public class SampleUI implements Runnable {

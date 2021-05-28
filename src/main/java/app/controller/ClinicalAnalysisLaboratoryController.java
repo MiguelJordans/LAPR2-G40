@@ -1,7 +1,7 @@
 package app.controller;
 
 import app.domain.model.Company;
-import app.domain.model.ClinicalAnalysisLaboratoryStore;
+import app.domain.stores.ClinicalAnalysisLaboratoryStore;
 import app.domain.model.TestType;
 
 import java.util.List;

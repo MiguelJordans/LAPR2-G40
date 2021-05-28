@@ -1,5 +1,6 @@
-package app.domain.model;
+package app.domain.stores;
 
+import app.domain.model.SpecialistDoctor;
 import app.ui.console.GeneratePassword;
 import auth.AuthFacade;
 

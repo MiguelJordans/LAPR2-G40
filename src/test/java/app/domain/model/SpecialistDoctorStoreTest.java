@@ -1,7 +1,6 @@
 package app.domain.model;
 
-import app.ui.console.GeneratePassword;
-import auth.AuthFacade;
+import app.domain.stores.SpecialistDoctorStore;
 import org.junit.Assert;
 import org.junit.Test;
 

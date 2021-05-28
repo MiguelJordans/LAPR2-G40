@@ -2,7 +2,7 @@ package app.domain.mappers;
 
 import app.domain.mappers.dto.CategoryListDTO;
 import app.domain.model.ParameterCategory;
-import app.domain.model.ParameterCategoryStore;
+import app.domain.stores.ParameterCategoryStore;
 
 import java.util.ArrayList;
 import java.util.List;
