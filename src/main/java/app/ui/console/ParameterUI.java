@@ -20,8 +20,8 @@ public class ParameterUI implements Runnable {
     @Override
     public void run() {
 
-        boolean count = true;
-        boolean leave = true;
+        boolean countFlag = true;
+        boolean leaveFlag = true;
 
 
         if (this.ctrl.getCategoryListDto() == null || this.ctrl.getCategoryListDto().isEmpty()) {
@@ -37,10 +37,10 @@ public class ParameterUI implements Runnable {
                     if (pc == null) {
                         System.out.println("Please choose a valid category!\n");
                     } else {
-                        leave=false;
+                        leaveFlag=false;
                     }
 
-                }while (leave);
+                }while (leaveFlag);
 
                 do {
                     try {
@@ -63,16 +63,16 @@ public class ParameterUI implements Runnable {
                     }
                 } while (exception);
 
-                count = Utils.confirm("Parameter created! Do you wish to save it(s/n)?" + ctrl.getPP());
+                countFlag = Utils.confirm("Parameter created! Do you wish to save it(s/n)?" + ctrl.getPP());
 
-                if (count) {
+                if (countFlag) {
 
                     if (this.ctrl.saveParameter()) {
                         System.out.println("Save successful!");
 
                     } else System.out.println("Save not sucessful! Please try again.");
                 }
-            } while (!count);
+            } while (!countFlag);
         }
     }
 }

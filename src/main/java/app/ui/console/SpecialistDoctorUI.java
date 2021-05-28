@@ -1,6 +1,5 @@
 package app.ui.console;
 
-import app.ui.console.utils.CreateDiagnosticUI;
 import app.ui.console.utils.Utils;
 
 import java.util.ArrayList;
