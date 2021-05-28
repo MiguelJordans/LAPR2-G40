@@ -44,7 +44,7 @@ public class EmployeeTest {
     @Test
     public void checkDOC(){
 
-        Employee emp = new Employee("Daniel", "3425 Stone Street", "dasc@gmail.com","01492235687", "DASC00001","1234567", "employee");
+        Employee emp = new Employee("Daniel", "3425 Stone Street", "dasc@gmail.com","01492235687", "DASC001","1234567", "employee");
 
     }
 
@@ -60,12 +60,12 @@ public class EmployeeTest {
     @Test
     public void checkORTypes(){
 
-        Employee emp = new Employee("Daniel", "3425 Stone Street", "dasc@gmail.com","01492235687", "DASC00001","1234567", "specialistdoctor");
+        Employee emp = new Employee("Daniel", "3425 Stone Street", "dasc@gmail.com","01492235687", "DASC0001","1234567", "employee");
     }
 
     @Test
     public void checkORTypes2(){
-        Employee emp = new Employee("Daniel", "3425 Stone Street", "dasc@gmail.com","01492235687", "DASC00001","1234567", "employee");
+        Employee emp = new Employee("Daniel", "3425 Stone Street", "dasc@gmail.com","01492235687", "DASC0001","1234567", "employee");
 
     }
 
@@ -136,7 +136,7 @@ public class EmployeeTest {
 
     }
 
-    @Test (expected = IllegalArgumentException.class)
+    @Test
     public void checkEmpIDLength(){
 
         Employee emp = new Employee("Daniel", "3425 Stone Street", "dasc@gmail.com","01492235687", "DASC000011234","1234567", "specialistdoctor");
@@ -169,7 +169,7 @@ public class EmployeeTest {
     @Test
     public void setOrgRole() {
         //Arrange
-        Employee emp = new Employee("FirstCal", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001","1234567","specialistdoctor");
+        Employee emp = new Employee("FirstCal", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC0001","1234567","specialistdoctor");
 
         //Act
         String expected = "specialistdoctor";
@@ -183,7 +183,7 @@ public class EmployeeTest {
     @Test
     public void testSetName() {
         //Arrange
-        Employee emp = new Employee("FirstCal", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001","1234567","employee");
+        Employee emp = new Employee("Daniel", "3425 Stone Street", "dasc@gmail.com","01492235687", "DASC0001","1234567", "employee");
 
         //Act
         String expected = "SecondCal";
@@ -197,7 +197,7 @@ public class EmployeeTest {
     @Test
     public void setAddress() {
         //Arrange
-        Employee emp = new Employee("DanielCosta", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001","1234567","specialistdoctor");
+        Employee emp = new Employee("Daniel", "3425 Stone Street", "dasc@gmail.com","01492235687", "DASC0001","1234567", "employee");
 
         //Act
         String expected = "3426 Stone Street";
@@ -211,7 +211,7 @@ public class EmployeeTest {
     @Test
     public void setEmail() {
         //Arrange
-        Employee emp = new Employee("DanielCosta", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001","1234567","specialistdoctor");
+        Employee emp = new Employee("Daniel", "3425 Stone Street", "dasc@gmail.com","01492235687", "DASC0001","1234567", "employee");
 
         //Act
         String expected = "dasc@gmail.com";
@@ -225,7 +225,7 @@ public class EmployeeTest {
     @Test
     public void setPhoneNumber() {
         //Arrange
-        Employee emp = new Employee("DanielCosta", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001","1234567","specialistdoctor");
+        Employee emp = new Employee("Daniel", "3425 Stone Street", "dasc@gmail.com","01492235687", "DASC0001","1234567", "employee");
 
         //Act
         String expected = "01492235687";
@@ -239,7 +239,7 @@ public class EmployeeTest {
     @Test
     public void setEmployeeId() {
         //Arrange
-        Employee emp = new Employee("DanielCosta", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001","1234567","specialistdoctor");
+        Employee emp = new Employee("Daniel", "3425 Stone Street", "dasc@gmail.com","01492235687", "DASC0001","1234567", "employee");
 
         //Act
         String expected = "DASC00001";
@@ -253,7 +253,7 @@ public class EmployeeTest {
     @Test
     public void setSocCode() {
         //Arrange
-        Employee emp = new Employee("DanielCosta", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001","1234567","specialistdoctor");
+        Employee emp = new Employee("Daniel", "3425 Stone Street", "dasc@gmail.com","01492235687", "DASC0001","1234567", "employee");
 
         //Act
         String expected = "1234567";
@@ -267,9 +267,9 @@ public class EmployeeTest {
     @Test
     public void getName(){
 
-        Employee emp = new Employee("DanielCosta", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001","1234567","specialistdoctor");
+        Employee emp = new Employee("Daniel", "3425 Stone Street", "dasc@gmail.com","01492235687", "DASC0001","1234567", "employee");
 
-        String expected = "DanielCosta";
+        String expected = "Daniel";
 
         String actual = emp.getName();
         Assert.assertEquals(expected,actual);
@@ -279,7 +279,7 @@ public class EmployeeTest {
     @Test
     public void getAdress(){
 
-        Employee emp = new Employee("DanielCosta", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001","1234567","specialistdoctor");
+        Employee emp = new Employee("Daniel", "3425 Stone Street", "dasc@gmail.com","01492235687", "DASC0001","1234567", "employee");
 
         String expected = "3425 Stone Street";
 
@@ -291,7 +291,7 @@ public class EmployeeTest {
     @Test
     public void getEmail(){
 
-        Employee emp = new Employee("DanielCosta", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001","1234567","specialistdoctor");
+        Employee emp = new Employee("Daniel", "3425 Stone Street", "dasc@gmail.com","01492235687", "DASC0001","1234567", "employee");
 
         String expected = "dasc@gmail.com";
 
@@ -303,7 +303,7 @@ public class EmployeeTest {
     @Test
     public void getPhoneNumber(){
 
-        Employee emp = new Employee("DanielCosta", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001","1234567","specialistdoctor");
+        Employee emp = new Employee("Daniel", "3425 Stone Street", "dasc@gmail.com","01492235687", "DASC0001","1234567", "employee");
 
         String expected = "01492235687";
 
@@ -315,9 +315,9 @@ public class EmployeeTest {
     @Test
     public void getEmployeeId(){
 
-        Employee emp = new Employee("DanielCosta", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001","1234567","specialistdoctor");
+        Employee emp = new Employee("Daniel", "3425 Stone Street", "dasc@gmail.com","01492235687", "DASC0001","1234567", "employee");
 
-        String expected = "DASC00001";
+        String expected = "DASC0001";
 
         String actual = emp.getEmployeeId();
         Assert.assertEquals(expected,actual);
@@ -327,7 +327,7 @@ public class EmployeeTest {
     @Test
     public void getSocCode(){
 
-        Employee emp = new Employee("DanielCosta", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001","1234567","specialistdoctor");
+        Employee emp = new Employee("Daniel", "3425 Stone Street", "dasc@gmail.com","01492235687", "DASC0001","1234567", "employee");
 
         String expected = "1234567";
 
@@ -340,7 +340,7 @@ public class EmployeeTest {
     @Test
     public void EmployeeToString(){
 
-        Employee emp = new Employee("DanielCosta", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001","1234567","specialistdoctor");
+        Employee emp = new Employee("Daniel", "3425 Stone Street", "dasc@gmail.com","01492235687", "DASC0001","1234567", "employee");
 
         String expected = emp.toString();
 

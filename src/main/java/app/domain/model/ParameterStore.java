@@ -22,7 +22,6 @@ public class ParameterStore {
      * @param description the Parameter's description
      * @param code        the Parameter's code
      * @param name        the Parameter's name
-     * @param pcStore     the Parameter's category list
      * @return the parameter created
      */
 
