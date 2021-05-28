@@ -18,13 +18,13 @@ public class EmployeeSuper {
 
     public EmployeeSuper(String name, String address, String email, String phoneNumber, String employeeId, String socCode, String orgRole) {
 
-        EmployeeSuper.checkNameRules(name);
-        EmployeeSuper.checkAddressRules(address);
-        EmployeeSuper.checkEmailRules(email);
-        EmployeeSuper.checkPhoneNumberRules(phoneNumber);
-        EmployeeSuper.checkEmployeeId(employeeId);
-        EmployeeSuper.checkSocCode(socCode);
-        EmployeeSuper.checkOrgRole(orgRole);
+        checkNameRules(name);
+        checkAddressRules(address);
+        checkEmailRules(email);
+        checkPhoneNumberRules(phoneNumber);
+        checkEmployeeId(employeeId);
+        checkSocCode(socCode);
+        checkOrgRole(orgRole);
 
         this.name = name;
         this.address = address;
@@ -43,7 +43,7 @@ public class EmployeeSuper {
      * @param orgRole the the Employee's ordanization role
      */
 
-    public static void checkOrgRole(String orgRole) {
+    public  void checkOrgRole(String orgRole) {
 
         if (StringUtils.isBlank(orgRole)) {
             throw new IllegalArgumentException("Organization role cannot be empty.");
@@ -56,7 +56,7 @@ public class EmployeeSuper {
      * @param name the Employee's name
      */
 
-    public static void checkNameRules(String name) {
+    public void checkNameRules(String name) {
 
         String aux = name.trim();
         aux = aux.toLowerCase();
@@ -83,7 +83,7 @@ public class EmployeeSuper {
      * @param address the Employee's address
      */
 
-    public static void checkAddressRules(String address) {
+    public void checkAddressRules(String address) {
         String aux = address.trim();
         aux = aux.toLowerCase();
 
@@ -103,7 +103,7 @@ public class EmployeeSuper {
      * @param email the Employee's mail
      */
 
-    public static void checkEmailRules(String email) {
+    public void checkEmailRules(String email) {
 
         if (email == "" || email == null) {
             throw new IllegalArgumentException("Email cannot be empty.");
@@ -125,7 +125,7 @@ public class EmployeeSuper {
      * @param phoneNumber the Employee's phone number
      */
 
-    public static void checkPhoneNumberRules(String phoneNumber) {
+    public void checkPhoneNumberRules(String phoneNumber) {
         String auxTrimPhoneNumber = phoneNumber.replaceAll("\\s", "");
         char[] auxChar = auxTrimPhoneNumber.toCharArray();
 
@@ -149,7 +149,7 @@ public class EmployeeSuper {
      * @param employeeId the Employee's ID
      */
 
-    public static void checkEmployeeId(String employeeId) {
+    public void checkEmployeeId(String employeeId) {
 
 
         String auxEmployeeId = employeeId.replaceAll("\\s", "");
@@ -169,12 +169,12 @@ public class EmployeeSuper {
      * @param socCode the Employee's soc Code
      */
 
-    public static void checkSocCode(String socCode) {
+    public void checkSocCode(String socCode) {
 
         String auxSocCode = socCode.replaceAll("\\s", "");
         char[] auxchar = auxSocCode.toCharArray();
 
-        if (StringUtils.isBlank(auxSocCode)) {
+        if (StringUtils.isBlank(socCode)) {
             throw new IllegalArgumentException("SOC code cannot be empty.");
         }
         if ((auxSocCode.length() != Constants.SOC_MAX)) {

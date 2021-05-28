@@ -4,7 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 
-public class EmployeeTest {
+public class EmployeeSuperTest {
 
 //CheckNameRules
 
@@ -151,6 +151,8 @@ public class EmployeeTest {
         Employee emp = new Employee("Daniel", "3425 Stone Street", "dasc@gmail.com","01492235687", "DASC00001","", "specialistdoctor");
 
     }
+
+
 
     @Test (expected = IllegalArgumentException.class)
     public void checkSOCLength(){

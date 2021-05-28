@@ -152,9 +152,4 @@ public class Company {
         return testStore.getInvalidTestList();
     }
 
-    public boolean saveTest(Test t) {
-        return testStore.saveTest(t);
-    }
-
-
 }
