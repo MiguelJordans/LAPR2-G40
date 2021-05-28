@@ -202,9 +202,11 @@ public class EmployeeStoreTest {
         String name = "Jordao";
         String role = "SPECIALIST_DOCTOR";
 
+        Company company = new Company("aaaa");
+
         EmployeeStore store = new EmployeeStore();
 
-        store.generateUserInformation(name,email,role);
+        store.generateUserInformation(name,email,role,company);
 
     }
 

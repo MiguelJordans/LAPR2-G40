@@ -61,7 +61,7 @@ public class RegisterEmployeeController {
 
     public void generateUserInformation(String name, String email,String role) {
 
-        store.generateUserInformation(name,email,role);
+        store.generateUserInformation(name,email,role,company);
 
     }
 }

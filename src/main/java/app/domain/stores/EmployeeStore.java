@@ -1,5 +1,6 @@
 package app.domain.stores;
 
+import app.domain.model.Company;
 import app.domain.model.Employee;
 import app.ui.console.GeneratePassword;
 import auth.AuthFacade;
@@ -148,13 +149,13 @@ public class EmployeeStore {
         return employeID;
     }
 
-    public void generateUserInformation(String name, String email, String role) {
+    public void generateUserInformation(String name, String email, String role, Company company) {
 
         gp.password();
 
         String password = gp.getPassword();
 
-        AuthFacade cc = new AuthFacade();
+        AuthFacade cc = company.getAuthFacade();
 
         if(!cc.existsUser(email)){
             cc.addUserWithRole(name,email,password,role);
