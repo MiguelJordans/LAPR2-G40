@@ -45,19 +45,15 @@ public class SampleStore {
         return randomBar;
     }
 
-    public void createTemporaryList() {
-        sampleListTemporary.add(sm);
-    }
-
     /**
      * Validates a test type
      *
-     * @param sm the object Sample
+
      * @return the validation of the Sample being created
      */
 
-    public boolean validateSample(Sample sm) {
-        if (sm == null || listContain(sm)) {
+    public boolean validateSample() {
+        if (sm == null || listContain()) {
             return false;
         }
         return true;
@@ -66,11 +62,11 @@ public class SampleStore {
     /**
      * Checks if the new objected created is already in the list
      *
-     * @param sm the object Sample
+
      * @return true if the list contains the Sample and false if it doesn't
      */
 
-    public boolean listContain(Sample sm) {
+    public boolean listContain() {
 
         if (this.list.contains(sm)) {
             return true;
@@ -86,8 +82,8 @@ public class SampleStore {
      */
 
     public boolean saveSample() {
-        if (validateSample(sm)) {
-            listAdd(sm);
+        if (validateSample()) {
+            listAdd();
             return true;
         } else {
             return false;
@@ -98,11 +94,10 @@ public class SampleStore {
     /**
      * Adds an instance of Sample to the list.
      *
-     * @param sm - the test type
      * @return the addition of the Test Type to the list
      */
 
-    public boolean listAdd(Sample sm) {
+    public boolean listAdd() {
         list.add(sm);
         return true;
     }
@@ -135,13 +130,6 @@ public class SampleStore {
      */
 
     public List<Sample> getSampleList() {
-        return list;
-    }
-
-    public List<Sample> showList() {
-        for (Sample sm1 : list) {
-            System.out.println(sm1.toString());
-        }
         return list;
     }
 

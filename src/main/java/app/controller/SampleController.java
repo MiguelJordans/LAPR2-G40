@@ -86,13 +86,4 @@ public class SampleController {
         return smStore.getSampleList();
     }
 
-    public List<Sample> showList(){
-         return smStore.showList();
-    }
-
-    /*public void addElementsToSampleList() {
-
-        for(Sample sm1 : g)
-
-    }*/
 }
