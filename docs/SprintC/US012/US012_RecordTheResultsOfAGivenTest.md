@@ -116,6 +116,7 @@ There is a dependency to:
 | Step/Msg 2: request sample barcode number | n/a | | |
 | Step/Msg 3: types the sample barcode number | ... knowing TestStore? | Company | IE: TestStore is initialized in Company |
 |                                             | ... knowing all the existent test? | TestStore | IE: knows its own tests |
+|                                             | ... transferring the data typed in the UI to the domain? | TestParameterDTO | DTO: When there is so much data to transfer, it is better to opt by using a DTO in order to reduce coupling between UI and domain |
 | Step/Msg 4: shows one parameter at a time and requests each value/result | n/a | | |
 | Step/Msg 5: types the value/result | ... knowing and getting the reference values? | ExternalModule | Protected Variation: It is necessary to know which adapter to use in order to get the reference values for the correct API |
 |                                    | ... getting the ExternalModule? | TestType | IE: knows what API to get depending on the type of test |
