@@ -1,6 +1,0 @@
-
-V
-java:S4973f"9Use the "equals" method if value comparison was intended.(Öî—Ü8½Ÿß¢›/
-‚
-java:S1450"fRemove the "parameterCategoryMapper" field and declare it as a local variable in the relevant methods.(°œ²k8ÆÜù¢›/
-h	java:S1004"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ƒùÌŠüÿÿÿÿ

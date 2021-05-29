@@ -1,7 +1,6 @@
 package app.ui.console;
 
 import app.controller.TestValidationController;
-import app.domain.model.Test;
 import app.ui.console.utils.Utils;
 
 public class TestValidationUI implements Runnable{

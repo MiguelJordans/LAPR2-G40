@@ -1,7 +1,6 @@
 package app.ui.console;
 
 import app.controller.ClientController;
-import app.domain.stores.ClientStore;
 import app.ui.console.utils.Utils;
 
 import java.util.Date;
@@ -10,7 +9,6 @@ import java.util.Date;
 public class ClientUI implements Runnable{
 
     private ClientController ctrl;
-    private ClientStore clientStore;
 
     public ClientUI() {
 
@@ -24,7 +22,7 @@ public class ClientUI implements Runnable{
         do {
             try {
                 String name = Utils.readLineFromConsole("Please enter the name of the client: ");
-                String email = Utils.readLineFromConsole("Please enter the email1 of the client: ");
+                String email = Utils.readLineFromConsole("Please enter the email of the client: ");
                 String sex = Utils.readLineFromConsole("Please enter the sex of the client: ");
                 Date birthdate = Utils.readDateFromConsole("Please enter the birth date of the client: ");
                 String citizenCardNumber = Utils.readLineFromConsole("Please enter the citizen card number of the client: ");
@@ -42,11 +40,9 @@ public class ClientUI implements Runnable{
         } while (exception);
 
         count = Utils.confirm("Client created! Do you want to save it(s/n)?" + ctrl.getCr().toString());
-        if (count) {
-            if (ctrl.saveClient()) {
+        if (count && ctrl.saveClient()) {
                 System.out.println("Save successful!");
                 ctrl.generateUserInformation(this.ctrl.getCr().getName(),this.ctrl.getCr().getEmail(),"client");
-            }
         }
     }
 

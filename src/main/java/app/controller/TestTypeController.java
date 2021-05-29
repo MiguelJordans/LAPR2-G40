@@ -99,7 +99,7 @@ public class TestTypeController {
     public void convertDTOintoCategory(ParameterCategoryDTO parameterCategoryDTO) {
 
         for (ParameterCategory pc : this.getParameterCategoryList()) {
-            if (parameterCategoryDTO.getCode() == pc.getCode()) {
+            if (parameterCategoryDTO.getCode().equals(pc.getCode())) {
                 pcList.add(pc);
             }
         }

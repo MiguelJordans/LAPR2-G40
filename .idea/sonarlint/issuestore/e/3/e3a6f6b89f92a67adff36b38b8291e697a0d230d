@@ -1,18 +1,0 @@
-
-F
-java:S1128
-"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ
-[
-java:S1128"ERemove this unused import 'app.domain.stores.ParameterCategoryStore'.(Òþôä
-Z
-java:S1128"?Remove this unused import 'app.domain.model.ParameterCategory'.(–¥Öåøÿÿÿÿ
-F
-java:S1128	"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ
-h
-java:S3776"RRefactor this method to reduce its Cognitive Complexity from 28 to the 15 allowed.(“–ýþ
-S	java:S106"9Replace this use of System.out or System.err by a logger.(Œ•½¡øÿÿÿÿ
-N	java:S106&"9Replace this use of System.out or System.err by a logger.(ìÊ´ë
-S	java:S106;"9Replace this use of System.out or System.err by a logger.(©þêÜúÿÿÿÿ
-S	java:S106<"9Replace this use of System.out or System.err by a logger.(˜éïáÿÿÿÿÿ
-S	java:S106G"9Replace this use of System.out or System.err by a logger.(™úôÁüÿÿÿÿ
-S	java:S106I"9Replace this use of System.out or System.err by a logger.(æ¼Øøÿÿÿÿ

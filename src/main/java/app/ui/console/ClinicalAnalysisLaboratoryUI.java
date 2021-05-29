@@ -2,12 +2,7 @@ package app.ui.console;
 
 import app.controller.ClinicalAnalysisLaboratoryController;
 import app.domain.mappers.dto.TestTypeDTO;
-import app.domain.model.TestType;
-import app.domain.stores.TestTypeStore;
 import app.ui.console.utils.Utils;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class ClinicalAnalysisLaboratoryUI implements Runnable {
 

@@ -1,9 +1,0 @@
-
-O
-java:S4973_"9Use the "equals" method if value comparison was intended.(Öî—Ü
-F
-java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ
-{
-java:S1450"fRemove the "parameterCategoryMapper" field and declare it as a local variable in the relevant methods.(°œ²k
-Q
-java:S1117^"6Rename "pc" which hides the field declared at line 17.(Ôè‡ýüÿÿÿÿ

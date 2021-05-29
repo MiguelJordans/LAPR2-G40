@@ -492,5 +492,15 @@ public class ClientTest {
 
     }
 
+    @Test
+    public void checkName() {
+
+        Client cr = new Client("JASASSSON", "2344@gmail.com", "Male", date,
+                "5647748895858574", "05968742634","7468496874", "7456375876");
+
+
+
+    }
+
 
 }

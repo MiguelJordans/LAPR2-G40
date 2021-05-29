@@ -20,7 +20,10 @@ public class ParameterCategoryStore {
      */
 
     public ParameterCategory createParameterCategory(String description,String code,String nhsld){
-        return this.pc = new ParameterCategory(code,description,nhsld);
+
+        this.pc = new ParameterCategory(code,description,nhsld);
+
+        return this.pc;
     }
 
     /**

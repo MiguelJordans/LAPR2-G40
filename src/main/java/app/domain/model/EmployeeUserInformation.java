@@ -9,7 +9,7 @@ import java.io.IOException;
 public class EmployeeUserInformation {
 
     public EmployeeUserInformation(){
-
+         //Creation of the file with the Employee information
     }
         public void generateEmployeeInformation(String name,String email,String password,String role)  {
 

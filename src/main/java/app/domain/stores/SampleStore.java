@@ -42,10 +42,7 @@ public class SampleStore {
 
     public String generateNumber() {
 
-        String randomBar = RandomStringUtils.randomNumeric(11);
-
-
-        return randomBar;
+        return RandomStringUtils.randomNumeric(11);
     }
 
     /**
