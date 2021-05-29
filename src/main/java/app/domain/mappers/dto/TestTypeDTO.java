@@ -2,13 +2,13 @@ package app.domain.mappers.dto;
 
 public class TestTypeDTO {
 
-    private String testCode;
+    private String testID;
     private String description;
     private String collectingMethod;
 
-    public TestTypeDTO(String testCode, String description, String collectingMethod){
+    public TestTypeDTO(String testID, String description, String collectingMethod){
 
-        this.testCode = testCode;
+        this.testID = testID;
         this.collectingMethod = collectingMethod;
         this.description = description;
 
@@ -23,13 +23,13 @@ public class TestTypeDTO {
     }
 
     public String getTestCode() {
-        return testCode;
+        return testID;
     }
 
     @Override
     public String toString() {
         return "TestTypeDTO{" +
-                "testCode='" + testCode + '\'' +
+                "testCode='" + testID + '\'' +
                 ", description='" + description + '\'' +
                 ", collectingMethod='" + collectingMethod + '\'' +
                 '}';

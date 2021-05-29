@@ -25,29 +25,33 @@ public class RecordTestResultUI implements Runnable {
 
         List<TestParameter> parameters = ctrl.getParameters(sampleID);
 
-        do {
-            for (TestParameter param : parameters) {
-                System.out.println();
-                System.out.print("Parameters: " + param.getParam().getName());
+        if (this.ctrl.getSampleListDto() == null || this.ctrl.getSampleListDto().isEmpty()) {
+            System.out.println("The list is of samples is empty!");
+        } else {
+            do {
+                for (TestParameter param : parameters) {
+                    System.out.println();
+                    System.out.print("Parameters: " + param.getParam().getName());
 
-                value = Utils.readDoubleFromConsole("Please insert the result/value:");
+                    value = Utils.readDoubleFromConsole("Please insert the result/value:");
 
-                try {
-                    result = ctrl.addTestParameterResult(param.getParam().getCode(), value);
-                    result = true;
-                } catch (Exception e) {
-                    System.out.println(e.getMessage());
-                    result = false;
+                    try {
+                        result = ctrl.addTestParameterResult(param.getParam().getCode(), value);
+                        result = true;
+                    } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                        result = false;
+                    }
+
+                    if (result) {
+                        System.out.println("Test parameter result saved with success!");
+                    } else {
+                        System.out.println("Incorrect input of data (an error has occurred).");
+                        repeat = Utils.confirm("Try again? (s/n)");
+                    }
                 }
-
-                if (result) {
-                    System.out.println("Test parameter result saved with success!");
-                } else {
-                    System.out.println("Incorrect input of data (an error has occurred).");
-                    repeat = Utils.confirm("Try again? (s/n)");
-                }
-            }
-        } while (repeat);
+            } while (repeat);
+        }
 
         if (result) {
             ctrl.setState();

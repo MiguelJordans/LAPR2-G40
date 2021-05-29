@@ -81,9 +81,5 @@ public class RecordTestResultController {
         this.sampleMapper = new SampleMapper();
 
         return sampleMapper.toDTO(getSampleList());
-
     }
-
-
-
 }
