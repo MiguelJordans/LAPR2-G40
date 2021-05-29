@@ -160,12 +160,130 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 # 4. Tests
 
-**Test 1:** Check that it is not possible to create an instance of the Example class with null values. 
+### TestParameterResult Tests
 
-	@Test(expected = IllegalArgumentException.class)
-		public void ensureNullIsNotAllowed() {
-		Exemplo instance = new Exemplo(null, null);
-	}
+**Test 1:** Get the test parameter result's parameterID.
+
+    public void getParamID() {
+
+        TestParameterResult tpr1 = new TestParameterResult("IgGAN", 15);
+
+        String expected = "IgGAN";
+        String actual = tpr1.getParamID();
+
+        Assert.assertEquals(expected, actual);
+
+    }
+
+**Test 2:** Get the test parameter result's result.
+
+    public void getResult() {
+
+        TestParameterResult tpr1 = new TestParameterResult("IgGAN", 15.5);
+
+        Double expected = 15.5;
+        Double actual = tpr1.getResult();
+
+        Assert.assertEquals(expected, actual);
+
+    }
+
+**Test 3:** Get the test parameter result's reference value.
+
+    public void getRefValue() {
+
+        TestParameterResult tpr1 = new TestParameterResult("IgGAN", 1.4);
+
+        RefValue expected = new RefValue("mm/hr", 1.0, 10.0);
+
+        tpr1.setRefValue(expected);
+        RefValue actual = tpr1.getRefValue();
+
+        Assert.assertEquals(expected, actual);
+
+    }
+
+**Test 4:** Set the test parameter result's reference value.
+
+    public void setRefValue() {
+
+        TestParameterResult tpr1 = new TestParameterResult("IgGAN", 15.5);
+        RefValue rv1 = new RefValue("aaa", 10.0, 20.0);
+
+        tpr1.setRefValue(rv1);
+        RefValue actual = tpr1.getRefValue();
+
+        Assert.assertEquals(rv1, actual);
+
+    }
+
+### RefValue Tests
+
+**Test 5:** Get the metric.
+
+    public void getMetric() {
+
+        RefValue rv1 = new RefValue("aaa", 10.0, 20.0);
+
+        String expected = "aaa";
+        String actual = rv1.getMetric();
+
+        Assert.assertEquals(expected, actual);
+
+    }
+
+**Test 6:** Get the minimum reference value.
+
+    public void getRefValueMin() {
+
+        RefValue rv1 = new RefValue("aaa", 10.0, 20.0);
+
+        Double expected = 10.0;
+        Double actual = rv1.getRefValueMin();
+
+        Assert.assertEquals(expected, actual);
+
+    }
+
+**Test 7:** Get the maximum reference value.
+
+    public void getRefValueMax() {
+
+        RefValue rv1 = new RefValue("aaa", 10.0, 20.0);
+
+        Double expected = 20.0;
+        Double actual = rv1.getRefValueMax();
+
+        Assert.assertEquals(expected, actual);
+
+    }
+
+**Test 8:** Get corresponding test using the sampleID.
+
+    private boolean getCorrespondingTest(String sampleID) {
+    String testID;
+
+        List<Sample> samples = sampleStore.getSampleList();
+
+        testID = "";
+
+        for (Sample sa : samples) {
+            if (sa.getBarcode().equals(sampleID)) {
+                testID = sa.getTr().getTestID();
+            }
+        }
+
+        List<Test> tests = testStore.getTestList();
+
+        for (Test test1 : tests) {
+            if (test1.getTestID().equals(testID)) {
+                this.test = test1;
+                return test1.compareTestState("SAMPLE_COLLECTED");
+            }
+        }
+        return false;
+    }
+	
 
 *It is also recommended organizing this content by subsections.* 
 
