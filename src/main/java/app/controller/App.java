@@ -130,15 +130,6 @@ public class App {
         parameterStore.createParameter("HB", "HB000", "HB", parameterCategory1);
         parameterStore.saveParameter();
         parameterStore.createParameter("MCH", "MCH00", "MCH", parameterCategory1);
-
-        Parameter p1 = new Parameter("IgGAN","000","paramCv1",parameterCategory);
-        parameterStore.saveParameter();
-        parameterStore.getParameterList().add(p1);
-        Parameter p2 = new Parameter("ESR00", "aaa", "paramBl1", parameterCategory);
-        parameterStore.saveParameter();
-        parameterStore.getParameterList().add(p2);
-        parameterStore.createParameter("ESR00", "aaa", "paramBl1", parameterCategory);
-
         parameterStore.saveParameter();
         parameterStore.createParameter("MCHC", "MCHC0", "MCHC", parameterCategory1);
         parameterStore.saveParameter();

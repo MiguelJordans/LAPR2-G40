@@ -129,6 +129,7 @@ There is a dependency to:
 
 According to the taken rationale, the conceptual classes promoted to software classes are: 
 
+ * Company
  * TestParameter
  * TestParameterResult
 
@@ -156,10 +157,7 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 ![US12_CD](US12_CD.svg)
 
-# 4. Tests 
-*In this section, it is suggested to systematize how the tests were designed to allow a correct measurement of requirements fulfilling.* 
-
-**_DO NOT COPY ALL DEVELOPED TESTS HERE_**
+# 4. Tests
 
 **Test 1:** Check that it is not possible to create an instance of the Example class with null values. 
 
@@ -172,20 +170,418 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 # 5. Construction (Implementation)
 
-*In this section, it is suggested to provide, if necessary, some evidence that the construction/implementation is in accordance with the previously carried out design. Furthermore, it is recommeded to mention/describe the existence of other relevant (e.g. configuration) files and highlight relevant commits.*
+### Class RecordTestResultUI
 
-*It is also recommended organizing this content by subsections.* 
+    public class RecordTestResultUI implements Runnable {
 
-# 6. Integration and Demo 
+        RecordTestResultController ctrl;
 
-*In this section, it is suggested to describe the efforts made to integrate this functionality with the other features of the system.*
+        public RecordTestResultUI() {
+            ctrl = new RecordTestResultController();
+        }
+
+        @Override
+        public void run() {
+
+            boolean result = true;
+            boolean repeat = false;
+            double value;
+
+            String sampleID = Utils.readLineFromConsole("Please enter the sample barcode number of the test:");
+
+            List<TestParameter> parameters = ctrl.getParameters(sampleID);
+
+            if (this.ctrl.getSampleListDto() == null || this.ctrl.getSampleListDto().isEmpty()) {
+                System.out.println("The list is of samples is empty!");
+            } else {
+                do {
+                    for (TestParameter param : parameters) {
+                        System.out.println();
+                        System.out.print("Parameters: " + param.getParam().getName());
+
+                        value = Utils.readDoubleFromConsole("Please insert the result/value:");
+
+                        try {
+                            result = ctrl.addTestParameterResult(param.getParam().getCode(), value);
+                            result = true;
+                        } catch (Exception e) {
+                            System.out.println(e.getMessage());
+                            result = false;
+                        }
+
+                        if (result) {
+                            System.out.println("Test parameter result saved with success!");
+                        } else {
+                            System.out.println("Incorrect input of data (an error has occurred).");
+                            repeat = Utils.confirm("Try again? (s/n)");
+                        }
+                    }
+                } while (repeat);
+            }
+
+            if (result) {
+                ctrl.setState();
+                System.out.println("Success! All test parameters results have been recorded.");
+            } else {
+                System.out.println("Something went wrong... please, try again.");
+            }
+        }
+    }
+
+
+### Class RecordTestResultController
+
+    public class RecordTestResultController {
+
+        private Company company;
+        private SampleStore sampleStore;
+        private TestStore testStore;
+        private Test test;
+
+        private SampleMapper sampleMapper;
+
+        public RecordTestResultController(){
+            this(App.getInstance().getCompany());
+            this.sampleStore = company.getSampleStore();
+            this.testStore = company.getTestStore();
+        }
+
+        public RecordTestResultController(Company company) {
+            this.company=company;
+        }
+
+        private boolean getCorrespondingTest(String sampleID) {
+            String testID;
+
+            List<Sample> samples = sampleStore.getSampleList();
+
+            testID = "";
+
+            for (Sample sa : samples) {
+                if (sa.getBarcode().equals(sampleID)) {
+                    testID = sa.getTr().getTestID();
+                }
+            }
+
+            List<Test> tests = testStore.getTestList();
+
+            for (Test test1 : tests) {
+                if (test1.getTestID().equals(testID)) {
+                    this.test = test1;
+                    return test1.compareTestState("SAMPLE_COLLECTED");
+                }
+            }
+            return false;
+        }
+
+        public List<TestParameter> getParameters(String sampleID) {
+            getCorrespondingTest(sampleID);
+
+            if(test == null) {
+                return null;
+            }
+            return test.getTpList();
+        }
+
+        public boolean addTestParameterResult(String parameterCode, double result) {
+
+            try {
+                test.addTestParameterResult(parameterCode, result);
+            } catch (Exception e) {
+                return false;
+            }
+            return true;
+        }
+
+        public void setState() {
+            test.setState("SAMPLE_ANALYSED");
+        }
+
+        public List<Sample> getSampleList(){return company.getSampleList(); }
+
+        public List<SampleDTO> getSampleListDto(){
+
+            this.sampleMapper = new SampleMapper();
+
+            return sampleMapper.toDTO(getSampleList());
+        }
+    }
+
+
+### Class TestParameter
+
+    public class TestParameter {
+
+        private String testID;
+        private Parameter param;
+        private TestParameterResult tpr;
+
+        public TestParameter(String testID, Parameter param) {
+            this.testID = testID;
+            this.param = param;
+            this.tpr = null;
+        }
+
+        public String getTestID() {
+            return testID;
+        }
+
+        public Parameter getParam() {
+            return param;
+        }
+
+        public TestParameterResult getTpr() {
+            return tpr;
+        }
+
+        public void setTpr(TestParameterResult tpr) {
+            this.tpr = tpr;
+        }
+    }
+
+
+### Class TestParameterResult
+
+    public class TestParameterResult {
+
+        private String paramID;
+        private double result;
+        private RefValue refValue;
+
+        public TestParameterResult(String paramID, double result) {
+            this.paramID = paramID;
+            this.result = result;
+        }
+
+        public String getParamID() {
+            return paramID;
+        }
+
+        public double getResult() {
+            return result;
+        }
+
+        public RefValue getRefValue() {
+            return refValue;
+        }
+
+        public void setRefValue(RefValue refValue) {
+            this.refValue = refValue;
+        }
+    }
+
+
+### Class RefValue
+
+    public class RefValue {
+
+        private String metric;
+        private double refValueMin;
+        private double refValueMax;
+
+        public RefValue(String metric, double refValueMin, double refValueMax) {
+            this.metric = metric;
+            this.refValueMin = refValueMin;
+            this.refValueMax = refValueMax;
+        }
+
+        public String getMetric() {
+            return metric;
+        }
+
+        public double getRefValueMin() {
+            return refValueMin;
+        }
+
+        public double getRefValueMax() {
+            return refValueMax;
+        }
+    }
+
+
+### Interface RefValueAdapter
+
+    public interface RefValueAdapter {
+
+        RefValue getRefValue(String param);
+
+        double getRefValueMin(String param);
+
+        double getRefValueMax(String param);
+
+        String getMetric(String param);
+    }
+
+
+### Class RefValueAdapter1
+
+    public class RefValueAdapter1 implements RefValueAdapter {
+    CovidReferenceValues1API api;
+
+        public RefValueAdapter1() {
+            this.api = new CovidReferenceValues1API();
+        }
+
+        public RefValue getRefValue(String param) {
+            return new RefValue(getMetric(param), getRefValueMin(param), getRefValueMax(param));
+        }
+
+        public double getRefValueMin(String paramID) {
+            return api.getMinReferenceValue(paramID, Constants.ACCESS_KEY);
+        }
+
+        public double getRefValueMax(String paramID) {
+            return api.getMaxReferenceValue(paramID, Constants.ACCESS_KEY);
+        }
+
+        public String getMetric(String paramID) {
+            return api.usedMetric(paramID, Constants.ACCESS_KEY);
+        }
+    }
+
+
+### Class RefValueAdapter2
+
+    public class RefValueAdapter2 implements RefValueAdapter {
+    ExternalModule2API api;
+
+        public RefValueAdapter2() {
+            this.api = new ExternalModule2API();
+        }
+
+        public RefValue getRefValue(String param) {
+            return new RefValue(getMetric(param), getRefValueMin(param), getRefValueMax(param));
+        }
+
+        public double getRefValueMin(String paramID) {
+            EMRefValue refValue = api.getReferenceFor(paramID);
+            return refValue.getMinValue();
+        }
+
+        public double getRefValueMax(String paramID) {
+            EMRefValue refValue = api.getReferenceFor(paramID);
+            return refValue.getMaxValue();
+        }
+
+        public String getMetric(String paramID) {
+            return api.getMetricsFor(paramID);
+        }
+    }
+
+
+### Class RefValueAdapter3
+
+    public class RefValueAdapter3 implements RefValueAdapter{
+    ExternalModule3API api;
+
+        public RefValueAdapter3() {
+            this.api = new ExternalModule3API();
+        }
+
+        public RefValue getRefValue(String param) {
+            return new RefValue(getMetric(param), getRefValueMin(param), getRefValueMax(param));
+        }
+
+        public double getRefValueMin(String paramID) {
+            return api.getMinReferenceValue(paramID, Constants.ACCESS_KEY);
+        }
+
+        public double getRefValueMax(String paramID) {
+            return api.getMaxReferenceValue(paramID, Constants.ACCESS_KEY);
+        }
+
+        public String getMetric(String paramID) {
+            return api.usedMetric(paramID, Constants.ACCESS_KEY);
+        }
+    }
+
+
+# 6. Integration and Demo
+
+### Integration in the Company class
+
+    TestStore testStore = new TestStore();
+
+    public TestStore getTestStore() {
+        return testStore;
+    }
+
+
+### Integration in the Test class
+
+    public void createTestParameter(String testID, List<Parameter> parameters) {
+        TestParameter tp;
+        for (Parameter param : parameters) {
+            tp = new TestParameter(testID, param);
+            this.tpList.add(tp);
+        }
+    }
+
+    public List<TestParameter> getTpList() {
+        return tpList;
+    }
+
+    public boolean addTestParameterResult(String parameterCode, double result) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+
+        TestParameter tp1 = null;
+
+        for (TestParameter tp : tpList) {
+            if (tp.getParam().getCode().equals(parameterCode)) {
+                tp1 = tp;
+            }
+        }
+
+        if (tp1 == null) {
+            return false;
+        }
+
+        String em = tt.getExternalModule();
+        Class<?> daclass = Class.forName(em);
+        RefValueAdapter adp = (RefValueAdapter) daclass.newInstance();
+
+        String paramCode = tp1.getParam().getCode();
+
+        TestParameterResult tpr = new TestParameterResult(parameterCode, result);
+        tpr.setRefValue(adp.getRefValue(paramCode));
+
+        tp1.setTpr(tpr);
+        return true;
+    }
+
+    public boolean compareTestState(String state) {
+
+        if (state.equals("SAMPLE_ANALYSED") || state.equals("DIAGNOSTIC_MADE") || state.equals("VALIDATED")) {
+            return false;
+        }
+        return true;
+    }
+
+
+### Integration in the TestType class
+
+    public String getExternalModule() {
+        return externalModule;
+    }
+
+    public String setExternalModule(String testCode) {
+
+        if(testCode.equals("BL000")) {
+            return Constants.EM_REFERENCE_API;
+        }
+
+        if(testCode.equals("COV19")) {
+            return Constants.COVID_REFERENCE_API;
+        }
+        return null;
+    }
+
+
+### Constants class
+
+    public static final int ACCESS_KEY = 12345;
+    public static final String COVID_REFERENCE_API = "app.domain.model.RefValueAdapter1";
+    public static final String EM_REFERENCE_API = "app.domain.model.RefValueAdapter2";
+    public static final String BC_REFERENCE_API = "app.domain.model.BarcodeAdapter1";
 
 
 # 7. Observations
-
-*In this section, it is suggested to present a critical perspective on the developed work, pointing, for example, to other alternatives and or future related work.*
-
-
-
-
-

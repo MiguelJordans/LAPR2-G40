@@ -147,24 +147,18 @@ public class Test {
 
     public boolean compareState(String state) {
 
-
         if (state.equals("SAMPLE_ANALYSED") || state.equals("SAMPLE_COLLECTED") || state.equals("DIAGNOSTIC_MADE") || state.equals("VALIDATED")) {
             return false;
         }
-
         return true;
-
     }
 
     public boolean compareTestState(String state) {
 
-
         if (state.equals("SAMPLE_ANALYSED") || state.equals("DIAGNOSTIC_MADE") || state.equals("VALIDATED")) {
             return false;
         }
-
         return true;
-
     }
 
     public String getState() {
