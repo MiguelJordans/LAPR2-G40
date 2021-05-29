@@ -114,28 +114,32 @@ There is a dependency to:
 | Step/Msg 1: asks to record the results of a given test | ... interacting with the actor? | TestResultUI | Pure Fabrication: there is no reason to assign this responsibility to any existing class in the Domain Model |
 |                                                        | ... coordinating the US? | TestResultController | Controller |
 | Step/Msg 2: request sample barcode number | n/a | | |
-| Step/Msg 3: types the sample barcode number | | | |
-| Step/Msg 4: shows the parameters and asks to select one | | | |
-| Step/Msg 5: selects test parameter | | | |
-| Step/Msg 6: request the result value and metric | | | |              
-| Step/Msg 7: types requested data | ... saving the inputted data? | TestResult | IE: object recorded in step/msg 1 has its own data |
-| Step/Msg 8: shows all data and requests a confirmation | ... validating the data locally (e.g.: mandatory vs non-mandatory data)? | | |
-|                                                        | ... validating the data globally (e.g.: duplicated)? | 
-| Step/Msg 9: confirms all data | ... saving the test results? | | |
-| Step/Msg 6: informs operation success | ... informing operation success? | | |
+| Step/Msg 3: types the sample barcode number | ... knowing TestStore? | Company | IE: TestStore is initialized in Company |
+|                                             | ... knowing all the existent test? | TestStore | IE: knows its own tests |
+| Step/Msg 4: shows one parameter at a time and requests each value/result | n/a | | |
+| Step/Msg 5: types the value/result | ... knowing and getting the reference values? | ExternalModule | Protected Variation: It is necessary to know which adapter to use in order to get the reference values for the correct API |
+|                                    | ... getting the ExternalModule? | TestType | IE: knows what API to get depending on the type of test |
+|                                    | ... creating the TestParameterResult object? | TestParameter | Creator: TestParameterResult is an attribute of TestParameter |
+|                                    | ... validating and saving the typed data? | ReferenceValue | IE: knows its own data |
+|                                    | ... changing the test state? | Test | IE: After the tests being recorded, Test must change its state |
+| Step/Msg 6: informs operation success | ... informing operation success? | RecordTestResultUI | IE: responsible for user interaction |
 
 
 ### Systematization ##
 
 According to the taken rationale, the conceptual classes promoted to software classes are: 
 
- * TestResult
  * TestParameter
+ * TestParameterResult
 
 Other software classes (i.e. Pure Fabrication) identified: 
- * TestResultUI  
- * TestResultController
- * TestResultStore
+ * RecordTestResultUI  
+ * RecordTestResultController
+ * ExternalModule
+ * RefValue
+ * RefValueAdapter (1 for each API)
+ * TestParameterDTO
+ * TestParameterMapper
 
 ## 3.2. Sequence Diagram (SD)
 

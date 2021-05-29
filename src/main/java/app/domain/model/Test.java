@@ -16,8 +16,7 @@ public class Test {
 
     private List<TestParameter> tpList;
 
-    static int nhsSize = 12;
-    static int testCode = 1;
+    private static int nhsSize = 12;
 
 
     public Test(String citizenCardNumber, String testID, String nhsCode, TestType tt) {
