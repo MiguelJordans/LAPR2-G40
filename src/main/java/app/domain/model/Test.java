@@ -20,11 +20,11 @@ public class Test {
     static int testCode = 1;
 
 
-    public Test(String citizenCardNumber, String testCode, String nhsCode, TestType tt) {
+    public Test(String citizenCardNumber, String testID, String nhsCode, TestType tt) {
         checkNhsCode(nhsCode);
 
         this.citizenCardNumber = citizenCardNumber;
-        this.testID = testCode;
+        this.testID = testID;
         this.nhsCode = nhsCode;
         this.tt = tt;
         state = State.CREATED;

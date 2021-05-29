@@ -9,7 +9,7 @@ public class TestParameter {
     public TestParameter(String testID, Parameter param) {
         this.testID = testID;
         this.param = param;
-        tpr = null;
+        this.tpr = null;
     }
 
     public String getTestID() {
