@@ -91,7 +91,7 @@ public class EmployeeSuper {
             throw new IllegalArgumentException("Address cannot be empty.");
         }
 
-        if ((aux.length() > Constants.ADRESS_EMPLOYEE_MAX)) {
+        if ((aux.length() > Constants.ADDRESS_EMPLOYEE_MAX)) {
             throw new IllegalArgumentException("Address cannot have more than 30 characters.");
         }
 
@@ -105,7 +105,7 @@ public class EmployeeSuper {
 
     public void checkEmailRules(String email) {
 
-        if (email == "" || email == null) {
+        if (email.equals("")) {
             throw new IllegalArgumentException("Email cannot be empty.");
         }
 
@@ -157,7 +157,7 @@ public class EmployeeSuper {
         if (StringUtils.isBlank(auxEmployeeId)) {
             throw new IllegalArgumentException("Employee ID cannot be empty.");
         }
-        if ((auxEmployeeId.length() == 9)) {
+        if ((auxEmployeeId.length() == Constants.EMPLOYEE_ID)) {
             throw new IllegalArgumentException("Employee ID has an invalid format.");
         }
 

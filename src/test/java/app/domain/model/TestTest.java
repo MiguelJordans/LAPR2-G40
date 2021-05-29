@@ -496,6 +496,78 @@ public class TestTest {
     }
 
     @Test
+    public void compareTestState3() {
+
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa", "aaa", "aaa");
+        pcList.add(pc);
+        Parameter pp = new Parameter("1abcE", "yes", "aaa", pc);
+
+        ParameterStore parameterStore = new ParameterStore();
+
+        TestType tt = new TestType("1abcE", "yes", "aaa", pcList);
+
+        app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", tt);
+        List<Parameter> parameters = new ArrayList<>();
+        parameters.add(pp);
+
+        test.createTestParameter("100000", parameters);
+
+        test.compareTestState("SAMPLE_COLLECTED");
+
+
+    }
+
+    @Test
+    public void compareTestState4() {
+
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa", "aaa", "aaa");
+        pcList.add(pc);
+        Parameter pp = new Parameter("1abcE", "yes", "aaa", pc);
+
+        ParameterStore parameterStore = new ParameterStore();
+
+        TestType tt = new TestType("1abcE", "yes", "aaa", pcList);
+
+        app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", tt);
+        List<Parameter> parameters = new ArrayList<>();
+        parameters.add(pp);
+
+        test.createTestParameter("100000", parameters);
+
+        test.compareTestState("DIAGNOSTIC_MADE");
+
+
+    }
+
+    @Test
+    public void compareTestState5() {
+
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa", "aaa", "aaa");
+        pcList.add(pc);
+        Parameter pp = new Parameter("1abcE", "yes", "aaa", pc);
+
+        ParameterStore parameterStore = new ParameterStore();
+
+        TestType tt = new TestType("1abcE", "yes", "aaa", pcList);
+
+        app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", tt);
+        List<Parameter> parameters = new ArrayList<>();
+        parameters.add(pp);
+
+        test.createTestParameter("100000", parameters);
+
+        test.compareTestState("VALIDATED");
+
+
+    }
+
+    @Test
     public void getState() {
 
         List<ParameterCategory> pcList = new ArrayList<>();

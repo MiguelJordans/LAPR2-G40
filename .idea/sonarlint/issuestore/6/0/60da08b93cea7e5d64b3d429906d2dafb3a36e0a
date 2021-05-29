@@ -1,6 +1,0 @@
-
-p
-java:S1488:"ZImmediately return this expression instead of assigning it to the temporary variable "bC".(•è‡°
-N	java:S106"9Replace this use of System.out or System.err by a logger.(ÄÆ‘»
-S	java:S106-"9Replace this use of System.out or System.err by a logger.(™ÿãûúÿÿÿÿ
-N	java:S1063"9Replace this use of System.out or System.err by a logger.(Ğ˜

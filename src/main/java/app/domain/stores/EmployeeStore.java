@@ -1,6 +1,5 @@
 package app.domain.stores;
 
-import app.domain.model.ClientUserInformation;
 import app.domain.model.Company;
 import app.domain.model.Employee;
 import app.domain.model.EmployeeUserInformation;

@@ -3,8 +3,6 @@ package app.domain.model;
 import app.domain.shared.Constants;
 import org.apache.commons.lang3.StringUtils;
 
-import java.util.List;
-
 public class Parameter {
 
     private String code;

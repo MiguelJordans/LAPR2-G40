@@ -17,7 +17,8 @@ public class RecordTestResultUI implements Runnable {
     @Override
     public void run() {
 
-        boolean result = true, repeat = false;
+        boolean result = true;
+        boolean repeat = false;
         double value;
 
         String sampleID = Utils.readLineFromConsole("Please enter the sample barcode number of the test:");

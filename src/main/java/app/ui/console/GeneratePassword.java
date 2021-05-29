@@ -12,7 +12,7 @@ public class GeneratePassword {
 
     public String password(){
 
-       return password= RandomStringUtils.randomAlphabetic(10);
+       return password = RandomStringUtils.randomAlphabetic(10);
 
     }
 

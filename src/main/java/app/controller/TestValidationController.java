@@ -4,10 +4,9 @@ import app.domain.model.Company;
 import app.domain.model.Test;
 import app.domain.stores.TestStore;
 
-import java.util.HashSet;
+import java.util.Set;
 
 public class TestValidationController {
-    private Company company;
     private TestStore testStore;
 
     public TestValidationController() {
@@ -16,12 +15,11 @@ public class TestValidationController {
     }
 
     public TestValidationController(Company company) {
-        this.company = company;
         testStore = company.getTestStore();
 
     }
 
-    public HashSet<Test> invalidTests() {
+    public Set<Test> invalidTests() {
         return testStore.getInvalidTestList();
     }
 /*

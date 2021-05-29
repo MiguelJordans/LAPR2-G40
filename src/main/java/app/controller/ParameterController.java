@@ -5,7 +5,6 @@ import app.domain.mappers.dto.ParameterCategoryDTO;
 import app.domain.model.*;
 import app.domain.stores.ParameterStore;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ParameterController {
@@ -91,9 +90,9 @@ public class ParameterController {
 
     public void convertDTOintoCategory(ParameterCategoryDTO parameterCategoryDTO) {
 
-        for (ParameterCategory pc : this.getCategoryList()) {
-            if (parameterCategoryDTO.getCode() == pc.getCode()) {
-                this.pc=pc;
+        for (ParameterCategory pt : this.getCategoryList()) {
+            if (parameterCategoryDTO.getCode().equals(pt.getCode())) {
+                this.pc=pt;
             }
         }
     }

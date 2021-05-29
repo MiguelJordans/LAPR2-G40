@@ -14,7 +14,7 @@ public class LaboratoryCoordinatorUI implements Runnable {
     @Override
     public void run() {
         List<MenuItem> options = new ArrayList<>();
-        options.add(new MenuItem("Validates a test", new ValidateTestUI()));
+        options.add(new MenuItem("Validates a test", new TestValidationUI()));
         int option = 0;
         do {
             option = Utils.showAndSelectIndex(options, "\n\nLaboratoryCoordinator Menu:");

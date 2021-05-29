@@ -7,7 +7,6 @@ import app.ui.console.GeneratePassword;
 import auth.AuthFacade;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 
@@ -16,8 +15,8 @@ public class SpecialistDoctorStore {
     List <SpecialistDoctor> specialistDoctorList;
     SpecialistDoctor sd;
 
-    private GeneratePassword gp = new GeneratePassword();
-    private EmployeeUserInformation ei = new EmployeeUserInformation();
+    private final GeneratePassword gp = new GeneratePassword();
+    private final EmployeeUserInformation ei = new EmployeeUserInformation();
 
     private static int employeeN;
 

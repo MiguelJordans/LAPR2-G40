@@ -2,11 +2,10 @@ package app.ui.console;
 
 import app.controller.RegisterEmployeeController;
 import app.controller.SpecialistDoctorController;
-import app.domain.shared.OrgRole;
+import app.domain.shared.OrgRoles;
 import app.domain.shared.Constants;
 import app.ui.console.utils.Utils;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class EmployeeUI implements Runnable {
@@ -14,8 +13,7 @@ public class EmployeeUI implements Runnable {
 
     private RegisterEmployeeController ctrl;
     private SpecialistDoctorController ctrl1;
-    private OrgRole orgRoles;
-    private List<String> roles = new ArrayList<>();
+    private OrgRoles orgRoles;
 
     public EmployeeUI() {
 
@@ -23,7 +21,7 @@ public class EmployeeUI implements Runnable {
 
         this.ctrl1 = new SpecialistDoctorController();
 
-        this.orgRoles = new OrgRole();
+        this.orgRoles = new OrgRoles();
 
     }
 
@@ -40,6 +38,8 @@ public class EmployeeUI implements Runnable {
             do {
 
                 try {
+
+                    List<String> roles;
 
                     System.out.println("\n\n");
 

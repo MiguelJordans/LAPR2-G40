@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.time.LocalDate;
 import java.util.HashSet;
+import java.util.Set;
 
 public class TestStore {
 
@@ -60,14 +61,14 @@ public class TestStore {
         return false;
     }
 
-    public HashSet<Test> getInvalidTestList() {
-        HashSet<Test> invalidTests = new HashSet<>();
+    public Set<Test> getInvalidTestList() {
+        Set<Test> invalidTests = new HashSet<>();
         for (Test temp : testsList) {
             if (!temp.isValid()) {
                 invalidTests.add(temp);
             }
         }
-        return invalidTests;//implement;
+        return invalidTests;
     }
 
     public List<Test> getTestList(){

@@ -1,7 +1,0 @@
-
-V
-java:S4973V"9Use the "equals" method if value comparison was intended.(Üá»­8ü¨£›/
-^
-java:S1128"HRemove this unused import 'app.domain.model.ClinicalAnalysisLaboratory'.(³Î°È
-x
-java:S1450"]Remove the "testTypeMapper" field and declare it as a local variable in the relevant methods.(ËÇÉüÿÿÿÿ

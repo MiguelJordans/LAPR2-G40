@@ -5,7 +5,6 @@ import app.domain.mappers.dto.TestDTO;
 import app.domain.model.*;
 import app.domain.stores.SampleStore;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,7 +45,7 @@ public class SampleController {
      * Creates a test type (Calling the TestType constructor implemented in the TestTypeStore)
      */
 
-    public void CreateSample(int n) throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException {
+    public void CreateSample(int n) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
         smStore = company.getSampleStore();
 
@@ -77,7 +76,7 @@ public class SampleController {
         List<Test> testList = new ArrayList<>();
 
         for(Test test : company.getTestList()){
-            if(test.getState()=="SAMPLE_COLLECTED"||test.getState()=="SAMPLE_ANALYSED"||test.getState()=="DIAGNOSTIC_MADE"||test.getState()=="VALIDATED")
+            if(test.getState().equals("SAMPLE_COLLECTED")||test.getState().equals("SAMPLE_ANALYSED")||test.getState().equals("DIAGNOSTIC_MADE")||test.getState().equals("VALIDATED"))
                 testList.add(test);
         }
 
@@ -121,9 +120,9 @@ public class SampleController {
 
     public void convertDTOintoTest(TestDTO testDTO) {
 
-        for (Test tr : this.getTestList()) {
-            if (testDTO.getTestID() == tr.getTestID()) {
-                this.tr = tr;
+        for (Test tr1 : this.getTestList()) {
+            if (testDTO.getTestID().equals(tr1.getTestID())) {
+                this.tr = tr1;
             }
         }
 

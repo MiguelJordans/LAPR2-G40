@@ -55,9 +55,7 @@ public class BarcodeAdapter1 implements BarcodeAdapter {
 
     private Barcode generateUPCBarcode(String barcodeText) throws BarcodeException {
 
-        Barcode bC = BarcodeFactory.createUPCA(barcodeText);
-
-        return bC;
+        return BarcodeFactory.createUPCA(barcodeText);
     }
 
     private BufferedImage generateUPCBarcodeImage(Barcode barcode) throws OutputException {

@@ -2,12 +2,7 @@ package app.ui.console;
 
 import app.controller.ParameterController;
 import app.domain.mappers.dto.ParameterCategoryDTO;
-import app.domain.model.ParameterCategory;
-import app.domain.stores.ParameterCategoryStore;
 import app.ui.console.utils.Utils;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class ParameterUI implements Runnable {
 

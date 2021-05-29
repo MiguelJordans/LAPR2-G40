@@ -6,6 +6,10 @@ package app.domain.shared;
  */
 public class Constants {
 
+    private Constants(){
+        //Constants
+    }
+
     public static final String ROLE_ADMIN = "ADMINISTRATOR";
     public static final String ROLE_RECEPTIONIST = "RECEPTIONIST";
     public static final String ROLE_MEDICAL_LAB_TECHNICIAN = "MEDICAL_LAB_TECHNICIAN";
@@ -41,9 +45,10 @@ public class Constants {
 
     public static final int DOCTOR_INDEX_NUMBER_MAX=6;
     public static final int NAME_EMPLOYEE_MAX=30;
-    public static final int ADRESS_EMPLOYEE_MAX=30;
+    public static final int ADDRESS_EMPLOYEE_MAX =30;
     public static final int PHONE_NUMBER_MAX=11;
     public static final int SOC_MAX=7;
+    public static final int EMPLOYEE_ID=30;
 
     public static final int ACCESS_KEY = 12345;
     public static final String COVID_REFERENCE_API = "app.domain.model.RefValueAdapter1";

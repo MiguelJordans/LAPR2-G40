@@ -42,10 +42,10 @@ public class RecordTestResultController {
 
         List<Test> tests = testStore.getTestList();
 
-        for (Test test : tests) {
-            if (test.getTestID().equals(testID)) {
-                this.test = test;
-                return test.compareTestState("SAMPLE_COLLECTED");
+        for (Test test1 : tests) {
+            if (test1.getTestID().equals(testID)) {
+                this.test = test1;
+                return test1.compareTestState("SAMPLE_COLLECTED");
             }
         }
         return false;
