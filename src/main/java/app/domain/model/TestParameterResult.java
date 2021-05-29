@@ -2,8 +2,8 @@ package app.domain.model;
 
 public class TestParameterResult {
 
-    String paramID;
-    double result;
+    private String paramID;
+    private double result;
     private RefValue refValue;
 
     public TestParameterResult(String paramID, double result) {
@@ -27,8 +27,4 @@ public class TestParameterResult {
         this.refValue = refValue;
     }
 
-    @Override
-    public String toString() {
-        return "Parameter: " + paramID + "\n Result: " + result + ", " + refValue.getMetric() + "Reference values: \n" + "Max: " + refValue.getRefValueMax() + "\n Min: " + refValue.getRefValueMin();
-    }
 }

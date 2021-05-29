@@ -13,10 +13,6 @@ public class TestStore {
     private static List<Test> testsList = new ArrayList<>();
     private static int testNumber = 1;
 
-    public List<Test> getTestsList() {
-        return testsList;
-    }
-
     public Test createTest(String citizenCardNumber, String testID, String nhsCode, TestType testType) {
         Test test = new Test(citizenCardNumber, testID, nhsCode, testType);
 
