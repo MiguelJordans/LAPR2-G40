@@ -43,7 +43,7 @@ public class EmployeeSuper {
      * @param orgRole the the Employee's ordanization role
      */
 
-    public  void checkOrgRole(String orgRole) {
+    public void checkOrgRole(String orgRole) {
 
         if (StringUtils.isBlank(orgRole)) {
             throw new IllegalArgumentException("Organization role cannot be empty.");

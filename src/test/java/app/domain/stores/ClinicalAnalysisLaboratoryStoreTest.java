@@ -90,6 +90,31 @@ public class ClinicalAnalysisLaboratoryStoreTest {
     }
 
     @Test
+    public void saveClinicalAnalysisLaboratory2() {
+
+        List<TestType> ttList = new ArrayList<>();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE","yes","aaa",pcList);
+        ttList.add(tt);
+
+        //Arrange
+        ClinicalAnalysisLaboratoryStore store = new ClinicalAnalysisLaboratoryStore();
+        ClinicalAnalysisLaboratory cal = store.createClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "3245681253",ttList);
+        store.saveClinicalAnalysisLaboratory();
+
+        //Act
+        boolean expected = false;
+        boolean actual = store.saveClinicalAnalysisLaboratory();
+
+        //Assert
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
     public void listAdd() {
 
         List<TestType> ttList = new ArrayList<>();

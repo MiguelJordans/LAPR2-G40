@@ -1,0 +1,11 @@
+
+|
+java:S1488-"aImmediately return this expression instead of assigning it to the temporary variable "randomBar".(Ü“­ùÿÿÿÿ
+N
+java:S1874"3Remove this use of "newInstance"; it is deprecated.(ê­æÄúÿÿÿÿ
+W
+java:S1126;"AReplace this if-then-else statement by a single return statement.(Ùøƒ”
+\
+java:S1126J"AReplace this if-then-else statement by a single return statement.(ÅêŠüÿÿÿÿ
+P
+java:S2209J"5Change this instance-reference to a static reference.(ÅêŠüÿÿÿÿ

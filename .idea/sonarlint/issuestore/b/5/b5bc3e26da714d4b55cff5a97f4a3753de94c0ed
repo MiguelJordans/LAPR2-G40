@@ -1,0 +1,8 @@
+
+`
+java:S1128"CRemove this unused import 'app.domain.model.ClientUserInformation'.(ÀÌž—8±¼Ðž›/
+W
+java:S11269"AReplace this if-then-else statement by a single return statement.(ß¼·Ô
+\
+java:S1126K"AReplace this if-then-else statement by a single return statement.(œïË§úÿÿÿÿ
+O	java:S106©"9Replace this use of System.out or System.err by a logger.(¨½ì‚

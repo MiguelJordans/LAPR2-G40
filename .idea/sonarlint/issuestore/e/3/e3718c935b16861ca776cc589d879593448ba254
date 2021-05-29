@@ -1,0 +1,11 @@
+
+i
+java:S1450"TRemove the "roles" field and declare it as a local variable in the relevant methods.(‹Å}
+h
+java:S3776!"RRefactor this method to reduce its Cognitive Complexity from 23 to the 15 allowed.(“–ış
+S	java:S106,"9Replace this use of System.out or System.err by a logger.(ˆšÑÖüÿÿÿÿ
+S	java:S1065"9Replace this use of System.out or System.err by a logger.(ßäáÑüÿÿÿÿ
+S	java:S106H"9Replace this use of System.out or System.err by a logger.(©şêÜúÿÿÿÿ
+M	java:S106I"9Replace this use of System.out or System.err by a logger.(ÒÆÔQ
+S	java:S106U"9Replace this use of System.out or System.err by a logger.(™úôÁüÿÿÿÿ
+S	java:S106\"9Replace this use of System.out or System.err by a logger.(™úôÁüÿÿÿÿ

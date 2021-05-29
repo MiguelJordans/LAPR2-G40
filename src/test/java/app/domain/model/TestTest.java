@@ -29,6 +29,50 @@ public class TestTest {
 
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void checkTestNHSBlank() {
+
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa", "aaa", "aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE", "yes", "aaa", pcList);
+
+        app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "", tt);
+
+
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void checkTestNHSTooManyChars() {
+
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa", "aaa", "aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE", "yes", "aaa", pcList);
+
+        app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "11111111111111111111111111111111111111111111111111", tt);
+
+
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void checkTestNHSNotValid() {
+
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa", "aaa", "aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE", "yes", "aaa", pcList);
+
+        app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "==",tt);
+
+    }
+
     @Test
     public void getNHS() {
 
@@ -75,6 +119,11 @@ public class TestTest {
         TestType tt = new TestType("1abcE", "yes", "aaa", pcList);
 
         app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", tt);
+
+        List<Parameter> parameters = new ArrayList<>();
+        parameters.add(pp);
+
+        test.createTestParameter("100000", parameters);
 
         try {
             test.addTestParameterResult(pp.getCode(), 1);

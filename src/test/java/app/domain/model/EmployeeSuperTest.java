@@ -352,4 +352,40 @@ public class EmployeeSuperTest {
 
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void checkOrgRoleBlank() {
+
+        Employee emp = new Employee("AAAAA", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001","1234567", "");
+
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void checkOrgRoleNull() {
+
+        Employee emp = new Employee("AAAAA", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001","1234567", "");
+
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void checkSocRoleBlank() {
+
+        Employee emp = new Employee("AAAAA", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001","", "YAH");
+
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void checkSocRoleTooManyChars() {
+
+        Employee emp = new Employee("AAAAA", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001","12345678", "YAH");
+
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void checkSocRoleInvalid() {
+
+        Employee emp = new Employee("AAAAA", "3425 Stone Street", "dasc@gmail.com", "01492235687", "DASC00001","****", "YAH");
+
+    }
+
+
 }
