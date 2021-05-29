@@ -1,6 +1,7 @@
 package app.ui.console;
 
 import app.domain.model.*;
+import app.domain.stores.SampleStore;
 import app.ui.console.utils.Utils;
 
 public class RegisteredSampleUI implements Runnable {

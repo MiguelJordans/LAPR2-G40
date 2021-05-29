@@ -1,5 +1,0 @@
-MEDICAL_LAB_TECHNICIAN INFORMATION: 
-
-Name: aaa
-Email: a@email.com
-Password: QJCoqNostX

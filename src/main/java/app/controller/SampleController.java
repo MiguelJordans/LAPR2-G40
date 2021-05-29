@@ -1,12 +1,12 @@
 package app.controller;
 
-import app.domain.mappers.SampleMapper;
 import app.domain.mappers.TestMapper;
-import app.domain.mappers.dto.SampleDTO;
 import app.domain.mappers.dto.TestDTO;
 import app.domain.model.*;
+import app.domain.stores.SampleStore;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class SampleController {
@@ -51,12 +51,8 @@ public class SampleController {
         smStore = company.getSampleStore();
 
         for (int i = 0; i < n; i++) {
-            //sampleListTemporary.add(smStore.CreateSample(tt)); O controller não esta a conseguir criar a sample deve ter aqui um erro
             this.smStore.createSample(tr);
-            //this.smStore.addToTemporaryList();
             this.smStore.saveSample();
-            //this.smStore.barcodeImage();
-
         }
     }
 
@@ -75,6 +71,20 @@ public class SampleController {
      *
      * @return the saving of an instance of a Test Type
      */
+
+    public List<Test> getCreatedTests (){
+
+        List<Test> testList = new ArrayList<>();
+
+        for(Test test : company.getTestList()){
+            if(test.getState()=="SAMPLE_COLLECTED"||test.getState()=="SAMPLE_ANALYSED"||test.getState()=="DIAGNOSTIC_MADE"||test.getState()=="VALIDATED")
+                testList.add(test);
+        }
+
+        return testList;
+
+    }
+
 
     public boolean saveSample() {
         return this.smStore.saveSample();

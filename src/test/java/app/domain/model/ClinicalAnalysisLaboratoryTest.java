@@ -655,7 +655,7 @@ public class ClinicalAnalysisLaboratoryTest {
         TestType tt = new TestType("1abcE","yes","aaa",pcList);
         ttList.add(tt);
 
-        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "014922356870", " ",ttList);
+        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "014922356870", "",ttList);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -789,4 +789,40 @@ public class ClinicalAnalysisLaboratoryTest {
         //Assert
         Assert.assertEquals(expected, actual);
     }
+
+    @Test
+    public void getTestList(){
+        List<TestType> ttList = new ArrayList<>();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE","yes","aaa",pcList);
+        ttList.add(tt);
+
+        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "1234567890",ttList);
+
+        List<TestType> testTypeList = cal.getTtList();
+    }
+
+    @Test
+    public void setTestList(){
+        List<TestType> ttList = new ArrayList<>();
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE","yes","aaa",pcList);
+        ttList.add(tt);
+
+        ClinicalAnalysisLaboratory cal = new ClinicalAnalysisLaboratory("LAB01", "FirstCal", "3425 Stone Street", "01492235687", "1234567890",ttList);
+
+        List<TestType> testTypeList = cal.getTtList();
+
+        cal.setTtList(testTypeList);
+
+    }
+
 }

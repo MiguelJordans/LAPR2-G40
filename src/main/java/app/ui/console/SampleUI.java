@@ -2,14 +2,11 @@ package app.ui.console;
 
 import app.controller.SampleController;
 import app.domain.mappers.dto.TestDTO;
-import app.domain.model.*;
-import app.domain.stores.TestStore;
 import app.ui.console.utils.Utils;
 
 public class SampleUI implements Runnable {
 
-    private SampleController ctrl;
-    private TestStore trStore;
+    private final SampleController ctrl;
 
     public SampleUI() {
         this.ctrl = new SampleController();
@@ -18,13 +15,12 @@ public class SampleUI implements Runnable {
     @Override
     public void run() {
 
-        boolean count = true;
-        boolean flag = true;
+        boolean count;
+        boolean flag;
         boolean m = false;
         boolean nbol = false;
 
-        Test tr = null;
-        TestDTO trDto = null;
+        TestDTO trDto;
 
         if (this.ctrl.getTestListDto() == null || this.ctrl.getTestListDto().isEmpty()) {
             System.out.println("The list is empty! Please, try adding at least one test in order to create the sample(s)!");

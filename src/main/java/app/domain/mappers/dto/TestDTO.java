@@ -1,10 +1,5 @@
 package app.domain.mappers.dto;
 
-import app.domain.model.Test;
-import app.domain.model.TestType;
-
-import java.util.List;
-
 public class TestDTO {
 
     private String citizenCardNumber;

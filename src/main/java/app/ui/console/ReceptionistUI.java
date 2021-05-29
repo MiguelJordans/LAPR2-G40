@@ -8,14 +8,13 @@ import java.util.List;
 public class ReceptionistUI implements Runnable {
 
         public ReceptionistUI() {
-
             //Receptionist Menu
-
         }
 
         public void run() {
             List<MenuItem> options = new ArrayList<>();
             options.add(new MenuItem("Register a new client ", new ClientUI()));
+            options.add(new MenuItem("Register a test ", new TestUI()));
 
             int option = 0;
             do {

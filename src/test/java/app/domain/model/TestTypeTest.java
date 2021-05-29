@@ -490,4 +490,66 @@ public class TestTypeTest {
 
     }
 
+    @Test
+    public void getExternalModule(){
+
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1111","111111111111111","11111111",pcList);
+
+        tt.getExternalModule();
+
+
+    }
+
+    @Test
+    public void setExternalModule(){
+
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1111","111111111111111","11111111",pcList);
+
+        Assert.assertNotNull(tt.setExternalModule("BL000"));
+
+
+    }
+
+    @Test
+    public void setExternalModule2(){
+
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1111","111111111111111","11111111",pcList);
+
+        Assert.assertNotNull(tt.setExternalModule("COV19"));
+
+
+    }
+
+    @Test
+    public void setExternalModuleNull(){
+
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa","aaa","aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1111","111111111111111","11111111",pcList);
+
+        Assert.assertNull(tt.setExternalModule("aaaa"));
+
+
+    }
+
+
+
 }
