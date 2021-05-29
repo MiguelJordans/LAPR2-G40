@@ -92,24 +92,42 @@ As a medical lab technician, I want to record the samples collected in the scope
 
 | Interaction ID | Question: Which class is responsible for... | Answer  | Justification (with patterns)  |
 |:-------------  |:--------------------- |:------------|:---------------------------- |
-| Step 1  		 |							 |             |                              |
-| Step 2  		 |							 |             |                              |
-| Step 3  		 |							 |             |                              |
-| Step 4  		 |							 |             |                              |
-| Step 5  		 |							 |             |                              |
-| Step 6  		 |							 |             |                              |              
+| **Step/MSG 1**: asks to create a sample 		 |	...interacting with the actor?					 |  SampleUI           |  **PureFabrication** : There is no reason to assign this responsibility to any existing class in the Domain model                            |
+| 		 |	...coordinating the US?	   |  SampleController    |  **Controller**   |
+| 		 |	...knows TestStore?	 |  Company   | **IE**: Company knows the TestStore to which it is delegating some tasks.      |
+| 		 |	...checks all tests available in the system?	 |  TestStore   | **IE**: The testStore knows all tests available in the system.      |
+| 		 |	...verify if the test already has sample(s) collected?	 |  Test   | **IE**: The test knows its own state.      |
+| 	 |	...gets the data to expose to the user?	|  TestMapper   | **DTO**: In order to detach the domain layer from the UI layer, we use a data transfer object (DTO) to only extract data from the domain class (and not extract methods from the domain class)    |
+|  **Step/MSG 2**: shows the list of registered tests (without a sample)	 |	n/a  |     |   |
+|  **Step/MSG 3**: selects a test		 |	...creates the SampleStore?	 |  Company   | **PureFabrication** : By applying **HC+LC**, this delegates that the responsibility for such will be the Company.       |
+|  **Step/MSG 4**: asks how many samples the actor wishes to create |		n/a				 |        |             |
+|  **Step/MSG 5**:  types the number of samples to create		 |	...creates the desired samples?			 |  SampleStore           | **Creator(R1)** and **HC+LC** : By the application of the Creator(R1), it would be the company, but, by applying HC + LC  to the company, this delegates that responsibility to the "SampleStore"                              |
+| 		 |	...creates the barcodeText?	   |  SampleStore   | **IE**: Responsible for generating the barcodeText  |
+| 		 |	...knows which API should the system use?	   |  SampleStore    |  **Protected variation** : The system knows which API should be use in order to create the Barcode   |
+| 		 |	...creates the barcode?	       |  BarcodeAdapter    |  **IE**: Responsible for creating the barcode and its components  |
+| 		 |	...creates the barcodeImage?   |  BarcodeAdapter    |  **IE**: Responsible for creating the barcode image and its components   |
+| 		 |	...exports the barcodeImage in the jpg format?   |  BarcodeAdapter    | **IE**: Responsible for exporting the images (in jpg format) into a folder |
+|  **Step/MSG 6**:  shows all data and requests confirmation		 |	... validating the data locally (e.g.: mandatory vs non-mandatory data)? 			 |   Sample   |  **IE**: An object knows its data            |
+| 	 |	... validating the data globally (e.g.: duplicated)?			 |  SampleStore           | **IE**: Knows all samples             |
+|  **Step/MSG 7**:  confirms all data 		 |	...saving the created sample(s)?		 |   SampleStore          |  **IE**: The SampleStore knows all samples in the system and stores the created samples  |   
+|  **Step/MSG 8**: informs operation sucess		 |	... informing operation success?	 |   SampleUI|  **IE**: Responsible for user interaction |              
 
 ### Systematization ##
 
 According to the taken rationale, the conceptual classes promoted to software classes are: 
 
- * Class1
- * Class2
- * Class3
+ * Sample
+ * Company
+ * Barcode
+ * BarcodeImage
 
 Other software classes (i.e. Pure Fabrication) identified: 
- * xxxxUI  
- * xxxxController
+ * SampleUI  
+ * SampleController
+ * SampleStore
+ * TestStore
+ * BarcodeAdapter
+ * TestMapper
 
 ## 3.2. Sequence Diagram (SD)
 
