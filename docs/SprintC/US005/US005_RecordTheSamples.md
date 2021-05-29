@@ -128,6 +128,7 @@ Other software classes (i.e. Pure Fabrication) identified:
  * TestStore
  * BarcodeAdapter
  * TestMapper
+ * TestDTO
 
 ## 3.2. Sequence Diagram (SD)
 
@@ -138,33 +139,779 @@ Other software classes (i.e. Pure Fabrication) identified:
 ![US005-CD](US005_CD.svg)
 
 # 4. Tests 
-*In this section, it is suggested to systematize how the tests were designed to allow a correct measurement of requirements fulfilling.* 
 
-**_DO NOT COPY ALL DEVELOPED TESTS HERE_**
+***SampleTest***
 
-**Test 1:** Check that it is not possible to create an instance of the Example class with null values. 
+**Test 1:** Create a sample. 
 
-	@Test(expected = IllegalArgumentException.class)
-		public void ensureNullIsNotAllowed() {
-		Exemplo instance = new Exemplo(null, null);
-	}
+	@Test
+    public void createSample() {
 
-*It is also recommended to organize this content by subsections.* 
+        ParameterCategory parameterCategory1 = new ParameterCategory("12346", "cat", "1212");
+
+        List<ParameterCategory> categories2 = new ArrayList<>();
+        categories2.add(parameterCategory1);
+
+        TestType bloodTest = new TestType("BL000", "Blood Test", "Needle", categories2);
+        app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", bloodTest);
+
+        Sample sm1 = new Sample(test, "11111111111");
+
+    }
+
+**Test 2:** Get sample barcode.
+
+        @Test
+        public void getBarcode1() {
+
+          ParameterCategory parameterCategory1 = new ParameterCategory("12346", "cat", "1212");
+
+         List<ParameterCategory> categories2 = new ArrayList<>();
+         categories2.add(parameterCategory1);
+
+         TestType bloodTest = new TestType("BL000", "Blood Test", "Needle", categories2);
+          app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", bloodTest);
+
+          Sample sm1 = new Sample(test, "11111111111");
+
+         String expected = "11111111111";
+         String actual = sm1.getBarcode();
+
+          Assert.assertEquals(expected, actual);
+
+     }
+
+**Test 3:** Get Test (associated to a sample).
+
+    @Test
+    public void getTest() {
+
+        ParameterCategory parameterCategory1 = new ParameterCategory("12346", "cat", "1212");
+
+        List<ParameterCategory> categories2 = new ArrayList<>();
+        categories2.add(parameterCategory1);
+
+        TestType bloodTest = new TestType("BL000", "Blood Test", "Needle", categories2);
+        app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", bloodTest);
+
+        Sample sm1 = new Sample(test, "11111111111");
+
+        app.domain.model.Test expected = test;
+        app.domain.model.Test actual = sm1.getTr();
+
+        Assert.assertEquals(expected, actual);
+
+    }
+
+**Test 4:** Set barcode.
+
+        @Test
+        public void setBarcode() {
+
+        ParameterCategory parameterCategory1 = new ParameterCategory("12346", "cat", "1212");
+
+        List<ParameterCategory> categories2 = new ArrayList<>();
+        categories2.add(parameterCategory1);
+
+        TestType bloodTest = new TestType("BL000", "Blood Test", "Needle", categories2);
+        app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", bloodTest);
+
+        Sample sm1 = new Sample(test, "11111111111");
+
+        String expected = "19111111111";
+
+        sm1.setBarcode(expected);
+
+        Assert.assertNotNull(sm1.getBarcode());
+
+    }
+
+**Test 5:** Set barcode.
+
+        @Test
+        public void setTest() {
+
+        ParameterCategory parameterCategory1 = new ParameterCategory("12346", "cat", "1212");
+
+        List<ParameterCategory> categories2 = new ArrayList<>();
+        categories2.add(parameterCategory1);
+
+        TestType bloodTest = new TestType("BL000", "Blood Test", "Needle", categories2);
+        app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", bloodTest);
+
+        Sample sm1 = new Sample(test, "11111111111");
+
+        app.domain.model.Test expected = new app.domain.model.Test("1234567890123412", "120000000000", "991999999999", bloodTest);
+
+        sm1.setTr(expected);
+
+        Assert.assertNotNull(sm1.getTr());
+
+    }
+
+***SampleStore and BarcodeAdapter***
+
+**Test 1:** Create a sample using SampleStore.
+
+        @Test
+        public void createSample() {
+
+        ParameterCategory parameterCategory1 = new ParameterCategory("12346", "cat", "1212");
+
+        List<ParameterCategory> categories2 = new ArrayList<>();
+        categories2.add(parameterCategory1);
+
+        TestType bloodTest = new TestType("BL000", "Blood Test", "Needle", categories2);
+        app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", bloodTest);
+
+        SampleStore sampleStore = new SampleStore();
+
+        try {
+            Assert.assertNotNull(sampleStore.createSample(test));
+        } catch (Exception e) {
+
+        }
+
+    }
+
+**Test 2:** Validate a sample.
+
+        @Test
+        public void validateSample() {
+
+        ParameterCategory parameterCategory1 = new ParameterCategory("12346", "cat", "1212");
+
+        List<ParameterCategory> categories2 = new ArrayList<>();
+        categories2.add(parameterCategory1);
+
+        TestType bloodTest = new TestType("BL000", "Blood Test", "Needle", categories2);
+        app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", bloodTest);
+
+        SampleStore sampleStore = new SampleStore();
+
+        try {
+            sampleStore.createSample(test);
+            Assert.assertTrue(sampleStore.validateSample());
+
+        } catch (Exception e) {
+
+        }
+
+    }
+
+**Test 3:** Save a sample.
+
+        @Test
+        public void saveSample() {
+
+        ParameterCategory parameterCategory1 = new ParameterCategory("12346", "cat", "1212");
+
+        List<ParameterCategory> categories2 = new ArrayList<>();
+        categories2.add(parameterCategory1);
+
+        TestType bloodTest = new TestType("BL000", "Blood Test", "Needle", categories2);
+        app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", bloodTest);
+
+        SampleStore sampleStore = new SampleStore();
+
+        try {
+            sampleStore.createSample(test);
+            Assert.assertTrue(sampleStore.saveSample());
+
+        } catch (Exception e) {
+
+        }
+
+    }
+
+**Test 4:** Get sample (from SampleStore (from list index))
+
+        @Test
+        public void getSample() {
+
+        ParameterCategory parameterCategory1 = new ParameterCategory("12346", "cat", "1212");
+
+        List<ParameterCategory> categories2 = new ArrayList<>();
+        categories2.add(parameterCategory1);
+
+        TestType bloodTest = new TestType("BL000", "Blood Test", "Needle", categories2);
+        app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", bloodTest);
+
+        SampleStore sampleStore = new SampleStore();
+
+        try {
+            sampleStore.createSample(test);
+            Assert.assertNotNull(sampleStore.getSample(0));
+
+        } catch (Exception e) {
+
+        }
+
+    }
+
+**Test 5:** Get sample (from SampleStore (the last objected saved in the sampleList))
+
+        @Test
+        public void getSM() {
+
+        ParameterCategory parameterCategory1 = new ParameterCategory("12346", "cat", "1212");
+
+        List<ParameterCategory> categories2 = new ArrayList<>();
+        categories2.add(parameterCategory1);
+
+        TestType bloodTest = new TestType("BL000", "Blood Test", "Needle", categories2);
+        app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", bloodTest);
+
+        SampleStore sampleStore = new SampleStore();
+
+        try {
+            sampleStore.createSample(test);
+            Assert.assertNotNull(sampleStore.getSm());
+
+        } catch (Exception e) {
+
+        }
+
+    }
+
+**Test 6** Get sample list
+
+        @Test
+        public void getSampleList() {
+
+        ParameterCategory parameterCategory1 = new ParameterCategory("12346", "cat", "1212");
+
+        List<ParameterCategory> categories2 = new ArrayList<>();
+        categories2.add(parameterCategory1);
+
+        TestType bloodTest = new TestType("BL000", "Blood Test", "Needle", categories2);
+        app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", bloodTest);
+
+        SampleStore sampleStore = new SampleStore();
+
+        try {
+            sampleStore.createSample(test);
+            List<Sample> sampleList;
+
+            sampleList = sampleStore.getSampleList();
+
+            Assert.assertNotNull(sampleList);
+
+        } catch (Exception e) {
+
+        }
+
+    }
+
+***SampleDTO and SampleMapper***
+
+**Test 1:** toDto
+
+        @Test
+        public void toDTO(){
+
+        ParameterCategory parameterCategory1 = new ParameterCategory("12346", "cat", "1212");
+
+        List<ParameterCategory> categories2 = new ArrayList<>();
+        categories2.add(parameterCategory1);
+
+        TestType bloodTest = new TestType("BL000", "Blood Test", "Needle", categories2);
+        app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", bloodTest);
+
+        Sample sm1 = new Sample(test, "11111111111");
+        List<Sample> sampleList = new ArrayList<>();
+
+        sampleList.add(sm1);
+
+        SampleMapper sampleMapper = new SampleMapper();
+
+        sampleMapper.toDTO(sampleList);
+
+    }
+
+**Test 2:** Create SampleDTO
+
+        @Test
+        public void createSampleDto(){
+
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa", "aaa", "aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE","yes","aaa",pcList);
+
+        app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", tt);
+
+        SampleDTO sampleDTO = new SampleDTO(test,"12345678901");
+
+        Assert.assertNotNull(sampleDTO);
+
+    }
+
+**Test 3:** Get barcode (from SampleDTO)
+
+        @Test
+        public void getBarcode(){
+
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa", "aaa", "aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE","yes","aaa",pcList);
+
+        app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", tt);
+
+        SampleDTO sampleDTO = new SampleDTO(test,"12345678901");
+
+
+
+        Assert.assertNotNull(sampleDTO.getBarcode());
+
+    }
+
+**Test 4** Get test (from SampleDTO)
+
+        @Test
+        public void getTR(){
+
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa", "aaa", "aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE","yes","aaa",pcList);
+
+        app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", tt);
+
+        SampleDTO sampleDTO = new SampleDTO(test,"12345678901");
+
+
+
+        Assert.assertNotNull(sampleDTO.getTr());
+
+    }
+
+**Test5** SampleDTO toString
+
+      @Test
+      public void TesttoString(){
+
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        ParameterCategory pc = new ParameterCategory("aaaaa", "aaa", "aaa");
+        pcList.add(pc);
+
+        TestType tt = new TestType("1abcE","yes","aaa",pcList);
+
+        app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", tt);
+
+        SampleDTO sampleDTO = new SampleDTO(test,"12345678901");
+
+        String expected = "SampleDTO{tr=Test{citizenCardNumber='1234567890123456', testID='100000000000', nhsCode='999999999999', tt= Test Code: 1abcE, Description:yes, CollectingMethod:aaa, state=CREATED, tpList=[]}, barcode='12345678901'}";
+
+        String actual = sampleDTO.toString();
+
+        Assert.assertEquals(expected,actual);
+
+    }
 
 # 5. Construction (Implementation)
 
-*In this section, it is suggested to provide, if necessary, some evidence that the construction/implementation is in accordance with the previously carried out design. Furthermore, it is recommeded to mention/describe the existence of other relevant (e.g. configuration) files and highlight relevant commits.*
+### Class SampleUI
 
-*It is also recommended to organize this content by subsections.* 
+    package app.ui.console;
+
+    import app.controller.SampleController;
+    import app.mappers.dto.TestDTO;
+    import app.ui.console.utils.Utils;
+
+    public class SampleUI implements Runnable {
+
+    private final SampleController ctrl;
+
+    public SampleUI() {
+        this.ctrl = new SampleController();
+    }
+
+    @Override
+    public void run() {
+
+        boolean count;
+        boolean flag;
+        boolean m = false;
+        boolean nbol = false;
+
+        TestDTO trDto;
+
+        if (this.ctrl.getTestListDto() == null || this.ctrl.getTestListDto().isEmpty()) {
+            System.out.println("The list is empty! Please, try adding at least one test in order to create the sample(s)!");
+
+        } else {
+            do {
+                boolean exception = false;
+                do {
+
+                     trDto = (TestDTO) Utils.showAndSelectOne(this.ctrl.getTestListDto(), "Select the test: \n");
+
+                    if (trDto != null)
+                        m = trDto.compareState(trDto.getState());
+
+
+                    if (!m) {
+                        if(trDto==null){
+                            System.out.println("Please choose a valid test!\n");
+                        } else
+                        System.out.println("Please choose a valid test (sample is already collected!)\n");
+                    }
+
+                } while (!m);
+
+                do {
+                    try {
+
+
+                        int n = Utils.readIntegerFromConsole("Type the number of samples that you wish to create: ");
+
+                        ctrl.addTest(trDto);
+
+                        this.ctrl.createSample(n);
+
+                        exception = false;
+
+                    } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                        System.out.println("Incorrect input of data (an error has occurred), please try again.");
+                        exception = true;
+
+                    }
+                } while (exception);
+
+
+                count = Utils.confirm("Sample(s) created! Do you wish to see it(them) (s/n)?");
+
+                if (count) {
+
+                    do {
+                        Utils.showListWithouThe0(ctrl.getSampleList(), "Do you wish to delete any?(s/n)");
+                        flag = Utils.confirm("");
+                        count = flag;
+                        nbol = flag;
+
+                        if (flag) {
+                            int a = Utils.readIntegerFromConsole("Type the number of the sample that you wish to delete: ");
+                            ctrl.getSampleList().remove(a - 1);
+                            count = !flag;
+
+                        }
+
+                    }while(nbol);
+                }
+
+
+            } while (count);
+
+            ctrl.getSm().getTr().setState("SAMPLE_COLLECTED");
+
+         }
+       }
+    }
+
+###Class SampleController
+
+      package app.controller;
+
+      import app.mappers.TestMapper;
+      import app.mappers.dto.TestDTO;
+      import app.domain.model.*;
+      import app.domain.stores.SampleStore;
+
+      import java.util.ArrayList;
+      import java.util.List;
+
+      public class SampleController {
+
+      private Company company;
+      private SampleStore smStore;
+      private TestMapper testMapper;
+
+      static List<Sample> sampleListTemporary;
+
+      private Test tr;
+
+    /**
+     * Creates an empty Test Type controller
+     */
+
+    public SampleController() {
+        this(App.getInstance().getCompany());
+    }
+
+    /**
+     * Instance of a Test Type
+     *
+     * @param company the company that administrates the system
+     */
+
+
+    public SampleController(Company company) {
+        this.company = company;
+    }
+
+    public void addTest(TestDTO trDto){
+        convertDTOintoTest(trDto);
+    }
+
+    /**
+     * Creates a test type (Calling the TestType constructor implemented in the TestTypeStore)
+     */
+
+    public void createSample(int n) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+
+        smStore = company.getSampleStore();
+
+        for (int i = 0; i < n; i++) {
+            this.smStore.createSample(tr);
+            this.smStore.saveSample();
+        }
+    }
+
+    /**
+     * Transforms into string.
+     *
+     * @return the Test Type's info in string format
+     */
+
+    public Sample getSm() {
+        return smStore.getSm();
+    }
+
+    /**
+     * Saves an instance Test type.
+     *
+     * @return the saving of an instance of a Test Type
+     */
+
+    public List<Test> getCreatedTests (){
+
+        List<Test> testList = new ArrayList<>();
+
+        for(Test test : company.getTestList()){
+            if(test.getState().equals("SAMPLE_COLLECTED")||test.getState().equals("SAMPLE_ANALYSED")||test.getState().equals("DIAGNOSTIC_MADE")||test.getState().equals("VALIDATED"))
+                testList.add(test);
+        }
+
+        return testList;
+
+    }
+
+
+    public boolean saveSample() {
+        return this.smStore.saveSample();
+    }
+
+    public boolean saveSamples() {
+        for (Sample sm1 : sampleListTemporary) {
+            smStore.getSampleList().add(sm1);
+        }
+        return true;
+    }
+
+    /**
+     * Returns the list of test type already created
+     *
+     * @return the list of test type already created
+     */
+
+    public List<Sample> getSampleList() {
+        return smStore.getSampleList();
+    }
+
+    public List<Test> getTestList() {
+        return this.company.getTestList();
+    }
+
+    public List<TestDTO> getTestListDto() {
+
+        this.testMapper = new TestMapper();
+
+        return testMapper.toDTO(getTestList());
+
+    }
+
+    public void convertDTOintoTest(TestDTO testDTO) {
+
+        for (Test tr1 : this.getTestList()) {
+            if (testDTO.getTestID().equals(tr1.getTestID())) {
+                this.tr = tr1;
+            }
+        }
+
+     }
+
+    }
+
+### Sample
+
+    package app.domain.model;
+
+    public class Sample {
+
+    private Test tr;
+    private String barcode;
+
+    public Sample(Test tr,String barcode) {
+
+        this.tr=tr;
+        this.barcode=barcode;
+
+    }
+
+    public String getBarcode() {
+        return barcode;
+    }
+
+    public Test getTr() {
+        return tr;
+    }
+
+    public void setBarcode(String barcode) {
+
+        this.barcode = barcode;
+    }
+
+    public void setTr(Test tr) {
+        this.tr = tr;
+    }
+
+    @Override
+    public String toString() {
+        return "Sample {" +
+                " Test ID=" + tr.getTestID() +
+                ", Barcode=" + barcode +
+                '}';
+      }
+    }
+
+###Class BarcodeAdapter
+
+    package app.domain.model;
+
+    import app.domain.shared.Constants;
+    import net.sourceforge.barbecue.Barcode;
+    import net.sourceforge.barbecue.BarcodeException;
+    import net.sourceforge.barbecue.BarcodeFactory;
+    import net.sourceforge.barbecue.BarcodeImageHandler;
+    import net.sourceforge.barbecue.output.OutputException;
+
+    import javax.imageio.ImageIO;
+    import java.awt.image.BufferedImage;
+    import java.io.File;
+    import java.io.IOException;
+
+    public class BarcodeAdapter1 implements BarcodeAdapter {
+
+    private Barcode barcode;
+    private BufferedImage barcodeImage;
+
+    public BarcodeAdapter1() {
+      //Object created in order to create a barcode
+    }
+
+    public String generateBarcodeandBarcodeImage(String barcodeText,String filename){
+
+        try {
+
+            this.barcode = generateUPCBarcode(barcodeText);
+
+        } catch (Exception e) {
+            System.out.println("Barcode couldn't be created! Verify barcodeText!");
+        }
+
+        generateBarcodeImage(this.barcode,filename);
+
+        return barcode.getData();
+
+    }
+
+    private void generateBarcodeImage(Barcode barcode,String filename){
+
+        try{
+            this.barcodeImage = generateUPCBarcodeImage(barcode);
+        } catch (Exception e){
+            System.out.println("Barcode image couldn't be created! Verify the barcode!");
+        }
+        try{
+            barcodeImage(barcodeImage,filename);
+        } catch (IOException e){
+            e.getMessage();
+            System.out.println("Image couldn't be created! Please check the integrity of the sample!");
+        }
+
+    }
+
+    private Barcode generateUPCBarcode(String barcodeText) throws BarcodeException {
+
+        return BarcodeFactory.createUPCA(barcodeText);
+    }
+
+    private BufferedImage generateUPCBarcodeImage(Barcode barcode) throws OutputException {
+        return BarcodeImageHandler.getImage(barcode);
+    }
+
+    public String getBarcode() {
+        return barcode.getData();
+    }
+
+    private void barcodeImage(BufferedImage barcodeImage,String filename) throws IOException {
+
+        File outputfile = new File(Constants.PATH+filename+".jpg");
+
+        ImageIO.write(barcodeImage, "jpg", outputfile);
+
+     }
+
+    }
+
+###Interface BarcodeAdapter
+
+    package app.domain.model;
+
+
+    public interface BarcodeAdapter {
+
+    String generateBarcodeandBarcodeImage(String barcodeText,String filename);
+
+    String getBarcode();
+
+    }
+
+
 
 # 6. Integration and Demo 
 
-*In this section, it is suggested to describe the efforts made to integrate this functionality with the other features of the system.*
+###Integration in the Company Class
+
+    SampleStore sampleStore = new SampleStore();
+
+    public List<Sample> getSampleList() {
+        return sampleStore.getSampleList();
+    }
+
+    public SampleStore getSampleStore() {
+        return sampleStore;
+    }
+
+###Constants
+
+    public static final String BARCODE_IMAGE="BarcodeImage";
+    public static final String PATH ="Barcodes\\";
 
 
 # 7. Observations
 
-*In this section, it is suggested to present a critical perspective on the developed work, pointing, for example, to other alternatives and or future related work.*
+*As requested by the SW Client the barcodeImages are saved in a package inside the project. They are exported from the Barcode Adapter in the .jgp format with the name BarcodeImage_(testID)_(BarcodeText)*
 
 
 
