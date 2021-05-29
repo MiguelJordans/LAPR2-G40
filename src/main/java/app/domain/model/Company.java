@@ -53,7 +53,9 @@ public class Company {
 
     TestStore testStore = new TestStore();
 
-    public List<Test> getTestList(){return testStore.getTestsList();}
+    public List<Test> getTestList() {
+        return testStore.getTestList();
+    }
 
     public TestStore getTestStore() {
         return testStore;
@@ -82,7 +84,7 @@ public class Company {
         return employeeStore.getEmployeeList();
     }
 
-    public List<SpecialistDoctor> getSpecialistDoctorList(){
+    public List<SpecialistDoctor> getSpecialistDoctorList() {
         return specialistDoctorStore.getSpecialistDoctorList();
     }
 
@@ -90,7 +92,9 @@ public class Company {
         return employeeStore;
     }
 
-    public SpecialistDoctorStore getSpecialistDoctorStore() { return specialistDoctorStore; }
+    public SpecialistDoctorStore getSpecialistDoctorStore() {
+        return specialistDoctorStore;
+    }
 
 
     // US08 - ClinicalAnalysisLaboratory --------------------------------------------------------

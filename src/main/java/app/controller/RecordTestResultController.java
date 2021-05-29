@@ -40,7 +40,7 @@ public class RecordTestResultController {
             }
         }
 
-        List<Test> tests = testStore.getTestsList();
+        List<Test> tests = testStore.getTestList();
 
         for (Test test : tests) {
             if (test.getTestID().equals(testID)) {
