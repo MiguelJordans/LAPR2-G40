@@ -1,7 +1,7 @@
 package app.ui.console;
 
 import app.controller.TestTypeController;
-import app.domain.mappers.dto.ParameterCategoryDTO;
+import app.mappers.dto.ParameterCategoryDTO;
 import app.ui.console.utils.Utils;
 
 

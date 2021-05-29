@@ -1,7 +1,7 @@
 package app.controller;
 
-import app.domain.mappers.SampleMapper;
-import app.domain.mappers.dto.SampleDTO;
+import app.mappers.SampleMapper;
+import app.mappers.dto.SampleDTO;
 import app.domain.model.*;
 import app.domain.stores.SampleStore;
 import app.domain.stores.TestStore;

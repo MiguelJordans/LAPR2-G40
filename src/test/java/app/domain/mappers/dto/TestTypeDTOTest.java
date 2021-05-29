@@ -1,9 +1,7 @@
 package app.domain.mappers.dto;
 
-import app.domain.model.Parameter;
 import app.domain.model.ParameterCategory;
-import app.domain.model.TestType;
-import app.domain.stores.ParameterStore;
+import app.mappers.dto.TestTypeDTO;
 import org.junit.Assert;
 import org.junit.Test;
 

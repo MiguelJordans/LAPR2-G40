@@ -1,6 +1,7 @@
 package app.domain.mappers.dto;
 
 
+import app.mappers.dto.ParameterCategoryDTO;
 import org.junit.Assert;
 import org.junit.Test;
 

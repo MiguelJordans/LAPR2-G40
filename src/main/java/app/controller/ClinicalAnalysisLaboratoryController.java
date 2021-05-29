@@ -1,8 +1,7 @@
 package app.controller;
 
-import app.domain.mappers.TestTypeMapper;
-import app.domain.mappers.dto.TestTypeDTO;
-import app.domain.model.ClinicalAnalysisLaboratory;
+import app.mappers.TestTypeMapper;
+import app.mappers.dto.TestTypeDTO;
 import app.domain.model.Company;
 import app.domain.stores.ClinicalAnalysisLaboratoryStore;
 import app.domain.model.TestType;

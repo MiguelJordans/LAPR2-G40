@@ -1,6 +1,6 @@
-package app.domain.mappers;
+package app.mappers;
 
-import app.domain.mappers.dto.SampleDTO;
+import app.mappers.dto.SampleDTO;
 import app.domain.model.Sample;
 
 import java.util.ArrayList;

@@ -1,7 +1,7 @@
 package app.ui.console;
 
 import app.controller.ClinicalAnalysisLaboratoryController;
-import app.domain.mappers.dto.TestTypeDTO;
+import app.mappers.dto.TestTypeDTO;
 import app.ui.console.utils.Utils;
 
 public class ClinicalAnalysisLaboratoryUI implements Runnable {

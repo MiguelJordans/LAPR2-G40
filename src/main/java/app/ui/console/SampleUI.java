@@ -1,7 +1,7 @@
 package app.ui.console;
 
 import app.controller.SampleController;
-import app.domain.mappers.dto.TestDTO;
+import app.mappers.dto.TestDTO;
 import app.ui.console.utils.Utils;
 
 public class SampleUI implements Runnable {
@@ -53,7 +53,7 @@ public class SampleUI implements Runnable {
 
                         ctrl.addTest(trDto);
 
-                        this.ctrl.CreateSample(n);
+                        this.ctrl.createSample(n);
 
                         exception = false;
 

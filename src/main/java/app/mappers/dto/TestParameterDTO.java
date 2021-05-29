@@ -1,4 +1,4 @@
-package app.domain.mappers.dto;
+package app.mappers.dto;
 
 import app.domain.model.Parameter;
 import app.domain.model.TestParameterResult;

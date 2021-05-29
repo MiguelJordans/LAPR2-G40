@@ -1,7 +1,7 @@
 package app.controller;
 
-import app.domain.mappers.TestMapper;
-import app.domain.mappers.dto.TestDTO;
+import app.mappers.TestMapper;
+import app.mappers.dto.TestDTO;
 import app.domain.model.*;
 import app.domain.stores.SampleStore;
 
@@ -45,7 +45,7 @@ public class SampleController {
      * Creates a test type (Calling the TestType constructor implemented in the TestTypeStore)
      */
 
-    public void CreateSample(int n) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+    public void createSample(int n) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
         smStore = company.getSampleStore();
 

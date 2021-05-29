@@ -1,7 +1,7 @@
 package app.controller;
 
-import app.domain.mappers.ParameterCategoryMapper;
-import app.domain.mappers.dto.ParameterCategoryDTO;
+import app.mappers.ParameterCategoryMapper;
+import app.mappers.dto.ParameterCategoryDTO;
 import app.domain.model.*;
 import app.domain.stores.TestTypeStore;
 
