@@ -43,8 +43,6 @@ g
 7src/test/java/app/domain/stores/ParameterStoreTest.java,2\2\22664c2c7dd56392c373cadc9bbaacd17f3cba1d
 o
 ?src/test/java/app/domain/stores/ParameterCategoryStoreTest.java,a\d\ad10a870e86f06eb3574f636cae639ed6b48432d
-f
-6src/test/java/app/domain/stores/EmployeeStoreTest.java,3\a\3a9bdb855d5b94efa1ef21a2e4623f56d083d0cf
 d
 4src/test/java/app/domain/stores/ClientStoreTest.java,e\2\e2b46e13e389ecab1bfeccfd2f4a376c149640dc
 r

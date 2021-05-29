@@ -17,6 +17,7 @@ import java.util.List;
 import java.util.Properties;
 
 /**
+ *
  * @author Paulo Maio <pam@isep.ipp.pt>
  */
 public class App {
@@ -24,31 +25,37 @@ public class App {
     private final Company company;
     private final AuthFacade authFacade;
 
-    private App() {
+    private App()
+    {
         Properties props = getProperties();
         this.company = new Company(props.getProperty(Constants.PARAMS_COMPANY_DESIGNATION));
         this.authFacade = this.company.getAuthFacade();
         bootstrap();
     }
 
-    public Company getCompany() {
+    public Company getCompany()
+    {
         return this.company;
     }
 
 
-    public UserSession getCurrentUserSession() {
+    public UserSession getCurrentUserSession()
+    {
         return this.authFacade.getCurrentUserSession();
     }
 
-    public boolean doLogin(String email, String pwd) {
-        return this.authFacade.doLogin(email, pwd).isLoggedIn();
+    public boolean doLogin(String email, String pwd)
+    {
+        return this.authFacade.doLogin(email,pwd).isLoggedIn();
     }
 
-    public void doLogout() {
+    public void doLogout()
+    {
         this.authFacade.doLogout();
     }
 
-    private Properties getProperties() {
+    private Properties getProperties()
+    {
         Properties props = new Properties();
 
         // Add default properties and values
@@ -56,25 +63,22 @@ public class App {
 
 
         // Read configured values
-        try {
+        try
+        {
             InputStream in = new FileInputStream(Constants.PARAMS_FILENAME);
             props.load(in);
             in.close();
-<<<<<<< HEAD
-        } catch (IOException ex) {
-
-=======
         }
         catch(IOException ex)
         {
-             //Exception
->>>>>>> 09d8604fd132a4274a616ef887a3a3a8d25e7d84
+            //Exception
         }
         return props;
     }
 
 
     private void bootstrap() {
+
         this.authFacade.addUserRole(Constants.ROLE_ADMIN, Constants.ROLE_ADMIN);
         this.authFacade.addUserRole(Constants.ROLE_RECEPTIONIST, Constants.ROLE_RECEPTIONIST);
         this.authFacade.addUserRole(Constants.ROLE_MEDICAL_LAB_TECHNICIAN, Constants.ROLE_MEDICAL_LAB_TECHNICIAN);
@@ -94,7 +98,6 @@ public class App {
         this.authFacade.addUserWithRole("Laboratory Coordinator", "lcoo@lei.sem2.pt", "123456", Constants.ROLE_LABORATORY_COORDINATOR);
         this.authFacade.addUserWithRole("Client", "cc@lei.sem2.pt", "123456", Constants.ROLE_CLIENT);
         this.authFacade.addUserWithRole("Specialist Doctor", "spd@lei.sem2.pt", "123456", Constants.ROLE_SPECIALIST_DOCTOR);
-
 
         TestTypeStore testTypeStore = company.getTestTypeStore();
         ParameterCategoryStore parameterCategoryStore = company.getParameterCategoryStore();
@@ -120,7 +123,6 @@ public class App {
         testTypeStore.saveTestType();
         testTypeStore.getTestTypeList().add(bloodTest);
 
-<<<<<<< HEAD
         parameterStore.createParameter("IgGAN", "IgC", "IgGAN", parameterCategory);
         parameterStore.saveParameter();
         parameterStore.createParameter("ESR", "ESR00", "ESR", parameterCategory1);
@@ -128,7 +130,7 @@ public class App {
         parameterStore.createParameter("HB", "HB000", "HB", parameterCategory1);
         parameterStore.saveParameter();
         parameterStore.createParameter("MCH", "MCH00", "MCH", parameterCategory1);
-=======
+
         Parameter p1 = new Parameter("IgGAN","000","paramCv1",parameterCategory);
         parameterStore.saveParameter();
         parameterStore.getParameterList().add(p1);
@@ -136,7 +138,7 @@ public class App {
         parameterStore.saveParameter();
         parameterStore.getParameterList().add(p2);
         parameterStore.createParameter("ESR00", "aaa", "paramBl1", parameterCategory);
->>>>>>> 09d8604fd132a4274a616ef887a3a3a8d25e7d84
+
         parameterStore.saveParameter();
         parameterStore.createParameter("MCHC", "MCHC0", "MCHC", parameterCategory1);
         parameterStore.saveParameter();

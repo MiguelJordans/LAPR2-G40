@@ -23,10 +23,10 @@ Throughout the project's development period, the distribution of _tasks / requir
 
 | Task                        |  [Sprint A](SprintA/README.md)          | [Sprint B](SprintB/README.md) | [Sprint C](SprintC/README.md) |  [Sprint D](SprintD/README.md) |
 |-----------------------------|-----------------------------------------|------------|------------|------------|
-| Glossary                    |  [1200759 1200581](SprintA/Glossary.md) |   [](SprintB/Glossary.md)  |   [](SprintC/Glossary.md)  | [](SprintD/Glossary.md)  |
-| Use Case Diagram (UCD)      |  [1201487 1200902](SprintA/UCD.md)      |   [](SprintB/UCD.md)  |   [](SprintC/UCD.md)  | [](SprintD/UCD.md)  |
+| Glossary                    |  [1200759 1200581](SprintA/Glossary.md) |   [](SprintB/Glossary.md)  |   [1201487 1200902](SprintC/Glossary.md)  | [](SprintD/Glossary.md)  |
+| Use Case Diagram (UCD)      |  [1201487 1200902](SprintA/UCD.md)      |   [](SprintB/UCD.md)  |   [1201487 1200902](SprintC/UCD.md)  | [](SprintD/UCD.md)  |
 | Supplementary Specification |  [1200759 1200581](SprintA/FURPS.md)    |   [](SprintB/FURPS.md)  |   [](SprintC/FURPS.md)  | [](SprintD/FURPS.md)  |
-| Domain Model                |  [1201487 1200902](SprintA/DM.svg)      |   [](SprintB/DM.md)  |   [](SprintC/DM.md)  | [](SprintD/DM.md)  |
+| Domain Model                |  [1201487 1200902](SprintA/DM.svg)      |   [](SprintB/DM.md)  |   [1201487 1200902](SprintC/DM.md)  | [](SprintD/DM.md)  |
 | US 1 (SDP Activities)       |     |    |   |  |
 | US 2 (SDP Activities)       |     |    |   |  |
 | US 3 (SDP Activities)       |     |  [1200759](SprintB/US3/US3_RegisterClient.md)   |   |  |
