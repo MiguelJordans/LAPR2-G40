@@ -1,5 +1,5 @@
-SPECIALIST_DOCTOR INFORMATION: 
+SPECIALISTDOCTOR INFORMATION: 
 
 Name: Jordao
-Email: email@hotmail.com
-Password: medgXqrXca
+Email: 1201487@isep.ipp.pt
+Password: 1234567890
