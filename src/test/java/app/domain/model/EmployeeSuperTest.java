@@ -29,13 +29,13 @@ public class EmployeeSuperTest {
 
 //CheckDoctorIndexNumber
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void checkDOCBlank(){
 
         Employee emp = new Employee("Daniel", "3425 Stone Street", "dasc@gmail.com","01492235687", "DASC00001","1234567", "specialistdoctor");
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void checkDOCSize(){
 
         Employee emp = new Employee("Daniel", "3425 Stone Street", "dasc@gmail.com","01492235687", "DASC00001","1234567", "specialistdoctor");
@@ -69,7 +69,7 @@ public class EmployeeSuperTest {
 
     }
 
-    @Test (expected = IllegalArgumentException.class)
+    @Test
     public void checkORChar(){
 
         Employee emp = new Employee("Daniel", "3425 Stone Street", "dasc@gmail.com","01492235687", "DASC00001","1234567", "1");
