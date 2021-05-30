@@ -66,4 +66,8 @@ public class Constants {
 
     public static final String PASSWORD= "123456";
 
+    public static final int CITIZEN_NUMBER_CARD_MAX=16;
+
+    public static final int NAME_MAX1=36;
+
 }

@@ -214,7 +214,7 @@ public class Client {
         if (StringUtils.isBlank(name)) {
             throw new IllegalArgumentException("Name cannot be empty.");
         }
-        if ((name.length() >= 36)) {
+        if ((name.length() >= Constants.NAME_MAX1)) {
                 throw new IllegalArgumentException("Name cannot have more than 35 characters.");
         }
         for (int i = 0; i < auxchar.length; i++) {
@@ -312,7 +312,7 @@ public class Client {
         if (StringUtils.isBlank(auxStrCitizenCardNumber)) {
             throw new IllegalArgumentException("Citizen card number cannot be empty.");
         }
-        if (auxStrCitizenCardNumber.length() != 16) {
+        if (auxStrCitizenCardNumber.length() != Constants.CITIZEN_NUMBER_CARD_MAX) {
             throw new IllegalArgumentException("Citizen card number must have 16 digit numbers.");
         }
 
@@ -339,7 +339,7 @@ public class Client {
         if (StringUtils.isBlank(auxStrPhoneNumber)) {
             throw new IllegalArgumentException("Phone number cannot be empty.");
         }
-        if (auxStrPhoneNumber.length() != 11) {
+        if (auxStrPhoneNumber.length() != Constants.PHONE_NUMBER_MAX) {
             throw new IllegalArgumentException("Phone number must have 11 digit numbers.");
         }
 
@@ -366,7 +366,7 @@ public class Client {
         if (StringUtils.isBlank(auxStrTINnumber)) {
             throw new IllegalArgumentException("TIN number cannot be empty.");
         }
-        if (auxStrTINnumber.length() != 10) {
+        if (auxStrTINnumber.length() != Constants.TIN_NUMBER_SIZE) {
             throw new IllegalArgumentException("TIN number must have 10 digit numbers.");
         }
 
@@ -393,7 +393,7 @@ public class Client {
         if (StringUtils.isBlank(auxStrNHSnumber)) {
             throw new IllegalArgumentException("TIN number cannot be empty.");
         }
-        if (auxStrNHSnumber.length() != 10) {
+        if (auxStrNHSnumber.length() != Constants.NHSLD_MAX) {
             throw new IllegalArgumentException("TIN number must have 10 digit numbers.");
         }
 

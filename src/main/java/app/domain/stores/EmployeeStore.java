@@ -132,9 +132,22 @@ public class EmployeeStore {
     }
 
 
+    /**
+     * Gets the employee List
+     *
+     * @return the employee list
+     */
+
     public List<Employee> getEmployeeList() {
         return this.employeeList;
     }
+
+    /**
+     * Generates the employee ID
+     *
+     * @param name the name of the employee
+     * @return the ID created for the employee
+     */
 
     public String generateEmployeeID(String name){
 
@@ -150,6 +163,15 @@ public class EmployeeStore {
 
         return employeID;
     }
+
+    /**
+     * Generates the file with the employee user information
+     *
+     * @param name the name of the client
+     * @param email the email of the client
+     * @param role the role of the client
+     * @param company the geral company
+     */
 
     public void generateUserInformation(String name, String email, String role, Company company) {
 

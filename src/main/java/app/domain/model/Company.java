@@ -241,6 +241,11 @@ public class Company {
 
     // US15 - ValidateTest -----------------------------------------------------------------
 
+    /**
+     * Gets invalid test list
+     * @return the invalid test list
+     */
+
     public Set<Test> getInvalidTestList() {
         return testStore.getInvalidTestList();
     }

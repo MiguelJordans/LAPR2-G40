@@ -53,7 +53,7 @@ public class Parameter {
     }
 
     /**
-     * Checks the Parameter's name (according to the acceptance criteira).
+     * Checks the Parameter's name (according to the acceptance criteria).
      *
      * @param name the Parameter's name
      */

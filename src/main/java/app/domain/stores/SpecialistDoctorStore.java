@@ -133,9 +133,22 @@ public class SpecialistDoctorStore {
     }
 
 
+    /**
+     * Gets the SpecialistDoctor list
+     *
+     * @return the SpecialistDoctor list
+     */
+
     public List<SpecialistDoctor> getSpecialistDoctorList() {
         return this.specialistDoctorList;
     }
+
+    /**
+     * Generates the SpecialistDoctor ID
+     *
+     * @param name the name of the Specialist Doctor
+     * @return the ID of the Specialist Doctor
+     */
 
     public String generateEmployeeID(String name){
 
@@ -151,6 +164,15 @@ public class SpecialistDoctorStore {
 
         return employeID;
     }
+
+    /**
+     * Generates the file with the SpecialistDoctor user information
+     *
+     * @param name the name of the Specialist Doctor
+     * @param email the email of the Specialist Doctor
+     * @param role the role of the Specialist Doctor
+     * @param company the geral company
+     */
 
     public void generateUserInformation(String name, String email, String role, Company company) {
 

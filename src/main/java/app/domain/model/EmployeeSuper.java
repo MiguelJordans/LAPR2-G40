@@ -84,7 +84,7 @@ public class EmployeeSuper {
     }
 
     /**
-     * Checks the Employee's address (according to the acceptance criteira)
+     * Checks the Employee's address (according to the acceptance criteria)
      *
      * @param address the Employee's address
      */
@@ -102,7 +102,7 @@ public class EmployeeSuper {
     }
 
     /**
-     * Checks the Employee's email (according to the acceptance criteira)
+     * Checks the Employee's email (according to the acceptance criteria)
      *
      * @param email the Employee's mail
      */
@@ -122,7 +122,7 @@ public class EmployeeSuper {
     }
 
     /**
-     * Checks the Employee's phone number (according to the acceptance criteira)
+     * Checks the Employee's phone number (according to the acceptance criteria)
      *
      * @param phoneNumber the Employee's phone number
      */
@@ -145,7 +145,7 @@ public class EmployeeSuper {
     }
 
     /**
-     * Checks the Employee's employee ID (according to the acceptance criteira)
+     * Checks the Employee's employee ID (according to the acceptance criteria)
      *
      * @param employeeId the Employee's ID
      */
@@ -319,7 +319,7 @@ public class EmployeeSuper {
     /**
      * Returns the textual description of the Employee in the formate : name, address, phoneNumber, email, orgRole, employeeId, socCode, doctorIndexNumber.
      *
-     * @return
+     * @return the textual format of the object
      */
     @Override
     public String toString() {

@@ -32,7 +32,7 @@ public class SpecialistDoctor extends EmployeeSuper {
     //Checks
 
     /**
-     * Checks the Employee's doctor index number (according to the acceptance criteira)
+     * Checks the Employee's doctor index number (according to the acceptance criteria)
      *
      * @param doctorIndexNumber the Employee's doctor index number
      */

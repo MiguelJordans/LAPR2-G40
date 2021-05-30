@@ -5,6 +5,7 @@ import app.domain.model.ClientUserInformation;
 import app.domain.model.Company;
 import app.ui.console.GeneratePassword;
 import auth.AuthFacade;
+import sun.jvm.hotspot.runtime.ppc64.PPC64CurrentFrameGuess;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -124,6 +125,12 @@ public class ClientStore {
         return cr;
     }
 
+    /**
+     * Checks if the client (from the tests) exists and returns his/her name
+     *
+     * @param citizenCardNumber TIN Number from the client
+     * @return the name of the client
+     */
 
     public String  checkExistingClient(String citizenCardNumber){
 
@@ -136,9 +143,24 @@ public class ClientStore {
         return null;
     }
 
+    /**
+     * Gets the client List
+     *
+     * @return the client list
+     */
+
     public List<Client> getClientList() {
         return this.clientList;
     }
+
+    /**
+     * Generates the file with the client information
+     *
+     * @param name the name of the client
+     * @param email the email of the client
+     * @param role the role of the client
+     * @param company the geral company
+     */
 
     public void generateUserInformation(String name, String email, String role, Company company) {
 

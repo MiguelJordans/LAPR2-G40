@@ -34,7 +34,7 @@ public class ParameterCategory {
     //Checks --------------------------------------------------------------------
 
     /**
-     * Checks code rules (According to the acceptance criteira).
+     * Checks code rules (According to the acceptance criteria).
      *
      * @param code the ParameterCategory's code
      */
@@ -50,7 +50,7 @@ public class ParameterCategory {
     }
 
     /**
-     * Checks Nhsld rules (According to the acceptance criteira).
+     * Checks Nhsld rules (According to the acceptance criteria).
      *
      * @param nhsld the ParameterCategory's nhsld
      */
@@ -67,7 +67,7 @@ public class ParameterCategory {
     }
 
     /**
-     * Checks the description rules (According to the acceptance criteira).
+     * Checks the description rules (According to the acceptance criteria).
      *
      * @param description the ParameterCategory's description
      */

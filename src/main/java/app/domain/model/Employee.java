@@ -6,7 +6,7 @@ public class Employee extends EmployeeSuper {
      * Constructs an instance of Employee
      *
      * @param name the Employee's name
-     * @param address the Employee's adress
+     * @param address the Employee's address
      * @param email the Employee's email
      * @param phoneNumber the Employee's phone number
      * @param employeeId the Employee's employee ID
