@@ -83,7 +83,7 @@ When the administrator (US9) specifies a new type of test, the administrator als
 
 ### 1.7 Other Relevant Remarks
 
-*Use this section to capture other relevant information that is related with this US such as (i) special requirements ; (ii) data and/or technology variations; (iii) how often this US is held.* 
+*n/a* 
 
 ## 2. OO Analysis
 
@@ -93,7 +93,7 @@ When the administrator (US9) specifies a new type of test, the administrator als
 
 ### 2.2. Other Remarks
 
-*Use this section to capture some aditional notes/remarks that must be taken into consideration into the design activity. In some case, it might be usefull to add other analysis artifacts (e.g. activity or state diagrams).* 
+*n/a* 
 
 
 

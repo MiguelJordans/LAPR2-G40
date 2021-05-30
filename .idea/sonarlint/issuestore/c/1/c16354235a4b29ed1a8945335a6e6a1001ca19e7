@@ -1,0 +1,13 @@
+
+W
+java:S1854'":Remove this useless assignment to local variable "result".(Óğ¿8‰šê¥›/
+o
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(“–ış8Ü­¯Ï›/
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(í­­åùÿÿÿÿ8ß­¯Ï›/
+S	java:S106!"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ
+U	java:S106""9Replace this use of System.out or System.err by a logger.(Ôã™Â8šê¥›/
+S	java:S106*"9Replace this use of System.out or System.err by a logger.(©şêÜúÿÿÿÿ
+T	java:S106/"9Replace this use of System.out or System.err by a logger.(¹¨İ_8šê¥›/
+Z	java:S1061"9Replace this use of System.out or System.err by a logger.(¥¶î§ıÿÿÿÿ8šê¥›/
+Z	java:S106:"9Replace this use of System.out or System.err by a logger.(õŠşèşÿÿÿÿ8šê¥›/
+U	java:S106<"9Replace this use of System.out or System.err by a logger.(Í”Ëç8šê¥›/

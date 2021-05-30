@@ -45,6 +45,7 @@
 * Typed data:
     * Name
     * Code
+    * Description
     
 **Selected data**: 
 
@@ -61,7 +62,7 @@
 
 ### 1.7 Other Relevant Remarks
 
-*Use this section to capture other relevant information that is related with this US such as (i) special requirements ; (ii) data and/or technology variations; (iii) how often this US is held.* 
+*n/a* 
 
 
 ## 2. OO Analysis
@@ -72,7 +73,7 @@
 
 ### 2.2. Other Remarks
 
-*Use this section to capture some aditional notes/remarks that must be taken into consideration into the design activity. In some case, it might be usefull to add other analysis artifacts (e.g. activity or state diagrams).* 
+*n/a* 
 
 
 
@@ -84,17 +85,15 @@
 
 | Interaction ID | Question: Which class is responsible for... | Answer  | Justification (with patterns)  |
 |:-------------  |:--------------------- |:------------|:---------------------------- |
-| Step/Msg 1: 		 |	...instantiating a new Parameter Category		 |            |                            |
-| 		 |	...coordinating the US?		 |  ParameterCategoryController           | Controller                             |
-| 		 |	...starts new parameter category?		 |  Company            |       Creator: R1/2                        |
-| 		 |		...knowing the user using the system?	 | UserSession             |  IE: cf. A&A component documentation                            |
-| 		 |	...knowing to which organization the user belongs to	| Company           | IE: has registed all?                           |
-| Step/Msg 2: request data (i.e.,code,description,nhsld) 		 | n/a							 |             |                              |
-| Step/Msg 3: types requested data  		 |		...saving the input data					 | ParameterCategory            |      IE: The object created in step 1 has its own data                        |
-| Step/Msg 4: shows the data and requests a confirmation  		 |	...validating the data locally (e.g..:mandatory vs. nom-mandatory data)?						 |   ParameterCategory          |    IE: knows its own data                          |
-|  	 |	...validanting the data globally (e.g..:duplicated)?		 |  ParameterStore          |      IE : adopts/records all the ParameterCategory objects                       |
-| Step/Msg 5:confirms the data		 | ...saving the created parameter category							 |  ParameterStore          |  IE: adopts/records all the ParameterCategory objects                            |
-| Step/Msg 6:informing operation sucess	 | 	...informing operation sucess			 |  ParameterCategoryUI	         |    IE: responible for user interaction                           |                 
+**Step/Msg 1**: starts new test type | ... interacting with the actor? | CreateTestTypeUI | **Pure Fabrication**: there is no reason to assign this responsibility to any existing class in the Domain Model |
+| 		 |	...coordinating the US?		 |  ParameterCategoryController           | **Controller**                             |
+| **Step/Msg 2**: request data (i.e.,code,description,nhsld) 		 | n/a							 |             |                              |
+| **Step/Msg 3**: types requested data  		 |		...creates the SampleStore?					 |  Company           |     **PureFabrication** : By applying **HC+LC**, this delegates that the responsibility for such will be the Company.                       |
+| |...creates the desired parameter category?					 |  ParameterCategoryStore            |     **Creator(R1)** and **HC+LC** : By the application of the Creator(R1), it would be the company, but, by applying HC + LC  to the company, this delegates that responsibility to the "SampleStore"                       |
+| **Step/Msg 4**: shows the data and requests a confirmation  		 |	...validating the data locally (e.g..:mandatory vs. nom-mandatory data)?						 |   ParameterCategory          |    **IE**: knows its own data                          |
+|  	 |	...validanting the data globally (e.g..:duplicated)?		 |  ParameterCategory          |      **IE**: The object knows its own data            |
+| **Step/Msg 5**:confirms the data		 | ...saving the created parameter category							 |  ParameterCategoryStore          |  **IE**: Adopts/records all the ParameterCategory objects                            |
+| **Step/Msg 6**:informing operation sucess	 | 	...informing operation sucess			 |  ParameterCategoryUI	         |    **IE**: Responible for user interaction                           |                 
 
 
 ### Systematization ##
