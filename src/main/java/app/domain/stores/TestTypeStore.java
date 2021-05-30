@@ -12,19 +12,18 @@ public class TestTypeStore {
     TestType tt;
 
     /**
-     *
      * Creates a Test Type (Calling the TestType constructor)
      *
-     * @param description the Test Type's description
-     * @param testCode the Test Type's test code
+     * @param description      the Test Type's description
+     * @param testCode         the Test Type's test code
      * @param collectingMethod the Test Type's collecting method
-     * @param pcList the Test Type's category list
+     * @param pcList           the Test Type's category list
      * @return the test type created
      */
 
-    public TestType createTestType(String description,String testCode,String collectingMethod,List<ParameterCategory> pcList){
+    public TestType createTestType(String description, String testCode, String collectingMethod, List<ParameterCategory> pcList) {
 
-        this.tt = new TestType(testCode,description,collectingMethod,pcList);
+        this.tt = new TestType(testCode, description, collectingMethod, pcList);
 
         return this.tt;
     }
@@ -36,8 +35,8 @@ public class TestTypeStore {
      * @return the validation of the Test Type being created
      */
 
-    public boolean validateTestType(TestType tt){
-        if(tt==null||listContain(tt)){
+    public boolean validateTestType(TestType tt) {
+        if (tt == null || listContain(tt)) {
             return false;
         }
         return true;
@@ -50,9 +49,9 @@ public class TestTypeStore {
      * @return true if the list contains the Test Type and false if it doesn't
      */
 
-    public boolean listContain(TestType tt){
+    public boolean listContain(TestType tt) {
 
-        if(this.list.contains(tt)){
+        if (this.list.contains(tt)) {
             return true;
         } else {
             return false;
@@ -65,8 +64,8 @@ public class TestTypeStore {
      * @return the saving of an instance of a Test Type
      */
 
-    public boolean saveTestType(){
-        if(validateTestType(tt)){
+    public boolean saveTestType() {
+        if (validateTestType(tt)) {
             listAdd(tt);
             return true;
         } else {
@@ -82,7 +81,7 @@ public class TestTypeStore {
      * @return the addition of the Test Type to the list
      */
 
-    public boolean listAdd(TestType tt){
+    public boolean listAdd(TestType tt) {
         list.add(tt);
         return true;
     }
@@ -94,7 +93,7 @@ public class TestTypeStore {
      * @return the element previously at the specified postion
      */
 
-    public TestType getTestType(int i){
+    public TestType getTestType(int i) {
         return list.get(i);
     }
 

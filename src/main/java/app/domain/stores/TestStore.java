@@ -71,7 +71,7 @@ public class TestStore {
         return invalidTests;
     }
 
-    public List<Test> getTestList(){
+    public List<Test> getTestList() {
         return testsList;
     }
 

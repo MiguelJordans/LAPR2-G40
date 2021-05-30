@@ -33,7 +33,7 @@ public class ClinicalAnalysisLaboratoryController {
         this.company = company;
     }
 
-    public void addTestTypesToTtList(TestTypeDTO testTypeDTO){
+    public void addTestTypesToTtList(TestTypeDTO testTypeDTO) {
         convertDTOintoTestType(testTypeDTO);
     }
 
@@ -41,14 +41,14 @@ public class ClinicalAnalysisLaboratoryController {
      * Creates a Clinical Analysis Laboratory.
      *
      * @param laboratoryID the Clinical Analysis Laboratory's laboratory ID
-     * @param name the Clinical Analysis Laboratory's name
-     * @param address the Clinical Analysis Laboratory's address
-     * @param phoneNumber the Clinical Analysis Laboratory's phone number
-     * @param tinNumber the Clinical Analysis Laboratory's TIN number
+     * @param name         the Clinical Analysis Laboratory's name
+     * @param address      the Clinical Analysis Laboratory's address
+     * @param phoneNumber  the Clinical Analysis Laboratory's phone number
+     * @param tinNumber    the Clinical Analysis Laboratory's TIN number
      */
     public void createClinicalAnalysisLaboratory(String laboratoryID, String name, String address, String phoneNumber, String tinNumber) {
         store = company.getClinicalAnalysisLaboratoryStore();
-        store.createClinicalAnalysisLaboratory(laboratoryID, name, address, phoneNumber, tinNumber,ttList);
+        store.createClinicalAnalysisLaboratory(laboratoryID, name, address, phoneNumber, tinNumber, ttList);
     }
 
     /**
@@ -69,20 +69,20 @@ public class ClinicalAnalysisLaboratoryController {
         return this.store.saveClinicalAnalysisLaboratory();
     }
 
-    public List<TestTypeDTO> getTestTypeListDto(){
+    public List<TestTypeDTO> getTestTypeListDto() {
         this.testTypeMapper = new TestTypeMapper();
 
-        return  testTypeMapper.toDTO(getTestTypeList());
+        return testTypeMapper.toDTO(getTestTypeList());
     }
 
-    public List<TestType> getTestTypeList(){
+    public List<TestType> getTestTypeList() {
         return this.company.getTestTypeList();
     }
 
-    public void convertDTOintoTestType(TestTypeDTO testTypeDTO){
+    public void convertDTOintoTestType(TestTypeDTO testTypeDTO) {
 
-        for (TestType tt : this.getTestTypeList()){
-            if(testTypeDTO.getTestCode()==tt.getTestCode())
+        for (TestType tt : this.getTestTypeList()) {
+            if (testTypeDTO.getTestCode() == tt.getTestCode())
                 ttList.add(tt);
         }
 

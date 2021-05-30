@@ -18,7 +18,9 @@ public class RecordTestResultController {
     private SampleMapper sampleMapper;
 
 
-    public RecordTestResultController(){this(App.getInstance().getCompany());}
+    public RecordTestResultController() {
+        this(App.getInstance().getCompany());
+    }
 
     /**
      * Constructor.
@@ -32,6 +34,7 @@ public class RecordTestResultController {
 
     /**
      * Gets the corresponding test using the sample barcode number
+     *
      * @param sampleID the sample barcode number
      * @return the corresponding test
      */
@@ -61,6 +64,7 @@ public class RecordTestResultController {
 
     /**
      * Gets the test parameter list of the corresponding test.
+     *
      * @param sampleID the sample barcode number
      * @return the test parameter list of the corresponding test
      */
@@ -75,8 +79,9 @@ public class RecordTestResultController {
 
     /**
      * Adds the test parameter result.
+     *
      * @param parameterCode the parameter code
-     * @param result the value/result of the parameter
+     * @param result        the value/result of the parameter
      * @return success/failure in adding the test parameter result
      */
     public boolean addTestParameterResult(String parameterCode, double result) {
@@ -98,6 +103,7 @@ public class RecordTestResultController {
 
     /**
      * Gets the sample list.
+     *
      * @return the sample list
      */
     public List<Sample> getSampleList() {
@@ -106,6 +112,7 @@ public class RecordTestResultController {
 
     /**
      * Gets the sample list (DTO).
+     *
      * @return the sample list (DTO)
      */
     public List<SampleDTO> getSampleListDto() {

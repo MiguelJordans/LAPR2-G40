@@ -23,6 +23,7 @@ public class Company {
 
     /**
      * Constructor.
+     *
      * @param designation the Company's designation
      */
     public Company(String designation) {
@@ -35,6 +36,7 @@ public class Company {
 
     /**
      * Gets the Company's designation.
+     *
      * @return the Company's designation
      */
     public String getDesignation() {
@@ -43,6 +45,7 @@ public class Company {
 
     /**
      * Gets the Auth Facade.
+     *
      * @return the auth facade
      */
     public AuthFacade getAuthFacade() {
@@ -56,6 +59,7 @@ public class Company {
 
     /**
      * Gets the client list.
+     *
      * @return the client list
      */
     public List<Client> getClientList() {
@@ -64,6 +68,7 @@ public class Company {
 
     /**
      * Gets the client store.
+     *
      * @return the client store
      */
     public ClientStore getClientStore() {
@@ -77,6 +82,7 @@ public class Company {
 
     /**
      * Gets the test list.
+     *
      * @return the test list
      */
     public List<Test> getTestList() {
@@ -85,6 +91,7 @@ public class Company {
 
     /**
      * Gets the test store.
+     *
      * @return the test store
      */
     public TestStore getTestStore() {
@@ -98,6 +105,7 @@ public class Company {
 
     /**
      * Gets the sample list.
+     *
      * @return the sample list
      */
     public List<Sample> getSampleList() {
@@ -106,6 +114,7 @@ public class Company {
 
     /**
      * Gets the sample store.
+     *
      * @return the sample store
      */
     public SampleStore getSampleStore() {
@@ -121,6 +130,7 @@ public class Company {
 
     /**
      * Gets the employee list.
+     *
      * @return the employee list
      */
     public List<Employee> getEmployeeList() {
@@ -129,6 +139,7 @@ public class Company {
 
     /**
      * Gets the specialist doctor list.
+     *
      * @return the specialist doctor list
      */
     public List<SpecialistDoctor> getSpecialistDoctorList() {
@@ -137,6 +148,7 @@ public class Company {
 
     /**
      * Gets the employee store.
+     *
      * @return the employee store
      */
     public EmployeeStore getEmployeeStore() {
@@ -145,6 +157,7 @@ public class Company {
 
     /**
      * Gets the specialist doctor store.
+     *
      * @return the specialist doctor store
      */
     public SpecialistDoctorStore getSpecialistDoctorStore() {
@@ -158,6 +171,7 @@ public class Company {
 
     /**
      * Gets the clinical analysis laboratory list.
+     *
      * @return the clinical analysis laboratory list
      */
     public List<ClinicalAnalysisLaboratory> getClinicalAnalysisLaboratoryList() {
@@ -166,6 +180,7 @@ public class Company {
 
     /**
      * Gets the clinical analysis laboratory store.
+     *
      * @return the clinical analysis laboratory store
      */
     public ClinicalAnalysisLaboratoryStore getClinicalAnalysisLaboratoryStore() {
@@ -179,6 +194,7 @@ public class Company {
 
     /**
      * Gets test type list.
+     *
      * @return the test type list
      */
     public List<TestType> getTestTypeList() {
@@ -187,6 +203,7 @@ public class Company {
 
     /**
      * Gets the test type store.
+     *
      * @return the test type store
      */
     public TestTypeStore getTestTypeStore() {
@@ -200,6 +217,7 @@ public class Company {
 
     /**
      * Gets the parameter list.
+     *
      * @return the parameter list
      */
     public List<Parameter> getParameterList() {
@@ -208,6 +226,7 @@ public class Company {
 
     /**
      * Gets the parameter store.
+     *
      * @return the parameter store
      */
     public ParameterStore getParameterStore() {
@@ -221,6 +240,7 @@ public class Company {
 
     /**
      * Gets the parameter category list.
+     *
      * @return the parameter category list
      */
     public List<ParameterCategory> getParameterCategoryList() {
@@ -229,6 +249,7 @@ public class Company {
 
     /**
      * Gets parameter category store.
+     *
      * @return the parameter category store
      */
     public ParameterCategoryStore getParameterCategoryStore() {
@@ -243,6 +264,7 @@ public class Company {
 
     /**
      * Gets invalid test list
+     *
      * @return the invalid test list
      */
 

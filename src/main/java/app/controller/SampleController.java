@@ -86,7 +86,7 @@ public class SampleController {
 
         this.testMapper1 = new TestMapper();
 
-        return testMapper1.toDTO(getAvailableTestsList(),null); //Name null (not yet implemented) one member of our group didn't implement this in time
+        return testMapper1.toDTO(getAvailableTestsList(), null); //Name null (not yet implemented) one member of our group didn't implement this in time
 
     }
 
@@ -136,6 +136,7 @@ public class SampleController {
 
     /**
      * Gets the current sample list (DTO).
+     *
      * @return the current sample list (DTO)
      */
     public List<SampleDTO> getCurrentSampleListDTO() {
@@ -148,6 +149,7 @@ public class SampleController {
 
     /**
      * Converts test DTO into test.
+     *
      * @param testDTO the test DTO
      */
     public void convertDTOintoTest(TestDTO testDTO) {
@@ -162,6 +164,7 @@ public class SampleController {
 
     /**
      * Gets the client store from the company.
+     *
      * @return the client store
      */
     public ClientStore getClientStore() {
@@ -170,6 +173,7 @@ public class SampleController {
 
     /**
      * Gets the client's name.
+     *
      * @param test the test
      * @return success: client's name / failure: null
      */

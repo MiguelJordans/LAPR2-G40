@@ -4,6 +4,7 @@ public interface RefValueAdapter {
 
     /**
      * Gets the reference value of the parameter.
+     *
      * @param param the parameter code
      * @return the reference value of the parameter
      */
@@ -11,6 +12,7 @@ public interface RefValueAdapter {
 
     /**
      * Gets the minimum reference value of the parameter.
+     *
      * @param param the parameter code
      * @return the minimum reference value of the parameter
      */
@@ -18,6 +20,7 @@ public interface RefValueAdapter {
 
     /**
      * Gets the maximum reference value of the parameter.
+     *
      * @param param the parameter code
      * @return the maximum reference value of the parameter
      */
@@ -25,6 +28,7 @@ public interface RefValueAdapter {
 
     /**
      * Gets the metric of the parameter.
+     *
      * @param param the parameter code
      * @return the metric of the parameter
      */

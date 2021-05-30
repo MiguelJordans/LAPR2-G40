@@ -19,7 +19,7 @@ public class ParameterController {
      * Creates an empty Parameter controller.
      */
 
-    public ParameterController(){
+    public ParameterController() {
         this(App.getInstance().getCompany());
     }
 
@@ -29,11 +29,11 @@ public class ParameterController {
      * @param company - the company that administrates the system
      */
 
-    public ParameterController(Company company){
-        this.company=company;
+    public ParameterController(Company company) {
+        this.company = company;
     }
 
-    public void addCategory(ParameterCategoryDTO parameterCategoryDTO){
+    public void addCategory(ParameterCategoryDTO parameterCategoryDTO) {
         convertDTOintoCategory(parameterCategoryDTO);
     }
 
@@ -41,13 +41,13 @@ public class ParameterController {
      * Creates a Parameter(Calling the Parameter constructor implemented in the parameterStore)
      *
      * @param description the parameter's description
-     * @param code the parameter's code
-     * @param name the parameter's name
+     * @param code        the parameter's code
+     * @param name        the parameter's name
      */
 
-    public void createParameter(String description,String code,String name){
+    public void createParameter(String description, String code, String name) {
         store = company.getParameterStore();
-        store.createParameter(description,code,name,pc);
+        store.createParameter(description, code, name, pc);
     }
 
     /**
@@ -56,7 +56,9 @@ public class ParameterController {
      * @return the Parameter's info in string format
      */
 
-    public String getPP(){ return store.getPp().toString(); }
+    public String getPP() {
+        return store.getPp().toString();
+    }
 
     /**
      * Saves an instance of Parameter.
@@ -78,7 +80,9 @@ public class ParameterController {
         return store.getParameterList();
     }
 
-    public List<ParameterCategory> getCategoryList(){return this.company.getParameterCategoryList();}
+    public List<ParameterCategory> getCategoryList() {
+        return this.company.getParameterCategoryList();
+    }
 
     public List<ParameterCategoryDTO> getCategoryListDto() {
 
@@ -92,7 +96,7 @@ public class ParameterController {
 
         for (ParameterCategory pt : this.getCategoryList()) {
             if (parameterCategoryDTO.getCode().equals(pt.getCode())) {
-                this.pc=pt;
+                this.pc = pt;
             }
         }
     }

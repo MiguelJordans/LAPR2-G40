@@ -29,11 +29,12 @@ public class Test {
         this.tt = tt;
         state = State.CREATED;
         tpList = new ArrayList<>();
-        this.date=LocalDate.now();
+        this.date = LocalDate.now();
     }
 
     /**
      * Gets the test ID.
+     *
      * @return the test ID
      */
     public String getTestID() {
@@ -42,6 +43,7 @@ public class Test {
 
     /**
      * Gets the NHS code.
+     *
      * @return NHS code
      */
     public String getNhsCode() {
@@ -50,6 +52,7 @@ public class Test {
 
     /**
      * Gets the parameter list.
+     *
      * @return the parameter list
      */
     public List<Parameter> getParamList() {
@@ -74,7 +77,8 @@ public class Test {
 
     /**
      * Creates a test parameter and adds it to the test parameter list.
-     * @param testID the test ID
+     *
+     * @param testID     the test ID
      * @param parameters the parameter list
      */
     public void createTestParameter(String testID, List<Parameter> parameters) {
@@ -87,6 +91,7 @@ public class Test {
 
     /**
      * Gets the test parameter list.
+     *
      * @return the test parameter list
      */
     public List<TestParameter> getTpList() {
@@ -95,8 +100,9 @@ public class Test {
 
     /**
      * Adds the test parameter result.
+     *
      * @param parameterCode the parameter code
-     * @param result the value/result of the parameter
+     * @param result        the value/result of the parameter
      * @return success/failure in adding the test parameter result
      * @throws ClassNotFoundException
      * @throws InstantiationException
@@ -131,6 +137,7 @@ public class Test {
 
     /**
      * Gets the TIN number.
+     *
      * @return the TIN number
      */
     public String getTinNumber() {
@@ -139,6 +146,7 @@ public class Test {
 
     /**
      * Gets the date.
+     *
      * @return the date
      */
     public LocalDate getDate() {
@@ -147,6 +155,7 @@ public class Test {
 
     /**
      * Gets the test type.
+     *
      * @return the test type
      */
     public TestType getTt() {
@@ -178,6 +187,7 @@ public class Test {
 
     /**
      * Modifies the test state.
+     *
      * @param state the test state
      */
     public void setState(State state) {
@@ -188,23 +198,23 @@ public class Test {
         switch (s) {
             case "CREATED":
                 setState(State.CREATED);
-                date=LocalDate.now();
+                date = LocalDate.now();
                 break;
             case "SAMPLE_COLLECTED":
                 setState(State.SAMPLE_COLLECTED);
-                date=LocalDate.now();
+                date = LocalDate.now();
                 break;
             case "SAMPLE_ANALYSED":
                 setState(State.SAMPLE_ANALYSED);
-                date=LocalDate.now();
+                date = LocalDate.now();
                 break;
             case "DIAGNOSTIC_MADE":
                 setState(State.DIAGNOSTIC_MADE);
-                date=LocalDate.now();
+                date = LocalDate.now();
                 break;
             case "VALIDATED":
                 setState(State.VALIDATED);
-                date=LocalDate.now();
+                date = LocalDate.now();
                 break;
             default:
                 break;
@@ -213,6 +223,7 @@ public class Test {
 
     /**
      * Compares the state.
+     *
      * @param state the state
      * @return true if it's different, false if it's equal
      */
@@ -226,6 +237,7 @@ public class Test {
 
     /**
      * Compares the test state.
+     *
      * @param state the test state
      * @return true if it's different, false if it's equal
      */
@@ -239,6 +251,7 @@ public class Test {
 
     /**
      * Gets the test state.
+     *
      * @return the test state
      */
     public String getState() {
@@ -248,6 +261,7 @@ public class Test {
     /**
      * Returns the textual description of the test in the format: TIN number, test ID, NHS code,
      * test type, state and date.
+     *
      * @return the Test's characteristics
      */
     @Override

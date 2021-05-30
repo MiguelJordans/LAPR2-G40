@@ -8,8 +8,9 @@ public class TestParameter {
 
     /**
      * Constructor.
+     *
      * @param testID the test ID
-     * @param param the parameter
+     * @param param  the parameter
      */
     public TestParameter(String testID, Parameter param) {
         this.testID = testID;
@@ -19,6 +20,7 @@ public class TestParameter {
 
     /**
      * Gets the test ID.
+     *
      * @return the test ID
      */
     public String getTestID() {
@@ -27,6 +29,7 @@ public class TestParameter {
 
     /**
      * Gets the parameter.
+     *
      * @return the parameter
      */
     public Parameter getParam() {
@@ -35,6 +38,7 @@ public class TestParameter {
 
     /**
      * Gets the test parameter result.
+     *
      * @return the test parameter result
      */
     public TestParameterResult getTpr() {
@@ -43,6 +47,7 @@ public class TestParameter {
 
     /**
      * Modifies the test parameter result.
+     *
      * @param tpr the test parameter result
      */
     public void setTpr(TestParameterResult tpr) {

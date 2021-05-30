@@ -14,14 +14,14 @@ public class ParameterCategoryStore {
      * Creates a Parameter Category (Calling the parameter category constructor)
      *
      * @param description the Parameter Category's description
-     * @param code the Parameter Category's code
-     * @param nhsld the Parameter Category's nhsld
+     * @param code        the Parameter Category's code
+     * @param nhsld       the Parameter Category's nhsld
      * @return the parameter category created
      */
 
-    public ParameterCategory createParameterCategory(String description,String code,String nhsld){
+    public ParameterCategory createParameterCategory(String description, String code, String nhsld) {
 
-        this.pc = new ParameterCategory(code,description,nhsld);
+        this.pc = new ParameterCategory(code, description, nhsld);
 
         return this.pc;
     }
@@ -33,8 +33,8 @@ public class ParameterCategoryStore {
      * @return the validation of the parameter category being created
      */
 
-    public boolean validateParameterCategory(ParameterCategory pc){
-        if(pc==null||listContain(pc)){
+    public boolean validateParameterCategory(ParameterCategory pc) {
+        if (pc == null || listContain(pc)) {
             return false;
         }
         return true;
@@ -47,8 +47,8 @@ public class ParameterCategoryStore {
      * @return true if the list contains the parameter category and false if it doesn't
      */
 
-    public boolean listContain(ParameterCategory pc){
-        if(this.list.contains(pc)){
+    public boolean listContain(ParameterCategory pc) {
+        if (this.list.contains(pc)) {
             return true;
         } else {
             return false;
@@ -61,8 +61,8 @@ public class ParameterCategoryStore {
      * @return the saving of an instance of parameter category
      */
 
-    public boolean saveParameterCategory(){
-        if(validateParameterCategory(this.pc)){
+    public boolean saveParameterCategory() {
+        if (validateParameterCategory(this.pc)) {
             listAdd();
             return true;
         } else {
@@ -76,7 +76,7 @@ public class ParameterCategoryStore {
      * @return the addition of parameter category to the list
      */
 
-    public boolean listAdd(){
+    public boolean listAdd() {
         list.add(pc);
         return true;
     }
@@ -88,7 +88,7 @@ public class ParameterCategoryStore {
      * @return the element previously at the specified postion
      */
 
-    public ParameterCategory getParameterCategory(int i){
+    public ParameterCategory getParameterCategory(int i) {
         return list.get(i);
     }
 

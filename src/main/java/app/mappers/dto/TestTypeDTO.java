@@ -8,8 +8,9 @@ public class TestTypeDTO {
 
     /**
      * Constructor.
-     * @param testCode the test ID
-     * @param description the description
+     *
+     * @param testCode         the test ID
+     * @param description      the description
      * @param collectingMethod the collecting method
      */
     public TestTypeDTO(String testCode, String description, String collectingMethod) {
@@ -20,6 +21,7 @@ public class TestTypeDTO {
 
     /**
      * Gets the description.
+     *
      * @return the description
      */
     public String getDescription() {
@@ -28,6 +30,7 @@ public class TestTypeDTO {
 
     /**
      * Gets the collecting method.
+     *
      * @return the collecting method
      */
     public String getCollectingMethod() {
@@ -36,6 +39,7 @@ public class TestTypeDTO {
 
     /**
      * Gets the test code.
+     *
      * @return the test code
      */
     public String getTestCode() {
@@ -44,6 +48,7 @@ public class TestTypeDTO {
 
     /**
      * Returns the textual description of the test type in the format: test code, description, collecting method.
+     *
      * @return the Test Type's characteristics
      */
     @Override

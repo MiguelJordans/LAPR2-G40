@@ -14,9 +14,9 @@ public class Parameter {
     /**
      * Constructs an instance of Parameter
      *
-     * @param code the Parameter's code
+     * @param code        the Parameter's code
      * @param description the Parameter's description
-     * @param name the Parameter's name
+     * @param name        the Parameter's name
      */
 
     public Parameter(String code, String description, String name, ParameterCategory pc) {
@@ -29,7 +29,7 @@ public class Parameter {
         this.code = code;
         this.name = name;
         this.description = description;
-        this.pc=pc;
+        this.pc = pc;
 
     }
 
@@ -86,16 +86,15 @@ public class Parameter {
 
     /**
      * Checks the Parameter's category list (according to the acceptance criteria)
-     *
      */
 
-    public void checkCategory(ParameterCategory pc){
-        if(pc==null) {
+    public void checkCategory(ParameterCategory pc) {
+        if (pc == null) {
             throw new IllegalArgumentException("Categories not valid! List is null!");
         }
     }
 
-   //Get ------------------------------------------------------------------
+    //Get ------------------------------------------------------------------
 
     /**
      * Returns the code of the Parameter
@@ -140,7 +139,6 @@ public class Parameter {
 
     /**
      * Modifies the category list of the Parameter
-     *
      */
 
     public void setPc(ParameterCategory pc) {
@@ -191,7 +189,7 @@ public class Parameter {
     @Override
     public String toString() {
         return
-                " Code: " + code  +
+                " Code: " + code +
                         ", Description:" + description +
                         ", Name:" + name;
 

@@ -8,8 +8,9 @@ public class TestParameterResult {
 
     /**
      * Constructor.
+     *
      * @param paramID the parameter ID
-     * @param result the value/result
+     * @param result  the value/result
      */
     public TestParameterResult(String paramID, double result) {
         this.paramID = paramID;
@@ -18,6 +19,7 @@ public class TestParameterResult {
 
     /**
      * Gets the parameter ID.
+     *
      * @return the parameter ID
      */
     public String getParamID() {
@@ -26,6 +28,7 @@ public class TestParameterResult {
 
     /**
      * Gets the result.
+     *
      * @return the result
      */
     public double getResult() {
@@ -34,6 +37,7 @@ public class TestParameterResult {
 
     /**
      * Gets the reference value.
+     *
      * @return the reference value
      */
     public RefValue getRefValue() {
@@ -42,6 +46,7 @@ public class TestParameterResult {
 
     /**
      * Modifies the reference value.
+     *
      * @param refValue the reference value
      */
     public void setRefValue(RefValue refValue) {

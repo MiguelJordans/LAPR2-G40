@@ -4,7 +4,6 @@ import app.domain.shared.Constants;
 import org.apache.commons.lang3.StringUtils;
 
 
-
 public class ParameterCategory {
 
     private String code;
@@ -14,9 +13,9 @@ public class ParameterCategory {
     /**
      * Constructs an instance of ParameterCategory.
      *
-     * @param code the ParameterCategory's code
+     * @param code        the ParameterCategory's code
      * @param description the ParameterCategory's description
-     * @param nhsld the ParameterCategory's nhsld
+     * @param nhsld       the ParameterCategory's NHS ID
      */
 
     public ParameterCategory(String code, String description, String nhsld) {
@@ -44,7 +43,7 @@ public class ParameterCategory {
         if (StringUtils.isBlank(code))
             throw new IllegalArgumentException("Code cannot be blank.");
 
-        if (code.length()< Constants.CODE_MIN || code.length() > Constants.CODE_CATEGORY_MAX)
+        if (code.length() < Constants.CODE_MIN || code.length() > Constants.CODE_CATEGORY_MAX)
             throw new IllegalArgumentException("Code not valid! Code must have 4 to 8 chars.");
 
     }
@@ -158,7 +157,7 @@ public class ParameterCategory {
     @Override
     public String toString() {
         return
-                " Code: " + code  +
+                " Code: " + code +
                         ", Description:" + description +
                         ", NHSLD:" + nhsld;
 

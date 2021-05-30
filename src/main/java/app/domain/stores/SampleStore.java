@@ -46,6 +46,7 @@ public class SampleStore {
 
     /**
      * Generates a random number with 11 digits.
+     *
      * @return a random number with 11 digits
      */
     public String generateNumber() {

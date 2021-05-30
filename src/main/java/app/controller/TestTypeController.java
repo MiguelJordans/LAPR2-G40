@@ -14,7 +14,7 @@ public class TestTypeController {
     private TestTypeStore store;
     private ParameterCategoryMapper parameterCategoryMapper;
 
-    private List<ParameterCategory> pcList=new ArrayList<>();
+    private List<ParameterCategory> pcList = new ArrayList<>();
 
     /**
      * Creates an empty Test Type controller

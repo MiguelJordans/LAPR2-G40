@@ -23,22 +23,24 @@ public class ClientStore {
      * Constructor.
      */
 
-    public ClientStore(){this.clientList = new ArrayList<>();}
+    public ClientStore() {
+        this.clientList = new ArrayList<>();
+    }
 
     /**
      * Creates a Client.
      *
-     * @param name - the Client's name.
-     * @param email - the Client's email.
-     * @param sex - the Client's sex.
-     * @param birthdate - the Client's birth date.
+     * @param name              - the Client's name.
+     * @param email             - the Client's email.
+     * @param sex               - the Client's sex.
+     * @param birthdate         - the Client's birth date.
      * @param citizenCardNumber - the Client's citizen card number.
-     * @param phoneNumber - the Client's phone number.
-     * @param tinNumber - the Client's TIN number.
-     * @param nhsNumber - the Client's NHS number.
+     * @param phoneNumber       - the Client's phone number.
+     * @param tinNumber         - the Client's TIN number.
+     * @param nhsNumber         - the Client's NHS number.
      */
 
-    public Client createClient(String name, String email, String sex, Date birthdate, String citizenCardNumber, String phoneNumber, String tinNumber, String nhsNumber){
+    public Client createClient(String name, String email, String sex, Date birthdate, String citizenCardNumber, String phoneNumber, String tinNumber, String nhsNumber) {
 
         this.cr = new Client(name, email, sex, birthdate, citizenCardNumber, phoneNumber, tinNumber, nhsNumber);
 
@@ -52,9 +54,9 @@ public class ClientStore {
      * @return the validation of the Client being created.
      */
 
-    public boolean validateClient(Client cr){
+    public boolean validateClient(Client cr) {
 
-        if(cr == null||listContain(cr)){
+        if (cr == null || listContain(cr)) {
             return false;
         }
         return true;
@@ -68,8 +70,8 @@ public class ClientStore {
      * @return true if the list contains the Client and false if it doesn't.
      */
 
-    public boolean listContain(Client cr){
-        if(this.clientList.contains(cr)){
+    public boolean listContain(Client cr) {
+        if (this.clientList.contains(cr)) {
             return true;
         } else {
             return false;
@@ -82,8 +84,8 @@ public class ClientStore {
      * @return the saving of an instance of a Client.
      */
 
-    public boolean saveClient(){
-        if(validateClient(this.cr)){
+    public boolean saveClient() {
+        if (validateClient(this.cr)) {
             listAdd(cr);
             return true;
         } else {
@@ -99,7 +101,7 @@ public class ClientStore {
      * @return the addition of the Client to the list.
      */
 
-    public boolean listAdd(Client cr){
+    public boolean listAdd(Client cr) {
         clientList.add(cr);
         return true;
     }
@@ -132,9 +134,9 @@ public class ClientStore {
      * @return the name of the client
      */
 
-    public String  checkExistingClient(String citizenCardNumber){
+    public String checkExistingClient(String citizenCardNumber) {
 
-        for (Client client : clientList){
+        for (Client client : clientList) {
             if (client.getCitizenCardNumber().equalsIgnoreCase(citizenCardNumber)) {
                 return client.getName();
             }
@@ -156,9 +158,9 @@ public class ClientStore {
     /**
      * Generates the file with the client information
      *
-     * @param name the name of the client
-     * @param email the email of the client
-     * @param role the role of the client
+     * @param name    the name of the client
+     * @param email   the email of the client
+     * @param role    the role of the client
      * @param company the geral company
      */
 
@@ -168,13 +170,13 @@ public class ClientStore {
 
         String password = gp.getPassword();
 
-        cn.generateClientUserInformation(name,email,password);
+        cn.generateClientUserInformation(name, email, password);
 
         AuthFacade cc = company.getAuthFacade();
 
-        if(!cc.existsUser(email)){
+        if (!cc.existsUser(email)) {
             role = role.toUpperCase(Locale.ROOT);
-            cc.addUserWithRole(name,email,password,role);
+            cc.addUserWithRole(name, email, password, role);
         }
 
     }

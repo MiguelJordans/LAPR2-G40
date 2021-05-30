@@ -103,8 +103,9 @@ public class BarcodeAdapter1 implements BarcodeAdapter {
 
     /**
      * Writes the barcode and barcode image in a file.
+     *
      * @param barcodeImage the barcode image
-     * @param filename the file
+     * @param filename     the file
      * @throws IOException
      */
     private void barcodeImage(BufferedImage barcodeImage, String filename) throws IOException {

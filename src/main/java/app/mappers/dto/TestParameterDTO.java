@@ -11,8 +11,9 @@ public class TestParameterDTO {
 
     /**
      * Constructor.
+     *
      * @param testID the test ID
-     * @param param the parameter
+     * @param param  the parameter
      */
     public TestParameterDTO(String testID, Parameter param) {
         this.testID = testID;
@@ -22,6 +23,7 @@ public class TestParameterDTO {
 
     /**
      * Gets the test ID.
+     *
      * @return the test ID
      */
     public String getTestID() {
@@ -30,6 +32,7 @@ public class TestParameterDTO {
 
     /**
      * Gets the parameter.
+     *
      * @return the parameter
      */
     public Parameter getParam() {
@@ -38,6 +41,7 @@ public class TestParameterDTO {
 
     /**
      * Gets the test parameter result.
+     *
      * @return the test parameter result
      */
     public TestParameterResult getTpr() {
@@ -46,6 +50,7 @@ public class TestParameterDTO {
 
     /**
      * Returns the textual description of the test parameter in the format: test ID, parameter, test parameter result.
+     *
      * @return the Test Parameter's characteristics
      */
     @Override

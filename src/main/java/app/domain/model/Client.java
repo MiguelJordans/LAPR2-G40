@@ -28,14 +28,14 @@ public class Client {
     /**
      * Constructs an instance of Client.
      *
-     * @param name - the Client's name.
-     * @param email - the Client's email.
-     * @param sex - the Client's sex.
-     * @param birthdate - the Client's birth date.
+     * @param name              - the Client's name.
+     * @param email             - the Client's email.
+     * @param sex               - the Client's sex.
+     * @param birthdate         - the Client's birth date.
      * @param citizenCardNumber - the Client's citizen card number.
-     * @param phoneNumber - the Client's phone number.
-     * @param tinNumber - the Client's TIN number.
-     * @param nhsNumber - the Client's NHS number.
+     * @param phoneNumber       - the Client's phone number.
+     * @param tinNumber         - the Client's TIN number.
+     * @param nhsNumber         - the Client's NHS number.
      */
 
 
@@ -70,7 +70,9 @@ public class Client {
      * @return the name of the Client.
      */
 
-    public String getName() { return name; }
+    public String getName() {
+        return name;
+    }
 
     /**
      * Returns the email of the Client.
@@ -78,7 +80,9 @@ public class Client {
      * @return the email of the Client.
      */
 
-    public String getEmail() { return email; }
+    public String getEmail() {
+        return email;
+    }
 
     /**
      * Returns the sex of the Client.
@@ -86,7 +90,9 @@ public class Client {
      * @return the sex of the Client.
      */
 
-    public String getSex() { return sex; }
+    public String getSex() {
+        return sex;
+    }
 
     /**
      * Returns the birth date of the Client.
@@ -94,7 +100,9 @@ public class Client {
      * @return the birth date of the Client.
      */
 
-    public Date getBirthdate() { return birthdate; }
+    public Date getBirthdate() {
+        return birthdate;
+    }
 
     /**
      * Returns the citizen card number of the Client.
@@ -102,7 +110,9 @@ public class Client {
      * @return the citizen card number of the Client.
      */
 
-    public String getCitizenCardNumber() { return citizenCardNumber; }
+    public String getCitizenCardNumber() {
+        return citizenCardNumber;
+    }
 
     /**
      * Returns the phone number of the Client.
@@ -110,7 +120,9 @@ public class Client {
      * @return the phone number of the Client.
      */
 
-    public String getPhoneNumber() { return phoneNumber; }
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
 
     /**
      * Returns the TIN number of the Client.
@@ -118,7 +130,9 @@ public class Client {
      * @return the TIN number of the Client.
      */
 
-    public String getTinNumber() { return tinNumber; }
+    public String getTinNumber() {
+        return tinNumber;
+    }
 
     /**
      * Returns the NHS number of the Client.
@@ -126,7 +140,9 @@ public class Client {
      * @return the NHS number of the Client.
      */
 
-    public String getNhsNumber() { return nhsNumber; }
+    public String getNhsNumber() {
+        return nhsNumber;
+    }
 
 
     //  Set Methods -------------------------------------------------------------------
@@ -138,7 +154,9 @@ public class Client {
      * @param name - the Client's name.
      */
 
-    public void setName(String name) { this.name = name; }
+    public void setName(String name) {
+        this.name = name;
+    }
 
     /**
      * Modifies the email of the Client.
@@ -146,7 +164,9 @@ public class Client {
      * @param email - the Client's email.
      */
 
-    public void setEmail(String email) { this.email = email; }
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     /**
      * Modifies the sex of the Client.
@@ -154,7 +174,9 @@ public class Client {
      * @param sex - the Client's sex.
      */
 
-    public void setSex(String sex) { this.sex = sex; }
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
 
     /**
      * Modifies the birth date of the Client.
@@ -162,7 +184,9 @@ public class Client {
      * @param birthdate - the Client's birth date.
      */
 
-    public void setBirthdate(Date birthdate) { this.birthdate = birthdate; }
+    public void setBirthdate(Date birthdate) {
+        this.birthdate = birthdate;
+    }
 
     /**
      * Modifies the citizen card number of the Client.
@@ -170,7 +194,9 @@ public class Client {
      * @param citizenCardNumber - the Client's citizen card number.
      */
 
-    public void setCitizenCardNumber(String citizenCardNumber) { this.citizenCardNumber = citizenCardNumber; }
+    public void setCitizenCardNumber(String citizenCardNumber) {
+        this.citizenCardNumber = citizenCardNumber;
+    }
 
     /**
      * Modifies the phone number of the Client.
@@ -178,7 +204,9 @@ public class Client {
      * @param phoneNumber - the Client's phone number.
      */
 
-    public void setPhoneNumber(String phoneNumber) { this.phoneNumber = phoneNumber; }
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
 
     /**
      * Modifies the TIN number of the Client.
@@ -186,7 +214,9 @@ public class Client {
      * @param tinNumber - the Client's TIN number.
      */
 
-    public void setTinNumber(String tinNumber) { this.tinNumber = tinNumber; }
+    public void setTinNumber(String tinNumber) {
+        this.tinNumber = tinNumber;
+    }
 
     /**
      * Modifies the NHS number of the Client.
@@ -194,7 +224,9 @@ public class Client {
      * @param nhsNumber - the Client's NHS number.
      */
 
-    public void setNhsNumber(String nhsNumber) { this.nhsNumber = nhsNumber; }
+    public void setNhsNumber(String nhsNumber) {
+        this.nhsNumber = nhsNumber;
+    }
 
 
     //  Check Methods ---------------------------------------------------------------------
@@ -205,7 +237,7 @@ public class Client {
      * @param name - the Client's name.
      */
 
-    private void checkNameRules(String name){
+    private void checkNameRules(String name) {
 
         String aux = name.trim();
         aux = aux.toLowerCase();
@@ -215,7 +247,7 @@ public class Client {
             throw new IllegalArgumentException("Name cannot be empty.");
         }
         if ((name.length() >= Constants.NAME_MAX1)) {
-                throw new IllegalArgumentException("Name cannot have more than 35 characters.");
+            throw new IllegalArgumentException("Name cannot have more than 35 characters.");
         }
         for (int i = 0; i < auxchar.length; i++) {
             char ch = auxchar[i];
@@ -232,7 +264,7 @@ public class Client {
      * @param email - the Client's email.
      */
 
-    private void checkEmailRules(String email){
+    private void checkEmailRules(String email) {
 
         if (StringUtils.isBlank(email)) {
             throw new IllegalArgumentException("Email cannot be empty.");
@@ -246,7 +278,7 @@ public class Client {
 
         Pattern pat = Pattern.compile(emailRegex);
 
-        if (!pat.matcher(email).matches()){
+        if (!pat.matcher(email).matches()) {
             throw new IllegalArgumentException("Invalid Email format.");
         }
 
@@ -258,19 +290,20 @@ public class Client {
      * @param sex - the Client's sex.
      */
 
-    private void checkSexRules(String sex){
+    private void checkSexRules(String sex) {
 
         if (StringUtils.isBlank(sex)) {
             throw new IllegalArgumentException("Sex cannot be empty.");
         }
 
-       if (!(sex.equalsIgnoreCase("Male") || sex.equalsIgnoreCase("Female") || sex.equalsIgnoreCase("Other"))){
-           throw new IllegalArgumentException("Invalid sex");
-       }
+        if (!(sex.equalsIgnoreCase("Male") || sex.equalsIgnoreCase("Female") || sex.equalsIgnoreCase("Other"))) {
+            throw new IllegalArgumentException("Invalid sex");
+        }
 
     }
 
-    /** Calculate the age of the client
+    /**
+     * Calculate the age of the client
      *
      * @param birthdate - Client birth date (xx/yy/zzz)
      * @return - age of the client
@@ -281,7 +314,8 @@ public class Client {
         return Period.between(date, LocalDate.now()).getYears();
     }
 
-    /** Check if birth date respects the acceptance criteria
+    /**
+     * Check if birth date respects the acceptance criteria
      *
      * @param birthdate - Client birth date (xx/yy/zzz)
      */
@@ -304,7 +338,7 @@ public class Client {
      * @param citizenCardNumber - the Client's citizen card number.
      */
 
-    private void checkCitizenCardNumberRules(String citizenCardNumber){
+    private void checkCitizenCardNumberRules(String citizenCardNumber) {
 
         String auxStrCitizenCardNumber = citizenCardNumber.replaceAll("\\s", "");
         char[] auxchar = auxStrCitizenCardNumber.toCharArray();
@@ -331,7 +365,7 @@ public class Client {
      * @param phoneNumber - the Client's phone number.
      */
 
-    private void checkPhoneNumberRules(String phoneNumber){
+    private void checkPhoneNumberRules(String phoneNumber) {
 
         String auxStrPhoneNumber = phoneNumber.replaceAll("\\s", "");
         char[] auxchar = auxStrPhoneNumber.toCharArray();
@@ -417,6 +451,6 @@ public class Client {
     public String toString() {
         return "Client: " + name + ", Email: " + email + ", Sex: " + sex + ", Birth date: " + birthdate +
                 ", Citizen Card Number: " + citizenCardNumber + ", Phone Number: " + phoneNumber +
-                    ", TIN Number: " + tinNumber + ", NHS Number: " + nhsNumber;
+                ", TIN Number: " + tinNumber + ", NHS Number: " + nhsNumber;
     }
 }

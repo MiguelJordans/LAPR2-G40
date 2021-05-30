@@ -18,10 +18,10 @@ public class TestType {
     /**
      * Constructs an instance of Test Type
      *
-     * @param testCode the Test Type's test code
-     * @param description the Test Type's description
+     * @param testCode         the Test Type's test code
+     * @param description      the Test Type's description
      * @param collectingMethod the Test Type's collecting method
-     * @param pcList the Test Type's category list
+     * @param pcList           the Test Type's category list
      */
 
     public TestType(String testCode, String description, String collectingMethod, List<ParameterCategory> pcList) {
@@ -91,8 +91,8 @@ public class TestType {
      * @param pcList the Test Type's categories
      */
 
-    public void checkCategoriesList(List<ParameterCategory> pcList){
-        if(pcList.isEmpty()) {
+    public void checkCategoriesList(List<ParameterCategory> pcList) {
+        if (pcList.isEmpty()) {
             throw new IllegalArgumentException("Categories not valid! List is null!");
         }
     }
@@ -193,14 +193,15 @@ public class TestType {
     @Override
     public String toString() {
         return
-                " Test Code: " + testCode  +
-                ", Description:" + description +
-                ", CollectingMethod:" + collectingMethod;
+                " Test Code: " + testCode +
+                        ", Description:" + description +
+                        ", CollectingMethod:" + collectingMethod;
 
     }
 
     /**
      * Gets the external module name.
+     *
      * @return the external module name
      */
     public String getExternalModule() {
@@ -209,16 +210,17 @@ public class TestType {
 
     /**
      * Sets the external module to the corresponding test type.
+     *
      * @param testCode the test type code
      * @return the corresponding external module name
      */
     public String setExternalModule(String testCode) {
 
-        if(testCode.equals("BL000")) {
+        if (testCode.equals("BL000")) {
             return Constants.EM_REFERENCE_API;
         }
 
-        if(testCode.equals("COV19")) {
+        if (testCode.equals("COV19")) {
             return Constants.COVID_REFERENCE_API;
         }
         return null;

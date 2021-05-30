@@ -7,7 +7,7 @@ public class OrgRoles {
 
     List<String> orgRoleList;
 
-    public OrgRoles(){
+    public OrgRoles() {
 
         orgRoleList = new ArrayList<>();
         orgRoleList.add(Constants.ROLE_MEDICAL_LAB_TECHNICIAN);
@@ -17,10 +17,7 @@ public class OrgRoles {
         orgRoleList.add(Constants.ROLE_LABORATORY_COORDINATOR);
     }
 
-    public List<String> orgRoles(){
-
-       return orgRoleList;
-
+    public List<String> orgRoles() {
+        return orgRoleList;
     }
-
 }

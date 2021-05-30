@@ -14,7 +14,6 @@ import java.util.List;
 import java.util.Properties;
 
 /**
- *
  * @author Paulo Maio <pam@isep.ipp.pt>
  */
 public class App {
@@ -22,37 +21,31 @@ public class App {
     private final Company company;
     private final AuthFacade authFacade;
 
-    private App()
-    {
+    private App() {
         Properties props = getProperties();
         this.company = new Company(props.getProperty(Constants.PARAMS_COMPANY_DESIGNATION));
         this.authFacade = this.company.getAuthFacade();
         bootstrap();
     }
 
-    public Company getCompany()
-    {
+    public Company getCompany() {
         return this.company;
     }
 
 
-    public UserSession getCurrentUserSession()
-    {
+    public UserSession getCurrentUserSession() {
         return this.authFacade.getCurrentUserSession();
     }
 
-    public boolean doLogin(String email, String pwd)
-    {
-        return this.authFacade.doLogin(email,pwd).isLoggedIn();
+    public boolean doLogin(String email, String pwd) {
+        return this.authFacade.doLogin(email, pwd).isLoggedIn();
     }
 
-    public void doLogout()
-    {
+    public void doLogout() {
         this.authFacade.doLogout();
     }
 
-    private Properties getProperties()
-    {
+    private Properties getProperties() {
         Properties props = new Properties();
 
         // Add default properties and values
@@ -60,14 +53,11 @@ public class App {
 
 
         // Read configured values
-        try
-        {
+        try {
             InputStream in = new FileInputStream(Constants.PARAMS_FILENAME);
             props.load(in);
             in.close();
-        }
-        catch(IOException ex)
-        {
+        } catch (IOException ex) {
             //Exception
         }
         return props;

@@ -12,9 +12,10 @@ public class SampleDTO {
 
     /**
      * Constructor.
-     * @param tr the test
+     *
+     * @param tr      the test
      * @param barcode the barcode
-     * @param date the date
+     * @param date    the date
      */
     public SampleDTO(Test tr, String barcode, String date) {
         this.tr = tr;
@@ -24,6 +25,7 @@ public class SampleDTO {
 
     /**
      * Gets the barcode.
+     *
      * @return the barcode
      */
     public String getBarcode() {
@@ -32,6 +34,7 @@ public class SampleDTO {
 
     /**
      * Gets the test.
+     *
      * @return the test
      */
     public Test getTr() {
@@ -40,6 +43,7 @@ public class SampleDTO {
 
     /**
      * Returns the textual description of the Sample in the format: test, barcode, date.
+     *
      * @return the Sample's characteristics
      */
     @Override

@@ -14,7 +14,7 @@ public class ParameterCategoryController {
      * Creates an empty ParameterCategory controller.
      */
 
-    public ParameterCategoryController(){
+    public ParameterCategoryController() {
         this(App.getInstance().getCompany());
     }
 
@@ -24,21 +24,21 @@ public class ParameterCategoryController {
      * @param company - the company that administrates the system
      */
 
-    public ParameterCategoryController(Company company){
-        this.company=company;
+    public ParameterCategoryController(Company company) {
+        this.company = company;
     }
 
     /**
      * Creates a ParameterCategory
      *
      * @param description the parameter category's description
-     * @param testCode the parameter category's test code
-     * @param nhsld the parameter category's nhsld
+     * @param testCode    the parameter category's test code
+     * @param nhsld       the parameter category's nhsld
      */
 
-    public void CreateParameterCategory(String description,String testCode,String nhsld){
+    public void CreateParameterCategory(String description, String testCode, String nhsld) {
         store = company.getParameterCategoryStore();
-        store.createParameterCategory(description,testCode,nhsld);
+        store.createParameterCategory(description, testCode, nhsld);
     }
 
     /**
@@ -47,7 +47,9 @@ public class ParameterCategoryController {
      * @return the parameter category's info in string format
      */
 
-    public String getPC(){ return store.getPc().toString(); }
+    public String getPC() {
+        return store.getPc().toString();
+    }
 
 
     /**
@@ -56,7 +58,9 @@ public class ParameterCategoryController {
      * @return the saving of an instance of a parameter cartegory
      */
 
-    public boolean saveParameterCategory(){ return this.store.saveParameterCategory(); }
+    public boolean saveParameterCategory() {
+        return this.store.saveParameterCategory();
+    }
 
     /**
      * Returns the list of parameter category already created

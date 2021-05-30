@@ -96,6 +96,7 @@ public class ClinicalAnalysisLaboratory {
 
     /**
      * Gets the test type list.
+     *
      * @return the test type list
      */
     public List<TestType> getTtList() {
@@ -160,6 +161,7 @@ public class ClinicalAnalysisLaboratory {
 
     /**
      * Modifies the test type list.
+     *
      * @param ttList the test type list
      */
     public void setTtList(List<TestType> ttList) {
@@ -273,6 +275,7 @@ public class ClinicalAnalysisLaboratory {
 
     /**
      * Checks the Test Type list.
+     *
      * @param ttList the Test Type list
      */
     public void checkTestTypeList(List<TestType> ttList) {

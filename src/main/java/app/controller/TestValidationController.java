@@ -23,11 +23,8 @@ public class TestValidationController {
         return testStore.getInvalidTestList();
     }
 
-    public boolean validateTest(String testId){
+    public boolean validateTest(String testId) {
         LocalDate instant = LocalDate.now();
-        return testStore.validateTest(testId,instant);
-
+        return testStore.validateTest(testId, instant);
     }
-
-
 }

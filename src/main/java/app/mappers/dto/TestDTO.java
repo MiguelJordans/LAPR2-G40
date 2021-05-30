@@ -107,6 +107,7 @@ public class TestDTO {
 
     /**
      * Compares the state.
+     *
      * @param state the state
      * @return true if it's different, false if it's equal
      */
@@ -121,6 +122,7 @@ public class TestDTO {
     /**
      * Returns the textual description of the test in the format: TIN number, test ID, NHS code,
      * test type, state and date.
+     *
      * @return the Test's characteristics
      */
     @Override

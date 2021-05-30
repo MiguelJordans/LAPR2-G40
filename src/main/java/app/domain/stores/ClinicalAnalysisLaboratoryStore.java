@@ -22,15 +22,15 @@ public class ClinicalAnalysisLaboratoryStore {
      * Creates a Clinical Analysis Laboratory.
      *
      * @param laboratoryID the Clinical Analysis Laboratory's laboratory ID
-     * @param name the Clinical Analysis Laboratory's name
-     * @param address the Clinical Analysis Laboratory's address
-     * @param phoneNumber the Clinical Analysis Laboratory's phone number
-     * @param tinNumber the Clinical Analysis Laboratory's TIN number
+     * @param name         the Clinical Analysis Laboratory's name
+     * @param address      the Clinical Analysis Laboratory's address
+     * @param phoneNumber  the Clinical Analysis Laboratory's phone number
+     * @param tinNumber    the Clinical Analysis Laboratory's TIN number
      */
 
-    public ClinicalAnalysisLaboratory createClinicalAnalysisLaboratory(String laboratoryID, String name, String address, String phoneNumber, String tinNumber,List<TestType> ttList) {
+    public ClinicalAnalysisLaboratory createClinicalAnalysisLaboratory(String laboratoryID, String name, String address, String phoneNumber, String tinNumber, List<TestType> ttList) {
 
-        this.cal = new ClinicalAnalysisLaboratory(laboratoryID, name, address, phoneNumber, tinNumber,ttList);
+        this.cal = new ClinicalAnalysisLaboratory(laboratoryID, name, address, phoneNumber, tinNumber, ttList);
 
         return this.cal;
     }
