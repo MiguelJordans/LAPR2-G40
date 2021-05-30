@@ -185,9 +185,9 @@ public class TestType {
     }
 
     /**
-     * Returns the textual description of the Test Type in the format : Test Code, Description, CollectingMethod.
+     * Returns the textual description of the Test Type in the format: Test Code, Description, CollectingMethod.
      *
-     * @return
+     * @return the Test Type's characteristics
      */
 
     @Override
@@ -199,10 +199,19 @@ public class TestType {
 
     }
 
+    /**
+     * Gets the external module name.
+     * @return the external module name
+     */
     public String getExternalModule() {
         return externalModule;
     }
 
+    /**
+     * Sets the external module to the corresponding test type.
+     * @param testCode the test type code
+     * @return the corresponding external module name
+     */
     public String setExternalModule(String testCode) {
 
         if(testCode.equals("BL000")) {

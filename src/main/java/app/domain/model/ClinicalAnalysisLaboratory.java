@@ -1,4 +1,5 @@
 package app.domain.model;
+
 import app.domain.shared.Constants;
 import org.apache.commons.lang3.StringUtils;
 
@@ -17,10 +18,10 @@ public class ClinicalAnalysisLaboratory {
      * Constructs an instance of Clinical Analysis Laboratory.
      *
      * @param laboratoryID the Clinical Analysis Laboratory's laboratory ID
-     * @param name the Clinical Analysis Laboratory's name
-     * @param address the Clinical Analysis Laboratory's address
-     * @param phoneNumber the Clinical Analysis Laboratory's phone number
-     * @param tinNumber the Clinical Analysis Laboratory's TIN number
+     * @param name         the Clinical Analysis Laboratory's name
+     * @param address      the Clinical Analysis Laboratory's address
+     * @param phoneNumber  the Clinical Analysis Laboratory's phone number
+     * @param tinNumber    the Clinical Analysis Laboratory's TIN number
      */
 
     public ClinicalAnalysisLaboratory(String laboratoryID, String name, String address, String phoneNumber, String tinNumber, List<TestType> ttList) {
@@ -93,7 +94,13 @@ public class ClinicalAnalysisLaboratory {
         return tinNumber;
     }
 
-    public List<TestType> getTtList(){return ttList;}
+    /**
+     * Gets the test type list.
+     * @return the test type list
+     */
+    public List<TestType> getTtList() {
+        return ttList;
+    }
 
     //  Sets --------------------------------------------------------------------
 
@@ -151,7 +158,11 @@ public class ClinicalAnalysisLaboratory {
         this.tinNumber = tinNumber;
     }
 
-    public void setTtList(List<TestType> ttList){
+    /**
+     * Modifies the test type list.
+     * @param ttList the test type list
+     */
+    public void setTtList(List<TestType> ttList) {
         this.ttList = ttList;
     }
 
@@ -260,8 +271,12 @@ public class ClinicalAnalysisLaboratory {
         }
     }
 
-    public void checkTestTypeList(List<TestType> ttList){
-        if(ttList.isEmpty()) {
+    /**
+     * Checks the Test Type list.
+     * @param ttList the Test Type list
+     */
+    public void checkTestTypeList(List<TestType> ttList) {
+        if (ttList.isEmpty()) {
             throw new IllegalArgumentException("Test type list is not valid! List is null!");
         }
     }
@@ -272,7 +287,6 @@ public class ClinicalAnalysisLaboratory {
      *
      * @return the Clinical Analysis Laboratory's characteristics
      */
-
     @Override
     public String toString() {
         return "LaboratoryID: " + laboratoryID + ", Name: " + name + ", Address: " + address + ", Phone number: " + phoneNumber + ", TIN number: " + tinNumber;

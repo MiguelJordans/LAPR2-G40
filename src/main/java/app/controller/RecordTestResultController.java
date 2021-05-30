@@ -30,7 +30,7 @@ public class RecordTestResultController {
     /**
      * Gets the corresponding test using the sample barcode number
      * @param sampleID the sample barcode number
-     * @return corresponding test
+     * @return the corresponding test
      */
     private boolean getCorrespondingTest(String sampleID) {
         String testID;
@@ -57,9 +57,9 @@ public class RecordTestResultController {
     }
 
     /**
-     * 
-     * @param sampleID
-     * @return
+     * Gets the test parameter list of the corresponding test.
+     * @param sampleID the sample barcode number
+     * @return the test parameter list of the corresponding test
      */
     public List<TestParameter> getParameters(String sampleID) {
         getCorrespondingTest(sampleID);
@@ -70,6 +70,12 @@ public class RecordTestResultController {
         return test.getTpList();
     }
 
+    /**
+     * Adds the test parameter result.
+     * @param parameterCode the parameter code
+     * @param result the value/result of the parameter
+     * @return success/failure in adding the test parameter result
+     */
     public boolean addTestParameterResult(String parameterCode, double result) {
 
         try {
@@ -80,14 +86,25 @@ public class RecordTestResultController {
         return true;
     }
 
+    /**
+     * Modifies the state of the test.
+     */
     public void setState() {
         test.setState("SAMPLE_ANALYSED");
     }
 
+    /**
+     * Gets the sample list.
+     * @return the sample list
+     */
     public List<Sample> getSampleList() {
         return company.getSampleList();
     }
 
+    /**
+     * Gets the sample list (DTO).
+     * @return the sample list (DTO)
+     */
     public List<SampleDTO> getSampleListDto() {
 
         this.sampleMapper = new SampleMapper();

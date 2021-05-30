@@ -32,15 +32,26 @@ public class Test {
         this.date=LocalDate.now();
     }
 
+    /**
+     * Gets the test ID.
+     * @return the test ID
+     */
     public String getTestID() {
         return testID;
     }
 
-
+    /**
+     * Gets the NHS code.
+     * @return NHS code
+     */
     public String getNhsCode() {
         return nhsCode;
     }
 
+    /**
+     * Gets the parameter list.
+     * @return the parameter list
+     */
     public List<Parameter> getParamList() {
         List<Parameter> paramList = new ArrayList<>();
 
@@ -61,6 +72,11 @@ public class Test {
         }
     }
 
+    /**
+     * Creates a test parameter and adds it to the test parameter list.
+     * @param testID the test ID
+     * @param parameters the parameter list
+     */
     public void createTestParameter(String testID, List<Parameter> parameters) {
         TestParameter tp;
         for (Parameter param : parameters) {
@@ -69,10 +85,23 @@ public class Test {
         }
     }
 
+    /**
+     * Gets the test parameter list.
+     * @return the test parameter list
+     */
     public List<TestParameter> getTpList() {
         return tpList;
     }
 
+    /**
+     * Adds the test parameter result.
+     * @param parameterCode the parameter code
+     * @param result the value/result of the parameter
+     * @return success/failure in adding the test parameter result
+     * @throws ClassNotFoundException
+     * @throws InstantiationException
+     * @throws IllegalAccessException
+     */
     public boolean addTestParameterResult(String parameterCode, double result) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
         TestParameter tp1 = null;
@@ -100,14 +129,26 @@ public class Test {
         return true;
     }
 
+    /**
+     * Gets the TIN number.
+     * @return the TIN number
+     */
     public String getTinNumber() {
         return tinNumber;
     }
 
+    /**
+     * Gets the date.
+     * @return the date
+     */
     public LocalDate getDate() {
         return date;
     }
 
+    /**
+     * Gets the test type.
+     * @return the test type
+     */
     public TestType getTt() {
         return tt;
     }
@@ -124,6 +165,9 @@ public class Test {
 
     //
 
+    /**
+     * Test state options.
+     */
     enum State {
         CREATED,
         SAMPLE_COLLECTED,
@@ -132,6 +176,10 @@ public class Test {
         VALIDATED;
     }
 
+    /**
+     * Modifies the test state.
+     * @param state the test state
+     */
     public void setState(State state) {
         this.state = state;
     }
@@ -179,10 +227,19 @@ public class Test {
         return true;
     }
 
+    /**
+     * Gets the test state.
+     * @return the test state
+     */
     public String getState() {
         return state.name();
     }
 
+    /**
+     * Returns the textual description of the test in the format: TIN number, test ID, NHS code,
+     * test type, state and date.
+     * @return the Test's characteristics
+     */
     @Override
     public String toString() {
         return "Test{" +
@@ -194,6 +251,5 @@ public class Test {
                 ", date=" + date +
                 '}';
     }
-
 }
 
