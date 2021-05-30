@@ -132,7 +132,7 @@ There is a dependency to:
 | **Step/MSG 6**: shows all data and requests confirmation | ... validating the data locally (e.g.: mandatory vs non-mandatory data)? | Sample | **IE**: An object knows its data |
 | 	                                                       | ... validating the data globally (e.g.: duplicated)? | SampleStore | **IE**: Knows all samples |
 | **Step/MSG 7**: confirms all data | ...saving the created sample(s)? | SampleStore | **IE**: The SampleStore knows all samples in the system and stores the created samples |   
-| **Step/MSG 8**: informs operation success		 |	... informing operation success? | SampleUI | **IE**: Responsible for user interaction |              
+| **Step/MSG 8**: informs operation success | ... informing operation success? | SampleUI | **IE**: Responsible for user interaction |              
 
 ### Systematization ##
 
