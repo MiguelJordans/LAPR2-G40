@@ -17,14 +17,14 @@ public class RecordTestResultController {
 
     private SampleMapper sampleMapper;
 
-    public RecordTestResultController(){
+    public RecordTestResultController() {
         this(App.getInstance().getCompany());
         this.sampleStore = company.getSampleStore();
         this.testStore = company.getTestStore();
     }
 
     public RecordTestResultController(Company company) {
-        this.company=company;
+        this.company = company;
     }
 
     private boolean getCorrespondingTest(String sampleID) {
@@ -54,7 +54,7 @@ public class RecordTestResultController {
     public List<TestParameter> getParameters(String sampleID) {
         getCorrespondingTest(sampleID);
 
-        if(test == null) {
+        if (test == null) {
             return null;
         }
         return test.getTpList();
@@ -74,9 +74,11 @@ public class RecordTestResultController {
         test.setState("SAMPLE_ANALYSED");
     }
 
-    public List<Sample> getSampleList(){return company.getSampleList(); }
+    public List<Sample> getSampleList() {
+        return company.getSampleList();
+    }
 
-    public List<SampleDTO> getSampleListDto(){
+    public List<SampleDTO> getSampleListDto() {
 
         this.sampleMapper = new SampleMapper();
 

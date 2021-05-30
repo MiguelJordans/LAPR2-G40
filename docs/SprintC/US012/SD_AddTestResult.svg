@@ -9,7 +9,7 @@
       ><path d="M-7 -7 L81 -7 L81 526 L-7 526 L-7 -7 Z"
       /></clipPath
       ><clipPath clipPathUnits="userSpaceOnUse" id="clipPath2"
-      ><path d="M-7 -7 L19 -7 L19 419 L-7 419 L-7 -7 Z"
+      ><path d="M-7 -7 L19 -7 L19 417 L-7 417 L-7 -7 Z"
       /></clipPath
       ><clipPath clipPathUnits="userSpaceOnUse" id="clipPath3"
       ><path d="M-7 -7 L102 -7 L102 526 L-7 526 L-7 -7 Z"
@@ -111,7 +111,7 @@
       ><path d="M0 0 L403 0 L403 104 L0 104 L0 0 Z"
       /></clipPath
       ><clipPath clipPathUnits="userSpaceOnUse" id="clipPath36"
-      ><path d="M120 32 L120 47 L66 47 L66 32 ZM0 0 L0 104 L403 104 L403 20 L371 20 L371 5 L403 5 L403 0 Z"
+      ><path d="M120 32 L120 47 L66 47 L66 32 ZM0 0 L0 104 L403 104 L403 22 L371 22 L371 7 L403 7 L403 0 Z"
       /></clipPath
       ><clipPath clipPathUnits="userSpaceOnUse" id="clipPath37"
       ><path d="M186 31 L186 46 L53 46 L53 31 ZM0 0 L0 11 L20 11 L20 26 L0 26 L0 104 L83 104 L83 90 L300 90 L300 104 L408 104 L408 0 Z"
@@ -170,10 +170,10 @@
       /><line clip-path="url(#clipPath1)" fill="none" x1="34" x2="34" y1="35" y2="515" stroke-linejoin="bevel" stroke-dasharray="8,3"
     /></g
     ><g font-size="11px" transform="translate(316,66)" fill-opacity="1" fill="rgb(122,207,245)" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="rgb(122,207,245)" stroke-opacity="1"
-    ><rect x="0" width="8" height="408" y="0" clip-path="url(#clipPath2)" stroke="none"
+    ><rect x="0" width="8" height="406" y="0" clip-path="url(#clipPath2)" stroke="none"
     /></g
     ><g stroke-linecap="butt" font-size="11px" transform="translate(316,66)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke-linejoin="round" stroke="black" stroke-opacity="1" stroke-miterlimit="0"
-    ><rect fill="none" x="0" width="8" height="408" y="0" clip-path="url(#clipPath2)"
+    ><rect fill="none" x="0" width="8" height="406" y="0" clip-path="url(#clipPath2)"
     /></g
     ><g font-size="11px" transform="translate(587,2)" fill-opacity="1" fill="rgb(122,207,245)" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="rgb(122,207,245)" stroke-opacity="1"
     ><rect x="0" width="90" height="35" y="0" clip-path="url(#clipPath3)" stroke="none"
@@ -231,7 +231,7 @@
     ><g font-size="11px" transform="translate(22,56)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" stroke-opacity="1"
     ><circle r="7" clip-path="url(#clipPath11)" cx="7" cy="9" stroke="none"
     /></g
-    ><g font-size="11px" transform="translate(2,452)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" stroke-opacity="1"
+    ><g font-size="11px" transform="translate(2,450)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="black" stroke-opacity="1"
     ><circle r="7" clip-path="url(#clipPath11)" cx="7" cy="9" stroke="none"
     /></g
     ><g font-size="11px" transform="translate(707,2)" fill-opacity="1" fill="rgb(122,207,245)" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="rgb(122,207,245)" stroke-opacity="1"
@@ -338,7 +338,7 @@
       /><polygon points=" 330 50 318 44 318 56" clip-path="url(#clipPath34)" stroke="none"
       /><polygon fill="none" points=" 330 50 318 44 318 56" clip-path="url(#clipPath34)"
     /></g
-    ><g stroke-linecap="butt" font-size="11px" transform="translate(-33,412)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke-linejoin="round" stroke="black" stroke-opacity="1"
+    ><g stroke-linecap="butt" font-size="11px" transform="translate(-33,410)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke-linejoin="round" stroke="black" stroke-opacity="1"
     ><line y2="50" fill="none" x1="349" clip-path="url(#clipPath36)" x2="50" y1="50"
       /><polygon points=" 50 50 62 56 62 44" clip-path="url(#clipPath36)" stroke="none"
       /><polygon fill="none" points=" 50 50 62 56 62 44" clip-path="url(#clipPath36)"
@@ -365,7 +365,7 @@
       /><text fill="black" x="9" xml:space="preserve" y="12" clip-path="url(#clipPath41)" stroke="none"
       >1.1: getParameterList()</text
     ></g
-    ><g font-size="11px" transform="translate(33,444)" fill-opacity="1" fill="white" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="white" stroke-opacity="1"
+    ><g font-size="11px" transform="translate(33,442)" fill-opacity="1" fill="white" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="white" stroke-opacity="1"
     ><rect x="0" width="54" height="15" y="0" clip-path="url(#clipPath42)" stroke="none"
       /><text fill="black" x="9" xml:space="preserve" y="12" clip-path="url(#clipPath42)" stroke="none"
       >1.7: ok</text
