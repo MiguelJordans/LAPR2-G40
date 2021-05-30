@@ -42,9 +42,8 @@
   * (iv) reference measurement unit (e.g.: "mg").
 * **AC2:** Each test result is characterized by a parameter code, a result and metric.
 * **AC3:** Each test parameter is characterized by a test result.
-* **AC4:** Each sample has a unique barcode.
-* **AC5:** The Clinical Chemistry Technologist should use the sample barcode number to find the test for which the sample was collected.
-* **AC6:** The Clinical Chemistry Technologist should register a value/result for each parameter of the test.
+* **AC4:** The Clinical Chemistry Technologist should use the sample barcode number to find the test for which the sample was collected.
+* **AC5:** The Clinical Chemistry Technologist should register a value/result for each parameter of the test.
 
 ### 1.4. Found out Dependencies
 
@@ -57,6 +56,7 @@ There is a dependency to:
 
 **From Sprint C:**
 
+There is a dependency to:
 * **"US04 Register a test to be performed to a registered client"** since at least one test must be registered in the system.
 * **"US05 Record the samples collected in the scope of a given test"** since each test must have an associated sample recorded in the system.
 
@@ -99,7 +99,7 @@ There is a dependency to:
 
 ### 2.2. Other Remarks
 
-*Use this section to capture some additional notes/remarks that must be taken into consideration into the design activity. In some case, it might be usefull to add other analysis artifacts (e.g. activity or state diagrams).* 
+*Use this section to capture some additional notes/remarks that must be taken into consideration into the design activity. In some case, it might be useful to add other analysis artifacts (e.g. activity or state diagrams).* 
 
 
 
@@ -111,19 +111,19 @@ There is a dependency to:
 
 | Interaction ID | Question: Which class is responsible for... | Answer  | Justification (with patterns)  |
 |:-------------  |:--------------------- |:------------|:---------------------------- |
-| Step/Msg 1: asks to record the results of a given test | ... interacting with the actor? | TestResultUI | Pure Fabrication: there is no reason to assign this responsibility to any existing class in the Domain Model |
+| **Step/Msg 1:** asks to record the results of a given test | ... interacting with the actor? | TestResultUI | **Pure Fabrication:** there is no reason to assign this responsibility to any existing class in the Domain Model |
 |                                                        | ... coordinating the US? | TestResultController | Controller |
-| Step/Msg 2: request sample barcode number | n/a | | |
-| Step/Msg 3: types the sample barcode number | ... knowing TestStore? | Company | IE: TestStore is initialized in Company |
-|                                             | ... knowing all the existent test? | TestStore | IE: knows its own tests |
-|                                             | ... transferring the data typed in the UI to the domain? | TestParameterDTO | DTO: When there is so much data to transfer, it is better to opt by using a DTO in order to reduce coupling between UI and domain |
-| Step/Msg 4: shows one parameter at a time and requests each value/result | n/a | | |
-| Step/Msg 5: types the value/result | ... knowing and getting the reference values? | ExternalModule | Protected Variation: It is necessary to know which adapter to use in order to get the reference values for the correct API |
-|                                    | ... getting the ExternalModule? | TestType | IE: knows what API to get depending on the type of test |
-|                                    | ... creating the TestParameterResult object? | TestParameter | Creator: TestParameterResult is an attribute of TestParameter |
-|                                    | ... validating and saving the typed data? | ReferenceValue | IE: knows its own data |
-|                                    | ... changing the test state? | Test | IE: After the tests being recorded, Test must change its state |
-| Step/Msg 6: informs operation success | ... informing operation success? | RecordTestResultUI | IE: responsible for user interaction |
+| **Step/Msg 2:** request sample barcode number | n/a | | |
+| **Step/Msg 3:** types the sample barcode number | ... knowing TestStore? | Company | **IE:** TestStore is initialized in Company |
+|                                             | ... knowing all the existent test? | TestStore | **IE:** knows its own tests |
+|                                             | ... transferring the data typed in the UI to the domain? | TestParameterDTO | **DTO:** When there is so much data to transfer, it is better to opt by using a DTO in order to reduce coupling between UI and domain |
+| **Step/Msg 4:** shows one parameter at a time and requests each value/result | n/a | | |
+| **Step/Msg 5:** types the value/result | ... knowing and getting the reference values? | ExternalModule | **Protected Variation:** It is necessary to know which adapter to use in order to get the reference values for the correct API |
+|                                    | ... getting the ExternalModule? | TestType | **IE:** knows what API to get depending on the type of test |
+|                                    | ... creating the TestParameterResult object? | TestParameter | **Creator:** TestParameterResult is an attribute of TestParameter |
+|                                    | ... validating and saving the typed data? | ReferenceValue | **IE:** knows its own data |
+|                                    | ... changing the test state? | Test | **IE:** After the tests being recorded, Test must change its state |
+| **Step/Msg 6:** informs operation success | ... informing operation success? | RecordTestResultUI | **IE:** responsible for user interaction |
 
 
 ### Systematization ##
