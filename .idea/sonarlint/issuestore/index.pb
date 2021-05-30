@@ -163,10 +163,6 @@ d
 4src/main/java/app/ui/console/SpecialistDoctorUI.java,8\e\8e4fde63a438f2762f80f6344f21beb4392e356f
 X
 (src/main/java/app/ui/console/TestUI.java,1\5\15d7308bfbedb40ecda7bcd7b7632dfb1d7328b1
-b
-2src/main/java/app/ui/console/TestValidationUI.java,e\3\e3a5b62cbd42edb430a74acec93b5f4efe82df54
-i
-9src/main/java/app/ui/console/LaboratoryCoordinatorUI.java,4\e\4e65c9b3aa89673363a216c4bc519d48d958ee09
 S
 #src/main/java/app/ui/gui/readme.txt,c\a\cadd55f783be2a6453ad7fa06bfa00662df8d290
 >
