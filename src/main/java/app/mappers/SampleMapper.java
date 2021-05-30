@@ -8,7 +8,7 @@ import java.util.List;
 
 public class SampleMapper {
     private SampleDTO toDTO(Sample sm) {
-        return new SampleDTO(sm.getTr(),sm.getBarcode(),sm.getDate());
+        return new SampleDTO(sm.getTr(), sm.getBarcode(), sm.getDate());
     }
 
     public List<SampleDTO> toDTO(List<Sample> sampleList) {

@@ -7,8 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ParameterCategoryMapper {
+
     private ParameterCategoryDTO toDTO(ParameterCategory cat) {
-        return new ParameterCategoryDTO(cat.getCode(), cat.getNhsld(),cat.getDescription());
+        return new ParameterCategoryDTO(cat.getCode(), cat.getNhsld(), cat.getDescription());
     }
 
     public List<ParameterCategoryDTO> toDTO(List<ParameterCategory> catList) {
@@ -18,5 +19,4 @@ public class ParameterCategoryMapper {
         }
         return categoriesDTO;
     }
-
 }

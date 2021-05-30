@@ -8,7 +8,16 @@ public class TestDTO {
     private State state;
     private String name;
 
-    public TestDTO(String citizenCardNumber,String testID,String nhsCode,String state,String name){
+    /**
+     * Constructor.
+     *
+     * @param citizenCardNumber the citizen card number
+     * @param testID            the test ID
+     * @param nhsCode           the NHS code
+     * @param state             the state
+     * @param name              the name
+     */
+    public TestDTO(String citizenCardNumber, String testID, String nhsCode, String state, String name) {
 
         this.citizenCardNumber = citizenCardNumber;
         this.testID = testID;
@@ -16,25 +25,47 @@ public class TestDTO {
         this.name = name;
 
         setState(state);
-
     }
 
+    /**
+     * Gets the citizen card number.
+     *
+     * @return the citizen card number
+     */
     public String getCitizenCardNumber() {
         return citizenCardNumber;
     }
 
+    /**
+     * Gets the NHS code.
+     *
+     * @return the NHS code
+     */
     public String getNhsCode() {
         return nhsCode;
     }
 
+    /**
+     * Gets the test ID.
+     *
+     * @return the test ID
+     */
     public String getTestID() {
         return testID;
     }
 
+    /**
+     * Gets the test state.
+     *
+     * @return the test state
+     */
     public String getState() {
         return state.name();
     }
 
+    /**
+     * Test state options.
+     */
     enum State {
         CREATED,
         SAMPLE_COLLECTED,
@@ -43,6 +74,11 @@ public class TestDTO {
         VALIDATED;
     }
 
+    /**
+     * Modifies the test state.
+     *
+     * @param state the test state
+     */
     public void setState(State state) {
         this.state = state;
     }
@@ -69,25 +105,31 @@ public class TestDTO {
         }
     }
 
+    /**
+     * Compares the state.
+     * @param state the state
+     * @return true if it's different, false if it's equal
+     */
     public boolean compareState(String state) {
-
 
         if (state.equals("SAMPLE_ANALYSED") || state.equals("SAMPLE_COLLECTED") || state.equals("DIAGNOSTIC_MADE") || state.equals("VALIDATED")) {
             return false;
         }
-
         return true;
-
     }
 
+    /**
+     * Returns the textual description of the test in the format: TIN number, test ID, NHS code,
+     * test type, state and date.
+     * @return the Test's characteristics
+     */
     @Override
     public String toString() {
         return "TestDTO{" +
-                " TestID:" + testID  +
-                ", NhsCode:" + nhsCode  +
-                ", Client name: "+ name +
+                " TestID:" + testID +
+                ", NhsCode:" + nhsCode +
+                ", Client name: " + name +
                 ", state:" + state +
                 '}';
     }
-
 }

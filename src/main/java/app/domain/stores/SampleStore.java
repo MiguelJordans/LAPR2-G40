@@ -23,7 +23,6 @@ public class SampleStore {
      *
      * @return the sample created
      */
-
     public Sample createSample(Test tr) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
         Class<?> eClass = Class.forName(Constants.BC_REFERENCE_API);
@@ -40,24 +39,25 @@ public class SampleStore {
         LocalDateTime now = LocalDateTime.now();
         String date = dtf.format(now);
 
-        this.sm = new Sample(tr, barcode,date);
+        this.sm = new Sample(tr, barcode, date);
 
         return this.sm;
-
     }
 
+    /**
+     * Generates a random number with 11 digits.
+     * @return a random number with 11 digits
+     */
     public String generateNumber() {
 
         return RandomStringUtils.randomNumeric(11);
     }
 
     /**
-     * Validates a test type
+     * Validates a sample.
      *
-
      * @return the validation of the Sample being created
      */
-
     public boolean validateSample() {
         if (sm == null || listContain()) {
             return false;
@@ -66,12 +66,10 @@ public class SampleStore {
     }
 
     /**
-     * Checks if the new objected created is already in the list
+     * Checks if the new objected created is already in the list.
      *
-
      * @return true if the list contains the Sample and false if it doesn't
      */
-
     public boolean listContain() {
 
         if (this.list.contains(sm)) {
@@ -86,7 +84,6 @@ public class SampleStore {
      *
      * @return the saving of an instance of a Sample
      */
-
     public boolean saveSample() {
         if (validateSample()) {
             listAdd();
@@ -94,7 +91,6 @@ public class SampleStore {
         } else {
             return false;
         }
-
     }
 
     /**
@@ -102,7 +98,6 @@ public class SampleStore {
      *
      * @return the addition of the Test Type to the list
      */
-
     public boolean listAdd() {
         list.add(sm);
         return true;
@@ -114,7 +109,6 @@ public class SampleStore {
      * @param i the index of the element to replace
      * @return the element previously at the specified postion
      */
-
     public Sample getSample(int i) {
         return list.get(i);
     }
@@ -124,7 +118,6 @@ public class SampleStore {
      *
      * @return the Sample requested
      */
-
     public Sample getSm() {
         return sm;
     }
@@ -134,10 +127,7 @@ public class SampleStore {
      *
      * @return the list of test types already created
      */
-
     public List<Sample> getSampleList() {
         return list;
     }
-
-
 }
