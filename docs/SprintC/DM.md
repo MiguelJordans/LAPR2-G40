@@ -84,7 +84,9 @@ To identify domain conceptual classes, start by making a list of candidate conce
 
 * Type of test
 * Category
-
+* barcodeText
+* TestType Description
+* ParameterCategory Description
 
 ---
 
@@ -98,14 +100,32 @@ To identify domain conceptual classes, start by making a list of candidate conce
 
 **Containers**
 
-*  
+* TestList
+* SampleList
+* ParameterCategoryList
+* ParameterList
+* TestTypeList
+* TestParameterList
+* ClientList
+* EmployeeList
+* ValidTestsList
+* InvalidTestsList
 
 ---
 
 
 **Elements of Containers**
 
-*  
+* Test
+* Sample
+* ParameterCategory
+* Parameter
+* TestType
+* TestParameter
+* Client
+* Employee
+* ValidTests
+* InvalidTests
 
 ---
 
@@ -122,6 +142,11 @@ To identify domain conceptual classes, start by making a list of candidate conce
 * NHS API module
 * External API module
 * barcode
+* barcode Image
+* ExternalAPI (Barbecue)
+* CovidReferenceValue1API
+* ExternalModule2API
+* ExternalModule3API
 
 ---
 
@@ -160,6 +185,10 @@ To identify domain conceptual classes, start by making a list of candidate conce
 |       Concept (A)       |          Association   	          |          Concept (B)          |
 |:-----------------------:|:---------------------------------:|:-----------------------------:|
 | Company  	              | owns                              | Chemical Laboratory           |
+| Company  	              | capable of analysing                               | Parameter           |
+| Company  	              | knows                             | ClientRegistration           |
+| Company  	              | adopts                              | ParameterCategory           |
+| Company  	              | knows                              | Employee           |
 | Company  	              | owns                              | Clinical Analysis Laboratory  |
 | Company  	              | performs   	                      | Test                          |
 | Company  	              | conducts    		              | Test Type                     |
@@ -173,15 +202,27 @@ To identify domain conceptual classes, start by making a list of candidate conce
 | Test 	                  | requests analysis of    	      | Parameter                     |
 | Test 	                  | collects    		              | Sample                        |
 | Test 	                  | requested by    	              | Client                        |
-| Parameter               | presented under    		          | Category                      |
+| TestType  	              | can measure parameters under                             | ParameterCategory  |
+| TestType  	              | makes use of                             | ExternalModule  |
+| ReferenceValue  	              | provided by                             | ExternalModule  |
+| TestParameterResult  	              | records                             | ReferenceValue  |
+| TestParameter  	              | contains                             | TestParameterResult  |
+| Administrator   	              | registers                             | Employee  |
+| ExternalAPI 	              | identifies                             | Sample  |
+| ExternalAPI 	              | generates                             | Barcode  |
+| ExternalAPI 	              | generates                             | BarcodeImage  |
+| Parameter               | presented under    		          | ParameterCategory                      |
 | Category 	              | created by    		              | Administrator                 |
 | Medical lab technicians | works in    		              | Clinical Analysis Laboratory  |
 | Sample 	              | registered locally by    	      | Medical lab technicians       |
 | Chemistry Technologist  | works in    		              | Chemical Laboratory           |
 | Chemistry Technologist  | performs the chemical analysis in | Sample                        |
+| Chemical Laboratory  | is a | Laboratory                        |
+| Clinical Analysis Laboratory 	              | performs                              | TestType           |
+| Clinical Analysis Laboratory   	              | is a                              | Laboratory           |
 | Specialist Doctor 	  | performs a                        | Diagnosis                     |
 | Specialist Doctor 	  | works in    		              | Chemical Laboratory           |
-| Laboratory Coordinator  | validates    		              | Sample                        |
+| Laboratory Coordinator  | validates    		              | Test                       |
 | NHS API            	  | generates              	 	      | Report                        |
 | Report               	  | sent to              	 	      | NHS                           |
 | External API	          | identifies         	              | Sample                        |

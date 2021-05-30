@@ -1,0 +1,16 @@
+
+n
+java:S1192Å"PDefine a constant instead of duplicating this literal "SAMPLE_ANALYSED" 3 times.(×ÁşÌ8Øøµî›/
+s
+java:S1192É"PDefine a constant instead of duplicating this literal "DIAGNOSTIC_MADE" 3 times.(ıˆäüÿÿÿÿ8Ùøµî›/
+h
+java:S1192Í"JDefine a constant instead of duplicating this literal "VALIDATED" 3 times.(§ˆ€á8Ùøµî›/
+P
+java:S1874y"3Remove this use of "newInstance"; it is deprecated.(ÒëşÓ8åøµî›/
+I
+java:S1172¡"+Remove this unused method parameter "date".(ÈÃĞ¶8æøµî›/
+Y	java:S125¢"<This block of commented-out lines of code should be removed.(Œ·Â¿8æøµî›/
+d
+java:S1126İ"AReplace this if-then-else statement by a single return statement.(ÂÊÕ¶ıÿÿÿÿ8èøµî›/
+^
+java:S1126ê"AReplace this if-then-else statement by a single return statement.(Ò‚¸Y8ñ³¸ñ›/

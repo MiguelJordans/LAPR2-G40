@@ -157,7 +157,15 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 ## 3.2. Sequence Diagram (SD)
 
+##Alternativa 1
+
 ![US005-SD](US005_SD.svg)
+
+*Remark* : Without the SampleMapper (to convert the samples in to DTO)
+
+##Alternativa 2
+
+![US005-SD](US005_V2_SD.svg)
 
 **Remark :** It is worth noticing that all objects' interactions are consistent with the responsibilities assigned during the rationale.
 

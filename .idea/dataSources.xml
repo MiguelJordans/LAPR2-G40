@@ -36,5 +36,12 @@
       <jdbc-url>jdbc:sqlite:C:\Users\Utilizador\Documents\lei-21-s2-1dj-g40\docs\SprintB\US3\Extras\US3 SSD.vpp</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="US12.vpp" uuid="42de9041-7eb7-4064-b18d-dab02e2a1003">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\MiguelJordão(1201487\Documents\lei-21-s2-1dj-g40\docs\SprintC\US012\Extras\US12.vpp.bak_020d</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>
