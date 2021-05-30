@@ -8,11 +8,12 @@ import java.util.List;
 
 public class Test {
 
-    private String citizenCardNumber;
+    private String tinNumber;
     private String testID;
     private String nhsCode;
     private TestType tt;
     private State state;
+    private LocalDate date;
 
     private List<TestParameter> tpList;
 
@@ -22,12 +23,13 @@ public class Test {
     public Test(String citizenCardNumber, String testID, String nhsCode, TestType tt) {
         checkNhsCode(nhsCode);
 
-        this.citizenCardNumber = citizenCardNumber;
+        this.tinNumber = citizenCardNumber;
         this.testID = testID;
         this.nhsCode = nhsCode;
         this.tt = tt;
         state = State.CREATED;
         tpList = new ArrayList<>();
+        this.date=LocalDate.now();
     }
 
     public String getTestID() {
@@ -97,8 +99,16 @@ public class Test {
         return true;
     }
 
-    public String getCitizenCardNumber() {
-        return citizenCardNumber;
+    public String getTinNumber() {
+        return tinNumber;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public TestType getTt() {
+        return tt;
     }
 
     //US15
@@ -110,6 +120,8 @@ public class Test {
         // this.validationDate=date;
         return true;
     }
+
+    //
 
     enum State {
         CREATED,
@@ -127,18 +139,23 @@ public class Test {
         switch (s) {
             case "CREATED":
                 setState(State.CREATED);
+                date=LocalDate.now();
                 break;
             case "SAMPLE_COLLECTED":
                 setState(State.SAMPLE_COLLECTED);
+                date=LocalDate.now();
                 break;
             case "SAMPLE_ANALYSED":
                 setState(State.SAMPLE_ANALYSED);
+                date=LocalDate.now();
                 break;
             case "DIAGNOSTIC_MADE":
                 setState(State.DIAGNOSTIC_MADE);
+                date=LocalDate.now();
                 break;
             case "VALIDATED":
                 setState(State.VALIDATED);
+                date=LocalDate.now();
                 break;
             default:
                 break;
@@ -168,13 +185,14 @@ public class Test {
     @Override
     public String toString() {
         return "Test{" +
-                "citizenCardNumber='" + citizenCardNumber + '\'' +
+                "TinNumber='" + tinNumber + '\'' +
                 ", testID='" + testID + '\'' +
                 ", nhsCode='" + nhsCode + '\'' +
                 ", tt=" + tt +
                 ", state=" + state +
-                ", tpList=" + tpList +
+                ", date=" + date +
                 '}';
     }
+
 }
 

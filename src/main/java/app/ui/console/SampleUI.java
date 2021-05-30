@@ -19,10 +19,11 @@ public class SampleUI implements Runnable {
         boolean flag;
         boolean m = false;
         boolean nbol = false;
+        int b;
 
         TestDTO trDto;
 
-        if (this.ctrl.getTestListDto() == null || this.ctrl.getTestListDto().isEmpty()) {
+        if (this.ctrl.getAvailableTestListDto() == null || this.ctrl.getAvailableTestListDto().isEmpty()) {
             System.out.println("The list is empty! Please, try adding at least one test in order to create the sample(s)!");
 
         } else {
@@ -30,7 +31,7 @@ public class SampleUI implements Runnable {
                 boolean exception = false;
                 do {
 
-                     trDto = (TestDTO) Utils.showAndSelectOne(this.ctrl.getTestListDto(), "Select the test: \n");
+                     trDto = (TestDTO) Utils.showAndSelectOne(this.ctrl.getAvailableTestListDto(), "Select the test: \n");
 
                     if (trDto != null)
                         m = trDto.compareState(trDto.getState());
@@ -71,14 +72,18 @@ public class SampleUI implements Runnable {
                 if (count) {
 
                     do {
-                        Utils.showListWithouThe0(ctrl.getSampleList(), "Do you wish to delete any?(s/n)");
+                        Utils.showListWithouThe0(ctrl.getCurrentSampleListDTO(), "Do you wish to delete any?(s/n)");
                         flag = Utils.confirm("");
                         count = flag;
                         nbol = flag;
 
                         if (flag) {
+                            if(ctrl.getCurrentSampleList().size()>ctrl.getSampleList().size()){
+                                b = ctrl.getCurrentSampleList().size();
+                            } else b=0;
+
                             int a = Utils.readIntegerFromConsole("Type the number of the sample that you wish to delete: ");
-                            ctrl.getSampleList().remove(a - 1);
+                            ctrl.getSampleList().remove(b+(a - 1));
                             count = !flag;
 
                         }

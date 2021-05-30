@@ -4,10 +4,13 @@ import org.junit.Assert;
 import org.junit.ComparisonFailure;
 import org.junit.Test;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 public class SampleTest {
+
+    private LocalDate date = LocalDate.now();
 
     @Test
     public void createSample() {
@@ -313,7 +316,7 @@ public class SampleTest {
 
         Sample sm1 = new Sample(test, "11111111111");
 
-        String expected = "Sample { Test ID=100000000000, Barcode=11111111111}";
+        String expected = "Sample{tr=Test{TinNumber='1234567890123456', testID='100000000000', nhsCode='999999999999', tt= Test Code: BL000, Description:Blood Test, CollectingMethod:Needle, state=CREATED, date=2021-05-30}, barcode='11111111111', date="+date+"}";
         String actual = sm1.toString();
 
         Assert.assertEquals(expected,actual);

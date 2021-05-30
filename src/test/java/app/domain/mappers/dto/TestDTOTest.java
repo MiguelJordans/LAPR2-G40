@@ -23,7 +23,7 @@ public class TestDTOTest {
 
         app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", tt);
 
-        TestDTO testDTO = new TestDTO(test.getCitizenCardNumber(),test.getTestID(),test.getNhsCode(),test.getState());
+        TestDTO testDTO = new TestDTO(test.getTinNumber(),test.getTestID(),test.getNhsCode(),test.getState());
 
     }
 
@@ -39,7 +39,7 @@ public class TestDTOTest {
 
         app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", tt);
 
-        TestDTO testDTO = new TestDTO(test.getCitizenCardNumber(),test.getTestID(),test.getNhsCode(),test.getState());
+        TestDTO testDTO = new TestDTO(test.getTinNumber(),test.getTestID(),test.getNhsCode(),test.getState());
 
         Assert.assertNotNull(testDTO.getCitizenCardNumber());
 
@@ -57,7 +57,7 @@ public class TestDTOTest {
 
         app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", tt);
 
-        TestDTO testDTO = new TestDTO(test.getCitizenCardNumber(),test.getTestID(),test.getNhsCode(),test.getState());
+        TestDTO testDTO = new TestDTO(test.getTinNumber(),test.getTestID(),test.getNhsCode(),test.getState());
 
         Assert.assertNotNull(testDTO.getNhsCode());
 
@@ -75,7 +75,7 @@ public class TestDTOTest {
 
         app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", tt);
 
-        TestDTO testDTO = new TestDTO(test.getCitizenCardNumber(),test.getTestID(),test.getNhsCode(),test.getState());
+        TestDTO testDTO = new TestDTO(test.getTinNumber(),test.getTestID(),test.getNhsCode(),test.getState());
 
         Assert.assertNotNull(testDTO.getTestID());
 
@@ -93,7 +93,7 @@ public class TestDTOTest {
 
         app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", tt);
 
-        TestDTO testDTO = new TestDTO(test.getCitizenCardNumber(),test.getTestID(),test.getNhsCode(),test.getState());
+        TestDTO testDTO = new TestDTO(test.getTinNumber(),test.getTestID(),test.getNhsCode(),test.getState());
 
         Assert.assertNotNull(testDTO.getState());
 
@@ -111,7 +111,7 @@ public class TestDTOTest {
 
         app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", tt);
 
-        TestDTO testDTO = new TestDTO(test.getCitizenCardNumber(),test.getTestID(),test.getNhsCode(),test.getState());
+        TestDTO testDTO = new TestDTO(test.getTinNumber(),test.getTestID(),test.getNhsCode(),test.getState());
 
        testDTO.setState("SAMPLE_COLLECTED");
 
@@ -129,7 +129,7 @@ public class TestDTOTest {
 
         app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", tt);
 
-        TestDTO testDTO = new TestDTO(test.getCitizenCardNumber(),test.getTestID(),test.getNhsCode(),test.getState());
+        TestDTO testDTO = new TestDTO(test.getTinNumber(),test.getTestID(),test.getNhsCode(),test.getState());
 
         testDTO.setState("SAMPLE_ANALYSED");
 
@@ -147,7 +147,7 @@ public class TestDTOTest {
 
         app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", tt);
 
-        TestDTO testDTO = new TestDTO(test.getCitizenCardNumber(),test.getTestID(),test.getNhsCode(),test.getState());
+        TestDTO testDTO = new TestDTO(test.getTinNumber(),test.getTestID(),test.getNhsCode(),test.getState());
 
         testDTO.setState("DIAGNOSTIC_MADE");
 
@@ -165,7 +165,7 @@ public class TestDTOTest {
 
         app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", tt);
 
-        TestDTO testDTO = new TestDTO(test.getCitizenCardNumber(),test.getTestID(),test.getNhsCode(),test.getState());
+        TestDTO testDTO = new TestDTO(test.getTinNumber(),test.getTestID(),test.getNhsCode(),test.getState());
 
         testDTO.setState("VALIDATED");
 
@@ -183,7 +183,7 @@ public class TestDTOTest {
 
         app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", tt);
 
-        TestDTO testDTO = new TestDTO(test.getCitizenCardNumber(),test.getTestID(),test.getNhsCode(),test.getState());
+        TestDTO testDTO = new TestDTO(test.getTinNumber(),test.getTestID(),test.getNhsCode(),test.getState());
 
         testDTO.compareState("SAMPLE_ANALYSED");
 
@@ -201,7 +201,7 @@ public class TestDTOTest {
 
         app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", tt);
 
-        TestDTO testDTO = new TestDTO(test.getCitizenCardNumber(),test.getTestID(),test.getNhsCode(),test.getState());
+        TestDTO testDTO = new TestDTO(test.getTinNumber(),test.getTestID(),test.getNhsCode(),test.getState());
 
         testDTO.compareState("");
 
@@ -219,9 +219,9 @@ public class TestDTOTest {
 
         app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", tt);
 
-        TestDTO testDTO = new TestDTO(test.getCitizenCardNumber(),test.getTestID(),test.getNhsCode(),test.getState());
+        TestDTO testDTO = new TestDTO(test.getTinNumber(),test.getTestID(),test.getNhsCode(),test.getState());
 
-        String expected= "TestDTO{citizenCardNumber='1234567890123456', testID='100000000000', nhsCode='999999999999', state=CREATED}";
+        String expected= "TestDTO{ TestID:100000000000, NhsCode:999999999999, state:CREATED}";
 
         String actual=testDTO.toString();
 

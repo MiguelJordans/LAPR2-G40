@@ -7,11 +7,14 @@ import app.mappers.dto.SampleDTO;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class SampleDTOTest {
+
+    private LocalDate date = LocalDate.now();
 
     @Test
     public void createSampleDto(){
@@ -25,7 +28,7 @@ public class SampleDTOTest {
 
         app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", tt);
 
-        SampleDTO sampleDTO = new SampleDTO(test,"12345678901");
+        SampleDTO sampleDTO = new SampleDTO(test,"12345678901",date);
 
         Assert.assertNotNull(sampleDTO);
 
@@ -43,7 +46,7 @@ public class SampleDTOTest {
 
         app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", tt);
 
-        SampleDTO sampleDTO = new SampleDTO(test,"12345678901");
+        SampleDTO sampleDTO = new SampleDTO(test,"12345678901",date);
 
 
 
@@ -63,7 +66,7 @@ public class SampleDTOTest {
 
         app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", tt);
 
-        SampleDTO sampleDTO = new SampleDTO(test,"12345678901");
+        SampleDTO sampleDTO = new SampleDTO(test,"12345678901",date);
 
 
 
@@ -84,9 +87,9 @@ public class SampleDTOTest {
 
         app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", tt);
 
-        SampleDTO sampleDTO = new SampleDTO(test,"12345678901");
+        SampleDTO sampleDTO = new SampleDTO(test,"12345678901",date);
 
-        String expected = "SampleDTO{tr=Test{citizenCardNumber='1234567890123456', testID='100000000000', nhsCode='999999999999', tt= Test Code: 1abcE, Description:yes, CollectingMethod:aaa, state=CREATED, tpList=[]}, barcode='12345678901'}";
+        String expected = "SampleDTO{TestID: 100000000000 ,Test description: yes, Barcode=12345678901, Sample creation date: "+date+"}";
 
         String actual = sampleDTO.toString();
 

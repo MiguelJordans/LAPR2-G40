@@ -81,10 +81,9 @@ public class TestDTO {
     @Override
     public String toString() {
         return "TestDTO{" +
-                "citizenCardNumber='" + citizenCardNumber + '\'' +
-                ", testID='" + testID + '\'' +
-                ", nhsCode='" + nhsCode + '\'' +
-                ", state=" + state +
+                " TestID:" + testID  +
+                ", NhsCode:" + nhsCode  +
+                ", state:" + state +
                 '}';
     }
 

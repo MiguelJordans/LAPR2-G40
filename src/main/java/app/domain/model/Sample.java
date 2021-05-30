@@ -1,14 +1,18 @@
 package app.domain.model;
 
+import java.time.LocalDate;
+
 public class Sample {
 
     private Test tr;
     private String barcode;
+    private LocalDate date;
 
     public Sample(Test tr,String barcode) {
 
         this.tr=tr;
         this.barcode=barcode;
+        this.date= LocalDate.now();
 
     }
 
@@ -25,15 +29,20 @@ public class Sample {
         this.barcode = barcode;
     }
 
+    public LocalDate getDate() {
+        return date;
+    }
+
     public void setTr(Test tr) {
         this.tr = tr;
     }
 
     @Override
     public String toString() {
-        return "Sample {" +
-                " Test ID=" + tr.getTestID() +
-                ", Barcode=" + barcode +
+        return "Sample{" +
+                "tr=" + tr +
+                ", barcode='" + barcode + '\'' +
+                ", date=" + date +
                 '}';
     }
 }

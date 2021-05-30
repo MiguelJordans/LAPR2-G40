@@ -30,8 +30,6 @@ public class RegisteredSampleUI implements Runnable {
 
                         if (code.equals(sm1.getTr().getTestID())) {
                             System.out.println(sm1);
-                        } else {
-                            System.out.println("Test code invalid! Please try to type a valid test!");
                         }
                         flag = true;
                     }

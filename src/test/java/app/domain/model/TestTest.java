@@ -228,7 +228,7 @@ public class TestTest {
 
         test.createTestParameter("100000", parameters);
 
-        Assert.assertNotNull(test.getCitizenCardNumber());
+        Assert.assertNotNull(test.getTinNumber());
 
     }
 

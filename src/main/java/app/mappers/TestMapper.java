@@ -8,7 +8,7 @@ import java.util.List;
 
 public class TestMapper {
     private TestDTO toDTO(Test test) {
-        return new TestDTO(test.getCitizenCardNumber(), test.getTestID(), test.getNhsCode(),test.getState());
+        return new TestDTO(test.getTinNumber(), test.getTestID(), test.getNhsCode(),test.getState());
     }
 
     public List<TestDTO> toDTO(List<Test> testList) {
