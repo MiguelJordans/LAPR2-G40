@@ -50,7 +50,7 @@ public class SampleStore {
      */
     public String generateNumber() {
 
-        return RandomStringUtils.randomNumeric(11);
+        return RandomStringUtils.randomNumeric(Constants.BARCODE_SIZE);
     }
 
     /**
