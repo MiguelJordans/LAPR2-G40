@@ -17,16 +17,21 @@ public class RecordTestResultController {
 
     private SampleMapper sampleMapper;
 
+    /**
+     * Constructor.
+     */
     public RecordTestResultController() {
-        this(App.getInstance().getCompany());
+        App app = App.getInstance();
+        Company company = app.getCompany();
         this.sampleStore = company.getSampleStore();
         this.testStore = company.getTestStore();
     }
 
-    public RecordTestResultController(Company company) {
-        this.company = company;
-    }
-
+    /**
+     * Gets the corresponding test using the sample barcode number
+     * @param sampleID the sample barcode number
+     * @return corresponding test
+     */
     private boolean getCorrespondingTest(String sampleID) {
         String testID;
 
@@ -51,6 +56,11 @@ public class RecordTestResultController {
         return false;
     }
 
+    /**
+     * 
+     * @param sampleID
+     * @return
+     */
     public List<TestParameter> getParameters(String sampleID) {
         getCorrespondingTest(sampleID);
 
