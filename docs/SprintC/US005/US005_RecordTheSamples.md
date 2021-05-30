@@ -129,6 +129,7 @@ There is a dependency to:
 | 		                                                | ... creating the barcode?	| BarcodeAdapter | **IE**: Responsible for creating the barcode and its components |
 | 		                                                | ... creating the barcodeImage? | BarcodeAdapter | **IE**: Responsible for creating the barcode image and its components |
 | 		                                                | ... exporting the barcodeImage in the jpeg format? | BarcodeAdapter | **IE**: Responsible for exporting the images (in jpg format) into a folder |
+| 		                                                | ... getting the data to expose to the user(Sample(s))? | SampleMapper | **DTO**: In order to detach the domain layer from the UI layer, we use a data transfer object (DTO) to only extract data from the domain class (and not extract methods from the domain class) |
 | **Step/MSG 6**: shows all data and requests confirmation | ... validating the data locally (e.g.: mandatory vs non-mandatory data)? | Sample | **IE**: An object knows its data |
 | 	                                                       | ... validating the data globally (e.g.: duplicated)? | SampleStore | **IE**: Knows all samples |
 | **Step/MSG 7**: confirms all data | ...saving the created sample(s)? | SampleStore | **IE**: The SampleStore knows all samples in the system and stores the created samples |   
@@ -151,6 +152,8 @@ Other software classes (i.e. Pure Fabrication) identified:
  * BarcodeAdapter
  * TestMapper
  * TestDTO
+ * SampleMapper
+ * SampleDTO
 
 ## 3.2. Sequence Diagram (SD)
 
