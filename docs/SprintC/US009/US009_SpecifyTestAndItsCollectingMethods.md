@@ -70,7 +70,7 @@ When the administrator (US9) specifies a new type of test, the administrator als
 
 ##
 
-![US009_SSD](US09_SSD.svg)
+![US009_SSD](US009_SSD.svg)
 
 ##
 
@@ -79,6 +79,7 @@ When the administrator (US9) specifies a new type of test, the administrator als
 ##
 
 ![US009_SSD](US009_V2_SSD.svg)
+
 
 ### 1.7 Other Relevant Remarks
 
@@ -104,19 +105,18 @@ When the administrator (US9) specifies a new type of test, the administrator als
 
 | Interaction ID | Question: Which class is responsible for... | Answer | Justification (with patterns) |
 |:-------------- |:--------------------- |:------------|:---------------------------- |
-| Step/Msg 1: starts new test type | ... interacting with the actor? | CreateTestTypeUI | Pure Fabrication: there is no reason to assign this responsibility to any existing class in the Domain Model |
-|                                  | ... coordinating the US? | CreateTestTypeController | Controller |
-| 		                           | ... instantiating a new test type? | Company | Creator (Rule 1): in the DM Company has a test type |
-| 	                               | ... knowing the user using the system? | UserSession | IE: cf. A&A component documentation |
-| 		                           | ... knowing to which organization the user belongs to? | System | IE: has registed all? |
-| Step/Msg 2: request data (description, code, collectingMethods) | n/a | | |
-| Step/Msg 3: types requested data | ... saving the inputted data? | TestType | IE: object created in step 1 has its own data |
-| Step/Msg 4: shows the test type category | ... knowing the test type category to show? | System | IE: TestType categories are defined by the system? | 
-| Step/Msg 5: confirms the selected category | ... saving the selected category? | TestType | IE: object created in step 1 is classified in one Category |
-| Step/Msg 6: shows the data and requests a confirmation | ... validating the data locally (e.g.: mandatory vs non-mandatory data)?	| TestTypeStore | IE: knows its own data |
+| **Step/Msg 1**: starts new test type | ... interacting with the actor? | CreateTestTypeUI | **Pure Fabrication**: there is no reason to assign this responsibility to any existing class in the Domain Model |
+|                                  | ... coordinating the US? | CreateTestTypeController | **Controller** |
+|                                  | ... knows ParameterCategoryStore? | Company | **IE**: Company knows the TestStore to which it is delegating some tasks.   |
+| 		                           | ... checks all parameter categories available in the system? | ParameterCategoryStore | **IE**: The ParameterCategoryStore knows all parameter categories available in the system |
+| **Step/Msg 2**: request data (description, code, collectingMethods) | n/a | | |
+| **Step/Msg 3**: types requested data | ... creates the desired testType? | TestTypeStore | **Creator(R1)** and **HC+LC** : By the application of the Creator(R1), it would be the company, but, by applying HC + LC  to the company, this delegates that responsibility to the "SampleStore" |
+| **Step/Msg 4**: shows the parameter category list| ... get the data to expose to the user?  | ParameterCategoryMapper| **DTO**: In order to detach the domain layer from the UI layer, we use a data transfer object (DTO) to only extract data from the domain class (and not extract methods from the domain class) |
+| **Step/Msg 5**: confirms the selected category | ... saving the selected category? | TestType | IE: object created can save its own data |
+| **Step/Msg 6**: shows the data and requests a confirmation | ... validating the data locally (e.g.: mandatory vs non-mandatory data)?	| TestType | IE: knows its own data |
 |                                                        | ... validating the data globally (e.g.:duplicated)? | TestTypeStore | IE: adopts/records all the TestType objects |
-| Step/Msg 7: confirms the data | ... saving the created test type? |  TestTypeStore | IE:adopts/records all the Test type objects |              
-| Step/Msg 8: informs operation success | ... informing operation success? | TestTypeUI | IE: responsible for user interaction |
+| **Step/Msg 7**: confirms the data | ... saving the created test type? |  TestTypeStore | IE:adopts/records all the Test type objects |              
+| **Step/Msg 8**: informs operation success | ... informing operation success? | TestTypeUI | IE: responsible for user interaction |
 
 ### Systematization ##
 
@@ -130,7 +130,9 @@ Other software classes (i.e. Pure Fabrication) identified:
  * TestTypeUI
  * TestTypeController
  * TestTypeStore
- * CategoryStore  
+ * CategoryStore
+ * ParameterCategoryDTO
+ * ParameterCategoryMapper
 
 
 

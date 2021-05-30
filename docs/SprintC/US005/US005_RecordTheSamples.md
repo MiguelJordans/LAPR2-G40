@@ -72,7 +72,7 @@ As a medical lab technician, I want to record the samples collected in the scope
 
 ### 1.7 Other Relevant Remarks
 
-*Use this section to capture other relevant information that is related with this US such as (i) special requirements ; (ii) data and/or technology variations; (iii) how often this US is held.* 
+*n/a* 
 
 ## 2. OO Analysis
 
@@ -82,7 +82,7 @@ As a medical lab technician, I want to record the samples collected in the scope
 
 ### 2.2. Other Remarks
 
-*Use this section to capture some aditional notes/remarks that must be taken into consideration into the design activity. In some case, it might be usefull to add other analysis artifacts (e.g. activity or state diagrams).* 
+*n/a* 
 
 ## 3. Design - User Story Realization 
 
@@ -133,6 +133,8 @@ Other software classes (i.e. Pure Fabrication) identified:
 ## 3.2. Sequence Diagram (SD)
 
 ![US005-SD](US005_SD.svg)
+
+**Remark :** It is worth noticing that all objects' interactions are consistent with the responsibilities assigned during the rationale.
 
 ## 3.3. Class Diagram (CD)
 
