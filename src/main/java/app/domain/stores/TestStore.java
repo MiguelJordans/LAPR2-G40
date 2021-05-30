@@ -75,15 +75,15 @@ public class TestStore {
         return testsList;
     }
 
-/*
+
     public boolean validateTest(String testId, LocalDate instant) {
-        for (Test temp : tests) {
+        for (Test temp : testsList) {
             if (temp.getTestID().equals(testId)) {
                 temp.validate(instant);
             }
         }
         return true;
     }
- */
+
 }
 

@@ -14,6 +14,6 @@ public class TestValidationUI implements Runnable{
     public void run() {
         System.out.println(ctrl.invalidTests());
         String testId= Utils.readLineFromConsole("Please enter the id of test to validate.");
-        //ctrl.validateTest(testId);
+        ctrl.validateTest(testId);
     }
 }
