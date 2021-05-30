@@ -2,9 +2,6 @@
 
 ## 1. Requirements Engineering
 
-*In this section, it is suggested to capture the requirement description and specifications as provided by the client as well as any further clarification on it. It is also suggested to capture the requirements acceptance criteria and existing dependencies to other requirements. At last, identfy the involved input and output data and depicted an Actor-System interaction in order to fulfill the requirement.*
-
-
 ### 1.1. User Story Description
 
 *As an administrator, I want to specify a new parameter and categorize it.*
@@ -39,7 +36,7 @@
 
 ### 1.4. Found out Dependencies
 
-* There is a dependency to “US11 Specify a new parameter category” since at least a parameter category must exist to classify the parameter being created.
+* There is a dependency to “US011 Specify a new parameter category” since at least a parameter category must exist to classify the parameter being created.
 
 ### 1.5 Input and Output Data
 
@@ -65,7 +62,7 @@
 
 ### 1.7 Other Relevant Remarks
 
-*Use this section to capture other relevant information that is related with this US such as (i) special requirements ; (ii) data and/or technology variations; (iii) how often this US is held.*
+*n/a*
 
 
 ## 2. OO Analysis
@@ -76,9 +73,7 @@
 
 ### 2.2. Other Remarks
 
-*Use this section to capture some additional notes/remarks that must be taken into consideration into the design activity. In some case, it might be usefull to add other analysis artifacts (e.g. activity or state diagrams).*
-
-
+*n/a*
 
 ## 3. Design - User Story Realization
 
@@ -88,18 +83,18 @@
 
 | Interaction ID | Question: Which class is responsible for... | Answer  | Justification (with patterns)  |
 |:-------------  |:--------------------- |:------------|:---------------------------- |
-| Step/Msg 1: asks to create a new parameter | ... interacting with the actor? | ParameterUI | Pure Fabrication: there is no reason to assign this responsibility to any existing class in the Domain Model |
-|                                            | ... coordinating the US? | ParameterController | Controller |
-|                                            | ... instantiating a new Parameter? | Company | Creator (Rule 1): in the DM Company has a Parameter |
-|                                            | ... knowing to which organization the user belongs to? | Company | IE: has registered all |
-| Step/Msg 2: request data (code, shortName, description) | n/a | | |
-| Step/Msg 3: types requested data | ... saving the inputted data? | Parameter | IE: object created in step/msg 1 has its own data |
-| Step/Msg 4: shows parameter categories and asks to select one | ... knowing the parameter categories to show? | Company | IE: parameter category are defined by the system |
-| Step/Msg 5: selects one parameter category | ... saving the selected data? | Parameter | IE: object created in step/msg 1 has its own data |
-| Step/Msg 6: shows all data and requests a confirmation | ... validating the data locally (e.g.: mandatory vs non-mandatory data)? | ParameterStore | IE: knows its own data |
-|                                                        | ... validating the data globally (e.g.: duplicated)? | ParameterStore | IE: knows all the Parameter objects |
-| Step/Msg 7: confirms the data | ... saving the created Parameter? | Company | IE: adopts/records all the Parameter objects |
-| Step/Msg 8: informs operation success | ... informing operation success? | ParameterUI | IE: responsible for user interaction |            
+| **Step/Msg 1**: asks to create a new parameter | ... interacting with the actor? | ParameterUI | **Pure Fabrication**: there is no reason to assign this responsibility to any existing class in the Domain Model |
+|                                            | ... coordinating the US? | ParameterController | **Controller** |
+| **Step/Msg 2**: request data (code, shortName, description) |	...creates the ParameterStore?	 |  Company   | **PureFabrication** : By applying **HC+LC**, this delegates that the responsibility for such will be the Company.       |
+| **Step/Msg 3**: types requested data | ... creating a Parameter? | ParameterStore | **Creator(R1)** and **HC+LC** : By the application of the Creator(R1), it would be the company, but, by applying HC + LC  to the company, this delegates that responsibility to the "ParameterStore" |
+| |... checks all available parameter categories? | ParameterCategoryStore | **IE**: The ParameterCategoryStore knows all parameter categories available in the system. |
+| **Step/Msg 4**: shows parameter categories and asks to select one | ... knowing the parameter categories to show? | ParameterCategoryStore | **IE**: ParameterCategoryStore has access to all parameters categories available in the system |
+|  | ... gets the data to expose to the user? | ParameterCategoryMapper |  **DTO**: In order to detach the domain layer from the UI layer, we use a data transfer object (DTO) to only extract data from the domain class (and not extract methods from the domain class)    | |
+| **Step/Msg 5**: selects one parameter category | n/a | |  |
+| **Step/Msg 6**: shows all data and requests a confirmation | ... validating the data locally (e.g.: mandatory vs non-mandatory data)? | Parameter | **IE**: An object knows its data |
+|                                                        | ... validating the data globally (e.g.: duplicated)? | ParameterStore | **IE**: knows all the Parameter objects |
+| **Step/Msg 7**: confirms the data | ... saving the created Parameter? | ParameterStore | IE: adopts/records all the Parameter objects |
+| **Step/Msg 8**: informs operation success | ... informing operation success? | ParameterUI | IE: responsible for user interaction |            
 
 ### Systematization ##
 
@@ -112,6 +107,9 @@ Other software classes (i.e. Pure Fabrication) identified:
 * ParameterUI
 * ParameterController
 * ParameterStore
+* ParameterCategoryMapper
+* ParameterCategoryDTO
+* ParameterCategoryStore
 
 ## 3.2. Sequence Diagram (SD)
 
