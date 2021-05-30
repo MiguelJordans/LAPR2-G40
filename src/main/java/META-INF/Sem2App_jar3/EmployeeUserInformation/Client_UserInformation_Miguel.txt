@@ -1,5 +1,5 @@
 MEDICAL_LAB_TECHNICIAN INFORMATION: 
 
-Name: Miguel
+Name: MIGUEL
 Email: miguel@email.pt
-Password: TAhRQSlFHL
+Password: XwlYQyYBiK
