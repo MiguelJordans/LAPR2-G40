@@ -233,7 +233,7 @@ public class TestDTOTest {
 
         TestDTO testDTO = new TestDTO(test.getTinNumber(),test.getTestID(),test.getNhsCode(),test.getState(),name);
 
-        String expected= "TestDTO{ TestID:100000000000, NhsCode:999999999999, state:CREATED}";
+        String expected= "TestDTO{ TestID:100000000000, NhsCode:999999999999, Client name: , state:CREATED}";
 
         String actual=testDTO.toString();
 
