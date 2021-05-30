@@ -6,13 +6,13 @@ public class Sample {
 
     private Test tr;
     private String barcode;
-    private LocalDate date;
+    private String date;
 
-    public Sample(Test tr,String barcode) {
+    public Sample(Test tr,String barcode,String date) {
 
         this.tr=tr;
         this.barcode=barcode;
-        this.date= LocalDate.now();
+        this.date= date;
 
     }
 
@@ -29,7 +29,7 @@ public class Sample {
         this.barcode = barcode;
     }
 
-    public LocalDate getDate() {
+    public String getDate() {
         return date;
     }
 

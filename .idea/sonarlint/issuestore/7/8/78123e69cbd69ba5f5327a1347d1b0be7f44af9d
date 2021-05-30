@@ -1,9 +1,0 @@
-
-N
-java:S1874"3Remove this use of "newInstance"; it is deprecated.(ê­æÄúÿÿÿÿ
-W
-java:S11268"AReplace this if-then-else statement by a single return statement.(Ùøƒ”
-\
-java:S1126G"AReplace this if-then-else statement by a single return statement.(ÅêŠüÿÿÿÿ
-P
-java:S2209G"5Change this instance-reference to a static reference.(ÅêŠüÿÿÿÿ

@@ -8,9 +8,9 @@ public class SampleDTO {
 
     private Test tr;
     private String barcode;
-    private LocalDate date;
+    private String date;
 
-    public SampleDTO(Test tr,String barcode,LocalDate date){
+    public SampleDTO(Test tr,String barcode,String date){
 
         this.tr=tr;
         this.barcode=barcode;

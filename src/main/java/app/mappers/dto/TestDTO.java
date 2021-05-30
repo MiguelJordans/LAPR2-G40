@@ -6,12 +6,14 @@ public class TestDTO {
     private String testID;
     private String nhsCode;
     private State state;
+    private String name;
 
-    public TestDTO(String citizenCardNumber,String testID,String nhsCode,String state){
+    public TestDTO(String citizenCardNumber,String testID,String nhsCode,String state,String name){
 
         this.citizenCardNumber = citizenCardNumber;
         this.testID = testID;
         this.nhsCode = nhsCode;
+        this.name = name;
 
         setState(state);
 
@@ -83,6 +85,7 @@ public class TestDTO {
         return "TestDTO{" +
                 " TestID:" + testID  +
                 ", NhsCode:" + nhsCode  +
+                ", Client name: "+ name +
                 ", state:" + state +
                 '}';
     }

@@ -6,6 +6,8 @@ import app.domain.model.Test;
 import app.domain.shared.Constants;
 import org.apache.commons.lang3.RandomStringUtils;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,7 +36,11 @@ public class SampleStore {
 
         barcode = ba.getBarcode();
 
-        this.sm = new Sample(tr, barcode);
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+        LocalDateTime now = LocalDateTime.now();
+        String date = dtf.format(now);
+
+        this.sm = new Sample(tr, barcode,date);
 
         return this.sm;
 

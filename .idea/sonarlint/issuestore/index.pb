@@ -57,8 +57,6 @@ x
 Hsrc/test/java/app/domain/stores/ClinicalAnalysisLaboratoryStoreTest.java,5\c\5c14d151cb00906f7290e4fd1a189375df13dcd8
 `
 0src/test/java/app/domain/model/TestTypeTest.java,3\f\3fd04dd577dee7a6d88b49fdc1a11d0af2ea6a18
-d
-4src/test/java/app/domain/mappers/TestMapperTest.java,f\7\f7913c629a74fb93643ce758bccaedfb47c8e933
 a
 1src/test/java/app/domain/shared/OrgRolesTest.java,9\d\9d1645a8abb802716c9c430aa151896bc3d66b9b
 ^
@@ -123,8 +121,6 @@ c
 3src/main/java/app/domain/stores/ParameterStore.java,7\d\7df0384a20bdaebe6b51963547bbdd812dd751a8
 k
 ;src/main/java/app/domain/stores/ParameterCategoryStore.java,9\0\90d1cb3bc9c98c352bd9dcd1a6f966b1b9d5fd20
-^
-.src/main/java/app/domain/stores/TestStore.java,9\d\9d7c93dfb2abbc9f3e33ac38ae37e345fc6eea94
 b
 2src/main/java/app/domain/stores/TestTypeStore.java,6\9\69abcc76976e9f417dc01351473c7f46aba03ee9
 Y
@@ -185,12 +181,8 @@ e
 5src/test/java/app/domain/model/EmployeeSuperTest.java,4\0\40526cc1eaa9957d64535d4b344f0819b86f0d2a
 f
 6src/test/java/app/domain/stores/EmployeeStoreTest.java,3\a\3a9bdb855d5b94efa1ef21a2e4623f56d083d0cf
-U
-%src/main/java/app/controller/App.java,4\7\47cfbdc47faac4c1edcb93d1b6968a5d5bdad509
 f
 6src/main/java/app/mappers/ParameterCategoryMapper.java,2\3\23121ea581068432dd0a6741af6d1b586c2f1860
-`
-0src/main/java/app/domain/stores/SampleStore.java,7\8\78123e69cbd69ba5f5327a1347d1b0be7f44af9d
 n
 >src/main/java/app/ui/console/ClinicalAnalysisLaboratoryUI.java,c\0\c0fd6dabae9ef849d635d874a4f85943315bb5da
 v
@@ -207,14 +199,10 @@ g
 7src/test/java/app/domain/model/BarcodeAdapter1Test.java,4\e\4e7d96b8b0f457df10a473eecf8adcb179a1f821
 d
 4src/test/java/app/domain/stores/SampleStoreTest.java,d\a\da910ce79a563b2cacaddc3f7b356f379844a6bb
-f
-6src/test/java/app/domain/mappers/SampleMapperTest.java,9\9\9956377c9c096dfb582da51ce1f1a7ba08079ea6
 X
 (docs/SprintC/US003/US3_RegisterClient.md,4\3\439049babe768ebff6c9f28fc24a01527b953b1d
 ^
 .src/main/java/app/domain/shared/Constants.java,f\e\fecb2f10414ac5d80f9e492ba88044c5911e8e84
-[
-+src/main/java/app/domain/model/Company.java,e\6\e66f0f8e51b44df23f2004467961976fbec241aa
 b
 2src/main/java/app/domain/model/BarcodeAdapter.java,5\7\572c72cede0b54c6aa265bd8ca31dfceabbe6d68
 c

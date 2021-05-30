@@ -24,8 +24,9 @@ public class TestMapperTest {
         testList.add(test);
 
         TestMapper testMapper = new TestMapper();
+        String name = "";
 
-        testMapper.toDTO(testList);
+        testMapper.toDTO(testList,name);
 
     }
 

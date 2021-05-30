@@ -2,17 +2,16 @@ package app.controller;
 
 import app.domain.model.*;
 import app.domain.shared.Constants;
-import app.domain.stores.ParameterCategoryStore;
-import app.domain.stores.ParameterStore;
-import app.domain.stores.TestStore;
-import app.domain.stores.TestTypeStore;
+import app.domain.stores.*;
 import auth.AuthFacade;
 import auth.UserSession;
 
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Properties;
 
@@ -103,6 +102,7 @@ public class App {
         ParameterCategoryStore parameterCategoryStore = company.getParameterCategoryStore();
         ParameterStore parameterStore = company.getParameterStore();
         TestStore testStore = company.getTestStore();
+        ClientStore clientStore = company.getClientStore();
 
         ParameterCategory parameterCategory = new ParameterCategory("12345", "categoria", "1212");
         parameterCategoryStore.saveParameterCategory();
@@ -141,6 +141,19 @@ public class App {
         parameterStore.saveParameter();
         parameterStore.createParameter("WBC", "WBC00", "WBC", parameterCategory1);
         parameterStore.saveParameter();
+
+        String dateStr = "11/11/2000";
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        Date date = null;
+        try {
+            date = dateFormat.parse(dateStr);
+        } catch (Exception e) {
+            //empty
+        }
+
+        Client client = new Client("Miguel","1201487@isep.ipp.pt","male",date,"1234567890123456","12345678901","1234567890","9999999999");
+        //clientStore.getClientList().add(client);
+        //clientStore.saveClient();
 
         Test test = new Test("1234567890123456", "100000000000", "999999999999", bloodTest);
         testStore.saveTest(test);

@@ -5,12 +5,16 @@ import org.junit.ComparisonFailure;
 import org.junit.Test;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
 public class SampleTest {
 
-    private LocalDate date = LocalDate.now();
+    DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+    LocalDateTime now = LocalDateTime.now();
+    String date = dtf.format(now);
 
     @Test
     public void createSample() {
@@ -23,7 +27,7 @@ public class SampleTest {
         TestType bloodTest = new TestType("BL000", "Blood Test", "Needle", categories2);
         app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", bloodTest);
 
-        Sample sm1 = new Sample(test, "11111111111");
+        Sample sm1 = new Sample(test, "11111111111",date);
 
     }
 
@@ -38,7 +42,7 @@ public class SampleTest {
         TestType bloodTest = new TestType("BL000", "Blood Test", "Needle", categories2);
         app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", bloodTest);
 
-        Sample sm1 = new Sample(test, "11111111111");
+        Sample sm1 = new Sample(test, "11111111111",date);
 
         Assert.assertNotNull(sm1);
 
@@ -72,7 +76,7 @@ public class SampleTest {
         TestType bloodTest = new TestType("BL000", "Blood Test", "Needle", categories2);
         app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", bloodTest);
 
-        Sample sm1 = new Sample(test, "11111111111");
+        Sample sm1 = new Sample(test, "11111111111",date);
 
         String expected = "11111111111";
         String actual = sm1.getBarcode();
@@ -92,7 +96,7 @@ public class SampleTest {
         TestType bloodTest = new TestType("BL000", "Blood Test", "Needle", categories2);
         app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", bloodTest);
 
-        Sample sm1 = new Sample(test, "11111111111");
+        Sample sm1 = new Sample(test, "11111111111",date);
 
 
         String actual = sm1.getBarcode();
@@ -112,7 +116,7 @@ public class SampleTest {
         TestType bloodTest = new TestType("BL000", "Blood Test", "Needle", categories2);
         app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", bloodTest);
 
-        Sample sm1 = new Sample(test, null);
+        Sample sm1 = new Sample(test, null,date);
 
 
         String actual = sm1.getBarcode();
@@ -132,7 +136,7 @@ public class SampleTest {
         TestType bloodTest = new TestType("BL000", "Blood Test", "Needle", categories2);
         app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", bloodTest);
 
-        Sample sm1 = new Sample(test, "11111111111");
+        Sample sm1 = new Sample(test, "11111111111",date);
 
         String expected = "1111111111";
         String actual = sm1.getBarcode();
@@ -152,7 +156,7 @@ public class SampleTest {
         TestType bloodTest = new TestType("BL000", "Blood Test", "Needle", categories2);
         app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", bloodTest);
 
-        Sample sm1 = new Sample(test, "11111111111");
+        Sample sm1 = new Sample(test, "11111111111",date);
 
         app.domain.model.Test expected = test;
         app.domain.model.Test actual = sm1.getTr();
@@ -172,7 +176,7 @@ public class SampleTest {
         TestType bloodTest = new TestType("BL000", "Blood Test", "Needle", categories2);
         app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", bloodTest);
 
-        Sample sm1 = new Sample(test, "11111111111");
+        Sample sm1 = new Sample(test, "11111111111",date);
 
         app.domain.model.Test expected = null;
         app.domain.model.Test actual = sm1.getTr();
@@ -192,7 +196,7 @@ public class SampleTest {
         TestType bloodTest = new TestType("BL000", "Blood Test", "Needle", categories2);
         app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", bloodTest);
 
-        Sample sm1 = new Sample(test, "11111111111");
+        Sample sm1 = new Sample(test, "11111111111",date);
 
         app.domain.model.Test actual = sm1.getTr();
 
@@ -211,7 +215,7 @@ public class SampleTest {
         TestType bloodTest = new TestType("BL000", "Blood Test", "Needle", categories2);
         app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", bloodTest);
 
-        Sample sm1 = new Sample(null, "11111111111");
+        Sample sm1 = new Sample(null, "11111111111",date);
 
 
         app.domain.model.Test actual = sm1.getTr();
@@ -231,7 +235,7 @@ public class SampleTest {
         TestType bloodTest = new TestType("BL000", "Blood Test", "Needle", categories2);
         app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", bloodTest);
 
-        Sample sm1 = new Sample(test, "11111111111");
+        Sample sm1 = new Sample(test, "11111111111",date);
 
         String expected = "19111111111";
 
@@ -252,7 +256,7 @@ public class SampleTest {
         TestType bloodTest = new TestType("BL000", "Blood Test", "Needle", categories2);
         app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", bloodTest);
 
-        Sample sm1 = new Sample(test, "11111111111");
+        Sample sm1 = new Sample(test, "11111111111",date);
 
         String expected = null;
 
@@ -273,7 +277,7 @@ public class SampleTest {
         TestType bloodTest = new TestType("BL000", "Blood Test", "Needle", categories2);
         app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", bloodTest);
 
-        Sample sm1 = new Sample(test, "11111111111");
+        Sample sm1 = new Sample(test, "11111111111",date);
 
         app.domain.model.Test expected = new app.domain.model.Test("1234567890123412", "120000000000", "991999999999", bloodTest);
 
@@ -294,7 +298,7 @@ public class SampleTest {
         TestType bloodTest = new TestType("BL000", "Blood Test", "Needle", categories2);
         app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", bloodTest);
 
-        Sample sm1 = new Sample(test, "11111111111");
+        Sample sm1 = new Sample(test, "11111111111",date);
 
         app.domain.model.Test expected = null;
 
@@ -314,7 +318,7 @@ public class SampleTest {
         TestType bloodTest = new TestType("BL000", "Blood Test", "Needle", categories2);
         app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", bloodTest);
 
-        Sample sm1 = new Sample(test, "11111111111");
+        Sample sm1 = new Sample(test, "11111111111",date);
 
         String expected = "Sample{tr=Test{TinNumber='1234567890123456', testID='100000000000', nhsCode='999999999999', tt= Test Code: BL000, Description:Blood Test, CollectingMethod:Needle, state=CREATED, date=2021-05-30}, barcode='11111111111', date="+date+"}";
         String actual = sm1.toString();

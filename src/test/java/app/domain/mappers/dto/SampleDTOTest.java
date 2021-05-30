@@ -8,13 +8,17 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class SampleDTOTest {
 
-    private LocalDate date = LocalDate.now();
+    DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+    LocalDateTime now = LocalDateTime.now();
+    String date = dtf.format(now);
 
     @Test
     public void createSampleDto(){

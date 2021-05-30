@@ -18,10 +18,12 @@ public class RegisteredSampleUI implements Runnable {
 
         boolean count;
         boolean flag = false;
+        int n=1;
 
         do {
 
             String code = Utils.readLineFromConsole("Type the test ID to see the registered samples of that test: ");
+            n=1;
 
             do {
 
@@ -29,7 +31,8 @@ public class RegisteredSampleUI implements Runnable {
                     for (Sample sm1 : smStore.getSampleList()) {
 
                         if (code.equals(sm1.getTr().getTestID())) {
-                            System.out.println(sm1);
+                            System.out.println(n +": "+sm1);
+                            n++;
                         }
                         flag = true;
                     }

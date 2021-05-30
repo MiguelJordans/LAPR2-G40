@@ -22,8 +22,9 @@ public class TestDTOTest {
         TestType tt = new TestType("1abcE","yes","aaa",pcList);
 
         app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", tt);
+        String name="";
 
-        TestDTO testDTO = new TestDTO(test.getTinNumber(),test.getTestID(),test.getNhsCode(),test.getState());
+        TestDTO testDTO = new TestDTO(test.getTinNumber(),test.getTestID(),test.getNhsCode(),test.getState(),name);
 
     }
 
@@ -38,8 +39,9 @@ public class TestDTOTest {
         TestType tt = new TestType("1abcE","yes","aaa",pcList);
 
         app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", tt);
+        String name="";
 
-        TestDTO testDTO = new TestDTO(test.getTinNumber(),test.getTestID(),test.getNhsCode(),test.getState());
+        TestDTO testDTO = new TestDTO(test.getTinNumber(),test.getTestID(),test.getNhsCode(),test.getState(),name);
 
         Assert.assertNotNull(testDTO.getCitizenCardNumber());
 
@@ -56,8 +58,9 @@ public class TestDTOTest {
         TestType tt = new TestType("1abcE","yes","aaa",pcList);
 
         app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", tt);
+        String name="";
 
-        TestDTO testDTO = new TestDTO(test.getTinNumber(),test.getTestID(),test.getNhsCode(),test.getState());
+        TestDTO testDTO = new TestDTO(test.getTinNumber(),test.getTestID(),test.getNhsCode(),test.getState(),name);
 
         Assert.assertNotNull(testDTO.getNhsCode());
 
@@ -74,8 +77,9 @@ public class TestDTOTest {
         TestType tt = new TestType("1abcE","yes","aaa",pcList);
 
         app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", tt);
+        String name="";
 
-        TestDTO testDTO = new TestDTO(test.getTinNumber(),test.getTestID(),test.getNhsCode(),test.getState());
+        TestDTO testDTO = new TestDTO(test.getTinNumber(),test.getTestID(),test.getNhsCode(),test.getState(),name);
 
         Assert.assertNotNull(testDTO.getTestID());
 
@@ -92,8 +96,9 @@ public class TestDTOTest {
         TestType tt = new TestType("1abcE","yes","aaa",pcList);
 
         app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", tt);
+        String name="";
 
-        TestDTO testDTO = new TestDTO(test.getTinNumber(),test.getTestID(),test.getNhsCode(),test.getState());
+        TestDTO testDTO = new TestDTO(test.getTinNumber(),test.getTestID(),test.getNhsCode(),test.getState(),name);
 
         Assert.assertNotNull(testDTO.getState());
 
@@ -110,8 +115,9 @@ public class TestDTOTest {
         TestType tt = new TestType("1abcE","yes","aaa",pcList);
 
         app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", tt);
+        String name="";
 
-        TestDTO testDTO = new TestDTO(test.getTinNumber(),test.getTestID(),test.getNhsCode(),test.getState());
+        TestDTO testDTO = new TestDTO(test.getTinNumber(),test.getTestID(),test.getNhsCode(),test.getState(),name);
 
        testDTO.setState("SAMPLE_COLLECTED");
 
@@ -128,8 +134,9 @@ public class TestDTOTest {
         TestType tt = new TestType("1abcE","yes","aaa",pcList);
 
         app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", tt);
+        String name="";
 
-        TestDTO testDTO = new TestDTO(test.getTinNumber(),test.getTestID(),test.getNhsCode(),test.getState());
+        TestDTO testDTO = new TestDTO(test.getTinNumber(),test.getTestID(),test.getNhsCode(),test.getState(),name);
 
         testDTO.setState("SAMPLE_ANALYSED");
 
@@ -146,8 +153,9 @@ public class TestDTOTest {
         TestType tt = new TestType("1abcE","yes","aaa",pcList);
 
         app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", tt);
+        String name="";
 
-        TestDTO testDTO = new TestDTO(test.getTinNumber(),test.getTestID(),test.getNhsCode(),test.getState());
+        TestDTO testDTO = new TestDTO(test.getTinNumber(),test.getTestID(),test.getNhsCode(),test.getState(),name);
 
         testDTO.setState("DIAGNOSTIC_MADE");
 
@@ -164,8 +172,9 @@ public class TestDTOTest {
         TestType tt = new TestType("1abcE","yes","aaa",pcList);
 
         app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", tt);
+        String name="";
 
-        TestDTO testDTO = new TestDTO(test.getTinNumber(),test.getTestID(),test.getNhsCode(),test.getState());
+        TestDTO testDTO = new TestDTO(test.getTinNumber(),test.getTestID(),test.getNhsCode(),test.getState(),name);
 
         testDTO.setState("VALIDATED");
 
@@ -182,8 +191,9 @@ public class TestDTOTest {
         TestType tt = new TestType("1abcE","yes","aaa",pcList);
 
         app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", tt);
+        String name="";
 
-        TestDTO testDTO = new TestDTO(test.getTinNumber(),test.getTestID(),test.getNhsCode(),test.getState());
+        TestDTO testDTO = new TestDTO(test.getTinNumber(),test.getTestID(),test.getNhsCode(),test.getState(),name);
 
         testDTO.compareState("SAMPLE_ANALYSED");
 
@@ -200,8 +210,9 @@ public class TestDTOTest {
         TestType tt = new TestType("1abcE","yes","aaa",pcList);
 
         app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", tt);
+        String name="";
 
-        TestDTO testDTO = new TestDTO(test.getTinNumber(),test.getTestID(),test.getNhsCode(),test.getState());
+        TestDTO testDTO = new TestDTO(test.getTinNumber(),test.getTestID(),test.getNhsCode(),test.getState(),name);
 
         testDTO.compareState("");
 
@@ -218,8 +229,9 @@ public class TestDTOTest {
         TestType tt = new TestType("1abcE","yes","aaa",pcList);
 
         app.domain.model.Test test = new app.domain.model.Test("1234567890123456", "100000000000", "999999999999", tt);
+        String name="";
 
-        TestDTO testDTO = new TestDTO(test.getTinNumber(),test.getTestID(),test.getNhsCode(),test.getState());
+        TestDTO testDTO = new TestDTO(test.getTinNumber(),test.getTestID(),test.getNhsCode(),test.getState(),name);
 
         String expected= "TestDTO{ TestID:100000000000, NhsCode:999999999999, state:CREATED}";
 

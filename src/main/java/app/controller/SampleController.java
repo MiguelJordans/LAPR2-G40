@@ -1,5 +1,7 @@
 package app.controller;
 
+import app.domain.stores.ClientStore;
+import app.domain.stores.TestStore;
 import app.mappers.SampleMapper;
 import app.mappers.TestMapper;
 import app.mappers.dto.SampleDTO;
@@ -76,7 +78,7 @@ public class SampleController {
 
         this.testMapper1 = new TestMapper();
 
-        return testMapper1.toDTO(getAvailableTestsList());
+        return testMapper1.toDTO(getAvailableTestsList(),getClientName(tr));
 
     }
 
@@ -102,14 +104,6 @@ public class SampleController {
 
     public List<Test> getTestList() {
         return this.company.getTestList();
-    }
-
-    public List<TestDTO> getTestListDto() {
-
-        this.testMapper = new TestMapper();
-
-        return testMapper.toDTO(getTestList());
-
     }
 
     public List<SampleDTO> getSampleListDTO(){
@@ -151,6 +145,19 @@ public class SampleController {
             }
         }
 
+    }
+
+    public ClientStore getClientStore(){
+       return this.company.getClientStore();
+    }
+
+    public String getClientName(Test test){
+        for (Client c : getClientStore().getClientList()){
+            if(test.getTinNumber().equalsIgnoreCase(c.getTinNumber())){
+                return c.getName();
+            }
+        }
+        return null;
     }
 
 
