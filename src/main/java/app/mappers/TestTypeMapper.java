@@ -7,8 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TestTypeMapper {
+
     private TestTypeDTO toDTO(TestType tt) {
-        return new TestTypeDTO(tt.getTestCode(),tt.getDescription(),tt.getCollectingMethod());
+        return new TestTypeDTO(tt.getTestCode(), tt.getDescription(), tt.getCollectingMethod());
     }
 
     public List<TestTypeDTO> toDTO(List<TestType> ttList) {
@@ -18,5 +19,4 @@ public class TestTypeMapper {
         }
         return ttsDTO;
     }
-
 }

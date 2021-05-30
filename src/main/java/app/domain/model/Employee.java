@@ -3,7 +3,7 @@ package app.domain.model;
 public class Employee extends EmployeeSuper {
 
     /**
-     * Contructs an instance of Employee
+     * Constructs an instance of Employee
      *
      * @param name the Employee's name
      * @param address the Employee's adress

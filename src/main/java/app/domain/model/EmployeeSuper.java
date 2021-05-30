@@ -16,6 +16,17 @@ public class EmployeeSuper {
     private String socCode;
 
 
+    /**
+     * Contructor.
+     *
+     * @param name        the Employee's name
+     * @param address     the Employee's address
+     * @param email       the Employee's email
+     * @param phoneNumber the Employee's phone number
+     * @param employeeId  the Employee's ID
+     * @param socCode     the Employee's SOC code
+     * @param orgRole     the Employee's organization role
+     */
     public EmployeeSuper(String name, String address, String email, String phoneNumber, String employeeId, String socCode, String orgRole) {
 
         checkNameRules(name);
@@ -33,8 +44,6 @@ public class EmployeeSuper {
         this.employeeId = employeeId;
         this.socCode = socCode;
         this.orgRole = orgRole;
-
-
     }
 
     /**
@@ -42,7 +51,6 @@ public class EmployeeSuper {
      *
      * @param orgRole the the Employee's ordanization role
      */
-
     public void checkOrgRole(String orgRole) {
 
         if (StringUtils.isBlank(orgRole)) {
@@ -55,7 +63,6 @@ public class EmployeeSuper {
      *
      * @param name the Employee's name
      */
-
     public void checkNameRules(String name) {
 
         String aux = name.trim();
@@ -74,7 +81,6 @@ public class EmployeeSuper {
                 throw new IllegalArgumentException("Invalid name.");
             }
         }
-
     }
 
     /**
@@ -82,7 +88,6 @@ public class EmployeeSuper {
      *
      * @param address the Employee's address
      */
-
     public void checkAddressRules(String address) {
         String aux = address.trim();
         aux = aux.toLowerCase();
@@ -94,7 +99,6 @@ public class EmployeeSuper {
         if ((aux.length() > Constants.ADDRESS_EMPLOYEE_MAX)) {
             throw new IllegalArgumentException("Address cannot have more than 30 characters.");
         }
-
     }
 
     /**
@@ -102,7 +106,6 @@ public class EmployeeSuper {
      *
      * @param email the Employee's mail
      */
-
     public void checkEmailRules(String email) {
 
         if (email.equals("")) {
@@ -116,7 +119,6 @@ public class EmployeeSuper {
         if (!pat.matcher(email).matches()) {
             throw new IllegalArgumentException("Invalid Email format.");
         }
-
     }
 
     /**
@@ -124,7 +126,6 @@ public class EmployeeSuper {
      *
      * @param phoneNumber the Employee's phone number
      */
-
     public void checkPhoneNumberRules(String phoneNumber) {
         String auxTrimPhoneNumber = phoneNumber.replaceAll("\\s", "");
         char[] auxChar = auxTrimPhoneNumber.toCharArray();
@@ -148,9 +149,7 @@ public class EmployeeSuper {
      *
      * @param employeeId the Employee's ID
      */
-
     public void checkEmployeeId(String employeeId) {
-
 
         String auxEmployeeId = employeeId.replaceAll("\\s", "");
 
@@ -160,7 +159,6 @@ public class EmployeeSuper {
         if ((auxEmployeeId.length() == Constants.EMPLOYEE_ID)) {
             throw new IllegalArgumentException("Employee ID has an invalid format.");
         }
-
     }
 
     /**
@@ -168,7 +166,6 @@ public class EmployeeSuper {
      *
      * @param socCode the Employee's soc Code
      */
-
     public void checkSocCode(String socCode) {
 
         String auxSocCode = socCode.replaceAll("\\s", "");
@@ -187,17 +184,15 @@ public class EmployeeSuper {
                 throw new IllegalArgumentException("Invalid Soc Code.");
             }
         }
-
     }
 
-    //Gets
+    //Gets ----------------------------------------------------------------------------
 
     /**
      * Returns the organization role of the Employee
      *
      * @return the organization role of the Employee
      */
-
     public String getOrgRole() {
         return orgRole;
     }
@@ -207,7 +202,6 @@ public class EmployeeSuper {
      *
      * @return the name of the Employee
      */
-
     public String getName() {
         return name;
     }
@@ -217,7 +211,6 @@ public class EmployeeSuper {
      *
      * @return the address of the Employee
      */
-
     public String getAddress() {
         return address;
     }
@@ -227,7 +220,6 @@ public class EmployeeSuper {
      *
      * @return the email of the Employee
      */
-
     public String getEmail() {
         return email;
     }
@@ -237,7 +229,6 @@ public class EmployeeSuper {
      *
      * @return the phone number of the Employee
      */
-
     public String getPhoneNumber() {
         return phoneNumber;
     }
@@ -247,7 +238,6 @@ public class EmployeeSuper {
      *
      * @return the ID of the Employee
      */
-
     public String getEmployeeId() {
         return employeeId;
     }
@@ -257,19 +247,17 @@ public class EmployeeSuper {
      *
      * @return the Soc code of the Employee
      */
-
     public String getSocCode() {
         return socCode;
     }
 
-    //Sets
+    //Sets ----------------------------------------------------------------------------
 
     /**
      * Modifies the organization role
      *
      * @param orgRole modifies the organization role of the Employee
      */
-
     public void setOrgRole(String orgRole) {
         this.orgRole = orgRole;
     }
@@ -279,8 +267,6 @@ public class EmployeeSuper {
      *
      * @param name modifies the name of the Employee
      */
-
-
     public void setName(String name) {
         this.name = name;
     }
@@ -290,8 +276,6 @@ public class EmployeeSuper {
      *
      * @param address modifies the address of the Employee
      */
-
-
     public void setAddress(String address) {
         this.address = address;
     }
@@ -301,7 +285,6 @@ public class EmployeeSuper {
      *
      * @param email modifies the email of the Employee
      */
-
     public void setEmail(String email) {
         this.email = email;
     }
@@ -311,7 +294,6 @@ public class EmployeeSuper {
      *
      * @param phoneNumber the phone number of the Employee
      */
-
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
@@ -321,7 +303,6 @@ public class EmployeeSuper {
      *
      * @param employeeId the ID of the Employee
      */
-
     public void setEmployeeId(String employeeId) {
         this.employeeId = employeeId;
     }
@@ -331,7 +312,6 @@ public class EmployeeSuper {
      *
      * @param socCode the Soc code of the Employee
      */
-
     public void setSocCode(String socCode) {
         this.socCode = socCode;
     }
@@ -341,7 +321,6 @@ public class EmployeeSuper {
      *
      * @return
      */
-
     @Override
     public String toString() {
         return "Employee{" +
@@ -354,5 +333,4 @@ public class EmployeeSuper {
                 ", socCode='" + socCode + '\'' +
                 '}';
     }
-
 }

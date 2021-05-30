@@ -211,6 +211,11 @@ public class Test {
         }
     }
 
+    /**
+     * Compares the state.
+     * @param state the state
+     * @return true if it's different, false if it's equal
+     */
     public boolean compareState(String state) {
 
         if (state.equals("SAMPLE_ANALYSED") || state.equals("SAMPLE_COLLECTED") || state.equals("DIAGNOSTIC_MADE") || state.equals("VALIDATED")) {
@@ -219,6 +224,11 @@ public class Test {
         return true;
     }
 
+    /**
+     * Compares the test state.
+     * @param state the test state
+     * @return true if it's different, false if it's equal
+     */
     public boolean compareTestState(String state) {
 
         if (state.equals("SAMPLE_ANALYSED") || state.equals("DIAGNOSTIC_MADE") || state.equals("VALIDATED")) {
