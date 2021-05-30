@@ -17,12 +17,15 @@ public class RecordTestResultController {
 
     private SampleMapper sampleMapper;
 
+
+    public RecordTestResultController(){this(App.getInstance().getCompany());}
+
     /**
      * Constructor.
      */
-    public RecordTestResultController() {
+    public RecordTestResultController(Company company) {
         App app = App.getInstance();
-        Company company = app.getCompany();
+        this.company = app.getCompany();
         this.sampleStore = company.getSampleStore();
         this.testStore = company.getTestStore();
     }

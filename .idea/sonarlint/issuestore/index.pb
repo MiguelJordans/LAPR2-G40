@@ -35,8 +35,6 @@ g
 7src/test/java/app/domain/stores/ParameterStoreTest.java,2\2\22664c2c7dd56392c373cadc9bbaacd17f3cba1d
 o
 ?src/test/java/app/domain/stores/ParameterCategoryStoreTest.java,a\d\ad10a870e86f06eb3574f636cae639ed6b48432d
-d
-4src/test/java/app/domain/stores/ClientStoreTest.java,e\2\e2b46e13e389ecab1bfeccfd2f4a376c149640dc
 r
 Bsrc/test/java/app/domain/mappers/dto/ParameterCategoryDTOTest.java,b\4\b4b899a52cfed41238f1aaf7f67d34045c3d559e
 i
@@ -61,18 +59,6 @@ a
 1src/test/java/app/domain/shared/OrgRolesTest.java,9\d\9d1645a8abb802716c9c430aa151896bc3d66b9b
 ^
 .src/test/java/app/domain/model/ClientTest.java,1\d\1ded02609d9819f819b2a83507b751b1338f4e87
-`
-0src/main/java/app/controller/AuthController.java,4\0\40778ef1d8f18e9634da9485a353d2b842458731
-b
-2src/main/java/app/controller/ClientController.java,5\a\5a87feaf6f42c59d6fb9b1b9dfbc7e3301510ae2
-m
-=src/main/java/app/controller/ParameterCategoryController.java,2\3\23d7effaa727cc5c981046c12a8f9235e70b6480
-e
-5src/main/java/app/controller/ParameterController.java,4\f\4f19fce5393904d211ab231416f416fab58e5767
-l
-<src/main/java/app/controller/SpecialistDoctorController.java,0\8\085883edfde4de2c1baccd427ab50ed7ebb42e6e
-`
-0src/main/java/app/controller/TestController.java,d\c\dcc79190b015d8cb3fbff1783551983fd16dafcd
 j
 :src/main/java/app/controller/TestValidationController.java,a\b\ab7e009270a473e23a2ab1de62a41e677fc5ae73
 g
@@ -111,8 +97,6 @@ g
 ,src/main/java/app/domain/model/TestType.java,2\4\2423c136bbc016d77dbe900fd13fca08fa27b56a
 ]
 -src/main/java/app/domain/shared/OrgRoles.java,9\a\9a1f2685ff51c5f56ee76249655cffebcb80ef0a
-`
-0src/main/java/app/domain/stores/ClientStore.java,a\2\a208024caf8eb82d63bccfceb639afa2ced6c709
 t
 Dsrc/main/java/app/domain/stores/ClinicalAnalysisLaboratoryStore.java,c\8\c8dd6df835cd076f3ec4060d792ce003beebd74c
 e
@@ -169,8 +153,6 @@ S
 docs/README.md,9\f\9f7cbce127b94a94ee14460050fbff2ce58417d0
 \
 ,src/main/java/app/ui/console/EmployeeUI.java,e\3\e3718c935b16861ca776cc589d879593448ba254
-l
-<src/main/java/app/controller/RegisterEmployeeController.java,a\7\a7a46266d73376633f802e31465ba57f12cf1fca
 b
 2src/main/java/app/domain/stores/EmployeeStore.java,b\5\b5bc3e26da714d4b55cff5a97f4a3753de94c0ed
 e
@@ -181,10 +163,6 @@ f
 6src/main/java/app/mappers/ParameterCategoryMapper.java,2\3\23121ea581068432dd0a6741af6d1b586c2f1860
 n
 >src/main/java/app/ui/console/ClinicalAnalysisLaboratoryUI.java,c\0\c0fd6dabae9ef849d635d874a4f85943315bb5da
-v
-Fsrc/main/java/app/controller/ClinicalAnalysisLaboratoryController.java,d\9\d946d0da3abf936298c84ea7108b7ba9aeb84cc8
-l
-<src/main/java/app/controller/RecordTestResultController.java,1\f\1fd1e700307b14128deb854e5c3e6c27e0e3adb9
 d
 4src/main/java/app/ui/console/RecordTestResultUI.java,c\1\c16354235a4b29ed1a8945335a6e6a1001ca19e7
 \
@@ -197,8 +175,6 @@ d
 4src/test/java/app/domain/stores/SampleStoreTest.java,d\a\da910ce79a563b2cacaddc3f7b356f379844a6bb
 X
 (docs/SprintC/US003/US3_RegisterClient.md,4\3\439049babe768ebff6c9f28fc24a01527b953b1d
-^
-.src/main/java/app/domain/shared/Constants.java,f\e\fecb2f10414ac5d80f9e492ba88044c5911e8e84
 b
 2src/main/java/app/domain/model/BarcodeAdapter.java,5\7\572c72cede0b54c6aa265bd8ca31dfceabbe6d68
 c

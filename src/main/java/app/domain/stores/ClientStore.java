@@ -125,15 +125,15 @@ public class ClientStore {
     }
 
 
-    public boolean checkExistingClient(String citizenCardNumber){
+    public String  checkExistingClient(String citizenCardNumber){
 
         for (Client client : clientList){
             if (client.getCitizenCardNumber().equalsIgnoreCase(citizenCardNumber)) {
-                return true;
+                return client.getName();
             }
 
         }
-        return false;
+        return null;
     }
 
     public List<Client> getClientList() {

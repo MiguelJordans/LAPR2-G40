@@ -9,9 +9,7 @@ import auth.UserSession;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Properties;
 
@@ -86,23 +84,22 @@ public class App {
         this.authFacade.addUserRole(Constants.ROLE_LABORATORY_COORDINATOR, Constants.ROLE_LABORATORY_COORDINATOR);
         this.authFacade.addUserRole(Constants.ROLE_SPECIALIST_DOCTOR, Constants.ROLE_SPECIALIST_DOCTOR);
 
-        this.authFacade.addUserWithRole("Main Administrator", "admin@lei.sem2.pt", "123456", Constants.ROLE_ADMIN);
-        this.authFacade.addUserWithRole("Miguel Jordão", "1201487@lei.sem2.pt", "123456", Constants.ROLE_ADMIN);
-        this.authFacade.addUserWithRole("Mariana Lages", "1200902@lei.sem2.pt", "123456", Constants.ROLE_ADMIN);
-        this.authFacade.addUserWithRole("Daniel Costa", "1200581@lei.sem2.pt", "123456", Constants.ROLE_ADMIN);
-        this.authFacade.addUserWithRole("Lucas Silva", "1200759@lei.sem2.pt", "123456", Constants.ROLE_ADMIN);
-        this.authFacade.addUserWithRole("Receptionist", "receptionist@lei.sem2.pt", "123456", Constants.ROLE_RECEPTIONIST);
-        this.authFacade.addUserWithRole("Medical lab technician", "mlt@lei.sem2.pt", "123456", Constants.ROLE_MEDICAL_LAB_TECHNICIAN);
-        this.authFacade.addUserWithRole("Clinical Chemistry Technologist", "cct@lei.sem2.pt", "123456", Constants.ROLE_CLINICAL_CHEMISTRY_TECHNOLOGIST);
-        this.authFacade.addUserWithRole("Laboratory Coordinator", "lcoo@lei.sem2.pt", "123456", Constants.ROLE_LABORATORY_COORDINATOR);
-        this.authFacade.addUserWithRole("Client", "cc@lei.sem2.pt", "123456", Constants.ROLE_CLIENT);
-        this.authFacade.addUserWithRole("Specialist Doctor", "spd@lei.sem2.pt", "123456", Constants.ROLE_SPECIALIST_DOCTOR);
+        this.authFacade.addUserWithRole("Main Administrator", "admin@lei.sem2.pt", Constants.PASSWORD, Constants.ROLE_ADMIN);
+        this.authFacade.addUserWithRole("Miguel Jordão", "1201487@lei.sem2.pt", Constants.PASSWORD, Constants.ROLE_ADMIN);
+        this.authFacade.addUserWithRole("Mariana Lages", "1200902@lei.sem2.pt", Constants.PASSWORD, Constants.ROLE_ADMIN);
+        this.authFacade.addUserWithRole("Daniel Costa", "1200581@lei.sem2.pt", Constants.PASSWORD, Constants.ROLE_ADMIN);
+        this.authFacade.addUserWithRole("Lucas Silva", "1200759@lei.sem2.pt", Constants.PASSWORD, Constants.ROLE_ADMIN);
+        this.authFacade.addUserWithRole("Receptionist", "receptionist@lei.sem2.pt", Constants.PASSWORD, Constants.ROLE_RECEPTIONIST);
+        this.authFacade.addUserWithRole("Medical lab technician", "mlt@lei.sem2.pt", Constants.PASSWORD, Constants.ROLE_MEDICAL_LAB_TECHNICIAN);
+        this.authFacade.addUserWithRole("Clinical Chemistry Technologist", "cct@lei.sem2.pt", Constants.PASSWORD, Constants.ROLE_CLINICAL_CHEMISTRY_TECHNOLOGIST);
+        this.authFacade.addUserWithRole("Laboratory Coordinator", "lcoo@lei.sem2.pt", Constants.PASSWORD, Constants.ROLE_LABORATORY_COORDINATOR);
+        this.authFacade.addUserWithRole("Client", "cc@lei.sem2.pt", Constants.PASSWORD, Constants.ROLE_CLIENT);
+        this.authFacade.addUserWithRole("Specialist Doctor", "spd@lei.sem2.pt", Constants.PASSWORD, Constants.ROLE_SPECIALIST_DOCTOR);
 
         TestTypeStore testTypeStore = company.getTestTypeStore();
         ParameterCategoryStore parameterCategoryStore = company.getParameterCategoryStore();
         ParameterStore parameterStore = company.getParameterStore();
         TestStore testStore = company.getTestStore();
-        ClientStore clientStore = company.getClientStore();
 
         ParameterCategory parameterCategory = new ParameterCategory("12345", "categoria", "1212");
         parameterCategoryStore.saveParameterCategory();
@@ -141,19 +138,6 @@ public class App {
         parameterStore.saveParameter();
         parameterStore.createParameter("WBC", "WBC00", "WBC", parameterCategory1);
         parameterStore.saveParameter();
-
-        String dateStr = "11/11/2000";
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        Date date = null;
-        try {
-            date = dateFormat.parse(dateStr);
-        } catch (Exception e) {
-            //empty
-        }
-
-        Client client = new Client("Miguel","1201487@isep.ipp.pt","male",date,"1234567890123456","12345678901","1234567890","9999999999");
-        //clientStore.getClientList().add(client);
-        //clientStore.saveClient();
 
         Test test = new Test("1234567890123456", "100000000000", "999999999999", bloodTest);
         testStore.saveTest(test);

@@ -1,7 +1,6 @@
 package app.controller;
 
 import app.domain.stores.ClientStore;
-import app.domain.stores.TestStore;
 import app.mappers.SampleMapper;
 import app.mappers.TestMapper;
 import app.mappers.dto.SampleDTO;
@@ -16,9 +15,7 @@ public class SampleController {
 
     private Company company;
     private SampleStore smStore;
-    private TestMapper testMapper;
     private TestMapper testMapper1;
-    private SampleMapper sampleMapper;
     private SampleMapper sampleMapper1;
 
     private Test tr;
@@ -89,7 +86,7 @@ public class SampleController {
 
         this.testMapper1 = new TestMapper();
 
-        return testMapper1.toDTO(getAvailableTestsList(), getClientName(tr));
+        return testMapper1.toDTO(getAvailableTestsList(),null); //Name null (not yet implemented) one member of our group didn't implement this in time
 
     }
 
@@ -118,19 +115,6 @@ public class SampleController {
      */
     public List<Test> getTestList() {
         return this.company.getTestList();
-    }
-
-    /**
-     * Gets the list of samples (DTO)
-     *
-     * @return the list of samples (DTO)
-     */
-    public List<SampleDTO> getSampleListDTO() {
-
-        this.sampleMapper = new SampleMapper();
-
-        return sampleMapper.toDTO(getSampleList());
-
     }
 
     /**
@@ -189,7 +173,7 @@ public class SampleController {
      * @param test the test
      * @return success: client's name / failure: null
      */
-    public String getClientName(Test test) {
+    public String getClientName(Test test) { //Not yet implemented!
         for (Client c : getClientStore().getClientList()) {
             if (test.getTinNumber().equalsIgnoreCase(c.getTinNumber())) {
                 return c.getName();

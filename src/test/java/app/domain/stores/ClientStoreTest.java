@@ -133,19 +133,7 @@ public class ClientStoreTest {
 
         store.saveClient();
 
-        Assert.assertTrue(store.checkExistingClient("5647748895858574"));
-
-    }
-
-    @Test
-    public void checkExistingClient2(){
-
-        ClientStore store = new ClientStore();
-        Client cr = store.createClient("Jason", "2344@gmail.com", "Male", date,
-                "5647748895858574", "05968742634","7468496874", "7456375876");
-
-
-        Assert.assertFalse(store.checkExistingClient("5647748895858574"));
+        Assert.assertNotNull(store.checkExistingClient("5647748895858574"));
 
     }
 

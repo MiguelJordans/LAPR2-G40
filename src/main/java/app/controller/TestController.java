@@ -44,10 +44,6 @@ public class TestController {
         this.tt = tt;
     }
 
-    public boolean searchClient(String citizenCardNumber) {
-        return clientStore.checkExistingClient(citizenCardNumber);
-    }
-
     public boolean validateNhsCode(String nhsCode) {
         return testStore.validateNhsCode(nhsCode);
     }

@@ -63,4 +63,6 @@ public class Constants {
     public static final String PATH_CLIENT_USER_INFORMATION="ClientUserInformation\\";
     public static final String PATH_EMPLOYEE_USER_INFORMATION="EmployeeUserInformation\\";
 
+    public static final String PASSWORD= "123456";
+
 }

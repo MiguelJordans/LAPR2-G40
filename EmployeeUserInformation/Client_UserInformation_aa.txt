@@ -1,5 +1,0 @@
-MEDICAL_LAB_TECHNICIAN INFORMATION: 
-
-Name: aa
-Email: a@email.pt
-Password: soUCYVWVTN
