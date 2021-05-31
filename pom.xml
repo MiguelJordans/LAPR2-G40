@@ -103,6 +103,7 @@
 	<properties>
 		<maven.compiler.source>1.11</maven.compiler.source>
 		<maven.compiler.target>1.11</maven.compiler.target>
+		<javafx.version>13</javafx.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -146,6 +147,16 @@
 			<version>1.0.0</version>
 			<scope>system</scope>
 			<systemPath>${basedir}/lib/CovidReferenceValues1API-1.0.0.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>org.openjfx</groupId>
+			<artifactId>javafx-controls</artifactId>
+			<version>12.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.openjfx</groupId>
+			<artifactId>javafx-fxml</artifactId>
+			<version>${javafx.version}</version>
 		</dependency>
 	</dependencies>
 </project>

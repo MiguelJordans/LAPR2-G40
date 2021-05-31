@@ -1,0 +1,73 @@
+Requests data (name, citizen card number, phone number, email, TIF number, NHS number, sex, birth date)
+
+
+São as stores que fazem a verificação da integridade dos objetos (validação)
+
+Stores tbm criam objetos , adicionam às listas pretendidas e tbm removem objetos.
+
+Dúvida : HashSet que faz? (Classe UserRoleStore) o quão útil é?
+
+No caso de User é a store que queria a role.
+
+Na US003 é a classe Password que cria a palavra passe (gera a palavra passe do User) confirmado pelo código do projeto
+
+Classe password tbm verifica a validade da passe
+
+Dúvida : Linha 34 classe Password - o que faz esse código ? Como funiona? (é facil perceber que serve para gerar a password mas como é que funciona overall?)
+
+Mesma coisa com a classe Email , é esta que gera o email para o cliente e verifica a sua integridade.
+
+Classe UserRole cria uma "role" com o ID do user (ou seja consoante o seu objetivo, neste projeto apenas existe MLT, specialist doctor bla bla bla)
+
+Todas as classes implementas pelo professor Paulo Maio utilizam o "hash" que serve para a geração do pretendido atributo (ainda temos de ver melhor como funciona isto)
+
+Nota: Já tinha dito ao daniel para fazer as 2 versões do US007 a hipótese 2 e 3 em SD pois caso consigamos ter tempo vamos implementar o "refraction" (chances de conseguir não são muitas altas tho foquem-se em pensar como fazer sem o mesmo)
+
+Todas as User interfaces estão definidas no Projeto base, temos de implementa las de forma correcta e assertiva ( é facil perceber como funcionam)
+
+Já mudei o código de algumas UI pois era preciso (Vamos fazer o menu por opções tal como fizeram em LAPR1, opção de escolher consoante o número escolhido)
+
+Sempre que forem a criar um objeto ( nao importa de que tipo seja) verifiquem a integridade dos atributos! Caso sejam inválidos o sistema tem de lançar os exceptions (definam os mesmos dentro dos construtores!, mais tarde por meios de organização podemos vir a mudar este método)
+
+Na classe AdminUI temos lá a interface para o administrator, cada US vai ser uma opção válida dentro da lista <MenuItem>, é lançado um ciclo do while para o administrator ter a possibilidade de realizar as tarefas pretendias , para ser possível isto acontecer primeiro tem de ser verificado o seu login como administrator (classes diponíveis)
+
+Depois de um estudo das UI cheguei a varias conclusões :
+
+A authUI é a primeira a ser lançada , nesta vai verificar a integridade do utilizador , o mesmo vai logar com as suas credenciais no sistema (no authentication) e caso seja possível o login, a classe vai buscar a role desse "user" , após isso vai ser rencaminhado para o rolesUI aonde posteriormente ser rencaminhado para a sua classe correta(classe essa para realizar as suas tarefas rececionista - registar cliente por exemplo)
+
+As roles vão ser obtidas através de um Data transfer objectt (DTO) que vai à lista dos users (acho eu ) e apenas vai aceder às roles existentes e expor para o user escolher a sua.
+
+O login é feito com 3 tentativas (caso falhe o login mais de 3 vezes da return a um boolean em false ) e que avisa que o login nao foi efectuado com sucesso ( um loop para o utilizador ter a possibilidade de dar login outra vez? )
+
+Dúvida : Como funcionam os Iteradores ? (Linha 95 Classe AuthUI ) para que serve realmente?
+
+Apos ter sido redirecionado para RoleUI o mesmo vai verificar o user para redirecionar o mesmo para a sua UI e posteriormente o seu controller para ter acesso ao seu material de trabalho.
+
+Nao sei se ja mencionei mas digo outra vez , apos um login feito com sucesso o mesmo vai mostrar uma lista de roles (a lista DTO criada a partir da lista Clients) e vai pedir ao user para escolher uma role possível (caso seja Admin vai haver outra administraçao para que esse user consiga entrar? ja verifico) essa escolha vem da classe Utilis (classe muito util pois tem bastantes metodos para mostrar informação e ler informação introduzida) , por isso tudo que seja preciso para demonstrar listas, ler informações esta tudo nesta classe!!! super importante
+
+No UI quando mostra as roles , primeiro mostra a lista com um metodo da classe Utilis e depois pede para escolher 1 usando outro metodo da classe Utilis, ou seja o trabalho é facilitado com bastantes interligações entre classes.
+
+Existe uma interface apenas para mostrar a nossa informação, para implementar posteriormente no menu inicial.
+
+No MainMenuUI , interface principal, é nesta que vamos colocar as opçoes todas para o user escolher o que deseja , desde ver a dev team , desde a fazer login , a tentar aceder às suas permissões... etc.
+
+Quando se esta a escolher as opções no menu é preciso criar objetos do tipo MenuItem com uma descrição unica para o mesmo e o UI desejado (dar login , ver a dev team ou tentar acedar as suas permisoes ), caso seja invalido o menu item é lançado uma exceção para nao funcionar o mesmo.
+
+O main menu também utiliza métodos da classe Utilis para facilitar o trabalho e transforma lo muito mais pratico.
+
+No menu apos selecionar uma opção utilizando um metodo do do Utilis é chamado o certo objeto desejado (adicionado antes na lista MenuItem) para realizar a tarefa desejada redirecionando para o UI do menuitem object.
+
+Existe também um UI chamao Show Text UI que server para dar print a textos por parte do utilizador (user) , usando um objecto showtextui.
+
+o main do programa apenas vai abrir o menu , that´s it
+
+IMPORTANTE : ao dar login não é preciso o nome do user , isso sao informações a mais , apenas é preciso o email e a password, posteriomente casso esse user exista vai obter o seu ID para dps ser possível adicionar à lista de roles (dto da lista client)
+
+
+
+
+
+
+
+
+
