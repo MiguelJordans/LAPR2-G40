@@ -5,7 +5,6 @@ import app.domain.model.ClientUserInformation;
 import app.domain.model.Company;
 import app.ui.console.GeneratePassword;
 import auth.AuthFacade;
-import sun.jvm.hotspot.runtime.ppc64.PPC64CurrentFrameGuess;
 
 import java.util.ArrayList;
 import java.util.Date;

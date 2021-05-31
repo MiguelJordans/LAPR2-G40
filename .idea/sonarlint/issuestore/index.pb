@@ -127,8 +127,6 @@ g
 7src/test/java/app/domain/mappers/dto/SampleDTOTest.java,7\9\797b54dd148fa02aa7c3551d9656d5262229c821
 f
 6src/test/java/app/domain/mappers/SampleMapperTest.java,9\9\9956377c9c096dfb582da51ce1f1a7ba08079ea6
-^
-.src/test/java/app/domain/model/SampleTest.java,3\0\30a600e399b7ae013cc66d630992203751d9841b
 d
 4src/test/java/app/domain/mappers/TestMapperTest.java,f\7\f7913c629a74fb93643ce758bccaedfb47c8e933
 d
@@ -217,8 +215,6 @@ g
 ,src/main/java/app/domain/model/TestType.java,2\4\2423c136bbc016d77dbe900fd13fca08fa27b56a
 t
 Dsrc/main/java/app/domain/stores/ClinicalAnalysisLaboratoryStore.java,c\8\c8dd6df835cd076f3ec4060d792ce003beebd74c
-`
-0src/main/java/app/domain/stores/ClientStore.java,a\2\a208024caf8eb82d63bccfceb639afa2ced6c709
 k
 ;src/main/java/app/domain/stores/ParameterCategoryStore.java,9\0\90d1cb3bc9c98c352bd9dcd1a6f966b1b9d5fd20
 `

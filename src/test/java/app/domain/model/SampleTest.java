@@ -320,7 +320,7 @@ public class SampleTest {
 
         Sample sm1 = new Sample(test, "11111111111",date);
 
-        String expected = "Sample{tr=Test{TinNumber='1234567890123456', testID='100000000000', nhsCode='999999999999', tt= Test Code: BL000, Description:Blood Test, CollectingMethod:Needle, state=CREATED, date=2021-05-30}, barcode='11111111111', date="+date+"}";
+        String expected = "Sample{tr=Test{TinNumber='1234567890123456', testID='100000000000', nhsCode='999999999999', tt= Test Code: BL000, Description:Blood Test, CollectingMethod:Needle, state=CREATED, date=2021-05-31}, barcode='11111111111', date="+date+"}";
         String actual = sm1.toString();
 
         Assert.assertEquals(expected,actual);
