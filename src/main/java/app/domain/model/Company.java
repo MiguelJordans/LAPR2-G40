@@ -210,6 +210,10 @@ public class Company {
         return testTypeStore;
     }
 
+    public void addTestTypelist(){
+        testTypeStore.readTestTypeSerilization();
+    }
+
 
     // US10 - Parameter -------------------------------------------------------------------------
 

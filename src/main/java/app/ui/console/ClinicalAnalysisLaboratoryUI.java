@@ -18,6 +18,8 @@ public class ClinicalAnalysisLaboratoryUI implements Runnable {
         boolean count = true;
         boolean leave = true;
 
+        ctrl.addTestTypeList();
+
         if (this.ctrl.getTestTypeList() == null || this.ctrl.getTestTypeList().isEmpty()) {
             System.out.println("The list is empty! Please, try adding at least one test type in order to create the laboratory.");
         } else {

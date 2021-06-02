@@ -3,6 +3,7 @@ package app.domain.stores;
 import app.domain.model.ParameterCategory;
 import app.domain.model.TestType;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -67,6 +68,7 @@ public class TestTypeStore {
     public boolean saveTestType() {
         if (validateTestType(tt)) {
             listAdd(tt);
+            saveTestTypeSerilization();
             return true;
         } else {
             return false;
@@ -117,4 +119,36 @@ public class TestTypeStore {
         return list;
     }
 
+    public void saveTestTypeSerilization() {
+
+        try {
+            FileOutputStream fileOutputStream = new FileOutputStream("TestPasta\\DN.ser.txt");
+            ObjectOutputStream outputStream = new ObjectOutputStream(fileOutputStream);
+            outputStream.writeObject(tt);
+            outputStream.close();
+
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+
+    }
+
+    public void readTestTypeSerilization() {
+
+        try {
+            FileInputStream fileInputStream = new FileInputStream("TestPasta\\Dn.ser.txt");
+            ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
+            TestType tt1 = (TestType) objectInputStream.readObject();
+            objectInputStream.close();
+            this.listAdd(tt1);
+            System.out.println(tt1.getCollectingMethod());
+            System.out.println(tt1.getDescription());
+            System.out.println(tt1.getTestCode());
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        } catch (ClassNotFoundException e) {
+            System.out.println(e.getMessage());
+        }
+
+    }
 }

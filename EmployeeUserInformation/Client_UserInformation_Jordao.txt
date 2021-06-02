@@ -2,4 +2,4 @@ SPECIALIST_DOCTOR INFORMATION:
 
 Name: Jordao
 Email: email@hotmail.com
-Password: hoOBtqOwKv
+Password: RYdEwckdob

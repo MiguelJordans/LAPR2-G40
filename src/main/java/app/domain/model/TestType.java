@@ -3,9 +3,10 @@ package app.domain.model;
 import app.domain.shared.Constants;
 import org.apache.commons.lang3.StringUtils;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class TestType {
+public class TestType implements Serializable {
 
     private String testCode;
     private String description;

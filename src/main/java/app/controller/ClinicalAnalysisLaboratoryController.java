@@ -88,4 +88,10 @@ public class ClinicalAnalysisLaboratoryController {
 
     }
 
+    public void addTestTypeList(){
+
+        this.company.addTestTypelist();
+
+    }
+
 }
